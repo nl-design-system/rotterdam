@@ -1,0 +1,18 @@
+on: pull_request
+
+name: Prevent merging fixup commits
+
+permissions:
+  pull-requests: read
+
+jobs:
+  message-check:
+    name: Require "git rebase --autosquash" of "fixup!" commits
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Block Autosquash Commits
+        uses: xt0rted/block-autosquash-commits-action@v2.2.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
