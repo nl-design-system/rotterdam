@@ -1,25 +1,20 @@
+import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
+import { withThemeByClassName } from '@storybook/addon-styling';
+import type { Preview } from '@storybook/react';
 import '@gemeente-rotterdam/design-tokens/dist/index.css';
 import '@gemeente-rotterdam/font/src/index.scss';
-import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
-import type { Preview, StoryContext } from '@storybook/react';
 
 defineCustomElements();
 
 const preview: Preview = {
   decorators: [
-    // Enable `utrecht-document` component as backdrop
-    // Enable `utrecht-theme` to configure the design tokens
-    // Ensure old html templates will be rendered as react component
-    (Story: any, storyContext: StoryContext<any>) => {
-      // Hack to make current args for a story available in the transformSource of the docs addon
-      storyContext.parameters['args'] = storyContext.args;
-
-      return (
-        <div className="example-theme">
-          <Story />
-        </div>
-      );
-    },
+    withThemeByClassName({
+      themes: {
+        Rotterdam: 'rods-theme',
+        'Rotterdam dark color scheme': 'rods-theme rods-theme--media-query-color-scheme-dark',
+      },
+      defaultTheme: 'Rotterdam',
+    }),
   ],
   parameters: {
     controls: { expanded: false },
