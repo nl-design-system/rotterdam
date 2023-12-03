@@ -1,0 +1,1 @@
+import{D as a,d}from"./chunk-HLWAVYOI-hAsfmEpf.js";import"./iframe-VAgLT6Db.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-qZm_vjb7.js";import"./extends-dGVwEr9R.js";import"./index-83LIMwj7.js";export{a as DocsRenderer,d as defaultComponents};

@@ -1,4 +1,4 @@
-import{M as a,e as i}from"./chunk-HLWAVYOI-evOOUI4M.js";import{j as e}from"./jsx-runtime-Q5kDp4vx.js";import{u as s}from"./index-BxL6228P.js";import"./iframe-DRhktoO3.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-qZm_vjb7.js";import"./index-83LIMwj7.js";const u=`# Auteursrecht {auteur}
+import{M as a,e as i}from"./chunk-HLWAVYOI-hAsfmEpf.js";import{j as e}from"./jsx-runtime-Q5kDp4vx.js";import{u as s}from"./index-BxL6228P.js";import"./iframe-VAgLT6Db.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-qZm_vjb7.js";import"./extends-dGVwEr9R.js";import"./index-83LIMwj7.js";const u=`# Auteursrecht {auteur}
 
 Copyright (c) {jaar} {auteur}
 
@@ -16,4 +16,4 @@ Lettertypes die worden gebruikt voor de huisstijl zijn niet allemaal gratis en o
 
 Wanneer je het logo of de huisstijl wilt gebruiken kun je voor toestemming contact opnemen met {contactpersoon}.
 `;function o(t){return e.jsxs(e.Fragment,{children:[e.jsx(a,{title:"Example/Toestemming voor gebruik"}),`
-`,e.jsx(i,{children:u})]})}function m(t={}){const{wrapper:r}=Object.assign({},s(),t.components);return r?e.jsx(r,{...t,children:e.jsx(o,{...t})}):o()}const p=()=>{throw new Error("Docs-only story")};p.parameters={docsOnly:!0};const n={title:"Example/Toestemming voor gebruik",tags:["stories-mdx"],includeStories:["__page"]};n.parameters=n.parameters||{};n.parameters.docs={...n.parameters.docs||{},page:m};const x=["__page"];export{x as __namedExportsOrder,p as __page,n as default};
+`,e.jsx(i,{children:u})]})}function m(t={}){const{wrapper:r}=Object.assign({},s(),t.components);return r?e.jsx(r,{...t,children:e.jsx(o,{...t})}):o()}const p=()=>{throw new Error("Docs-only story")};p.parameters={docsOnly:!0};const n={title:"Example/Toestemming voor gebruik",tags:["stories-mdx"],includeStories:["__page"]};n.parameters=n.parameters||{};n.parameters.docs={...n.parameters.docs||{},page:m};const v=["__page"];export{v as __namedExportsOrder,p as __page,n as default};
