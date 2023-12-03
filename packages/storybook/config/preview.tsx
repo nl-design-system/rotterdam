@@ -1,6 +1,7 @@
 import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
 import { withThemeByClassName } from '@storybook/addon-styling';
 import type { Preview } from '@storybook/react';
+import { Document } from '@utrecht/component-library-react/dist/css-module';
 import '@gemeente-rotterdam/design-tokens/dist/index.css';
 import '@gemeente-rotterdam/font/src/index.scss';
 
@@ -15,6 +16,7 @@ const preview: Preview = {
       },
       defaultTheme: 'Rotterdam',
     }),
+    (Story: any) => <Document>{Story()}</Document>,
   ],
   parameters: {
     controls: { expanded: false },
