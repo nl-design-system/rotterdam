@@ -20,7 +20,7 @@
         "text-decoration-thickness": {}
       },
       "placeholder": {
-        "color": {}
+        "color": { "value": "{rods.color.gray.tint-09}" }
       },
       "visited": {
         "color": {}
