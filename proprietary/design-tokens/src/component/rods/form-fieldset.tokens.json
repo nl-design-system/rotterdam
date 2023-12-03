@@ -1,8 +1,8 @@
 {
-  "rotterdam": {
+  "rods": {
     "form-fieldset": {
       "legend": {
-        "border-block-end-color": { "value": "{rotterdam.color.gray.tint-04}" },
+        "border-block-end-color": { "value": "{rods.color.gray.tint-04}" },
         "border-block-end-width": { "value": "1px" },
         "padding-block-end": { "value": "12px" }
       }

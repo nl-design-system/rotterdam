@@ -1,5 +1,5 @@
 {
-  "rotterdam": {
+  "rods": {
     "color": {
       "base": {
         "white": {
@@ -11,15 +11,15 @@
           "comment": "Base/Black"
         },
         "green": {
-          "value": "{rotterdam.color.green.tint-01}",
+          "value": "{rods.color.green.tint-01}",
           "comment": "Base/Green"
         },
         "magenta": {
-          "value": "{rotterdam.color.magenta.tint-01}",
+          "value": "{rods.color.magenta.tint-01}",
           "comment": "Base/Magenta"
         },
         "gray": {
-          "value": "{rotterdam.color.gray.tint-01}",
+          "value": "{rods.color.gray.tint-01}",
           "comment": "Base/Gray"
         }
       },
