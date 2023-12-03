@@ -19,7 +19,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
     reactOutputTarget({
-      componentCorePackage: '@example/web-components-stencil',
+      componentCorePackage: '@gemeente-rotterdam/web-components-stencil',
       proxiesFile: '../web-components-react/src/components.ts',
     }),
   ],

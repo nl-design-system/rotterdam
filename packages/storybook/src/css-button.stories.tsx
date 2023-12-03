@@ -1,9 +1,9 @@
 /* @license CC0-1.0 */
 
-import readme from '@example/components-css/button/README.md?raw';
+import readme from '@gemeente-rotterdam/components-css/button/README.md?raw';
 import type { Meta, StoryObj } from '@storybook/react';
 import { PropsWithChildren } from 'react';
-import '@example/components-css/button/index.scss';
+import '@gemeente-rotterdam/components-css/button/index.scss';
 
 const Button = ({ children }: PropsWithChildren<{}>) => (
   <button className="example-button" type="button">
