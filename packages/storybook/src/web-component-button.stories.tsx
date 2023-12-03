@@ -8,8 +8,8 @@ import { PropsWithChildren } from 'react';
 const Button = ({ children }: PropsWithChildren<{}>) => <ExampleButton>{children}</ExampleButton>;
 
 const meta = {
-  title: 'Web Component/Button',
-  id: 'web-component-button',
+  title: 'Web Component/Example button (do not use)',
+  id: 'web-component-example-button',
   component: Button,
   argTypes: {
     children: {
