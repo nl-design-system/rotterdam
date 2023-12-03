@@ -139,7 +139,7 @@ importers:
       '@babel/runtime':
         specifier: 7.23.5
         version: 7.23.5
-      '@example/components-css':
+      '@gemeente-rotterdam/components-css':
         specifier: workspace:*
         version: link:../components-css
       '@rollup/plugin-babel':
@@ -256,22 +256,22 @@ importers:
       '@etchteam/storybook-addon-status':
         specifier: 4.2.4
         version: 4.2.4
-      '@example/assets':
+      '@gemeente-rotterdam/assets':
         specifier: workspace:*
         version: link:../../proprietary/assets
-      '@example/components-css':
+      '@gemeente-rotterdam/components-css':
         specifier: workspace:*
         version: link:../components-css
-      '@example/design-tokens':
+      '@gemeente-rotterdam/design-tokens':
         specifier: workspace:*
         version: link:../../proprietary/design-tokens
-      '@example/font':
+      '@gemeente-rotterdam/font':
         specifier: workspace:*
         version: link:../../proprietary/font
-      '@example/web-components-react':
+      '@gemeente-rotterdam/web-components-react':
         specifier: workspace:*
         version: link:../web-components-react
-      '@example/web-components-stencil':
+      '@gemeente-rotterdam/web-components-stencil':
         specifier: workspace:*
         version: link:../web-components-stencil
       '@storybook/addon-a11y':
@@ -364,7 +364,7 @@ importers:
 
   packages/web-components-react:
     devDependencies:
-      '@example/web-components-stencil':
+      '@gemeente-rotterdam/web-components-stencil':
         specifier: workspace:*
         version: link:../web-components-stencil
       '@types/node':
@@ -395,7 +395,7 @@ importers:
         specifier: 4.8.0
         version: 4.8.0
     devDependencies:
-      '@example/components-css':
+      '@gemeente-rotterdam/components-css':
         specifier: workspace:*
         version: link:../components-css
       '@stencil/react-output-target':

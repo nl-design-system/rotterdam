@@ -3,7 +3,7 @@
   "author": "Community for NL Design System",
   "description": "Stencil web components bundle based on the NL Design System architecture",
   "license": "EUPL-1.2",
-  "name": "@example/web-components-stencil",
+  "name": "@gemeente-rotterdam/web-components-stencil",
   "keywords": [
     "nl-design-system"
   ],
@@ -34,7 +34,7 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@example/components-css": "workspace:*",
+    "@gemeente-rotterdam/components-css": "workspace:*",
     "@stencil/react-output-target": "0.5.3",
     "@stencil/sass": "3.0.7",
     "@types/jest": "29.5.10",
