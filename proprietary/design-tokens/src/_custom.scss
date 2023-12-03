@@ -46,4 +46,8 @@
     --utrecht-badge-background-color: var(--rods-status-badge-dark-yellow-background-color);
     --utrecht-badge-color: var(--rods-status-badge-dark-yellow-color);
   }
+
+  .utrecht-unordered-list__item::marker {
+    content: "■";
+  }
 }
