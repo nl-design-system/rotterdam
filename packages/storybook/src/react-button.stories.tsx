@@ -2,8 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../../components-react/src/Button';
 
 const meta = {
-  title: 'React Component/Button',
-  id: 'react-button',
+  title: 'React Component/Example button (do not use)',
+  id: 'react-example-button',
   component: Button,
   args: {
     children: 'Read more...',

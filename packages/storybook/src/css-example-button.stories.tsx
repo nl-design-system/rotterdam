@@ -12,8 +12,8 @@ const Button = ({ children }: PropsWithChildren<{}>) => (
 );
 
 const meta = {
-  title: 'CSS Component/Button',
-  id: 'css-button',
+  title: 'CSS Component/Example button (do not use)',
+  id: 'css-example-button',
   component: Button,
   argTypes: {
     children: {
