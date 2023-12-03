@@ -1,7 +1,7 @@
 {
   "utrecht": {
     "form-field-error-message": {
-      "color": { "value": "{rotterdam.color.red.tint-02}" },
+      "color": { "value": "{rods.color.red.tint-02}" },
       "font-family": {},
       "font-size": {},
       "font-weight": {},

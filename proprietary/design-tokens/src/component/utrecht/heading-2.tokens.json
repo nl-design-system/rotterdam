@@ -3,9 +3,9 @@
     "heading-2": {
       "color": {},
       "font-family": {},
-      "font-size": { "value": "{rotterdam.typography.scale.5xl.font-size}" },
+      "font-size": { "value": "{rods.typography.scale.5xl.font-size}" },
       "font-weight": {},
-      "line-height": { "value": "{rotterdam.typography.scale.5xl.line-height}" },
+      "line-height": { "value": "{rods.typography.scale.5xl.line-height}" },
       "margin-block-end": {},
       "margin-block-start": {}
     }

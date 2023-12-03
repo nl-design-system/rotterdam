@@ -1,9 +1,9 @@
 {
-  "rotterdam": {
+  "rods": {
     "textbox": {
       "hover": {
         "border-color": {
-          "value": "{rotterdam.color.base.green}"
+          "value": "{rods.color.base.green}"
         },
         "border-width": {
           "value": "2px"

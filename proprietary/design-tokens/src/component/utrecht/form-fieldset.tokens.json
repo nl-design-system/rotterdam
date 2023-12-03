@@ -15,11 +15,11 @@
         "color": {}
       },
       "legend": {
-        "color": { "value": "{rotterdam.color.gray.tint-11}" },
+        "color": { "value": "{rods.color.gray.tint-11}" },
         "font-family": {},
-        "font-size": { "value": "{rotterdam.typography.scale.xl.font-size}" },
-        "font-weight": { "value": "{rotterdam.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "value": "{rotterdam.typography.scale.xl.line-height}" },
+        "font-size": { "value": "{rods.typography.scale.xl.font-size}" },
+        "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
+        "line-height": { "value": "{rods.typography.scale.xl.line-height}" },
         "margin-block-end": {},
         "margin-block-start": {},
         "text-transform": {},

@@ -2,19 +2,19 @@
   "utrecht": {
     "badge": {
       "background-color": {
-        "value": "{rotterdam.color.blue.tint-03}"
+        "value": "{rods.color.blue.tint-03}"
       },
       "border-radius": {
         "value": "0"
       },
       "color": {
-        "value": "{rotterdam.color.base.white}"
+        "value": "{rods.color.base.white}"
       },
       "font-size": {
         "value": "12px"
       },
       "font-weight": {
-        "value": "{rotterdam.typography.weight-scale.bold.font-weight}"
+        "value": "{rods.typography.weight-scale.bold.font-weight}"
       },
       "line-height": {},
       "padding-block": {

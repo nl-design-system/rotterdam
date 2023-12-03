@@ -1,10 +1,10 @@
 {
   "utrecht": {
     "code-block": {
-      "background-color": { "value": "{rotterdam.color.gray.tint-01}" },
-      "color": { "value": "{rotterdam.color.gray.tint-11}" },
+      "background-color": { "value": "{rods.color.gray.tint-01}" },
+      "color": { "value": "{rods.color.gray.tint-11}" },
       "font-family": {},
-      "font-size": { "value": "{rotterdam.typography.scale.md}" },
+      "font-size": { "value": "{rods.typography.scale.md.font-size}" },
       "line-height": {},
       "margin-block-end": { "value": "24px" },
       "margin-block-start": { "value": "24px" },

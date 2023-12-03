@@ -1,10 +1,10 @@
 {
   "utrecht": {
     "form-select": {
-      "background-color": { "value": "{rotterdam.color.base.white}" },
+      "background-color": { "value": "{rods.color.base.white}" },
       "border-color": {},
       "border-width": { "value": "1px" },
-      "color": { "value": "{rotterdam.color.gray.tint-11}" },
+      "color": { "value": "{rods.color.gray.tint-11}" },
       "font-size": {},
       "max-inline-size": { "value": "100%" },
       "padding-block-end": {},
