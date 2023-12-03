@@ -1,4 +1,4 @@
-import{M as s,e as a}from"./chunk-HLWAVYOI-hAsfmEpf.js";import{j as e}from"./jsx-runtime-Q5kDp4vx.js";import{u as o}from"./index-BxL6228P.js";import"./iframe-VAgLT6Db.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-qZm_vjb7.js";import"./extends-dGVwEr9R.js";import"./index-83LIMwj7.js";const d=`<!-- @license CC0-1.0 -->
+import"./chunk-HLWAVYOI-WEnxM41e.js";import{M as s,d as a}from"./index-6eolIA8E.js";import{j as e}from"./jsx-runtime-Q5kDp4vx.js";import{u as o}from"./index-BxL6228P.js";import"./iframe-pxy80AgO.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-Zjprz-m4.js";import"./index-MroJ3egt.js";import"./extends-dGVwEr9R.js";import"./index-83LIMwj7.js";const d=`<!-- @license CC0-1.0 -->
 
 # NL Design System introductie
 
@@ -35,4 +35,4 @@ De POC is te vinden op:
 
 <http://github.com/nl-design-system>
 `;function r(n){return e.jsxs(e.Fragment,{children:[e.jsx(s,{title:"Example/Intro"}),`
-`,e.jsx(a,{children:d})]})}function l(n={}){const{wrapper:i}=Object.assign({},o(),n.components);return i?e.jsx(i,{...n,children:e.jsx(r,{...n})}):r()}const m=()=>{throw new Error("Docs-only story")};m.parameters={docsOnly:!0};const t={title:"Example/Intro",tags:["stories-mdx"],includeStories:["__page"]};t.parameters=t.parameters||{};t.parameters.docs={...t.parameters.docs||{},page:l};const w=["__page"];export{w as __namedExportsOrder,m as __page,t as default};
+`,e.jsx(a,{children:d})]})}function l(n={}){const{wrapper:i}=Object.assign({},o(),n.components);return i?e.jsx(i,{...n,children:e.jsx(r,{...n})}):r()}const m=()=>{throw new Error("Docs-only story")};m.parameters={docsOnly:!0};const t={title:"Example/Intro",tags:["stories-mdx"],includeStories:["__page"]};t.parameters=t.parameters||{};t.parameters.docs={...t.parameters.docs||{},page:l};const y=["__page"];export{y as __namedExportsOrder,m as __page,t as default};

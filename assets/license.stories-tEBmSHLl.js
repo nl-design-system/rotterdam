@@ -1,4 +1,4 @@
-import{M as r,e as a}from"./chunk-HLWAVYOI-hAsfmEpf.js";import{j as e}from"./jsx-runtime-Q5kDp4vx.js";import{u as s}from"./index-BxL6228P.js";import"./iframe-VAgLT6Db.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-qZm_vjb7.js";import"./extends-dGVwEr9R.js";import"./index-83LIMwj7.js";const c=`# EUROPEAN UNION PUBLIC LICENCE v. 1.2
+import"./chunk-HLWAVYOI-WEnxM41e.js";import{M as r,d as a}from"./index-6eolIA8E.js";import{j as e}from"./jsx-runtime-Q5kDp4vx.js";import{u as s}from"./index-BxL6228P.js";import"./iframe-pxy80AgO.js";import"../sb-preview/runtime.js";import"./index-DogsOklH.js";import"./react-18-Zjprz-m4.js";import"./index-MroJ3egt.js";import"./extends-dGVwEr9R.js";import"./index-83LIMwj7.js";const c=`# EUROPEAN UNION PUBLIC LICENCE v. 1.2
 
 EUPL © the European Union 2007, 2016
 
@@ -287,4 +287,4 @@ Code from exclusive appropriation.
 All other changes or additions to this Appendix require the production of a new
 EUPL version.
 `;function t(n){return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Example/Open Source License"}),`
-`,e.jsx(a,{children:c})]})}function h(n={}){const{wrapper:o}=Object.assign({},s(),n.components);return o?e.jsx(o,{...n,children:e.jsx(t,{...n})}):t()}const l=()=>{throw new Error("Docs-only story")};l.parameters={docsOnly:!0};const i={title:"Example/Open Source License",tags:["stories-mdx"],includeStories:["__page"]};i.parameters=i.parameters||{};i.parameters.docs={...i.parameters.docs||{},page:h};const w=["__page"];export{w as __namedExportsOrder,l as __page,i as default};
+`,e.jsx(a,{children:c})]})}function h(n={}){const{wrapper:o}=Object.assign({},s(),n.components);return o?e.jsx(o,{...n,children:e.jsx(t,{...n})}):t()}const l=()=>{throw new Error("Docs-only story")};l.parameters={docsOnly:!0};const i={title:"Example/Open Source License",tags:["stories-mdx"],includeStories:["__page"]};i.parameters=i.parameters||{};i.parameters.docs={...i.parameters.docs||{},page:h};const k=["__page"];export{k as __namedExportsOrder,l as __page,i as default};
