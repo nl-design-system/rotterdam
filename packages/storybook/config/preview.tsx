@@ -14,6 +14,7 @@ const preview: Preview = {
     withThemeByClassName({
       themes: {
         Rotterdam: 'rods-theme',
+        'Rotterdam responsive': 'rods-theme rods-theme--media-query-viewport',
         'Rotterdam dark color scheme': 'rods-theme rods-theme--media-query-color-scheme-dark',
       },
       defaultTheme: 'Rotterdam',

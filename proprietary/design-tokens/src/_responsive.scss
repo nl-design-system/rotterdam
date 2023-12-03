@@ -4,10 +4,49 @@
  * All rights reserved
  */
 
+$rods-desktop-min-width: 768px !default;
+$rods-mobile-min-width: 375px !default;
+
+@mixin rods-space-fluid {
+  /* Copied from rotterdam.nl */
+  --example-spacing-1x: clamp(4px, calc(4px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 6px);
+  --example-spacing-2x: clamp(8px, calc(8px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 10px);
+  --example-spacing-3x: clamp(12px, calc(12px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 14px);
+  --example-spacing-4x: clamp(16px, calc(16px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 18px);
+  --example-spacing-5x: clamp(18px, calc(22px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 22px);
+  --example-spacing-6x: clamp(22px, calc(26px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 26px);
+  --example-spacing-7x: clamp(28px, calc(28px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 30px);
+  --example-spacing-8x: clamp(32px, calc(32px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 34px);
+  --example-spacing-9x: clamp(36px, calc(36px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 38px);
+  --example-spacing-10x: clamp(40px, calc(40px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 42px);
+  --example-spacing-11x: clamp(44px, calc(44px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 46px);
+  --example-spacing-12x: clamp(48px, calc(48px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 50px);
+  --example-spacing-13x: clamp(52px, calc(52px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 54px);
+  --example-spacing-14x: clamp(56px, calc(56px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 58px);
+  --example-spacing-15x: clamp(60px, calc(60px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 62px);
+  --example-spacing-16x: clamp(64px, calc(64px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 66px);
+  --example-spacing-17x: clamp(68px, calc(68px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 70px);
+  --example-spacing-18x: clamp(72px, calc(72px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 74px);
+  --example-spacing-19x: clamp(76px, calc(76px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 78px);
+  --example-spacing-20x: clamp(80px, calc(78px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 82px);
+  --example-spacing-24x: clamp(96px, calc(96px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 98px);
+  --example-spacing-25x: clamp(100px, calc(100px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 102px);
+  --example-spacing-30x: clamp(120px, calc(120px + 2 * ((100vw - #{$rods-desktop-min-width}) / 512)), 122px);
+  --rods-space-scale-1: var(--example-spacing-1x);
+  --rods-space-scale-2: var(--example-spacing-2x);
+  --rods-space-scale-3: var(--example-spacing-4x);
+  --rods-space-scale-4: var(--example-spacing-8x);
+  --rods-space-scale-5: var(--example-spacing-16x);
+  --rods-space-scale-6: calc(2 * var(--example-spacing-16x));
+  --rods-space-scale-7: calc(4 * var(--example-spacing-16x));
+}
+
 /* stylelint-disable no-duplicate-selectors */
 .rods-theme--media-query,
 .rods-theme--media-query-viewport {
-  @media (width >= 768px) {
+  @include rods-space-fluid;
+
+  @media (width >= $rods-desktop-min-width) {
     & {
       --utrecht-page-footer-padding-inline-start: 24px;
       --utrecht-page-footer-padding-inline-end: 24px;
@@ -15,7 +54,7 @@
       --utrecht-page-footer-block-start: 52px;
     }
   }
-  @media (width <= 375px) {
+  @media (width <= $rods-mobile-min-width) {
     & {
       --utrecht-page-footer-padding-inline-start: 24px;
       --utrecht-page-footer-padding-inline-end: 24px;
