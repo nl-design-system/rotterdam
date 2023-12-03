@@ -301,6 +301,9 @@ importers:
       '@storybook/addon-viewport':
         specifier: 7.6.1
         version: 7.6.1
+      '@storybook/addons':
+        specifier: 7.6.1
+        version: 7.6.1(react-dom@18.2.0)(react@18.2.0)
       '@storybook/blocks':
         specifier: 7.6.1
         version: 7.6.1(@types/react-dom@18.2.17)(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)
@@ -319,6 +322,9 @@ importers:
       '@storybook/testing-library':
         specifier: 0.2.2
         version: 0.2.2
+      '@storybook/theming':
+        specifier: 7.6.1
+        version: 7.6.1(react-dom@18.2.0)(react@18.2.0)
       '@types/react':
         specifier: 18.2.39
         version: 18.2.39
@@ -2445,7 +2451,7 @@ packages:
       '@storybook/components': 7.0.26(react-dom@18.2.0)(react@18.2.0)
       '@storybook/core-events': 7.0.26
       '@storybook/manager-api': 7.0.26(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/theming': 7.0.26(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/theming': 7.6.1(react-dom@18.2.0)(react@18.2.0)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -4637,6 +4643,17 @@ packages:
       memoizerific: 1.11.3
     dev: true
 
+  /@storybook/addons@7.6.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Pm15SwzUuQITkGAUxuAOjNDvarMD6dyh2MKbahIByYNstJFvpsdrjpZFpRUptIqxnnj0/R1yNh/29KbnYSh0Hg==}
+    dependencies:
+      '@storybook/manager-api': 7.6.1(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.6.1
+      '@storybook/types': 7.6.1
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: true
+
   /@storybook/api@7.0.26(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-czS5iWE3Px3e0sXjgt1T+LDiT6Tl4gXYPmHIaWpKGDCh4W2zrGolOvB0WqDt3IKhDGnXxaJF5jn705OGBQOptw==}
     peerDependencies:
@@ -5482,7 +5499,7 @@ packages:
     resolution: {integrity: sha512-5RBi6agtDglNXdffmw4+Fyv2dUdlIdeOdUj0O5+JRYajTxfHdurZd9r/42z4OstN+ORDkLA/svt8Q9JyRpIb6Q==}
     dependencies:
       '@storybook/channels': 7.0.26
-      '@types/babel__core': 7.20.1
+      '@types/babel__core': 7.20.5
       '@types/express': 4.17.17
       file-system-cache: 2.3.0
     dev: true
@@ -7001,7 +7018,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.5
       '@jest/transform': 29.7.0
-      '@types/babel__core': 7.20.1
+      '@types/babel__core': 7.20.5
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 29.6.3(@babel/core@7.23.5)
       chalk: 4.1.2
@@ -7047,7 +7064,7 @@ packages:
     dependencies:
       '@babel/template': 7.22.15
       '@babel/types': 7.23.5
-      '@types/babel__core': 7.20.1
+      '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.20.1
     dev: true
 
