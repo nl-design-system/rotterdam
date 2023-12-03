@@ -1,0 +1,25 @@
+/**
+ * @license SEE LICENSE.md
+ * Copyright (c) 2021 NL Design System Community
+ * All rights reserved
+ */
+
+/* stylelint-disable no-duplicate-selectors */
+.rods-theme--media-query,
+.rods-theme--media-query-viewport {
+  @media (width >= 768px) {
+    & {
+      --utrecht-page-footer-padding-inline-start: 24px;
+      --utrecht-page-footer-padding-inline-end: 24px;
+      --utrecht-page-footer-block-end: 115px;
+      --utrecht-page-footer-block-start: 52px;
+    }
+  }
+  @media (width <= 375px) {
+    & {
+      --utrecht-page-footer-padding-inline-start: 24px;
+      --utrecht-page-footer-padding-inline-end: 24px;
+      --utrecht-page-footer-block-end: 48px;
+    }
+  }
+}
