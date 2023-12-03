@@ -1,7 +1,9 @@
 import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
 import { withThemeByClassName } from '@storybook/addon-styling';
+import { Controls, Description, Primary, Stories } from '@storybook/blocks';
 import type { Preview } from '@storybook/react';
 import { Document } from '@utrecht/component-library-react/dist/css-module';
+import { FigmaBlock } from './FigmaBlock';
 import '@gemeente-rotterdam/design-tokens/dist/index.css';
 import '@gemeente-rotterdam/font/src/index.scss';
 
@@ -20,6 +22,20 @@ const preview: Preview = {
   ],
   parameters: {
     controls: { expanded: false },
+    docs: {
+      page: () => {
+        // Exclude `<Title>` because the title comes from the Markdown file
+        return (
+          <>
+            <Description />
+            <FigmaBlock />
+            <Primary />
+            <Controls />
+            <Stories />
+          </>
+        );
+      },
+    },
     status: {
       statuses: {
         PRODUCTION: {
