@@ -1,0 +1,20 @@
+/**
+ * @license SEE LICENSE.md
+ * Copyright (c) 2021 NL Design System Community
+ * All rights reserved
+ */
+
+@import "./responsive";
+
+.rods-theme {
+  .utrecht-button--subtle {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+  .utrecht-form-fieldset__legend {
+    border-block-end-color: var(--rods-form-fieldset-legend-border-block-end-color);
+    border-block-end-style: solid;
+    border-block-end-width: var(--rods-form-fieldset-legend-border-block-end-width, 0);
+    padding-block-end: var(--rods-form-fieldset-legend-padding-block-end, 0);
+  }
+}
