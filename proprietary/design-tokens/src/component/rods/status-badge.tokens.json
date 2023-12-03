@@ -1,0 +1,30 @@
+{
+  "rods": {
+    "status-badge": {
+      "light-blue": {
+        "background-color": { "value": "#d9ebf4" },
+        "color": { "value": "{rods.color.dark-blue.tint-02}" }
+      },
+      "blue": {
+        "background-color": { "value": "{rods.color.blue.tint-02}" },
+        "color": { "value": "{rods.color.base.white}" }
+      },
+      "dark-blue": {
+        "background-color": { "value": "{rods.color.dark-blue.tint-03}" },
+        "color": { "value": "{rods.color.base.white}" }
+      },
+      "green-blue": {
+        "background-color": { "value": "{rods.color.green-blue.tint-02}" },
+        "color": { "value": "{rods.color.base.white}" }
+      },
+      "red": {
+        "background-color": { "value": "{rods.color.red.tint-02}" },
+        "color": { "value": "{rods.color.base.white}" }
+      },
+      "dark-yellow": {
+        "background-color": { "value": "{rods.color.dark-yellow.tint-01}" },
+        "color": { "value": "{rods.color.base.black}" }
+      }
+    }
+  }
+}
