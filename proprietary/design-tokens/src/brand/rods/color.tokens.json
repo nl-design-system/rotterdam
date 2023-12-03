@@ -23,6 +23,32 @@
           "comment": "Base/Gray"
         }
       },
+      "notification": {
+        "neutral": {
+          "background-color": { "value": "#E8F4FB" },
+          "icon-color": { "value": "#00689E" },
+          "color": { "value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "value": "#B4DBF1" }
+        },
+        "alert": {
+          "background-color": { "value": "#FDF0EE" },
+          "icon-color": { "value": "#D70D0D" },
+          "color": { "value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "value": "#F7CCC5" }
+        },
+        "warning": {
+          "background-color": { "value": "#FEF8E6" },
+          "icon-color": { "value": "#A65600" },
+          "color": { "value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "value": "#F9E7AC" }
+        },
+        "accomplishment": {
+          "background-color": { "value": "#E6F3E9" },
+          "icon-color": { "value": "#00811F" },
+          "color": { "value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "value": "#ACD6B7" }
+        }
+      },
       "gray": {
         "tint-01": {
           "value": "#EFF4F6",
