@@ -8,6 +8,7 @@ vendor/
 # Ignore generated files
 build/
 coverage/
+generated/
 dist/
 tmp/
 
