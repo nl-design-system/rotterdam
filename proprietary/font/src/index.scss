@@ -50,3 +50,11 @@ https://fontsource.org/fonts/open-sans
     url("./Bolder-Regular.woff2") format("woff2"),
     url("./Bolder-Regular.woff") format("woff");
 }
+
+@font-face {
+  font-display: swap;
+  font-family: "Bolder Heading";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./Bolder-Heading.woff2") format("woff2");
+}
