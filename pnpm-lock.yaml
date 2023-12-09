@@ -492,9 +492,6 @@ importers:
       '@types/jest':
         specifier: 29.5.10
         version: 29.5.10
-      '@utrecht/component-library-css':
-        specifier: 1.0.0-alpha.604
-        version: 1.0.0-alpha.604
       '@utrecht/components':
         specifier: 1.0.0-alpha.565
         version: 1.0.0-alpha.565
@@ -6626,10 +6623,6 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
-    dev: true
-
-  /@utrecht/component-library-css@1.0.0-alpha.604:
-    resolution: {integrity: sha512-2yAAOKxirmJVKpdHGhfh3lI4MdR46JN/W6oL+LlmRwmO84xTlJnWKqPuIcIijzjCHzggPWNl5O6zHPPlumWi4g==}
     dev: true
 
   /@utrecht/component-library-react@2.0.0(react-dom@18.2.0)(react@18.2.0):
