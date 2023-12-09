@@ -1,0 +1,9 @@
+@import "~@utrecht/components/icon/css/index";
+
+:host {
+  @include utrecht-icon;
+}
+
+svg {
+  @include utrecht-icon__svg;
+}

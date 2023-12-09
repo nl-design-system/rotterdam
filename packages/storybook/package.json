@@ -28,6 +28,7 @@
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
     "@gemeente-rotterdam/font": "workspace:*",
+    "@gemeente-rotterdam/icon": "workspace:*",
     "@gemeente-rotterdam/web-components-react": "workspace:*",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
     "@storybook/addon-a11y": "7.6.1",
