@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0-alpha.0",
+  "author": "Community for NL Design System",
+  "description": "Icons for the Municipality of Rotterdam based on the NL Design System architecture",
+  "license": "EUPL-1.2",
+  "name": "@gemeente-rotterdam/icon",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "private": true,
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npm run build:svg && npm run build:components",
+    "build:components": "node src/build.js $1 --prefix utrecht-icon --path ../../packages/web-components-stencil/src/components/generated/",
+    "build:svg": "svgo --recursive --folder ./src/svg --output ./tmp/optimized-svgs --quiet",
+    "clean": "rimraf dist/ tmp/ ../../packages/web-components-stencil/src/generated/ ../../packages/web-components-stencil/src/components/generated/"
+  },
+  "devDependencies": {
+    "lodash": "4.17.21",
+    "minimist": "1.2.8",
+    "svgo": "3.0.2"
+  },
+  "keywords": [
+    "nl-design-system"
+  ]
+}

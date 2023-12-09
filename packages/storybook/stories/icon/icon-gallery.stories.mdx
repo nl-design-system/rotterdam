@@ -1,0 +1,29 @@
+import iconSet from "@gemeente-rotterdam/icon/dist/index.json";
+import { Canvas, Meta } from "@storybook/blocks";
+import { CustomIconGallery, CustomIconGalleryItem } from "./CustomIconGallery";
+
+<Meta
+  id="rotterdam-iconen"
+  title="Rotterdam/Iconen/Overzicht"
+  parameters={{
+    status: {
+      type: "WORK IN PROGRESS",
+    },
+  }}
+/>
+
+# Iconen
+
+<Canvas>
+  <rods-icon-heart></rods-icon-heart>
+</Canvas>
+
+## Icon Set
+
+<CustomIconGallery>
+  {iconSet.map(({ id: Icon }, index) => (
+    <CustomIconGalleryItem name={Icon} key={index}>
+      <Icon />
+    </CustomIconGalleryItem>
+  ))}
+</CustomIconGallery>
