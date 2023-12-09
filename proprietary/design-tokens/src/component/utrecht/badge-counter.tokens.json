@@ -3,10 +3,11 @@
     "badge-counter": {
       "border-radius": { "value": "2em" },
       "color": {},
-      "font-size": {},
-      "font-weight": { "value": "400" },
-      "padding-block-end": { "value": "5px" },
-      "padding-inline-start": { "value": "5px" }
+      "font-size": { "value": "{rods.typography.scale.sm.font-size}" },
+      "font-weight": { "value": "700" },
+      "min-size": { "value": "24px" },
+      "padding-block": { "value": "0" },
+      "padding-inline": { "value": "0" }
     }
   }
 }

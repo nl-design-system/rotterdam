@@ -17,34 +17,46 @@
     border-block-end-width: var(--rods-form-fieldset-legend-border-block-end-width, 0);
     padding-block-end: var(--rods-form-fieldset-legend-padding-block-end, 0);
   }
+  .utrecht-badge-counter--rods-light-blue,
   .utrecht-status-badge--rods-light-blue {
     --utrecht-badge-background-color: var(--rods-status-badge-light-blue-background-color);
     --utrecht-badge-color: var(--rods-status-badge-light-blue-color);
   }
 
+  .utrecht-badge-counter--rods-blue,
   .utrecht-status-badge--rods-blue {
     --utrecht-badge-background-color: var(--rods-status-badge-blue-background-color);
     --utrecht-badge-color: var(--rods-status-badge-blue-color);
   }
 
+  .utrecht-badge-counter--rods-dark-blue,
   .utrecht-status-badge--rods-dark-blue {
     --utrecht-badge-background-color: var(--rods-status-badge-dark-blue-background-color);
     --utrecht-badge-color: var(--rods-status-badge-dark-blue-color);
   }
 
+  .utrecht-badge-counter--rods-green-blue,
   .utrecht-status-badge--rods-green-blue {
     --utrecht-badge-background-color: var(--rods-status-badge-green-blue-background-color);
     --utrecht-badge-color: var(--rods-status-badge-green-blue-color);
   }
 
+  .utrecht-badge-counter--rods-red,
   .utrecht-status-badge--rods-red {
     --utrecht-badge-background-color: var(--rods-status-badge-red-background-color);
     --utrecht-badge-color: var(--rods-status-badge-red-color);
   }
 
+  .utrecht-badge-counter--rods-dark-yellow,
   .utrecht-status-badge--rods-dark-yellow {
     --utrecht-badge-background-color: var(--rods-status-badge-dark-yellow-background-color);
     --utrecht-badge-color: var(--rods-status-badge-dark-yellow-color);
+  }
+
+  .utrecht-badge-counter {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
   }
 
   .utrecht-unordered-list__item::marker {
