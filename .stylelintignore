@@ -7,3 +7,4 @@ build/
 coverage/
 dist/
 tmp/
+packages/web-components-stencil/src/generated/
