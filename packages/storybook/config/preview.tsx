@@ -11,7 +11,7 @@ defineCustomElements();
 
 const preview: Preview = {
   decorators: [
-    withThemeByClassName({
+    (withThemeByClassName as any)({
       themes: {
         Rotterdam: 'rods-theme',
         'Rotterdam dark color scheme': 'rods-theme rods-theme--media-query-color-scheme-dark',
