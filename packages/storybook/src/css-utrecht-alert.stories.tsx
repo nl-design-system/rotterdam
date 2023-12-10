@@ -23,10 +23,10 @@ const meta = {
   },
   tags: ['autodocs'],
   parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=506-18997',
-    },
+    // design: {
+    //   type: 'figma',
+    //   url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=506-18997',
+    // },
     docs: {
       description: {
         component: readme,
@@ -50,6 +50,12 @@ export const Info: Story = {
     ),
     type: 'info',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=507-21455',
+    },
+  },
 };
 
 export const Error: Story = {
@@ -62,6 +68,12 @@ export const Error: Story = {
       </Paragraph>
     ),
     type: 'error',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=507-21457',
+    },
   },
 };
 
@@ -76,6 +88,12 @@ export const Warning: Story = {
     ),
     type: 'warning',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=507-21465&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const OK: Story = {
@@ -88,5 +106,11 @@ export const OK: Story = {
       </Paragraph>
     ),
     type: 'ok',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=507-21473&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };

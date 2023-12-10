@@ -44,6 +44,12 @@ export const Default: Story = {
   args: {
     defaultValue: 'Text',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=435-13663&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const Disabled: Story = {
@@ -51,6 +57,12 @@ export const Disabled: Story = {
   args: {
     defaultValue: 'Text',
     disabled: true,
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=521-26535&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };
 
@@ -60,6 +72,12 @@ export const Invalid: Story = {
     defaultValue: 'Text',
     invalid: true,
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=519-32348&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const Search: Story = {
@@ -68,5 +86,11 @@ export const Search: Story = {
     defaultValue: '',
     placeholder: 'Zoeken',
     type: 'search',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=520-26373&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };

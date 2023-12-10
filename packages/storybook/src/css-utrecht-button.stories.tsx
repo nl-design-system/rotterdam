@@ -46,6 +46,12 @@ export const DefaultButton: Story = {
   args: {
     children: 'Label',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=772-28425&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const PrimaryActionButton: Story = {
@@ -53,6 +59,12 @@ export const PrimaryActionButton: Story = {
   args: {
     appearance: 'primary-action-button',
     children: 'Label',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=487-17716&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };
 
@@ -62,6 +74,12 @@ export const SecondaryActionButton: Story = {
     appearance: 'secondary-action-button',
     children: 'Label',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=772-28371&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const SubtleButton: Story = {
@@ -69,5 +87,11 @@ export const SubtleButton: Story = {
   args: {
     appearance: 'subtle-button',
     children: 'Label',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=487-17717&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };

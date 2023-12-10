@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/preset-scss',
     '@storybook/addon-styling',
     '@storybook/addon-a11y',
+    '@storybook/addon-designs',
   ],
   framework: {
     name: '@storybook/react-vite',
