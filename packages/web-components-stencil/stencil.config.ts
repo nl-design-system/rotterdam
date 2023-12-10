@@ -3,8 +3,8 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'example',
-  srcDir: '../../components/',
+  namespace: 'rods',
+  srcDir: './src/',
   outputTargets: [
     {
       type: 'dist',
