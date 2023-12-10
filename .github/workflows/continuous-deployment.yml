@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
@@ -54,7 +54,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
@@ -94,7 +94,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
@@ -155,7 +155,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
@@ -197,7 +197,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
@@ -272,7 +272,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
