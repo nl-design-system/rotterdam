@@ -274,6 +274,9 @@ importers:
       '@etchteam/storybook-addon-status':
         specifier: 4.2.4
         version: 4.2.4
+      '@gemeente-denhaag/sidenav':
+        specifier: 0.1.0-alpha.176
+        version: 0.1.0-alpha.176(react@18.2.0)
       '@gemeente-rotterdam/assets':
         specifier: workspace:*
         version: link:../../proprietary/assets
@@ -2508,6 +2511,14 @@ packages:
 
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+    dev: true
+
+  /@gemeente-denhaag/sidenav@0.1.0-alpha.176(react@18.2.0):
+    resolution: {integrity: sha512-B7WhE+lGuuPRS+4rvzsw38S1KHdQLLqKKV2e9sHRnnh41tk5ZxfcZtKjF8CBvoFFXaaSbNkhGUnyMj1cunnAJA==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: true
 
   /@humanwhocodes/config-array@0.11.13:
