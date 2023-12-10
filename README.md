@@ -31,9 +31,11 @@ You need to have the following tools installed to run Storybook locally:
 1. Choose a prefix for your organisation. For example: the main NL Design System uses `nl-`, The Hague uses `denhaag-`, and you can choose something unique for you to use.
 2. Modify `.stylelintrc.json` by replacing the prefix `example` with the prefix you have chosen, in the following rules: `custom-property-pattern`, `selector-class-pattern`, `keyframes-name-pattern`, `scss/dollar-variable-pattern` and `scss/percent-placeholder-pattern`.
 3. Choose and register an npm organisation on [npmjs.com](https://www.npmjs.com/org/create), if you haven't already. This is very important to keep your project secure. The core NL Design System uses `@nl-design-system/`, and you can choose something for yourself. This prevents others from adding their code to your teams codebase.
-4. Modify all `package.json` files to use your npm organisation scope. Don't forget the locally linked packages under `devDependencies`.
+4. Modify all `package.json` files to use your npm organisation scope. Don't forget the locally linked packages under `devDependencies`. Find and replace all occurences of `@gemeente-rotterdam/` in your project with `@your-organisation/`. Run `pnpm install` to install each package in under the new organisation directory in each `node_modules/`.
 5. Modify `.npmpackagejsonlintrc.json` to require your organisation scope in package names, by configuring the `valid-values-name-scope` property.
 6. Modify the imports in `/packages/storybook/config/preview.tsx` and `packages/web-components-stencil/src/button/index.scss` to use your prefix.
+7. Modify `proprietary/design-tokens/style-dictionary.config.json` to output `.yourprefix-theme` instead of `.example-theme`.
+8. Modify `preview.tsx` to use `yourprefix-theme` instead of `example-theme` as default theme for Storybook stories.
 
 ### Run storybook
 
