@@ -1,6 +1,16 @@
 /* @license CC0-1.0 */
 
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
+import {
+  RodsIconBox,
+  RodsIconCoins,
+  RodsIconInbox,
+  RodsIconMoney2,
+  RodsIconOverview,
+  RodsIconParking,
+  RodsIconSummary,
+  RodsIconUser,
+} from '@gemeente-rotterdam/web-components-react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { BadgeCounter } from '@utrecht/component-library-react/dist/css-module';
 import readme from './sidenav.md?raw';
@@ -48,36 +58,50 @@ export const Default: Story = {
       <SidenavList>
         <SidenavItem>
           <SidenavLink current href="/#">
-            Overzicht
+            <RodsIconOverview /> Overzicht
           </SidenavLink>
         </SidenavItem>
         <SidenavItem>
           <SidenavLink href="/#">
+            <RodsIconInbox />
             Mijn berichten
             <BadgeCounter>2</BadgeCounter>
           </SidenavLink>
         </SidenavItem>
         <SidenavItem>
-          <SidenavLink href="/#">Mijn lopende zaken</SidenavLink>
+          <SidenavLink href="/#">
+            <RodsIconBox /> Mijn lopende zaken
+          </SidenavLink>
         </SidenavItem>
         <SidenavItem>
-          <SidenavLink href="/#">Zelf regelen</SidenavLink>
-        </SidenavItem>
-      </SidenavList>,
-      <SidenavList>
-        <SidenavItem>
-          <SidenavLink href="/#">Belastingen</SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">Werk &amp; Inkomen</SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">Parkeren</SidenavLink>
+          <SidenavLink href="/#">
+            <RodsIconSummary /> Zelf regelen
+          </SidenavLink>
         </SidenavItem>
       </SidenavList>,
       <SidenavList>
         <SidenavItem>
-          <SidenavLink href="/#">Mijn gegevens</SidenavLink>
+          <SidenavLink href="/#">
+            <RodsIconCoins /> Belastingen
+          </SidenavLink>
+        </SidenavItem>
+        <SidenavItem>
+          <SidenavLink href="/#">
+            <RodsIconMoney2 /> Werk &amp; Inkomen
+          </SidenavLink>
+        </SidenavItem>
+        <SidenavItem>
+          <SidenavLink href="/#">
+            <RodsIconParking /> Parkeren
+          </SidenavLink>
+        </SidenavItem>
+      </SidenavList>,
+      <SidenavList>
+        <SidenavItem>
+          <SidenavLink href="/#">
+            <RodsIconUser />
+            Mijn gegevens
+          </SidenavLink>
         </SidenavItem>
       </SidenavList>,
     ],
