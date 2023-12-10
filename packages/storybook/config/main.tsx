@@ -8,6 +8,7 @@ module.exports = {
     '@storybook/addon-viewport/register',
     '@storybook/preset-scss',
     '@storybook/addon-styling',
+    '@storybook/addon-a11y',
   ],
   framework: {
     name: '@storybook/react-vite',
