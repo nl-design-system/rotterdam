@@ -66,5 +66,8 @@
     "vite-plugin-html": "3.2.0",
     "vite-plugin-markdown": "2.1.0",
     "webpack": "5.89.0"
+  },
+  "dependencies": {
+    "@storybook/addon-designs": "7.0.7"
   }
 }

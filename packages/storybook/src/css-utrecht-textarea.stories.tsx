@@ -45,4 +45,10 @@ export const Default: Story = {
     defaultValue:
       'You can use this input field in your design when you want to use input fields with much more text in it.',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=1076-6680&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };

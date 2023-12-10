@@ -57,6 +57,12 @@ export const LightBlue: Story = {
     children: '35',
     className: 'utrecht-badge-counter--rods-light-blue',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=7927-10550&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const Blue: Story = {
@@ -64,6 +70,12 @@ export const Blue: Story = {
   args: {
     children: '35',
     className: 'utrecht-badge-counter--rods-blue',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=7927-10550&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };
 
@@ -73,6 +85,12 @@ export const DarkBlue: Story = {
     children: '35',
     className: 'utrecht-badge-counter--rods-dark-blue',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=7961-9861&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const GreenBlue: Story = {
@@ -80,6 +98,12 @@ export const GreenBlue: Story = {
   args: {
     children: '35',
     className: 'utrecht-badge-counter--rods-green-blue',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=7961-9852&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };
 
@@ -89,6 +113,12 @@ export const Red: Story = {
     children: '35',
     className: 'utrecht-badge-counter--rods-red',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=7961-9855&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
 
 export const DarkYellow: Story = {
@@ -96,5 +126,11 @@ export const DarkYellow: Story = {
   args: {
     children: '35',
     className: 'utrecht-badge-counter--rods-dark-yellow',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=7961-9858&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
   },
 };

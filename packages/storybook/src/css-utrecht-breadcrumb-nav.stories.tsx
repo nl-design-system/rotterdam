@@ -61,4 +61,10 @@ export const Default: Story = {
       </BreadcrumbNavLink>,
     ],
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=507-20062&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+    },
+  },
 };
