@@ -1,0 +1,5 @@
+/**
+ * @license EUPL-1.2
+ * Copyright (c) 2023 Rotterdam
+ * Copyright (c) 2023 Frameless B.V.
+ */.rods-grid{display:grid;grid-auto-rows:auto;grid-column-gap:1rem;grid-template-columns:repeat(4,1fr);padding-inline-end:1.5rem;padding-inline-start:1.5rem}.rods-grid__full-width{grid-column:1/-1}.rods-grid__half-width,.rods-grid__one-third,.rods-grid__two-third,.rods-grid__one-fourth{grid-column:span 4}@container (min-width: 48rem){.rods-grid{grid-column-gap:1.5rem}.rods-grid__half-width,.rods-grid__one-fourth,.rods-grid__one-third{grid-column:span 2}}@container (min-width: 60rem){.rods-grid{grid-template-columns:repeat(12,1fr)}.rods-grid__half-width{grid-column:span 6}.rods-grid__one-third{grid-column:span 4}.rods-grid__two-third{grid-column:span 8}.rods-grid__one-fourth{grid-column:span 3}}.utrecht-breadcrumb-nav{margin-inline-start:calc(-1 * var(--utrecht-breadcrumb-nav-item-padding-inline-start, 8px))}
