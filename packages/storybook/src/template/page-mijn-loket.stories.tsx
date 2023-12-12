@@ -14,7 +14,13 @@ import {
 } from '@gemeente-rotterdam/web-components-react';
 import { Meta, StoryObj } from '@storybook/react';
 import '@gemeente-rotterdam/components-css/grid/index.scss';
-import { BadgeCounter } from '@utrecht/component-library-react/dist/css-module';
+import './index.scss';
+import {
+  BadgeCounter,
+  BreadcrumbNav,
+  BreadcrumbNavLink,
+  BreadcrumbNavSeparator,
+} from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
   title: 'Template/Mijn Loket',
@@ -29,9 +35,6 @@ export const Default: Story = {
   render: (args) => (
     <div {...args} style={{ containerType: 'inline-size' }}>
       <div className={'rods-grid'}>
-        <div className={'rods-grid__full-width'}>
-          <p>Full width segment.</p>
-        </div>
         <div className={'rods-grid__one-fourth'}>
           <Sidenav>
             <SidenavList>
@@ -86,6 +89,19 @@ export const Default: Story = {
           </Sidenav>
         </div>
         <div className={'rods-grid__two-third'}>
+          <BreadcrumbNav>
+            <BreadcrumbNavLink href="/" rel="home" index={0}>
+              Home
+            </BreadcrumbNavLink>
+            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
+            <BreadcrumbNavLink href="/a/" index={1}>
+              Parkeren in Rotterdam
+            </BreadcrumbNavLink>
+            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
+            <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
+              Product aanvragen
+            </BreadcrumbNavLink>
+          </BreadcrumbNav>
           <section>
             <h1>Hallo mevrouw van Bergenhenegouwen</h1>
             <p>
