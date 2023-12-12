@@ -17,8 +17,8 @@
         "margin-inline-end": {}
       },
       "link": {
-        "padding-block-start": { "value": "12px" },
-        "padding-block-end": { "value": "12px" },
+        "padding-block-start": { "value": "10px" },
+        "padding-block-end": { "value": "10px" },
         "color": { "value": "{rods.color.gray.tint-11}" },
         "hover": {
           "color": { "value": "{rods.color.base.green}" }
