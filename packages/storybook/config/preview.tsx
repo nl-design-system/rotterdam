@@ -67,7 +67,7 @@ const preview: Preview = {
     options: {
       panelPosition: 'right',
       storySort: {
-        order: ['Rotterdam', 'CSS Component'],
+        order: ['Rotterdam', 'CSS Component', 'Web Component', 'Template'],
       },
     },
   },
