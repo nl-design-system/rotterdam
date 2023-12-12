@@ -281,6 +281,9 @@ importers:
       '@etchteam/storybook-addon-status':
         specifier: 4.2.4
         version: 4.2.4
+      '@gemeente-denhaag/action':
+        specifier: 0.1.1-alpha.25
+        version: 0.1.1-alpha.25(react@18.2.0)
       '@gemeente-denhaag/sidenav':
         specifier: 0.1.0-alpha.176
         version: 0.1.0-alpha.176(react@18.2.0)
@@ -2444,11 +2447,58 @@ packages:
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
 
+  /@gemeente-denhaag/action@0.1.1-alpha.25(react@18.2.0):
+    resolution: {integrity: sha512-2Yg1o6Cpv9jw3svFgfOLxzgzCJYu4zxz0DUFBtglBOMPBzcT8LVrhDoWA6byNQY2ypckLkPwvoqr4dIgs64AFA==}
+    dependencies:
+      '@gemeente-denhaag/button': 0.2.3-alpha.359(react@18.2.0)
+      '@gemeente-denhaag/icons': 0.2.3-alpha.359(react@18.2.0)
+      '@gemeente-denhaag/link': 0.2.3-alpha.359(react@18.2.0)
+      '@gemeente-denhaag/utils': 0.2.3-alpha.358(react@18.2.0)
+      date-fns: 2.30.0
+    transitivePeerDependencies:
+      - react
+    dev: true
+
+  /@gemeente-denhaag/button@0.2.3-alpha.359(react@18.2.0):
+    resolution: {integrity: sha512-Fr4Hy0GhzNPzXHUUY1+YZU/Ouk2XGV6jqgoCXL4qRNcWv6QdbgQw42CJ12fAEWQfEmwW49y8+qr+H5ABf+iuxw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@gemeente-denhaag/icons': 0.2.3-alpha.359(react@18.2.0)
+      react: 18.2.0
+    dev: true
+
+  /@gemeente-denhaag/icons@0.2.3-alpha.359(react@18.2.0):
+    resolution: {integrity: sha512-pBH7Rlk2fM1ccY2WP7tFu3gS31YE75KaIgMgG1Xiq2Xz24sG4jsl27CaUlDYa/nw9u3KxQEJBKo5twgtRbEaHw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: true
+
+  /@gemeente-denhaag/link@0.2.3-alpha.359(react@18.2.0):
+    resolution: {integrity: sha512-BtiR91jCtZK8VeTil++6ld+Bwmq+4RGfp0vq11na5Dfd+dFrejznNxPpDwW2acv9gxCLvzUoOntaPIGmtsQgDA==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@gemeente-denhaag/icons': 0.2.3-alpha.359(react@18.2.0)
+      react: 18.2.0
+    dev: true
+
   /@gemeente-denhaag/sidenav@0.1.0-alpha.176(react@18.2.0):
     resolution: {integrity: sha512-B7WhE+lGuuPRS+4rvzsw38S1KHdQLLqKKV2e9sHRnnh41tk5ZxfcZtKjF8CBvoFFXaaSbNkhGUnyMj1cunnAJA==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
+      react: 18.2.0
+    dev: true
+
+  /@gemeente-denhaag/utils@0.2.3-alpha.358(react@18.2.0):
+    resolution: {integrity: sha512-aELQTwmYA3/1xkbnY3UWkAEhiqXexPlbNzs+ybQUePgFABzwioMIDy8QI29ilgedBwst/CojKdZJQuB1b4rKUg==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      date-fns: 2.30.0
       react: 18.2.0
     dev: true
 
