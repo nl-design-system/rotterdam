@@ -25,6 +25,7 @@
     "@babel/preset-typescript": "7.23.3",
     "@etchteam/storybook-addon-status": "4.2.4",
     "@gemeente-denhaag/sidenav": "0.1.0-alpha.176",
+    "@gemeente-denhaag/action": "0.1.1-alpha.25",
     "@gemeente-rotterdam/assets": "workspace:*",
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
