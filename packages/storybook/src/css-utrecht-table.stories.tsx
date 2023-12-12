@@ -10,11 +10,8 @@ import {
   TableHeaderCell,
   TableRow,
 } from '@utrecht/component-library-react';
-import readme from '@utrecht/components/table/README.md?raw';
-import tokensDefinition from '@utrecht/components/table/tokens.json';
-import tokens from '@utrecht/design-tokens/dist/index.json';
-import { designTokenStory } from './design-token-story';
-import '@utrecht/components/table/css/index.scss';
+import '@gemeente-rotterdam/components-css/button/index.scss';
+import readme from './table.md?raw';
 
 const meta = {
   title: 'CSS Component/Table',
@@ -28,8 +25,6 @@ const meta = {
       type: 'WORK IN PROGRESS',
     },
     tokensPrefix: 'utrecht-table',
-    tokens,
-    tokensDefinition,
     docs: {
       description: {
         component: readme,
@@ -77,5 +72,3 @@ export const Default: Story = {
     },
   },
 };
-
-export const DesignTokens = designTokenStory(meta);
