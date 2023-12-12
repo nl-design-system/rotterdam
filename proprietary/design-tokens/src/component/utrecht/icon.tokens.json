@@ -2,8 +2,10 @@
   "utrecht": {
     "icon": {
       "color": {},
-      "size": { "value": "32px" },
-      "inset-block-start": { "value": "0.1em" },
+      "size": {
+        "value": "32px"
+      },
+      "inset-block-start": {},
       "baseline": {
         "inset-block-start": {}
       }
