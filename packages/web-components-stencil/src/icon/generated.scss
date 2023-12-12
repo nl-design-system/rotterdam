@@ -2,6 +2,8 @@
 
 :host {
   @include utrecht-icon;
+
+  display: inline-flex;
 }
 
 svg {
