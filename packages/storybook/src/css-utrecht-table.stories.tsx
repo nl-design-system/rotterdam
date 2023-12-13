@@ -21,10 +21,10 @@ const meta = {
   args: {},
   tags: ['autodocs'],
   parameters: {
-    status: {
-      type: 'WORK IN PROGRESS',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=507-19314',
     },
-    tokensPrefix: 'utrecht-table',
     docs: {
       description: {
         component: readme,
@@ -46,13 +46,14 @@ export const Default: Story = {
             <TableHeaderCell scope="col">Column A</TableHeaderCell>
             <TableHeaderCell scope="col">Column B</TableHeaderCell>
             <TableHeaderCell scope="col">Column C</TableHeaderCell>
+            <TableHeaderCell scope="col">Column d</TableHeaderCell>
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableHeaderCell scope="row">Item 1</TableHeaderCell>
             <TableCell>Data</TableCell>
-            <TableCell>More data</TableCell>
+            <TableCell>Data</TableCell>
+            <TableCell>Data</TableCell>
           </TableRow>
         </TableBody>
         <TableFooter>
