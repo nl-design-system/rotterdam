@@ -10,7 +10,6 @@ import {
   TableHeaderCell,
   TableRow,
 } from '@utrecht/component-library-react';
-import '@gemeente-rotterdam/components-css/button/index.scss';
 import readme from './table.md?raw';
 
 const meta = {
