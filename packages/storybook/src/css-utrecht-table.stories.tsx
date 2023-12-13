@@ -38,39 +38,37 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: (
-      <>
-        <TableHeader>
-          <TableRow>
-            <TableHeaderCell scope="col">Column A</TableHeaderCell>
-            <TableHeaderCell scope="col">Column B</TableHeaderCell>
-            <TableHeaderCell scope="col">Column C</TableHeaderCell>
-            <TableHeaderCell scope="col">Column d</TableHeaderCell>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell>Data</TableCell>
-            <TableCell>Data</TableCell>
-            <TableCell>Data</TableCell>
-            <TableCell>Data</TableCell>
-          </TableRow>
-        </TableBody>
-        <TableFooter>
-          <TableRow>
-            <TableCell>Footer data</TableCell>
-            <TableCell>Footer data</TableCell>
-            <TableCell>Footer data</TableCell>
-            <TableCell>Footer data</TableCell>
-          </TableRow>
-        </TableFooter>
-      </>
-    ),
+    children: [
+      <TableHeader>
+        <TableRow>
+          <TableHeaderCell scope="col">Column A</TableHeaderCell>
+          <TableHeaderCell scope="col">Column B</TableHeaderCell>
+          <TableHeaderCell scope="col">Column C</TableHeaderCell>
+          <TableHeaderCell scope="col">Column d</TableHeaderCell>
+        </TableRow>
+      </TableHeader>,
+      <TableBody>
+        <TableRow>
+          <TableCell>Data</TableCell>
+          <TableCell>Data</TableCell>
+          <TableCell>Data</TableCell>
+          <TableCell>Data</TableCell>
+        </TableRow>
+      </TableBody>,
+      <TableFooter>
+        <TableRow>
+          <TableCell>Footer data</TableCell>
+          <TableCell>Footer data</TableCell>
+          <TableCell>Footer data</TableCell>
+          <TableCell>Footer data</TableCell>
+        </TableRow>
+      </TableFooter>,
+    ],
   },
   parameters: {
-    chromatic: { disableSnapshot: false },
-    status: {
-      type: 'WORK IN PROGRESS',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=507-19314',
     },
   },
 };
