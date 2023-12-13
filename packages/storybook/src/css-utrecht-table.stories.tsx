@@ -54,10 +54,12 @@ export const Default: Story = {
             <TableCell>Data</TableCell>
             <TableCell>Data</TableCell>
             <TableCell>Data</TableCell>
+            <TableCell>Data</TableCell>
           </TableRow>
         </TableBody>
         <TableFooter>
           <TableRow>
+            <TableCell>Footer data</TableCell>
             <TableCell>Footer data</TableCell>
             <TableCell>Footer data</TableCell>
             <TableCell>Footer data</TableCell>
