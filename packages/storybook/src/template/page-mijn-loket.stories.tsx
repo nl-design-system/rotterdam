@@ -25,6 +25,21 @@ import {
 const meta = {
   title: 'Template/Mijn Loket',
   id: 'template-mijn-loket',
+  parameters: {
+    viewport: {
+      viewports: {
+        desktop: {
+          name: 'Desktop',
+          styles: {
+            width: '1280px',
+            height: '1528px',
+          },
+        },
+      },
+      defaultViewport: 'desktop',
+    },
+  },
+  decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
 } satisfies Meta;
 
 export default meta;

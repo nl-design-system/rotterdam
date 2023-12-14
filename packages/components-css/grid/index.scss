@@ -36,6 +36,8 @@
 @container (min-width: 48rem) {
   .rods-grid {
     grid-column-gap: 1.5rem;
+    padding-inline-end: 4.5rem;
+    padding-inline-start: 4.5rem;
   }
 
   .rods-grid__half-width {
@@ -51,9 +53,11 @@
   }
 }
 
-@container (min-width: 60rem) {
+@container (min-width: 64rem) {
   .rods-grid {
     grid-template-columns: repeat(12, 1fr);
+    padding-inline-end: 6rem;
+    padding-inline-start: 6rem;
   }
 
   .rods-grid__half-width {
@@ -70,5 +74,19 @@
 
   .rods-grid__one-fourth {
     grid-column: span 3;
+  }
+}
+
+@container (min-width: 80rem) {
+  .rods-grid {
+    padding-inline-end: 9rem;
+    padding-inline-start: 9rem;
+  }
+}
+
+@container (min-width: 105rem) {
+  .rods-grid {
+    padding-inline-end: 12rem;
+    padding-inline-start: 12rem;
   }
 }
