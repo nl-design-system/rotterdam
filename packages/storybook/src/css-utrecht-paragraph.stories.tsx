@@ -3,7 +3,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Paragraph } from '@utrecht/component-library-react/dist/css-module';
 import readme from './paragraph.md?raw';
-import '@gemeente-rotterdam/components-css/button/index.scss';
 
 const meta = {
   title: 'CSS Component/Paragraph',
