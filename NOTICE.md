@@ -1,12 +1,12 @@
-# Auteursrecht {auteur}
+# Auteursrecht gemeente Rotterdam
 
-Copyright (c) {jaar} {auteur}
+Copyright (c) 2023 gemeente Rotterdam
 
 ## Logo en huisstijl
 
-Op het huisstijl en logo zijn auteursrechten van toepassing. Het gebruik van logo en huisstijl is alleen toegestaan voor gebruik door {auteur}.
+Op het huisstijl en logo zijn auteursrechten van toepassing. Het gebruik van logo en huisstijl is alleen toegestaan voor gebruik door gemeente Rotterdam.
 
-Wanneer je een bewerking van de software wilt gebruiken voor andere doeleinden, mag je niet het logo van {auteur} gebruiken en je ontwerpt een eigen huisstijl.
+Wanneer je een bewerking van de software wilt gebruiken voor andere doeleinden, mag je niet het logo van gemeente Rotterdam gebruiken en je ontwerpt een eigen huisstijl.
 
 ## Lettertype
 
@@ -14,4 +14,4 @@ Lettertypes die worden gebruikt voor de huisstijl zijn niet allemaal gratis en o
 
 ## Toestemming
 
-Wanneer je het logo of de huisstijl wilt gebruiken kun je voor toestemming contact opnemen met {contactpersoon}.
+Wanneer je het logo of de huisstijl wilt gebruiken kun je voor toestemming contact opnemen met [de gemeente Rotterdam](https://www.rotterdam.nl/vraag-of-idee-doorgeven).
