@@ -5,7 +5,7 @@ module.exports = {
     '@etchteam/storybook-addon-status/register',
     '@storybook/addon-a11y/register',
     '@storybook/addon-docs',
-    '@storybook/addon-viewport/register',
+    '@storybook/addon-viewport',
     '@storybook/preset-scss',
     '@storybook/addon-styling',
     '@storybook/addon-a11y',
