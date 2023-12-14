@@ -1,3 +1,14 @@
 .utrecht-breadcrumb-nav {
   margin-inline-start: calc(-1 * var(--utrecht-breadcrumb-nav-item-padding-inline-start, 8px));
 }
+
+.example-card-group {
+  column-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.example-card {
+  border: 1px solid #ccc;
+  flex: 1 1 calc(50% - 2rem);
+}
