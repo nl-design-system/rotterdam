@@ -10,6 +10,7 @@ import {
   TableHeaderCell,
   TableRow,
 } from '@utrecht/component-library-react';
+import '@gemeente-rotterdam/components-css/table/index.scss';
 import readme from './table.md?raw';
 
 const meta = {
@@ -41,10 +42,18 @@ export const Default: Story = {
     children: [
       <TableHeader>
         <TableRow>
-          <TableHeaderCell scope="col">Column A</TableHeaderCell>
-          <TableHeaderCell scope="col">Column B</TableHeaderCell>
-          <TableHeaderCell scope="col">Column C</TableHeaderCell>
-          <TableHeaderCell scope="col">Column d</TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column A
+          </TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column B
+          </TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column C
+          </TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column d
+          </TableHeaderCell>
         </TableRow>
       </TableHeader>,
       <TableBody>
@@ -55,7 +64,7 @@ export const Default: Story = {
           <TableCell>Data</TableCell>
         </TableRow>
       </TableBody>,
-      <TableFooter>
+      <TableFooter className="rods-table-footer">
         <TableRow>
           <TableCell>Footer data</TableCell>
           <TableCell>Footer data</TableCell>
