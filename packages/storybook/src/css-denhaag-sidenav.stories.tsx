@@ -14,7 +14,6 @@ import {
 import type { Meta, StoryObj } from '@storybook/react';
 import { BadgeCounter } from '@utrecht/component-library-react/dist/css-module';
 import readme from './sidenav.md?raw';
-import '@gemeente-rotterdam/components-css/button/index.scss';
 
 const meta = {
   title: 'CSS Component/Side navigation',
