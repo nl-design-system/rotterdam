@@ -1,5 +1,11 @@
 /* @license CC0-1.0 */
 
+import {
+  RodsIconBadgeAlert,
+  RodsIconBadgeAlertSolid,
+  RodsIconBadgeCheck,
+  RodsIconBadgeInfo,
+} from '@gemeente-rotterdam/web-components-react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert, Paragraph } from '@utrecht/component-library-react/dist/css-module';
 import readme from './alert.md?raw';
@@ -48,6 +54,7 @@ export const Info: Story = {
         kloppen, kunt u dit wijzigen in het BRP.
       </Paragraph>
     ),
+    icon: <RodsIconBadgeInfo />,
     type: 'info',
   },
   parameters: {
@@ -67,6 +74,7 @@ export const Error: Story = {
         kloppen, kunt u dit wijzigen in het BRP.
       </Paragraph>
     ),
+    icon: <RodsIconBadgeAlertSolid />,
     type: 'error',
   },
   parameters: {
@@ -86,6 +94,7 @@ export const Warning: Story = {
         kloppen, kunt u dit wijzigen in het BRP.
       </Paragraph>
     ),
+    icon: <RodsIconBadgeAlert />,
     type: 'warning',
   },
   parameters: {
@@ -105,6 +114,7 @@ export const OK: Story = {
         kloppen, kunt u dit wijzigen in het BRP.
       </Paragraph>
     ),
+    icon: <RodsIconBadgeCheck />,
     type: 'ok',
   },
   parameters: {
