@@ -1,0 +1,17 @@
+{
+  "denhaag": {
+    "file": {
+      "focus": {
+        "outline-color": {
+          "value": "{rods.color.base.black}"
+        },
+        "outline-width": {
+          "value": "1px"
+        },
+        "outline-style": {
+          "value": "solid"
+        }
+      }
+    }
+  }
+}
