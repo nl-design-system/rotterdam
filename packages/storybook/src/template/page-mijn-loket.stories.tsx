@@ -14,6 +14,7 @@ import {
   RodsIconParking,
   RodsIconSummary,
   RodsIconUser,
+  RodsLogoImage,
 } from '@gemeente-rotterdam/web-components-react';
 import { Meta, StoryObj } from '@storybook/react';
 import '@gemeente-rotterdam/components-css/grid/index.scss';
@@ -238,6 +239,12 @@ export const Default: Story = {
             </div>
           </section>
         </div>
+        <footer className={'example-footer rods-grid__full-width'}>
+          <div className={'example-footer__navbar'}>navbar links</div>
+          <div className={'example-footer__logo'}>
+            <RodsLogoImage />
+          </div>
+        </footer>
       </div>
     </div>
   ),

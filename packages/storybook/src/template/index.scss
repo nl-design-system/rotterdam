@@ -2,6 +2,25 @@
   margin-inline-start: calc(-1 * var(--utrecht-breadcrumb-nav-item-padding-inline-start, 8px));
 }
 
+.example-footer {
+  border-block-start: 3px solid #00811f;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-block-start: 3rem;
+  padding-block-start: 1.5rem;
+}
+
+.example-footer__navbar {
+  align-items: center;
+  display: flex;
+}
+
+.example-footer__logo {
+  block-size: 48px;
+  inline-size: 240px;
+}
+
 .example-card-group {
   column-gap: 2rem;
   display: flex;
