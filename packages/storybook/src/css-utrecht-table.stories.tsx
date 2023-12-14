@@ -81,3 +81,49 @@ export const Default: Story = {
     },
   },
 };
+
+export const Hover: Story = {
+  args: {
+    className: 'utrecht-table--row-hover',
+    children: [
+      <TableHeader>
+        <TableRow>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column A
+          </TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column B
+          </TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column C
+          </TableHeaderCell>
+          <TableHeaderCell className="rods-table-header-cell" scope="col">
+            Column d
+          </TableHeaderCell>
+        </TableRow>
+      </TableHeader>,
+      <TableBody>
+        <TableRow>
+          <TableCell>Data</TableCell>
+          <TableCell>Data</TableCell>
+          <TableCell>Data</TableCell>
+          <TableCell>Data</TableCell>
+        </TableRow>
+      </TableBody>,
+      <TableFooter className="rods-table-footer">
+        <TableRow>
+          <TableCell>Footer data</TableCell>
+          <TableCell>Footer data</TableCell>
+          <TableCell>Footer data</TableCell>
+          <TableCell>Footer data</TableCell>
+        </TableRow>
+      </TableFooter>,
+    ],
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=507-19314',
+    },
+  },
+};
