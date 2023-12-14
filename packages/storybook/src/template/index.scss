@@ -7,6 +7,12 @@
   margin-block-end: 1.5rem;
 }
 
+rods-logo-image {
+  block-size: 48px;
+  display: inline-block;
+  inline-size: 240px;
+}
+
 .example-page-header__top-bar {
   background-color: var(--rods-color-base-gray);
 }
@@ -38,11 +44,6 @@
 .example-footer__navbar {
   align-items: center;
   display: flex;
-}
-
-.example-footer__logo {
-  block-size: 48px;
-  inline-size: 240px;
 }
 
 .example-card-group {

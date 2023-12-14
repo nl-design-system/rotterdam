@@ -57,7 +57,9 @@ export const Default: Story = {
     <div {...args} style={{ containerType: 'inline-size' }}>
       <PageHeader>
         <div className="example-page-header__top-bar">top bar</div>
-        <div className="example-page-header__content">main content</div>
+        <div className="example-page-header__content">
+          <RodsLogoImage className="example-page-header__logo" />
+        </div>
       </PageHeader>
       <div className={'rods-grid'}>
         <div className={'rods-grid__one-fourth'}>
@@ -245,9 +247,9 @@ export const Default: Story = {
             </div>
           </section>
         </div>
-        <footer className={'example-footer rods-grid__full-width'}>
-          <div className={'example-footer__navbar'}>navbar links</div>
-          <div className={'example-footer__logo'}>
+        <footer className="example-footer rods-grid__full-width">
+          <div className="example-footer__navbar">navbar links</div>
+          <div>
             <RodsLogoImage />
           </div>
         </footer>
