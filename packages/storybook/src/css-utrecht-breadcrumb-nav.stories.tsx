@@ -1,5 +1,6 @@
 /* @license CC0-1.0 */
 
+import { RodsIconChevronRight } from '@gemeente-rotterdam/web-components-react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   BreadcrumbNav,
@@ -50,12 +51,16 @@ export const Default: Story = {
       <BreadcrumbNavLink href="/" rel="home" index={0}>
         Home
       </BreadcrumbNavLink>,
-      <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>,
+      <BreadcrumbNavSeparator>
+        <RodsIconChevronRight />
+      </BreadcrumbNavSeparator>,
       <BreadcrumbNavLink href="/a/" index={1}>
         Parkeren in Rotterdam
       </BreadcrumbNavLink>,
       // TODO: Use icon when iconset is available
-      <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>,
+      <BreadcrumbNavSeparator>
+        <RodsIconChevronRight />
+      </BreadcrumbNavSeparator>,
       <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
         Product aanvragen
       </BreadcrumbNavLink>,
