@@ -33,7 +33,7 @@
         "color": { "value": "{rods.color.base.green}" },
         "inline-size": { "value": "40px" },
         "icon": {
-          "size": { "value": "24px" }
+          "size": { "value": "16px" }
         }
       },
       "arrows": {
