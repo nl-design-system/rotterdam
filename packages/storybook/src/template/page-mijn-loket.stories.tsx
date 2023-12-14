@@ -24,12 +24,14 @@ import {
   BreadcrumbNav,
   BreadcrumbNavLink,
   BreadcrumbNavSeparator,
+  PageHeader,
 } from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
   title: 'Template/Mijn Loket',
   id: 'template-mijn-loket',
   parameters: {
+    layout: 'fullscreen',
     viewport: {
       viewports: {
         desktop: {
@@ -53,6 +55,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <div {...args} style={{ containerType: 'inline-size' }}>
+      <PageHeader>
+        <div className="example-page-header__top-bar">top bar</div>
+        <div className="example-page-header__content">main content</div>
+      </PageHeader>
       <div className={'rods-grid'}>
         <div className={'rods-grid__one-fourth'}>
           <Sidenav>
