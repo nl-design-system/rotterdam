@@ -2,8 +2,32 @@
   margin-inline-start: calc(-1 * var(--utrecht-breadcrumb-nav-item-padding-inline-start, 8px));
 }
 
+.utrecht-page-header {
+  border-block-end: 1px solid var(--rods-color-gray-tint-04);
+  margin-block-end: 1.5rem;
+}
+
+.example-page-header__top-bar {
+  background-color: var(--rods-color-base-gray);
+}
+
+.example-page-header__content {
+  padding-inline-end: 6rem;
+  padding-inline-start: 6rem;
+}
+
+/*
+  // padding idea for screen sizes where content size caps out
+  // -4rem is for the header content alignment which start 64px left of the page content start
+  @media (min-width: 1564px) {
+    .example-page-header-content {
+      padding-inline-start: calc((100vw - 1180px) / 2 - 4rem);
+    }
+  }
+ */
+
 .example-footer {
-  border-block-start: 3px solid #00811f;
+  border-block-start: 3px solid var(--rods-color-base-green);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
