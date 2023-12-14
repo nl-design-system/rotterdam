@@ -32,7 +32,7 @@
       },
       "icon": {
         "color": { "value": "{rods.color.notification.neutral.icon-color}" },
-        "gap": {},
+        "gap": { "value": "12px" },
         "error": {
           "color": { "value": "{rods.color.notification.alert.icon-color}" }
         },
