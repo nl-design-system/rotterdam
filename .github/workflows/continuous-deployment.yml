@@ -121,19 +121,19 @@ jobs:
 
       - name: "Continuous Integration: build"
         env:
-          BASE_URL: "/utrecht/"
+          BASE_URL: "/rotterdam/"
         run: |
           pnpm run --if-present build
 
       - name: "Continuous Integration: lint build"
         env:
-          BASE_URL: "/utrecht/"
+          BASE_URL: "/rotterdam/"
         run: |
           pnpm run --if-present lint-build
 
       - name: "Continuous Integration: test build"
         env:
-          BASE_URL: "/utrecht/"
+          BASE_URL: "/rotterdam/"
         run: |
           pnpm run --if-present test-build
 
