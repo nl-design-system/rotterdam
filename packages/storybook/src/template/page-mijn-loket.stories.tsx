@@ -3,8 +3,11 @@
 import { ActionSingle } from '@gemeente-denhaag/action';
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
 import {
+  RodsIconArrowRight,
   RodsIconBox,
   RodsIconCoins,
+  RodsIconDocument,
+  RodsIconEnvelope,
   RodsIconInbox,
   RodsIconMoney2,
   RodsIconOverview,
@@ -174,6 +177,65 @@ export const Default: Story = {
           </section>
           <section>
             <h2>Zelf regelen</h2>
+            <div className={'example-card-group'}>
+              <div className={'example-card'}>
+                <RodsIconDocument />
+                <p className={'example-card-title'}>Passport vernieuwen of aanvragen</p>
+                <div className={'example-link-list'}>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Direct regelen
+                  </a>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Meer informatie op Rotterdam.nl
+                  </a>
+                </div>
+              </div>
+              <div className={'example-card'}>
+                <RodsIconParking />
+                <p className={'example-card-title'}>Parkeervergunning aanvragen of beheren</p>
+                <div className={'example-link-list'}>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Direct regelen
+                  </a>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Meer informatie op Rotterdam.nl
+                  </a>
+                </div>
+              </div>
+
+              <div className={'example-card'}>
+                <RodsIconEnvelope />
+                <p className={'example-card-title'}>Belastingzaken</p>
+                <div className={'example-link-list'}>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Direct regelen
+                  </a>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Meer informatie op Rotterdam.nl
+                  </a>
+                </div>
+              </div>
+              <div className={'example-card'}>
+                <RodsIconEnvelope />
+                <p className={'example-card-title'}>Belastingzaken</p>
+                <div className={'example-link-list'}>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Direct regelen
+                  </a>
+                  <a className={'example-link'} href={'#'}>
+                    <RodsIconArrowRight />
+                    Meer informatie op Rotterdam.nl
+                  </a>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>
