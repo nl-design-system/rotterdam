@@ -9,3 +9,14 @@
 .rods-table-footer {
   font-weight: 700;
 }
+
+.utrecht-table--row-hover {
+  .utrecht-table__body {
+    .utrecht-table__row:hover {
+      .utrecht-table__cell {
+        background-color: #eff4f6;
+        color: #404b4f;
+      }
+    }
+  }
+}
