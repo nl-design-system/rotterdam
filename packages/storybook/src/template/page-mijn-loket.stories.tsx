@@ -36,6 +36,7 @@ import {
   NavList,
   NavListLink,
   PageHeader,
+  Paragraph,
 } from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
@@ -180,11 +181,11 @@ export const Default: Story = {
           </BreadcrumbNav>
           <section>
             <h1>Hallo mevrouw van Bergenhenegouwen</h1>
-            <p>
+            <Paragraph>
               Via Mijn Loket kunt u veel zelf regelen met de gemeente. Bijvoorbeeld een afspraak maken om uw paspoort te
               verlengen, of een subsidie aanvraag indienen. U kunt ook zien welke dingen u nog moet regelen of die wij
               van u vragen. Bijvoorbeeld het betalen van gemeentelijke belastingen. Zie hiervoor ‘Wat ik moet regelen’.
-            </p>
+            </Paragraph>
           </section>
           <section>
             <h2>Wat moet ik regelen</h2>
@@ -240,7 +241,7 @@ export const Default: Story = {
                 <div className="example-card__icon">
                   <RodsIconDocument />
                 </div>
-                <p className="example-card__title">Passport vernieuwen of aanvragen</p>
+                <Paragraph className="example-card__title">Passport vernieuwen of aanvragen</Paragraph>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
@@ -253,7 +254,7 @@ export const Default: Story = {
                 <div className="example-card__icon">
                   <RodsIconParking />
                 </div>
-                <p className="example-card__title">Parkeervergunning aanvragen of beheren</p>
+                <Paragraph className="example-card__title">Parkeervergunning aanvragen of beheren</Paragraph>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
@@ -266,7 +267,7 @@ export const Default: Story = {
                 <div className="example-card__icon">
                   <RodsIconEnvelope />
                 </div>
-                <p className="example-card__title">Belastingzaken</p>
+                <Paragraph className="example-card__title">Belastingzaken</Paragraph>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
@@ -279,7 +280,7 @@ export const Default: Story = {
                 <div className="example-card__icon">
                   <RodsIconEnvelope />
                 </div>
-                <p className="example-card__title">Belastingzaken</p>
+                <Paragraph className="example-card__title">Belastingzaken</Paragraph>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
