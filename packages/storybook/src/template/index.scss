@@ -7,11 +7,23 @@
   margin-block-end: 1.5rem;
 }
 
+.utrecht-nav-bar {
+  font-size: var(--rods-typography-scale-sm-font-size);
+}
+
+.utrecht-nav-bar--button-menu {
+  --utrecht-nav-list-column-gap: 1.5rem; /* no space token for 24px */
+  --utrecht-nav-list-link-current-border-block-end: 4px solid var(--rods-color-base-green);
+
+  block-size: 100%;
+  font-size: var(--rods-typography-scale-md-font-size);
+}
+
 .utrecht-nav-list {
   --utrecht-link-color: var(--utrecht-nav-bar-color);
   --utrecht-link-text-decoration: none;
 
-  font-size: var(--rods-typography-scale-sm-font-size);
+  column-gap: var(--utrecht-nav-list-column-gap, 0);
 }
 
 @mixin utrecht-link--with-icon {
@@ -33,6 +45,16 @@ when classNames has a value */
   @include utrecht-link--with-icon;
 
   --utrecht-link-icon-size: var(--rods-typography-scale-lg-font-size);
+}
+
+.utrecht-nav-list__link[aria-current="page"] {
+  border-block-end: var(--utrecht-nav-list-link-current-border-block-end);
+}
+
+.utrecht-nav-bar--button-menu .utrecht-nav-list__link {
+  --utrecht-link-icon-size: var(--rods-typography-scale-3xl-font-size);
+
+  column-gap: var(--rods-space-scale-2);
 }
 
 .utrecht-link--backlink {

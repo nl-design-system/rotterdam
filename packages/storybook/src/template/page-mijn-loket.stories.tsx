@@ -12,9 +12,11 @@ import {
   RodsIconGlobe,
   RodsIconInbox,
   RodsIconLogOut,
+  RodsIconMijnLoket,
   RodsIconMoney2,
   RodsIconOverview,
   RodsIconParking,
+  RodsIconSearch,
   RodsIconShoppingCart,
   RodsIconSummary,
   RodsIconUser,
@@ -93,7 +95,18 @@ export const Default: Story = {
         </div>
         <div className="example-page-header__content">
           <RodsLogoImage className="example-page-header__logo" />
-          <div>Nav buttons here</div>
+          <div className="utrecht-nav-bar utrecht-nav-bar--button-menu">
+            <NavList>
+              <NavListLink href="#">
+                <RodsIconSearch />
+                Zoeken
+              </NavListLink>
+              <NavListLink href="#" aria-current="page">
+                <RodsIconMijnLoket />
+                Mijn Loket
+              </NavListLink>
+            </NavList>
+          </div>
         </div>
       </PageHeader>
       <div className={'rods-grid'}>
