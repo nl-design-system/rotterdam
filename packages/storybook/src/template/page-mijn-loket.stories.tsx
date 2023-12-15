@@ -31,6 +31,7 @@ import {
   BreadcrumbNavLink,
   BreadcrumbNavSeparator,
   Link,
+  LinkList,
   NavBar,
   NavList,
   NavListLink,
@@ -238,59 +239,47 @@ export const Default: Story = {
               <div className={'example-card'}>
                 <RodsIconDocument />
                 <p className={'example-card-title'}>Passport vernieuwen of aanvragen</p>
-                <div className={'example-link-list'}>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Direct regelen
-                  </a>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Meer informatie op Rotterdam.nl
-                  </a>
-                </div>
+                <LinkList
+                  icon={() => <RodsIconArrowRight />}
+                  links={[
+                    { href: '#', children: 'Direct regelen' },
+                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                  ]}
+                />
               </div>
               <div className={'example-card'}>
                 <RodsIconParking />
                 <p className={'example-card-title'}>Parkeervergunning aanvragen of beheren</p>
-                <div className={'example-link-list'}>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Direct regelen
-                  </a>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Meer informatie op Rotterdam.nl
-                  </a>
-                </div>
+                <LinkList
+                  icon={() => <RodsIconArrowRight />}
+                  links={[
+                    { href: '#', children: 'Direct regelen' },
+                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                  ]}
+                />
               </div>
 
               <div className={'example-card'}>
                 <RodsIconEnvelope />
                 <p className={'example-card-title'}>Belastingzaken</p>
-                <div className={'example-link-list'}>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Direct regelen
-                  </a>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Meer informatie op Rotterdam.nl
-                  </a>
-                </div>
+                <LinkList
+                  icon={() => <RodsIconArrowRight />}
+                  links={[
+                    { href: '#', children: 'Direct regelen' },
+                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                  ]}
+                />
               </div>
               <div className={'example-card'}>
                 <RodsIconEnvelope />
                 <p className={'example-card-title'}>Belastingzaken</p>
-                <div className={'example-link-list'}>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Direct regelen
-                  </a>
-                  <a className={'example-link'} href={'#'}>
-                    <RodsIconArrowRight />
-                    Meer informatie op Rotterdam.nl
-                  </a>
-                </div>
+                <LinkList
+                  icon={() => <RodsIconArrowRight />}
+                  links={[
+                    { href: '#', children: 'Direct regelen' },
+                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                  ]}
+                />
               </div>
             </div>
           </section>
