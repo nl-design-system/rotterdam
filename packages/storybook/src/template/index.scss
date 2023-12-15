@@ -72,6 +72,11 @@ rods-logo-image {
   line-height: var(--rods-typography-scale-sm-line-height);
 }
 
+.example-nav-list__divider {
+  align-items: center;
+  display: flex;
+}
+
 .example-card-group {
   column-gap: 2rem;
   display: flex;
