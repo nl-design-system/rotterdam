@@ -166,10 +166,6 @@ rods-logo-image {
   --utrecht-link-text-decoration: underline;
 }
 
-.example-section {
-  margin-block-start: var(--rods-space-scale-4);
-}
-
 .example-section + .example-section {
   margin-block-start: var(--rods-space-scale-5);
 }
@@ -188,4 +184,8 @@ rods-logo-image {
   --utrecht-icon-color: var(--denhaag-sidenav-link-color);
 
   background-color: var(--rods-color-gray-tint-01);
+}
+
+.rods-grid--margin-block-start {
+  margin-block-start: var(--rods-space-scale-3);
 }

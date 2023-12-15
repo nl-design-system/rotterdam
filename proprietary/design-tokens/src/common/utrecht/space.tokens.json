@@ -1,6 +1,7 @@
 {
   "utrecht": {
     "space": {
+      "around": { "value": 1 },
       "block": {
         "3xs": { "value": "0" },
         "2xs": { "value": "4px" },
