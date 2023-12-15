@@ -3,10 +3,10 @@
     "heading-1": {
       "color": {},
       "font-family": {},
-      "font-size": { "value": "{rods.typography.scale.6xl.font-size}" },
+      "font-size": { "value": "{rods.typography.scale.3xl.font-size}" },
       "font-weight": {},
-      "line-height": { "value": "{rods.typography.scale.6xl.line-height}" },
-      "margin-block-end": {},
+      "line-height": { "value": "{rods.typography.scale.3xl.line-height}" },
+      "margin-block-end": { "value": "{rods.space.scale.2}" },
       "margin-block-start": {}
     }
   }

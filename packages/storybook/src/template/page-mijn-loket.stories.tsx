@@ -25,6 +25,7 @@ import {
 import { Meta, StoryObj } from '@storybook/react';
 import '@gemeente-rotterdam/components-css/grid/index.scss';
 import './index.scss';
+import { Heading1 } from '@utrecht/component-library-react';
 import {
   BadgeCounter,
   BreadcrumbNav,
@@ -111,8 +112,24 @@ export const Default: Story = {
           </div>
         </div>
       </PageHeader>
-      <div className={'rods-grid'}>
-        <div className={'rods-grid__one-fourth'}>
+      <div className="rods-grid">
+        <div className="rods-grid__one-fourth"></div>
+        <div className="rods-grid__two-third">
+          <BreadcrumbNav>
+            <BreadcrumbNavLink href="/" rel="home" index={0}>
+              Home
+            </BreadcrumbNavLink>
+            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
+            <BreadcrumbNavLink href="/a/" index={1}>
+              Parkeren in Rotterdam
+            </BreadcrumbNavLink>
+            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
+            <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
+              Product aanvragen
+            </BreadcrumbNavLink>
+          </BreadcrumbNav>
+        </div>
+        <div className={'rods-grid__one-fourth rods-grid--margin-block-start'}>
           <Sidenav>
             <SidenavList>
               <SidenavItem>
@@ -165,22 +182,9 @@ export const Default: Story = {
             </SidenavList>
           </Sidenav>
         </div>
-        <div className={'rods-grid__two-third'}>
-          <BreadcrumbNav>
-            <BreadcrumbNavLink href="/" rel="home" index={0}>
-              Home
-            </BreadcrumbNavLink>
-            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
-            <BreadcrumbNavLink href="/a/" index={1}>
-              Parkeren in Rotterdam
-            </BreadcrumbNavLink>
-            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
-            <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
-              Product aanvragen
-            </BreadcrumbNavLink>
-          </BreadcrumbNav>
+        <div className={'rods-grid__two-third rods-grid--margin-block-start'}>
           <section className="example-section">
-            <h1>Hallo mevrouw van Bergenhenegouwen</h1>
+            <Heading1>Hallo mevrouw van Bergenhenegouwen</Heading1>
             <Paragraph>
               Via Mijn Loket kunt u veel zelf regelen met de gemeente. Bijvoorbeeld een afspraak maken om uw paspoort te
               verlengen, of een subsidie aanvraag indienen. U kunt ook zien welke dingen u nog moet regelen of die wij
