@@ -9,6 +9,37 @@
 
 .utrecht-nav-list {
   --utrecht-link-color: var(--utrecht-nav-bar-color);
+  --utrecht-link-text-decoration: none;
+}
+
+@mixin utrecht-link--with-icon {
+  --utrecht-icon-size: var(--utrecht-link-icon-size, 16px);
+  --utrecht-icon-color: var(--rods-color-gray-tint-06);
+
+  align-items: center;
+  column-gap: var(--rods-space-scale-1);
+  display: flex;
+}
+
+.utrecht-link--with-icon {
+  @include utrecht-link--with-icon;
+}
+
+/* Had to do it like this because the <NavLink> component has a bug that overwrites the utrecht-nav-list__link class
+when classNames has a value */
+.utrecht-nav-list__link {
+  @include utrecht-link--with-icon;
+
+  --utrecht-link-icon-size: var(--rods-typography-scale-lg-font-size);
+}
+
+.utrecht-link--backlink {
+  --utrecht-link-text-decoration: none;
+  --utrecht-link-hover-text-decoration: underline;
+
+  color: var(--rods-color-gray-tint-11);
+  font-size: var(--rods-typography-scale-sm-font-size);
+  line-height: var(--rods-typography-scale-sm-line-height);
 }
 
 rods-logo-image {
@@ -60,20 +91,6 @@ rods-logo-image {
 .example-footer__navbar {
   align-items: center;
   display: flex;
-}
-
-.utrecht-link--backlink {
-  --utrecht-icon-size: var(--rods-typography-scale-md-font-size);
-  --utrecht-icon-color: var(--rods-color-gray-tint-06);
-  --utrecht-link-text-decoration: none;
-  --utrecht-link-hover-text-decoration: underline;
-
-  align-items: center;
-  color: var(--rods-color-gray-tint-11);
-  column-gap: var(--rods-space-scale-1);
-  display: flex;
-  font-size: var(--rods-typography-scale-sm-font-size);
-  line-height: var(--rods-typography-scale-sm-line-height);
 }
 
 .example-nav-list__divider {
