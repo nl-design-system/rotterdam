@@ -10,6 +10,8 @@
 .utrecht-nav-list {
   --utrecht-link-color: var(--utrecht-nav-bar-color);
   --utrecht-link-text-decoration: none;
+
+  font-size: var(--rods-typography-scale-sm-font-size);
 }
 
 @mixin utrecht-link--with-icon {
