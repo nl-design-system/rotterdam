@@ -7,6 +7,10 @@
   margin-block-end: 1.5rem;
 }
 
+.utrecht-nav-list {
+  --utrecht-link-color: var(--utrecht-nav-bar-color);
+}
+
 rods-logo-image {
   block-size: 48px;
   display: inline-block;
