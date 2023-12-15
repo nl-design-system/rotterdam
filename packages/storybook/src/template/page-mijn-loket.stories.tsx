@@ -26,6 +26,8 @@ import {
   BreadcrumbNavLink,
   BreadcrumbNavSeparator,
   Link,
+  NavList,
+  NavListLink,
   PageHeader,
 } from '@utrecht/component-library-react/dist/css-module';
 
@@ -63,7 +65,15 @@ export const Default: Story = {
             <RodsIconArrowLeft />
             Rotterdam.nl
           </Link>
-          <div>Nav list here</div>
+          <div>
+            <NavList>
+              <NavListLink href="#">Translate</NavListLink>
+              <span className="example-nav-list__divider">|</span>
+              <NavListLink href="#">Unilever Nederland Holding B.V.</NavListLink>
+              <NavListLink href="#">Uitloggen</NavListLink>
+              <NavListLink href="#">Winkelmandje</NavListLink>
+            </NavList>
+          </div>
         </div>
         <div className="example-page-header__content">
           <RodsLogoImage className="example-page-header__logo" />
