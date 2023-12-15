@@ -29,6 +29,7 @@ import {
   BreadcrumbNavLink,
   BreadcrumbNavSeparator,
   Link,
+  NavBar,
   NavList,
   NavListLink,
   PageHeader,
@@ -68,7 +69,7 @@ export const Default: Story = {
             <RodsIconArrowLeft />
             Rotterdam.nl
           </Link>
-          <nav>
+          <NavBar>
             <NavList>
               <NavListLink href="#">
                 <RodsIconGlobe />
@@ -88,7 +89,7 @@ export const Default: Story = {
                 Winkelmandje
               </NavListLink>
             </NavList>
-          </nav>
+          </NavBar>
         </div>
         <div className="example-page-header__content">
           <RodsLogoImage className="example-page-header__logo" />
