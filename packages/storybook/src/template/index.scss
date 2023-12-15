@@ -14,10 +14,22 @@ rods-logo-image {
 }
 
 .example-page-header__top-bar {
+  align-items: center;
   background-color: var(--rods-color-base-gray);
+  block-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline-end: 6rem;
+  padding-inline-start: 6rem;
 }
 
 .example-page-header__content {
+  align-items: center;
+  block-size: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding-inline-end: 6rem;
   padding-inline-start: 6rem;
 }
@@ -44,6 +56,20 @@ rods-logo-image {
 .example-footer__navbar {
   align-items: center;
   display: flex;
+}
+
+.utrecht-link--backlink {
+  --utrecht-icon-size: var(--rods-typography-scale-md-font-size);
+  --utrecht-icon-color: var(--rods-color-gray-tint-06);
+  --utrecht-link-text-decoration: none;
+  --utrecht-link-hover-text-decoration: underline;
+
+  align-items: center;
+  color: var(--rods-color-gray-tint-11);
+  column-gap: var(--rods-space-scale-1);
+  display: flex;
+  font-size: var(--rods-typography-scale-sm-font-size);
+  line-height: var(--rods-typography-scale-sm-line-height);
 }
 
 .example-card-group {

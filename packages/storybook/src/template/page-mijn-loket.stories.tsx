@@ -3,6 +3,7 @@
 import { ActionSingle } from '@gemeente-denhaag/action';
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
 import {
+  RodsIconArrowLeft,
   RodsIconArrowRight,
   RodsIconBox,
   RodsIconCoins,
@@ -24,6 +25,7 @@ import {
   BreadcrumbNav,
   BreadcrumbNavLink,
   BreadcrumbNavSeparator,
+  Link,
   PageHeader,
 } from '@utrecht/component-library-react/dist/css-module';
 
@@ -56,9 +58,16 @@ export const Default: Story = {
   render: (args) => (
     <div {...args} style={{ containerType: 'inline-size' }}>
       <PageHeader>
-        <div className="example-page-header__top-bar">top bar</div>
+        <div className="example-page-header__top-bar">
+          <Link href="#" className="utrecht-link--backlink">
+            <RodsIconArrowLeft />
+            Rotterdam.nl
+          </Link>
+          <div>Nav list here</div>
+        </div>
         <div className="example-page-header__content">
           <RodsLogoImage className="example-page-header__logo" />
+          <div>Nav buttons here</div>
         </div>
       </PageHeader>
       <div className={'rods-grid'}>
