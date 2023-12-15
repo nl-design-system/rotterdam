@@ -1,0 +1,10 @@
+{
+  "utrecht": {
+    "link-list": {
+      "item": {
+        "column-gap": { "value": "{rods.space.scale.1}" },
+        "margin-block-start": { "value": "12px" }
+      }
+    }
+  }
+}
