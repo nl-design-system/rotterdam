@@ -123,7 +123,7 @@ export const Default: Story = {
                 <SidenavLink href="/#">
                   <RodsIconInbox />
                   Mijn berichten
-                  <BadgeCounter>2</BadgeCounter>
+                  <BadgeCounter className="utrecht-badge-counter--rods-light-blue">2</BadgeCounter>
                 </SidenavLink>
               </SidenavItem>
               <SidenavItem>
