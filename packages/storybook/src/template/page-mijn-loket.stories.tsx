@@ -6,6 +6,7 @@ import {
   RodsIconArrowLeft,
   RodsIconArrowRight,
   RodsIconBox,
+  RodsIconChevronRight,
   RodsIconCoins,
   RodsIconDocument,
   RodsIconEnvelope,
@@ -119,11 +120,15 @@ export const Default: Story = {
             <BreadcrumbNavLink href="/" rel="home" index={0}>
               Home
             </BreadcrumbNavLink>
-            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
+            <BreadcrumbNavSeparator>
+              <RodsIconChevronRight />
+            </BreadcrumbNavSeparator>
             <BreadcrumbNavLink href="/a/" index={1}>
               Parkeren in Rotterdam
             </BreadcrumbNavLink>
-            <BreadcrumbNavSeparator>›</BreadcrumbNavSeparator>
+            <BreadcrumbNavSeparator>
+              <RodsIconChevronRight />
+            </BreadcrumbNavSeparator>
             <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
               Product aanvragen
             </BreadcrumbNavLink>
@@ -245,7 +250,7 @@ export const Default: Story = {
                 <div className="example-card__icon">
                   <RodsIconDocument />
                 </div>
-                <Paragraph className="example-card__title">Passport vernieuwen of aanvragen</Paragraph>
+                <Paragraph className="example-card__title">Pasport vernieuwen of aanvragen</Paragraph>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[

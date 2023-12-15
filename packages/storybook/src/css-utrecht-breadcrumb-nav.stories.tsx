@@ -57,7 +57,6 @@ export const Default: Story = {
       <BreadcrumbNavLink href="/a/" index={1}>
         Parkeren in Rotterdam
       </BreadcrumbNavLink>,
-      // TODO: Use icon when iconset is available
       <BreadcrumbNavSeparator>
         <RodsIconChevronRight />
       </BreadcrumbNavSeparator>,
