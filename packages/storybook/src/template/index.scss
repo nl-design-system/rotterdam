@@ -132,3 +132,11 @@ rods-logo-image {
   border: 1px solid #ccc;
   flex: 1 1 calc(50% - 2rem);
 }
+
+.denhaag-action__warning-icon {
+  g,
+  path:not([stroke="#fff"]) {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+}
