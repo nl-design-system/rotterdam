@@ -123,14 +123,23 @@ rods-logo-image {
 }
 
 .example-card-group {
-  column-gap: 2rem;
+  --example-card-border-width: 4px;
+  --example-card-border-color: var(--rods-color-gray-tint-04);
+  --example-card-group-gap: var(--rods-space-scale-4);
+
+  column-gap: var(--example-card-group-gap);
   display: flex;
   flex-wrap: wrap;
+  row-gap: var(--example-card-group-gap);
 }
 
 .example-card {
-  border: 1px solid #ccc;
-  flex: 1 1 calc(50% - 2rem);
+  border: var(--example-card-border-width) solid var(--example-card-border-color);
+  flex: 1 1 calc(50% - 64px);
+  padding-block-end: calc(2rem - var(--example-card-border-width));
+  padding-block-start: calc(1.5rem - var(--example-card-border-width));
+  padding-inline-end: calc(1.5rem - var(--example-card-border-width));
+  padding-inline-start: calc(1.5rem - var(--example-card-border-width));
 }
 
 .denhaag-action__warning-icon {
