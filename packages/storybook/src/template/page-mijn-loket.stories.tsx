@@ -9,10 +9,13 @@ import {
   RodsIconCoins,
   RodsIconDocument,
   RodsIconEnvelope,
+  RodsIconGlobe,
   RodsIconInbox,
+  RodsIconLogOut,
   RodsIconMoney2,
   RodsIconOverview,
   RodsIconParking,
+  RodsIconShoppingCart,
   RodsIconSummary,
   RodsIconUser,
   RodsLogoImage,
@@ -61,17 +64,29 @@ export const Default: Story = {
     <div {...args} style={{ containerType: 'inline-size' }}>
       <PageHeader>
         <div className="example-page-header__top-bar">
-          <Link href="#" className="utrecht-link--backlink">
+          <Link href="#" className="utrecht-link--backlink utrecht-link--with-icon">
             <RodsIconArrowLeft />
             Rotterdam.nl
           </Link>
           <nav>
             <NavList>
-              <NavListLink href="#">Translate</NavListLink>
-              <span className="example-nav-list__divider">|</span>
-              <NavListLink href="#">Unilever Nederland Holding B.V.</NavListLink>
-              <NavListLink href="#">Uitloggen</NavListLink>
-              <NavListLink href="#">Winkelmandje</NavListLink>
+              <NavListLink href="#">
+                <RodsIconGlobe />
+                Translate
+              </NavListLink>
+              <div className="utrecht-nav-list__link">|</div>
+              <NavListLink href="#">
+                <RodsIconUser />
+                Unilever Nederland Holding B.V.
+              </NavListLink>
+              <NavListLink href="#">
+                <RodsIconLogOut />
+                Uitloggen
+              </NavListLink>
+              <NavListLink href="#">
+                <RodsIconShoppingCart />
+                Winkelmandje
+              </NavListLink>
             </NavList>
           </nav>
         </div>
