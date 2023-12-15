@@ -147,14 +147,6 @@ rods-logo-image {
   padding-inline-start: calc(1.5rem - var(--example-card-border-width));
 }
 
-.denhaag-action__warning-icon {
-  g,
-  path:not([stroke="#fff"]) {
-    fill: currentColor !important;
-    stroke: currentColor !important;
-  }
-}
-
 .example-card__icon {
   --utrecht-icon-size: 3rem;
   --utrecht-icon-color: var(--example-card-icon-color);
@@ -171,4 +163,20 @@ rods-logo-image {
 
 .example-card-group .utrecht-link-list {
   --utrecht-link-text-decoration: underline;
+}
+
+/* Den haag component overrides */
+.denhaag-action__warning-icon {
+  g,
+  path:not([stroke="#fff"]) {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+}
+
+.denhaag-sidenav__link--hover,
+.denhaag-sidenav__link:hover {
+  --utrecht-icon-color: var(--denhaag-sidenav-link-color);
+
+  background-color: var(--rods-color-gray-tint-01);
 }
