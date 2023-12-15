@@ -235,10 +235,12 @@ export const Default: Story = {
           </section>
           <section>
             <h2>Zelf regelen</h2>
-            <div className={'example-card-group'}>
-              <div className={'example-card'}>
-                <RodsIconDocument />
-                <p className={'example-card-title'}>Passport vernieuwen of aanvragen</p>
+            <div className="example-card-group">
+              <div className="example-card">
+                <div className="example-card__icon">
+                  <RodsIconDocument />
+                </div>
+                <p className="example-card__title">Passport vernieuwen of aanvragen</p>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
@@ -247,9 +249,11 @@ export const Default: Story = {
                   ]}
                 />
               </div>
-              <div className={'example-card'}>
-                <RodsIconParking />
-                <p className={'example-card-title'}>Parkeervergunning aanvragen of beheren</p>
+              <div className="example-card">
+                <div className="example-card__icon">
+                  <RodsIconParking />
+                </div>
+                <p className="example-card__title">Parkeervergunning aanvragen of beheren</p>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
@@ -258,10 +262,11 @@ export const Default: Story = {
                   ]}
                 />
               </div>
-
-              <div className={'example-card'}>
-                <RodsIconEnvelope />
-                <p className={'example-card-title'}>Belastingzaken</p>
+              <div className="example-card">
+                <div className="example-card__icon">
+                  <RodsIconEnvelope />
+                </div>
+                <p className="example-card__title">Belastingzaken</p>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
@@ -270,9 +275,11 @@ export const Default: Story = {
                   ]}
                 />
               </div>
-              <div className={'example-card'}>
-                <RodsIconEnvelope />
-                <p className={'example-card-title'}>Belastingzaken</p>
+              <div className="example-card">
+                <div className="example-card__icon">
+                  <RodsIconEnvelope />
+                </div>
+                <p className="example-card__title">Belastingzaken</p>
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[

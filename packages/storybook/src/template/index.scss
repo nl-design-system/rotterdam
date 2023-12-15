@@ -123,13 +123,18 @@ rods-logo-image {
 }
 
 .example-card-group {
+  --example-card-icon-color: var(--rods-color-base-green);
+  --example-card-icon-size: 3rem;
   --example-card-border-width: 4px;
   --example-card-border-color: var(--rods-color-gray-tint-04);
+  --example-card-title-font-size: var(--rods-typography-scale-lg-font-size);
+  --example-card-title-line-height: var(--rods-typography-scale-lg-line-height);
   --example-card-group-gap: var(--rods-space-scale-4);
 
   column-gap: var(--example-card-group-gap);
   display: flex;
   flex-wrap: wrap;
+  font-weight: 700;
   row-gap: var(--example-card-group-gap);
 }
 
@@ -148,4 +153,22 @@ rods-logo-image {
     fill: currentColor !important;
     stroke: currentColor !important;
   }
+}
+
+.example-card__icon {
+  --utrecht-icon-size: 3rem;
+  --utrecht-icon-color: var(--example-card-icon-color);
+
+  line-height: 0;
+}
+
+.example-card__title {
+  font-size: var(--example-card-title-font-size);
+  line-height: var(--example-card-title-line-height);
+  margin-block-end: 1.5rem;
+  margin-block-start: 0.5rem;
+}
+
+.example-card-group .utrecht-link-list {
+  --utrecht-link-text-decoration: underline;
 }
