@@ -179,7 +179,7 @@ export const Default: Story = {
               Product aanvragen
             </BreadcrumbNavLink>
           </BreadcrumbNav>
-          <section>
+          <section className="example-section">
             <h1>Hallo mevrouw van Bergenhenegouwen</h1>
             <Paragraph>
               Via Mijn Loket kunt u veel zelf regelen met de gemeente. Bijvoorbeeld een afspraak maken om uw paspoort te
@@ -187,7 +187,7 @@ export const Default: Story = {
               van u vragen. Bijvoorbeeld het betalen van gemeentelijke belastingen. Zie hiervoor ‘Wat ik moet regelen’.
             </Paragraph>
           </section>
-          <section>
+          <section className="example-section">
             <h2>Wat moet ik regelen</h2>
             <div>
               <ActionSingle
@@ -234,7 +234,7 @@ export const Default: Story = {
               </ActionSingle>
             </div>
           </section>
-          <section>
+          <section className="example-section">
             <h2>Zelf regelen</h2>
             <div className="example-card-group">
               <div className="example-card">

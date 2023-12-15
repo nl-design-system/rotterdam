@@ -166,6 +166,14 @@ rods-logo-image {
   --utrecht-link-text-decoration: underline;
 }
 
+.example-section {
+  margin-block-start: var(--rods-space-scale-4);
+}
+
+.example-section + .example-section {
+  margin-block-start: var(--rods-space-scale-5);
+}
+
 /* Den haag component overrides */
 .denhaag-action__warning-icon {
   g,
