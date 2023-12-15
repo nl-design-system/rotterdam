@@ -65,7 +65,7 @@ export const Default: Story = {
             <RodsIconArrowLeft />
             Rotterdam.nl
           </Link>
-          <div>
+          <nav>
             <NavList>
               <NavListLink href="#">Translate</NavListLink>
               <span className="example-nav-list__divider">|</span>
@@ -73,7 +73,7 @@ export const Default: Story = {
               <NavListLink href="#">Uitloggen</NavListLink>
               <NavListLink href="#">Winkelmandje</NavListLink>
             </NavList>
-          </div>
+          </nav>
         </div>
         <div className="example-page-header__content">
           <RodsLogoImage className="example-page-header__logo" />
