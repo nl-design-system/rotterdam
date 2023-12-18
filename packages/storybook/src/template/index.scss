@@ -118,6 +118,13 @@ rods-logo-image {
   display: flex;
 }
 
+.example-footer__link {
+  --utrecht-link-color: var(--rods-color-gray-tint-11);
+
+  font-size: small;
+  padding-inline-end: 16px;
+}
+
 .example-nav-list__divider {
   align-items: center;
   display: flex;
