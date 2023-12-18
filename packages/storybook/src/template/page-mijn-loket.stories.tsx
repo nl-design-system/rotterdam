@@ -303,13 +303,13 @@ export const Default: Story = {
         </div>
         <footer className="example-footer rods-grid__full-width">
           <div className="example-footer__navbar">
-            <Link>© Gemeente Rotterdam 2021</Link>
-            <Link>Vacatures</Link>
-            <Link>Corona</Link>
-            <Link>Cookies</Link>
-            <Link>Proclaimer</Link>
-            <Link>Privacy</Link>
-            <Link>Toegankelijkheid</Link>
+            <Link className="example-footer__link">© Gemeente Rotterdam 2021</Link>
+            <Link className="example-footer__link">Vacatures</Link>
+            <Link className="example-footer__link">Corona</Link>
+            <Link className="example-footer__link">Cookies</Link>
+            <Link className="example-footer__link">Proclaimer</Link>
+            <Link className="example-footer__link">Privacy</Link>
+            <Link className="example-footer__link">Toegankelijkheid</Link>
           </div>
           <div>
             <RodsLogoImage />
