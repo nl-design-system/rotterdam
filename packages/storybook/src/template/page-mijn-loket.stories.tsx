@@ -302,29 +302,31 @@ export const Default: Story = {
           </section>
         </div>
         <footer className="example-footer rods-grid__full-width">
-          <div className="example-footer__navbar">
-            <Link className="example-footer__link" href="#">
-              © Gemeente Rotterdam 2021
-            </Link>
-            <Link className="example-footer__link" href="#">
-              Vacatures
-            </Link>
-            <Link className="example-footer__link" href="#">
-              Corona
-            </Link>
-            <Link className="example-footer__link" href="#">
-              Cookies
-            </Link>
-            <Link className="example-footer__link" href="#">
-              Proclaimer
-            </Link>
-            <Link className="example-footer__link" href="#">
-              Privacy
-            </Link>
-            <Link className="example-footer__link" href="#">
-              Toegankelijkheid
-            </Link>
-          </div>
+          <NavBar className="rods-footer__navbar">
+            <NavList>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                © Gemeente Rotterdam 2021
+              </NavListLink>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                Vacatures
+              </NavListLink>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                Corona
+              </NavListLink>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                Cookies
+              </NavListLink>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                Proclaimer
+              </NavListLink>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                Privacy
+              </NavListLink>
+              <NavListLink className="rods-footer__nav-list-link" href="#">
+                Toegankelijkheid
+              </NavListLink>
+            </NavList>
+          </NavBar>
           <div>
             <RodsLogoImage />
           </div>
