@@ -302,7 +302,15 @@ export const Default: Story = {
           </section>
         </div>
         <footer className="example-footer rods-grid__full-width">
-          <div className="example-footer__navbar">navbar links</div>
+          <div className="example-footer__navbar">
+            <Link>© Gemeente Rotterdam 2021</Link>
+            <Link>Vacatures</Link>
+            <Link>Corona</Link>
+            <Link>Cookies</Link>
+            <Link>Proclaimer</Link>
+            <Link>Privacy</Link>
+            <Link>Toegankelijkheid</Link>
+          </div>
           <div>
             <RodsLogoImage />
           </div>
