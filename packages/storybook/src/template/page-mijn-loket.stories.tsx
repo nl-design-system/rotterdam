@@ -26,12 +26,13 @@ import {
 import { Meta, StoryObj } from '@storybook/react';
 import '@gemeente-rotterdam/components-css/grid/index.scss';
 import './index.scss';
-import { Heading1 } from '@utrecht/component-library-react';
 import {
   BadgeCounter,
   BreadcrumbNav,
   BreadcrumbNavLink,
   BreadcrumbNavSeparator,
+  Heading1,
+  Heading2,
   Link,
   LinkList,
   NavBar,
@@ -39,12 +40,17 @@ import {
   NavListLink,
   PageHeader,
   Paragraph,
+  PreserveData,
 } from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
   title: 'Template/Mijn Loket',
   id: 'template-mijn-loket',
   parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/hQPGq7PNYv3RvBdzSeqKf2/?node-id=810-3078',
+    },
     layout: 'fullscreen',
   },
   decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
@@ -56,7 +62,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <div {...args} style={{ containerType: 'inline-size' }}>
+    <div {...args} className="example-page" style={{ containerType: 'inline-size' }}>
       <PageHeader>
         <div className="example-page-header__top-bar">
           <Link href="#" className="utrecht-link--backlink utrecht-link--with-icon">
@@ -86,7 +92,9 @@ export const Default: Story = {
           </NavBar>
         </div>
         <div className="example-page-header__content">
-          <RodsLogoImage className="example-page-header__logo" />
+          <Link boxContent href="#" aria-label="homepage">
+            <RodsLogoImage className="example-page-header__logo" aria-label="logo gemeente Rotterdam" role="img" />
+          </Link>
           <div className="utrecht-nav-bar utrecht-nav-bar--button-menu">
             <NavList>
               <NavListLink href="#">
@@ -104,7 +112,7 @@ export const Default: Story = {
       <div className="rods-grid">
         <div className="rods-grid__one-fourth"></div>
         <div className="rods-grid__two-third">
-          <BreadcrumbNav>
+          <BreadcrumbNav label="Kruimelpad">
             <BreadcrumbNavLink href="/" rel="home" index={0}>
               Home
             </BreadcrumbNavLink>
@@ -177,7 +185,9 @@ export const Default: Story = {
         </div>
         <div className={'rods-grid__two-third rods-grid--margin-block-start'}>
           <section className="example-section">
-            <Heading1>Hallo mevrouw van Bergenhenegouwen</Heading1>
+            <Heading1>
+              Hallo mevrouw <PreserveData>Van Bergenhenegouwen</PreserveData>
+            </Heading1>
             <Paragraph>
               Via Mijn Loket kunt u veel zelf regelen met de gemeente. Bijvoorbeeld een afspraak maken om uw paspoort te
               verlengen, of een subsidie aanvraag indienen. U kunt ook zien welke dingen u nog moet regelen of die wij
@@ -185,7 +195,7 @@ export const Default: Story = {
             </Paragraph>
           </section>
           <section className="example-section">
-            <h2>Wat moet ik regelen</h2>
+            <Heading2>Wat moet ik regelen</Heading2>
             <div>
               <ActionSingle
                 dateTime="2023-09-30T19:47:36.593Z"
@@ -232,7 +242,7 @@ export const Default: Story = {
             </div>
           </section>
           <section className="example-section">
-            <h2>Zelf regelen</h2>
+            <Heading2>Zelf regelen</Heading2>
             <div className="example-card-group">
               <div className="example-card">
                 <div className="example-card__icon">
@@ -293,7 +303,7 @@ export const Default: Story = {
           <div className="example-footer__nav-bar">
             <NavBar>
               <NavList>
-                <NavListLink href="#">© Gemeente Rotterdam 2021</NavListLink>
+                <NavListLink href="#">© Gemeente Rotterdam 2023</NavListLink>
                 <NavListLink href="#">Vacatures</NavListLink>
                 <NavListLink href="#">Corona</NavListLink>
                 <NavListLink href="#">Cookies</NavListLink>
