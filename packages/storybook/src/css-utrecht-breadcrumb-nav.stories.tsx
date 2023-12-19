@@ -28,6 +28,7 @@ const meta = {
   },
   tags: ['autodocs'],
   parameters: {
+    bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fbreadcrumb-nav',
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=501-18760',
