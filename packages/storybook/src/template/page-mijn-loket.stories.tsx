@@ -46,18 +46,6 @@ const meta = {
   id: 'template-mijn-loket',
   parameters: {
     layout: 'fullscreen',
-    viewport: {
-      viewports: {
-        desktop: {
-          name: 'Desktop',
-          styles: {
-            width: '1280px',
-            height: '1528px',
-          },
-        },
-      },
-      defaultViewport: 'desktop',
-    },
   },
   decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
 } satisfies Meta;
@@ -302,31 +290,19 @@ export const Default: Story = {
           </section>
         </div>
         <footer className="example-footer rods-grid__full-width">
-          <NavBar className="rods-footer__navbar">
-            <NavList>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                © Gemeente Rotterdam 2021
-              </NavListLink>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                Vacatures
-              </NavListLink>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                Corona
-              </NavListLink>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                Cookies
-              </NavListLink>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                Proclaimer
-              </NavListLink>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                Privacy
-              </NavListLink>
-              <NavListLink className="rods-footer__nav-list-link" href="#">
-                Toegankelijkheid
-              </NavListLink>
-            </NavList>
-          </NavBar>
+          <div className="example-footer__nav-bar">
+            <NavBar>
+              <NavList>
+                <NavListLink href="#">© Gemeente Rotterdam 2021</NavListLink>
+                <NavListLink href="#">Vacatures</NavListLink>
+                <NavListLink href="#">Corona</NavListLink>
+                <NavListLink href="#">Cookies</NavListLink>
+                <NavListLink href="#">Proclaimer</NavListLink>
+                <NavListLink href="#">Privacy</NavListLink>
+                <NavListLink href="#">Toegankelijkheid</NavListLink>
+              </NavList>
+            </NavBar>
+          </div>
           <div>
             <RodsLogoImage />
           </div>

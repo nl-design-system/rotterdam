@@ -113,17 +113,38 @@ rods-logo-image {
   padding-block-start: 1.5rem;
 }
 
-.rods-footer__navbar {
-  align-items: center;
-  display: flex;
+.rods-theme {
+  /* TODO: decide underline offset value in design system. 0.1578em is copied from gov.uk */
+  --utrecht-link-text-underline-offset: max(2px, 0.1578em);
 }
 
-.rods-footer__nav-list-link {
+.example-footer__nav-bar {
   --utrecht-link-color: var(--rods-color-gray-tint-11);
+  --utrecht-link-text-decoration: underline;
   --utrecht-link-hover-color: var(--rods-color-base-green);
+  --utrecht-nav-bar-min-block-size: 48px;
+  --utrecht-nav-bar-link-padding-inline-start: 8px;
+  --utrecht-nav-bar-link-padding-inline-end: 8px;
 
-  font-size: 12px;
-  padding-inline-end: 16px;
+  align-items: center;
+  display: flex;
+  font-size: var(--rods-typography-scale-sm-font-size);
+
+  .utrecht-nav-list__link {
+    /* unfortunately `text-decoration` is hardcoded in the Utrecht nav-bar component for `utrecht-nav-list` */
+    --utrecht-link-text-decoration: underline;
+
+    box-sizing: border-box;
+    min-block-size: 48px;
+    min-inline-size: 48px;
+  }
+  .utrecht-nav-list__item:first-of-type {
+    --utrecht-nav-bar-link-padding-inline-start: 0;
+  }
+
+  .utrecht-nav-list__item:last-of-type {
+    --utrecht-nav-bar-link-padding-inline-end: 0;
+  }
 }
 
 .example-nav-list__divider {
