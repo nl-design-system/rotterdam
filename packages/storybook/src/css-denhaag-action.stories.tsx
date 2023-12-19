@@ -6,7 +6,7 @@ import readme from './action.md?raw';
 
 const meta = {
   title: 'CSS Component/Action',
-  id: 'css-denhaag-Action',
+  id: 'css-denhaag-action',
   component: ActionSingle,
   argTypes: {
     defaultValue: {
@@ -40,8 +40,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  name: 'Action',
+  name: 'Single action',
   args: {
-    children: <strong>Taak</strong>,
+    dateTime: '2023-09-30T19:47:36.593Z',
+    labels: {
+      approachingDeadline: () => 'nog 2 dagen',
+      before: 'vóór',
+      today: 'vandaag',
+      yesterday: 'gisteren',
+    },
+    link: '#',
+    now: '2023-09-28T19:47:36.593Z',
+    relativeDate: true,
+    children: <strong>Betaal uw parkeerbon van €68,90</strong>,
   },
 };
