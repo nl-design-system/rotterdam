@@ -36,6 +36,7 @@ const meta = {
   },
   tags: ['autodocs'],
   parameters: {
+    bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fstatus-badge',
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=6359-9671',

@@ -23,6 +23,7 @@ const meta = {
   },
   tags: ['autodocs'],
   parameters: {
+    bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fnav-bar',
     docs: {
       description: {
         component: readme,
