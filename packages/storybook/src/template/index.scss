@@ -136,6 +136,8 @@ rods-logo-image {
   --utrecht-link-text-underline-offset: max(2px, 0.1578em);
   --denhaag-sidenav-item-font-family: var(--utrecht-document-font-family);
   --denhaag-focus-border: var(--utrecht-focus-outline-width) solid var(--utrecht-focus-outline-color);
+  --denhaag-action-warning-icon-color: currentColor;
+  --denhaag-action-link-icon-color: var(--rods-color-base-green);
 }
 
 .example-footer__nav-bar {
@@ -230,10 +232,17 @@ rods-logo-image {
 
 /* Den haag component overrides */
 .denhaag-action__warning-icon {
+  --utrecht-icon-color: currentColor;
+  --utrecht-icon-inverse-color: Canvas;
+
   g,
   path:not([stroke="#fff"]) {
-    fill: currentColor !important;
-    stroke: currentColor !important;
+    fill: var(--utrecht-icon-color);
+    stroke: var(--utrecht-icon-color);
+  }
+
+  path[stroke="#fff"] {
+    stroke: var(--utrecht-icon-inverse-color) !important;
   }
 }
 
@@ -246,4 +255,15 @@ rods-logo-image {
 
 .rods-grid--margin-block-start {
   margin-block-start: var(--rods-space-scale-3);
+}
+
+@media screen and (forced-colors: active) {
+  .rods-theme {
+    --rods-logo-image-color: currentColor;
+  }
+
+  .utrecht-nav-bar {
+    border-block-end: 0;
+    border-block-start: 0;
+  }
 }
