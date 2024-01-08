@@ -10,6 +10,7 @@ import {
   RadioButton,
 } from '@utrecht/component-library-react/dist/css-module';
 import readme from './radio-group.md?raw';
+import '@gemeente-rotterdam/components-css/radio-group/index.scss';
 
 const meta = {
   title: 'CSS Component/Radio-group',
@@ -48,7 +49,7 @@ export const Default: Story = {
   args: {
     children: [
       <FieldsetLegend>Choose your option</FieldsetLegend>,
-      <FormField type="radio">
+      <FormField className="rods-form-field" type="radio">
         <Paragraph className="utrecht-form-field__label utrecht-form-field__label--radio">
           <FormLabel htmlFor="800b7f3f-5048-4dcc-8f23-d04fa6ca4199" type="radio">
             <RadioButton
@@ -61,7 +62,7 @@ export const Default: Story = {
           </FormLabel>
         </Paragraph>
       </FormField>,
-      <FormField type="radio">
+      <FormField className="rods-form-field" type="radio">
         <Paragraph className="utrecht-form-field__label utrecht-form-field__label--radio">
           <FormLabel htmlFor="fbc03e63-42c2-46e3-9acc-183fa64c6dcd" type="radio">
             <RadioButton
@@ -74,7 +75,7 @@ export const Default: Story = {
           </FormLabel>
         </Paragraph>
       </FormField>,
-      <FormField type="radio">
+      <FormField className="rods-form-field" type="radio">
         <Paragraph className="utrecht-form-field__label utrecht-form-field__label--radio">
           <FormLabel htmlFor="62824075-bcc1-4563-a97b-78d1eae3544f" type="radio">
             <RadioButton
