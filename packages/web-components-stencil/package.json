@@ -37,8 +37,8 @@
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/icon": "workspace:*",
     "@stencil/react-output-target": "0.5.3",
-    "@stencil/sass": "3.0.8",
-    "@types/jest": "29.5.11",
+    "@stencil/sass": "3.0.9",
+    "@types/jest": "29.5.12",
     "@utrecht/components": "3.0.0",
     "chokidar-cli": "3.0.0",
     "node-sass-package-importer": "5.3.3",
@@ -48,6 +48,6 @@
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "@stencil/core": "4.10.0"
+    "@stencil/core": "4.12.0"
   }
 }
