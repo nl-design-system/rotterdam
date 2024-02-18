@@ -1,0 +1,5 @@
+/**
+ * @license EUPL-1.2
+ * Copyright (c) 2023 Rotterdam
+ * Copyright (c) 2023 Frameless B.V.
+ */.rods-table__header-cell{border-block-end-style:solid}.rods-table-footer{font-weight:700}.utrecht-table--row-hover{--rods-table-row-hover-background-color: #eff4f6;--rods-table-row-hover-color: #404b4f}.utrecht-table--row-hover .utrecht-table__body .utrecht-table__row:hover .utrecht-table__cell{background-color:var(--rods-table-row-hover-background-color, var(--utrecht-table-cell-background-color));color:var(--rods-table-row-hover-color, var(--utrecht-table-cell-color))}
