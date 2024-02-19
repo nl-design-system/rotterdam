@@ -21,7 +21,7 @@ This example is using the [unpkg.com CDN](unpkg.com) for prototyping. This is a 
 Include the Design Token CSS variables:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/@rotterdam/design-tokens/dist/index.css" />
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@gemeente-rotterdam/design-tokens/dist/index.css" />
 ```
 
 Combine it with the CSS packages from the NL Design System community:
@@ -43,8 +43,8 @@ Combine it with the CSS packages from the NL Design System community:
 And use the [code snipped provided in Storybook](http://localhost:6006/?path=/docs/css-utrecht-button--docs) to get the identical component in code:
 
 ```html
-<!-- Set the rotterdam-theme to include Rotterdam styling for all NL Design System components -->
-<body class="rotterdam-theme">
+<!-- Set the rods-theme to include Rotterdam styling for all NL Design System components -->
+<body class="rods-theme">
   <!-- Include component from Utrecht, Den Haag, Rotterdam or other community library -->
   <button class="utrecht-button" type="button">Label</button>
 </body>
@@ -54,7 +54,7 @@ Here's a complete example:
 
 ```html
 <!doctype html>
-<html class="rotterdam-theme">
+<html class="rods-theme">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css/dist/index.css" />
