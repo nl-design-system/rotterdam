@@ -23,7 +23,7 @@
     "@babel/core": "7.24.0",
     "@babel/preset-env": "7.24.0",
     "@babel/preset-react": "7.23.3",
-    "@babel/preset-typescript": "7.23.3",
+    "@babel/preset-typescript": "7.24.1",
     "@etchteam/storybook-addon-status": "4.2.4",
     "@gemeente-denhaag/action": "0.1.1-alpha.47",
     "@gemeente-denhaag/sidenav": "0.1.0-alpha.199",
