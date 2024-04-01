@@ -31,7 +31,7 @@
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
     "@types/node": "20.11.26",
     "@types/react": "18.2.65",
-    "@types/react-dom": "18.2.21",
+    "@types/react-dom": "18.2.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rimraf": "5.0.5",
