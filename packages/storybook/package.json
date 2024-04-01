@@ -72,6 +72,6 @@
     "webpack": "5.90.3"
   },
   "dependencies": {
-    "@storybook/addon-designs": "7.0.9"
+    "@storybook/addon-designs": "8.0.0"
   }
 }
