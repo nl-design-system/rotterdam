@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "clsx": "2.1.0",
-    "date-fns": "3.4.0",
+    "date-fns": "3.6.0",
     "lodash.chunk": "4.2.0"
   },
   "devDependencies": {
