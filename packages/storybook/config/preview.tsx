@@ -1,18 +1,18 @@
+import '@gemeente-rotterdam/design-tokens/dist/index.css';
+import '@gemeente-rotterdam/font/src/index.scss';
 import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
-import { withThemeByClassName } from '@storybook/addon-styling';
+import { withThemeByClassName } from '@storybook/addon-themes';
 import { Controls, Description, Primary, Stories } from '@storybook/blocks';
 import type { Preview } from '@storybook/react';
 import { ButtonGroup, Document } from '@utrecht/component-library-react/dist/css-module';
 import { FigmaBlock } from './FigmaBlock';
 import { GitHubBlock } from './GitHubBlock';
-import '@gemeente-rotterdam/design-tokens/dist/index.css';
-import '@gemeente-rotterdam/font/src/index.scss';
 
 defineCustomElements();
 
 const preview: Preview = {
   decorators: [
-    (withThemeByClassName as any)({
+    withThemeByClassName({
       themes: {
         Rotterdam: 'rods-theme',
         'Rotterdam dark color scheme': 'rods-theme rods-theme--media-query-color-scheme-dark',
@@ -36,34 +36,6 @@ const preview: Preview = {
             <Stories />
           </>
         );
-      },
-    },
-    status: {
-      statuses: {
-        PRODUCTION: {
-          background: '#088008',
-          color: '#ffffff',
-          description:
-            'Used in production in a variety of situations, well tested, stable APIs, mostly patches and minor releases.',
-        },
-        BETA: {
-          background: '#3065ee',
-          color: '#ffffff',
-          description:
-            'Used in production in a specific situation, evolving APIs based on feedback, breaking changes are still likely.',
-        },
-        ALPHA: {
-          background: '#e0bc2e',
-          color: '#000000',
-          description:
-            'Used in prototypes and in projects that are still in development, breaking changes occur frequently and are not communicated.',
-        },
-        'WORK IN PROGRESS': {
-          background: '#cc0000',
-          color: '#ffffff',
-          description:
-            'Do not use in production. Does not follow semantic versioning and any published packages are for internal use only.',
-        },
       },
     },
     options: {
