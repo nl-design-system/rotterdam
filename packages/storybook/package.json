@@ -29,7 +29,7 @@
     "@gemeente-rotterdam/icon": "workspace:*",
     "@gemeente-rotterdam/web-components-react": "workspace:*",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
-    "@storybook/addon-a11y": "8.0.8",
+    "@storybook/addon-a11y": "8.0.10",
     "@storybook/addon-actions": "8.0.8",
     "@storybook/addon-designs": "8.0.0",
     "@storybook/addon-docs": "8.0.8",
