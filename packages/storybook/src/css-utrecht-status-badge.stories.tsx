@@ -19,15 +19,25 @@ const meta = {
     },
     className: {
       name: 'Appearance',
-      control: 'select',
-      options: {
-        'Light blue': 'utrecht-status-badge--rods-light-yellow',
-        Blue: 'utrecht-status-badge--rods-blue',
-        'Dark blue': 'utrecht-status-badge--rods-dark-blue',
-        'Green blue': 'utrecht-status-badge--rods-green-blue',
-        Red: 'utrecht-status-badge--rods-red',
-        'Dark yellow': 'utrecht-status-badge--rods-dark-yellow',
+      control: {
+        type: 'select',
+        labels: {
+          'Light blue': 'utrecht-status-badge--rods-light-yellow',
+          Blue: 'utrecht-status-badge--rods-blue',
+          'Dark blue': 'utrecht-status-badge--rods-dark-blue',
+          'Green blue': 'utrecht-status-badge--rods-green-blue',
+          Red: 'utrecht-status-badge--rods-red',
+          'Dark yellow': 'utrecht-status-badge--rods-dark-yellow',
+        },
       },
+      options: [
+        'utrecht-status-badge--rods-light-yellow',
+        'utrecht-status-badge--rods-blue',
+        'utrecht-status-badge--rods-dark-blue',
+        'utrecht-status-badge--rods-green-blue',
+        'utrecht-status-badge--rods-red',
+        'utrecht-status-badge--rods-dark-yellow',
+      ],
     },
   },
   args: {
