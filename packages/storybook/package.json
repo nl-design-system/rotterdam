@@ -20,7 +20,7 @@
     "start": "http-server dist/"
   },
   "devDependencies": {
-    "@gemeente-denhaag/action": "0.1.1-alpha.59",
+    "@gemeente-denhaag/action": "0.1.1-alpha.61",
     "@gemeente-denhaag/sidenav": "0.1.0-alpha.211",
     "@gemeente-rotterdam/assets": "workspace:*",
     "@gemeente-rotterdam/components-css": "workspace:*",
