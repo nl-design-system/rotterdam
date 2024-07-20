@@ -1,0 +1,21 @@
+@import "~@utrecht/breadcrumb-nav-css/src/mixin";
+
+.breadcrumb {
+  @include utrecht-breadcrumb-nav;
+  @include utrecht-breadcrumb-nav__list;
+}
+
+.breadcrumb-item {
+  @include utrecht-breadcrumb-nav__item;
+  @include utrecht-breadcrumb-nav__link;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-inline-start: 0;
+}
+
+.breadcrumb-item::before {
+  @include utrecht-breadcrumb-nav__separator;
+
+  text-decoration: none;
+}

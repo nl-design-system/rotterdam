@@ -8,13 +8,21 @@
     "nl-design-system"
   ],
   "private": true,
+  "scripts": {
+    "build": "rollup --config ./rollup.config.mjs",
+    "clean": "rimraf dist"
+  },
   "devDependencies": {
     "@babel/core": "7.25.2",
     "@mdx-js/react": "3.0.1",
     "@storybook/addon-docs": "8.2.6",
     "@types/react": "18.3.3",
-    "react": "18.3.1",
+    "postcss-discard-duplicates": "7.0.0",
     "react-dom": "18.3.1",
+    "react": "18.3.1",
+    "rimraf": "5.0.7",
+    "rollup-plugin-postcss": "4.0.2",
+    "rollup": "4.18.0",
     "typescript": "5.5.4",
     "webpack": "5.93.0"
   },
