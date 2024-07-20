@@ -1,0 +1,34 @@
+@mixin utrecht-badge--rods-light-blue {
+  --utrecht-badge-background-color: var(--rods-status-badge-light-blue-background-color);
+  --utrecht-badge-color: var(--rods-status-badge-light-blue-color);
+}
+
+@mixin utrecht-badge--rods-blue {
+  --utrecht-badge-background-color: var(--rods-status-badge-blue-background-color);
+  --utrecht-badge-color: var(--rods-status-badge-blue-color);
+}
+
+@mixin utrecht-badge--rods-dark-blue {
+  --utrecht-badge-background-color: var(--rods-status-badge-dark-blue-background-color);
+  --utrecht-badge-color: var(--rods-status-badge-dark-blue-color);
+}
+
+@mixin utrecht-badge--rods-green-blue {
+  --utrecht-badge-background-color: var(--rods-status-badge-green-blue-background-color);
+  --utrecht-badge-color: var(--rods-status-badge-green-blue-color);
+}
+
+@mixin utrecht-badge--rods-red {
+  --utrecht-badge-background-color: var(--rods-status-badge-red-background-color);
+  --utrecht-badge-color: var(--rods-status-badge-red-color);
+}
+
+@mixin utrecht-badge--rods-dark-yellow {
+  --utrecht-badge-background-color: var(--rods-status-badge-dark-yellow-background-color);
+  --utrecht-badge-color: var(--rods-status-badge-dark-yellow-color);
+}
+
+@mixin utrecht-badge--rods-secondary {
+  --utrecht-badge-background-color: var(--rods-button-secondary-action-background-color);
+  --utrecht-badge-color: var(--rods-button-secondary-action-color);
+}

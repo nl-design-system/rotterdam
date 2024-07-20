@@ -1,0 +1,5 @@
+@import "~@utrecht/paragraph-css/src/mixin";
+
+p {
+  @include utrecht-paragraph;
+}
