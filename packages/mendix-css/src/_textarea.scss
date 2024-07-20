@@ -1,0 +1,6 @@
+@import "~@utrecht/textarea-css/src/mixin";
+
+.mx-textarea-input {
+  @include utrecht-textarea;
+  @include utrecht-textarea--html-textarea;
+}
