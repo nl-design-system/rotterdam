@@ -1,0 +1,6 @@
+@import "~@utrecht/custom-checkbox-css/src/mixin";
+
+input[type="checkbox" i] {
+  @include utrecht-custom-checkbox;
+  @include utrecht-custom-checkbox--html-input;
+}

@@ -1,0 +1,404 @@
+/* stylelint-disable */
+
+/* The following file imports a hardcoded variable, which causes issues.
+ * We will import all of its dependencies manually, so we can override the variable before it is used;
+ */
+/* @import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/main";*/
+
+$font-family-import-initial: $font-family-import;
+
+/* Default variables */
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/exclusion-variables-defaults";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/../../../theme/web/exclusion-variables";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/generated-exclusion-variables";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/variables";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/variables-css-mappings";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/../../../theme/web/custom-variables";
+
+$font-family-import: $font-family-import-initial;
+
+/* Font Family Import */
+@if $font-family-import != false {
+  @import url($font-family-import);
+}
+
+/*=============================== Bootstrap ================================*/
+
+/* Utilities */
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/_legacy/bootstrap/bootstrap";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/_legacy/bootstrap/bootstrap-rtl";
+@if not $exclude-bootstrap {
+  @include bootstrap();
+  @include bootstrap-rtl();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/_legacy/mxui";
+@if not $exclude-mxui {
+  @include mxui();
+}
+
+/*================================== CORE ==================================*/
+
+/* Base */
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/mixins/animations";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/mixins/spacing";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/mixins/layout-spacing";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/mixins/buttons";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/mixins/groupbox";
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/animation";
+@if not $exclude-animations {
+  @include animations();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/flex";
+@if not $exclude-flex {
+  @include flex();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/spacing";
+@if not $exclude-spacing {
+  @include spacing();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/base";
+@if not $exclude-base {
+  @include base();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/base/login";
+@if not $exclude-login {
+  @include login();
+}
+
+/* Widgets */
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/input";
+@if not $exclude-input {
+  @include input();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/background";
+@if not $exclude-background-helpers {
+  @include background-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/label";
+@if not $exclude-label {
+  @include label();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/badge";
+@if not $exclude-badge {
+  @include badge();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/label";
+@if not $exclude-label and not $exclude-label-helpers {
+  @include label-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/badge-button";
+@if not $exclude-badge-button {
+  @include badge-button();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/badge-button";
+@if not $exclude-badge-button and not $exclude-badge-button-helpers {
+  @include badge-button-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/button";
+@if not $exclude-button {
+  @include button();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/button";
+@if not $exclude-button and not $exclude-button-helpers {
+  @include button-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/check-box";
+@if not $exclude-check-box {
+  @include check-box();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/grid";
+@if not $exclude-grid {
+  @include grid();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/data-grid";
+@if not $exclude-data-grid {
+  @include data-grid();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/data-grid";
+@if not $exclude-data-grid and not $exclude-data-grid-helpers {
+  @include data-grid-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/data-view";
+@if not $exclude-data-view {
+  @include data-view();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/date-picker";
+@if not $exclude-data-picker {
+  @include date-picker();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/header";
+@if not $exclude-header {
+  @include header();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/glyphicon";
+@if not $exclude-glyphicon {
+  @include glyphicon();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/group-box";
+@if not $exclude-group-box {
+  @include group-box();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/group-box";
+@if not $exclude-group-box and not $exclude-group-box-helpers {
+  @include group-box-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/image";
+@if not $exclude-image-helpers {
+  @include image-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/list-view";
+@if not $exclude-list-view {
+  @include list-view();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/list-view";
+@if not $exclude-list-view and not $exclude-list-view-helpers {
+  @include list-view-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/modal";
+@if not $exclude-modal {
+  @include modal();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/navigation-bar";
+@if not $exclude-navigation-bar {
+  @include navigation-bar();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/navigation-bar";
+@if not $exclude-navigation-bar and not $exclude-navigation-bar-helpers {
+  @include navigation-bar-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/navigation-list";
+@if not $exclude-navigation-list {
+  @include navigation-list();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/navigation-tree";
+@if not $exclude-navigation-tree {
+  @include navigation-tree();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/navigation-tree";
+@if not $exclude-navigation-tree and not $exclude-navigation-tree-helpers {
+  @include navigation-tree-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/pop-up-menu";
+@if not $exclude-pop-up-menu {
+  @include pop-up-menu();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/simple-menu-bar";
+@if not $exclude-simple-menu-bar {
+  @include simple-menu-bar();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/simple-menu-bar";
+@if not $exclude-simple-menu-bar and not $exclude-simple-menu-bar-helpers {
+  @include simple-menu-bar-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/radio-button";
+@if not $exclude-radio-button {
+  @include radio-button();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/scroll-container-react";
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/scroll-container-dojo";
+@if not $exclude-scroll-container {
+  @if $use-modern-client {
+    @include scroll-container-react();
+  } @else  {
+    @include scroll-container-dojo();
+  }
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/tab-container";
+@if not $exclude-tab-container {
+  @include tab-container();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/tab-container";
+@if not $exclude-tab-container and not $exclude-tab-container-helpers {
+  @include tab-container-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/table";
+@if not $exclude-table {
+  @include table();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/table";
+@if not $exclude-table and not $exclude-table-helpers {
+  @include table-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/template-grid";
+@if not $exclude-template-grid {
+  @include template-grid();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/template-grid";
+@if not $exclude-template-grid and not $exclude-template-grid-helpers {
+  @include template-grid-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/typography";
+@if not $exclude-typography {
+  @include typography();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/typography";
+@if not $exclude-typography and not $exclude-typography-helpers {
+  @include typography-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/layout-grid";
+@if not $exclude-layout-grid {
+  @include layout-grid();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/pagination";
+@if not $exclude-pagination {
+  @include pagination();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/progress";
+@if not $exclude-progress {
+  @include progress();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/progress-bar";
+@if not $exclude-progress-bar {
+  @include progress-bar();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/progress-bar";
+@if not $exclude-progress-bar and not $exclude-progress-bar-helpers {
+  @include progress-bar-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/progress-circle";
+@if not $exclude-progress-circle {
+  @include progress-circle();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/progress-circle";
+@if not $exclude-progress-circle and not $exclude-progress-circle-helpers {
+  @include progress-circle-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/rating";
+@if not $exclude-rating {
+  @include rating();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/rating";
+@if not $exclude-rating and not $exclude-rating-helpers {
+  @include rating-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/range-slider";
+@if not $exclude-range-slider {
+  @include range-slider();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/range-slider";
+@if not $exclude-range-slider and not $exclude-range-slider-helpers {
+  @include range-slider-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/slider";
+@if not $exclude-slider {
+  @include slider();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/slider";
+@if not $exclude-slider and not $exclude-slider-helpers {
+  @include slider-helpers();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/timeline";
+@if not $exclude-timeline {
+  @include timeline();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/tooltip";
+@if not $exclude-tooltip {
+  @include tooltip();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/helper-classes";
+@if not $exclude-helper-classes {
+  @include helper-classes();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/barcode-scanner";
+@if not $exclude-barcode-scanner {
+  @include barcode-scanner();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/accordion";
+@if not $exclude-accordion {
+  @include accordion();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/helpers/accordion";
+@if not $exclude-accordion and not $exclude-accordion-helpers {
+  @include accordion-helpers();
+}
+
+/* Custom widgets */
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgetscustom/dijit-widget";
+@if not $exclude-custom-dijit-widget {
+  @include dijit-widget();
+}
+
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/core/widgets/switch";
+@if not $exclude-custom-switch {
+  @include switch();
+}
+
+/*================================= CUSTOM =================================*/
+
+/* Layouts */
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/layouts/layout-atlas";
+@if not $exclude-layout-atlas {
+  @include layout-atlas();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/layouts/layout-atlas-phone";
+@if not $exclude-layout-atlas-phone {
+  @include layout-atlas-phone();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/layouts/layout-atlas-responsive";
+@if not $exclude-layout-atlas-responsive {
+  @include layout-atlas-responsive();
+}
+@import "~@mendix/atlas/packages/atlas/src/themesource/atlas_core/web/layouts/layout-atlas-tablet";
+@if not $exclude-layout-atlas-tablet {
+  @include layout-atlas-tablet();
+}
