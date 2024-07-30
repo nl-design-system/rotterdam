@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git+ssh",
-    "url": "git@github.com:nl-design-system/rotterdam.git"
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "wicket/components-wicket"
   },
   "scripts": {},
   "devDependencies": {

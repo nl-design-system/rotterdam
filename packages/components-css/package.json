@@ -1,9 +1,9 @@
 {
+  "name": "@gemeente-rotterdam/components-css",
   "version": "1.0.0-alpha.0",
   "author": "Community for NL Design System",
   "description": "CSS Components for a design system based on the NL Design System architecture",
   "license": "EUPL-1.2",
-  "name": "@gemeente-rotterdam/components-css",
   "keywords": [
     "nl-design-system"
   ],
@@ -17,5 +17,10 @@
     "react-dom": "18.3.1",
     "typescript": "5.5.4",
     "webpack": "5.93.0"
+  },
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam",
+    "directory": "packages/components-css"
   }
 }
