@@ -144,7 +144,7 @@ jobs:
         run: pnpm run --if-present build
 
       - name: Publish to Chromatic
-        uses: chromaui/action@fa68b990eaee8aa67857557651a1953a8eb6d70b # v11.5.3
+        uses: chromaui/action@b984808b772126a9f44b2b7737b131b68a2ede32 # v11.7.1
         if: github.event.pull_request.draft == false
         with:
           autoAcceptChanges: main
