@@ -39,7 +39,7 @@
     "@stencil/react-output-target": "0.5.3",
     "@stencil/sass": "3.0.12",
     "@types/jest": "29.5.12",
-    "@utrecht/components": "4.0.0",
+    "@utrecht/components": "7.1.0",
     "chokidar-cli": "3.0.0",
     "node-sass-package-importer": "5.3.3",
     "npm-run-all": "4.1.5",
