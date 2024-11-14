@@ -45,13 +45,12 @@
                             <nodeVersion>v20.12.2</nodeVersion>
                         </configuration>
                     </execution>
-                    <!-- Run npm install -->
                     <execution>
                         <id>npm-install</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
-                        <phase>generate-sources</phase> <!-- Executes in the generate-resources phase -->
+                        <phase>generate-sources</phase>
                         <configuration>
                             <arguments>install</arguments>
                         </configuration>
@@ -117,6 +116,5 @@
                 </excludes>
             </resource>
         </resources>
-
     </build>
 </project>
