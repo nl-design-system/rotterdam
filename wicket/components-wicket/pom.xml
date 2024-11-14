@@ -37,7 +37,7 @@
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
-                        <phase>generate-sources</phase> <!-- Executes in the generate-resources phase -->
+                         <phase>generate-sources</phase>
                         <configuration>
                             <!-- todo should use .nvmrc but seems to be not possible yet
                             https://github.com/eirslett/frontend-maven-plugin/issues/1047
