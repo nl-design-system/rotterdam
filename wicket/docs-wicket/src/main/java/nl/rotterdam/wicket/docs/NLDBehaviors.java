@@ -2,6 +2,7 @@ package nl.rotterdam.wicket.docs;
 
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
+import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 
 public class NLDBehaviors {
@@ -9,12 +10,17 @@ public class NLDBehaviors {
     public static Behavior heading1() {
         return new Behavior() {
 
+            private static final MetaDataKey<Boolean> behaviorAddedKey = new MetaDataKey<>() { };
+
             @Override
             public void onConfigure(Component component) {
                 super.onConfigure(component);
 
-                // TODO: do this only once per component
-                component.add(AttributeModifier.append("class", "utrecht-heading-1"));
+                Boolean metaData = component.getMetaData(behaviorAddedKey);
+                if (metaData == null) {
+                    component.add(AttributeModifier.append("class", "utrecht-heading-1"));
+                    component.setMetaData(behaviorAddedKey, true);
+                }
             }
         };
     }
