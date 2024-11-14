@@ -7,17 +7,17 @@ import org.apache.wicket.model.Model;
 
 // import nl.utrecht.components.UtrechtUnorderedList;
 
-public class Components extends BasePage {
+public class ComponentsPage extends BasePage {
 
-    public Components() {
-        add(new Label(TITLE_ID, "Components · Apache Wicket · Rotterdam Design System"));
+    public ComponentsPage() {
+        add(new Label(TITLE_ID, "ComponentsPage · Apache Wicket · Rotterdam Design System"));
 
         add(new WebMarkupContainer("heading") {
             @Override
             protected void onInitialize() {
                 super.onInitialize();
                 add(NLDBehaviors.heading1());
-                add(new NonTranslatingLabel("name", Model.of("Robbert van Frameless")));
+                add(new NLDUntranslatableLabel("name", Model.of("Robbert van Frameless")));
             }
         });
 

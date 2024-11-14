@@ -8,9 +8,9 @@ import org.apache.wicket.model.IModel;
 /**
  *   mark text to be excluded for translation <bdi translate="no" class="utrecht-preserve-data" wicket:id="name">Van Bergenhenegouwen</bdi>
  */
-public class NonTranslatingLabel extends Label {
+public class NLDUntranslatableLabel extends Label {
 
-    public NonTranslatingLabel(String id, IModel<?> model) {
+    public NLDUntranslatableLabel(String id, IModel<?> model) {
         super(id, model);
     }
 
