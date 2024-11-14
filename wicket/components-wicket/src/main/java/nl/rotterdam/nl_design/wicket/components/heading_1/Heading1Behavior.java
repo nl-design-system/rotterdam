@@ -7,21 +7,21 @@ import org.apache.wicket.behavior.Behavior;
 
 public class Heading1Behavior {
 
-    public static Behavior heading1() {
-        return new Behavior() {
+  public static Behavior heading1() {
+    return new Behavior() {
+      private static final MetaDataKey<Boolean> behaviorAddedKey =
+        new MetaDataKey<>() {};
 
-            private static final MetaDataKey<Boolean> behaviorAddedKey = new MetaDataKey<>() { };
+      @Override
+      public void onConfigure(Component component) {
+        super.onConfigure(component);
 
-            @Override
-            public void onConfigure(Component component) {
-                super.onConfigure(component);
-
-                Boolean metaData = component.getMetaData(behaviorAddedKey);
-                if (metaData == null) {
-                    component.add(AttributeModifier.append("class", "utrecht-heading-1"));
-                    component.setMetaData(behaviorAddedKey, true);
-                }
-            }
-        };
-    }
+        Boolean metaData = component.getMetaData(behaviorAddedKey);
+        if (metaData == null) {
+          component.add(AttributeModifier.append("class", "utrecht-heading-1"));
+          component.setMetaData(behaviorAddedKey, true);
+        }
+      }
+    };
+  }
 }

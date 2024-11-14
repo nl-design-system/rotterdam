@@ -10,20 +10,20 @@ import org.apache.wicket.model.IModel;
  */
 public class NLDUntranslatableLabel extends Label {
 
-    public NLDUntranslatableLabel(String id, IModel<?> model) {
-        super(id, model);
-    }
+  public NLDUntranslatableLabel(String id, IModel<?> model) {
+    super(id, model);
+  }
 
-    @Override
-    protected void onComponentTag(ComponentTag tag) {
-        super.onComponentTag(tag);
-        tag.setName("bdi");
-    }
+  @Override
+  protected void onComponentTag(ComponentTag tag) {
+    super.onComponentTag(tag);
+    tag.setName("bdi");
+  }
 
-    @Override
-    protected void onInitialize() {
-        super.onInitialize();
-        add(AttributeModifier.replace("translate", "no"));
-        add(AttributeModifier.append("class", "utrecht-preserve-data"));
-    }
+  @Override
+  protected void onInitialize() {
+    super.onInitialize();
+    add(AttributeModifier.replace("translate", "no"));
+    add(AttributeModifier.append("class", "utrecht-preserve-data"));
+  }
 }

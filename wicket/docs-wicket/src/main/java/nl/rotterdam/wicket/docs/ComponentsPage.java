@@ -11,18 +11,30 @@ import org.apache.wicket.model.Model;
 
 public class ComponentsPage extends BasePage {
 
-    public ComponentsPage() {
-        add(new Label(TITLE_ID, "ComponentsPage · Apache Wicket · Rotterdam Design System"));
+  public ComponentsPage() {
+    add(
+      new Label(
+        TITLE_ID,
+        "ComponentsPage · Apache Wicket · Rotterdam Design System"
+      )
+    );
 
-        add(new WebMarkupContainer("heading") {
-            @Override
-            protected void onInitialize() {
-                super.onInitialize();
-                add(Heading1Behavior.heading1());
-                add(new NLDUntranslatableLabel("name", Model.of("Robbert van Frameless")));
-            }
-        });
+    add(
+      new WebMarkupContainer("heading") {
+        @Override
+        protected void onInitialize() {
+          super.onInitialize();
+          add(Heading1Behavior.heading1());
+          add(
+            new NLDUntranslatableLabel(
+              "name",
+              Model.of("Robbert van Frameless")
+            )
+          );
+        }
+      }
+    );
 
-        add(new UtrechtCodeBlock("code-block-example", Model.of("Reload Page")));
-    }
+    add(new UtrechtCodeBlock("code-block-example", Model.of("Reload Page")));
+  }
 }
