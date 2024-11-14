@@ -7,9 +7,12 @@
   "keywords": [
     "nl-design-system"
   ],
+  "exports": {
+    "./dist/*.css": "./dist/*.css"
+  },
   "private": true,
   "scripts": {
-    "build": "rimraf dist && rollup --config ./rollup.config.mjs",
+    "build": "rimraf dist && node patch.mjs && rollup --config ./rollup.config.mjs",
     "clean": "rimraf dist/*"
   },
   "devDependencies": {
