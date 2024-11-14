@@ -49,7 +49,7 @@ export const TextInput: Story = {
           <div className="mx-name-radioButtons5 mx-radiobuttons form-group no-columns">
             <label
               className="control-label"
-              for="31.Forms.Page1_TextInput.radioButtons5_rai_37"
+              htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37"
               id="31.Forms.Page1_TextInput.radioButtons5_rai_37-label"
             >
               Answer as single choice
@@ -67,7 +67,7 @@ export const TextInput: Story = {
                   name="31.Forms.Page1_TextInput.radioButtons5_rai_37"
                   value="Choice1"
                 />
-                <label for="31.Forms.Page1_TextInput.radioButtons5_rai_37_0">Choice 1</label>
+                <label htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37_0">Choice 1</label>
               </div>
               <div className="radio">
                 <input
@@ -75,9 +75,9 @@ export const TextInput: Story = {
                   id="31.Forms.Page1_TextInput.radioButtons5_rai_37_1"
                   name="31.Forms.Page1_TextInput.radioButtons5_rai_37"
                   value="Choice2"
-                  tabindex="-1"
+                  tabIndex={-1}
                 />
-                <label for="31.Forms.Page1_TextInput.radioButtons5_rai_37_1">Choice 2</label>
+                <label htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37_1">Choice 2</label>
               </div>
               <div className="radio">
                 <input
@@ -85,9 +85,9 @@ export const TextInput: Story = {
                   id="31.Forms.Page1_TextInput.radioButtons5_rai_37_2"
                   name="31.Forms.Page1_TextInput.radioButtons5_rai_37"
                   value="Choice3"
-                  tabindex="-1"
+                  tabIndex={-1}
                 />
-                <label for="31.Forms.Page1_TextInput.radioButtons5_rai_37_2">Choice 3</label>
+                <label htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37_2">Choice 3</label>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ export const DisabledTextarea: Story = {
           <div className="mx-name-radioButtons5 mx-radiobuttons form-group no-columns">
             <label
               className="control-label"
-              for="31.Forms.Page1_TextInput.radioButtons5_rai_37"
+              htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37"
               id="31.Forms.Page1_TextInput.radioButtons5_rai_37-label"
             >
               Answer as single choice
@@ -135,7 +135,7 @@ export const DisabledTextarea: Story = {
                   value="Choice1"
                   disabled
                 />
-                <label for="31.Forms.Page1_TextInput.radioButtons5_rai_37_0">Choice 1</label>
+                <label htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37_0">Choice 1</label>
               </div>
               <div className="radio">
                 <input
@@ -143,10 +143,10 @@ export const DisabledTextarea: Story = {
                   id="31.Forms.Page1_TextInput.radioButtons5_rai_37_1"
                   name="31.Forms.Page1_TextInput.radioButtons5_rai_37"
                   value="Choice2"
-                  tabindex="-1"
+                  tabIndex={-1}
                   disabled
                 />
-                <label for="31.Forms.Page1_TextInput.radioButtons5_rai_37_1">Choice 2</label>
+                <label htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37_1">Choice 2</label>
               </div>
               <div className="radio">
                 <input
@@ -154,10 +154,10 @@ export const DisabledTextarea: Story = {
                   id="31.Forms.Page1_TextInput.radioButtons5_rai_37_2"
                   name="31.Forms.Page1_TextInput.radioButtons5_rai_37"
                   value="Choice3"
-                  tabindex="-1"
+                  tabIndex={-1}
                   disabled
                 />
-                <label for="31.Forms.Page1_TextInput.radioButtons5_rai_37_2">Choice 3</label>
+                <label htmlFor="31.Forms.Page1_TextInput.radioButtons5_rai_37_2">Choice 3</label>
               </div>
             </div>
           </div>

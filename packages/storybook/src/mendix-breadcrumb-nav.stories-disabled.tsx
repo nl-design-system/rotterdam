@@ -49,7 +49,7 @@ export const Breadcrumbs: Story = {
         Item 1
       </a>
       <a
-        class="mx-link mx-name-actionButton12 breadcrumb-item"
+        className="mx-link mx-name-actionButton12 breadcrumb-item"
         href="#"
         role="button"
         title=""
@@ -60,7 +60,7 @@ export const Breadcrumbs: Story = {
         Item 2
       </a>
       <a
-        class="mx-link mx-name-actionButton14 breadcrumb-item"
+        className="mx-link mx-name-actionButton14 breadcrumb-item"
         href="#"
         role="button"
         title=""
