@@ -47,7 +47,7 @@ export const TextInput: Story = {
       <div className="mx-name-textArea1 mx-textarea form-group no-columns">
         <label
           className="control-label"
-          for="31.Forms.Page1_TextInput.textArea1_rai_34"
+          htmlFor="31.Forms.Page1_TextInput.textArea1_rai_34"
           id="31.Forms.Page1_TextInput.textArea1_rai_34-label"
         >
           Inputs come in various shapes and sizes
@@ -55,7 +55,7 @@ export const TextInput: Story = {
         <textarea
           id="31.Forms.Page1_TextInput.textArea1_rai_34"
           className="form-control mx-textarea-input mx-textarea-noresize"
-          maxlength="200"
+          maxLength={200}
           style={{ height: '144px !important' }}
         ></textarea>
       </div>
@@ -80,7 +80,7 @@ export const DisabledTextarea: Story = {
       <div className="mx-name-textArea1 mx-textarea form-group no-columns">
         <label
           className="control-label"
-          for="31.Forms.Page1_TextInput.textArea1_rai_34"
+          htmlFor="31.Forms.Page1_TextInput.textArea1_rai_34"
           id="31.Forms.Page1_TextInput.textArea1_rai_34-label"
         >
           Inputs come in various shapes and sizes
@@ -88,7 +88,7 @@ export const DisabledTextarea: Story = {
         <textarea
           id="31.Forms.Page1_TextInput.textArea1_rai_34"
           className="form-control mx-textarea-input mx-textarea-noresize"
-          maxlength="200"
+          maxLength={200}
           style={{ height: '144px !important' }}
           disabled
         ></textarea>

@@ -58,7 +58,7 @@ export const TextInput: Story = {
           type="text"
           maxLength={200}
           mask=""
-          autocomplete="on"
+          autoComplete="on"
           value=""
         />
       </div>
@@ -94,7 +94,7 @@ export const DisabledTextInput: Story = {
           type="text"
           maxLength={200}
           mask=""
-          autocomplete="on"
+          autoComplete="on"
           value=""
           disabled
         />
