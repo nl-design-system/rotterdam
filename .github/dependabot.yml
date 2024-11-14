@@ -5,31 +5,22 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Amsterdam"
     reviewers:
       - "nl-design-system/kernteam-dependabot"
   - package-ecosystem: "npm"
     directory: "/"
-    # Only have Dependabot to create pull requests for these dependencies
-    # to prevent using up Chromatic screenshots
-    allow:
-      - dependency-name: "@gemeente-rotterdam/*"
-      - dependency-name: "@gemeente-denhaag/*"
-      - dependency-name: "@utrecht/*"
-      - dependency-name: "@nl-design-system/*"
-      - dependency-name: "@nl-design-system-unstable/*"
-    # Bundle the above dependencies into a single pull request
-    groups:
-      allowed-deps:
-        patterns:
-          - "@gemeente-rotterdam/*"
-          - "@gemeente-utrecht/*"
-          - "@utrecht/*"
-          - "@nl-design-system/*"
-          - "@nl-design-system-unstable/*"
     schedule:
       interval: "monthly"
+    groups:
+      patch-and-minor-dependencies:
+        applies-to: "version-updates"
+        update-types:
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
     versioning-strategy: "increase-if-necessary"
     open-pull-requests-limit: 20
     reviewers:
