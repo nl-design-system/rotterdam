@@ -12,11 +12,4 @@
         <module>wicket</module>
     </modules>
 
-
-    <build>
-        <pluginManagement>
-            <plugins>
-            </plugins>
-        </pluginManagement>
-    </build>
 </project>
