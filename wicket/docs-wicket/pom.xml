@@ -14,7 +14,6 @@
 
     <packaging>war</packaging>
 
-
     <dependencies>
         <dependency>
             <groupId>nl.rotterdam</groupId>
@@ -24,12 +23,10 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>${jetty.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>${jetty.version}</version>
+            <groupId>org.eclipse.jetty.ee10</groupId>
+            <artifactId>jetty-ee10-webapp</artifactId>
         </dependency>
     </dependencies>
 
