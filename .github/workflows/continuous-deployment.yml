@@ -74,7 +74,7 @@ jobs:
       - name: "Continuous Integration: build"
         env:
           BASE_URL: "/rotterdam/"
-        run:  pnpm run --if-present build
+        run: pnpm run --if-present build
 
       - name: "Continuous Integration: lint build"
         env:
