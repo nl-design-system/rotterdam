@@ -88,8 +88,6 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
 
-  apps/docs-wicket: {}
-
   components/icon:
     devDependencies:
       lodash:
@@ -258,8 +256,6 @@ importers:
       vite-plugin-runtime-config:
         specifier: 1.0.2
         version: 1.0.2(vite@5.3.5(@types/node@22.0.0)(sass@1.77.8)(terser@5.27.0))
-
-  packages/components-wicket: {}
 
   packages/storybook:
     devDependencies:
@@ -465,9 +461,23 @@ importers:
         specifier: 3.9.2
         version: 3.9.2
 
-  proprietary/design-tokens-wicket: {}
-
   proprietary/font: {}
+
+  wicket/components-wicket:
+    devDependencies:
+      '@gemeente-rotterdam/design-tokens':
+        specifier: 1.0.0-alpha.35
+        version: 1.0.0-alpha.35
+      '@nl-design-system-candidate/paragraph-css':
+        specifier: 1.0.2
+        version: 1.0.2
+      '@utrecht/component-library-css':
+        specifier: 6.1.0
+        version: 6.1.0
+
+  wicket/design-tokens-wicket: {}
+
+  wicket/docs-wicket: {}
 
 packages:
 
@@ -1660,6 +1670,9 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
+  '@gemeente-rotterdam/design-tokens@1.0.0-alpha.35':
+    resolution: {integrity: sha512-PCeByC6lefxcvxd5aModHD8psz5x9zzNGtzVkKFClG22FrrP73vY5y7lcR0S/zWlqbMkoK9jT0Zuir5aAwquYw==}
+
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -1979,6 +1992,9 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@nl-design-system-candidate/paragraph-css@1.0.2':
+    resolution: {integrity: sha512-YfjWEJ5l6tW78SJMG+ig4U1gi59sv/sKfjVMLU3o7YoapRgX0kxLeOaPB9hAi7xg/fyfTg6M8lTHM9AX/HiMXw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2896,6 +2912,9 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@utrecht/component-library-css@6.1.0':
+    resolution: {integrity: sha512-+2qarCIgsNpLpxOcG5Rw3WLqNBASoWJFHMI4RlZJm5JTFfnhnl2wC/ylK23wOOooLNNCmsGrLdvSHHrEThJynw==}
 
   '@utrecht/component-library-react@5.0.0':
     resolution: {integrity: sha512-D8wSfBl1rCLA5zNj1wND2QaHBrlW5T5qZjlqvcYmQdvOOF+L+aQ8gxg3uo30FBvugvH2HDfOCc6qD8z7/+R+0A==}
@@ -10214,6 +10233,8 @@ snapshots:
       date-fns: 3.6.0
       react: 18.3.1
 
+  '@gemeente-rotterdam/design-tokens@1.0.0-alpha.35': {}
+
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.2
@@ -10799,6 +10820,8 @@ snapshots:
 
   '@next/swc-win32-x64-msvc@14.2.5':
     optional: true
+
+  '@nl-design-system-candidate/paragraph-css@1.0.2': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -11941,6 +11964,8 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@utrecht/component-library-css@6.1.0': {}
 
   '@utrecht/component-library-react@5.0.0(@babel/runtime@7.25.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
