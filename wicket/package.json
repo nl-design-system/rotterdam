@@ -1,9 +1,9 @@
 {
   "version": "0.0.0",
   "author": "Community for NL Design System",
-  "description": "Apache Wicket documentation for a design system based on the NL Design System architecture",
+  "description": "Apache Wicket workspace for a design system based on the NL Design System architecture",
   "license": "EUPL-1.2",
-  "name": "@gemeente-rotterdam/docs-wicket",
+  "name": "@gemeente-rotterdam/wicket",
   "keywords": [
     "nl-design-system",
     "Apache Wicket"
