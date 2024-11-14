@@ -1,0 +1,20 @@
+{
+  "version": "0.0.0",
+  "author": "Community for NL Design System",
+  "description": "Apache Wicket component library for the Example repository, based on the NL Design System architecture",
+  "license": "EUPL-1.2",
+  "name": "@gemeente-rotterdam/components-react",
+  "keywords": [
+    "nl-design-system"
+  ],
+  "private": true,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam.git"
+  },
+  "scripts": {}
+}
