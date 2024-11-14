@@ -16,7 +16,7 @@
     <modules>
         <module>components-wicket</module>
 <!--        <module>design-tokens-wicket</module> TODO will it be a maven module?-->
-<!--        <module>docs-wicket</module>-->
+        <module>docs-wicket</module>
     </modules>
 
     <properties>

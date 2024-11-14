@@ -1,6 +1,7 @@
 package nl.rotterdam.wicket.docs;
 
 import nl.utrecht.components.UtrechtCodeBlock;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
 
 // import nl.utrecht.components.UtrechtUnorderedList;
