@@ -1,6 +1,8 @@
 package nl.rotterdam.wicket.docs;
 
-import nl.utrecht.components.UtrechtCodeBlock;
+import nl.rotterdam.nl_design.wicket.components.code_block.UtrechtCodeBlock;
+import nl.rotterdam.nl_design.wicket.components.heading_1.Heading1Behavior;
+import nl.rotterdam.nl_design.wicket.components.untranslatable.NLDUntranslatableLabel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
@@ -16,7 +18,7 @@ public class ComponentsPage extends BasePage {
             @Override
             protected void onInitialize() {
                 super.onInitialize();
-                add(NLDBehaviors.heading1());
+                add(Heading1Behavior.heading1());
                 add(new NLDUntranslatableLabel("name", Model.of("Robbert van Frameless")));
             }
         });

@@ -1,4 +1,4 @@
-package nl.rotterdam.wicket;
+package nl.rotterdam.nl_design.wicket.components.code_block.util;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
