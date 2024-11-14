@@ -1,4 +1,5 @@
 packages:
+  - "wicket/"
   - "wicket/**"
   - "components/**"
   - "packages/*"

@@ -13,6 +13,8 @@
     "pnpm": "^9"
   },
   "workspaces": [
+    "./wicket/",
+    "./wicket/*",
     "./packages/*",
     "./components/*",
     "./proprietary/*"
