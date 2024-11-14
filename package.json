@@ -73,7 +73,11 @@
     "update-minor": "npm-check-updates --configFileName .ncurc.minor.cjs",
     "update-major": "npm-check-updates --configFileName .ncurc.major.cjs",
     "watch:storybook": "npm run --workspace packages/storybook storybook",
-    "watch:style-dictionary": "lerna run watch:style-dictionary"
+    "watch:style-dictionary": "lerna run watch:style-dictionary",
+    "wicket:build": "mvn --offline clean install",
+    "wicket:clean": "mvn clean",
+    "wicket:install": "mvn dependency:go-offline",
+    "wicket:dev": "mvn exec:java -pl :docs-wicket"
   },
   "dependencies": {
     "http-server": "14.1.1"

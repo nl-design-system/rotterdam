@@ -16,6 +16,14 @@ mvn install
 mvn exec:java -pl :docs-wicket
 ```
 
+### Maven uitvoeren met pnpm
+
+We hebben de volgende scripts beschikbaar:
+
+- `pnpm run -w wicket:install`: installeer alle Maven dependencies
+- `pnpm run -w wicket:build`: build alle Maven projecten
+- `pnpm run -w wicket:dev`: start de development server op [localhost:8945](http://localhost:8945).
+
 ### Maven uitvoeren in Docker
 
 Je hoeft niet precies de goeie versie van Java en Maven te installeren op je
