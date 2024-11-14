@@ -7,7 +7,5 @@
   "keywords": [
     "nl-design-system",
     "Apache Wicket"
-  ],
-  "private": true,
-  "devDependencies": {}
+  ]
 }
