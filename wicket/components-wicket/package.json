@@ -3,7 +3,7 @@
   "author": "Community for NL Design System",
   "description": "Apache Wicket component library for the Example repository, based on the NL Design System architecture",
   "license": "EUPL-1.2",
-  "name": "@gemeente-rotterdam/components-react",
+  "name": "@gemeente-rotterdam/components-wicket",
   "keywords": [
     "nl-design-system"
   ],

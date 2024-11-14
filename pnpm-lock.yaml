@@ -463,6 +463,8 @@ importers:
 
   proprietary/font: {}
 
+  wicket: {}
+
   wicket/components-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
