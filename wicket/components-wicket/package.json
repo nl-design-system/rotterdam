@@ -16,5 +16,10 @@
     "type": "git+ssh",
     "url": "git@github.com:nl-design-system/rotterdam.git"
   },
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "@gemeente-rotterdam/design-tokens": "1.0.0-alpha.35",
+    "@nl-design-system-candidate/paragraph-css": "1.0.2",
+    "@utrecht/component-library-css": "6.1.0"
+  }
 }

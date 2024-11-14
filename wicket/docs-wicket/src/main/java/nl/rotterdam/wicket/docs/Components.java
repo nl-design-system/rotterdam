@@ -7,7 +7,7 @@ import org.apache.wicket.model.Model;
 
 // import nl.utrecht.components.UtrechtUnorderedList;
 
-public class Components extends EmptyPage {
+public class Components extends BasePage {
 
     public Components() {
         add(new Label(TITLE_ID, "Components · Apache Wicket · Rotterdam Design System"));
