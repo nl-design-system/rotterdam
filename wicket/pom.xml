@@ -21,6 +21,7 @@
 
     <properties>
         <wicket.version>10.2.0</wicket.version>
+        <jetty.version>11.0.24</jetty.version>
     </properties>
 
     <dependencyManagement>
@@ -60,6 +61,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
 
 </project>
