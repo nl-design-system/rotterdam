@@ -23,7 +23,89 @@
     </dependencies>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <!--
+                TODO make it work with pnpm, possible but needs some extra time.
+                -->
+                <executions>
+                    <!-- Install Node and npm -->
+                    <execution>
+                        <id>install-node-and-npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <phase>generate-sources</phase> <!-- Executes in the generate-resources phase -->
+                        <configuration>
+                            <!-- todo should use .nvmrc but seems to be not possible yet
+                            https://github.com/eirslett/frontend-maven-plugin/issues/1047
+                            -->
+                            <nodeVersion>v20.12.2</nodeVersion>
+                        </configuration>
+                    </execution>
+                    <!-- Run npm install -->
+                    <execution>
+                        <id>npm-install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-sources</phase> <!-- Executes in the generate-resources phase -->
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <!-- Clean node directory -->
+                        <fileset>
+                            <directory>${project.basedir}/node</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <!-- Clean node_modules directory -->
+                        <fileset>
+                            <directory>${project.basedir}/node_modules</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+        </plugins>
         <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/@nl-design-system-candidate/paragraph-css/dist</directory>
+                <includes>
+                    <include>paragraph.css</include>
+                </includes>
+                <targetPath>css</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/@gemeente-rotterdam/design-tokens/dist</directory>
+                <includes>
+                    <include>theme.css</include>
+                </includes>
+                <targetPath>css</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/@utrecht/component-library-css/dist</directory>
+                <includes>
+                    <include>index.css</include>
+                </includes>
+                <targetPath>css</targetPath>
+            </resource>
             <resource>
                 <filtering>false</filtering>
                 <directory>src/main/java</directory>

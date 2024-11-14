@@ -34,7 +34,7 @@ public class Start {
         server.setHandler(bb);
 
         try {
-            System.out.println(">>> STARTING EMBEDDED JETTY SERVER on http://localhost:" + PORT + ", PRESS ANY KEY TO STOP");
+            System.out.println(">>> STARTING EMBEDDED JETTY SERVER on http://localhost:" + PORT + " PRESS ANY KEY TO STOP");
             server.start();
             System.in.read();
             System.out.println(">>> STOPPING EMBEDDED JETTY SERVER");
