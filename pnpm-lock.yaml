@@ -88,6 +88,8 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
 
+  apps/docs-wicket: {}
+
   components/icon:
     devDependencies:
       lodash:
@@ -256,6 +258,8 @@ importers:
       vite-plugin-runtime-config:
         specifier: 1.0.2
         version: 1.0.2(vite@5.3.5(@types/node@22.0.0)(sass@1.77.8)(terser@5.27.0))
+
+  packages/components-wicket: {}
 
   packages/storybook:
     devDependencies:
@@ -460,6 +464,8 @@ importers:
       style-dictionary:
         specifier: 3.9.2
         version: 3.9.2
+
+  proprietary/design-tokens-wicket: {}
 
   proprietary/font: {}
 
