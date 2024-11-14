@@ -1,11 +1,11 @@
-package nl.rotterdam.wicket.docs;
+package nl.rotterdam.nl_design.wicket.components.heading_1;
 
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 
-public class NLDBehaviors {
+public class Heading1Behavior {
 
     public static Behavior heading1() {
         return new Behavior() {

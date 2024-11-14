@@ -1,4 +1,4 @@
-package nl.rotterdam.wicket.docs;
+package nl.rotterdam.nl_design.wicket.components.untranslatable;
 
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.ComponentTag;
