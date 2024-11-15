@@ -1,0 +1,15 @@
+<configuration scan="true" scanPeriod="5 seconds">
+    <appender name="appender-console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="appender-console"/>
+    </root>
+</configuration>
