@@ -6,6 +6,7 @@ vendor/
 build/
 coverage/
 dist/
+target/
 tmp/
 
 # Ignore generated files from Stencil

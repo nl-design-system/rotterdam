@@ -2,5 +2,6 @@
 node_modules
 
 # Ignore generated files
-dist
+dist/
+target/
 CHANGELOG.md
