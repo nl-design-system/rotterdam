@@ -2,7 +2,7 @@ package css;
 
 import org.apache.wicket.request.resource.CssResourceReference;
 
-public class RotterdamNLDCssReferences {
+public class NlDesignSystemCssReferences {
 
   public static final CssResourceReference PARAGRAPH = makeReference(
     "paragraph.css"
@@ -11,6 +11,6 @@ public class RotterdamNLDCssReferences {
   public static final CssResourceReference THEME = makeReference("theme.css");
 
   private static CssResourceReference makeReference(String file) {
-    return new CssResourceReference(RotterdamNLDCssReferences.class, file);
+    return new CssResourceReference(NlDesignSystemCssReferences.class, file);
   }
 }

@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
-import css.RotterdamNLDCssReferences;
+import css.NlDesignSystemCssReferences;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
@@ -15,13 +15,13 @@ public abstract class BasePage extends WebPage {
     super.renderHead(response);
 
     response.render(
-      CssHeaderItem.forReference(RotterdamNLDCssReferences.PARAGRAPH)
+      CssHeaderItem.forReference(NlDesignSystemCssReferences.PARAGRAPH)
     );
     response.render(
-      CssHeaderItem.forReference(RotterdamNLDCssReferences.THEME)
+      CssHeaderItem.forReference(NlDesignSystemCssReferences.THEME)
     );
     response.render(
-      CssHeaderItem.forReference(RotterdamNLDCssReferences.INDEX)
+      CssHeaderItem.forReference(NlDesignSystemCssReferences.INDEX)
     );
 
     response.render(
