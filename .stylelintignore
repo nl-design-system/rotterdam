@@ -1,10 +1,13 @@
 # Ignore 3rd party files
+
 node_modules/
 vendor/
 
 # Ignore generated files
+
 build/
 coverage/
 dist/
+target/
 tmp/
 packages/web-components-stencil/src/generated/
