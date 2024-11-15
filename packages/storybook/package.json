@@ -46,7 +46,7 @@
     "@storybook/theming": "8.2.6",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
-    "@utrecht/component-library-react": "5.0.0",
+    "@utrecht/component-library-react": "7.3.3",
     "@utrecht/components": "4.0.0",
     "http-server": "14.1.1",
     "react": "18.3.1",
