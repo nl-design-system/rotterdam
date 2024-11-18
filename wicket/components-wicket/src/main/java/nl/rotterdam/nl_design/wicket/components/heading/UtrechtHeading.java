@@ -27,9 +27,4 @@ public class UtrechtHeading extends Label  {
         return this;
     }
 
-    @Override
-    public void renderHead(IHeaderResponse response) {
-        super.renderHead(response);
-        response.render(CssHeaderItem.forReference(NlDesignSystemCssReferences.PARAGRAPH));
-    }
 }
