@@ -5,8 +5,11 @@ import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.IHeaderResponse;
 
 import java.util.Map;
+
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_CSS_HEADER_ITEM;
 
 public class UtrechtHeadingBehavior extends Behavior {
 
@@ -61,6 +64,12 @@ public class UtrechtHeadingBehavior extends Behavior {
             }
             component.setMetaData(tagNameReplaced, true);
         }
+    }
+
+    @Override
+    public void renderHead(Component component, IHeaderResponse response) {
+        super.renderHead(component, response);
+        response.render(UTRECHT_HEADING_CSS_HEADER_ITEM);
     }
 
     @Override
