@@ -18,25 +18,23 @@ public class HeadingPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(new UtrechtHeading("utrechtLabel1", "Een label met kop 1").level(1));
-        add(new UtrechtHeading("utrechtLabel2", "Een label met kop 2").level(2));
-        add(new UtrechtHeading("utrechtLabel3", "Een label met kop 3").level(3));
-        add(new UtrechtHeading("utrechtLabel4", "Een label met kop 4").level(4));
-        add(new UtrechtHeading("utrechtLabel5", "Een label met kop 5").level(5));
-        add(new UtrechtHeading("utrechtLabel6", "Een label met kop 6").level(6));
+        add(new UtrechtHeading("utrechtLabel1", "Een label met kop 1", 1));
+        add(new UtrechtHeading("utrechtLabel2", "Een label met kop 2", 2));
+        add(new UtrechtHeading("utrechtLabel3", "Een label met kop 3", 3));
+        add(new UtrechtHeading("utrechtLabel4", "Een label met kop 4", 4));
+        add(new UtrechtHeading("utrechtLabel5", "Een label met kop 5", 5));
+        add(new UtrechtHeading("utrechtLabel6", "Een label met kop 6", 6));
 
-        add(new UtrechtHeading("utrechtLabel3MetDivTag", "div wordt vervangen met h3").level(3));
+        add(new UtrechtHeading("utrechtLabel3MetDivTag", "div wordt vervangen met h3", 3));
 
-        add(new UtrechtHeading("bestaandeCssClass", "bestaande CSS class behouden").level(4));
+        add(new UtrechtHeading("bestaandeCssClass", "bestaande CSS class behouden",4));
 
         add(
-            new UtrechtHeading("utrechtHeadingModelConstructor", Model.of("Text via model constructor"))
-                .level(3)
+            new UtrechtHeading("utrechtHeadingModelConstructor", Model.of("Text via model constructor"),3)
         );
 
         add(
-            new UtrechtHeading("utrechtHeadingDefaultModel")
-                .level(3)
+            new UtrechtHeading("utrechtHeadingDefaultModel", 3)
                 .setDefaultModel(Model.of("Text via defaultModel"))
         );
 
@@ -54,6 +52,5 @@ public class HeadingPanel extends Panel {
                 }
             }
         );
-
     }
 }
