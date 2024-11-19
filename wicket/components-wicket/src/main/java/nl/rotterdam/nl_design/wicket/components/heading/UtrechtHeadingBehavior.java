@@ -23,15 +23,20 @@ public class UtrechtHeadingBehavior extends Behavior {
         return behavior;
     }
 
-    private static final Map<Integer, Behavior> behaviors =
-            Map.of(
-                    1, createBehavior(1),
-                    2, createBehavior(2),
-                    3, createBehavior(3),
-                    4, createBehavior(4),
-                    5, createBehavior(5),
-                    6, createBehavior(6)
-            );
+    private static final Map<Integer, Behavior> behaviors = Map.of(
+            1,
+            createBehavior(1),
+            2,
+            createBehavior(2),
+            3,
+            createBehavior(3),
+            4,
+            createBehavior(4),
+            5,
+            createBehavior(5),
+            6,
+            createBehavior(6)
+    );
 
     private final int level;
 
@@ -46,17 +51,21 @@ public class UtrechtHeadingBehavior extends Behavior {
         this.expectedTagName = "h" + level;
     }
 
-    private static final MetaDataKey<Boolean> classAdded = new MetaDataKey<>() {
-    };
+    private static final MetaDataKey<Boolean> classAdded =
+            new MetaDataKey<>() {
+            };
 
-    private static final MetaDataKey<Boolean> tagNameReplaced = new MetaDataKey<>() {
-    };
+    private static final MetaDataKey<Boolean> tagNameReplaced =
+            new MetaDataKey<>() {
+            };
 
     @Override
     public void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
-        Boolean tagNameReplaceAlreadyApplied = component.getMetaData(tagNameReplaced);
+        Boolean tagNameReplaceAlreadyApplied = component.getMetaData(
+                tagNameReplaced
+        );
 
         if (tagNameReplaceAlreadyApplied == null) {
             if (!expectedTagName.equals(tag.getName())) {
@@ -78,7 +87,9 @@ public class UtrechtHeadingBehavior extends Behavior {
 
         Boolean classAddAlreadyApplied = component.getMetaData(classAdded);
         if (classAddAlreadyApplied == null) {
-            component.add(AttributeModifier.append("class", "utrecht-heading-" + level));
+            component.add(
+                    AttributeModifier.append("class", "utrecht-heading-" + level)
+            );
             component.setMetaData(classAdded, true);
         }
     }
