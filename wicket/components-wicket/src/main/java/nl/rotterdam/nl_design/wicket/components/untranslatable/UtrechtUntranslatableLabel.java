@@ -6,11 +6,13 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 
 /**
- *   mark text to be excluded for translation <bdi translate="no" class="utrecht-preserve-data" wicket:id="name">Van Bergenhenegouwen</bdi>
+ *  Mark the given model to be excluded for translation.
+ *  Example:
+ *  <bdi translate="no" class="utrecht-preserve-data" wicket:id="name">Van Bergenhenegouwen</bdi>
  */
-public class NLDUntranslatableLabel extends Label {
+public class UtrechtUntranslatableLabel extends Label {
 
-  public NLDUntranslatableLabel(String id, IModel<?> model) {
+  public UtrechtUntranslatableLabel(String id, IModel<?> model) {
     super(id, model);
   }
 

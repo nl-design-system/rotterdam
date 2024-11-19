@@ -1,0 +1,47 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+
+  <h2>Heading componenten</h2>
+  <p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste
+    niveau.</p>
+  <p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading
+    documentatie</a>
+  </p>
+
+  <p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
+  <ol>
+    <li>UtrechtHeading: een Label component om een waarde of Model te tonen</li>
+    <li>UtrechtHeadingBehavior: pas de Utrecht Heading style toe op een ander
+      Wicket component</li>
+  </ol>
+
+  <p>Je kunt het component gebruiken met de correcte <em>hx</em> HTML-tags:</p>
+  <h1 wicket:id="utrechtLabel1">Header 1</h1>
+  <h1 wicket:id="utrechtLabel2">Header 2</h1>
+  <h1 wicket:id="utrechtLabel3">Header 3</h1>
+  <h1 wicket:id="utrechtLabel4">Header 4</h1>
+  <h1 wicket:id="utrechtLabel5">Header 5</h1>
+  <h1 wicket:id="utrechtLabel6">Header 6</h1>
+
+  <p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste
+    kop-tag:
+  </p>
+  <div wicket:id="utrechtLabel3MetDivTag">Utrecht label 3 met div</div>
+
+  <p>Bestaande CSS-class wordt behouden:</p>
+  <h4 class="extra-class" wicket:id="bestaandeCssClass">Keep the class!</h4>
+
+  <p>Tekst kan gezet worden met model constructor:</p>
+  <h4 wicket:id="utrechtHeadingModelConstructor">Text wordt gezet via model
+    constructor</h4>
+
+  <p>Tekst kan gezet worden via defaultModel:</p>
+  <h4 wicket:id="utrechtHeadingDefaultModel">Text wordt gezet via
+    defaultModel</h4>
+
+  <p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden
+    door vertaalsoftware:</p>
+  <h1 wicket:id="headingMetUntranslatableContent">
+    Welkom mevrouw
+    <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
+  </h1>
+</wicket:panel>
