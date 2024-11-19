@@ -20,11 +20,6 @@
     "build": "rimraf dist && node patch.mjs && rollup --config ./rollup.config.mjs",
     "clean": "rimraf dist/*"
   },
-  "repository": {
-    "type": "git+ssh",
-    "url": "git@github.com:nl-design-system/rotterdam.git",
-    "directory": "proprietary/mendix-css"
-  },
   "devDependencies": {
     "@mendix/atlas": "https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz",
     "@gemeente-rotterdam/components-css": "workspace:*",
