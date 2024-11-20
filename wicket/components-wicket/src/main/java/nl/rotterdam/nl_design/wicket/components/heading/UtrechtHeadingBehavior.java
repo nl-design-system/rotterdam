@@ -1,8 +1,6 @@
 package nl.rotterdam.nl_design.wicket.components.heading;
 
-import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
-import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -23,32 +21,24 @@ public class UtrechtHeadingBehavior extends Behavior {
         return behavior;
     }
 
-    private static final Map<Integer, Behavior> behaviors =
-            Map.of(
-                    1, createBehavior(1),
-                    2, createBehavior(2),
-                    3, createBehavior(3),
-                    4, createBehavior(4),
-                    5, createBehavior(5),
-                    6, createBehavior(6)
-            );
-
-    private final int level;
+    private static final Map<Integer, Behavior> behaviors
+            = Map.of(
+            1, new UtrechtHeadingBehavior(1),
+            2, new UtrechtHeadingBehavior(2),
+            3, new UtrechtHeadingBehavior(3),
+            4, new UtrechtHeadingBehavior(4),
+            5, new UtrechtHeadingBehavior(5),
+            6, new UtrechtHeadingBehavior(6)
+    );
 
     private final String expectedTagName;
 
-    private static Behavior createBehavior(int level) {
-        return new UtrechtHeadingBehavior(level);
-    }
+    private final String className;
 
     private UtrechtHeadingBehavior(int level) {
-        this.level = level;
         this.expectedTagName = "h" + level;
+        this.className = "utrecht-heading-" + level;
     }
-
-    private static final MetaDataKey<Boolean> classAdded = new MetaDataKey<>() {
-    };
-
 
     @Override
     public void onComponentTag(Component component, ComponentTag tag) {
@@ -56,6 +46,10 @@ public class UtrechtHeadingBehavior extends Behavior {
 
         if (!expectedTagName.equals(tag.getName())) {
             tag.setName(expectedTagName);
+        }
+
+        if (!tag.isClose()) {
+            tag.append("class", className, " ");
         }
     }
 
@@ -65,14 +59,4 @@ public class UtrechtHeadingBehavior extends Behavior {
         response.render(UTRECHT_HEADING_CSS_HEADER_ITEM);
     }
 
-    @Override
-    public void onConfigure(Component component) {
-        super.onConfigure(component);
-
-        Boolean classAddAlreadyApplied = component.getMetaData(classAdded);
-        if (classAddAlreadyApplied == null) {
-            component.add(AttributeModifier.append("class", "utrecht-heading-" + level));
-            component.setMetaData(classAdded, true);
-        }
-    }
 }
