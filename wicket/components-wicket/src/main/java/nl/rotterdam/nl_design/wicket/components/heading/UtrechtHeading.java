@@ -6,7 +6,7 @@ import org.apache.wicket.model.Model;
 
 import java.io.Serializable;
 
-public class UtrechtHeading extends Label  {
+public class UtrechtHeading extends Label {
 
     public UtrechtHeading(String id, int level) {
         this(id, Model.of((String) null), level);
