@@ -575,9 +575,24 @@ importers:
       '@nl-design-system-candidate/paragraph-css':
         specifier: 1.0.2
         version: 1.0.2
-      '@utrecht/component-library-css':
-        specifier: 6.1.0
-        version: 6.1.0
+      '@utrecht/heading-1-css':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@utrecht/heading-2-css':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@utrecht/heading-3-css':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@utrecht/heading-4-css':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@utrecht/heading-5-css':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@utrecht/heading-6-css':
+        specifier: 1.1.0
+        version: 1.1.0
 
   wicket/design-tokens-wicket: {}
 
@@ -3128,9 +3143,6 @@ packages:
 
   '@utrecht/button-css@1.1.0':
     resolution: {integrity: sha512-1NtKfwHmpaTmkv28fGRoVtT4Y9BER2TDE1jMuDGhL727DROQTXDKZB7ZEZMuLUqtxPInbyskZeJHMaA18CJbIA==}
-
-  '@utrecht/component-library-css@6.1.0':
-    resolution: {integrity: sha512-+2qarCIgsNpLpxOcG5Rw3WLqNBASoWJFHMI4RlZJm5JTFfnhnl2wC/ylK23wOOooLNNCmsGrLdvSHHrEThJynw==}
 
   '@utrecht/component-library-react@5.0.0':
     resolution: {integrity: sha512-D8wSfBl1rCLA5zNj1wND2QaHBrlW5T5qZjlqvcYmQdvOOF+L+aQ8gxg3uo30FBvugvH2HDfOCc6qD8z7/+R+0A==}
@@ -12315,8 +12327,6 @@ snapshots:
   '@utrecht/breadcrumb-nav-css@1.1.0': {}
 
   '@utrecht/button-css@1.1.0': {}
-
-  '@utrecht/component-library-css@6.1.0': {}
 
   '@utrecht/component-library-react@5.0.0(@babel/runtime@7.25.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:

@@ -1,15 +1,14 @@
 package nl.rotterdam.nl_design.wicket.components.heading;
 
-import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
-import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
 import java.util.Map;
 
-import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_CSS_HEADER_ITEM;
+import static css.NlDesignSystemCssReferences.*;
 
 public class UtrechtHeadingBehavior extends Behavior {
 
@@ -23,74 +22,43 @@ public class UtrechtHeadingBehavior extends Behavior {
         return behavior;
     }
 
-    private static final Map<Integer, Behavior> behaviors = Map.of(
-            1,
-            createBehavior(1),
-            2,
-            createBehavior(2),
-            3,
-            createBehavior(3),
-            4,
-            createBehavior(4),
-            5,
-            createBehavior(5),
-            6,
-            createBehavior(6)
+    private static final Map<Integer, Behavior> behaviors
+            = Map.of(
+            1, new UtrechtHeadingBehavior(1, UTRECHT_HEADING_1_HEADER_ITEM),
+            2, new UtrechtHeadingBehavior(2, UTRECHT_HEADING_2_HEADER_ITEM),
+            3, new UtrechtHeadingBehavior(3, UTRECHT_HEADING_3_HEADER_ITEM),
+            4, new UtrechtHeadingBehavior(4, UTRECHT_HEADING_4_HEADER_ITEM),
+            5, new UtrechtHeadingBehavior(5, UTRECHT_HEADING_5_HEADER_ITEM),
+            6, new UtrechtHeadingBehavior(6, UTRECHT_HEADING_6_HEADER_ITEM)
     );
-
-    private final int level;
 
     private final String expectedTagName;
 
-    private static Behavior createBehavior(int level) {
-        return new UtrechtHeadingBehavior(level);
-    }
+    private final String className;
+    private final HeaderItem cssHeaderItem;
 
-    private UtrechtHeadingBehavior(int level) {
-        this.level = level;
+    private UtrechtHeadingBehavior(int level, HeaderItem cssHeaderItem) {
         this.expectedTagName = "h" + level;
+        this.className = "utrecht-heading-" + level;
+        this.cssHeaderItem = cssHeaderItem;
     }
-
-    private static final MetaDataKey<Boolean> classAdded =
-            new MetaDataKey<>() {
-            };
-
-    private static final MetaDataKey<Boolean> tagNameReplaced =
-            new MetaDataKey<>() {
-            };
 
     @Override
     public void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
-        Boolean tagNameReplaceAlreadyApplied = component.getMetaData(
-                tagNameReplaced
-        );
+        if (!expectedTagName.equals(tag.getName())) {
+            tag.setName(expectedTagName);
+        }
 
-        if (tagNameReplaceAlreadyApplied == null) {
-            if (!expectedTagName.equals(tag.getName())) {
-                tag.setName(expectedTagName);
-            }
-            component.setMetaData(tagNameReplaced, true);
+        if (!tag.isClose()) {
+            tag.append("class", className, " ");
         }
     }
 
     @Override
     public void renderHead(Component component, IHeaderResponse response) {
         super.renderHead(component, response);
-        response.render(UTRECHT_HEADING_CSS_HEADER_ITEM);
-    }
-
-    @Override
-    public void onConfigure(Component component) {
-        super.onConfigure(component);
-
-        Boolean classAddAlreadyApplied = component.getMetaData(classAdded);
-        if (classAddAlreadyApplied == null) {
-            component.add(
-                    AttributeModifier.append("class", "utrecht-heading-" + level)
-            );
-            component.setMetaData(classAdded, true);
-        }
+        response.render(cssHeaderItem);
     }
 }
