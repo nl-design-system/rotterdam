@@ -49,20 +49,13 @@ public class UtrechtHeadingBehavior extends Behavior {
     private static final MetaDataKey<Boolean> classAdded = new MetaDataKey<>() {
     };
 
-    private static final MetaDataKey<Boolean> tagNameReplaced = new MetaDataKey<>() {
-    };
 
     @Override
     public void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
-        Boolean tagNameReplaceAlreadyApplied = component.getMetaData(tagNameReplaced);
-
-        if (tagNameReplaceAlreadyApplied == null) {
-            if (!expectedTagName.equals(tag.getName())) {
-                tag.setName(expectedTagName);
-            }
-            component.setMetaData(tagNameReplaced, true);
+        if (!expectedTagName.equals(tag.getName())) {
+            tag.setName(expectedTagName);
         }
     }
 
