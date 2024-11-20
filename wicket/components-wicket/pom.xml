@@ -90,17 +90,22 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>node_modules/@gemeente-rotterdam/design-tokens/dist</directory>
+                <directory>node_modules/</directory>
                 <includes>
-                    <include>theme.css</include>
+                    <include>@utrecht/heading-1-css/dist/*.css</include>
+                    <include>@utrecht/heading-2-css/dist/*.css</include>
+                    <include>@utrecht/heading-3-css/dist/*.css</include>
+                    <include>@utrecht/heading-4-css/dist/*.css</include>
+                    <include>@utrecht/heading-5-css/dist/*.css</include>
+                    <include>@utrecht/heading-5-css/dist/*.css</include>
                 </includes>
                 <targetPath>css</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>node_modules/@utrecht/component-library-css/dist</directory>
+                <directory>node_modules/@gemeente-rotterdam/design-tokens/dist</directory>
                 <includes>
-                    <include>index.css</include>
+                    <include>theme.css</include>
                 </includes>
                 <targetPath>css</targetPath>
             </resource>

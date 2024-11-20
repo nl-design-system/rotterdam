@@ -1,15 +1,19 @@
 package nl.rotterdam.nl_design.wicket.components.heading;
 
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_1_HEADER_ITEM;
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_2_HEADER_ITEM;
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_3_HEADER_ITEM;
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_4_HEADER_ITEM;
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_5_HEADER_ITEM;
+import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_6_HEADER_ITEM;
+
+import java.util.Map;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.IHeaderResponse;
-
-import java.util.Map;
-
-import static css.NlDesignSystemCssReferences.UTRECHT_HEADING_CSS_HEADER_ITEM;
 
 public class UtrechtHeadingBehavior extends Behavior {
 
@@ -23,15 +27,20 @@ public class UtrechtHeadingBehavior extends Behavior {
         return behavior;
     }
 
-    private static final Map<Integer, Behavior> behaviors =
-            Map.of(
-                    1, createBehavior(1),
-                    2, createBehavior(2),
-                    3, createBehavior(3),
-                    4, createBehavior(4),
-                    5, createBehavior(5),
-                    6, createBehavior(6)
-            );
+    private static final Map<Integer, Behavior> behaviors = Map.of(
+        1,
+        createBehavior(1),
+        2,
+        createBehavior(2),
+        3,
+        createBehavior(3),
+        4,
+        createBehavior(4),
+        5,
+        createBehavior(5),
+        6,
+        createBehavior(6)
+    );
 
     private final int level;
 
@@ -46,11 +55,9 @@ public class UtrechtHeadingBehavior extends Behavior {
         this.expectedTagName = "h" + level;
     }
 
-    private static final MetaDataKey<Boolean> classAdded = new MetaDataKey<>() {
-    };
+    private static final MetaDataKey<Boolean> classAdded = new MetaDataKey<>() {};
 
-    private static final MetaDataKey<Boolean> tagNameReplaced = new MetaDataKey<>() {
-    };
+    private static final MetaDataKey<Boolean> tagNameReplaced = new MetaDataKey<>() {};
 
     @Override
     public void onComponentTag(Component component, ComponentTag tag) {
@@ -69,7 +76,12 @@ public class UtrechtHeadingBehavior extends Behavior {
     @Override
     public void renderHead(Component component, IHeaderResponse response) {
         super.renderHead(component, response);
-        response.render(UTRECHT_HEADING_CSS_HEADER_ITEM);
+        response.render(UTRECHT_HEADING_1_HEADER_ITEM);
+        response.render(UTRECHT_HEADING_2_HEADER_ITEM);
+        response.render(UTRECHT_HEADING_3_HEADER_ITEM);
+        response.render(UTRECHT_HEADING_4_HEADER_ITEM);
+        response.render(UTRECHT_HEADING_5_HEADER_ITEM);
+        response.render(UTRECHT_HEADING_6_HEADER_ITEM);
     }
 
     @Override

@@ -1,12 +1,11 @@
 package nl.rotterdam.nl_design.wicket.components.heading;
 
+import java.io.Serializable;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
-import java.io.Serializable;
-
-public class UtrechtHeading extends Label  {
+public class UtrechtHeading extends Label {
 
     public UtrechtHeading(String id, int level) {
         this(id, Model.of((String) null), level);
