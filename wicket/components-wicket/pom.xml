@@ -97,7 +97,7 @@
                     <include>@utrecht/heading-3-css/dist/*.css</include>
                     <include>@utrecht/heading-4-css/dist/*.css</include>
                     <include>@utrecht/heading-5-css/dist/*.css</include>
-                    <include>@utrecht/heading-5-css/dist/*.css</include>
+                    <include>@utrecht/heading-6-css/dist/*.css</include>
                 </includes>
                 <targetPath>css</targetPath>
             </resource>
