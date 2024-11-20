@@ -21,6 +21,11 @@
   "devDependencies": {
     "@gemeente-rotterdam/design-tokens": "1.0.0-alpha.35",
     "@nl-design-system-candidate/paragraph-css": "1.0.2",
-    "@utrecht/component-library-css": "6.1.0"
+    "@utrecht/heading-1-css": "1.1.0",
+    "@utrecht/heading-2-css": "1.1.0",
+    "@utrecht/heading-3-css": "1.1.0",
+    "@utrecht/heading-4-css": "1.1.0",
+    "@utrecht/heading-5-css": "1.1.0",
+    "@utrecht/heading-6-css": "1.1.0"
   }
 }

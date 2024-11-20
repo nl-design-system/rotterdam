@@ -7,6 +7,11 @@
   "keywords": [
     "nl-design-system"
   ],
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "packages/mendix-css"
+  },
   "exports": {
     "./dist/*.css": "./dist/*.css"
   },

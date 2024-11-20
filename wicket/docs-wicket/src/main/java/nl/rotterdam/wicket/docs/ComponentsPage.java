@@ -1,40 +1,36 @@
 package nl.rotterdam.wicket.docs;
 
 import nl.rotterdam.nl_design.wicket.components.code_block.UtrechtCodeBlock;
-import nl.rotterdam.nl_design.wicket.components.heading_1.Heading1Behavior;
-import nl.rotterdam.nl_design.wicket.components.untranslatable.NLDUntranslatableLabel;
-import org.apache.wicket.markup.html.WebMarkupContainer;
+import nl.rotterdam.wicket.docs.heading.HeadingPanel;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.Model;
-
-// import nl.utrecht.components.UtrechtUnorderedList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ComponentsPage extends BasePage {
 
-  public ComponentsPage() {
-    add(
-      new Label(
-        TITLE_ID,
-        "ComponentsPage · Apache Wicket · Rotterdam Design System"
-      )
-    );
+    private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
 
-    add(
-      new WebMarkupContainer("heading") {
-        @Override
-        protected void onInitialize() {
-          super.onInitialize();
-          add(Heading1Behavior.heading1());
-          add(
-            new NLDUntranslatableLabel(
-              "name",
-              Model.of("Robbert van Frameless")
+    public ComponentsPage() {
+
+        // TODO set title using model in BasePage
+        add(
+            new Label(
+                TITLE_ID,
+                "ComponentsPage · Apache Wicket · Rotterdam Design System"
             )
-          );
-        }
-      }
-    );
+        );
 
-    add(new UtrechtCodeBlock("code-block-example", Model.of("Reload Page")));
-  }
+        add(new UtrechtCodeBlock("code-block-example", Model.of("Reload Page")));
+
+        add(new HeadingPanel("headingComponents"));
+
+        add(new Link<Void>("refreshStatefulPageLink") {
+            @Override
+            public void onClick() {
+                LOGGER.info("Link was clicked. Page url now has state. Gives ability to inspect HTML in different state.");
+            }
+        });
+    }
 }
