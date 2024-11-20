@@ -5,43 +5,39 @@ Gebruik de component als volgt:
 Voorbeeld 1
 
 ```html
-<div wicket:enclosure="utrechtHeadingDefaultModel">
-  <p>Tekst kan gezet worden via defaultModel:</p>
-  <h4 wicket:id="utrechtHeadingDefaultModel">Text wordt gezet via defaultModel</h4>
-</div>
+<p>Tekst kan gezet worden via defaultModel:</p>
+<h4 wicket:id="utrechtHeadingDefaultModel">Text wordt gezet via defaultModel</h4>
 ```
 
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtHeadingDefaultModel", 3).setDefaultModel(Model.of("Text via defaultModel")));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtHeadingDefaultModel", 3).setDefaultModel(Model.of("Text via defaultModel")));
+    }
 }
-
 ```
 
 Voorbeeld 2
 
 ```html
-<div wicket:enclosure="utrechtLabel3MetDivTag">
-  <p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste kop-tag:</p>
-  <div wicket:id="utrechtLabel3MetDivTag">Utrecht label 3 met div</div>
+<p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste kop-tag:</p>
+<div wicket:id="utrechtLabel3MetDivTag">
+ Utrecht label 3 met div
 </div>
 ```
 
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel3MetDivTag", "div wordt vervangen met h3", 3));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel3MetDivTag", "div wordt vervangen met h3", 3));
+    }
 }
-
 ```
 
 Voorbeeld 3
@@ -53,13 +49,12 @@ Voorbeeld 3
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel1", "Een label met kop 1", 1));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel1", "Een label met kop 1", 1));
+    }
 }
-
 ```
 
 Voorbeeld 4
@@ -71,13 +66,12 @@ Voorbeeld 4
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel2", "Een label met kop 2", 2));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel2", "Een label met kop 2", 2));
+    }
 }
-
 ```
 
 Voorbeeld 5
@@ -89,13 +83,12 @@ Voorbeeld 5
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel3", "Een label met kop 3", 3));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel3", "Een label met kop 3", 3));
+    }
 }
-
 ```
 
 Voorbeeld 6
@@ -107,13 +100,12 @@ Voorbeeld 6
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel4", "Een label met kop 4", 4));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel4", "Een label met kop 4", 4));
+    }
 }
-
 ```
 
 Voorbeeld 7
@@ -125,13 +117,12 @@ Voorbeeld 7
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel5", "Een label met kop 5", 5));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel5", "Een label met kop 5", 5));
+    }
 }
-
 ```
 
 Voorbeeld 8
@@ -143,43 +134,37 @@ Voorbeeld 8
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtLabel6", "Een label met kop 6", 6));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel6", "Een label met kop 6", 6));
+    }
 }
-
 ```
 
 Voorbeeld 9
 
 ```html
-<div wicket:enclosure="bestaandeCssClass">
-  <p>Bestaande CSS-class wordt behouden:</p>
-  <h4 class="extra-class" wicket:id="bestaandeCssClass">Keep the class!</h4>
-</div>
+<p>Bestaande CSS-class wordt behouden:</p>
+<h4 class="extra-class" wicket:id="bestaandeCssClass">Keep the class!</h4>
 ```
 
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("bestaandeCssClass", "bestaande CSS class behouden", 4));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("bestaandeCssClass", "bestaande CSS class behouden", 4));
+    }
 }
-
 ```
 
 Voorbeeld 10
 
 ```html
-<div wicket:enclosure="utrechtHeadingModelConstructor">
-  <p>Tekst kan gezet worden met model constructor:</p>
-  <h4 wicket:id="utrechtHeadingModelConstructor">Text wordt gezet via model constructor</h4>
-</div>
+<p>Tekst kan gezet worden met model constructor:</p>
+<h4 wicket:id="utrechtHeadingModelConstructor">Text wordt gezet via model constructor</h4>
 ```
 
 ```java
@@ -191,5 +176,4 @@ class NlDesignSystemWicketDemoPanel extends Panel {
     add(new UtrechtHeading("utrechtHeadingModelConstructor", Model.of("Text via model constructor"), 3));
   }
 }
-
 ```

@@ -13,7 +13,7 @@ public class GenerateMarkdownAndStorybookExamples {
     WicketTester tester = new WicketTester(new DocsApplication());
 
     @Test
-    void generateHeadingComponent() throws Exception {
+    void generateHeadingComponent() {
         new MarkdownDocumentationExamplesGenerator(
             HeadingExamplesPanel.class,
             "heading"

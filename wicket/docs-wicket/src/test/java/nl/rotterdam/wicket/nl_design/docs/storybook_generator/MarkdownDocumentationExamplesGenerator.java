@@ -243,23 +243,22 @@ public class MarkdownDocumentationExamplesGenerator {
     private String extractMarkup(String wicketId) throws IOException {
         String htmlContent = Files.readString(htmlFile.toPath());
 
-        // Parse the HTML content with Jsoup
         Document document = Jsoup.parse(htmlContent);
 
-        // Select the element with wicket:id="utrechtLabel2"
         Element element = document.selectFirst(
-            "[wicket:enclosure=" + wicketId + "]"
+                "[data-example-container-for=" + wicketId + "]"
         );
 
-        if (element == null) {
-            element = document.selectFirst("[wicket:id=" + wicketId + "]");
+        if (element != null) {
+            return element.html();
         }
+
+        element = document.selectFirst("[wicket:id=" + wicketId + "]");
 
         if (element == null) {
             throw new IllegalArgumentException(
                 "No wicket markup found for id: " + wicketId
             );
-            // Output the full HTML of the selected element
         }
 
         return element.outerHtml();
