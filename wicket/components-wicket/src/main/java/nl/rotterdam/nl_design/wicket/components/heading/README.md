@@ -1,4 +1,4 @@
-# heading component voor Apache Wicket
+# Heading component voor Apache Wicket
 
 Gebruik de component als volgt:
 
@@ -170,10 +170,10 @@ Voorbeeld 10
 ```java
 class NlDesignSystemWicketDemoPanel extends Panel {
 
-  @Override
-  protected void onInitialize() {
-    super.onInitialize();
-    add(new UtrechtHeading("utrechtHeadingModelConstructor", Model.of("Text via model constructor"), 3));
-  }
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtHeadingModelConstructor", Model.of("Text via model constructor"), 3));
+    }
 }
 ```

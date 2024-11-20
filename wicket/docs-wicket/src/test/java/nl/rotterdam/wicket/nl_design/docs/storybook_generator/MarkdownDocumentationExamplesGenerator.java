@@ -32,12 +32,14 @@ public class MarkdownDocumentationExamplesGenerator {
     private final File markdownStorybookFile;
     private final Panel headingPanel;
     private final String componentName;
+    private final String componentNameCapitalized;
 
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> panelClazz,
         String componentName
     ) {
         this.componentName = componentName;
+        this.componentNameCapitalized = Strings.capitalize(componentName);
 
         String moduleRootPath = resolveModuleRootPath(
             GenerateMarkdownAndStorybookExamples.class
@@ -159,7 +161,7 @@ public class MarkdownDocumentationExamplesGenerator {
                 <Markdown>{markdown}</Markdown>
                 """,
             componentName,
-            Strings.capitalize(componentName) // TODO: first char to upper
+                Strings.capitalize(componentName)
         );
 
         Files.write(markdownStorybookFile.toPath(), content.getBytes());
@@ -170,7 +172,7 @@ public class MarkdownDocumentationExamplesGenerator {
     ) throws IOException {
         List<String> lines = new ArrayList<>(
             List.of(
-                "# " + componentName + " component voor Apache Wicket",
+                    "# " + componentNameCapitalized + " component voor Apache Wicket",
                 "",
                 "Gebruik de component als volgt:"
             )
