@@ -100,6 +100,7 @@ public class HeadingExamplesPanel extends Panel {
         );
     }
 
+    @ComponentExample
     private WebMarkupContainer exampleUntranslatableContent() {
         return new WebMarkupContainer("headingMetUntranslatableContent") {
             @Override

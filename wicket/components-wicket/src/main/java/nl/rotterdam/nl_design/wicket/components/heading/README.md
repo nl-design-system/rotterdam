@@ -177,3 +177,31 @@ class NlDesignSystemWicketDemoPanel extends Panel {
     }
 }
 ```
+
+Voorbeeld 11
+
+```html
+<p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden door vertaalsoftware:</p>
+<h1 wicket:id="headingMetUntranslatableContent">Welkom mevrouw
+  <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
+</h1>
+```
+
+```java
+class NlDesignSystemWicketDemoPanel extends Panel {
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new WebMarkupContainer("headingMetUntranslatableContent") {
+
+            @Override
+            private void onInitialize() {
+                super.onInitialize();
+                add(heading(1));
+                add(new UtrechtUntranslatableLabel("name", Model.of("Samira de Jongh")));
+            }
+        });
+    }
+}
+```
