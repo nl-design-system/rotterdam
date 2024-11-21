@@ -60,7 +60,7 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 Voorbeeld 4
 
 ```html
-<h1 wicket:id="utrechtLabel2">Header 2</h1>
+<h2 wicket:id="utrechtLabel2">Header 2</h2>
 ```
 
 ```java
@@ -77,7 +77,7 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 Voorbeeld 5
 
 ```html
-<h1 wicket:id="utrechtLabel3">Header 3</h1>
+<h3 wicket:id="utrechtLabel3">Header 3</h3>
 ```
 
 ```java
@@ -94,7 +94,7 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 Voorbeeld 6
 
 ```html
-<h1 wicket:id="utrechtLabel4">Header 4</h1>
+<h4 wicket:id="utrechtLabel4">Header 4</h4>
 ```
 
 ```java
@@ -111,7 +111,7 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 Voorbeeld 7
 
 ```html
-<h1 wicket:id="utrechtLabel5">Header 5</h1>
+<h5 wicket:id="utrechtLabel5">Header 5</h5>
 ```
 
 ```java
@@ -128,7 +128,7 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 Voorbeeld 8
 
 ```html
-<h1 wicket:id="utrechtLabel6">Header 6</h1>
+<h6 wicket:id="utrechtLabel6">Header 6</h6>
 ```
 
 ```java
