@@ -2,13 +2,14 @@
 
 [Voorbeeld sourcecode](https://github.com/nl-design-system/rotterdam/blob/main/wicket/docs-wicket//src/main/java/nl/rotterdam/wicket/docs/heading/)
 
-<p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
-<p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
-<p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
-<ol>
- <li>UtrechtHeading: een Label component om een waarde of Model te tonen</li>
- <li>UtrechtHeadingBehavior: pas de Utrecht Heading style toe op een ander Wicket component</li>
-</ol>
+Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.
+
+[NL Design System Heading documentatie](https://nldesignsystem.nl/heading/)
+
+Mogelijkheden om Kopteksten te maken in Wicket:
+
+1. UtrechtHeading: een Label component om een waarde of Model te tonen
+2. UtrechtHeadingBehavior: pas de Utrecht Heading style toe op een ander Wicket component
 
 Hieronder volgen verschillende voorbeelden van het gebruik van het component in Apache Wicket.
 

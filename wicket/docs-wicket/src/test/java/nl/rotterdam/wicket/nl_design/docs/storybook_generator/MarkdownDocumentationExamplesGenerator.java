@@ -3,6 +3,7 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -182,12 +183,9 @@ public class MarkdownDocumentationExamplesGenerator {
             List.of(
                 "# " + componentNameCapitalized + " component voor Apache Wicket",
                 "",
-                "",
                 "[Voorbeeld sourcecode](" + gitHubComponentPath + ")",
                 "",
-
-                documentationExtractor.extractHeader(),
-                "",
+                convertToMarkdown(documentationExtractor.extractHeader()),
                 "Hieronder volgen verschillende voorbeelden van het gebruik van het component in Apache Wicket."
             )
         );
@@ -204,7 +202,7 @@ public class MarkdownDocumentationExamplesGenerator {
             if (example.htmlSnippet().documentationHtml() != null) {
                 lines.addAll(
                     List.of(
-                        example.htmlSnippet().documentationHtml(),
+                        convertToMarkdown(example.htmlSnippet().documentationHtml()),
                         ""
                     )
                 );
@@ -224,6 +222,10 @@ public class MarkdownDocumentationExamplesGenerator {
         });
 
         Files.write(markdownReadmeFile.toPath(), lines);
+    }
+
+    private String convertToMarkdown(String html) {
+        return FlexmarkHtmlConverter.builder().build().convert(html);
     }
 
     private String wrapInDemoJavaPanelWithOnInitialize(String statement) {
