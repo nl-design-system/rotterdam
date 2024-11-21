@@ -1,5 +1,6 @@
 # Heading component voor Apache Wicket
 
+
 <p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
 <p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
 <p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
@@ -244,7 +245,7 @@ public class NlDesignSystemWicketDemoPanel extends Panel {
         protected void onInitialize() {
             super.onInitialize();
             add(heading(1));
-          add(new UtrechtPreserveDataLabel("name", Model.of("Samira de Jongh")));
+            add(new UtrechtPreserveDataLabel("name", Model.of("Samira de Jongh")));
         }
     });
     }

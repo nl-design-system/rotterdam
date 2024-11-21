@@ -29,6 +29,7 @@ public class MarkdownDocumentationExamplesGenerator {
     private final String componentName;
     private final String componentNameCapitalized;
     private final HtmlDocumentationExtractor documentationExtractor;
+    private final String relativePathInWicketComponentsFromModuleRoot;
 
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> examplePanelClass,
@@ -52,9 +53,10 @@ public class MarkdownDocumentationExamplesGenerator {
                 "/";
 
 
+        relativePathInWicketComponentsFromModuleRoot = "src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
         String basePathInWicketComponent =
             moduleRootPath +
-                "/../components-wicket/src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
+                "/../components-wicket/" + relativePathInWicketComponentsFromModuleRoot;
 
         String exampleFilenameWithoutExtension =
             basePathInDocs + examplePanelClass.getSimpleName();
@@ -159,13 +161,13 @@ public class MarkdownDocumentationExamplesGenerator {
         String content = String.format(
             """
                 import { Markdown, Meta } from "@storybook/blocks";
-                import markdown from "../../../../wicket/components-wicket/src/main/java/nl/rotterdam/nl_design/wicket/components/%s/README.md?raw";
+                import markdown from "../../../../wicket/components-wicket/%s/README.md?raw";
                 
                 <Meta title="Apache Wicket/%s" />
                 
                 <Markdown>{markdown}</Markdown>
                 """,
-            componentName,
+            relativePathInWicketComponentsFromModuleRoot,
             Strings.capitalize(componentName)
         );
 
