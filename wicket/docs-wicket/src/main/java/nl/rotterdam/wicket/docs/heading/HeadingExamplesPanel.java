@@ -17,7 +17,7 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleDefaultModel() {
+    private static Component example10DefaultModel() {
         return new UtrechtHeading(
             "utrechtHeadingDefaultModel",
             3
@@ -25,7 +25,7 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleModelConstructor() {
+    private static UtrechtHeading example09ModelConstructor() {
         return new UtrechtHeading(
             "utrechtHeadingModelConstructor",
             Model.of("Text via model constructor"),
@@ -34,7 +34,7 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleKeepExistingClass() {
+    private static UtrechtHeading example08KeepExistingClass() {
         return new UtrechtHeading(
             "bestaandeCssClass",
             "bestaande CSS class behouden",
@@ -43,12 +43,12 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleHeading6() {
+    private static UtrechtHeading example06Heading6() {
         return new UtrechtHeading("utrechtLabel6", "Een label met kop 6", 6);
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleH3MetDivTag() {
+    private static UtrechtHeading example07H3MetDivTag() {
         return new UtrechtHeading(
             "utrechtLabel3MetDivTag",
             "div wordt vervangen met h3",
@@ -57,27 +57,27 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleHeading5() {
+    private static UtrechtHeading example05Heading5() {
         return new UtrechtHeading("utrechtLabel5", "Een label met kop 5", 5);
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleHeading4() {
+    private static UtrechtHeading example04Heading4() {
         return new UtrechtHeading("utrechtLabel4", "Een label met kop 4", 4);
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleHeading3() {
+    private static UtrechtHeading example03Heading3() {
         return new UtrechtHeading("utrechtLabel3", "Een label met kop 3", 3);
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleHeading2() {
+    private static UtrechtHeading example02Heading2() {
         return new UtrechtHeading("utrechtLabel2", "Een label met kop 2", 2);
     }
 
     @ComponentExample
-    private static UtrechtHeading exampleHeading1() {
+    private static UtrechtHeading example01Heading1() {
         return new UtrechtHeading("utrechtLabel1", "Een label met kop 1", 1);
     }
 
@@ -86,22 +86,22 @@ public class HeadingExamplesPanel extends Panel {
         super.onInitialize();
 
         add(
-            exampleHeading1(),
-            exampleHeading2(),
-            exampleHeading3(),
-            exampleHeading4(),
-            exampleHeading5(),
-            exampleHeading6(),
-            exampleH3MetDivTag(),
-            exampleKeepExistingClass(),
-            exampleModelConstructor(),
-            exampleDefaultModel(),
-            exampleUntranslatableContent()
+            example01Heading1(),
+            example02Heading2(),
+            example03Heading3(),
+            example04Heading4(),
+            example05Heading5(),
+            example06Heading6(),
+            example07H3MetDivTag(),
+            example08KeepExistingClass(),
+            example09ModelConstructor(),
+            example10DefaultModel(),
+            example11UntranslatableContent()
         );
     }
 
     @ComponentExample
-    private WebMarkupContainer exampleUntranslatableContent() {
+    private WebMarkupContainer example11UntranslatableContent() {
         return new WebMarkupContainer("headingMetUntranslatableContent") {
             @Override
             protected void onInitialize() {

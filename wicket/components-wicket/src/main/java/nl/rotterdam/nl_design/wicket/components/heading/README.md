@@ -1,53 +1,27 @@
 # Heading component voor Apache Wicket
 
-Gebruik de component als volgt:
+<p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
+<p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
+<p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
+<ol>
+ <li>UtrechtHeading: een Label component om een waarde of Model te tonen</li>
+ <li>UtrechtHeadingBehavior: pas de Utrecht Heading style toe op een ander Wicket component</li>
+</ol>
 
-Voorbeeld 1
+Hieronder volgen verschillende voorbeelden van het gebruik van het component in Apache Wicket.
+
+## Kop 1
 
 ```html
-<p>Tekst kan gezet worden via defaultModel:</p>
-<h4 wicket:id="utrechtHeadingDefaultModel">Text wordt gezet via defaultModel</h4>
+<h1 wicket:id="utrechtLabel1">Gebruik maximaal één h1 per pagina</h1>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
 
-    @Override
-    protected void onInitialize() {
-        super.onInitialize();
-        add(new UtrechtHeading("utrechtHeadingDefaultModel", 3).setDefaultModel(Model.of("Text via defaultModel")));
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
     }
-}
-```
-
-Voorbeeld 2
-
-```html
-<p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste kop-tag:</p>
-<div wicket:id="utrechtLabel3MetDivTag">
- Utrecht label 3 met div
-</div>
-```
-
-```java
-class NlDesignSystemWicketDemoPanel extends Panel {
-
-    @Override
-    protected void onInitialize() {
-        super.onInitialize();
-        add(new UtrechtHeading("utrechtLabel3MetDivTag", "div wordt vervangen met h3", 3));
-    }
-}
-```
-
-Voorbeeld 3
-
-```html
-<h1 wicket:id="utrechtLabel1">Header 1</h1>
-```
-
-```java
-class NlDesignSystemWicketDemoPanel extends Panel {
 
     @Override
     protected void onInitialize() {
@@ -57,14 +31,18 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 4
+## Kop 2
 
 ```html
 <h2 wicket:id="utrechtLabel2">Header 2</h2>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -74,14 +52,18 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 5
+## Kop 3
 
 ```html
 <h3 wicket:id="utrechtLabel3">Header 3</h3>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -91,14 +73,18 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 6
+## Kop 4
 
 ```html
 <h4 wicket:id="utrechtLabel4">Header 4</h4>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -108,14 +94,18 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 7
+## Kop 5
 
 ```html
 <h5 wicket:id="utrechtLabel5">Header 5</h5>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -125,14 +115,18 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 8
+## Kop 6
 
 ```html
 <h6 wicket:id="utrechtLabel6">Header 6</h6>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -142,15 +136,41 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 9
+## Tags worden vervangen
 
 ```html
-<p>Bestaande CSS-class wordt behouden:</p>
-<h4 class="extra-class" wicket:id="bestaandeCssClass">Keep the class!</h4>
+<div wicket:id="utrechtLabel3MetDivTag">
+ Utrecht label 3 met div wordt door Wicket bij het renderen vervangen.
+</div>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtLabel3MetDivTag", "div wordt vervangen met h3", 3));
+    }
+}
+```
+
+## Behoud bestaande CSS class
+
+```html
+<h4 class="extra-class" wicket:id="bestaandeCssClass">De bestaande class blijft behouden</h4>
+```
+
+```java
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -160,15 +180,18 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 10
+## Model constructor
 
 ```html
-<p>Tekst kan gezet worden met model constructor:</p>
-<h4 wicket:id="utrechtHeadingModelConstructor">Text wordt gezet via model constructor</h4>
+<h4 wicket:id="utrechtHeadingModelConstructor">Tekst wordt gezet via model constructor</h4>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
@@ -178,30 +201,52 @@ class NlDesignSystemWicketDemoPanel extends Panel {
 }
 ```
 
-Voorbeeld 11
+## Model via defaultModel
 
 ```html
-<p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden door vertaalsoftware:</p>
-<h1 wicket:id="headingMetUntranslatableContent">Welkom mevrouw
-  <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
-</h1>
+<h4 wicket:id="utrechtHeadingDefaultModel">Tekst wordt gezet via defaultModel</h4>
 ```
 
 ```java
-class NlDesignSystemWicketDemoPanel extends Panel {
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(new UtrechtHeading("utrechtHeadingDefaultModel", 3).setDefaultModel(Model.of("Text via defaultModel")));
+    }
+}
+```
+
+## MarkupContainer met niet-vertaalbare content
+
+```html
+<h1 wicket:id="headingMetUntranslatableContent">Welkom mevrouw <bdi wicket:id="name">Van Bergenhenegouwen</bdi></h1>
+```
+
+```java
+public class NlDesignSystemWicketDemoPanel extends Panel {
+
+    public NlDesignSystemWicketDemoPanel(String id) {
+        super(id);
+    }
 
     @Override
     protected void onInitialize() {
         super.onInitialize();
         add(new WebMarkupContainer("headingMetUntranslatableContent") {
 
-            @Override
-            private void onInitialize() {
-                super.onInitialize();
-                add(heading(1));
-                add(new UtrechtUntranslatableLabel("name", Model.of("Samira de Jongh")));
-            }
-        });
+        @Override
+        protected void onInitialize() {
+            super.onInitialize();
+            add(heading(1));
+            add(new UtrechtUntranslatableLabel("name", Model.of("Samira de Jongh")));
+        }
+    });
     }
 }
 ```

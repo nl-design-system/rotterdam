@@ -7,13 +7,9 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.util.string.Strings;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.junit.platform.commons.support.ModifierSupport;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
@@ -27,12 +23,12 @@ import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModul
 public class MarkdownDocumentationExamplesGenerator {
 
     private final File javaFile;
-    private final File htmlFile;
     private final File markdownReadmeFile;
     private final File markdownStorybookFile;
     private final Panel headingPanel;
     private final String componentName;
     private final String componentNameCapitalized;
+    private final HtmlDocumentationExtractor documentationExtractor;
 
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> panelClazz,
@@ -46,25 +42,28 @@ public class MarkdownDocumentationExamplesGenerator {
         ).getAbsolutePath();
         String basePathInDocs =
             moduleRootPath +
-            "/src/main/java/" +
-            panelClazz.getPackageName().replace(".", "/") +
-            "/";
+                "/src/main/java/" +
+                panelClazz.getPackageName().replace(".", "/") +
+                "/";
         String basePathInWicketComponent =
             moduleRootPath +
-            "/../components-wicket/src/main/java/nl/rotterdam/nl_design/wicket/components/" +
-            this.componentName +
-            "/";
+                "/../components-wicket/src/main/java/nl/rotterdam/nl_design/wicket/components/" +
+                this.componentName +
+                "/";
         String nameWithoutExtension =
             basePathInDocs + panelClazz.getSimpleName();
 
         javaFile = new File(nameWithoutExtension + ".java");
-        htmlFile = new File(nameWithoutExtension + ".html");
+        documentationExtractor = new HtmlDocumentationExtractor(
+            new File(nameWithoutExtension + ".html").toPath()
+        );
+
         markdownReadmeFile = new File(basePathInWicketComponent + "README.md");
         markdownStorybookFile = new File(
             moduleRootPath +
-            "/../../packages/storybook/src/documentation/wicket-" +
-            componentName +
-            ".mdx"
+                "/../../packages/storybook/src/documentation/wicket-" +
+                componentName +
+                ".mdx"
         );
 
         try {
@@ -112,7 +111,7 @@ public class MarkdownDocumentationExamplesGenerator {
     }
 
     private List<WicketComponentExample> collectExamples()
-        throws FileNotFoundException {
+        throws Exception {
         CompilationUnit compilationUnit = new JavaParser()
             .parse(javaFile)
             .getResult()
@@ -161,7 +160,7 @@ public class MarkdownDocumentationExamplesGenerator {
                 <Markdown>{markdown}</Markdown>
                 """,
             componentName,
-                Strings.capitalize(componentName)
+            Strings.capitalize(componentName)
         );
 
         Files.write(markdownStorybookFile.toPath(), content.getBytes());
@@ -172,9 +171,12 @@ public class MarkdownDocumentationExamplesGenerator {
     ) throws IOException {
         List<String> lines = new ArrayList<>(
             List.of(
-                    "# " + componentNameCapitalized + " component voor Apache Wicket",
+                "# " + componentNameCapitalized + " component voor Apache Wicket",
                 "",
-                "Gebruik de component als volgt:"
+                "",
+                documentationExtractor.extractHeader(),
+                "",
+                "Hieronder volgen verschillende voorbeelden van het gebruik van het component in Apache Wicket."
             )
         );
 
@@ -183,10 +185,23 @@ public class MarkdownDocumentationExamplesGenerator {
             lines.addAll(
                 List.of(
                     "",
-                    "Voorbeeld " + (i + 1),
-                    "",
+                    "## " + example.htmlSnippet().headerHtml(),
+                    "")
+            );
+
+            if (example.htmlSnippet().documentationHtml() != null) {
+                lines.addAll(
+                    List.of(
+                        example.htmlSnippet().documentationHtml(),
+                        ""
+                    )
+                );
+            }
+
+            lines.addAll(
+                List.of(
                     "```html",
-                    example.htmlCode(),
+                    example.htmlSnippet().codeHTML(),
                     "```",
                     "",
                     "```java",
@@ -202,7 +217,11 @@ public class MarkdownDocumentationExamplesGenerator {
     private String wrapInDemoJavaPanelWithOnInitialize(String statement) {
         return String.format(
             """
-                class NlDesignSystemWicketDemoPanel extends Panel {
+                public class NlDesignSystemWicketDemoPanel extends Panel {
+                
+                    public NlDesignSystemWicketDemoPanel(String id) {
+                        super(id);
+                    }
                 
                     @Override
                     protected void onInitialize() {
@@ -222,7 +241,7 @@ public class MarkdownDocumentationExamplesGenerator {
 
         return new WicketComponentExample(
             extractJavaCode(methodDeclaration),
-            extractMarkup(wicketId),
+            documentationExtractor.extractExample(wicketId),
             wicketId
         );
     }
@@ -242,34 +261,12 @@ public class MarkdownDocumentationExamplesGenerator {
         return result.getId();
     }
 
-    private String extractMarkup(String wicketId) throws IOException {
-        String htmlContent = Files.readString(htmlFile.toPath());
-
-        Document document = Jsoup.parse(htmlContent);
-
-        Element element = document.selectFirst(
-                "[data-example-container-for=" + wicketId + "]"
-        );
-
-        if (element != null) {
-            return element.html();
-        }
-
-        element = document.selectFirst("[wicket:id=" + wicketId + "]");
-
-        if (element == null) {
-            throw new IllegalArgumentException(
-                "No wicket markup found for id: " + wicketId
-            );
-        }
-
-        return element.outerHtml();
-    }
 }
 
 record WicketComponentExample(
     String javaCode,
-    String htmlCode,
+    WicketHtmlExampleSnippet htmlSnippet,
     String wicketId
 ) {
+
 }
