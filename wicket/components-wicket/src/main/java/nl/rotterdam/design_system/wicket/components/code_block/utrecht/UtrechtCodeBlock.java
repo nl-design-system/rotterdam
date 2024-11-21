@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design.wicket.components.code_block;
+package nl.rotterdam.design_system.wicket.components.code_block.utrecht;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;

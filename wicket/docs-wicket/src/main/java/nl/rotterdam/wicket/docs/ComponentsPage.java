@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
-import nl.rotterdam.nl_design.wicket.components.code_block.UtrechtCodeBlock;
+import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;

@@ -1,14 +1,15 @@
 package nl.rotterdam.wicket.docs.heading;
 
-import nl.rotterdam.nl_design.wicket.components.heading.UtrechtHeading;
-import nl.rotterdam.nl_design.wicket.components.untranslatable.UtrechtUntranslatableLabel;
+import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
+import nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-import static nl.rotterdam.nl_design.wicket.components.heading.UtrechtHeadingBehavior.heading;
+import static nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeadingBehavior.heading;
+
 
 public class HeadingExamplesPanel extends Panel {
 
@@ -108,7 +109,7 @@ public class HeadingExamplesPanel extends Panel {
                 super.onInitialize();
                 add(heading(1));
                 add(
-                    new UtrechtUntranslatableLabel(
+                    new UtrechtPreserveDataLabel(
                         "name",
                         Model.of("Samira de Jongh")
                     )

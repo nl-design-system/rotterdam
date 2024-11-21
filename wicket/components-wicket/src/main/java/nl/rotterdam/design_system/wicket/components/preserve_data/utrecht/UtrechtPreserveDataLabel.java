@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design.wicket.components.untranslatable;
+package nl.rotterdam.design_system.wicket.components.preserve_data.utrecht;
 
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.ComponentTag;
@@ -6,13 +6,13 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 
 /**
- *  Mark the given model to be excluded for translation.
+ *  Mark the given model to be preserved and show it 'as is'.
  *  Example:
  *  <bdi translate="no" class="utrecht-preserve-data" wicket:id="name">Van Bergenhenegouwen</bdi>
  */
-public class UtrechtUntranslatableLabel extends Label {
+public class UtrechtPreserveDataLabel extends Label {
 
-    public UtrechtUntranslatableLabel(String id, IModel<?> model) {
+    public UtrechtPreserveDataLabel(String id, IModel<?> model) {
         super(id, model);
     }
 
