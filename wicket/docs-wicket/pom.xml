@@ -47,6 +47,10 @@
             <artifactId>junit-jupiter</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-tester</artifactId>
             <scope>test</scope>
@@ -58,18 +62,29 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>java</goal>
                         </goals>
+                        <configuration>
+                            <mainClass>nl.rotterdam.wicket.nl_design.docs.Start</mainClass>
+                            <classpathScope>test</classpathScope>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generateStoryBook</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>
+                                nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain
+                            </mainClass>
+                            <classpathScope>test</classpathScope>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <mainClass>nl.rotterdam.wicket.nl_design.docs.Start</mainClass>
-                    <classpathScope>test</classpathScope>
-                </configuration>
             </plugin>
         </plugins>
         <resources>

@@ -11,9 +11,18 @@ Deze componenten worden in opdracht van gemeente Rotterdam ontwikkeld door
 
 Installeer Java 21 en Maven 3.x
 
+### Documentatie starten
+
 ```shell
 mvn install
 mvn exec:java -pl :docs-wicket
+```
+
+### Storybook documentatie genereren
+
+```shell
+mvn install
+mvn exec:java@generateStoryBook -pl :docs-wicket
 ```
 
 ### Maven uitvoeren met pnpm

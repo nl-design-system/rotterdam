@@ -244,7 +244,7 @@ public class NlDesignSystemWicketDemoPanel extends Panel {
         protected void onInitialize() {
             super.onInitialize();
             add(heading(1));
-            add(new UtrechtUntranslatableLabel("name", Model.of("Samira de Jongh")));
+          add(new UtrechtPreserveDataLabel("name", Model.of("Samira de Jongh")));
         }
     });
     }

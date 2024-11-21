@@ -22,7 +22,7 @@ import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModul
 
 public class MarkdownDocumentationExamplesGenerator {
 
-    private final File javaFile;
+    private final File exampleJavaFile;
     private final File markdownReadmeFile;
     private final File markdownStorybookFile;
     private final Panel headingPanel;
@@ -31,7 +31,12 @@ public class MarkdownDocumentationExamplesGenerator {
     private final HtmlDocumentationExtractor documentationExtractor;
 
     public MarkdownDocumentationExamplesGenerator(
-        Class<? extends Panel> panelClazz,
+        Class<? extends Panel> examplePanelClass,
+
+        /*
+          When you have a Behavior and a component, put them in the same package.
+         */
+        Class<? extends Component> componentClass,
         String componentName
     ) {
         this.componentName = componentName;
@@ -43,19 +48,20 @@ public class MarkdownDocumentationExamplesGenerator {
         String basePathInDocs =
             moduleRootPath +
                 "/src/main/java/" +
-                panelClazz.getPackageName().replace(".", "/") +
+                examplePanelClass.getPackageName().replace(".", "/") +
                 "/";
+
+
         String basePathInWicketComponent =
             moduleRootPath +
-                "/../components-wicket/src/main/java/nl/rotterdam/nl_design/wicket/components/" +
-                this.componentName +
-                "/";
-        String nameWithoutExtension =
-            basePathInDocs + panelClazz.getSimpleName();
+                "/../components-wicket/src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
 
-        javaFile = new File(nameWithoutExtension + ".java");
+        String exampleFilenameWithoutExtension =
+            basePathInDocs + examplePanelClass.getSimpleName();
+
+        exampleJavaFile = new File(exampleFilenameWithoutExtension + ".java");
         documentationExtractor = new HtmlDocumentationExtractor(
-            new File(nameWithoutExtension + ".html").toPath()
+            new File(exampleFilenameWithoutExtension + ".html").toPath()
         );
 
         markdownReadmeFile = new File(basePathInWicketComponent + "README.md");
@@ -67,7 +73,7 @@ public class MarkdownDocumentationExamplesGenerator {
         );
 
         try {
-            headingPanel = panelClazz
+            headingPanel = examplePanelClass
                 .getConstructor(String.class)
                 .newInstance("panelId");
         } catch (Exception e) {
@@ -113,7 +119,7 @@ public class MarkdownDocumentationExamplesGenerator {
     private List<WicketComponentExample> collectExamples()
         throws Exception {
         CompilationUnit compilationUnit = new JavaParser()
-            .parse(javaFile)
+            .parse(exampleJavaFile)
             .getResult()
             .orElseThrow();
 
