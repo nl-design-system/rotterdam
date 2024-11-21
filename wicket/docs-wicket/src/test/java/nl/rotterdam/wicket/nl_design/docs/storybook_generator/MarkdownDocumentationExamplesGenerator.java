@@ -29,7 +29,8 @@ public class MarkdownDocumentationExamplesGenerator {
     private final String componentName;
     private final String componentNameCapitalized;
     private final HtmlDocumentationExtractor documentationExtractor;
-    private final String relativePathInWicketComponentsFromModuleRoot;
+    private final String relativePathInComponentsWicketFromModuleRoot;
+    private final String gitHubComponentPath;
 
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> examplePanelClass,
@@ -46,17 +47,17 @@ public class MarkdownDocumentationExamplesGenerator {
         String moduleRootPath = resolveModuleRootPath(
             GenerateMarkdownAndStorybookExamples.class
         ).getAbsolutePath();
-        String basePathInDocs =
-            moduleRootPath +
-                "/src/main/java/" +
-                examplePanelClass.getPackageName().replace(".", "/") +
-                "/";
+
+        String relativePathInDocsWicketFromModuleRoot = "/src/main/java/" +
+            examplePanelClass.getPackageName().replace(".", "/") + "/";
+
+        String basePathInDocs = moduleRootPath + relativePathInDocsWicketFromModuleRoot;
 
 
-        relativePathInWicketComponentsFromModuleRoot = "src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
-        String basePathInWicketComponent =
-            moduleRootPath +
-                "/../components-wicket/" + relativePathInWicketComponentsFromModuleRoot;
+        relativePathInComponentsWicketFromModuleRoot = "src/main/java/" +
+            componentClass.getPackageName().replace(".", "/") + "/";
+
+        String basePathInWicketComponent = moduleRootPath + "/../components-wicket/" + relativePathInComponentsWicketFromModuleRoot;
 
         String exampleFilenameWithoutExtension =
             basePathInDocs + examplePanelClass.getSimpleName();
@@ -69,10 +70,10 @@ public class MarkdownDocumentationExamplesGenerator {
         markdownReadmeFile = new File(basePathInWicketComponent + "README.md");
         markdownStorybookFile = new File(
             moduleRootPath +
-                "/../../packages/storybook/src/documentation/wicket-" +
-                componentName +
-                ".mdx"
+                "/../../packages/storybook/src/documentation/wicket-" + componentName + ".mdx"
         );
+
+        gitHubComponentPath = "https://github.com/nl-design-system/rotterdam/blob/main/wicket/docs-wicket/" + relativePathInDocsWicketFromModuleRoot;
 
         try {
             headingPanel = examplePanelClass
@@ -167,7 +168,7 @@ public class MarkdownDocumentationExamplesGenerator {
                 
                 <Markdown>{markdown}</Markdown>
                 """,
-            relativePathInWicketComponentsFromModuleRoot,
+            relativePathInComponentsWicketFromModuleRoot,
             Strings.capitalize(componentName)
         );
 
@@ -182,6 +183,9 @@ public class MarkdownDocumentationExamplesGenerator {
                 "# " + componentNameCapitalized + " component voor Apache Wicket",
                 "",
                 "",
+                "[Voorbeeld sourcecode](" + gitHubComponentPath + ")",
+                "",
+
                 documentationExtractor.extractHeader(),
                 "",
                 "Hieronder volgen verschillende voorbeelden van het gebruik van het component in Apache Wicket."

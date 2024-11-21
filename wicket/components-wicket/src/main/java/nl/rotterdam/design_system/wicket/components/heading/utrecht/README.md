@@ -1,5 +1,6 @@
 # Heading component voor Apache Wicket
 
+[Voorbeeld sourcecode](https://github.com/nl-design-system/rotterdam/blob/main/wicket/docs-wicket//src/main/java/nl/rotterdam/wicket/docs/heading/)
 
 <p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
 <p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
