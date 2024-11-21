@@ -1,1 +1,1 @@
-echo "pnpm exec lint-staged temporary disabled to make it available to Robbert"
+pnpm exec lint-staged
