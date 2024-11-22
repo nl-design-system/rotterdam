@@ -569,12 +569,12 @@ importers:
 
   wicket/components-wicket:
     devDependencies:
-      '@gemeente-rotterdam/design-tokens':
-        specifier: 1.0.0-alpha.35
-        version: 1.0.0-alpha.35
       '@nl-design-system-candidate/paragraph-css':
         specifier: 1.0.2
         version: 1.0.2
+      '@nl-design-system-unstable/voorbeeld-design-tokens':
+        specifier: 3.1.0
+        version: 3.1.0
       '@utrecht/heading-1-css':
         specifier: 1.1.0
         version: 1.1.0
@@ -594,7 +594,11 @@ importers:
         specifier: 1.1.0
         version: 1.1.0
 
-  wicket/design-tokens-wicket: {}
+  wicket/design-tokens-wicket:
+    devDependencies:
+      '@gemeente-rotterdam/design-tokens':
+        specifier: 1.0.0-alpha.35
+        version: 1.0.0-alpha.35
 
   wicket/docs-wicket: {}
 
@@ -2134,6 +2138,9 @@ packages:
 
   '@nl-design-system-candidate/paragraph-css@1.0.2':
     resolution: {integrity: sha512-YfjWEJ5l6tW78SJMG+ig4U1gi59sv/sKfjVMLU3o7YoapRgX0kxLeOaPB9hAi7xg/fyfTg6M8lTHM9AX/HiMXw==}
+
+  '@nl-design-system-unstable/voorbeeld-design-tokens@3.1.0':
+    resolution: {integrity: sha512-FiJvNzCnG3bO/cCm3ZhggCpS8H4d7CPRXe99f5BEj+3cOeM+lPZvU6qMGgevU7x1BrnfzBwzB4S4TtB8IgcGBA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -11129,6 +11136,8 @@ snapshots:
     optional: true
 
   '@nl-design-system-candidate/paragraph-css@1.0.2': {}
+
+  '@nl-design-system-unstable/voorbeeld-design-tokens@3.1.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
