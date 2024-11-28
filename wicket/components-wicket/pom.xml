@@ -84,14 +84,9 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/heading-1-css/dist/*.css</include>
-                    <include>@utrecht/heading-2-css/dist/*.css</include>
-                    <include>@utrecht/heading-3-css/dist/*.css</include>
-                    <include>@utrecht/heading-4-css/dist/*.css</include>
-                    <include>@utrecht/heading-5-css/dist/*.css</include>
-                    <include>@utrecht/heading-6-css/dist/*.css</include>
                     <include>@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css</include>
                     <include>@nl-design-system-candidate/paragraph-css/dist/paragraph.css</include>
+                    <include>@utrecht/*-css/dist/*.css</include>
                 </includes>
                 <targetPath>css</targetPath>
             </resource>
