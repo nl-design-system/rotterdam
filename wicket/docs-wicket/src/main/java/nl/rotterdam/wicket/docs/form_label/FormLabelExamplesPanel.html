@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel xmlns:wicket="http://wicket.apache.org">
+      <section class="example-collection">
+        <h2>Form Field Label component</h2>
+        <p>Toont een tekstlabel dat informeert over de in te vullen informatie.</p>
+
+        <section class="example-container" data-example-container-for="utrechtLabel1">
+          <h2 class="example-container__header">Form Label</h2>
+          <div class="example-container__explanation">
+            <ul>
+              <li>Plaats het label voor het invoerveld, behalve voor checkbox options en radio options.</li>
+              <li>Plaats de checkbox of radio button in de form label.</li>
+              <li>Koppel de label met de form control met "for" en "id".</li>
+            </ul>
+          </div>
+          <div class="example-container__code">
+            <label for="firstname" wicket:id="utrechtLabel1">Voornaam</label>
+            <input type="text" id="firstname" />
+          </div>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

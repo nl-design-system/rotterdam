@@ -1,0 +1,36 @@
+package nl.rotterdam.design_system.wicket.components.page_layout.utrecht;
+
+import static css.NlDesignSystemCssReferences.UTRECHT_PAGE_LAYOUT_HEADER_ITEM;
+
+import java.util.Map;
+import org.apache.wicket.Component;
+import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.HeaderItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
+
+public class UtrechtPageLayoutBehavior extends Behavior {
+
+    private final String className;
+    private final HeaderItem cssHeaderItem = UTRECHT_PAGE_LAYOUT_HEADER_ITEM;
+
+    private UtrechtPageLayoutBehavior(HeaderItem cssHeaderItem) {
+        this.className = "utrecht-page-layout";
+        this.cssHeaderItem = cssHeaderItem;
+    }
+
+    @Override
+    public void onComponentTag(Component component, ComponentTag tag) {
+        super.onComponentTag(component, tag);
+
+        if (!tag.isClose()) {
+            tag.append("class", className, " ");
+        }
+    }
+
+    @Override
+    public void renderHead(Component component, IHeaderResponse response) {
+        super.renderHead(component, response);
+        response.render(cssHeaderItem);
+    }
+}

@@ -6,7 +6,6 @@ import org.apache.wicket.request.resource.CssResourceReference;
 
 public class NlDesignSystemCssReferences {
 
-
     public static final HeaderItem UTRECHT_HEADING_1_HEADER_ITEM = makeUtrechtHeadingCss(1);
     public static final HeaderItem UTRECHT_HEADING_2_HEADER_ITEM = makeUtrechtHeadingCss(2);
     public static final HeaderItem UTRECHT_HEADING_3_HEADER_ITEM = makeUtrechtHeadingCss(3);
@@ -15,6 +14,10 @@ public class NlDesignSystemCssReferences {
     public static final HeaderItem UTRECHT_HEADING_6_HEADER_ITEM = makeUtrechtHeadingCss(6);
 
     public static final HeaderItem THEME_CSS_HEADER_ITEM = makeHeaderItemForCss("theme.css");
+
+    public static final HeaderItem PAGE_LAYOUT_HEADER_ITEM = makeHeaderItemForCss(
+        "@utrecht/page-layout-css/dist/index.css"
+    );
 
     // TODO: support dependencies, and know which dependencies are there
     private static CssResourceReference makeReference(String file) {
