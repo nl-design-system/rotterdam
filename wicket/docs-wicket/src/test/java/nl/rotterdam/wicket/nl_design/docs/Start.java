@@ -1,14 +1,13 @@
 package nl.rotterdam.wicket.nl_design.docs;
 
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
+
+import java.time.Duration;
 import org.eclipse.jetty.ee10.webapp.WebAppContext;
 import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
-
-import java.time.Duration;
-
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
 
 public class Start {
 
@@ -21,10 +20,7 @@ public class Start {
 
         final HttpConfiguration http_config = new HttpConfiguration();
 
-        final ServerConnector connector = new ServerConnector(
-            server,
-            new HttpConnectionFactory(http_config)
-        );
+        final ServerConnector connector = new ServerConnector(server, new HttpConnectionFactory(http_config));
         connector.setPort(PORT);
         connector.setIdleTimeout(timeout);
 
@@ -38,9 +34,7 @@ public class Start {
 
         try {
             System.out.println(
-                ">>> STARTING EMBEDDED JETTY SERVER on http://localhost:" +
-                    PORT +
-                    " PRESS ANY KEY TO STOP"
+                ">>> STARTING EMBEDDED JETTY SERVER on http://localhost:" + PORT + " PRESS ANY KEY TO STOP"
             );
             server.start();
             System.in.read();
