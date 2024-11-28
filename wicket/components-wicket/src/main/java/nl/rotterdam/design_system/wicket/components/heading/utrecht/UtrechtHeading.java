@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design.wicket.components.heading;
+package nl.rotterdam.design_system.wicket.components.heading.utrecht;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;

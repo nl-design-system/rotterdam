@@ -1,7 +1,7 @@
 package nl.rotterdam.wicket.docs;
 
-import nl.rotterdam.nl_design.wicket.components.code_block.UtrechtCodeBlock;
-import nl.rotterdam.wicket.docs.heading.HeadingPanel;
+import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
+import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.Model;
@@ -24,7 +24,7 @@ public class ComponentsPage extends BasePage {
 
         add(new UtrechtCodeBlock("code-block-example", Model.of("Reload Page")));
 
-        add(new HeadingPanel("headingComponents"));
+        add(new HeadingExamplesPanel("headingComponents"));
 
         add(new Link<Void>("refreshStatefulPageLink") {
             @Override
@@ -32,5 +32,6 @@ public class ComponentsPage extends BasePage {
                 LOGGER.info("Link was clicked. Page url now has state. Gives ability to inspect HTML in different state.");
             }
         });
+
     }
 }
