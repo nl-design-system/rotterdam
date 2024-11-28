@@ -1,28 +1,96 @@
-<!DOCTYPE html>
-<html lang="nl" xmlns:wicket="http://wicket.apache.org">
-<body>
-<wicket:extend>
-  <div style="margin-inline: auto; max-width: 40em">
+<html xmlns="http://www.w3.org/1999/html" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:extend>
+      <wicket:container wicket:id="utrechtPageLayout">
+        <wicket:container wicket:id="utrechtPageHeader">
+          <wicket:container wicket:id="utrechtLogo">
+            <wicket:container wicket:id="rotterdamLogoImage"></wicket:container>
+          </wicket:container>
+        </wicket:container>
+        <wicket:container wicket:id="utrechtPageBody">
+          <div style="margin-inline: auto; max-width: 40em">
+            <div class="theme-container">
+              <label
+                >Selecteer thema
+                <select id="activeTheme" wicket:id="activeTheme">
+                  <option value="voorbeeld-gemeente">Voorbeeld gemeente</option>
+                </select>
+              </label>
+            </div>
 
-    <div class="theme-container">
-      <label>Selecteer thema
-        <select id="activeTheme" wicket:id="activeTheme">
-          <option value="voorbeeld-gemeente">Voorbeeld gemeente</option>
-        </select>
-      </label>
-    </div>
+            <h1>Components</h1>
+            <h2>Code Block</h2>
+            <div class="example-story" wicket:id="code-block-example"></div>
 
-    <h1>Components</h1>
-    <h2>Code Block</h2>
-    <div class="example-story" wicket:id="code-block-example"></div>
+            <wicket:container wicket:id="headingComponents">
+              <!-- heading components here -->
+            </wicket:container>
 
-    <wicket:container wicket:id="headingComponents">
-      <!-- heading components here -->
-    </wicket:container>
+            <wicket:container wicket:id="labelComponents"></wicket:container>
+            <span wicket:id="utrechtNumberBadge">42</span>
+            <!-- <wicket:container wicket:id="pageLayoutExamples"></wicket:container> -->
+            <p><a href="#" wicket:id="refreshStatefulPageLink">Link to trigger Wicket stateful page refresh</a></p>
+            <div wicket:id="utrechtHtmlContent">
+              <h1>Hello world</h1>
+              <p>
+                <button type="submit">Submit</button>
+              </p>
+            </div>
+            <wicket:container wicket:id="utrechtAlertInfo"></wicket:container>
+            <wicket:container wicket:id="utrechtAlertWarning"></wicket:container>
+            <wicket:container wicket:id="utrechtAlertAlert"></wicket:container>
+            <wicket:container wicket:id="utrechtAlertOk"></wicket:container>
+            <wicket:container wicket:id="utrechtButtonGroup">Buttons go here</wicket:container>
+            <wicket:container wicket:id="utrechtOrderedList"></wicket:container>
+            <wicket:container wicket:id="utrechtUnorderedList"></wicket:container>
+            <wicket:container wicket:id="utrechtSeparator"></wicket:container>
+            <wicket:container wicket:id="utrechtIcon">
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em">
+                <path
+                  fill-rule="evenodd"
+                  d="M16 3.75 29.4 13.8l-1.2 1.6-2.2-1.65V27H6V13.75L3.8 15.4l-1.2-1.6zM14 25h4v-8h-4zm6 0V15h-8v10H8V12.25l8-6 8 6V25z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </wicket:container>
+            <wicket:container wicket:id="utrechtColumnLayout">
+              <p>
+                Nam quod exercitationem vero et. Sapiente alias occaecati voluptas est. Ullam sed quis hic est nisi. Et
+                saepe expedita est sunt sed vitae exercitationem et.
+              </p>
+              <p>Eos provident at quaerat sed. Et adipisci corporis iste. Praesentium ut aut sit dolores distinctio.</p>
+              <p>
+                Alias officiis et sint. Autem fuga praesentium omnis velit sit id sunt suscipit. Nihil vel minus cumque.
+                At mollitia inventore ut quia enim. Ut cupiditate explicabo porro ab vel vel. Velit nostrum doloribus
+                et.
+              </p>
+              <p>
+                Natus eos veniam voluptas. Ea modi est dolores doloribus delectus amet nemo. Ea vel nihil et eos et
+                perspiciatis iure commodi. Vel dolores exercitationem facilis quisquam. Voluptas modi quo consequatur
+                quos.
+              </p>
+              <p>
+                Aut consequuntur sed qui. Ea id molestiae similique sequi facere deserunt sunt fugiat. Molestiae beatae
+                consectetur perferendis. Qui earum velit sed vel non officiis odit. Deleniti nesciunt nemo ut delectus
+                nemo at sunt. Maiores numquam natus aut adipisci ipsum fuga aliquam consequatur.
+              </p>
+            </wicket:container>
+            <wicket:container wicket:id="utrechtHeadingGroup">
+              <h2>Heading in a heading group</h2>
+              <p>Sub-heading</p>
+            </wicket:container>
 
-
-    <p><a href="#" wicket:id="refreshStatefulPageLink">Link to trigger Wicket stateful page refresh</a></p>
-  </div>
-</wicket:extend>
-</body>
+            <!-- <div wicket:id="utrechtOrderedList2">
+              <li>one</li>
+              <li>two</li>
+              <li>three</li>
+            </div> -->
+            <wicket:container wicket:id="utrechtFormFieldCheckbox"></wicket:container>
+          </div>
+        </wicket:container>
+        <wicket:container wicket:id="utrechtPageFooter">Page footer </wicket:container>
+      </wicket:container>
+    </wicket:extend>
+  </body>
+  >>>>>>> 7de5dcc (feat: add many new Wicket components)
 </html>
