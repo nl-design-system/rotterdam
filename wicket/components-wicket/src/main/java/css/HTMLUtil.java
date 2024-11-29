@@ -1,5 +1,6 @@
 package css;
 
+
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -14,8 +15,8 @@ public class HTMLUtil {
     }
 
     public static String joinTokens(String... classes) {
-        return Arrays.asList(classes)
-            .stream()
+        return Arrays
+            .stream(classes)
             .filter(className -> className != null && !className.trim().isEmpty())
             .collect(Collectors.joining(" "));
     }
