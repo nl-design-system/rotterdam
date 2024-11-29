@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
@@ -9,16 +9,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>components-wicket</artifactId>
+    <artifactId>design-tokens-wicket</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-request</artifactId>
         </dependency>
     </dependencies>
 
@@ -84,26 +80,9 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/heading-1-css/dist/*.css</include>
-                    <include>@utrecht/heading-2-css/dist/*.css</include>
-                    <include>@utrecht/heading-3-css/dist/*.css</include>
-                    <include>@utrecht/heading-4-css/dist/*.css</include>
-                    <include>@utrecht/heading-5-css/dist/*.css</include>
-                    <include>@utrecht/heading-6-css/dist/*.css</include>
-                    <include>@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css</include>
-                    <include>@nl-design-system-candidate/paragraph-css/dist/paragraph.css</include>
+                    <include>@gemeente-rotterdam/design-tokens/dist/theme.css</include>
                 </includes>
                 <targetPath>css</targetPath>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
             </resource>
         </resources>
     </build>

@@ -4,7 +4,7 @@ import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.request.resource.CssResourceReference;
 
-public class NlDesignSystemCssReferences {
+public class WicketComponentsCssReferences {
 
 
     public static final HeaderItem UTRECHT_HEADING_1_HEADER_ITEM = makeUtrechtHeadingCss(1);
@@ -14,12 +14,12 @@ public class NlDesignSystemCssReferences {
     public static final HeaderItem UTRECHT_HEADING_5_HEADER_ITEM = makeUtrechtHeadingCss(5);
     public static final HeaderItem UTRECHT_HEADING_6_HEADER_ITEM = makeUtrechtHeadingCss(6);
 
-    public static final HeaderItem THEME_CSS_HEADER_ITEM = makeHeaderItemForCss("theme.css");
-
-    // TODO: support dependencies, and know which dependencies are there
-    private static CssResourceReference makeReference(String file) {
-        return new CssResourceReference(NlDesignSystemCssReferences.class, file);
-    }
+    /**
+     * Use this theme if your organization doesn't have its own theme yet (based on Design System tokens).
+     *
+     * <p>Check <a href="https://nldesignsystem.nl/handboek/developer/thema-maken/">the manual</a> for details</p>
+     */
+    public static final HeaderItem THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM = makeHeaderItemForCss("@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css");
 
     private static HeaderItem makeUtrechtHeadingCss(int level) {
         return makeHeaderItemForCss("@utrecht/heading-" + level + "-css/dist/index.css");
@@ -28,4 +28,9 @@ public class NlDesignSystemCssReferences {
     private static HeaderItem makeHeaderItemForCss(String cssName) {
         return CssHeaderItem.forReference(makeReference(cssName));
     }
+
+    private static CssResourceReference makeReference(String file) {
+        return new CssResourceReference(WicketComponentsCssReferences.class, file);
+    }
+
 }

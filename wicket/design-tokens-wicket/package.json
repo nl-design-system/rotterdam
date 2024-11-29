@@ -12,5 +12,8 @@
     "type": "git+ssh",
     "url": "git@github.com:nl-design-system/rotterdam.git",
     "directory": "wicket/design-tokens-wicket"
+  },
+  "devDependencies": {
+    "@gemeente-rotterdam/design-tokens": "1.0.0-alpha.35"
   }
 }

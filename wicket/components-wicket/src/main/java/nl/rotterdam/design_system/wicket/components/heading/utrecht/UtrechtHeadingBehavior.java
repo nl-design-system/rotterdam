@@ -8,7 +8,7 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 
 import java.util.Map;
 
-import static css.NlDesignSystemCssReferences.*;
+import static css.WicketComponentsCssReferences.*;
 
 public class UtrechtHeadingBehavior extends Behavior {
 

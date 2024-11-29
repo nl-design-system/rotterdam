@@ -10,7 +10,7 @@
     <name>wicket-nl-design-system-parent</name>
     <modules>
         <module>components-wicket</module>
-        <!--        <module>design-tokens-wicket</module> TODO will it be a maven module?-->
+        <module>design-tokens-wicket</module>
         <module>docs-wicket</module>
     </modules>
 

@@ -6,7 +6,8 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.resource.CssResourceReference;
 
-import static css.NlDesignSystemCssReferences.THEME_CSS_HEADER_ITEM;
+import static css.DesignTokensWicketCssReference.THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM;
+import static css.WicketComponentsCssReferences.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
 
 public abstract class BasePage extends WebPage {
 
@@ -23,8 +24,8 @@ public abstract class BasePage extends WebPage {
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
 
-        // TODO: theme should not be an explicit dependency, but is there an ordering relation between component css files and the theme CSS files?
-        response.render(THEME_CSS_HEADER_ITEM);
+        response.render(THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM);
+        response.render(THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM);
         response.render(DOCS_CSS_HEADER_ITEM);
     }
 }
