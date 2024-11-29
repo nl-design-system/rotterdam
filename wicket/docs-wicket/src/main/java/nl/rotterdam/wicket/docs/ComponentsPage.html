@@ -43,7 +43,17 @@
             <wicket:container wicket:id="utrechtButtonGroup">Buttons go here</wicket:container>
             <wicket:container wicket:id="utrechtOrderedList"></wicket:container>
             <wicket:container wicket:id="utrechtUnorderedList"></wicket:container>
+
             <hr wicket:id="utrechtSeparator" />
+
+            <h2>Utrecht ordered list</h2>
+            <ol wicket:id="utrechtOrderedListWebMarkupContainer">
+              <li wicket:id="listItem">
+                <a wicket:id="link">Example label</a>
+              </li>
+            </ol>
+            <p>End ordered list</p>
+
             <wicket:container wicket:id="utrechtIcon">
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em">
                 <path
