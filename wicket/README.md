@@ -15,7 +15,7 @@ Installeer Java 21 en Maven 3.x
 
 ```shell
 mvn install
-mvn exec:java -pl :docs-wicket
+mvn exec:java@runDocs -pl :docs-wicket
 ```
 
 ### Storybook documentatie genereren
