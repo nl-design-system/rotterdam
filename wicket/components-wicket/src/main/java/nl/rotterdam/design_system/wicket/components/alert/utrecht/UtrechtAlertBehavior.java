@@ -1,14 +1,15 @@
 package nl.rotterdam.design_system.wicket.components.alert.utrecht;
 
-import static css.WicketComponentsCssReferences.ALERT_HEADER_ITEM;
-
 import css.HTMLUtil;
-import java.util.Map;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
+
+import java.util.Map;
+
+import static css.WicketComponentsCssReferences.ALERT_HEADER_ITEM;
 
 public class UtrechtAlertBehavior extends Behavior {
 
@@ -59,7 +60,7 @@ public class UtrechtAlertBehavior extends Behavior {
         }
 
         if (!tag.isClose()) {
-            tag.put("class", HTMLUtil.className(this.className, "utrecht-alert--" + type.type));
+            tag.put("class", HTMLUtil.className(this.className, "utrecht-alert utrecht-alert--" + type.type));
         }
     }
 
