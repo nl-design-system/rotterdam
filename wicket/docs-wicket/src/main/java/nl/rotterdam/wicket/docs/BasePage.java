@@ -51,27 +51,5 @@ public abstract class BasePage extends WebPage {
         response.render(DOCS_CSS_HEADER_ITEM);
         response.render(ROOT_HEADER_ITEM);
         response.render(BODY_HEADER_ITEM);
-        response.render(PAGE_BODY_HEADER_ITEM);
-        response.render(PAGE_HEADER_HEADER_ITEM);
-        response.render(PAGE_FOOTER_HEADER_ITEM);
-        response.render(PAGE_LAYOUT_HEADER_ITEM);
-        response.render(HTML_CONTENT_HEADER_ITEM);
-        response.render(FORM_LABEL_HEADER_ITEM);
-        response.render(NUMBER_BADGE_HEADER_ITEM);
-        response.render(BUTTON_GROUP_HEADER_ITEM);
-        response.render(ALERT_HEADER_ITEM);
-        response.render(BADGE_LIST_HEADER_ITEM);
-        response.render(SEPARATOR_HEADER_ITEM);
-        response.render(ORDERED_LIST_HEADER_ITEM);
-        response.render(UNORDERED_LIST_HEADER_ITEM);
-        response.render(ICON_HEADER_ITEM);
-        response.render(COLUMN_LAYOUT_HEADER_ITEM);
-        response.render(HEADING_GROUP_HEADER_ITEM);
-        response.render(LOGO_HEADER_ITEM);
-        response.render(FORM_FIELD_HEADER_ITEM);
-        response.render(FORM_FIELD_DESCRIPTION_HEADER_ITEM);
-        response.render(FORM_FIELD_ERROR_MESSAGE_HEADER_ITEM);
-        response.render(CHECKBOX_HEADER_ITEM);
-        response.render(CUSTOM_CHECKBOX_HEADER_ITEM);
     }
 }
