@@ -1,7 +1,10 @@
 package nl.rotterdam.design_system.wicket.components.preserve_data.utrecht;
 
+import static css.WicketComponentsCssReferences.PRESERVE_DATA_HEADER_ITEM;
+
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 
@@ -27,5 +30,11 @@ public class UtrechtPreserveDataLabel extends Label {
         super.onInitialize();
         add(AttributeModifier.replace("translate", "no"));
         add(AttributeModifier.append("class", "utrecht-preserve-data"));
+    }
+
+    @Override
+    public void renderHead(IHeaderResponse response) {
+        super.renderHead(response);
+        response.render(PRESERVE_DATA_HEADER_ITEM);
     }
 }
