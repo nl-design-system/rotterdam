@@ -17,6 +17,7 @@ public class LoginFormPanel extends Panel {
 
         Model<String> username = Model.of("");
         Model<String> password = Model.of("");
+        Model<Boolean> rememberMe = Model.of(true);
 
         add(new Form<Void>("loginForm") {
 
@@ -25,12 +26,16 @@ public class LoginFormPanel extends Panel {
                 super.onInitialize();
                 add(
                     new FeedbackPanel("feedback"),
-                    new RequiredTextField<String>("username", username)
+
+                    new RequiredTextField<>("username", username)
                         .setLabel(Model.of("Gebruikersnaam")),
-                    new PasswordTextField("password", password).setRequired(true)
+
+                    new PasswordTextField("password", password)
+                        .setRequired(true)
                         .setLabel(Model.of("Wachtwoord")),
 
-                    new CheckBox("rememberMe", Model.of(true)).setLabel(Model.of("Onthoud mij")),
+                    new CheckBox("rememberMe", rememberMe)
+                        .setLabel(Model.of("Onthoud mij")),
 
                     new Button("submit")
                 );
@@ -40,6 +45,10 @@ public class LoginFormPanel extends Panel {
             protected void onSubmit() {
 
                 info("Submitted!");
+
+                System.out.println("Received username: " + username.getObject());
+                System.out.println("Received password: " + password.getObject());
+                System.out.println("Received rememberMe: " + rememberMe.getObject());
 
                 super.onSubmit();
             }
