@@ -16,10 +16,7 @@ public class DocsApplication extends WebApplication {
         getMarkupSettings().setStripWicketTags(true);
 
         // Configure our own fance error page
-        getExceptionSettings()
-            .setUnexpectedExceptionDisplay(
-                ExceptionSettings.SHOW_INTERNAL_ERROR_PAGE
-            );
+        getExceptionSettings().setUnexpectedExceptionDisplay(ExceptionSettings.SHOW_EXCEPTION_PAGE);
 
         /*
          * `CSPDirective` does not appear to support every option we want.
