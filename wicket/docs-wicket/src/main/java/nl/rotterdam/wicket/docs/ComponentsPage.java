@@ -3,6 +3,7 @@ package nl.rotterdam.wicket.docs;
 import css.DesignSystemTheme;
 import java.util.Arrays;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
+import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlertType;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
@@ -103,7 +104,8 @@ public class ComponentsPage extends BasePage {
                 "utrechtAlertInfo",
                 Model.of(
                     "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
-                )
+                ),
+                UtrechtAlertType.INFO
             )
         );
         pageBody.add(
@@ -111,7 +113,8 @@ public class ComponentsPage extends BasePage {
                 "utrechtAlertWarning",
                 Model.of(
                     "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
-                )
+                ),
+                UtrechtAlertType.WARNING
             )
         );
         pageBody.add(
@@ -119,7 +122,8 @@ public class ComponentsPage extends BasePage {
                 "utrechtAlertAlert",
                 Model.of(
                     "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
-                )
+                ),
+                UtrechtAlertType.ERROR
             )
         );
         pageBody.add(
@@ -127,7 +131,8 @@ public class ComponentsPage extends BasePage {
                 "utrechtAlertOk",
                 Model.of(
                     "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
-                )
+                ),
+                UtrechtAlertType.OK
             )
         );
         pageBody.add(new UtrechtSeparator("utrechtSeparator"));
