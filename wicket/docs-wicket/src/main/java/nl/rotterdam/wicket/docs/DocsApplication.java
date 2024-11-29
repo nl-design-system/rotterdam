@@ -1,5 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
+import nl.rotterdam.wicket.docs.behavior_css_rendering.BehaviorCssPage;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
 import org.apache.wicket.markup.html.WebPage;
@@ -20,6 +21,8 @@ public class DocsApplication extends WebApplication {
             .setUnexpectedExceptionDisplay(
                 ExceptionSettings.SHOW_INTERNAL_ERROR_PAGE
             );
+
+        mountPages();
 
         /*
          * `CSPDirective` does not appear to support every option we want.
@@ -47,6 +50,10 @@ public class DocsApplication extends WebApplication {
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.UNSAFE_INLINE)
             .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.SELF)
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF);
+    }
+
+    private void mountPages() {
+        mountPage("/behavior-css", BehaviorCssPage.class);
     }
 
     @Override
