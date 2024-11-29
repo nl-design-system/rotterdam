@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import css.HTMLUtil;
-import java.util.UUID;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
@@ -9,9 +8,9 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
-public class UtrechtFormFieldCheckbox extends Panel {
+import java.util.UUID;
 
-    private static final long serialVersionUID = 1L;
+public class UtrechtFormFieldCheckbox extends Panel {
 
     private final CheckBox checkbox;
     private final Label description;

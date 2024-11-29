@@ -33,6 +33,7 @@
         <input type="password" wicket:id="password">
       </div>
 
+
       <div>
         <label wicket:for="rememberMe">
           <wicket:label>Remember me</wicket:label>
@@ -40,6 +41,10 @@
         <input type="checkbox" wicket:id="rememberMe">
         <span>Onthoud mij 14 dagen</span>
       </div>
+
+      <wicket:container wicket:id="rememberMeNlDesign">
+        <!-- label, checkbox and validation goes here -->
+      </wicket:container>
 
       <div>
         <button type="submit" wicket:id="submit">Submit</button>

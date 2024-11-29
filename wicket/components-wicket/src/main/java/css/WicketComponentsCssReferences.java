@@ -24,7 +24,7 @@ public class WicketComponentsCssReferences {
     public static final HeaderItem THEME_CSS_HEADER_ITEM = makeHeaderItemForCss("theme.css");
     public static final HeaderItem ROOT_HEADER_ITEM = makeHeaderItemForCss("@utrecht/root-css/dist/index.css");
     public static final HeaderItem BODY_HEADER_ITEM = makeHeaderItemForCss("@utrecht/body-css/dist/index.css");
-    public static final HeaderItem CHECKBOX_HEADER_ITEM = makeHeaderItemForCss("@utrecht/checkbox-css/dist/index.css");
+    public static final HeaderItem CHECKBOX_HEADER_ITEM = makeHeaderItemForCss("@utrecht/custom-checkbox-css/dist/index.css");
     public static final HeaderItem CUSTOM_CHECKBOX_HEADER_ITEM = makeHeaderItemForCss(
         "@utrecht/custom-checkbox-css/dist/index.css"
     );

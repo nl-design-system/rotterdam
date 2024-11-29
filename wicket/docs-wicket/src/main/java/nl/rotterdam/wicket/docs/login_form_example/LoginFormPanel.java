@@ -1,5 +1,6 @@
 package nl.rotterdam.wicket.docs.login_form_example;
 
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -36,6 +37,10 @@ public class LoginFormPanel extends Panel {
 
                     new CheckBox("rememberMe", rememberMe)
                         .setLabel(Model.of("Onthoud mij")),
+
+                    new UtrechtFormFieldCheckbox("rememberMeNlDesign", rememberMe, "Onthoud mij")
+                        .setRequired(true),
+
 
                     new Button("submit")
                 );
