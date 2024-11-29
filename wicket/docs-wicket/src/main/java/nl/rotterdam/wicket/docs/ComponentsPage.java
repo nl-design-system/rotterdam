@@ -1,7 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
 import css.DesignSystemTheme;
-import java.util.Arrays;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlertType;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
@@ -15,6 +14,8 @@ import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBord
 import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedList;
+import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListBehavior;
+import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListItemBehavior;
 import nl.rotterdam.design_system.wicket.components.page_body.utrecht.UtrechtPageBodyBorder;
 import nl.rotterdam.design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
 import nl.rotterdam.design_system.wicket.components.page_header.utrecht.UtrechtPageHeaderBorder;
@@ -23,19 +24,26 @@ import nl.rotterdam.design_system.wicket.components.separator.utrecht.UtrechtSep
 import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedList;
 import nl.rotterdam.wicket.docs.form_label.FormLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
-import nl.rotterdam.wicket.docs.page_layout.PageLayoutExamplesPanel;
+import nl.rotterdam.wicket.docs.unordered_list.Kind;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.LambdaChoiceRenderer;
+import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class ComponentsPage extends BasePage {
 
@@ -164,6 +172,37 @@ public class ComponentsPage extends BasePage {
         //         }
         //     }
         // );
+
+
+        List<Kind> kinderen = List.of(
+            new Kind("Jan", 2000, 123456789),
+            new Kind("Storm", 2001, 123456790),
+            new Kind("Fatima", 2002, 123456791)
+        );
+
+
+        pageBody.add(new WebMarkupContainer("utrechtOrderedListWebMarkupContainer") {
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+
+                add(new UtrechtOrderedListBehavior()); // TODO should be singleton
+                add(new ListView<Kind>("listItem", kinderen) {
+
+                        @Override
+                        protected void populateItem(ListItem<Kind> item) {
+                            Kind kind = item.getModelObject();
+                            item.add(new UtrechtOrderedListItemBehavior()); // TODO: should be singleton
+                            item.add(new ExternalLink("link",
+                                "https://concern.ir.rotterdam.nl/example/kind/" + kind.administratienummer(),
+                                kind.naam() + " - " + kind.geboortejaar())
+                            );
+
+                        }
+                    }
+                );
+            }
+        });
 
         // RepeatingView listItems = new RepeatingView("utrechtOrderedListItem");
         // listItems.add(new Label(listItems.newChildId(), "green"));
