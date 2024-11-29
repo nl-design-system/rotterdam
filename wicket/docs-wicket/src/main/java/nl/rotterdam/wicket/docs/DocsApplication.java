@@ -2,6 +2,7 @@ package nl.rotterdam.wicket.docs;
 
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
+import org.apache.wicket.markup.html.HTML5Attributes;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.settings.ExceptionSettings;
@@ -14,6 +15,8 @@ public class DocsApplication extends WebApplication {
 
         // Avoid <wicket:panel> in the output HTML
         getMarkupSettings().setStripWicketTags(true);
+
+        getComponentInstantiationListeners().add(new HTML5Attributes.InstantiationListener());
 
         // Configure our own fance error page
         getExceptionSettings()

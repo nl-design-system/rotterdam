@@ -23,6 +23,7 @@ import nl.rotterdam.design_system.wicket.components.separator.utrecht.UtrechtSep
 import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedList;
 import nl.rotterdam.wicket.docs.form_label.FormLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
+import nl.rotterdam.wicket.docs.login_form_example.LoginFormPanel;
 import nl.rotterdam.wicket.docs.unordered_list.Kind;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -101,9 +102,14 @@ public class ComponentsPage extends BasePage {
 
         pageBody.add(new UtrechtCodeBlock("code-block-example", Model.of("Reload Page")));
 
-        pageBody.add(new HeadingExamplesPanel("headingComponents"));
+        pageBody.add(new LoginFormPanel("loginFormPanel"));
+
+
+        pageBody.add(
+            new HeadingExamplesPanel("headingComponents"),
+            new FormLabelExamplesPanel("labelComponents")
+        );
         // add(new HeadingPanel("labelComponents"));
-        pageBody.add(new FormLabelExamplesPanel("labelComponents"));
         pageBody.add(new UtrechtHtmlContentBorder("utrechtHtmlContent"));
         pageBody.add(new UtrechtNumberBadge("utrechtNumberBadge", Model.of("42")));
         pageBody.add(
