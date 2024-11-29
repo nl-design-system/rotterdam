@@ -81,8 +81,14 @@ public class WicketComponentsCssReferences {
     public static final HeaderItem HEADING_GROUP_HEADER_ITEM = makeHeaderItemForCss(
         "@utrecht/heading-group-css/dist/index.css"
     );
+    public static final HeaderItem CODE_BLOCK_HEADER_ITEM = makeHeaderItemForCss(
+        "@utrecht/code-block-css/dist/index.css"
+    );
     public static final HeaderItem LOGO_HEADER_ITEM = makeHeaderItemForCss("@utrecht/logo-css/dist/index.css");
     public static final HeaderItem ICON_HEADER_ITEM = makeHeaderItemForCss("@utrecht/icon/dist/index.css");
+    public static final HeaderItem PRESERVE_DATA_HEADER_ITEM = makeHeaderItemForCss(
+        "@utrecht/preserve-data-css/dist/index.css"
+    );
 
     // TODO: support dependencies, and know which dependencies are there
     private static CssResourceReference makeReference(String file) {

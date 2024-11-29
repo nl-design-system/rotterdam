@@ -677,6 +677,9 @@ importers:
       '@utrecht/paragraph-css':
         specifier: 1.1.0
         version: 1.1.0
+      '@utrecht/preserve-data-css':
+        specifier: 1.3.0
+        version: 1.3.0
       '@utrecht/root-css':
         specifier: 1.1.0
         version: 1.1.0
@@ -3050,6 +3053,9 @@ packages:
 
   '@utrecht/paragraph-css@2.2.0':
     resolution: {integrity: sha512-jgFsFdz7xcqO14IhYEFx37dh4n1GjCfJM9iQsvo/Yr4zrknQHpGBWQcXMb548W19/4yHMnQnsSnivQGDbPdSug==}
+
+  '@utrecht/preserve-data-css@1.3.0':
+    resolution: {integrity: sha512-Kg0NLsia0xbT+VxJx2BeEayKNUOq/n6WQOlrEVkt4d2ytdgXlrUIhq4w92pMjyUhykeHHCJWPSPVZUviEyF2Og==}
 
   '@utrecht/radio-button-css@1.5.1':
     resolution: {integrity: sha512-pfY44q+TYZ3zVqFjhDfshkdfrBRWd8YcDOnVH10Oyw0xlZFVcJ1rciZZ0bGRwtncdFTbuOh1Ra3LRwUkOaQwkw==}
@@ -10678,6 +10684,8 @@ snapshots:
   '@utrecht/paragraph-css@1.1.0': {}
 
   '@utrecht/paragraph-css@2.2.0': {}
+
+  '@utrecht/preserve-data-css@1.3.0': {}
 
   '@utrecht/radio-button-css@1.5.1': {}
 
