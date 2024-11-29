@@ -1,5 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.alert.utrecht;
 
+import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
@@ -7,13 +9,21 @@ import org.apache.wicket.model.IModel;
 public class UtrechtAlert extends Panel {
 
     public static final String SLOT_ID = "slot";
-    private final Label label;
 
-    public UtrechtAlert(String id, IModel<String> textContent) {
+    public UtrechtAlert(String id, IModel<String> textContent, UtrechtAlertType type) {
         super(id);
-        label = new Label(SLOT_ID, textContent);
+        WebMarkupContainer container = new WebMarkupContainer("alert") {
+            @Override
+            public void onComponentTag(ComponentTag tag) {
+                super.onComponentTag(tag);
 
-        add(new UtrechtAlertBehavior());
-        add(label);
+                if (!tag.isClose()) {
+                    tag.append("class", "utrecht-alert--" + type.type, " ");
+                }
+            }
+        };
+        add(container);
+        container.add(UtrechtAlertBehavior.utrechtAlert(type));
+        container.add(new Label(SLOT_ID, textContent));
     }
 }
