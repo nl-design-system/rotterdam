@@ -62,3 +62,5 @@ pnpm-lock.yaml
 
 # Ignore generated files from Stencil
 components.d.ts
+/wicket/components-wicket/components-wicket.iml
+/wicket/docs-wicket/docs-wicket.iml
