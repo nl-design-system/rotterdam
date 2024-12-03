@@ -84,7 +84,7 @@
     "wicket:build": "mvn --offline clean install",
     "wicket:clean": "mvn clean",
     "wicket:install": "mvn dependency:go-offline",
-    "wicket:dev": "mvn exec:java -pl :docs-wicket"
+    "wicket:dev": "mvn exec:java@runDocs -pl :docs-wicket"
   },
   "dependencies": {
     "http-server": "14.1.1"
