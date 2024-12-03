@@ -1,15 +1,14 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import com.google.common.base.Charsets;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Charsets;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Optional;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 public class HtmlDocumentationExtractor {
 
@@ -24,16 +23,16 @@ public class HtmlDocumentationExtractor {
     }
 
     public WicketHtmlExampleSnippet extractExample(String wicketId) {
-        Element element = document.selectFirst(
-            "[data-example-container-for=" + wicketId + "]"
-        );
+        Element element = document.selectFirst("[data-example-container-for=" + wicketId + "]");
 
         checkNotNull(element, "No element found for: " + wicketId);
 
         return new WicketHtmlExampleSnippet(
-            checkNotNull(element.selectFirst(".example-container__header"), wicketId + "mus have header").html(),
-            Optional.ofNullable(element.selectFirst(".example-container__documentation")).map(Element::html).orElse(null),
-            checkNotNull(element.selectFirst(".example-container__code"), wicketId + "mus have code").html()
+            checkNotNull(element.selectFirst(".example-container__header"), wicketId + "must have header").html(),
+            Optional.ofNullable(element.selectFirst(".example-container__documentation"))
+                .map(Element::html)
+                .orElse(null),
+            checkNotNull(element.selectFirst(".example-container__code"), wicketId + "must have code").html()
         );
     }
 

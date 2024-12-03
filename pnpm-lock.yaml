@@ -367,6 +367,9 @@ importers:
       '@gemeente-rotterdam/design-tokens':
         specifier: workspace:*
         version: link:../../proprietary/design-tokens
+      '@gemeente-rotterdam/docs-wicket':
+        specifier: workspace:*
+        version: link:../../wicket/docs-wicket
       '@gemeente-rotterdam/font':
         specifier: workspace:*
         version: link:../../proprietary/font
@@ -705,7 +708,11 @@ importers:
         specifier: 1.0.0-alpha.35
         version: 1.0.0-alpha.35
 
-  wicket/docs-wicket: {}
+  wicket/docs-wicket:
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
 
 packages:
 
