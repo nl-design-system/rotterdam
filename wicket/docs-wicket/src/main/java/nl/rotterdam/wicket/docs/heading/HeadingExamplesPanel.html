@@ -1,124 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl" xmlns:wicket="http://wicket.apache.org">
-<body>
-<wicket:panel xmlns:wicket="http://wicket.apache.org">
-  <section class="example-collection">
-    <h2>Heading component</h2>
-    <header>
-      <p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
-      <p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
+  <body>
+    <wicket:panel xmlns:wicket="http://wicket.apache.org">
+      <section class="stories">
+        <h1>Heading component</h1>
+        <div>
+          <p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
+          <p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
 
-      <p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
-      <ol>
-        <li>UtrechtHeading: een Label component om een waarde of Model te tonen</li>
-        <li>UtrechtHeadingBehavior: pas de Utrecht Heading style toe op een ander Wicket component</li>
-      </ol>
-    </header>
-
-    <p>Je kunt het component gebruiken met de correcte <em>hx</em> HTML-tags:</p>
-
-    <section class="example-container" data-example-container-for="utrechtLabel1">
-      <h2 class="example-container__header">Kop 1</h2>
-      <div class="example-container__explanation">
-        <p>Gebruik h1 maximaal één keer per pagina.</p>
-      </div>
-      <div class="example-container__code">
-        <h1 wicket:id="utrechtLabel1">Gebruik maximaal één h1 per pagina</h1>
-      </div>
-    </section>
-
-    <section class="example-container" data-example-container-for="utrechtLabel2">
-      <h2 class="example-container__header">Kop 2</h2>
-      <div class="example-container__code">
-        <h2 wicket:id="utrechtLabel2">Header 2</h2>
-      </div>
-    </section>
-
-
-    <section class="example-container" data-example-container-for="utrechtLabel3">
-      <h2 class="example-container__header">Kop 3</h2>
-      <div class="example-container__code">
-        <h3 wicket:id="utrechtLabel3">Header 3</h3>
-      </div>
-    </section>
-
-    <section class="example-container" data-example-container-for="utrechtLabel4">
-      <h2 class="example-container__header">Kop 4</h2>
-      <div class="example-container__code">
-        <h4 wicket:id="utrechtLabel4">Header 4</h4>
-      </div>
-    </section>
-
-    <section class="example-container" data-example-container-for="utrechtLabel5">
-      <h2 class="example-container__header">Kop 5</h2>
-      <div class="example-container__code">
-        <h5 wicket:id="utrechtLabel5">Header 5</h5>
-      </div>
-    </section>
-
-
-    <section class="example-container" data-example-container-for="utrechtLabel6">
-      <h2 class="example-container__header">Kop 6</h2>
-      <div class="example-container__code">
-        <h6 wicket:id="utrechtLabel6">Header 6</h6>
-      </div>
-    </section>
-
-    <section class="example-container" data-example-container-for="utrechtLabel3MetDivTag">
-      <h2 class="example-container__header">Tags worden vervangen</h2>
-      <div class="example-container__explanation">
-        <p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste kop-tag:</p>
-      </div>
-      <div class="example-container__code">
-        <div wicket:id="utrechtLabel3MetDivTag">Utrecht label 3 met div wordt door Wicket bij het renderen vervangen.
+          <p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
+          <ol>
+            <li>UtrechtHeading: een Label component om een waarde of Model te tonen</li>
+            <li>UtrechtHeadingBehavior: pas de Utrecht Heading style toe op een ander Wicket component</li>
+          </ol>
         </div>
-      </div>
-    </section>
 
-    <section class="example-container" data-example-container-for="bestaandeCssClass">
-      <h2 class="example-container__header">Behoud bestaande CSS class</h2>
-      <div class="example-container__explanation">
-        <p>Bestaande CSS-class wordt behouden:</p>
-      </div>
-      <div class="example-container__code">
-        <h4 class="extra-class" wicket:id="bestaandeCssClass">De bestaande class blijft behouden</h4>
-      </div>
-    </section>
+        <p>Je kunt het component gebruiken met de correcte <em>hx</em> HTML-tags:</p>
 
-    <section class="example-container" data-example-container-for="utrechtHeadingModelConstructor">
-      <h2 class="example-container__header">Model constructor</h2>
-      <div class="example-container__explanation">
-        <p>Tekst kan gezet worden met model constructor:</p>
-      </div>
-      <div class="example-container__code">
-        <h4 wicket:id="utrechtHeadingModelConstructor">Tekst wordt gezet via model constructor</h4>
-      </div>
-    </section>
+        <section data-testid="utrechtLabel1">
+          <h2>Kop 1</h2>
+          <div>
+            <p>Gebruik h1 maximaal één keer per pagina.</p>
+          </div>
+          <template>
+            <h1 wicket:id="utrechtLabel1">Gebruik maximaal één h1 per pagina</h1>
+          </template>
+        </section>
 
-    <section class="example-container" data-example-container-for="utrechtHeadingDefaultModel">
-      <h2 class="example-container__header">Model via defaultModel</h2>
-      <div class="example-container__explanation">
-        <p>Tekst kan gezet worden via defaultModel:</p>
-      </div>
-      <div class="example-container__code">
-        <h4 wicket:id="utrechtHeadingDefaultModel">Tekst wordt gezet via defaultModel</h4>
-      </div>
-    </section>
+        <section data-testid="utrechtLabel2">
+          <h2>Kop 2</h2>
+          <template>
+            <h2 wicket:id="utrechtLabel2">Header 2</h2>
+          </template>
+        </section>
 
-    <section class="example-container" data-example-container-for="headingMetUntranslatableContent">
-      <h2 class="example-container__header">MarkupContainer met niet-vertaalbare content</h2>
-      <div class="example-container__explanation">
-        <p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden door vertaalsoftware:</p>
-      </div>
-      <div class="example-container__code">
-        <h1 wicket:id="headingMetUntranslatableContent">
-          Welkom mevrouw
-          <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
-        </h1>
-      </div>
-    </section>
+        <section data-testid="utrechtLabel3">
+          <h2>Kop 3</h2>
+          <template>
+            <h3 wicket:id="utrechtLabel3">Header 3</h3>
+          </template>
+        </section>
 
-  </section>
-</wicket:panel>
-</body>
+        <section data-testid="utrechtLabel4">
+          <h2>Kop 4</h2>
+          <template>
+            <h4 wicket:id="utrechtLabel4">Header 4</h4>
+          </template>
+        </section>
+
+        <section data-testid="utrechtLabel5">
+          <h2>Kop 5</h2>
+          <template>
+            <h5 wicket:id="utrechtLabel5">Header 5</h5>
+          </template>
+        </section>
+
+        <section data-testid="utrechtLabel6">
+          <h2>Kop 6</h2>
+          <template>
+            <h6 wicket:id="utrechtLabel6">Header 6</h6>
+          </template>
+        </section>
+
+        <section data-testid="utrechtLabel3MetDivTag">
+          <h2>Tags worden vervangen</h2>
+          <div>
+            <p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste kop-tag:</p>
+          </div>
+          <template>
+            <div wicket:id="utrechtLabel3MetDivTag">
+              Utrecht label 3 met div wordt door Wicket bij het renderen vervangen.
+            </div>
+          </template>
+        </section>
+
+        <section data-testid="bestaandeCssClass">
+          <h2>Behoud bestaande CSS class</h2>
+          <div>
+            <p>Bestaande CSS-class wordt behouden:</p>
+          </div>
+          <template>
+            <h4 class="extra-class" wicket:id="bestaandeCssClass">De bestaande class blijft behouden</h4>
+          </template>
+        </section>
+
+        <section data-testid="utrechtHeadingModelConstructor">
+          <h2>Model constructor</h2>
+          <div>
+            <p>Tekst kan gezet worden met model constructor:</p>
+          </div>
+          <template>
+            <h4 wicket:id="utrechtHeadingModelConstructor">Tekst wordt gezet via model constructor</h4>
+          </template>
+        </section>
+
+        <section data-testid="utrechtHeadingDefaultModel">
+          <h2>Model via defaultModel</h2>
+          <div>
+            <p>Tekst kan gezet worden via defaultModel:</p>
+          </div>
+          <template>
+            <h4 wicket:id="utrechtHeadingDefaultModel">Tekst wordt gezet via defaultModel</h4>
+          </template>
+        </section>
+
+        <section data-testid="headingMetUntranslatableContent">
+          <h2>MarkupContainer met niet-vertaalbare content</h2>
+          <div>
+            <p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden door vertaalsoftware:</p>
+          </div>
+          <template>
+            <h1 wicket:id="headingMetUntranslatableContent">
+              Welkom mevrouw
+              <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
+            </h1>
+          </template>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
 </html>
