@@ -23,20 +23,18 @@ public class HtmlDocumentationExtractor {
     }
 
     public WicketHtmlExampleSnippet extractExample(String wicketId) {
-        Element element = document.selectFirst("[data-example-container-for=" + wicketId + "]");
+        Element element = document.selectFirst("[data-testid=" + wicketId + "]");
 
         checkNotNull(element, "No element found for: " + wicketId);
 
         return new WicketHtmlExampleSnippet(
-            checkNotNull(element.selectFirst(".example-container__header"), wicketId + "must have header").html(),
-            Optional.ofNullable(element.selectFirst(".example-container__documentation"))
-                .map(Element::html)
-                .orElse(null),
-            checkNotNull(element.selectFirst(".example-container__code"), wicketId + "must have code").html()
+            checkNotNull(element.selectFirst("h2"), wicketId + "must have header").html(),
+            Optional.ofNullable(element.selectFirst("h2 + div")).map(Element::html).orElse(null),
+            checkNotNull(element.selectFirst("template"), wicketId + "must have code").html()
         );
     }
 
     public String extractHeader() {
-        return checkNotNull(document.selectFirst("header")).html();
+        return checkNotNull(document.selectFirst("h1 + div")).html();
     }
 }
