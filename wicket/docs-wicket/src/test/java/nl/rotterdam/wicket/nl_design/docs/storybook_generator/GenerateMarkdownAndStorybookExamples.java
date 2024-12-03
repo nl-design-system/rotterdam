@@ -37,6 +37,15 @@ public class GenerateMarkdownAndStorybookExamples {
         ).generate();
     }
 
+    @Test
+    void generateHeading2Component() {
+        new MarkdownDocumentationExamplesGenerator(
+            HeadingExamplesPanel.class,
+            UtrechtHeading.class,
+            "heading"
+        ).generate();
+    }
+
     @AfterEach
     void tearDown() {
         tester.destroy();

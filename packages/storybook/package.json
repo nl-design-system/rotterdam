@@ -25,6 +25,7 @@
     "@gemeente-rotterdam/assets": "workspace:*",
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
+    "@gemeente-rotterdam/docs-wicket": "workspace:*",
     "@gemeente-rotterdam/font": "workspace:*",
     "@gemeente-rotterdam/icon": "workspace:*",
     "@gemeente-rotterdam/mendix-css": "workspace:*",

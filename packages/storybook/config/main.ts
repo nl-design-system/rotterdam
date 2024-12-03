@@ -22,7 +22,7 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['../../../proprietary/assets/src'],
-  stories: ['../src/**/*stories.@(js|jsx|ts|tsx)', '../src/**/*.mdx'],
+  stories: ['../src/**/*stories.@(js|jsx|ts|tsx)', '../src/**/*.mdx', '../../../wicket/docs-wicket/stories/*.mdx'],
 };
 
 export default config;
