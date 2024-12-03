@@ -1,13 +1,14 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
+import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
+import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
 
 /**
  * How to update the documentation:
@@ -29,16 +30,12 @@ public class GenerateMarkdownAndStorybookExamples {
     WicketTester tester = new WicketTester(new DocsApplication());
 
     @Test
-    void generateHeadingComponent() {
-        new MarkdownDocumentationExamplesGenerator(
-            HeadingExamplesPanel.class,
-            UtrechtHeading.class,
-            "heading"
-        ).generate();
+    void generateAlertComponent() {
+        new MarkdownDocumentationExamplesGenerator(AlertExamplesPanel.class, UtrechtAlert.class, "alert").generate();
     }
 
     @Test
-    void generateHeading2Component() {
+    void generateHeadingComponent() {
         new MarkdownDocumentationExamplesGenerator(
             HeadingExamplesPanel.class,
             UtrechtHeading.class,
