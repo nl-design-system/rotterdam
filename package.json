@@ -82,7 +82,7 @@
     "wicket:install-and-build": "mvn --no-transfer-progress clean install",
     "wicket:clean": "mvn clean",
     "wicket:install": "mvn --no-transfer-progress dependency:go-offline",
-    "wicket:dev": "mvn exec:java -pl :docs-wicket"
+    "wicket:dev": "mvn exec:java@runDocs -pl :docs-wicket"
   },
   "dependencies": {
     "http-server": "14.1.1"
