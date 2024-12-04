@@ -13,6 +13,7 @@ import nl.rotterdam.design_system.wicket.components.html_content.utrecht.Utrecht
 import nl.rotterdam.design_system.wicket.components.icon.utrecht.UtrechtIconBorder;
 import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
 import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
+import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
@@ -29,6 +30,7 @@ import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
 import nl.rotterdam.wicket.docs.logo.UtrechtLogoExamplesPanel;
 import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
+import nl.rotterdam.wicket.docs.number_badge.UtrechtNumberBadgeExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -167,6 +169,15 @@ public class GenerateMarkdownAndStorybookExamples {
             IconExamplesPanel.class,
             UtrechtIconBorder.class,
             "utrecht-icon"
+        ).generate();
+    }
+
+    @Test
+    void generateUtrechtNumberBadge() {
+        new MarkdownDocumentationExamplesGenerator(
+            UtrechtNumberBadgeExamplesPanel.class,
+            UtrechtNumberBadge.class,
+            "utrecht-number-badge"
         ).generate();
     }
 
