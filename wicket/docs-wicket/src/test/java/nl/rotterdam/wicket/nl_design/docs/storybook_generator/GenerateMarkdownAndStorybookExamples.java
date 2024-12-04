@@ -10,6 +10,7 @@ import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
 import nl.rotterdam.design_system.wicket.components.html_content.utrecht.UtrechtHtmlContentBorder;
+import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
@@ -23,6 +24,7 @@ import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
+import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -134,6 +136,15 @@ public class GenerateMarkdownAndStorybookExamples {
             HtmlContentExamplesPanel.class,
             UtrechtHtmlContentBorder.class,
             "html-content"
+        ).generate();
+    }
+
+    @Test
+    void generateRotterdamLogoImage() {
+        new MarkdownDocumentationExamplesGenerator(
+            RotterdamLogoImageExamplesPanel.class,
+            RotterdamLogoImage.class,
+            "rotterdam-logo-image"
         ).generate();
     }
 
