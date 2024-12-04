@@ -7,6 +7,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
+import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
@@ -43,6 +44,11 @@ public class GenerateMarkdownAndStorybookExamples {
             UtrechtBadgeListBorder.class,
             "badge-list"
         ).generate();
+    }
+
+    @Test
+    void generateBodyComponent() {
+        new MarkdownDocumentationExamplesGenerator(BodyExamplesPanel.class, BodyExamplesPanel.class, "body").generate();
     }
 
     @Test
