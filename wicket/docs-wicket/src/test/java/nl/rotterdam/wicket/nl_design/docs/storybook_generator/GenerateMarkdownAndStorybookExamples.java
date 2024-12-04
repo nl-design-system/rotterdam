@@ -8,6 +8,7 @@ import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.Utrech
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabel;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
+import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
@@ -19,6 +20,7 @@ import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
+import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -112,6 +114,15 @@ public class GenerateMarkdownAndStorybookExamples {
             HeadingExamplesPanel.class,
             UtrechtHeading.class,
             "heading"
+        ).generate();
+    }
+
+    @Test
+    void generateHeadingGroupComponent() {
+        new MarkdownDocumentationExamplesGenerator(
+            HeadingGroupExamplesPanel.class,
+            UtrechtHeadingGroupBorder.class,
+            "heading-group"
         ).generate();
     }
 
