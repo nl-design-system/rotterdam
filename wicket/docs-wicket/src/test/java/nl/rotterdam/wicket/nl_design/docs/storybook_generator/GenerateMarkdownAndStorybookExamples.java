@@ -3,6 +3,7 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
+import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
@@ -10,6 +11,7 @@ import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
+import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
@@ -59,6 +61,15 @@ public class GenerateMarkdownAndStorybookExamples {
             ButtonGroupExamplesPanel.class,
             UtrechtButtonGroupBorder.class,
             "button-group"
+        ).generate();
+    }
+
+    @Test
+    void generateCodeBlockComponent() {
+        new MarkdownDocumentationExamplesGenerator(
+            CodeBlockExamplesPanel.class,
+            UtrechtCodeBlock.class,
+            "code-block"
         ).generate();
     }
 
