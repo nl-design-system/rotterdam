@@ -10,6 +10,7 @@ import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
 import nl.rotterdam.design_system.wicket.components.html_content.utrecht.UtrechtHtmlContentBorder;
+import nl.rotterdam.design_system.wicket.components.icon.utrecht.UtrechtIconBorder;
 import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
 import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.wicket.docs.ComponentExample;
@@ -25,6 +26,7 @@ import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
+import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
 import nl.rotterdam.wicket.docs.logo.UtrechtLogoExamplesPanel;
 import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
@@ -156,6 +158,15 @@ public class GenerateMarkdownAndStorybookExamples {
             UtrechtLogoExamplesPanel.class,
             UtrechtLogoBorder.class,
             "utrecht-logo"
+        ).generate();
+    }
+
+    @Test
+    void generateUtrechtIcon() {
+        new MarkdownDocumentationExamplesGenerator(
+            IconExamplesPanel.class,
+            UtrechtIconBorder.class,
+            "utrecht-icon"
         ).generate();
     }
 
