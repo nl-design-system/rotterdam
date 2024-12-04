@@ -5,6 +5,7 @@ import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBa
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
@@ -14,6 +15,7 @@ import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
+import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
@@ -81,6 +83,15 @@ public class GenerateMarkdownAndStorybookExamples {
             ColumnLayoutExamplesPanel.class,
             UtrechtColumnLayoutBorder.class,
             "column-layout"
+        ).generate();
+    }
+
+    @Test
+    void generateFormFieldCheckboxComponent() {
+        new MarkdownDocumentationExamplesGenerator(
+            FormFieldCheckboxExamplesPanel.class,
+            UtrechtFormFieldCheckbox.class,
+            "form-field-checkbox"
         ).generate();
     }
 
