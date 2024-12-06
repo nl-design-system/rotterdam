@@ -602,6 +602,9 @@ importers:
       '@utrecht/custom-checkbox-css':
         specifier: 1.1.1
         version: 1.1.1
+      '@utrecht/data-badge-css':
+        specifier: 1.0.0
+        version: 1.0.0
       '@utrecht/form-field-css':
         specifier: 1.5.0
         version: 1.5.0
@@ -3294,6 +3297,9 @@ packages:
 
   '@utrecht/custom-checkbox-css@1.1.1':
     resolution: {integrity: sha512-nU6T1eDEFSWBXmJ3eUuAlKy/0gPygXrGZhVmk7HUwyP+H0J6kAZd75t7d/ZlIjwzz5cWPF7uUbGD5637Z7KgHg==}
+
+  '@utrecht/data-badge-css@1.0.0':
+    resolution: {integrity: sha512-f+u4fYqOKEtFJrtiRcByDLnSTmlgMICjLDRgMMiRFZls9iq7jLK/5as8nOv/1dYjSdSWjN5AxeIvh6KmzWmWJA==}
 
   '@utrecht/focus-ring-css@1.1.0':
     resolution: {integrity: sha512-MDxrC7b1AZ+S0+oqfMA/QD05GDhBTnc7q5VR3a+39jwJkgXtG7gJSQ7Pr8kdK8/Brx94SayIAEP5vAjuBee6bQ==}
@@ -12537,6 +12543,8 @@ snapshots:
       clsx: 1.2.1
 
   '@utrecht/custom-checkbox-css@1.1.1': {}
+
+  '@utrecht/data-badge-css@1.0.0': {}
 
   '@utrecht/focus-ring-css@1.1.0': {}
 

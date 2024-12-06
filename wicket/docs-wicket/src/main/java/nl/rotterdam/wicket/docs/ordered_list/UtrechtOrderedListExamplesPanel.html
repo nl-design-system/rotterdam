@@ -14,7 +14,11 @@
             <p>Voorbeeld.</p>
           </div>
           <rods-story-canvas
-            ><template> <div wicket:id="utrechtOrderedList"></div> </template>
+            ><template>
+              <ol wicket:id="utrechtOrderedListWebMarkupContainer">
+                <li wicket:id="listItem"><wicket:container wicket:id="label"></wicket:container></li>
+              </ol>
+            </template>
           </rods-story-canvas>
         </section>
       </section>
