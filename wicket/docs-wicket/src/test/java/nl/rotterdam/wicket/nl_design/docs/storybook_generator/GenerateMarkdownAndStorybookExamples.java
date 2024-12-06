@@ -75,10 +75,15 @@ public class GenerateMarkdownAndStorybookExamples {
 
     @Test
     void generateBadgeListComponent() {
+
+        tester.startComponentInPage(BadgeListExamplesPanel.class);
+        String renderedHtml = tester.getLastResponseAsString();
+
         new MarkdownDocumentationExamplesGenerator(
             BadgeListExamplesPanel.class,
             UtrechtBadgeListBorder.class,
-            "badge-list"
+            "badge-list",
+            renderedHtml
         ).generate();
     }
 
@@ -92,8 +97,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             ButtonGroupExamplesPanel.class,
             UtrechtButtonGroupBorder.class,
-            "button-group"
-        ).generate();
+            "button-group").generate();
     }
 
     @Test
@@ -134,10 +138,15 @@ public class GenerateMarkdownAndStorybookExamples {
 
     @Test
     void generateHeadingComponent() {
+
+        tester.startComponentInPage(HeadingExamplesPanel.class);
+        String renderedHtml = tester.getLastResponseAsString();
+
         new MarkdownDocumentationExamplesGenerator(
             HeadingExamplesPanel.class,
             UtrechtHeading.class,
-            "heading"
+            "heading",
+            renderedHtml
         ).generate();
     }
 
@@ -146,8 +155,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             HeadingGroupExamplesPanel.class,
             UtrechtHeadingGroupBorder.class,
-            "heading-group"
-        ).generate();
+            "heading-group").generate();
     }
 
     @Test
@@ -155,8 +163,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             HtmlContentExamplesPanel.class,
             UtrechtHtmlContentBorder.class,
-            "html-content"
-        ).generate();
+            "html-content").generate();
     }
 
     @Test
@@ -164,8 +171,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             RotterdamLogoImageExamplesPanel.class,
             RotterdamLogoImage.class,
-            "rotterdam-logo-image"
-        ).generate();
+            "rotterdam-logo-image").generate();
     }
 
     @Test
@@ -173,8 +179,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtLogoExamplesPanel.class,
             UtrechtLogoBorder.class,
-            "utrecht-logo"
-        ).generate();
+            "utrecht-logo").generate();
     }
 
     @Test
@@ -182,8 +187,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             IconExamplesPanel.class,
             UtrechtIconBorder.class,
-            "utrecht-icon"
-        ).generate();
+            "utrecht-icon").generate();
     }
 
     @Test
@@ -191,8 +195,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtNumberBadgeExamplesPanel.class,
             UtrechtNumberBadge.class,
-            "utrecht-number-badge"
-        ).generate();
+            "utrecht-number-badge").generate();
     }
 
     @Test
@@ -200,8 +203,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtPageBodyExamplesPanel.class,
             UtrechtPageBodyBorder.class,
-            "utrecht-page-body"
-        ).generate();
+            "utrecht-page-body").generate();
     }
 
     @Test
@@ -209,8 +211,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtPageFooterExamplesPanel.class,
             UtrechtPageFooterBorder.class,
-            "utrecht-page-footer"
-        ).generate();
+            "utrecht-page-footer").generate();
     }
 
     @Test
@@ -218,8 +219,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtPageLayoutExamplesPanel.class,
             UtrechtPageLayoutBorder.class,
-            "utrecht-page-layout"
-        ).generate();
+            "utrecht-page-layout").generate();
     }
 
     @Test
@@ -227,8 +227,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtPreserveDataExamplesPanel.class,
             UtrechtPreserveDataLabel.class,
-            "utrecht-preserve-data"
-        ).generate();
+            "utrecht-preserve-data").generate();
     }
 
     @Test
@@ -236,8 +235,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtRootExamplesPanel.class,
             UtrechtRootBorder.class,
-            "utrecht-root"
-        ).generate();
+            "utrecht-root").generate();
     }
 
     @Test
@@ -245,8 +243,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtSeparatorExamplesPanel.class,
             UtrechtSeparator.class,
-            "utrecht-separator"
-        ).generate();
+            "utrecht-separator").generate();
     }
 
     @Test
@@ -254,8 +251,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtOrderedListExamplesPanel.class,
             UtrechtOrderedList.class,
-            "utrecht-ordered-list"
-        ).generate();
+            "utrecht-ordered-list").generate();
     }
 
     @Test
@@ -263,8 +259,7 @@ public class GenerateMarkdownAndStorybookExamples {
         new MarkdownDocumentationExamplesGenerator(
             UtrechtOrderedListExamplesPanel.class,
             UtrechtOrderedList.class,
-            "utrecht-unordered-list"
-        ).generate();
+            "utrecht-unordered-list").generate();
     }
 
     @AfterEach

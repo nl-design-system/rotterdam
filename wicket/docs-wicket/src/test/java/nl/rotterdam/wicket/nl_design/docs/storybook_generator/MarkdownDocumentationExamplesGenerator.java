@@ -1,11 +1,15 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
-
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.util.string.Strings;
+import org.junit.platform.commons.support.ModifierSupport;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -14,11 +18,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
-import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.util.string.Strings;
-import org.junit.platform.commons.support.ModifierSupport;
+
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
 
 public class MarkdownDocumentationExamplesGenerator {
 
@@ -38,8 +39,17 @@ public class MarkdownDocumentationExamplesGenerator {
           When you have a Behavior and a component, put them in the same package.
          */
         Class<? extends Component> componentClass,
-        String componentName
-    ) {
+        String componentName) {
+        this(examplePanelClass, componentClass, componentName, null);
+    }
+    public MarkdownDocumentationExamplesGenerator(
+        Class<? extends Panel> examplePanelClass,
+        /*
+          When you have a Behavior and a component, put them in the same package.
+         */
+        Class<? extends Component> componentClass,
+        String componentName,
+        String renderedHtml) {
         this.componentName = componentName;
         this.componentNameCapitalized = Strings.capitalize(componentName);
 
@@ -53,8 +63,10 @@ public class MarkdownDocumentationExamplesGenerator {
         String exampleFilenameWithoutExtension = basePathInDocs + examplePanelClass.getSimpleName();
 
         exampleJavaFile = new File(exampleFilenameWithoutExtension + ".java");
-        documentationExtractor = new HtmlDocumentationExtractor(
-            new File(exampleFilenameWithoutExtension + ".html").toPath()
+        documentationExtractor =
+            renderedHtml != null
+                ? new HtmlDocumentationExtractor(renderedHtml)
+                : new HtmlDocumentationExtractor(new File(exampleFilenameWithoutExtension + ".html").toPath()
         );
 
         markdownReadmeFile = new File(moduleRootPath + "/stories/" + componentName + ".md");
@@ -176,10 +188,7 @@ public class MarkdownDocumentationExamplesGenerator {
             lines.addAll(
                 List.of(
                     "```html",
-                    "<wicket:panel xmlns:wicket=\"http://wicket.apache.org\">",
-                    // TODO: Indent each line of codeHTML, not only the first
-                    "    " + example.htmlSnippet().codeHTML(),
-                    "</wicket:panel>",
+                    example.htmlSnippet().codeHTML(),
                     "```",
                     "",
                     "```java",
