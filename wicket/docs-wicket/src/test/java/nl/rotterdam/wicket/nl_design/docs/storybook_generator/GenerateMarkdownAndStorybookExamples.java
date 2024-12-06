@@ -258,6 +258,15 @@ public class GenerateMarkdownAndStorybookExamples {
         ).generate();
     }
 
+    @Test
+    void generateUtrechtUnorderedList() {
+        new MarkdownDocumentationExamplesGenerator(
+            UtrechtOrderedListExamplesPanel.class,
+            UtrechtOrderedList.class,
+            "utrecht-unordered-list"
+        ).generate();
+    }
+
     @AfterEach
     void tearDown() {
         tester.destroy();
