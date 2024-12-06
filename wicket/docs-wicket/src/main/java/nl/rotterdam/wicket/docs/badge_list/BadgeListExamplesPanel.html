@@ -8,11 +8,14 @@
           <p>Lijst van labels met extra informatie, zoals een categorie of een eigenschap.</p>
         </div>
 
-        <section data-testid="utrechtBadgeList">
+        <section data-testid="utrechtBadgeListWebMarkupContainer">
           <h2>Badge List</h2>
           <div></div>
           <rods-story-canvas
-            ><template> <div wicket:id="utrechtBadgeList"></div> </template>
+            ><template>
+              <div wicket:id="utrechtBadgeListWebMarkupContainer">
+                <span wicket:id="listItem"><wicket:container wicket:id="label"></wicket:container></span></div
+            ></template>
           </rods-story-canvas>
         </section>
       </section>
