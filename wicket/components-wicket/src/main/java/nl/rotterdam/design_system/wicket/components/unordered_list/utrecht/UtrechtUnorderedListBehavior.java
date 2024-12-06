@@ -3,16 +3,15 @@ package nl.rotterdam.design_system.wicket.components.unordered_list.utrecht;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
+
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 public class UtrechtUnorderedListBehavior extends Behavior {
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(UtrechtUnorderedListBehavior.class, "@utrecht/unordered-list-css/dist/index.css")
-    );
+    public static final CssReferenceHeaderItem CSS =
+        cssReferenceHeaderItem(UtrechtUnorderedListBehavior.class, "@utrecht/unordered-list-css/dist/index.css");
 
     private final String expectedTagName;
     private final String className;
