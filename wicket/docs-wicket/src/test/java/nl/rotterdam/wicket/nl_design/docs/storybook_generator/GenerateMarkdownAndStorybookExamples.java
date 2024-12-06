@@ -14,6 +14,7 @@ import nl.rotterdam.design_system.wicket.components.icon.utrecht.UtrechtIconBord
 import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
 import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
+import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedList;
 import nl.rotterdam.design_system.wicket.components.page_body.utrecht.UtrechtPageBodyBorder;
 import nl.rotterdam.design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
 import nl.rotterdam.design_system.wicket.components.page_layout.utrecht.UtrechtPageLayoutBorder;
@@ -37,6 +38,7 @@ import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
 import nl.rotterdam.wicket.docs.logo.UtrechtLogoExamplesPanel;
 import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
 import nl.rotterdam.wicket.docs.number_badge.UtrechtNumberBadgeExamplesPanel;
+import nl.rotterdam.wicket.docs.ordered_list.UtrechtOrderedListExamplesPanel;
 import nl.rotterdam.wicket.docs.page_body.UtrechtPageBodyExamplesPanel;
 import nl.rotterdam.wicket.docs.page_footer.UtrechtPageFooterExamplesPanel;
 import nl.rotterdam.wicket.docs.page_layout.UtrechtPageLayoutExamplesPanel;
@@ -244,6 +246,15 @@ public class GenerateMarkdownAndStorybookExamples {
             UtrechtSeparatorExamplesPanel.class,
             UtrechtSeparator.class,
             "utrecht-separator"
+        ).generate();
+    }
+
+    @Test
+    void generateUtrechtOrderedList() {
+        new MarkdownDocumentationExamplesGenerator(
+            UtrechtOrderedListExamplesPanel.class,
+            UtrechtOrderedList.class,
+            "utrecht-ordered-list"
         ).generate();
     }
 
