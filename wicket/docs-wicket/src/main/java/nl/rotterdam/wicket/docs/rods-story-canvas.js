@@ -31,10 +31,11 @@ class RodsStoryElement extends HTMLElement {
     shadow.adoptedStyleSheets = [stylesheet];
     const template = this.querySelector('template');
     const div = this.ownerDocument.createElement('div');
+    div.appendChild(this.ownerDocument.createElement('slot'));
     div.classList.add('rods-story-canvas');
     shadow.appendChild(div);
     if (template) {
-      div.appendChild(template.content.cloneNode(true));
+      this.appendChild(template.content.cloneNode(true));
     }
   }
 }

@@ -1,15 +1,15 @@
 package nl.rotterdam.design_system.wicket.components.alert.utrecht;
 
 import css.HTMLUtil;
+import java.util.Map;
+import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.HeaderItem;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
-
-import java.util.Map;
-
-import static css.WicketComponentsCssReferences.ALERT_HEADER_ITEM;
+import org.apache.wicket.request.resource.CssResourceReference;
 
 public class UtrechtAlertBehavior extends Behavior {
 
@@ -39,15 +39,17 @@ public class UtrechtAlertBehavior extends Behavior {
         UTRECHT_ALERT_OK
     );
 
+    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtAlertBehavior.class, "@utrecht/alert-css/dist/index.css")
+    );
+
     private final String expectedTagName;
     private final String className;
-    private final HeaderItem cssHeaderItem;
     private final UtrechtAlertType type;
 
     private UtrechtAlertBehavior(UtrechtAlertType type) {
         this.expectedTagName = "div";
         this.className = "utrecht-alert";
-        this.cssHeaderItem = ALERT_HEADER_ITEM;
         this.type = type;
     }
 
@@ -67,6 +69,6 @@ public class UtrechtAlertBehavior extends Behavior {
     @Override
     public void renderHead(Component component, IHeaderResponse response) {
         super.renderHead(component, response);
-        response.render(cssHeaderItem);
+        response.render(CSS);
     }
 }
