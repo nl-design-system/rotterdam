@@ -1,16 +1,16 @@
 package nl.rotterdam.design_system.wicket.components.alert.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
-import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
 
 import java.util.Map;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 public class UtrechtAlertBehavior extends TagNameClassComponentBehavior {
+
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(UtrechtAlertBehavior.class, "@utrecht/alert-css/dist/index.css");
 
     public static Behavior utrechtAlert(UtrechtAlertType type) {
         Behavior behavior = types.get(type);
@@ -38,18 +38,9 @@ public class UtrechtAlertBehavior extends TagNameClassComponentBehavior {
         UTRECHT_ALERT_OK
     );
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(UtrechtAlertBehavior.class, "@utrecht/alert-css/dist/index.css");
-
-    private static final String EXPECTED_TAG_NAME = "div";
-    private static final String CLASS_NAME = "utrecht-alert";
 
     private UtrechtAlertBehavior(UtrechtAlertType type) {
-        super(EXPECTED_TAG_NAME, CLASS_NAME, "utrecht-alert--" + type.type);
-    }
-
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-        response.render(CSS);
+        super("div", "utrecht-alert", "utrecht-alert--" + type.type);
+        addHeaderItem(CSS);
     }
 }
