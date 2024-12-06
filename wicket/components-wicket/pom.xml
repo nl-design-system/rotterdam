@@ -299,6 +299,14 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>@utrecht/textbox-css/dist/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/design_system/wicket/components/textbox/utrecht</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
                     <include>@utrecht/unordered-list-css/dist/*.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/design_system/wicket/components/unordered_list/utrecht</targetPath>
