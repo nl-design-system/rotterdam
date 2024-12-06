@@ -1,8 +1,14 @@
 package nl.rotterdam.wicket.docs.badge_list;
 
-import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
+import java.util.List;
+import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBehavior;
+import nl.rotterdam.design_system.wicket.components.data_badge.utrecht.UtrechtDataBadgeBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class BadgeListExamplesPanel extends Panel {
@@ -13,7 +19,27 @@ public class BadgeListExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleBadgeList() {
-        return new UtrechtBadgeListBorder("utrechtBadgeList");
+        List<String> namen = List.of("duurzaamheid", "schoon, heel en veilig");
+
+        return new WebMarkupContainer("utrechtBadgeListWebMarkupContainer") {
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+
+                add(new UtrechtBadgeListBehavior()); // TODO should be singleton
+                add(
+                    new ListView<String>("listItem", namen) {
+                        @Override
+                        protected void populateItem(ListItem<String> item) {
+                            item.add(new UtrechtDataBadgeBehavior()); // TODO: should be singleton
+                            String naam = item.getModelObject();
+                            // item.add(naam);
+                            item.add(new Label("label", naam));
+                        }
+                    }
+                );
+            }
+        };
     }
 
     @Override

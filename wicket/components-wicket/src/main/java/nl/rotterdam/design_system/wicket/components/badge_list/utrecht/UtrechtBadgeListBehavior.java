@@ -1,20 +1,19 @@
 package nl.rotterdam.design_system.wicket.components.badge_list.utrecht;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class UtrechtBadgeListBehavior extends Behavior {
+import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(UtrechtBadgeListBehavior.class, "@utrecht/badge-list-css/dist/index.css");
+public class UtrechtBadgeListBehavior extends TagNameClassComponentBehavior {
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+        UtrechtBadgeListBehavior.class,
+        "@utrecht/badge-list-css/dist/index.css"
+    );
 
-        response.render(CSS);
+    public UtrechtBadgeListBehavior() {
+        super("div", "utrecht-badge-list");
+        addHeaderItem(CSS);
     }
 }
