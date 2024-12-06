@@ -18,6 +18,7 @@ import nl.rotterdam.design_system.wicket.components.page_body.utrecht.UtrechtPag
 import nl.rotterdam.design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
 import nl.rotterdam.design_system.wicket.components.page_layout.utrecht.UtrechtPageLayoutBorder;
 import nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
+import nl.rotterdam.design_system.wicket.components.root.utrecht.UtrechtRootBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
@@ -39,6 +40,7 @@ import nl.rotterdam.wicket.docs.page_body.UtrechtPageBodyExamplesPanel;
 import nl.rotterdam.wicket.docs.page_footer.UtrechtPageFooterExamplesPanel;
 import nl.rotterdam.wicket.docs.page_layout.UtrechtPageLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.preserve_data.UtrechtPreserveDataExamplesPanel;
+import nl.rotterdam.wicket.docs.root.UtrechtRootExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -222,6 +224,15 @@ public class GenerateMarkdownAndStorybookExamples {
             UtrechtPreserveDataExamplesPanel.class,
             UtrechtPreserveDataLabel.class,
             "utrecht-preserve-data"
+        ).generate();
+    }
+
+    @Test
+    void generateUtrechtRoot() {
+        new MarkdownDocumentationExamplesGenerator(
+            UtrechtRootExamplesPanel.class,
+            UtrechtRootBorder.class,
+            "utrecht-root"
         ).generate();
     }
 
