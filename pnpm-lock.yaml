@@ -593,6 +593,9 @@ importers:
       '@utrecht/button-group-css':
         specifier: 1.4.0
         version: 1.4.0
+      '@utrecht/code-block-css':
+        specifier: 1.4.0
+        version: 1.4.0
       '@utrecht/column-layout-css':
         specifier: 1.5.0
         version: 1.5.0
@@ -3262,6 +3265,9 @@ packages:
 
   '@utrecht/button-group-css@1.4.0':
     resolution: {integrity: sha512-NV12LA6wh0IaBuqjVVD+dZUzl4Sk0aKKiO3qL0BT7XQJvygDRjJq3M5d2pI9BDMMOb9jgT6VuIARST0Qk6JuxQ==}
+
+  '@utrecht/code-block-css@1.4.0':
+    resolution: {integrity: sha512-jZF2CeGvNQfaTAgh8r0tZPQsMrzqcyUFkmWg0pz9Gt66R8y3d3Le3UgfIp5KKN0yFm35kuZvXsjRIUwvPQly/A==}
 
   '@utrecht/column-layout-css@1.5.0':
     resolution: {integrity: sha512-XnhA/CscHCwy5i35dOORgagmi0Ajhu/56Zr6ghRP42D8r2pcTL5YCYRAJ3qXozeQ+2QbDqzoGsVkYtmcuaJAFg==}
@@ -12513,6 +12519,8 @@ snapshots:
   '@utrecht/button-css@1.1.0': {}
 
   '@utrecht/button-group-css@1.4.0': {}
+
+  '@utrecht/code-block-css@1.4.0': {}
 
   '@utrecht/column-layout-css@1.5.0': {}
 

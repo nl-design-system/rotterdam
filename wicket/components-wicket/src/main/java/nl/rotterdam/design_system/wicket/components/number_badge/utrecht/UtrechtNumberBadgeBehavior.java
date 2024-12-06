@@ -1,23 +1,25 @@
 package nl.rotterdam.design_system.wicket.components.number_badge.utrecht;
 
-import static css.WicketComponentsCssReferences.NUMBER_BADGE_HEADER_ITEM;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.HeaderItem;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.request.resource.CssResourceReference;
 
 public class UtrechtNumberBadgeBehavior extends Behavior {
 
+    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtNumberBadgeBehavior.class, "@utrecht/number-badge-css/dist/index.css")
+    );
+
     private final String expectedTagName;
     private final String className;
-    private final HeaderItem cssHeaderItem;
 
     public UtrechtNumberBadgeBehavior() {
         this.expectedTagName = "data";
         this.className = "utrecht-number-badge";
-        this.cssHeaderItem = NUMBER_BADGE_HEADER_ITEM;
     }
 
     @Override
@@ -36,6 +38,6 @@ public class UtrechtNumberBadgeBehavior extends Behavior {
     @Override
     public void renderHead(Component component, IHeaderResponse response) {
         super.renderHead(component, response);
-        response.render(cssHeaderItem);
+        response.render(CSS);
     }
 }

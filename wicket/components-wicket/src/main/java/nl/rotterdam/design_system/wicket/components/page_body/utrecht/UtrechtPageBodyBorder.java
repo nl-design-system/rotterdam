@@ -6,5 +6,6 @@ public class UtrechtPageBodyBorder extends Border {
 
     public UtrechtPageBodyBorder(String id) {
         super(id);
+        add(new UtrechtPageBodyBehavior());
     }
 }
