@@ -49,7 +49,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=8202-9795',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-5876&t=EXoPmctpkctdqa4z-4',
     },
   },
 };
