@@ -7,12 +7,10 @@ import org.apache.wicket.model.IModel;
 public class UtrechtCodeBlock extends Panel {
 
     public static final String SLOT_ID = "slot";
-    private final Label label;
 
     public UtrechtCodeBlock(String id, IModel<String> textContent) {
         super(id);
-        label = new Label(SLOT_ID, textContent);
-        add(label);
+        add(new Label(SLOT_ID, textContent));
         add(new UtrechtCodeBlockBehavior());
     }
 }
