@@ -9,6 +9,7 @@ import nl.rotterdam.design_system.wicket.components.button_group.utrecht.Utrecht
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht.UtrechtFormFieldTextbox;
 import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
 import nl.rotterdam.design_system.wicket.components.html_content.utrecht.UtrechtHtmlContentBorder;
 import nl.rotterdam.design_system.wicket.components.icon.utrecht.UtrechtIconBorder;
@@ -32,6 +33,7 @@ import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
+import nl.rotterdam.wicket.docs.form_field_textbox.UtrechtFormFieldTextboxExamplesPanel;
 // import nl.rotterdam.wicket.docs.form_label.FormLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
@@ -135,6 +137,7 @@ public class ComponentsPage extends BasePage {
         pageBody.add(new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"));
         pageBody.add(new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"));
         pageBody.add(new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"));
+        pageBody.add(new UtrechtFormFieldTextboxExamplesPanel("formFieldTextboxExamplesPanel"));
         pageBody.add(new HeadingExamplesPanel("headingExamplesPanel"));
         pageBody.add(new HeadingGroupExamplesPanel("headingGroupExamplesPanel"));
         pageBody.add(new HtmlContentExamplesPanel("htmlContentExamplesPanel"));
