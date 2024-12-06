@@ -1,19 +1,25 @@
 package nl.rotterdam.wicket.nl_design.docs;
 
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
-
-import java.time.Duration;
+import nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain;
 import org.eclipse.jetty.ee10.webapp.WebAppContext;
 import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 
+import java.time.Duration;
+
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
+
 public class Start {
 
     public static final int PORT = 8945;
 
+    @SuppressWarnings({"CallToPrintStackTrace", "ResultOfMethodCallIgnored"})
     public static void main(final String[] args) {
+
+        GenerateMarkdownAndStorybookExamplesMain.main(args);
+
         final int timeout = (int) Duration.ofHours(1L).toMillis();
 
         final Server server = new Server();
