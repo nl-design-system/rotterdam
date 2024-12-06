@@ -22,44 +22,56 @@
           <div>
             <p>Gebruik h1 maximaal één keer per pagina.</p>
           </div>
-          <template>
-            <h1 wicket:id="utrechtLabel1">Gebruik maximaal één h1 per pagina</h1>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h1 wicket:id="utrechtLabel1">Gebruik maximaal één h1 per pagina</h1>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtLabel2">
           <h2>Kop 2</h2>
-          <template>
-            <h2 wicket:id="utrechtLabel2">Header 2</h2>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h2 wicket:id="utrechtLabel2">Header 2</h2>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtLabel3">
           <h2>Kop 3</h2>
-          <template>
-            <h3 wicket:id="utrechtLabel3">Header 3</h3>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h3 wicket:id="utrechtLabel3">Header 3</h3>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtLabel4">
           <h2>Kop 4</h2>
-          <template>
-            <h4 wicket:id="utrechtLabel4">Header 4</h4>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h4 wicket:id="utrechtLabel4">Header 4</h4>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtLabel5">
           <h2>Kop 5</h2>
-          <template>
-            <h5 wicket:id="utrechtLabel5">Header 5</h5>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h5 wicket:id="utrechtLabel5">Header 5</h5>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtLabel6">
           <h2>Kop 6</h2>
-          <template>
-            <h6 wicket:id="utrechtLabel6">Header 6</h6>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h6 wicket:id="utrechtLabel6">Header 6</h6>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtLabel3MetDivTag">
@@ -67,11 +79,13 @@
           <div>
             <p>Het Wicket component vervangt automatisch een <em>div</em> door de juiste kop-tag:</p>
           </div>
-          <template>
-            <div wicket:id="utrechtLabel3MetDivTag">
-              Utrecht label 3 met div wordt door Wicket bij het renderen vervangen.
-            </div>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <div wicket:id="utrechtLabel3MetDivTag">
+                Utrecht label 3 met div wordt door Wicket bij het renderen vervangen.
+              </div>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="bestaandeCssClass">
@@ -79,9 +93,11 @@
           <div>
             <p>Bestaande CSS-class wordt behouden:</p>
           </div>
-          <template>
-            <h4 class="extra-class" wicket:id="bestaandeCssClass">De bestaande class blijft behouden</h4>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h4 class="extra-class" wicket:id="bestaandeCssClass">De bestaande class blijft behouden</h4>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtHeadingModelConstructor">
@@ -89,9 +105,11 @@
           <div>
             <p>Tekst kan gezet worden met model constructor:</p>
           </div>
-          <template>
-            <h4 wicket:id="utrechtHeadingModelConstructor">Tekst wordt gezet via model constructor</h4>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h4 wicket:id="utrechtHeadingModelConstructor">Tekst wordt gezet via model constructor</h4>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="utrechtHeadingDefaultModel">
@@ -99,9 +117,11 @@
           <div>
             <p>Tekst kan gezet worden via defaultModel:</p>
           </div>
-          <template>
-            <h4 wicket:id="utrechtHeadingDefaultModel">Tekst wordt gezet via defaultModel</h4>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h4 wicket:id="utrechtHeadingDefaultModel">Tekst wordt gezet via defaultModel</h4>
+            </template></rods-story-canvas
+          >
         </section>
 
         <section data-testid="headingMetUntranslatableContent">
@@ -109,12 +129,14 @@
           <div>
             <p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden door vertaalsoftware:</p>
           </div>
-          <template>
-            <h1 wicket:id="headingMetUntranslatableContent">
-              Welkom mevrouw
-              <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
-            </h1>
-          </template>
+          <rods-story-canvas
+            ><template>
+              <h1 wicket:id="headingMetUntranslatableContent">
+                Welkom mevrouw
+                <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
+              </h1>
+            </template></rods-story-canvas
+          >
         </section>
       </section>
     </wicket:panel>
