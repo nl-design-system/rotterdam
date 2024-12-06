@@ -1,5 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
+import nl.rotterdam.wicket.docs.login_page.LoginPage;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
 import org.apache.wicket.markup.html.HTML5Attributes;
@@ -23,6 +24,9 @@ public class DocsApplication extends WebApplication {
             .setUnexpectedExceptionDisplay(
                 ExceptionSettings.SHOW_INTERNAL_ERROR_PAGE
             );
+
+
+        mountPage("login", LoginPage.class);
 
         /*
          * `CSPDirective` does not appear to support every option we want.
