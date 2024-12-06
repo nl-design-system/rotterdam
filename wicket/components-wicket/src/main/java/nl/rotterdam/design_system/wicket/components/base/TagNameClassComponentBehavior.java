@@ -22,7 +22,7 @@ public abstract class TagNameClassComponentBehavior extends Behavior {
         }
 
         if (!tag.isClose()) {
-            tag.put("class", String.join(" ", classNames));
+            tag.append("class", String.join(" ", classNames), " ");
         }
     }
 }
