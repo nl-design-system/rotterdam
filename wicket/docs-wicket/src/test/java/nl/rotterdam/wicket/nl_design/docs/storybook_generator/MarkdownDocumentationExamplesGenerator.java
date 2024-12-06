@@ -157,12 +157,11 @@ public class MarkdownDocumentationExamplesGenerator {
                 "",
                 "# " + componentNameCapitalized + " component voor Apache Wicket",
                 "",
+                convertToMarkdown(documentationExtractor.extractHeader()),
+                "",
                 "[Broncode van dit voorbeeld](" + gitHubExamplePath + ")",
                 "",
-                "[Broncode van de component](" + gitHubComponentPath + ")",
-                "",
-                convertToMarkdown(documentationExtractor.extractHeader()),
-                "Hieronder volgen verschillende voorbeelden van het gebruik van het component in Apache Wicket."
+                "[Broncode van de component](" + gitHubComponentPath + ")"
             )
         );
 
@@ -177,7 +176,10 @@ public class MarkdownDocumentationExamplesGenerator {
             lines.addAll(
                 List.of(
                     "```html",
-                    example.htmlSnippet().codeHTML(),
+                    "<wicket:panel xmlns:wicket=\"http://wicket.apache.org\">",
+                    // TODO: Indent each line of codeHTML, not only the first
+                    "    " + example.htmlSnippet().codeHTML(),
+                    "</wicket:panel>",
                     "```",
                     "",
                     "```java",
