@@ -41,14 +41,12 @@ public class UtrechtAlertBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(UtrechtAlertBehavior.class, "@utrecht/alert-css/dist/index.css");
 
+    private static final String EXPECTED_TAG_NAME = "div";
+    private static final String CLASS_NAME = "utrecht-alert";
 
-    private final String expectedTagName;
-    private final String className;
     private final UtrechtAlertType type;
 
     private UtrechtAlertBehavior(UtrechtAlertType type) {
-        this.expectedTagName = "div";
-        this.className = "utrecht-alert";
         this.type = type;
     }
 
@@ -56,12 +54,12 @@ public class UtrechtAlertBehavior extends Behavior {
     public void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
-        if (!expectedTagName.equals(tag.getName())) {
-            tag.setName(expectedTagName);
+        if (!EXPECTED_TAG_NAME.equals(tag.getName())) {
+            tag.setName(EXPECTED_TAG_NAME);
         }
 
         if (!tag.isClose()) {
-            tag.put("class", HTMLUtil.className(this.className, "utrecht-alert utrecht-alert--" + type.type));
+            tag.put("class", HTMLUtil.className(CLASS_NAME, "utrecht-alert utrecht-alert--" + type.type));
         }
     }
 
