@@ -36,6 +36,10 @@ type Story = StoryObj<typeof meta>;
 export const Base: Story = {
   name: 'Base logo',
   parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/RiVsTfcbmnKSU2BGqQBI9n/RODS-fundament?node-id=1-1385',
+    },
     docs: {
       description: {
         story: logoImageBaseDocs,

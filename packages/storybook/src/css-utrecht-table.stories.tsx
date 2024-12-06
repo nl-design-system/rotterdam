@@ -84,7 +84,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=507-19314',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=22-6351&t=5SS9SJ1KhfLkhqSu-4',
     },
   },
 };
