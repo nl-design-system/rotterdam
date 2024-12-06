@@ -1,15 +1,35 @@
 package nl.rotterdam.design_system.wicket.components.heading.utrecht;
 
-import static css.WicketComponentsCssReferences.*;
-
 import java.util.Map;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.request.resource.CssResourceReference;
 
 public class UtrechtHeadingBehavior extends Behavior {
+
+    public static final CssReferenceHeaderItem UTRECHT_HEADING_1_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtHeadingBehavior.class, "@utrecht/heading-1-css/dist/index.css")
+    );
+    public static final CssReferenceHeaderItem UTRECHT_HEADING_2_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtHeadingBehavior.class, "@utrecht/heading-2-css/dist/index.css")
+    );
+    public static final CssReferenceHeaderItem UTRECHT_HEADING_3_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtHeadingBehavior.class, "@utrecht/heading-3-css/dist/index.css")
+    );
+    public static final CssReferenceHeaderItem UTRECHT_HEADING_4_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtHeadingBehavior.class, "@utrecht/heading-4-css/dist/index.css")
+    );
+    public static final CssReferenceHeaderItem UTRECHT_HEADING_5_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtHeadingBehavior.class, "@utrecht/heading-5-css/dist/index.css")
+    );
+    public static final CssReferenceHeaderItem UTRECHT_HEADING_6_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(UtrechtHeadingBehavior.class, "@utrecht/heading-6-css/dist/index.css")
+    );
 
     public static Behavior heading(int level) {
         Behavior behavior = behaviors.get(level);

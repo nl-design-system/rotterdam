@@ -608,6 +608,9 @@ importers:
       '@utrecht/button-group-css':
         specifier: 1.4.0
         version: 1.4.0
+      '@utrecht/code-block-css':
+        specifier: 1.4.0
+        version: 1.4.0
       '@utrecht/column-layout-css':
         specifier: 1.5.0
         version: 1.5.0
@@ -2887,6 +2890,9 @@ packages:
       '@babel/runtime': '*'
       react: '18'
       react-dom: '18'
+
+  '@utrecht/code-block-css@1.4.0':
+    resolution: {integrity: sha512-jZF2CeGvNQfaTAgh8r0tZPQsMrzqcyUFkmWg0pz9Gt66R8y3d3Le3UgfIp5KKN0yFm35kuZvXsjRIUwvPQly/A==}
 
   '@utrecht/column-layout-css@1.5.0':
     resolution: {integrity: sha512-XnhA/CscHCwy5i35dOORgagmi0Ajhu/56Zr6ghRP42D8r2pcTL5YCYRAJ3qXozeQ+2QbDqzoGsVkYtmcuaJAFg==}
@@ -10535,6 +10541,8 @@ snapshots:
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  '@utrecht/code-block-css@1.4.0': {}
 
   '@utrecht/column-layout-css@1.5.0': {}
 

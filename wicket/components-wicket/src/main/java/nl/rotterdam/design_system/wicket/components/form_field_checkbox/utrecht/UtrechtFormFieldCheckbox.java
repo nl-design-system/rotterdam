@@ -1,16 +1,13 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
-import static css.WicketComponentsCssReferences.CHECKBOX_HEADER_ITEM;
-import static css.WicketComponentsCssReferences.CUSTOM_CHECKBOX_HEADER_ITEM;
-import static css.WicketComponentsCssReferences.FORM_FIELD_DESCRIPTION_HEADER_ITEM;
-import static css.WicketComponentsCssReferences.FORM_FIELD_ERROR_MESSAGE_HEADER_ITEM;
-import static css.WicketComponentsCssReferences.FORM_FIELD_HEADER_ITEM;
-import static css.WicketComponentsCssReferences.FORM_LABEL_HEADER_ITEM;
-
 import css.HTMLUtil;
 import java.util.UUID;
+import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
+import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -53,6 +50,12 @@ public class UtrechtFormFieldCheckbox extends Panel {
         IModel<String> errorModel
     ) {
         super(id);
+        add(new UtrechtFormFieldBehavior());
+        add(new UtrechtFormLabelBehavior());
+        add(new UtrechtFormFieldDescriptionBehavior());
+        add(new UtrechtFormFieldErrorMessageBehavior());
+        add(new UtrechtCheckboxBehavior());
+
         errorMessageModel = errorModel;
 
         // Generate unique IDs `for` and `aria-describedby` ID references
@@ -185,17 +188,6 @@ public class UtrechtFormFieldCheckbox extends Panel {
                 isInvalid() ? UtrechtFormFieldCheckbox.FORM_FIELD_INVALID_CLASSNAME : null
             )
         );
-    }
-
-    @Override
-    public void renderHead(IHeaderResponse response) {
-        super.renderHead(response);
-        response.render(CHECKBOX_HEADER_ITEM);
-        response.render(CUSTOM_CHECKBOX_HEADER_ITEM);
-        response.render(FORM_FIELD_DESCRIPTION_HEADER_ITEM);
-        response.render(FORM_FIELD_ERROR_MESSAGE_HEADER_ITEM);
-        response.render(FORM_FIELD_HEADER_ITEM);
-        response.render(FORM_LABEL_HEADER_ITEM);
     }
 
     public UtrechtFormFieldCheckbox setRequired(boolean required) {
