@@ -11,6 +11,7 @@ import nl.rotterdam.design_system.wicket.components.page_layout.utrecht.UtrechtP
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
+import nl.rotterdam.wicket.docs.button.UtrechtButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
@@ -107,6 +108,7 @@ public class ComponentsPage extends BasePage {
         pageBody.add(new AlertExamplesPanel("alertExamplesPanel"));
         pageBody.add(new BadgeListExamplesPanel("badgeListExamplesPanel"));
         pageBody.add(new BodyExamplesPanel("bodyExamplesPanel"));
+        pageBody.add(new UtrechtButtonExamplesPanel("buttonExamplesPanel"));
         pageBody.add(new ButtonGroupExamplesPanel("buttonGroupExamplesPanel"));
         pageBody.add(new CodeBlockExamplesPanel("codeBlockExamplesPanel"));
         pageBody.add(new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"));
