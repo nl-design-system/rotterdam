@@ -1,13 +1,12 @@
 package nl.rotterdam.design_system.wicket.components.base;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class TagNameClassComponentBehavior extends Behavior {
 
@@ -28,6 +27,10 @@ public abstract class TagNameClassComponentBehavior extends Behavior {
         headerItems.add(headerItem);
     }
 
+    public String[] getClassNames() {
+        return classNames;
+    }
+
     public void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
@@ -36,7 +39,7 @@ public abstract class TagNameClassComponentBehavior extends Behavior {
         }
 
         if (!tag.isClose()) {
-            tag.append("class", String.join(" ", classNames), " ");
+            tag.append("class", String.join(" ", this.getClassNames()), " ");
         }
     }
 
