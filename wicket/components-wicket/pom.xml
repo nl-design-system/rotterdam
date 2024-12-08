@@ -227,6 +227,14 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>@utrecht/link-css/dist/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/design_system/wicket/components/link/utrecht</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
                     <include>@utrecht/logo-css/dist/*.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/design_system/wicket/components/logo/utrecht</targetPath>
