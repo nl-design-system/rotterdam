@@ -28,6 +28,7 @@ import nl.rotterdam.wicket.docs.ordered_list.UtrechtOrderedListExamplesPanel;
 import nl.rotterdam.wicket.docs.page_body.UtrechtPageBodyExamplesPanel;
 import nl.rotterdam.wicket.docs.page_footer.UtrechtPageFooterExamplesPanel;
 import nl.rotterdam.wicket.docs.page_layout.UtrechtPageLayoutExamplesPanel;
+import nl.rotterdam.wicket.docs.paragraph.utrecht.UtrechtParagraphExamplesPanel;
 import nl.rotterdam.wicket.docs.preserve_data.UtrechtPreserveDataExamplesPanel;
 import nl.rotterdam.wicket.docs.root.UtrechtRootExamplesPanel;
 import nl.rotterdam.wicket.docs.separator.UtrechtSeparatorExamplesPanel;
@@ -122,6 +123,7 @@ public class ComponentsPage extends BasePage {
         pageBody.add(new UtrechtPageBodyExamplesPanel("pageBodyExamplesPanel"));
         pageBody.add(new UtrechtPageFooterExamplesPanel("pageFooterExamplesPanel"));
         pageBody.add(new UtrechtPageLayoutExamplesPanel("pageLayoutExamplesPanel"));
+        pageBody.add(new UtrechtParagraphExamplesPanel("paragraphExamplesPanel"));
         pageBody.add(new UtrechtPreserveDataExamplesPanel("preserveDataExamplesPanel"));
         pageBody.add(new UtrechtRootExamplesPanel("rootExamplesPanel"));
         pageBody.add(new UtrechtSeparatorExamplesPanel("separatorExamplesPanel"));
