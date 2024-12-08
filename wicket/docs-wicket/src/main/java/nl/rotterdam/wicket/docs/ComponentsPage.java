@@ -28,6 +28,7 @@ import nl.rotterdam.wicket.docs.paragraph.utrecht.UtrechtParagraphExamplesPanel;
 import nl.rotterdam.wicket.docs.preserve_data.UtrechtPreserveDataExamplesPanel;
 import nl.rotterdam.wicket.docs.root.UtrechtRootExamplesPanel;
 import nl.rotterdam.wicket.docs.separator.UtrechtSeparatorExamplesPanel;
+import nl.rotterdam.wicket.docs.side_nav.DenhaagSideNavExamplesPanel;
 import nl.rotterdam.wicket.docs.unordered_list.UtrechtUnorderedListExamplesPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -74,6 +75,7 @@ public class ComponentsPage extends RotterdamBasePage {
         super.onInitialize();
 
         // Add the component stories
+        pageBody.add(new DenhaagSideNavExamplesPanel("denhaagSideNavExamplesPanel"));
         pageBody.add(new AlertExamplesPanel("alertExamplesPanel"));
         pageBody.add(new BadgeListExamplesPanel("badgeListExamplesPanel"));
         pageBody.add(new BodyExamplesPanel("bodyExamplesPanel"));

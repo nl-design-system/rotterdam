@@ -587,6 +587,9 @@ importers:
 
   wicket/components-wicket:
     devDependencies:
+      '@gemeente-denhaag/sidenav':
+        specifier: 0.1.0-alpha.218
+        version: 0.1.0-alpha.218(react@18.3.1)
       '@nl-design-system-candidate/paragraph-css':
         specifier: 2.0.0
         version: 2.0.0
