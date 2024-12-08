@@ -1,5 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.button.utrecht;
 
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.model.IModel;
 
@@ -8,7 +10,9 @@ public class UtrechtButton extends Button {
     public boolean busy = false;
     public UtrechtButtonAppearance appearance = null;
     public UtrechtButtonHint hint = null;
-    public boolean pressed = false;
+
+    // Pressed is a nullable boolean
+    public Boolean pressed = null;
 
     public UtrechtButton(String id) {
         this(id, null);
@@ -30,7 +34,7 @@ public class UtrechtButton extends Button {
         this.busy = busy;
     }
 
-    public void setPressed(boolean pressed) {
+    public void setPressed(Boolean pressed) {
         this.pressed = pressed;
     }
 
@@ -41,7 +45,7 @@ public class UtrechtButton extends Button {
         boolean isBusy = this.busy;
         UtrechtButtonAppearance appearance = this.appearance;
         UtrechtButtonHint hint = this.hint;
-        boolean isPressed = this.pressed;
+        Boolean isPressed = this.pressed;
 
         add(
             new UtrechtButtonBehavior() {
@@ -52,9 +56,19 @@ public class UtrechtButton extends Button {
                         appearance != null ? "utrecht-button--" + appearance.appearance : "",
                         hint != null ? "utrecht-button--" + hint.hint : "",
                         isEnabled ? "" : "utrecht-button--disabled",
-                        isPressed ? "utrecht-button--pressed" : "",
+                        isPressed != null && isPressed == true ? "utrecht-button--pressed" : "",
                         isBusy ? "utrecht-button--busy" : "",
                     };
+                }
+
+                @Override
+                public void onComponentTag(Component component, ComponentTag tag) {
+                    super.onComponentTag(component, tag);
+
+                    // Create a toggle button when the nullable boolean `isPressed` is a boolean.
+                    if (isPressed != null) {
+                        tag.put("aria-pressed", isPressed ? "true" : "false");
+                    }
                 }
             }
         );

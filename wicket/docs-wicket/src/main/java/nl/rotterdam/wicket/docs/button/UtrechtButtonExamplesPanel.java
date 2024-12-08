@@ -21,13 +21,21 @@ public class UtrechtButtonExamplesPanel extends Panel {
     @ComponentExample
     private static Component utrechtButtonDisabled() {
         UtrechtButton button = new UtrechtButton("utrechtButtonDisabled");
+        button.setEnabled(false);
         return button;
     }
 
     @ComponentExample
     private static Component utrechtButtonBusy() {
         UtrechtButton button = new UtrechtButton("utrechtButtonBusy");
-        button.setEnabled(false);
+        button.setBusy(true);
+        return button;
+    }
+
+    @ComponentExample
+    private static Component utrechtButtonToggle() {
+        UtrechtButton button = new UtrechtButton("utrechtButtonToggle");
+        button.setPressed(false);
         return button;
     }
 
@@ -93,6 +101,7 @@ public class UtrechtButtonExamplesPanel extends Panel {
         add(utrechtButton());
         add(utrechtButtonDisabled());
         add(utrechtButtonBusy());
+        add(utrechtButtonToggle());
         add(utrechtButtonPressed());
         add(utrechtButtonIconStart());
         add(utrechtButtonPrimaryAction());

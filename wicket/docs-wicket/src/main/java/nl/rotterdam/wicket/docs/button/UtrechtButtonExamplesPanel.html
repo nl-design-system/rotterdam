@@ -44,8 +44,20 @@
           >
         </section>
 
+        <section data-testid="utrechtButtonToggle">
+          <h2>Toggle Button</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <div wicket:id="utrechtButtonToggle">Click me</div>
+            </template></rods-story-canvas
+          >
+        </section>
+
         <section data-testid="utrechtButtonPressed">
-          <h2>Pressed Button</h2>
+          <h2>Pressed Toggle Button</h2>
           <div>
             <p>Voorbeeld.</p>
           </div>
@@ -63,7 +75,19 @@
           </div>
           <rods-story-canvas
             ><template>
-              <div wicket:id="utrechtButtonIconStart">Click me</div>
+              <div wicket:id="utrechtButtonIconStart">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 23V13H15V23H13Z" />
+                  <path d="M17 23V13H19V23H17Z" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M20 4H12V8H5V10H8V28H24V10H27V8H20V4ZM10 26V10H22V26H10ZM18 6H14V8H18V6Z"
+                  />
+                </svg>
+
+                Click me
+              </div>
             </template></rods-story-canvas
           >
         </section>
