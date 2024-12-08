@@ -1,10 +1,12 @@
 package nl.rotterdam.wicket.docs.link;
 
+import nl.rotterdam.design_system.wicket.components.link.utrecht.UtrechtBookmarkableLink;
 import nl.rotterdam.design_system.wicket.components.link.utrecht.UtrechtExternalLink;
 import nl.rotterdam.design_system.wicket.components.link.utrecht.UtrechtLink;
 import nl.rotterdam.design_system.wicket.components.link.utrecht.UtrechtLinkBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ComponentsPage;
+import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
@@ -37,6 +39,16 @@ public class UtrechtLinkExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleUtrechtLink() {
         return new UtrechtLink<String, ComponentsPage>("utrechtLink", Model.of("Homepage"), ComponentsPage.class);
+    }
+
+    @ComponentExample
+    private static Component exampleUtrechtBookmarkableLink() {
+        return new UtrechtBookmarkableLink<>("utrechtBookmarkableLink", MijnLoketPage.class);
+    }
+
+    @ComponentExample
+    private static Component exampleUtrechtBookmarkableLinkCurrent() {
+        return new UtrechtBookmarkableLink<>("utrechtBookmarkableLinkCurrent", ComponentsPage.class);
     }
 
     @ComponentExample
@@ -97,6 +109,18 @@ public class UtrechtLinkExamplesPanel extends Panel {
         return link;
     }
 
+    @ComponentExample
+    private static Component exampleUtrechtBookmarkableLinkPlaceholder() {
+        // `setDisabled()` is default functionality on `Link`
+        UtrechtBookmarkableLink<?> link = new UtrechtBookmarkableLink<>(
+            "utrechtBookmarkableLinkPlaceholder",
+            ComponentsPage.class
+        );
+
+        link.setPlaceholder(true);
+        return link;
+    }
+
     @Override
     protected void onInitialize() {
         super.onInitialize();
@@ -104,10 +128,13 @@ public class UtrechtLinkExamplesPanel extends Panel {
         add(exampleLinkLabel());
         add(exampleLinkExternal());
         add(exampleUtrechtLink());
+        add(exampleUtrechtBookmarkableLink());
+        add(exampleUtrechtBookmarkableLinkCurrent());
         add(exampleUtrechtLinkExternal());
         add(exampleUtrechtLinkBehavior());
         add(exampleUtrechtLinkExternalBehavior());
         add(exampleUtrechtLinkPlaceholder());
         add(exampleUtrechtLinkExternalPlaceholder());
+        add(exampleUtrechtBookmarkableLinkPlaceholder());
     }
 }

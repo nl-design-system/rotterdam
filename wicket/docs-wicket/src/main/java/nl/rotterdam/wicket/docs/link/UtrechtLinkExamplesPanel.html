@@ -50,6 +50,29 @@
           </rods-story-canvas>
         </section>
 
+        <section data-testid="utrechtBookmarkableLink">
+          <h2>Link met <code>BookmarkableLink</code></h2>
+          <div>
+            <p>Voorbeeld van de <code>UtrechtBookmarkableLink</code> class.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="utrechtBookmarkableLink">Mijn Loket</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="utrechtBookmarkableLinkCurrent">
+          <h2>Link met <code>BookmarkableLink</code> naar de huidige pagina</h2>
+          <div>
+            <p>
+              Voorbeeld van de <code>UtrechtBookmarkableLink</code> class die naar de huidige pagina verwijst.
+              Automatisch wordt <code>aria-current</code> toegevoegd.
+            </p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="utrechtBookmarkableLinkCurrent">Componenten · rotterdam.nl</a> </template>
+          </rods-story-canvas>
+        </section>
+
         <section data-testid="utrechtLinkBehavior">
           <h2>Link met <code>Link</code></h2>
           <div>
@@ -87,6 +110,16 @@
           </div>
           <rods-story-canvas
             ><template> <a wicket:id="utrechtLinkExternalPlaceholder">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="utrechtBookmarkableLinkPlaceholder">
+          <h2>Placeholder Link met <code>UtrechtBookmarkableLink</code></h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="utrechtBookmarkableLinkPlaceholder">Link tekst</a> </template>
           </rods-story-canvas>
         </section>
       </section>
