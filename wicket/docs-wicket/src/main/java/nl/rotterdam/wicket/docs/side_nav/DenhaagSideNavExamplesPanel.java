@@ -1,6 +1,8 @@
 package nl.rotterdam.wicket.docs.side_nav;
 
 import java.util.List;
+import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
+import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavBehavior;
 import nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavItemBehavior;
@@ -25,14 +27,20 @@ public class DenhaagSideNavExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleDenhaagSideNav() {
         List<SideNavRecord<?>> links = List.of(
-            new SideNavRecord<>("Overzicht", MijnLoketPage.class, 0, ""),
-            new SideNavRecord<>("Mijn berichten", RotterdamPlaceholderPage.class, 2, "2 nieuwe berichten"),
-            new SideNavRecord<>("Mijn lopende zaken", RotterdamPlaceholderPage.class, 0, ""),
-            new SideNavRecord<>("Zelf regelen", RotterdamPlaceholderPage.class, 0, ""),
-            new SideNavRecord<>("Belastingen", RotterdamPlaceholderPage.class, 0, ""),
-            new SideNavRecord<>("Werk & Inkomen", RotterdamPlaceholderPage.class, 0, ""),
-            new SideNavRecord<>("Parkeren", RotterdamPlaceholderPage.class, 0, ""),
-            new SideNavRecord<>("Mijn gegevens", RotterdamPlaceholderPage.class, 0, "")
+            new SideNavRecord<>(RotterdamIconType.OVERVIEW, "Overzicht", MijnLoketPage.class, 0, ""),
+            new SideNavRecord<>(
+                RotterdamIconType.INBOX,
+                "Mijn berichten",
+                RotterdamPlaceholderPage.class,
+                2,
+                "2 nieuwe berichten"
+            ),
+            new SideNavRecord<>(RotterdamIconType.BOX, "Mijn lopende zaken", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.SUMMARY, "Zelf regelen", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.COINS, "Belastingen", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.MONEY_2, "Werk & Inkomen", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.PARKING, "Parkeren", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.USER, "Mijn gegevens", RotterdamPlaceholderPage.class, 0, "")
         );
 
         return new WebMarkupContainer("denhaagSideNav") {
@@ -64,7 +72,13 @@ public class DenhaagSideNavExamplesPanel extends Panel {
                                         );
 
                                         // Optionally add an icon
-                                        link.add(new Label("denhaagSideNavLinkIcon", "[icon]"));
+                                        if (record.icon() != null) {
+                                            WebMarkupContainer icon = new WebMarkupContainer("denhaagSideNavLinkIcon");
+                                            icon.add(new RotterdamIconBehavior(record.icon()));
+                                            link.add(icon);
+                                        } else {
+                                            link.add(new Label("denhaagSideNavLinkIcon", ""));
+                                        }
 
                                         // Add the link text
                                         link.add(new Label("denhaagSideNavLinkLabel", naam));
