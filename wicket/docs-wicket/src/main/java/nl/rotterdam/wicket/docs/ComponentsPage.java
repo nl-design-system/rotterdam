@@ -2,12 +2,6 @@ package nl.rotterdam.wicket.docs;
 
 import css.DesignSystemTheme;
 import java.util.Arrays;
-import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
-import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
-import nl.rotterdam.design_system.wicket.components.page_body.utrecht.UtrechtPageBodyBorder;
-import nl.rotterdam.design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
-import nl.rotterdam.design_system.wicket.components.page_header.utrecht.UtrechtPageHeaderBorder;
-import nl.rotterdam.design_system.wicket.components.page_layout.utrecht.UtrechtPageLayoutBorder;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
@@ -40,7 +34,6 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceType;
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.LambdaChoiceRenderer;
 import org.apache.wicket.markup.html.link.Link;
@@ -49,7 +42,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ComponentsPage extends BasePage {
+public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
     private static final JavaScriptReferenceHeaderItem COMPONENTS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
@@ -76,33 +69,9 @@ public class ComponentsPage extends BasePage {
         ).setOutputMarkupId(true);
     }
 
-    private UtrechtPageLayoutBorder pageLayout;
-    private UtrechtPageHeaderBorder pageHeader;
-    private UtrechtPageBodyBorder pageBody;
-    private UtrechtPageFooterBorder pageFooter;
-    private UtrechtLogoBorder logo;
-
     @Override
     protected void onInitialize() {
         super.onInitialize();
-
-        // Build up the page layout
-        pageLayout = new UtrechtPageLayoutBorder("utrechtPageLayout");
-        add(pageLayout);
-
-        pageHeader = new UtrechtPageHeaderBorder("utrechtPageHeader");
-        pageLayout.add(pageHeader);
-
-        logo = new UtrechtLogoBorder("utrechtLogo");
-        pageHeader.add(logo);
-
-        logo.add(new RotterdamLogoImage("rotterdamLogoImage"));
-
-        pageBody = new UtrechtPageBodyBorder("utrechtPageBody");
-        pageLayout.add(pageBody);
-
-        pageFooter = new UtrechtPageFooterBorder("utrechtPageFooter");
-        pageLayout.add(pageFooter);
 
         // Add the component stories
         pageBody.add(new AlertExamplesPanel("alertExamplesPanel"));
@@ -133,11 +102,6 @@ public class ComponentsPage extends BasePage {
         pageBody.add(new UtrechtSeparatorExamplesPanel("separatorExamplesPanel"));
         pageBody.add(new UtrechtUnorderedListExamplesPanel("unorderedListExamplesPanel"));
 
-        add(
-            // TODO set title using model in BasePage
-            new Label(TITLE_ID, "ComponentsPage · Apache Wicket · Rotterdam Design System")
-        );
-
         pageBody.add(createActiveThemeChoice());
         pageBody.add(createRefreshPgaeLink());
     }
@@ -150,5 +114,8 @@ public class ComponentsPage extends BasePage {
         response.render(COMPONENTS_JS_HEADER_ITEM);
     }
 
-    public ComponentsPage() {}
+    public ComponentsPage() {
+        super();
+        this.pageTitle = "Componenten voor Apache Wicket";
+    }
 }
