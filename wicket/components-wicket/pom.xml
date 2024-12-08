@@ -283,6 +283,14 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>@utrecht/paragraph-css/dist/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/design_system/wicket/components/paragraph/utrecht</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
                     <include>@utrecht/preserve-data-css/dist/*.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/design_system/wicket/components/preserve-data/utrecht</targetPath>
