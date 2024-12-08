@@ -1,7 +1,10 @@
 package nl.rotterdam.wicket.docs;
 
+import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
+import nl.rotterdam.wicket.docs.sso_login_page.SingleSignOnLoginPage;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
+import org.apache.wicket.markup.html.HTML5Attributes;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.settings.ExceptionSettings;
@@ -14,6 +17,9 @@ public class DocsApplication extends WebApplication {
 
         // Avoid <wicket:panel> in the output HTML
         getMarkupSettings().setStripWicketTags(true);
+
+        // A listener to instantiations of FormComponents to add HTML5 attributes.
+        getComponentInstantiationListeners().add(new HTML5Attributes.InstantiationListener());
 
         // Configure our own fance error page
         getExceptionSettings().setUnexpectedExceptionDisplay(ExceptionSettings.SHOW_EXCEPTION_PAGE);
@@ -44,6 +50,11 @@ public class DocsApplication extends WebApplication {
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.UNSAFE_INLINE)
             .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.SELF)
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF);
+        mountPage("sso", SingleSignOnLoginPage.class);
+        mountPage("rotterdam-base-page", RotterdamBasePage.class);
+        mountPage("hello-world", RotterdamHelloWorldPage.class);
+        mountPage("mijn-loket", MijnLoketPage.class);
+        mountPage("voorbeeld", RotterdamPlaceholderPage.class);
     }
 
     @Override
