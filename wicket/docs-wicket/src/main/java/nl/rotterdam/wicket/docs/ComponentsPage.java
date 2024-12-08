@@ -16,6 +16,7 @@ import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
+import nl.rotterdam.wicket.docs.icon.RodsIconExamplesPanel;
 import nl.rotterdam.wicket.docs.link.UtrechtLinkExamplesPanel;
 import nl.rotterdam.wicket.docs.logo.UtrechtLogoExamplesPanel;
 import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
@@ -90,6 +91,7 @@ public class ComponentsPage extends RotterdamBasePage {
         pageBody.add(new HeadingGroupExamplesPanel("headingGroupExamplesPanel"));
         pageBody.add(new HtmlContentExamplesPanel("htmlContentExamplesPanel"));
         pageBody.add(new IconExamplesPanel("iconExamplesPanel"));
+        pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel"));
         pageBody.add(new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"));
         pageBody.add(new UtrechtLinkExamplesPanel("linkExamplesPanel"));
         pageBody.add(new UtrechtLogoExamplesPanel("logoExamplesPanel"));
