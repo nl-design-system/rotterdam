@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Paragraph component</h1>
+        <div>
+          <p>Toont een alinea aan tekst.</p>
+        </div>
+
+        <section data-testid="utrechtParagraph">
+          <h2>Paragraph</h2>
+          <div>
+            <p>Voorbeeld</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <p wicket:id="utrechtParagraph">Lorem ipsum dolor sit amet</p>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="utrechtParagraphLead">
+          <h2>Lead Paragraph</h2>
+          <div>
+            <p>Voorbeeld</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <p wicket:id="utrechtParagraphLead">Lorem ipsum dolor sit amet</p>
+            </template></rods-story-canvas
+          >
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>
