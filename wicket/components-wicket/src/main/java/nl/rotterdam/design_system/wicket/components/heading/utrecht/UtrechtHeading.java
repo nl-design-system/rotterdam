@@ -1,10 +1,9 @@
 package nl.rotterdam.design_system.wicket.components.heading.utrecht;
 
+import java.io.Serializable;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
-
-import java.io.Serializable;
 
 public class UtrechtHeading extends Label {
 
