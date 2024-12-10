@@ -54,6 +54,7 @@ public class DocsApplication extends WebApplication {
         mountPage("rotterdam-base-page", RotterdamBasePage.class);
         mountPage("hello-world", RotterdamHelloWorldPage.class);
         mountPage("mijn-loket", MijnLoketPage.class);
+        mountPage("voorbeeld", RotterdamPlaceholderPage.class);
     }
 
     @Override
