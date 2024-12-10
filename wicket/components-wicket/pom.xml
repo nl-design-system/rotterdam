@@ -134,6 +134,14 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>@utrecht/breadcrumb-nav-css/dist/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/design_system/wicket/components/breadcrumb_nav/utrecht</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
                     <include>@utrecht/button-css/dist/*.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/design_system/wicket/components/button/utrecht</targetPath>
