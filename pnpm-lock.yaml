@@ -590,6 +590,9 @@ importers:
       '@gemeente-denhaag/sidenav':
         specifier: 0.1.0-alpha.218
         version: 0.1.0-alpha.218(react@18.3.1)
+      '@gemeente-rotterdam/web-components-stencil':
+        specifier: workspace:*
+        version: link:../../packages/web-components-stencil
       '@nl-design-system-candidate/paragraph-css':
         specifier: 2.0.0
         version: 2.0.0
@@ -603,6 +606,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
       '@utrecht/body-css':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@utrecht/breadcrumb-nav-css':
         specifier: 1.1.0
         version: 1.1.0
       '@utrecht/button-css':
@@ -662,6 +668,9 @@ importers:
       '@utrecht/link-css':
         specifier: 1.1.0
         version: 1.1.0
+      '@utrecht/link-list-css':
+        specifier: 2.3.0
+        version: 2.3.0
       '@utrecht/logo-css':
         specifier: 1.4.0
         version: 1.4.0
@@ -710,6 +719,8 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.4.0
         version: 1.4.0
+
+  wicket/components-wicket/target/classes/nl/rotterdam/design_system/wicket/components/icon/rotterdam/@gemeente-rotterdam/web-components-stencil/loader: {}
 
   wicket/design-tokens-wicket:
     devDependencies:
@@ -1877,6 +1888,11 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
+  '@gemeente-denhaag/sidenav@0.1.0-alpha.218':
+    resolution: {integrity: sha512-KK6mZBwbVFwPaSU1XJ3ok0t3zr/d9C1E0SuAVfJwn7DH6GwYK6SRiTrQM/MUdMIFrOZa8RmGI+QfSMrtl6cyKg==}
+    peerDependencies:
+      react: ^18.0.0
+
   '@gemeente-denhaag/sidenav@0.1.0-alpha.240':
     resolution: {integrity: sha512-IZrD8WeJ8oX8tveBmv6NxTjYM1/MDm3iW5EhA2LSH4I7XpKIumnEL+tfpRLZIOGlp4cQw+oBwjYCF0kJocWcOA==}
     peerDependencies:
@@ -2861,6 +2877,9 @@ packages:
   '@utrecht/body-css@1.1.0':
     resolution: {integrity: sha512-bKIHtnumGwF8biJoYamCNaro4Bko/M90I1ACjV5qYJGRWCBvp14gD0Qxeq8xHqPe+sWFYQmbFRvSrukiqzYy3A==}
 
+  '@utrecht/breadcrumb-nav-css@1.1.0':
+    resolution: {integrity: sha512-n7D1X/QJSU3pzJ/HvjUqxgZ4XHFPmdVLJ5RYZnlm6ygFcVQMblz35rI4Rz2iK5foddkehAFiNmXzQPDOrUb9VQ==}
+
   '@utrecht/breadcrumb-nav-css@1.4.0':
     resolution: {integrity: sha512-mBe/Xczr2ekfT9sxl9svOtZJWrW0klbnWBDyhf4it4zOk5BKeeKxUYEjbOQghOQ5jqVRPdnRbIVZoKX0Vrq3sQ==}
 
@@ -3031,6 +3050,9 @@ packages:
 
   '@utrecht/link-css@1.5.0':
     resolution: {integrity: sha512-2GgUbhOGWwu7GEoahQAV4QwHgNCkiUgdde6Ko97sjRhX0INhMIhQl++ROyA3jSefUHJYTkVSSWTNDUVF7vkFAg==}
+
+  '@utrecht/link-list-css@2.3.0':
+    resolution: {integrity: sha512-rpPJ6MJhnMscO6B5YdufXg9ERteiDsWZ4b3PlLxyWXQkIeKS+/By+b7ER7VJhYSKP+J9TIjuRFxGF3LTNhO8WA==}
 
   '@utrecht/link-react@1.0.4':
     resolution: {integrity: sha512-0tOmJuQGL2oorw7oZCPZEsdyl2exanOH7X6L3lL4b89I3PHSrzBkLpTlvBXPTbIuZKDCKcdGXzDykmIhK/wlOw==}
@@ -9356,6 +9378,10 @@ snapshots:
       '@gemeente-denhaag/icons': 1.0.0(react@18.3.1)
       react: 18.3.1
 
+  '@gemeente-denhaag/sidenav@0.1.0-alpha.218(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
   '@gemeente-denhaag/sidenav@0.1.0-alpha.240(react@18.3.1)':
     dependencies:
       react: 18.3.1
@@ -10516,6 +10542,8 @@ snapshots:
 
   '@utrecht/body-css@1.1.0': {}
 
+  '@utrecht/breadcrumb-nav-css@1.1.0': {}
+
   '@utrecht/breadcrumb-nav-css@1.4.0': {}
 
   '@utrecht/button-css@1.1.0': {}
@@ -10676,6 +10704,8 @@ snapshots:
   '@utrecht/link-css@1.1.0': {}
 
   '@utrecht/link-css@1.5.0': {}
+
+  '@utrecht/link-list-css@2.3.0': {}
 
   '@utrecht/link-react@1.0.4(@babel/runtime@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
