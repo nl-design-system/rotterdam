@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "author": "Community for NL Design System",
   "description": "Mendix CSS for a design system based on the NL Design System architecture",
   "license": "EUPL-1.2",
@@ -24,9 +24,9 @@
     "clean": "rimraf dist/*"
   },
   "devDependencies": {
-    "@mendix/atlas": "https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz",
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
+    "@mendix/atlas": "https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz",
     "@utrecht/badge-css": "1.1.0",
     "@utrecht/badge-data-css": "1.1.0",
     "@utrecht/breadcrumb-nav-css": "1.1.0",
