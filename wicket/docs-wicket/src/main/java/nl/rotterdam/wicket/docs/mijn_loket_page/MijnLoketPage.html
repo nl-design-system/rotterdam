@@ -1,0 +1,35 @@
+<wicket:extend xmlns="http://www.w3.org/1999/html" xmlns:wicket="http://wicket.apache.org">
+  <div style="display: flex; flex-direction: row">
+    <div wicket:id="sideNav"></div>
+    <div>
+      <div wicket:id="breadcrumbNav"></div>
+      <main>
+        <h1>Hallo <span wicket:id="name"></span></h1>
+        <p>
+          Via Mijn Loket kunt u veel zelf regelen met de gemeente. Bijvoorbeeld een afspraak maken om uw paspoort te
+          verlengen, of een subsidie aanvraag indienen. U kunt ook zien welke dingen u nog moet regelen of die wij van u
+          vragen. Bijvoorbeeld het betalen van gemeentelijke belastingen. Zie hiervoor ‘Wat ik moet regelen’.
+        </p>
+        <h2>Wat moet ik regelen</h2>
+        <p>...</p>
+        <h2>Zelf regelen</h2>
+        <section>
+          <h3>Paspoort vernieuwen of aanvragen</h3>
+          <div wicket:id="linkList1"></div>
+        </section>
+        <section>
+          <h3>Parkeervergunning aanvragen of beheren</h3>
+          <div wicket:id="linkList2"></div>
+        </section>
+        <section>
+          <h3>Belastingzaken</h3>
+          <div wicket:id="linkList3"></div>
+        </section>
+        <section>
+          <h3>Belastingzaken</h3>
+          <div wicket:id="linkList4"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+</wicket:extend>

@@ -14,6 +14,7 @@ public class UtrechtPreserveDataLabel extends Label {
 
     public UtrechtPreserveDataLabel(String id, IModel<?> model) {
         super(id, model);
+        add(new UtrechtPreserveDataBehavior());
     }
 
     @Override
