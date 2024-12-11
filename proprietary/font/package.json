@@ -8,9 +8,10 @@
   "keywords": [
     "nl-design-system"
   ],
-  "private": true,
+  "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "src"
