@@ -3,9 +3,9 @@
     "heading-2": {
       "color": {},
       "font-family": {},
-      "font-size": { "value": "{rods.typography.scale.5xl.font-size}" },
-      "font-weight": {},
-      "line-height": { "value": "{rods.typography.scale.5xl.line-height}" },
+      "font-size": { "value": "{nl.heading.level-2.font-size}" },
+      "font-weight": { "value": "{nl.heading.level-2.font-weight}" },
+      "line-height": { "value": "{nl.heading.level-2.line-height}" },
       "margin-block-end": {},
       "margin-block-start": {}
     }

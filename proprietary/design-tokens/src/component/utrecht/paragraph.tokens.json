@@ -2,16 +2,17 @@
   "utrecht": {
     "paragraph": {
       "color": {},
-      "font-family": { "value": "{rods.typography.sans-serif.font-family}" },
-      "font-size": { "value": "{rods.typography.scale.md.font-size}" },
-      "font-weight": { "value": "{rods.typography.weight-scale.normal.font-weight}" },
-      "line-height": { "value": "28px" },
+      "font-family": { "value": "{nl.paragraph.font-family}" },
+      "font-size": { "value": "{nl.paragraph.font-size}" },
+      "font-weight": { "value": "{nl.paragraph.font-weight}" },
+      "line-height": { "value": "{nl.paragraph.line-height}" },
       "margin-block-start": {},
       "margin-block-end": {},
       "lead": {
-        "font-size": { "value": "28px" },
-        "font-weight": { "value": "400" },
-        "line-height": { "value": "36px" }
+        "color": {},
+        "font-size": { "value": "{nl.paragraph.lead.font-size}" },
+        "font-weight": { "value": "{nl.paragraph.lead.font-weight}" },
+        "line-height": { "value": "{nl.paragraph.lead.line-height}" }
       },
       "small": {
         "color": {},
