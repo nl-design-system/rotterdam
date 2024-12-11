@@ -1,0 +1,19 @@
+{
+  "nl": {
+    "number-badge": {
+      "background-color": {
+        "value": "{rods.color.base.green}"
+      },
+      "border-radius": { "value": "2em" },
+      "color": {
+        "value": "{rods.color.base.white}"
+      },
+      "font-size": { "value": "{rods.typography.scale.sm.font-size}" },
+      "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
+      "min-inline-size": { "value": "24px" },
+      "min-block-size": { "value": "24px" },
+      "padding-block": { "value": "0" },
+      "padding-inline": { "value": "0" }
+    }
+  }
+}

@@ -1,13 +1,18 @@
 {
   "utrecht": {
     "badge-counter": {
-      "border-radius": { "value": "2em" },
-      "color": {},
-      "font-size": { "value": "{rods.typography.scale.sm.font-size}" },
-      "font-weight": { "value": "700" },
-      "min-size": { "value": "24px" },
-      "padding-block": { "value": "0" },
-      "padding-inline": { "value": "0" }
+      "background-color": {
+        "value": "{nl.data-badge.background-color}"
+      },
+      "border-radius": { "value": "{nl.number-badge.border-radius}" },
+      "color": {
+        "value": "{nl.data-badge.color}"
+      },
+      "font-size": { "value": "{nl.number-badge.font-size}" },
+      "font-weight": { "value": "{nl.number-badge.font-weight}" },
+      "min-size": { "value": "{nl.number-badge.min-inline-size}" },
+      "padding-block": { "value": "{nl.number-badge.padding-block}" },
+      "padding-inline": { "value": "{nl.number-badge.padding-inline}" }
     }
   }
 }
