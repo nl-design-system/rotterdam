@@ -21,6 +21,7 @@ import nl.rotterdam.design_system.wicket.components.page_layout.utrecht.UtrechtP
 import nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
 import nl.rotterdam.design_system.wicket.components.root.utrecht.UtrechtRootBorder;
 import nl.rotterdam.design_system.wicket.components.separator.utrecht.UtrechtSeparator;
+import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedList;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
@@ -45,6 +46,7 @@ import nl.rotterdam.wicket.docs.page_layout.UtrechtPageLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.preserve_data.UtrechtPreserveDataExamplesPanel;
 import nl.rotterdam.wicket.docs.root.UtrechtRootExamplesPanel;
 import nl.rotterdam.wicket.docs.separator.UtrechtSeparatorExamplesPanel;
+import nl.rotterdam.wicket.docs.unordered_list.UtrechtUnorderedListExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -257,8 +259,8 @@ public class GenerateMarkdownAndStorybookExamples {
     @Test
     void generateUtrechtUnorderedList() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtOrderedListExamplesPanel.class,
-            UtrechtOrderedList.class,
+            UtrechtUnorderedListExamplesPanel.class,
+            UtrechtUnorderedList.class,
             "utrecht-unordered-list").generate();
     }
 
