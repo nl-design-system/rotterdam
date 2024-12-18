@@ -1,7 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
 import css.DesignSystemTheme;
-import java.util.Arrays;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
@@ -45,6 +44,8 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
+
 public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
@@ -76,20 +77,23 @@ public class ComponentsPage extends RotterdamBasePage {
     protected void onInitialize() {
         super.onInitialize();
 
-        // Add the component stories
-        pageBody.add(new DenhaagSideNavExamplesPanel("denhaagSideNavExamplesPanel"));
-        pageBody.add(new AlertExamplesPanel("alertExamplesPanel"));
-        pageBody.add(new BadgeListExamplesPanel("badgeListExamplesPanel"));
-        pageBody.add(new BodyExamplesPanel("bodyExamplesPanel"));
-        pageBody.add(new UtrechtButtonExamplesPanel("buttonExamplesPanel"));
-        pageBody.add(new ButtonGroupExamplesPanel("buttonGroupExamplesPanel"));
-        pageBody.add(new CodeBlockExamplesPanel("codeBlockExamplesPanel"));
-        pageBody.add(new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"));
-        pageBody.add(new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"));
-        pageBody.add(new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"));
-        pageBody.add(new UtrechtFormFieldTextboxExamplesPanel("formFieldTextboxExamplesPanel"));
-        pageBody.add(new HeadingExamplesPanel("headingExamplesPanel"));
-        pageBody.add(new HeadingGroupExamplesPanel("headingGroupExamplesPanel"));
+        // Add the component stories. You can add multiple components with just one add, making it easier to read.
+        pageBody.add(
+            new DenhaagSideNavExamplesPanel("denhaagSideNavExamplesPanel"),
+            new AlertExamplesPanel("alertExamplesPanel"),
+            new BadgeListExamplesPanel("badgeListExamplesPanel"),
+            new BodyExamplesPanel("bodyExamplesPanel"),
+            new UtrechtButtonExamplesPanel("buttonExamplesPanel"),
+            new ButtonGroupExamplesPanel("buttonGroupExamplesPanel"),
+            new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
+            new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
+            new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
+            new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
+            new UtrechtFormFieldTextboxExamplesPanel("formFieldTextboxExamplesPanel"),
+            new HeadingExamplesPanel("headingExamplesPanel"),
+            new HeadingGroupExamplesPanel("headingGroupExamplesPanel")
+        );
+
         pageBody.add(new HtmlContentExamplesPanel("htmlContentExamplesPanel"));
         pageBody.add(new IconExamplesPanel("iconExamplesPanel"));
         pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel"));
