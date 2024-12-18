@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import css.HTMLUtil;
-import java.util.UUID;
 import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
@@ -13,6 +12,8 @@ import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+
+import java.util.UUID;
 
 public class UtrechtFormFieldCheckbox extends Panel {
 
@@ -138,7 +139,12 @@ public class UtrechtFormFieldCheckbox extends Panel {
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
-                tag.put("id", descriptionId);
+            }
+
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+                setMarkupId(descriptionId);
             }
 
             @Override
@@ -151,7 +157,12 @@ public class UtrechtFormFieldCheckbox extends Panel {
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
-                tag.put("id", errorMessageId);
+            }
+
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+                UtrechtFormFieldCheckbox.this.setMarkupId(errorMessageId);
             }
 
             @Override
@@ -179,7 +190,6 @@ public class UtrechtFormFieldCheckbox extends Panel {
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
-        tag.put("id", fieldId);
         tag.put(
             "class",
             HTMLUtil.className(
@@ -188,6 +198,12 @@ public class UtrechtFormFieldCheckbox extends Panel {
                 isInvalid() ? UtrechtFormFieldCheckbox.FORM_FIELD_INVALID_CLASSNAME : null
             )
         );
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        setMarkupId(fieldId);
     }
 
     public UtrechtFormFieldCheckbox setRequired(boolean required) {
