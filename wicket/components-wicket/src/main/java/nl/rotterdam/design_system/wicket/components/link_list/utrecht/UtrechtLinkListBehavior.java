@@ -7,12 +7,13 @@ import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderIte
 
 public class UtrechtLinkListBehavior extends TagNameClassComponentBehavior {
 
-    public static final UtrechtLinkListBehavior UTRECHT_LINK_LIST_BEHAVIOR = new UtrechtLinkListBehavior();
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         UtrechtLinkListBehavior.class,
         "@utrecht/link-list-css/dist/index.css"
     );
+
+    public static final UtrechtLinkListBehavior UTRECHT_LINK_LIST_BEHAVIOR = new UtrechtLinkListBehavior();
 
     private UtrechtLinkListBehavior() {
         super("ul", "utrecht-link-list");
