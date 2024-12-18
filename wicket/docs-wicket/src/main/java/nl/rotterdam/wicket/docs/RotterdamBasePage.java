@@ -1,7 +1,5 @@
 package nl.rotterdam.wicket.docs;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
 import nl.rotterdam.design_system.wicket.components.body.utrecht.UtrechtBodyBehavior;
 import nl.rotterdam.design_system.wicket.components.link.utrecht.UtrechtBookmarkableLink;
 import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
@@ -15,14 +13,17 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class RotterdamBasePage extends BasePage {
 
-    public UtrechtPageLayoutBorder pageLayout;
-    public UtrechtPageHeaderBorder pageHeader;
-    public UtrechtPageBodyBorder pageBody;
-    public UtrechtPageFooterBorder pageFooter;
+    protected UtrechtPageLayoutBorder pageLayout;
+    protected UtrechtPageHeaderBorder pageHeader;
+    protected UtrechtPageBodyBorder pageBody;
+    protected UtrechtPageFooterBorder pageFooter;
     private UtrechtLogoBorder logo;
-    private String siteTitle = "rotterdam.nl";
+    private final String siteTitle = "rotterdam.nl";
     public String pageTitle;
     public String stepTitle;
     public String errorTitle;
