@@ -1,3 +1,5 @@
+import './rods-story-canvas.js';
+
 document.addEventListener('DOMContentLoaded', function () {
   function updateTheme(newTheme) {
     const htmlElement = document.documentElement; // Get the <html> element

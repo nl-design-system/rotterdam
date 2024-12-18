@@ -9,15 +9,14 @@ import org.apache.wicket.request.resource.CssResourceReference;
 import static css.DesignTokensWicketCssReference.THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM;
 import static css.WicketComponentsCssReferences.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
 
-public abstract class BasePage extends WebPage {
+public abstract class DocsBasePage extends WebPage {
 
-    public static final String TITLE_ID = "title";
-    public static final CssReferenceHeaderItem DOCS_CSS_HEADER_ITEM =
-        CssHeaderItem.forReference(
-            new CssResourceReference(BasePage.class, "docs.css")
-        );
+    public static final CssReferenceHeaderItem DOCS_CSS_HEADER_ITEM = CssHeaderItem.forReference(
+        new CssResourceReference(DocsBasePage.class, "docs.css")
+    );
 
-    public BasePage() {
+    public DocsBasePage() {
+        super();
     }
 
     @Override

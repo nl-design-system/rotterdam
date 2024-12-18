@@ -13,5 +13,11 @@
     "type": "git+ssh",
     "url": "git@github.com:nl-design-system/rotterdam.git",
     "directory": "wicket/components-wicket"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
+  },
+  "scripts": {
+    "clean": "rimraf stories/* target"
   }
 }
