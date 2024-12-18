@@ -1,13 +1,11 @@
 package nl.rotterdam.wicket.docs.side_nav;
 
-import java.util.List;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavBehavior;
 import nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavItemBehavior;
 import nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavLink;
-import nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavListBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.RotterdamPlaceholderPage;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
@@ -17,6 +15,10 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
+
+import java.util.List;
+
+import static nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavListBehavior.DENHAAG_SIDE_NAV_LIST_BEHAVIOR;
 
 public class DenhaagSideNavExamplesPanel extends Panel {
 
@@ -55,7 +57,7 @@ public class DenhaagSideNavExamplesPanel extends Panel {
                         protected void onInitialize() {
                             super.onInitialize();
 
-                            add(new DenhaagSideNavListBehavior()); // TODO should be singleton
+                            add(DENHAAG_SIDE_NAV_LIST_BEHAVIOR);
                             add(
                                 new ListView<SideNavRecord<?>>("denhaagSideNavItem", links) {
                                     @Override
