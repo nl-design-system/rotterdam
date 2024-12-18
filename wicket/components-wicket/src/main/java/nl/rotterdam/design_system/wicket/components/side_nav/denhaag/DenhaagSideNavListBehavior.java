@@ -4,7 +4,9 @@ import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBe
 
 public class DenhaagSideNavListBehavior extends TagNameClassComponentBehavior {
 
-    public DenhaagSideNavListBehavior() {
+    public static final DenhaagSideNavListBehavior DENHAAG_SIDE_NAV_LIST_BEHAVIOR = new DenhaagSideNavListBehavior();
+
+    private DenhaagSideNavListBehavior() {
         super("ul", "denhaag-sidenav__list");
         addHeaderItem(DenhaagSideNavBehavior.CSS);
     }

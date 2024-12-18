@@ -1,6 +1,5 @@
 package nl.rotterdam.design_system.wicket.components.side_nav.denhaag;
 
-import java.util.List;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -9,6 +8,10 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
+
+import java.util.List;
+
+import static nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavListBehavior.DENHAAG_SIDE_NAV_LIST_BEHAVIOR;
 
 public class DenhaagSideNavPanel extends Panel {
 
@@ -37,7 +40,7 @@ public class DenhaagSideNavPanel extends Panel {
                             protected void onInitialize() {
                                 super.onInitialize();
 
-                                add(new DenhaagSideNavListBehavior()); // TODO should be singleton
+                                add(DENHAAG_SIDE_NAV_LIST_BEHAVIOR); // TODO should be singleton
                                 add(
                                     new ListView<DenhaagSideNavRecord<? extends IRequestablePage>>(
                                         "denhaagSideNavItem",
