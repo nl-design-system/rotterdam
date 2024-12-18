@@ -4,7 +4,9 @@ import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBe
 
 public class UtrechtBreadcrumbNavItemBehavior extends TagNameClassComponentBehavior {
 
-    public UtrechtBreadcrumbNavItemBehavior() {
+    public static final UtrechtBreadcrumbNavItemBehavior INSTANCE = new UtrechtBreadcrumbNavItemBehavior();
+
+    private UtrechtBreadcrumbNavItemBehavior() {
         super("li", "utrecht-breadcrumb-nav__item");
         addHeaderItem(UtrechtBreadcrumbNavBehavior.CSS);
     }
