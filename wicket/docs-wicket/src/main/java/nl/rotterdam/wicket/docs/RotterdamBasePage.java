@@ -16,7 +16,7 @@ import org.apache.wicket.markup.html.link.Link;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class RotterdamBasePage extends BasePage {
+public class RotterdamBasePage extends DocsBasePage {
 
     protected UtrechtPageLayoutBorder pageLayout;
     protected UtrechtPageHeaderBorder pageHeader;
