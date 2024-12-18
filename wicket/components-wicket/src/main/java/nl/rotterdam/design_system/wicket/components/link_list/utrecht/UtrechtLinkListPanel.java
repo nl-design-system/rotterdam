@@ -1,6 +1,5 @@
 package nl.rotterdam.design_system.wicket.components.link_list.utrecht;
 
-import java.util.List;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -9,6 +8,10 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
+
+import java.util.List;
+
+import static nl.rotterdam.design_system.wicket.components.link_list.utrecht.UtrechtLinkListBehavior.UTRECHT_LINK_LIST_BEHAVIOR;
 
 public class UtrechtLinkListPanel extends Panel {
 
@@ -30,9 +33,9 @@ public class UtrechtLinkListPanel extends Panel {
                 protected void onInitialize() {
                     super.onInitialize();
 
-                    add(new UtrechtLinkListBehavior()); // TODO should be singleton
+                    add(UTRECHT_LINK_LIST_BEHAVIOR);
                     add(
-                        new ListView<UtrechtLinkListRecord<? extends IRequestablePage>>("utrechtLinkListItem", links) {
+                        new ListView<>("utrechtLinkListItem", links) {
                             @Override
                             protected void populateItem(
                                 ListItem<UtrechtLinkListRecord<? extends IRequestablePage>> item
@@ -42,7 +45,7 @@ public class UtrechtLinkListPanel extends Panel {
                                 String naam = record.label();
 
                                 // TODO: How do I type this?
-                                @SuppressWarnings({ "rawtypes", "unchecked" })
+                                @SuppressWarnings({"rawtypes", "unchecked"})
                                 UtrechtLinkListLink<?> link = new UtrechtLinkListLink(
                                     "utrechtLinkListLink",
                                     record.target()
