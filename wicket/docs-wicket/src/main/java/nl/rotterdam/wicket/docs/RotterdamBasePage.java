@@ -24,10 +24,10 @@ public class RotterdamBasePage extends BasePage {
     protected UtrechtPageFooterBorder pageFooter;
     private UtrechtLogoBorder logo;
     private final String siteTitle = "rotterdam.nl";
-    public String pageTitle;
-    public String stepTitle;
-    public String errorTitle;
-    public String titlePartSeparator = " · ";
+    protected String pageTitle;
+    protected String stepTitle;
+    protected String errorTitle;
+    protected String titlePartSeparator = " · ";
 
     @Override
     protected void onInitialize() {
