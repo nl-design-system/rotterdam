@@ -11,6 +11,9 @@ import org.apache.wicket.request.component.IRequestablePage;
 
 import java.util.List;
 
+import static nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht.UtrechtBreadcrumbNavItemBehavior.UTRECHT_BREADCRUMB_NAV_ITEM_BEHAVIOR;
+import static nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht.UtrechtBreadcrumbNavListBehavior.UTRECHT_BREADCRUMB_NAV_LIST_BEHAVIOR;
+
 public class UtrechtBreadcrumbNavPanel extends Panel {
 
     public List<UtrechtBreadcrumbNavRecord<? extends IRequestablePage>> links;
@@ -26,7 +29,7 @@ public class UtrechtBreadcrumbNavPanel extends Panel {
             protected void populateItem(
                 ListItem<UtrechtBreadcrumbNavRecord<? extends IRequestablePage>> item
             ) {
-                item.add(UtrechtBreadcrumbNavItemBehavior.INSTANCE);
+                item.add(UTRECHT_BREADCRUMB_NAV_ITEM_BEHAVIOR);
                 UtrechtBreadcrumbNavRecord<? extends IRequestablePage> record =
                     item.getModelObject();
                 String naam = record.label();
@@ -75,7 +78,7 @@ public class UtrechtBreadcrumbNavPanel extends Panel {
                             protected void onInitialize() {
                                 super.onInitialize();
 
-                                add(UtrechtBreadcrumbNavListBehavior.INSTANCE);
+                                add(UTRECHT_BREADCRUMB_NAV_LIST_BEHAVIOR);
                                 add(createNavListview(links)
                                 );
                             }
