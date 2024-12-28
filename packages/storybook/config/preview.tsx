@@ -1,9 +1,9 @@
 import '@gemeente-rotterdam/design-tokens/dist/index.css';
 import '@gemeente-rotterdam/font/src/index.scss';
+import type { Preview } from '@storybook/react';
 import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { Controls, Description, Primary, Stories } from '@storybook/blocks';
-import type { Preview } from '@storybook/react';
 import { ButtonGroup, Document } from '@utrecht/component-library-react/dist/css-module';
 import { FigmaBlock } from './FigmaBlock';
 import { GitHubBlock } from './GitHubBlock';
@@ -13,11 +13,11 @@ defineCustomElements();
 const preview: Preview = {
   decorators: [
     withThemeByClassName({
+      defaultTheme: 'Rotterdam',
       themes: {
         Rotterdam: 'rods-theme',
         'Rotterdam dark color scheme': 'rods-theme rods-theme--media-query-color-scheme-dark',
       },
-      defaultTheme: 'Rotterdam',
     }),
     (Story) => <Document>{Story()}</Document>,
   ],

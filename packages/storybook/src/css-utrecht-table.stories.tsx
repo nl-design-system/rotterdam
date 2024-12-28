@@ -1,7 +1,7 @@
 /* @license CC0-1.0 */
 
-import { RodsIconEdit } from '@gemeente-rotterdam/web-components-react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { RodsIconEdit } from '@gemeente-rotterdam/web-components-react';
 import {
   ButtonLink,
   IBANData,
@@ -20,12 +20,10 @@ import readme from './table.md?raw';
 import '@gemeente-rotterdam/components-css/table/index.scss';
 
 const meta = {
-  title: 'CSS Component/Table',
   id: 'css-table',
-  component: Table,
-  argTypes: {},
   args: {},
-  tags: ['autodocs'],
+  argTypes: {},
+  component: Table,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Ftable',
     design: {
@@ -38,6 +36,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Table',
 } satisfies Meta<typeof Table>;
 
 export default meta;
@@ -93,7 +93,6 @@ export const Default: Story = {
 
 export const Hover: Story = {
   args: {
-    className: 'utrecht-table--row-hover',
     children: (
       <>
         <TableHeader>
@@ -130,6 +129,7 @@ export const Hover: Story = {
         </TableFooter>
       </>
     ),
+    className: 'utrecht-table--row-hover',
   },
   parameters: {
     design: {
@@ -140,8 +140,8 @@ export const Hover: Story = {
 };
 
 export const EditLink: Story = {
+  name: 'Rows with edit link',
   args: {
-    className: 'utrecht-table--row-hover',
     children: (
       <>
         <TableCaption>Lopende automatische incasso’s</TableCaption>
@@ -198,8 +198,8 @@ export const EditLink: Story = {
         </TableBody>
       </>
     ),
+    className: 'utrecht-table--row-hover',
   },
-  name: 'Rows with edit link',
   parameters: {
     design: {
       type: 'figma',
@@ -209,6 +209,7 @@ export const EditLink: Story = {
 };
 
 export const Badges: Story = {
+  name: 'Rows with badges',
   args: {
     children: (
       <>
@@ -271,7 +272,6 @@ export const Badges: Story = {
       </>
     ),
   },
-  name: 'Rows with badges',
   parameters: {
     design: {
       type: 'figma',

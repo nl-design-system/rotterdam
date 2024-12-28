@@ -1,27 +1,25 @@
 /* @license CC0-1.0 */
 
-import { ActionSingle } from '@gemeente-denhaag/action';
 import type { Meta, StoryObj } from '@storybook/react';
+import { ActionSingle } from '@gemeente-denhaag/action';
 import readme from './action.md?raw';
 
 const meta = {
-  title: 'CSS Component/Action',
   id: 'css-denhaag-action',
-  component: ActionSingle,
+  args: {
+    defaultValue: '',
+  },
   argTypes: {
     defaultValue: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    defaultValue: '',
-  },
-  tags: ['autodocs'],
+  component: ActionSingle,
   parameters: {
     design: {
       type: 'figma',
@@ -33,6 +31,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Action',
 } satisfies Meta<typeof ActionSingle>;
 
 export default meta;
@@ -42,6 +42,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Single action',
   args: {
+    children: <strong>Betaal uw parkeerbon van €68,90</strong>,
     dateTime: '2023-09-30T19:47:36.593Z',
     labels: {
       approachingDeadline: () => 'nog 2 dagen',
@@ -52,6 +53,5 @@ export const Default: Story = {
     link: '#',
     now: '2023-09-28T19:47:36.593Z',
     relativeDate: true,
-    children: <strong>Betaal uw parkeerbon van €68,90</strong>,
   },
 };

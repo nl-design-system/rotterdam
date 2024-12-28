@@ -5,23 +5,21 @@ import { Textarea } from '@utrecht/component-library-react/dist/css-module';
 import readme from './textarea.md?raw';
 
 const meta = {
-  title: 'CSS Component/Textarea',
   id: 'css-utrecht-textarea',
-  component: Textarea,
+  args: {
+    defaultValue: '',
+  },
   argTypes: {
     defaultValue: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    defaultValue: '',
-  },
-  tags: ['autodocs'],
+  component: Textarea,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Ftextarea',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Textarea',
 } satisfies Meta<typeof Textarea>;
 
 export default meta;

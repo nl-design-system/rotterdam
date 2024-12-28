@@ -5,30 +5,31 @@ import { BadgeCounter } from '@utrecht/component-library-react/dist/css-module';
 import readme from './counter-badge.md?raw';
 
 const meta = {
-  title: 'CSS Component/Counter badge',
   id: 'css-utrecht-badge-counter',
-  component: BadgeCounter,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
     className: {
       name: 'Appearance',
       control: {
-        type: 'select',
         labels: {
-          'Light blue': 'utrecht-badge-counter--rods-light-yellow',
           Blue: 'utrecht-badge-counter--rods-blue',
           'Dark blue': 'utrecht-badge-counter--rods-dark-blue',
-          'Green blue': 'utrecht-badge-counter--rods-green-blue',
-          Red: 'utrecht-badge-counter--rods-red',
           'Dark yellow': 'utrecht-badge-counter--rods-dark-yellow',
+          'Green blue': 'utrecht-badge-counter--rods-green-blue',
+          'Light blue': 'utrecht-badge-counter--rods-light-yellow',
+          Red: 'utrecht-badge-counter--rods-red',
         },
+        type: 'select',
       },
       options: [
         'utrecht-badge-counter--rods-light-yellow',
@@ -40,10 +41,7 @@ const meta = {
       ],
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: BadgeCounter,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fcounter-badge',
     design: {
@@ -56,6 +54,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Counter badge',
 } satisfies Meta<typeof BadgeCounter>;
 
 export default meta;

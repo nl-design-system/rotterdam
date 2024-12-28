@@ -5,23 +5,21 @@ import { OrderedList, OrderedListItem } from '@utrecht/component-library-react/d
 import readme from './ordered-list.md?raw';
 
 const meta = {
-  title: 'CSS Component/Ordered list',
   id: 'css-utrecht-ordered-list',
-  component: OrderedList,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: OrderedList,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fordered-list',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Ordered list',
 } satisfies Meta<typeof OrderedList>;
 
 export default meta;

@@ -1,5 +1,6 @@
 /* @license CC0-1.0 */
 
+import type { Meta, StoryObj } from '@storybook/react';
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
 import {
   RodsIconBox,
@@ -11,28 +12,25 @@ import {
   RodsIconSummary,
   RodsIconUser,
 } from '@gemeente-rotterdam/web-components-react';
-import type { Meta, StoryObj } from '@storybook/react';
 import { BadgeCounter } from '@utrecht/component-library-react/dist/css-module';
 import readme from './sidenav.md?raw';
 
 const meta = {
-  title: 'CSS Component/Side navigation',
   id: 'css-denhaag-sidenav',
-  component: Sidenav,
+  args: {
+    defaultValue: '',
+  },
   argTypes: {
     defaultValue: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    defaultValue: '',
-  },
-  tags: ['autodocs'],
+  component: Sidenav,
   parameters: {
     design: {
       type: 'figma',
@@ -44,6 +42,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Side navigation',
 } satisfies Meta<typeof Sidenav>;
 
 export default meta;

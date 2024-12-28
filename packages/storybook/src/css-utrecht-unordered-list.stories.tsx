@@ -5,23 +5,21 @@ import { UnorderedList, UnorderedListItem } from '@utrecht/component-library-rea
 import readme from './unordered-list.md?raw';
 
 const meta = {
-  title: 'CSS Component/Unordered list',
   id: 'css-utrecht-unordered-list',
-  component: UnorderedList,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: UnorderedList,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Funordered-list',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Unordered list',
 } satisfies Meta<typeof UnorderedList>;
 
 export default meta;

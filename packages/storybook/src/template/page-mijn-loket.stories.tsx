@@ -44,8 +44,8 @@ import {
 } from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
-  title: 'Template/Mijn Loket',
   id: 'template-mijn-loket',
+  decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
   parameters: {
     design: {
       type: 'figma',
@@ -53,7 +53,7 @@ const meta = {
     },
     layout: 'fullscreen',
   },
-  decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
+  title: 'Template/Mijn Loket',
 } satisfies Meta;
 
 export default meta;
@@ -252,8 +252,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>
@@ -265,8 +265,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>
@@ -278,8 +278,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>
@@ -291,8 +291,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>

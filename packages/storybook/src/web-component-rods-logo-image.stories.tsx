@@ -1,12 +1,12 @@
 /* @license CC0-1.0 */
 
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   RodsLogoImage,
   RodsLogoImageAvatar,
   RodsLogoImageMark,
   RodsLogoImageSquare,
 } from '@gemeente-rotterdam/web-components-react';
-import type { Meta, StoryObj } from '@storybook/react';
 import logoImageAvatarDocs from './_logo-image-avatar.md?raw';
 import logoImageBaseDocs from './_logo-image-base.md?raw';
 import logoImageMarkDocs from './_logo-image-mark.md?raw';
@@ -14,12 +14,10 @@ import logoImageSquareDocs from './_logo-image-square.md?raw';
 import readme from './logo-image.md?raw';
 
 const meta = {
-  title: 'Web Component/Logo image',
   id: 'web-component-rods-logo-image',
-  component: RodsLogoImage,
-  argTypes: {},
   args: {},
-  tags: ['autodocs'],
+  argTypes: {},
+  component: RodsLogoImage,
   parameters: {
     docs: {
       description: {
@@ -27,6 +25,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'Web Component/Logo image',
 } satisfies Meta<typeof RodsLogoImage>;
 
 export default meta;

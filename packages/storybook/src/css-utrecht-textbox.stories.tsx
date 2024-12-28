@@ -5,23 +5,21 @@ import { Textbox } from '@utrecht/component-library-react/dist/css-module';
 import readme from './textbox.md?raw';
 
 const meta = {
-  title: 'CSS Component/Textbox',
   id: 'css-utrecht-textbox',
-  component: Textbox,
+  args: {
+    defaultValue: '',
+  },
   argTypes: {
     defaultValue: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    defaultValue: '',
-  },
-  tags: ['autodocs'],
+  component: Textbox,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Ftextbox',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Textbox',
 } satisfies Meta<typeof Textbox>;
 
 export default meta;
