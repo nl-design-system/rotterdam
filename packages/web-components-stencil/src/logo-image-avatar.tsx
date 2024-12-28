@@ -4,6 +4,7 @@
  * Copyright (c) 2023 Frameless B.V.
  */
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import { Component, h } from '@stencil/core';
 
 @Component({

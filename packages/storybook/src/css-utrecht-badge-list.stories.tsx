@@ -38,14 +38,16 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Default',
   args: {
-    children: [
-      <Link href="#">
-        <DataBadge>duurzaamheid</DataBadge>
-      </Link>,
-      <Link href="#">
-        <DataBadge>schoon, heel en veilig</DataBadge>
-      </Link>,
-    ],
+    children: (
+      <>
+        <Link href="#">
+          <DataBadge>duurzaamheid</DataBadge>
+        </Link>
+        <Link href="#">
+          <DataBadge>schoon, heel en veilig</DataBadge>
+        </Link>
+      </>
+    ),
   },
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fbadge-list',

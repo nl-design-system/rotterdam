@@ -48,23 +48,25 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Breadcrumb navigation',
   args: {
-    children: [
-      <BreadcrumbNavLink href="/" rel="home" index={0}>
-        Home
-      </BreadcrumbNavLink>,
-      <BreadcrumbNavSeparator>
-        <RodsIconChevronRight />
-      </BreadcrumbNavSeparator>,
-      <BreadcrumbNavLink href="/a/" index={1}>
-        Parkeren in Rotterdam
-      </BreadcrumbNavLink>,
-      <BreadcrumbNavSeparator>
-        <RodsIconChevronRight />
-      </BreadcrumbNavSeparator>,
-      <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
-        Product aanvragen
-      </BreadcrumbNavLink>,
-    ],
+    children: (
+      <>
+        <BreadcrumbNavLink href="/" rel="home" index={0}>
+          Home
+        </BreadcrumbNavLink>
+        <BreadcrumbNavSeparator>
+          <RodsIconChevronRight />
+        </BreadcrumbNavSeparator>
+        <BreadcrumbNavLink href="/a/" index={1}>
+          Parkeren in Rotterdam
+        </BreadcrumbNavLink>
+        <BreadcrumbNavSeparator>
+          <RodsIconChevronRight />
+        </BreadcrumbNavSeparator>
+        <BreadcrumbNavLink href="/a/b/" rel="up" index={2} disabled current>
+          Product aanvragen
+        </BreadcrumbNavLink>
+      </>
+    ),
   },
   parameters: {
     design: {

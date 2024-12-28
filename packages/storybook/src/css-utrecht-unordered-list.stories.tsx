@@ -43,17 +43,19 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Unordered list',
   args: {
-    children: [
-      <UnorderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </UnorderedListItem>,
-      <UnorderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </UnorderedListItem>,
-      <UnorderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </UnorderedListItem>,
-    ],
+    children: (
+      <>
+        <UnorderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </UnorderedListItem>
+        <UnorderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </UnorderedListItem>
+        <UnorderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </UnorderedListItem>
+      </>
+    ),
   },
   parameters: {
     design: {

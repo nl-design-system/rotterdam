@@ -3,6 +3,7 @@
  * Copyright (c) 2021 Community for NL Design System
  */
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import { Component, h } from '@stencil/core';
 
 @Component({

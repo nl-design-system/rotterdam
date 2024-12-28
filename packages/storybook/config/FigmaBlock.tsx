@@ -31,7 +31,7 @@ export const FigmaLink = ({ children, href }: PropsWithChildren<{ href?: string 
   </a>
 );
 
-export const FigmaBlock = ({ of }: any) => {
+export const FigmaBlock = ({ of }: { of?: string }) => {
   const resolvedOf = useOf(of || 'story', ['story', 'meta', 'component']);
   const storyObj: StoryObj | undefined = (resolvedOf as typeof resolvedOf & { story?: StoryObj })?.story;
   if (

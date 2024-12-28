@@ -53,56 +53,58 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Side navigation',
   args: {
-    children: [
-      <SidenavList>
-        <SidenavItem>
-          <SidenavLink current href="/#">
-            <RodsIconOverview /> Overzicht
-          </SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconInbox />
-            Mijn berichten
-            <BadgeCounter>2</BadgeCounter>
-          </SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconBox /> Mijn lopende zaken
-          </SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconSummary /> Zelf regelen
-          </SidenavLink>
-        </SidenavItem>
-      </SidenavList>,
-      <SidenavList>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconCoins /> Belastingen
-          </SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconMoney2 /> Werk &amp; Inkomen
-          </SidenavLink>
-        </SidenavItem>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconParking /> Parkeren
-          </SidenavLink>
-        </SidenavItem>
-      </SidenavList>,
-      <SidenavList>
-        <SidenavItem>
-          <SidenavLink href="/#">
-            <RodsIconUser />
-            Mijn gegevens
-          </SidenavLink>
-        </SidenavItem>
-      </SidenavList>,
-    ],
+    children: (
+      <>
+        <SidenavList>
+          <SidenavItem>
+            <SidenavLink current href="/#">
+              <RodsIconOverview /> Overzicht
+            </SidenavLink>
+          </SidenavItem>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconInbox />
+              Mijn berichten
+              <BadgeCounter>2</BadgeCounter>
+            </SidenavLink>
+          </SidenavItem>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconBox /> Mijn lopende zaken
+            </SidenavLink>
+          </SidenavItem>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconSummary /> Zelf regelen
+            </SidenavLink>
+          </SidenavItem>
+        </SidenavList>
+        <SidenavList>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconCoins /> Belastingen
+            </SidenavLink>
+          </SidenavItem>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconMoney2 /> Werk &amp; Inkomen
+            </SidenavLink>
+          </SidenavItem>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconParking /> Parkeren
+            </SidenavLink>
+          </SidenavItem>
+        </SidenavList>
+        <SidenavList>
+          <SidenavItem>
+            <SidenavLink href="/#">
+              <RodsIconUser />
+              Mijn gegevens
+            </SidenavLink>
+          </SidenavItem>
+        </SidenavList>
+      </>
+    ),
   },
 };

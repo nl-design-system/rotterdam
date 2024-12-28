@@ -15,7 +15,7 @@ export const GitHubIssuesLink = ({ children, href }: PropsWithChildren<{ href?: 
   </a>
 );
 
-export const GitHubBlock = ({ of }: any) => {
+export const GitHubBlock = ({ of }: { of?: string }) => {
   const resolvedOf = useOf(of || 'story', ['story', 'meta', 'component']);
   const storyObj: StoryObj | undefined = (resolvedOf as typeof resolvedOf & { story?: StoryObj })?.story;
   if (storyObj?.parameters && typeof storyObj?.parameters['bugs'] === 'string') {
