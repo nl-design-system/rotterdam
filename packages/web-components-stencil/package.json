@@ -42,7 +42,7 @@
     "@jest/globals": "29.7.0",
     "@stencil/react-output-target": "0.5.3",
     "@stencil/sass": "3.0.12",
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.14",
     "@utrecht/components": "4.0.0",
     "chokidar-cli": "3.0.0",
     "jest": "29.7.0",
