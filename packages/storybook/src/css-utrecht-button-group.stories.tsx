@@ -43,11 +43,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Default',
   args: {
-    children: [
-      <Button appearance="primary-action-button">Primary</Button>,
-      <Button appearance="secondary-action-button">Label</Button>,
-      <Button>Label</Button>,
-      <LinkButton>Text button</LinkButton>,
-    ],
+    children: (
+      <>
+        <Button appearance="primary-action-button">Primary</Button>
+        <Button appearance="secondary-action-button">Label</Button>
+        <Button>Label</Button>
+        <LinkButton>Text button</LinkButton>
+      </>
+    ),
   },
 };

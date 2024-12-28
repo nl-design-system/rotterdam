@@ -43,16 +43,18 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Ordered list',
   args: {
-    children: [
-      <OrderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </OrderedListItem>,
-      <OrderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </OrderedListItem>,
-      <OrderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </OrderedListItem>,
-    ],
+    children: (
+      <>
+        <OrderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </OrderedListItem>
+        <OrderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </OrderedListItem>
+        <OrderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </OrderedListItem>
+      </>
+    ),
   },
 };

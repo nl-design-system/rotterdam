@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const lodash = require('lodash');
 const { camelCase, kebabCase, upperFirst } = lodash;
 
@@ -7,7 +6,8 @@ exports.component = (name, children, container) => {
   const ComponentName = upperFirst(camelCase(name));
   const webComponentName = kebabCase(name);
 
-  return `import { Component, h } from '@stencil/core';
+  return `/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: '${webComponentName}',
@@ -28,7 +28,8 @@ exports.iconContainerComponent = (name, children) => {
   const ComponentName = upperFirst(camelCase(name));
   const webComponentName = kebabCase(name);
 
-  return `import { Component, h } from '@stencil/core';
+  return `/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+import { Component, h } from '@stencil/core';
 
   @Component({
     tag: '${webComponentName}',
@@ -50,7 +51,7 @@ exports.iconContainerComponent = (name, children) => {
 exports.test = (name) => {
   const ComponentName = upperFirst(camelCase(name));
   const webComponentName = kebabCase(name);
-  return `/* eslint-env jest */
+  return `import { describe, expect, it } from '@jest/globals';
 import { ${ComponentName} } from './${webComponentName}.stencil';
 
 describe('${ComponentName}', () => {

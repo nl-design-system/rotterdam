@@ -39,14 +39,14 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Default',
   args: {
-    children: [
+    children: (
       <NavList>
         <NavListLink href="#">Translate</NavListLink>
         <NavListLink href="#">Unilever Nederland Holding B.V.</NavListLink>
         <NavListLink href="#">Uitloggen</NavListLink>
         <NavListLink href="#">Winkelmandje</NavListLink>
-      </NavList>,
-    ],
+      </NavList>
+    ),
   },
   parameters: {
     design: {

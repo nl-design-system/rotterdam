@@ -19,7 +19,7 @@ const preview: Preview = {
       },
       defaultTheme: 'Rotterdam',
     }),
-    (Story: any) => <Document>{Story()}</Document>,
+    (Story) => <Document>{Story()}</Document>,
   ],
   parameters: {
     controls: { expanded: false },
