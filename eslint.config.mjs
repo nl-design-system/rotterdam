@@ -1,24 +1,3 @@
-// import config from "@nl-design-system/eslint-config";
-
-// export default [
-//   ...config,
-//   {
-//     name: "rotterdam/global-ignores",
-//     ignores: [
-//       "build/",
-//       "coverage/",
-//       "dist/",
-//       "target/",
-//       "tmp/",
-//       "components/components.d.ts",
-//       "packages/web-components-angular/src/directives/angular-component-lib/utils.ts",
-//       "packages/web-components-angular/src/directives/proxies.ts",
-//       "packages/web-components-stencil/loader",
-//       "packages/web-components-react/src/react-component-lib/",
-//       "packages/web-components-react/src/components.ts",
-//     ],
-//   },
-// ];
 import js from "@eslint/js";
 import json from "@eslint/json";
 import eslintConfigPrettier from "eslint-config-prettier";
@@ -49,15 +28,15 @@ export default tseslint.config(
       "packages/web-components-react/src/components.ts",
     ],
   },
-  // {
-  //   name: "nl-design-system/plugins-settings",
-  //   plugins: { perfectionist, react },
-  //   settings: {
-  //     react: {
-  //       version: "detect",
-  //     },
-  //   },
-  // },
+  {
+    name: "nl-design-system/plugins-settings",
+    plugins: { perfectionist, react },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
   {
     name: "@eslint/js/recommended",
     files: [
@@ -75,10 +54,10 @@ export default tseslint.config(
     extends: [...tseslint.configs.strict],
     files: ["**/*.ts", "**/*.mts", "**/*.tsx"],
   },
-  // {
-  //   name: "eslint-plugin-perfectionist/recommended-natural",
-  //   ...perfectionist["recommended-natural"],
-  // },
+  {
+    name: "eslint-plugin-perfectionist/recommended-natural",
+    ...perfectionist["recommended-natural"],
+  },
   {
     name: "eslint-plugin-react/recommended",
     files: ["**/*.jsx", "**/*.tsx"],
@@ -130,7 +109,6 @@ export default tseslint.config(
     // This section applies to all files
     name: "nl-design-system/all",
     rules: {
-      "typescript-eslint/no-unused-expressions": "off",
       "array-callback-return": ["error", { checkForEach: false }],
       "block-scoped-var": "error",
       "consistent-return": "error",
@@ -160,25 +138,26 @@ export default tseslint.config(
       "no-useless-concat": "error",
       "no-useless-return": "error",
       "no-void": "error",
-      // "perfectionist/sort-imports": [
-      //   "error",
-      //   {
-      //     ignoreCase: false,
-      //     newlinesBetween: "never",
-      //   },
-      // ],
-      // "perfectionist/sort-objects": [
-      //   "error",
-      //   {
-      //     customGroups: {
-      //       first: ["id", "name"],
-      //       last: ["overrides"],
-      //     },
-      //     groups: ["first", "unknown", "last"],
-      //   },
-      // ],
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          ignoreCase: false,
+          newlinesBetween: "never",
+        },
+      ],
+      "perfectionist/sort-objects": [
+        "error",
+        {
+          customGroups: {
+            first: ["id", "name"],
+            last: ["overrides"],
+          },
+          groups: ["first", "unknown", "last"],
+        },
+      ],
       "prefer-regex-literals": "error",
       radix: "error",
+      "typescript-eslint/no-unused-expressions": "off",
       yoda: "error",
     },
   },

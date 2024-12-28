@@ -5,25 +5,25 @@ import { Button } from '@utrecht/component-library-react/dist/css-module';
 import '@gemeente-rotterdam/mendix-css/dist/mendix-nl-design-system-rotterdam-theme.css';
 
 const meta = {
-  title: 'Mendix Component/Form field radio group',
   id: 'mendix-form-field-radio-group',
-  component: Button,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       description: 'Button text',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: Button,
   parameters: {},
+  tags: ['autodocs'],
+  title: 'Mendix Component/Form field radio group',
 } satisfies Meta<typeof Button>;
 
 export default meta;

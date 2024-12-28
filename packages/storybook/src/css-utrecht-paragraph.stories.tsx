@@ -5,23 +5,21 @@ import { Paragraph } from '@utrecht/component-library-react/dist/css-module';
 import readme from './paragraph.md?raw';
 
 const meta = {
-  title: 'CSS Component/Paragraph',
   id: 'css-utrecht-paragraph',
-  component: Paragraph,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: Paragraph,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fparagraph',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Paragraph',
 } satisfies Meta<typeof Paragraph>;
 
 export default meta;

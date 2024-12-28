@@ -3,20 +3,20 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
+  extras: { enableImportInjection: true },
   namespace: 'rods',
-  srcDir: './src/',
   outputTargets: [
     {
-      type: 'dist',
       esmLoaderPath: '../loader',
+      type: 'dist',
     },
     {
-      type: 'dist-custom-elements',
       customElementsExportBehavior: 'bundle',
+      type: 'dist-custom-elements',
     },
     {
-      type: 'www',
       serviceWorker: null, // disable service workers
+      type: 'www',
     },
     reactOutputTarget({
       componentCorePackage: '@gemeente-rotterdam/web-components-stencil',
@@ -24,5 +24,5 @@ export const config: Config = {
     }),
   ],
   plugins: [sass()],
-  extras: { enableImportInjection: true },
+  srcDir: './src/',
 };

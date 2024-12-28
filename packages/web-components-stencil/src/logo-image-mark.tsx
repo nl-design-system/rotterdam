@@ -8,9 +8,9 @@
 import { Component, h } from '@stencil/core';
 
 @Component({
-  tag: 'rods-logo-image-mark',
-  styleUrl: 'logo-image.scss',
   shadow: true,
+  styleUrl: 'logo-image.scss',
+  tag: 'rods-logo-image-mark',
 })
 export class LogoImageMark {
   render() {

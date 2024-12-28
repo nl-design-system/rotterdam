@@ -5,24 +5,22 @@ import { DataBadge, Link } from '@utrecht/component-library-react/dist/css-modul
 import readme from './data-badge.md?raw';
 
 const meta = {
-  title: 'CSS Component/Data badge',
   id: 'css-utrecht-data-badge',
-  component: DataBadge,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       description: 'Data badge text',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: DataBadge,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fdata-badge',
     design: {
@@ -35,6 +33,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Data badge',
 } satisfies Meta<typeof DataBadge>;
 
 export default meta;

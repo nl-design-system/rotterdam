@@ -5,24 +5,22 @@ import { Button } from '@utrecht/component-library-react/dist/css-module';
 import readme from './button.md?raw';
 
 const meta = {
-  title: 'CSS Component/Button',
   id: 'css-utrecht-button',
-  component: Button,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       description: 'Button text',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: Button,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fbutton',
     design: {
@@ -35,6 +33,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Button',
 } satisfies Meta<typeof Button>;
 
 export default meta;

@@ -1,33 +1,31 @@
 /* @license CC0-1.0 */
 
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   RodsIconBadgeAlert,
   RodsIconBadgeAlertSolid,
   RodsIconBadgeCheck,
   RodsIconBadgeInfo,
 } from '@gemeente-rotterdam/web-components-react';
-import type { Meta, StoryObj } from '@storybook/react';
 import { Alert, Paragraph } from '@utrecht/component-library-react/dist/css-module';
 import readme from './alert.md?raw';
 
 const meta = {
-  title: 'CSS Component/Alert',
   id: 'css-utrecht-alert',
-  component: Alert,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: Alert,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Falert',
     design: {
@@ -40,6 +38,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Alert',
 } satisfies Meta<typeof Alert>;
 
 export default meta;

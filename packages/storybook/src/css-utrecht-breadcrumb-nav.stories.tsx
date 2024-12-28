@@ -1,7 +1,7 @@
 /* @license CC0-1.0 */
 
-import { RodsIconChevronRight } from '@gemeente-rotterdam/web-components-react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { RodsIconChevronRight } from '@gemeente-rotterdam/web-components-react';
 import {
   BreadcrumbNav,
   BreadcrumbNavLink,
@@ -10,23 +10,21 @@ import {
 import readme from './breadcrumb-nav.md?raw';
 
 const meta = {
-  title: 'CSS Component/Breadcrumb navigation',
   id: 'css-utrecht-breadcrumb-nav',
-  component: BreadcrumbNav,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: BreadcrumbNav,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fbreadcrumb-nav',
     design: {
@@ -39,6 +37,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Breadcrumb navigation',
 } satisfies Meta<typeof BreadcrumbNav>;
 
 export default meta;
