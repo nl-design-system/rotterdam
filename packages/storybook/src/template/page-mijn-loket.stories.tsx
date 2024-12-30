@@ -206,6 +206,7 @@ export const Default: Story = {
                   yesterday: 'gisteren',
                 }}
                 link="#"
+                locale="nl-NL"
                 now="2023-09-28T19:47:36.593Z"
                 relativeDate
               >
@@ -220,6 +221,7 @@ export const Default: Story = {
                   yesterday: 'gisteren',
                 }}
                 link="#"
+                locale="nl-NL"
                 now="2023-03-00T19:47:36.593Z"
                 relativeDate
               >
@@ -234,6 +236,7 @@ export const Default: Story = {
                   yesterday: 'gisteren',
                 }}
                 link="#"
+                locale="nl-NL"
                 now="2023-03-00T19:47:36.593Z"
                 relativeDate
               >
