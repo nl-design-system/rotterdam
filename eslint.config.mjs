@@ -14,9 +14,6 @@ export default tseslint.config(
   {
     name: "rotterdam/global-ignores",
     ignores: [
-      "**/build/",
-      "**/coverage/",
-      "**/dist/",
       "**/target/**",
       "**/tmp/",
       "**/package-lock.json",
