@@ -20,7 +20,7 @@
     "postcss-discard-duplicates": "7.0.1",
     "react-dom": "18.3.1",
     "react": "18.3.1",
-    "rimraf": "5.0.10",
+    "rimraf": "6.0.1",
     "rollup-plugin-postcss": "4.0.2",
     "rollup": "4.29.1",
     "typescript": "5.7.2",

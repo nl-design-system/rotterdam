@@ -46,14 +46,14 @@
     "@storybook/theming": "8.4.7",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
-    "@utrecht/component-library-react": "5.0.0",
-    "@utrecht/components": "4.0.0",
+    "@utrecht/component-library-react": "8.0.4",
+    "@utrecht/components": "7.4.0",
     "http-server": "14.1.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "rimraf": "6.0.1",
     "storybook": "8.4.7",
     "typescript": "5.7.2",
-    "vite": "5.4.11"
+    "vite": "6.0.6"
   }
 }
