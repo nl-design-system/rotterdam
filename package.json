@@ -78,9 +78,10 @@
     "update-major": "npm-check-updates --configFileName .ncurc.major.cjs",
     "watch:storybook": "pnpm --filter @gemeente-rotterdam/storybook run storybook",
     "watch:style-dictionary": "pnpm --filter @gemeente-rotterdam/design-tokens run watch",
-    "wicket:build": "mvn --offline clean install",
+    "wicket:build": "mvn --no-transfer-progress --offline clean install",
+    "wicket:install-and-build": "mvn --no-transfer-progress clean install",
     "wicket:clean": "mvn clean",
-    "wicket:install": "mvn dependency:go-offline",
+    "wicket:install": "mvn --no-transfer-progress dependency:go-offline",
     "wicket:dev": "mvn exec:java -pl :docs-wicket"
   },
   "dependencies": {
