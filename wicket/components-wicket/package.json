@@ -20,7 +20,7 @@
   "scripts": {},
   "devDependencies": {
     "@nl-design-system-unstable/voorbeeld-design-tokens": "3.3.4",
-    "@nl-design-system-candidate/paragraph-css": "1.0.2",
+    "@nl-design-system-candidate/paragraph-css": "2.0.0",
     "@utrecht/heading-1-css": "1.4.0",
     "@utrecht/heading-2-css": "1.4.0",
     "@utrecht/heading-3-css": "1.4.0",
