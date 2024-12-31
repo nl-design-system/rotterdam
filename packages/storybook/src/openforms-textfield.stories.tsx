@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-textfield',
-  title: 'Open Formulieren/Textfield',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'textfield',
     label: '',
+    type: 'textfield',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Textfield',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -23,11 +23,11 @@ export const Default: Story = {
 };
 export const disabled: Story = {
   args: {
-    key: 'textfield',
-    label: 'Voornaam',
     extraComponentProperties: {
       defaultValue: 'dit is de text in de text field',
       disabled: true,
     },
+    key: 'textfield',
+    label: 'Voornaam',
   },
 };

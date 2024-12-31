@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-email',
-  title: 'Open Formulieren/Email',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'email',
     label: '',
+    type: 'email',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Email',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -23,10 +23,10 @@ export const Default: Story = {
 };
 export const Disabled: Story = {
   args: {
-    key: 'email',
-    label: 'Email',
     extraComponentProperties: {
       disabled: true,
     },
+    key: 'email',
+    label: 'Email',
   },
 };

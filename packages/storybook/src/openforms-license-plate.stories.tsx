@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-license-plate',
-  title: 'Open Formulieren/LicensePlateField',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'licenseplate',
     label: '',
+    type: 'licenseplate',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/LicensePlateField',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -24,10 +24,10 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
-    key: 'licenseplate',
-    label: 'Kentekennummer',
     extraComponentProperties: {
       disabled: true,
     },
+    key: 'licenseplate',
+    label: 'Kentekennummer',
   },
 };

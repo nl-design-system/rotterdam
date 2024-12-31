@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-checkbox',
-  title: 'Open Formulieren/Checkbox',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'checkbox',
     label: '',
+    type: 'checkbox',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Checkbox',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -24,27 +24,27 @@ export const Default: Story = {
 
 export const Required: Story = {
   args: {
+    extraComponentProperties: { validate: { required: true } },
     key: 'checkbox',
     label: 'Ik heb de voorwaarden gelezen en ga hiermee akkoord.',
-    extraComponentProperties: { validate: { required: true } },
   },
 };
 
 export const Checked: Story = {
   args: {
-    key: 'checkbox',
-    label: 'Ik heb de voorwaarden gelezen en ga hiermee akkoord.',
     extraComponentProperties: {
       defaultValue: true,
     },
+    key: 'checkbox',
+    label: 'Ik heb de voorwaarden gelezen en ga hiermee akkoord.',
   },
 };
 export const Disabled: Story = {
   args: {
-    key: 'checkbox',
-    label: 'Ik heb de voorwaarden gelezen en ga hiermee akkoord.',
     extraComponentProperties: {
       disabled: true,
     },
+    key: 'checkbox',
+    label: 'Ik heb de voorwaarden gelezen en ga hiermee akkoord.',
   },
 };

@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-postcode',
-  title: 'Open Formulieren/PostcodeField',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'postcode',
     label: '',
+    type: 'postcode',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/PostcodeField',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -23,10 +23,10 @@ export const Default: Story = {
 };
 export const Disabled: Story = {
   args: {
-    key: 'postcode',
-    label: 'Postcode',
     extraComponentProperties: {
       disabled: true,
     },
+    key: 'postcode',
+    label: 'Postcode',
   },
 };

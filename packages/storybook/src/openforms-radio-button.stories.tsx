@@ -3,11 +3,11 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-radio',
-  title: 'Open Formulieren/Radio',
-  component: SingleFormioComponent,
   args: {
     type: 'radio',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Radio',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -15,7 +15,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    type: 'radio',
     extraComponentProperties: {
       values: [
         {
@@ -33,13 +32,14 @@ export const Default: Story = {
         },
       ],
     },
+    type: 'radio',
   },
 };
 
 export const Checked: Story = {
   args: {
-    type: 'radio',
     extraComponentProperties: {
+      defaultValue: 'radioA',
       values: [
         {
           label: 'Optie A',
@@ -54,13 +54,15 @@ export const Checked: Story = {
           value: 'radioC',
         },
       ],
-      defaultValue: 'radioA',
     },
+    type: 'radio',
   },
 };
 export const Disabled: Story = {
   args: {
     extraComponentProperties: {
+      defaultValue: 'radioA',
+      disabled: true,
       values: [
         {
           label: 'Optie A',
@@ -75,8 +77,6 @@ export const Disabled: Story = {
           value: 'radioC',
         },
       ],
-      defaultValue: 'radioA',
-      disabled: true,
     },
   },
 };

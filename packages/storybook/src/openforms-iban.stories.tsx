@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-iban',
-  title: 'Open Formulieren/IBANField',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'iban',
     label: '',
+    type: 'iban',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/IBANField',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -24,10 +24,10 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
-    key: 'iban',
-    label: 'IBAN',
     extraComponentProperties: {
       disabled: true,
     },
+    key: 'iban',
+    label: 'IBAN',
   },
 };

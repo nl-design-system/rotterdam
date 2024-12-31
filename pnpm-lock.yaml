@@ -383,8 +383,8 @@ importers:
         specifier: workspace:*
         version: link:../web-components-stencil
       '@open-formulieren/sdk':
-        specifier: 2.2.0-alpha.0
-        version: 2.2.0-alpha.0(@types/react@18.3.18)(encoding@0.1.13)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.83.0)(typescript@5.7.2)
+        specifier: 2.5.0-alpha.1
+        version: 2.5.0-alpha.1(@types/react@18.3.18)(encoding@0.1.13)(formiojs@4.21.6(encoding@0.1.13))(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.83.0)(storybook@8.4.7(prettier@3.4.2))(typescript@5.7.2)
       '@storybook/addon-a11y':
         specifier: 8.4.7
         version: 8.4.7(storybook@8.4.7(prettier@3.4.2))
@@ -427,6 +427,12 @@ importers:
       '@storybook/theming':
         specifier: 8.4.7
         version: 8.4.7(storybook@8.4.7(prettier@3.4.2))
+      '@types/lodash':
+        specifier: 4.17.13
+        version: 4.17.13
+      '@types/lodash-es':
+        specifier: 4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: 18.3.18
         version: 18.3.18
@@ -442,6 +448,9 @@ importers:
       http-server:
         specifier: 14.1.1
         version: 14.1.1
+      lodash-es:
+        specifier: 4.17.21
+        version: 4.17.21
       lodash.merge:
         specifier: 4.6.2
         version: 4.6.2
@@ -1677,8 +1686,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@floating-ui/react@0.24.8':
-    resolution: {integrity: sha512-AuYeDoaR8jtUlUXtZ1IJ/6jtBkGnSpJXbGNzokBL87VDJ8opMq1Bgrc0szhK482ReQY6KZsMoZCVSb4xwalkBA==}
+  '@floating-ui/react@0.26.28':
+    resolution: {integrity: sha512-yORQuuAtVpiRjpMhdc0wJj06b9JFjrYF4qp96j++v2NBpbi6SEGF7donUJ3TMieerQ6qVkAv1tgr7L4r5roTqw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1744,8 +1753,8 @@ packages:
   '@formio/vanilla-text-mask@5.1.1-formio.1':
     resolution: {integrity: sha512-rYBlvIPMNUd6sAaduOaiIwI4vfTAjHDRonko2qJn2RP1O//TQ7rcFIPYVYePJZ4OtOpwHiHAvAIh79McphZotQ==}
 
-  '@fortawesome/fontawesome-free@6.7.2':
-    resolution: {integrity: sha512-JUOtgFW6k9u4Y+xeIaEiLr3+cjoUPiAuLXoyKOJSia6Duzb7pq+A76P9ZdPDoAoxHdHzq6gE9/jKBGXlZT8FbA==}
+  '@fortawesome/fontawesome-free@6.4.0':
+    resolution: {integrity: sha512-0NyytTlPJwB/BF5LtRV8rrABDbe3TdTXqNB3PdZ+UUUZAEIrdOJdmABqKjt4AXwIoJNaRVVZEXxpNrqvE1GAYQ==}
     engines: {node: '>=6'}
 
   '@gemeente-denhaag/action@0.1.2':
@@ -2014,16 +2023,19 @@ packages:
     resolution: {integrity: sha512-NCcr1uQo1k5U+SYlnIrbAh3cxy+OQT1VtqiAbxdymSlptbzBb62AjH2xXgjNCoP073hoa1CfCAcwoZ8k96C4nA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  '@open-formulieren/design-tokens@0.52.1':
-    resolution: {integrity: sha512-FaaAzV0pWF+fJFpCl7p+jkT3RsJeFfxaEvc88ci567lY7HFM+R/a/3TNnPW43YSEyCbhytCGP41oSib0wtdxlQ==}
+  '@open-formulieren/design-tokens@0.55.0':
+    resolution: {integrity: sha512-0SP1YSlJJ9I52jfg/t4ZAmFMloChZEG7DXSfWitC6haEuTqANQNsh1PlJYfdwY44lvB4D62pjExrwVpBGFF+Cw==}
+
+  '@open-formulieren/formiojs@4.13.14':
+    resolution: {integrity: sha512-McxmqPpNz5bFF1mYOPwA0+ivISpVyn2gUvYj16rtTojjxfcyAKKwH7gWZL0DgUsXnEr3zKvmlTuugVl3WidNHw==}
 
   '@open-formulieren/leaflet-tools@1.0.0':
     resolution: {integrity: sha512-G2Sdh+Td5iYkVQ9cEIvAiQfpV3V7HdYfQOovLJp3RVJEaXEuOc37ScYaCags5amIjjQZwJpQ+UZtjfK0IBU8pQ==}
     peerDependencies:
       leaflet: ^1.7.1
 
-  '@open-formulieren/sdk@2.2.0-alpha.0':
-    resolution: {integrity: sha512-I6E4x+l5e9DvXpNgdNDrJe3W+X3C6hDvHDAku9UmJknyPbdBc5lIn0YGlXkoFD7TvDLyI1T0gtLVLUvD+pRxaQ==}
+  '@open-formulieren/sdk@2.5.0-alpha.1':
+    resolution: {integrity: sha512-c4024CuOjI6U6D4d6tjQhGzdmvfDRwJQdPiZ4rg+w+fMQrImjkqV/fmWwrrhwT0d9R0sQp1W3bIzKaiZK8Yshg==}
     peerDependencies:
       prop-types: ^15.7.2
       react: ^18.0.0
@@ -2653,11 +2665,17 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
+  '@types/lodash-es@4.17.12':
+    resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
+
   '@types/lodash.chunk@4.2.9':
     resolution: {integrity: sha512-Z9VtFUSnmT0No/QymqfG9AGbfOA4O5qB/uyP89xeZBqDAsKsB4gQFTqt7d0pHjbsTwtQ4yZObQVHuKlSOhIJ5Q==}
 
   '@types/lodash@4.14.195':
     resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
+
+  '@types/lodash@4.17.13':
+    resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
 
   '@types/mdx@2.0.5':
     resolution: {integrity: sha512-76CqzuD6Q7LC+AtbPqrvD9AqsN0k8bsYo2bM2J8pmNldP1aIPAbzUQ7QbobyXL4eLr1wK5x8FZFe8eF/ubRuBg==}
@@ -3211,10 +3229,6 @@ packages:
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-
-  aria-hidden@1.2.4:
-    resolution: {integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==}
-    engines: {node: '>=10'}
 
   aria-query@5.1.3:
     resolution: {integrity: sha512-R5iJ5lkuHybztUfuOAznmboyjWq8O6sqNqtK7CLOqdydi54VNbORp49mb14KbWgG1QD3JFO9hJdZ+y4KutfdOQ==}
@@ -4562,9 +4576,6 @@ packages:
     resolution: {integrity: sha512-A+2EI7U7aG296q2TLGvNapDNTZp1khVt5Vk0Q/fyfSROss0V/V6+txt2aJnwEos44IxTCW/LYAi/zgWzlevj+g==}
     peerDependencies:
       react: '>=16.8.0'
-
-  formiojs@4.13.12:
-    resolution: {integrity: sha512-JMSr3C0nqlnXlWk+bJNRbGxxHEb/kXuZRfCgNSRUrYa7jOFbzMhNgZkoKh+wbHUJHQk4OooQ3EeIRuC2l2BnhA==}
 
   formiojs@4.21.6:
     resolution: {integrity: sha512-Ky2lGjxO5ujk4vKu0V8OJyI79qyJxacEMWjGJcu6FTiUbT70o61Q5pZxo87tTwMpaw6uzncGlkhMr6t4pzby7A==}
@@ -6951,11 +6962,11 @@ packages:
       react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
       react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
 
-  react-number-format@5.4.3:
-    resolution: {integrity: sha512-VCY5hFg/soBighAoGcdE+GagkJq0230qN6jcS5sp8wQX1qy1fYN/RX7/BXkrs0oyzzwqR8/+eSUrqXbGeywdUQ==}
+  react-number-format@5.2.2:
+    resolution: {integrity: sha512-wCh64Z1HCwXcO2dbgkeYIaB+Rmp/fcsH8kAeRtUkc46dv1pIrgDjie2WkOqKBw8YqyqhwNdYgNFNQuuY+iGJ/g==}
     peerDependencies:
-      react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
   react-property@2.0.2:
     resolution: {integrity: sha512-+PbtI3VuDV0l6CleQMsx2gtK0JZbZKbpdu5ynr+lbsuvtmgbNcS3VM0tuY2QjFNOcWxvXeHjDpy42RO+4U2rug==}
@@ -9738,10 +9749,10 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@floating-ui/react@0.24.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@floating-ui/react@0.26.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      aria-hidden: 1.2.4
+      '@floating-ui/utils': 0.2.8
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tabbable: 6.2.0
@@ -9817,9 +9828,9 @@ snapshots:
       fuse.js: 3.6.1
       redux: 4.2.1
 
-  '@formio/protected-eval@1.2.2(formiojs@4.13.12(encoding@0.1.13))':
+  '@formio/protected-eval@1.2.2(formiojs@4.21.6(encoding@0.1.13))':
     dependencies:
-      formiojs: 4.13.12(encoding@0.1.13)
+      formiojs: 4.21.6(encoding@0.1.13)
       js-interpreter: https://codeload.github.com/formio/JS-Interpreter/tar.gz/0ed5007ada500c12d797ab867a15cfab736e9b25
       lodash: 4.17.21
       vm-browserify: 1.1.2
@@ -9832,7 +9843,7 @@ snapshots:
 
   '@formio/vanilla-text-mask@5.1.1-formio.1': {}
 
-  '@fortawesome/fontawesome-free@6.7.2': {}
+  '@fortawesome/fontawesome-free@6.4.0': {}
 
   '@gemeente-denhaag/action@0.1.2(react@18.3.1)':
     dependencies:
@@ -10227,27 +10238,68 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@open-formulieren/design-tokens@0.52.1': {}
+  '@open-formulieren/design-tokens@0.55.0': {}
+
+  '@open-formulieren/formiojs@4.13.14(encoding@0.1.13)':
+    dependencies:
+      '@formio/bootstrap3': 2.12.3
+      '@formio/choices.js': 9.0.1
+      '@formio/semantic': 2.6.1
+      '@formio/vanilla-text-mask': 5.1.1
+      autocompleter: 6.1.3
+      browser-cookies: 1.2.0
+      compare-versions: 3.6.0
+      core-js: 3.39.0
+      custom-event-polyfill: 1.0.7
+      dialog-polyfill: 0.5.6
+      dompurify: 2.5.8
+      downloadjs: 1.4.7
+      dragula: 3.7.3
+      eventemitter3: 4.0.7
+      fast-deep-equal: 3.1.3
+      fast-json-patch: 3.1.1
+      fetch-ponyfill: 7.1.0(encoding@0.1.13)
+      i18next: 20.4.0
+      idb: 6.1.5
+      ismobilejs: 1.1.1
+      json-logic-js: 2.0.5
+      jstimezonedetect: 1.0.7
+      jwt-decode: 3.1.2
+      lodash: 4.17.21
+      moment: 2.30.1
+      moment-timezone: 0.5.46
+      native-promise-only: 0.8.1
+      quill: 2.0.3
+      resize-observer-polyfill: 1.5.1
+      signature_pad: 2.3.2
+      string-hash: 1.1.3
+      text-mask-addons: 3.8.0
+      tooltip.js: 1.3.3
+      uuid: 8.3.2
+      vanilla-picker: 2.12.3
+    transitivePeerDependencies:
+      - encoding
 
   '@open-formulieren/leaflet-tools@1.0.0(leaflet@1.9.4)':
     dependencies:
       leaflet: 1.9.4
       proj4leaflet: 1.0.2
 
-  '@open-formulieren/sdk@2.2.0-alpha.0(@types/react@18.3.18)(encoding@0.1.13)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.83.0)(typescript@5.7.2)':
+  '@open-formulieren/sdk@2.5.0-alpha.1(@types/react@18.3.18)(encoding@0.1.13)(formiojs@4.21.6(encoding@0.1.13))(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.83.0)(storybook@8.4.7(prettier@3.4.2))(typescript@5.7.2)':
     dependencies:
-      '@floating-ui/react': 0.24.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@formio/protected-eval': 1.2.2(formiojs@4.13.12(encoding@0.1.13))
-      '@fortawesome/fontawesome-free': 6.7.2
-      '@open-formulieren/design-tokens': 0.52.1
+      '@floating-ui/react': 0.26.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@formio/protected-eval': 1.2.2(formiojs@4.21.6(encoding@0.1.13))
+      '@fortawesome/fontawesome-free': 6.4.0
+      '@open-formulieren/design-tokens': 0.55.0
+      '@open-formulieren/formiojs': 4.13.14(encoding@0.1.13)
       '@open-formulieren/leaflet-tools': 1.0.0(leaflet@1.9.4)
       '@sentry/react': 6.19.7(react@18.3.1)
       '@sentry/tracing': 6.19.7
+      '@storybook/test': 8.4.7(storybook@8.4.7(prettier@3.4.2))
       classnames: 2.5.1
       date-fns: 2.30.0
       flatpickr: 4.6.13
       formik: 2.4.6(react@18.3.1)
-      formiojs: 4.13.12(encoding@0.1.13)
       ibantools: 3.3.1
       immer: 9.0.21
       leaflet: 1.9.4
@@ -10263,7 +10315,7 @@ snapshots:
       react-intl: 6.8.9(react@18.3.1)(typescript@5.7.2)
       react-leaflet: 4.2.1(leaflet@1.9.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-modal: 3.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-number-format: 5.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-number-format: 5.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom: 6.28.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-select: 5.9.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-use: 17.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10274,7 +10326,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - encoding
+      - formiojs
       - sass
+      - storybook
       - supports-color
       - typescript
 
@@ -10930,11 +10984,17 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/lodash-es@4.17.12':
+    dependencies:
+      '@types/lodash': 4.17.13
+
   '@types/lodash.chunk@4.2.9':
     dependencies:
       '@types/lodash': 4.14.195
 
   '@types/lodash@4.14.195': {}
+
+  '@types/lodash@4.17.13': {}
 
   '@types/mdx@2.0.5': {}
 
@@ -11562,10 +11622,6 @@ snapshots:
       sprintf-js: 1.0.3
 
   argparse@2.0.1: {}
-
-  aria-hidden@1.2.4:
-    dependencies:
-      tslib: 2.8.1
 
   aria-query@5.1.3:
     dependencies:
@@ -13243,46 +13299,6 @@ snapshots:
       react-fast-compare: 2.0.4
       tiny-warning: 1.0.3
       tslib: 2.8.1
-
-  formiojs@4.13.12(encoding@0.1.13):
-    dependencies:
-      '@formio/bootstrap3': 2.12.3
-      '@formio/choices.js': 9.0.1
-      '@formio/semantic': 2.6.1
-      '@formio/vanilla-text-mask': 5.1.1
-      autocompleter: 6.1.3
-      browser-cookies: 1.2.0
-      compare-versions: 3.6.0
-      core-js: 3.39.0
-      custom-event-polyfill: 1.0.7
-      dialog-polyfill: 0.5.6
-      dompurify: 2.5.8
-      downloadjs: 1.4.7
-      dragula: 3.7.3
-      eventemitter3: 4.0.7
-      fast-deep-equal: 3.1.3
-      fast-json-patch: 3.1.1
-      fetch-ponyfill: 7.1.0(encoding@0.1.13)
-      i18next: 20.4.0
-      idb: 6.1.5
-      ismobilejs: 1.1.1
-      json-logic-js: 2.0.5
-      jstimezonedetect: 1.0.7
-      jwt-decode: 3.1.2
-      lodash: 4.17.21
-      moment: 2.30.1
-      moment-timezone: 0.5.46
-      native-promise-only: 0.8.1
-      quill: 2.0.3
-      resize-observer-polyfill: 1.5.1
-      signature_pad: 2.3.2
-      string-hash: 1.1.3
-      text-mask-addons: 3.8.0
-      tooltip.js: 1.3.3
-      uuid: 8.3.2
-      vanilla-picker: 2.12.3
-    transitivePeerDependencies:
-      - encoding
 
   formiojs@4.21.6(encoding@0.1.13):
     dependencies:
@@ -15990,8 +16006,9 @@ snapshots:
       react-lifecycles-compat: 3.0.4
       warning: 4.0.3
 
-  react-number-format@5.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-number-format@5.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
+      prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 

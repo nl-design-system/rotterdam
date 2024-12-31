@@ -3,38 +3,38 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-columns',
-  title: 'Open Formulieren/Columns',
-  component: SingleFormioComponent,
   args: {
-    key: '',
-    type: 'columns',
     extraComponentProperties: {
       columns: [
         {
-          size: '',
-          sizeMobile: '',
           components: [
             {
               key: '',
-              type: '',
               label: '',
+              type: '',
             },
           ],
+          size: '',
+          sizeMobile: '',
         },
         {
-          size: '',
-          sizeMobile: '',
           components: [
             {
               key: '',
-              type: '',
               label: '',
+              type: '',
             },
           ],
+          size: '',
+          sizeMobile: '',
         },
       ],
     },
+    key: '',
+    type: 'columns',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Columns',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -42,33 +42,33 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    key: 'cosign',
-    label: 'columns',
     extraComponentProperties: {
       columns: [
         {
-          size: 3,
-          sizeMobile: 6,
           components: [
             {
               key: 'postcode',
-              type: 'postcode',
               label: 'Postcode',
+              type: 'postcode',
             },
           ],
-        },
-        {
           size: 3,
           sizeMobile: 6,
+        },
+        {
           components: [
             {
               key: 'number',
-              type: 'textfield',
               label: 'Huisnummer',
+              type: 'textfield',
             },
           ],
+          size: 3,
+          sizeMobile: 6,
         },
       ],
     },
+    key: 'cosign',
+    label: 'columns',
   },
 };

@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-fieldset',
-  title: 'Open Formulieren/Fieldset',
-  component: SingleFormioComponent,
   args: {
     key: 'fieldset',
-    type: 'fieldset',
     label: 'Fieldset',
+    type: 'fieldset',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Fieldset',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -20,20 +20,20 @@ export const Default: Story = {
     extraComponentProperties: {
       components: [
         {
-          key: 'name-a',
-          type: 'textfield',
-          input: true,
-          required: true,
-          label: 'Naam persoon 1',
           description: 'Voor- en achternaam zoals op je identiteitsbewijs',
+          input: true,
+          key: 'name-a',
+          label: 'Naam persoon 1',
+          required: true,
+          type: 'textfield',
         },
         {
-          key: 'name-b',
-          type: 'textfield',
-          input: true,
-          required: true,
-          label: 'Naam persoon 2',
           description: 'Voor- en achternaam zoals op je identiteitsbewijs',
+          input: true,
+          key: 'name-b',
+          label: 'Naam persoon 2',
+          required: true,
+          type: 'textfield',
         },
       ],
     },

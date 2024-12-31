@@ -3,21 +3,21 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-date-field',
-  title: 'Open Formulieren/DateField',
-  component: SingleFormioComponent,
   args: {
-    type: 'date',
     extraComponentProperties: {
-      enableTime: false,
       datePicker: {
-        minDate: null,
         maxDate: null,
+        minDate: null,
       },
+      enableTime: false,
       format: 'dd-MM-yyyy',
 
       placeholder: 'dd-mm-yyyy',
     },
+    type: 'date',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/DateField',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;

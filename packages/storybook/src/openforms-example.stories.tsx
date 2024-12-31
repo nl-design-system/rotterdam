@@ -3,17 +3,17 @@ import { MultipleFormioComponents } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-voorbeeld',
-  title: 'Open Formulieren/Voorbeeld',
-  component: MultipleFormioComponents,
   args: {
     components: [
       {
-        type: '',
         key: '',
         label: '',
+        type: '',
       },
     ],
   },
+  component: MultipleFormioComponents,
+  title: 'Open Formulieren/Voorbeeld',
 } satisfies Meta<typeof MultipleFormioComponents>;
 
 export default meta;
@@ -23,64 +23,76 @@ export const Default: Story = {
   args: {
     components: [
       {
-        type: 'textfield',
+        extraComponentProperties: {
+          description: 'Text field description',
+          validate: {
+            pattern: '^\\d+',
+            required: true,
+          },
+        },
         key: 'textfield',
         label: 'Required text field',
-        description: 'Text field description',
-        validate: {
-          required: true,
-          pattern: '^\\d+',
-        },
+        type: 'textfield',
       },
       {
-        type: 'radio',
+        extraComponentProperties: {
+          validate: {
+            required: true,
+          },
+          values: [
+            { label: 'Option A', value: 'a' },
+            { label: 'Option B', value: 'b' },
+          ],
+        },
         key: 'radio',
         label: 'Required radio',
-        validate: {
-          required: true,
-        },
-        values: [
-          { value: 'a', label: 'Option A' },
-          { value: 'b', label: 'Option B' },
-        ],
+        type: 'radio',
       },
       {
-        type: 'content',
+        extraComponentProperties: {
+          customClass: 'info',
+          html: '<p>Some WYSIWYG content</p>',
+        },
         key: 'content',
         label: 'Content',
-        html: '<p>Some WYSIWYG content</p>',
-        customClass: 'info',
+        type: 'content',
       },
       {
-        type: 'fieldset',
+        extraComponentProperties: {
+          components: [
+            {
+              key: 'checkbox',
+              label: 'Checkbox',
+              type: 'checkbox',
+            },
+            {
+              key: 'nestedTextfield',
+              label: 'Nested text field',
+              type: 'textfield',
+            },
+          ],
+          hideHeader: true,
+        },
         key: 'fieldset',
         label: 'Fieldset label',
-        hideHeader: true,
-        components: [
-          {
-            type: 'checkbox',
-            key: 'checkbox',
-            label: 'Checkbox',
-          },
-          {
-            type: 'textfield',
-            key: 'nestedTextfield',
-            label: 'Nested text field',
-          },
-        ],
+        type: 'fieldset',
       },
       {
-        type: 'textfield',
+        extraComponentProperties: {
+          hidden: true,
+        },
         key: 'hiddenTextfield',
         label: 'Hidden text field',
-        hidden: true,
+        type: 'textfield',
       },
       {
-        label: 'Submit',
-        showValidations: false,
+        extraComponentProperties: {
+          input: true,
+          showValidations: false,
+        },
         key: 'submit1',
+        label: 'Submit',
         type: 'button',
-        input: true,
       },
     ],
   },

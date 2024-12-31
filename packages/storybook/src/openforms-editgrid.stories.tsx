@@ -3,50 +3,50 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const innerComponents = [
   {
-    key: 'name',
-    type: 'textfield',
     input: true,
+    key: 'name',
     label: 'Item name',
+    type: 'textfield',
   },
   {
-    key: 'prijs',
-    type: 'currency',
-    input: true,
-    label: 'Price',
+    allowNegative: false,
     currency: 'EUR',
     delimiter: true,
-    allowNegative: false,
+    input: true,
+    key: 'prijs',
+    label: 'Price',
+    type: 'currency',
   },
   {
-    key: 'content',
     html: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>',
-    type: 'content',
     input: false,
+    key: 'content',
     label: '',
     tableView: false,
+    type: 'content',
   },
 ];
 
 const meta = {
   id: 'open-forms-edit-grid',
-  title: 'Open Formulieren/EditGrid',
-  component: SingleFormioComponent,
   args: {
-    type: 'editgrid',
-
     extraComponentProperties: {
-      groupLabel: '',
-      maxLength: null,
-      hideLabel: false,
+      addAnother: 'Add new',
       components: innerComponents,
-      inlineEdit: false,
       description: 'Adds a new group to the grid',
       disableAddingRemovingRows: false,
-      addAnother: 'Add new',
-      saveRow: 'Confirm',
+      groupLabel: '',
+      hideLabel: false,
+      inlineEdit: false,
+      maxLength: null,
       removeRow: 'Remove',
+      saveRow: 'Confirm',
     },
+
+    type: 'editgrid',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/EditGrid',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;

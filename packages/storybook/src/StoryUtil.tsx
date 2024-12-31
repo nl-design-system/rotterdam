@@ -1,10 +1,9 @@
 import { OFLibrary, OpenFormsModule } from '@open-formulieren/sdk';
-import merge from 'lodash.merge';
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import { Form, Formio, Templates } from 'react-formio';
 import '@open-formulieren/sdk/styles.css';
 
-export type FormConfiguration = { type: string; components: { type: string; key: string; label: string }[] };
+export type FormConfiguration = { type: string; components: { type: string; key?: string; label?: string }[] };
 
 const useOpenFormsConfiguration = () => {
   const [isConfigured, setIsConfigured] = useState(Templates.current === OFLibrary);
@@ -31,13 +30,13 @@ const RenderFormioForm = ({ form }: PropsWithChildren<{ form: FormConfiguration 
       form={form}
       submission={{}}
       options={{
-        noAlerts: true,
-        language: 'nl',
         baseUrl: '',
         evalContext: {
           ofPrefix: 'openforms-',
           requiredFieldsWithAsterisk: false,
         },
+        language: 'nl',
+        noAlerts: true,
         ofContext: {
           submissionUuid: '426c8d33-6dcb-4578-8208-f17071a4aebe',
         },
@@ -46,32 +45,40 @@ const RenderFormioForm = ({ form }: PropsWithChildren<{ form: FormConfiguration 
   );
 };
 
+type ComponentProperty = string | boolean | number | object | null;
+
 type SingleFormioComponentProps = {
   type: string;
-  key: string;
-  label: string;
-  extraComponentProperties?: { [index: string]: any };
+  key?: string;
+  label?: string;
+  extraComponentProperties?: { [index: string]: ComponentProperty };
 };
 
 type MultipleFormioComponentsProps = {
-  components: {
-    type: string;
-    key: string;
-    label: string;
-    [index: string]: any;
-  }[];
+  components: SingleFormioComponentProps[];
 };
 
-export const SingleFormioComponent = ({
-  type,
+const mergeExtraComponentProperties = ({
+  extraComponentProperties = {},
   key,
   label,
-  extraComponentProperties = {},
-}: SingleFormioComponentProps) => {
-  const component = merge({ type, key, label }, extraComponentProperties);
-  return <RenderFormioForm form={{ type: 'form', components: [component] }} />;
+  type,
+}: SingleFormioComponentProps): {
+  type: string;
+  key?: string;
+  label?: string;
+  [index: string]: unknown;
+} => ({
+  key,
+  label,
+  type,
+  ...extraComponentProperties,
+});
+
+export const SingleFormioComponent = (args: SingleFormioComponentProps) => {
+  return <RenderFormioForm form={{ components: [mergeExtraComponentProperties(args)], type: 'form' }} />;
 };
 
 export const MultipleFormioComponents = ({ components }: MultipleFormioComponentsProps) => {
-  return <RenderFormioForm form={{ type: 'form', components: components }} />;
+  return <RenderFormioForm form={{ components, type: 'form' }} />;
 };

@@ -3,13 +3,13 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-bsn',
-  title: 'Open Formulieren/BSNField',
-  component: SingleFormioComponent,
   args: {
     key: '',
-    type: 'bsn',
     label: '',
+    type: 'bsn',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/BSNField',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -23,10 +23,10 @@ export const Default: Story = {
 };
 export const Disabled: Story = {
   args: {
-    key: 'bsn',
-    label: 'Burgerservicenummer (BSN)',
     extraComponentProperties: {
       disabled: true,
     },
+    key: 'bsn',
+    label: 'Burgerservicenummer (BSN)',
   },
 };

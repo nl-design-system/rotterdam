@@ -3,11 +3,11 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-selectboxes',
-  title: 'Open Formulieren/Selectboxes',
-  component: SingleFormioComponent,
   args: {
     type: 'selectboxes',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Selectboxes',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
@@ -38,6 +38,7 @@ export const Default: Story = {
 export const Checked: Story = {
   args: {
     extraComponentProperties: {
+      defaultValue: 'selectA',
       values: [
         {
           label: 'Optie A',
@@ -53,13 +54,14 @@ export const Checked: Story = {
           value: 'selectC',
         },
       ],
-      defaultValue: 'selectA',
     },
   },
 };
 export const Disabled: Story = {
   args: {
     extraComponentProperties: {
+      defaultValue: 'selectA',
+      disabled: true,
       values: [
         {
           label: 'Optie A',
@@ -75,8 +77,6 @@ export const Disabled: Story = {
           value: 'selectC',
         },
       ],
-      defaultValue: 'selectA',
-      disabled: true,
     },
   },
 };

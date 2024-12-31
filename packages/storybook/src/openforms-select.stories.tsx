@@ -3,11 +3,11 @@ import { SingleFormioComponent } from './StoryUtil';
 
 const meta = {
   id: 'open-forms-select',
-  title: 'Open Formulieren/Select',
-  component: SingleFormioComponent,
   args: {
     type: 'select',
   },
+  component: SingleFormioComponent,
+  title: 'Open Formulieren/Select',
 } satisfies Meta<typeof SingleFormioComponent>;
 
 export default meta;
