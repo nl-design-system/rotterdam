@@ -68,8 +68,17 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
 
+      - name: Setup Java version
+        uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b # v4.5.0
+        with:
+          distribution: temurin
+          java-version: 21
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Maven build
+        run: pnpm run wicket:install-and-build
 
       - name: "Continuous Integration: build"
         env:
