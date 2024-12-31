@@ -1,8 +1,10 @@
 /* @license CC0-1.0 */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { DataBadge, Link } from '@utrecht/component-library-react/dist/css-module';
 import readme from './data-badge.md?raw';
+
+const LinkDecorator: Decorator = (Story) => <Link href="#">{Story()}</Link>;
 
 const meta = {
   id: 'css-utrecht-data-badge',
@@ -59,7 +61,7 @@ export const BadgeAsLink: Story = {
   args: {
     children: 'sustainability',
   },
-  decorators: [(Story) => <Link href="#">{Story()}</Link>],
+  decorators: [LinkDecorator],
   parameters: {
     design: {
       type: 'figma',
