@@ -171,7 +171,7 @@ public class MarkdownDocumentationExamplesGenerator {
             List.of(
                 "<!-- @license CC0-1.0 -->",
                 "",
-                "# " + componentNameCapitalized + " component voor Apache Wicket",
+                "# " + componentTitle + " component voor Apache Wicket",
                 "",
                 convertToMarkdown(documentationExtractor.extractHeader()),
                 "",
