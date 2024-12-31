@@ -1,13 +1,11 @@
 {
   "utrecht": {
     "badge-list": {
-      "item": {
-        "margin-inline": {
-          "value": "{rods.space.scale.1}"
-        },
-        "margin-block": {
-          "value": "0"
-        }
+      "column-gap": {
+        "value": "{rods.space.scale.1}"
+      },
+      "row-gap": {
+        "value": "0"
       }
     }
   }
