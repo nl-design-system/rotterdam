@@ -1,3 +1,8 @@
+:root {
+  /* override Mendix CSS: `font-size: 10px` */
+  font-size: initial !important;
+}
+
 .utrecht-breadcrumb-nav {
   margin-inline-start: calc(-1 * var(--utrecht-breadcrumb-nav-item-padding-inline-start, 8px));
 }
@@ -9,6 +14,9 @@
 
 .utrecht-nav-bar {
   font-size: var(--rods-typography-scale-sm-font-size);
+
+  /* Override the `inline-size: 100%` to be able to align the Navigation Bar to the right */
+  inline-size: fit-content;
 }
 
 .example-page {
