@@ -1,15 +1,11 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
+
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
-import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.util.string.Strings;
-import org.junit.platform.commons.support.ModifierSupport;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -18,8 +14,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
-
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.util.string.Strings;
+import org.junit.platform.commons.support.ModifierSupport;
 
 public class MarkdownDocumentationExamplesGenerator {
 
@@ -28,6 +27,7 @@ public class MarkdownDocumentationExamplesGenerator {
     private final File markdownStorybookFile;
     private final Panel headingPanel;
     private final String componentName;
+    private final String componentTitle;
     private final String componentNameCapitalized;
     private final HtmlDocumentationExtractor documentationExtractor;
     private final String gitHubExamplePath;
@@ -39,9 +39,12 @@ public class MarkdownDocumentationExamplesGenerator {
           When you have a Behavior and a component, put them in the same package.
          */
         Class<? extends Component> componentClass,
-        String componentName) {
-        this(examplePanelClass, componentClass, componentName, null);
+        String componentName,
+        String componentTitle
+    ) {
+        this(examplePanelClass, componentClass, componentName, componentTitle, null);
     }
+
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> examplePanelClass,
         /*
@@ -49,8 +52,11 @@ public class MarkdownDocumentationExamplesGenerator {
          */
         Class<? extends Component> componentClass,
         String componentName,
-        String renderedHtml) {
+        String componentTitle,
+        String renderedHtml
+    ) {
         this.componentName = componentName;
+        this.componentTitle = componentTitle;
         this.componentNameCapitalized = Strings.capitalize(componentName);
 
         String moduleRootPath = resolveModuleRootPath(GenerateMarkdownAndStorybookExamples.class).getAbsolutePath();
@@ -63,11 +69,9 @@ public class MarkdownDocumentationExamplesGenerator {
         String exampleFilenameWithoutExtension = basePathInDocs + examplePanelClass.getSimpleName();
 
         exampleJavaFile = new File(exampleFilenameWithoutExtension + ".java");
-        documentationExtractor =
-            renderedHtml != null
-                ? new HtmlDocumentationExtractor(renderedHtml)
-                : new HtmlDocumentationExtractor(new File(exampleFilenameWithoutExtension + ".html").toPath()
-        );
+        documentationExtractor = renderedHtml != null
+            ? new HtmlDocumentationExtractor(renderedHtml)
+            : new HtmlDocumentationExtractor(new File(exampleFilenameWithoutExtension + ".html").toPath());
 
         markdownReadmeFile = new File(moduleRootPath + "/stories/" + componentName + ".md");
         markdownStorybookFile = new File(moduleRootPath + "/stories/" + componentName + ".mdx");
@@ -156,7 +160,7 @@ public class MarkdownDocumentationExamplesGenerator {
             <Markdown>{markdown}</Markdown>
             """,
             componentName,
-            Strings.capitalize(componentName)
+            componentTitle
         );
 
         Files.write(markdownStorybookFile.toPath(), content.getBytes());
