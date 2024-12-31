@@ -2,16 +2,14 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
-import {
-  RodsIconBox,
-  RodsIconCoins,
-  RodsIconInbox,
-  RodsIconMoney2,
-  RodsIconOverview,
-  RodsIconParking,
-  RodsIconSummary,
-  RodsIconUser,
-} from '@gemeente-rotterdam/web-components-react';
+import RodsIconBox from '@gemeente-rotterdam/web-components-react/dist/RodsIconBox';
+import RodsIconCoins from '@gemeente-rotterdam/web-components-react/dist/RodsIconCoins';
+import RodsIconInbox from '@gemeente-rotterdam/web-components-react/dist/RodsIconInbox';
+import RodsIconMoney2 from '@gemeente-rotterdam/web-components-react/dist/RodsIconMoney2';
+import RodsIconOverview from '@gemeente-rotterdam/web-components-react/dist/RodsIconOverview';
+import RodsIconParking from '@gemeente-rotterdam/web-components-react/dist/RodsIconParking';
+import RodsIconSummary from '@gemeente-rotterdam/web-components-react/dist/RodsIconSummary';
+import RodsIconUser from '@gemeente-rotterdam/web-components-react/dist/RodsIconUser';
 import { BadgeCounter } from '@utrecht/component-library-react/dist/css-module';
 import readme from './sidenav.md?raw';
 

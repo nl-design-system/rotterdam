@@ -12,6 +12,7 @@ export const config: Config = {
     },
     {
       customElementsExportBehavior: 'bundle',
+      externalRuntime: false,
       type: 'dist-custom-elements',
     },
     {
@@ -19,8 +20,8 @@ export const config: Config = {
       type: 'www',
     },
     reactOutputTarget({
-      componentCorePackage: '@gemeente-rotterdam/web-components-stencil',
-      proxiesFile: '../web-components-react/src/components.ts',
+      esModules: true,
+      outDir: '../web-components-react/src/',
     }),
   ],
   plugins: [sass()],

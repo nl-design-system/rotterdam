@@ -1,7 +1,7 @@
 /* @license CC0-1.0 */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { RodsIconChevronRight } from '@gemeente-rotterdam/web-components-react';
+import RodsIconChevronRight from '@gemeente-rotterdam/web-components-react/dist/RodsIconChevronRight';
 import {
   BreadcrumbNav,
   BreadcrumbNavLink,
