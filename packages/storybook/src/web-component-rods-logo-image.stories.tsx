@@ -1,12 +1,10 @@
 /* @license CC0-1.0 */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  RodsLogoImage,
-  RodsLogoImageAvatar,
-  RodsLogoImageMark,
-  RodsLogoImageSquare,
-} from '@gemeente-rotterdam/web-components-react';
+import RodsLogoImage from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImage';
+import RodsLogoImageAvatar from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImageAvatar';
+import RodsLogoImageMark from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImageMark';
+import RodsLogoImageSquare from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImageSquare';
 import logoImageAvatarDocs from './_logo-image-avatar.md?raw';
 import logoImageBaseDocs from './_logo-image-base.md?raw';
 import logoImageMarkDocs from './_logo-image-mark.md?raw';

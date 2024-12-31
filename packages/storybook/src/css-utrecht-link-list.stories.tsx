@@ -1,7 +1,7 @@
 /* @license CC0-1.0 */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { RodsIconArrowRight } from '@gemeente-rotterdam/web-components-react';
+import RodsIconArrowRight from '@gemeente-rotterdam/web-components-react/dist/RodsIconArrowRight';
 import { LinkList } from '@utrecht/component-library-react/dist/css-module';
 import readme from './link-list.md?raw';
 

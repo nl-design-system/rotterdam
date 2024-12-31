@@ -1,12 +1,10 @@
 /* @license CC0-1.0 */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  RodsIconBadgeAlert,
-  RodsIconBadgeAlertSolid,
-  RodsIconBadgeCheck,
-  RodsIconBadgeInfo,
-} from '@gemeente-rotterdam/web-components-react';
+import RodsIconBadgeAlert from '@gemeente-rotterdam/web-components-react/dist/RodsIconBadgeAlert';
+import RodsIconBadgeAlertSolid from '@gemeente-rotterdam/web-components-react/dist/RodsIconBadgeAlertSolid';
+import RodsIconBadgeCheck from '@gemeente-rotterdam/web-components-react/dist/RodsIconBadgeCheck';
+import RodsIconBadgeInfo from '@gemeente-rotterdam/web-components-react/dist/RodsIconBadgeInfo';
 import { Alert, Paragraph } from '@utrecht/component-library-react/dist/css-module';
 import readme from './alert.md?raw';
 
