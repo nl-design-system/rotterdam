@@ -17,8 +17,6 @@ import java.util.UUID;
 
 public class UtrechtFormFieldCheckbox extends Panel {
 
-    private static final long serialVersionUID = 1L;
-
     private final CheckBox checkbox;
     private final Label description;
     private final IModel<String> errorMessageModel;
