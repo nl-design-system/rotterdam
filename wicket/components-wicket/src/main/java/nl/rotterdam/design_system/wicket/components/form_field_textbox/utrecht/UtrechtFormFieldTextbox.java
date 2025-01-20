@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
-import java.util.UUID;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
@@ -13,6 +12,8 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+
+import java.util.UUID;
 
 public class UtrechtFormFieldTextbox extends Panel {
 
@@ -57,6 +58,9 @@ public class UtrechtFormFieldTextbox extends Panel {
 
         // Generate unique IDs `for` and `aria-describedby` ID references
         fieldId = UUID.randomUUID().toString();
+
+        setMarkupId(fieldId);
+
         controlId = UUID.randomUUID().toString();
         descriptionId = UUID.randomUUID().toString();
         errorMessageId = UUID.randomUUID().toString();
@@ -131,10 +135,13 @@ public class UtrechtFormFieldTextbox extends Panel {
 
         // Create description and error message
         description = new Label("description", descriptionModel) {
+            {
+                setMarkupId(descriptionId);
+            }
+
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
-                tag.put("id", descriptionId);
             }
 
             @Override
@@ -144,10 +151,8 @@ public class UtrechtFormFieldTextbox extends Panel {
         };
 
         errorMessage = new Label("error", errorModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-                tag.put("id", errorMessageId);
+            {
+                setMarkupId(errorMessageId);
             }
 
             @Override
@@ -175,7 +180,6 @@ public class UtrechtFormFieldTextbox extends Panel {
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
-        tag.put("id", fieldId);
         tag.put(
             "class",
             HTMLUtil.className(
