@@ -59,43 +59,43 @@ public class DenhaagSideNavExamplesPanel extends Panel {
 
                             add(DENHAAG_SIDE_NAV_LIST_BEHAVIOR);
                             add(
-                                new ListView<SideNavRecord<?>>("denhaagSideNavItem", links) {
-                                    @Override
-                                    protected void populateItem(ListItem<SideNavRecord<?>> item) {
-                                        item.add(new DenhaagSideNavItemBehavior()); // TODO: should be singleton
-                                        SideNavRecord<?> record = item.getModelObject();
-                                        String naam = record.label();
+                                    new ListView<>("denhaagSideNavItem", links) {
+                                        @Override
+                                        protected void populateItem(ListItem<SideNavRecord<?>> item) {
+                                            item.add(new DenhaagSideNavItemBehavior()); // TODO: should be singleton
+                                            SideNavRecord<?> record = item.getModelObject();
+                                            String naam = record.label();
 
-                                        // TODO: How do I type this?
-                                        @SuppressWarnings({ "rawtypes", "unchecked" })
-                                        DenhaagSideNavLink<?> link = new DenhaagSideNavLink(
-                                            "denhaagSideNavLink",
-                                            record.target()
-                                        );
+                                            // TODO: How do I type this?
+                                            @SuppressWarnings({"rawtypes", "unchecked"})
+                                            DenhaagSideNavLink<?> link = new DenhaagSideNavLink(
+                                                    "denhaagSideNavLink",
+                                                    record.target()
+                                            );
 
-                                        // Optionally add an icon
-                                        if (record.icon() != null) {
-                                            WebMarkupContainer icon = new WebMarkupContainer("denhaagSideNavLinkIcon");
-                                            icon.add(new RotterdamIconBehavior(record.icon()));
-                                            link.add(icon);
-                                        } else {
-                                            link.add(new Label("denhaagSideNavLinkIcon", ""));
+                                            // Optionally add an icon
+                                            if (record.icon() != null) {
+                                                WebMarkupContainer icon = new WebMarkupContainer("denhaagSideNavLinkIcon");
+                                                icon.add(new RotterdamIconBehavior(record.icon()));
+                                                link.add(icon);
+                                            } else {
+                                                link.add(new Label("denhaagSideNavLinkIcon", ""));
+                                            }
+
+                                            // Add the link text
+                                            link.add(new Label("denhaagSideNavLinkLabel", naam));
+
+                                            // Optionally add a number badge
+                                            UtrechtNumberBadge numberBadge = new UtrechtNumberBadge(
+                                                    "denhaagSideNavLinkNumberBadge",
+                                                    record.numberBadge()
+                                            );
+                                            numberBadge.setVisible(record.numberBadge() >= 1);
+                                            link.add(numberBadge);
+
+                                            item.add(link);
                                         }
-
-                                        // Add the link text
-                                        link.add(new Label("denhaagSideNavLinkLabel", naam));
-
-                                        // Optionally add a number badge
-                                        UtrechtNumberBadge numberBadge = new UtrechtNumberBadge(
-                                            "denhaagSideNavLinkNumberBadge",
-                                            record.numberBadge()
-                                        );
-                                        numberBadge.setVisible(record.numberBadge() >= 1);
-                                        link.add(numberBadge);
-
-                                        item.add(link);
                                     }
-                                }
                             );
                         }
                     }

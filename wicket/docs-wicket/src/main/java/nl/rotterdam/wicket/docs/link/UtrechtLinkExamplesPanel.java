@@ -38,7 +38,7 @@ public class UtrechtLinkExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleUtrechtLink() {
-        return new UtrechtLink<String, ComponentsPage>("utrechtLink", Model.of("Homepage"), ComponentsPage.class);
+        return new UtrechtLink<>("utrechtLink", Model.of("Homepage"), ComponentsPage.class);
     }
 
     @ComponentExample
@@ -58,7 +58,7 @@ public class UtrechtLinkExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleUtrechtLinkBehavior() {
-        return new Link<String>("utrechtLinkBehavior", Model.of("Homepage")) {
+        return new Link<>("utrechtLinkBehavior", Model.of("Homepage")) {
             @Override
             public void onInitialize() {
                 super.onInitialize();
@@ -86,7 +86,7 @@ public class UtrechtLinkExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleUtrechtLinkPlaceholder() {
         // `setDisabled()` is default functionality on `Link`
-        UtrechtLink<String, ComponentsPage> link = new UtrechtLink<String, ComponentsPage>(
+        UtrechtLink<String, ComponentsPage> link = new UtrechtLink<>(
             "utrechtLinkPlaceholder",
             Model.of("Homepage"),
             ComponentsPage.class

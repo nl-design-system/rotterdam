@@ -33,7 +33,7 @@ public class RodsIconExamplesPanel extends Panel {
 
                 add(new UtrechtUnorderedListBehavior());
                 add(
-                    new ListView<RotterdamIconType>("iconItem", icons) {
+                    new ListView<>("iconItem", icons) {
                         @Override
                         protected void populateItem(ListItem<RotterdamIconType> item) {
                             item.add(new UtrechtUnorderedListItemBehavior()); // TODO: should be singleton

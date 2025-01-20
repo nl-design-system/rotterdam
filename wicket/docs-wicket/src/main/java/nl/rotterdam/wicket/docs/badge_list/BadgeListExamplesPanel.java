@@ -28,7 +28,7 @@ public class BadgeListExamplesPanel extends Panel {
 
                 add(new UtrechtBadgeListBehavior()); // TODO should be singleton
                 add(
-                    new ListView<String>("listItem", namen) {
+                    new ListView<>("listItem", namen) {
                         @Override
                         protected void populateItem(ListItem<String> item) {
                             item.add(new UtrechtDataBadgeBehavior()); // TODO: should be singleton
