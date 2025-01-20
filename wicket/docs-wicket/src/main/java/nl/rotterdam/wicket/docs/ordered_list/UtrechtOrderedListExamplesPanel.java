@@ -28,7 +28,7 @@ public class UtrechtOrderedListExamplesPanel extends Panel {
 
                 add(new UtrechtOrderedListBehavior()); // TODO should be singleton
                 add(
-                    new ListView<String>("listItem", namen) {
+                    new ListView<>("listItem", namen) {
                         @Override
                         protected void populateItem(ListItem<String> item) {
                             item.add(new UtrechtOrderedListItemBehavior()); // TODO: should be singleton
