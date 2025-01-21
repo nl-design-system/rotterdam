@@ -19,14 +19,14 @@ export const extendedColors = Object.entries(tokens["rods"]["color"]).filter(
 
 <ColorPalette>
   {Object.entries(baseColors).map(([key, token]) => (
-    <ColorItem title={key} colors={[token]} />
+    <ColorItem key={key} title={key} colors={[token.value]} />
   ))}
 </ColorPalette>
 
 ## Grays
 
 <ColorPalette>
-  <ColorItem title="Gray" colors={Object.values(grayTones)} />
+  <ColorItem title="Gray" colors={Object.values(grayTones).map((token) => token.value)} />
 </ColorPalette>
 
 ## Notification colors
@@ -35,7 +35,7 @@ export const extendedColors = Object.entries(tokens["rods"]["color"]).filter(
 
 <ColorPalette>
   {notificationColors.map(([name, tokens]) => (
-    <ColorItem title={name} colors={Object.values(tokens)} />
+    <ColorItem key={name} title={name} colors={Object.values(tokens).map((token) => token.value)} />
   ))}
 </ColorPalette>
 
@@ -45,7 +45,7 @@ export const extendedColors = Object.entries(tokens["rods"]["color"]).filter(
 
 <ColorPalette>
   {extendedColors.map(([name, tokens]) => (
-    <ColorItem title={name} colors={Object.values(tokens)} />
+    <ColorItem key={name} title={name} colors={Object.values(tokens).map((token) => token.value)} />
   ))}
 </ColorPalette>
 
@@ -55,6 +55,6 @@ export const extendedColors = Object.entries(tokens["rods"]["color"]).filter(
 
 <ColorPalette>
   {skinColors.map(([name, tokens]) => (
-    <ColorItem title={name} colors={Object.values(tokens)} />
+    <ColorItem key={name} title={name} colors={Object.values(tokens).map((token) => token.value)} />
   ))}
 </ColorPalette>
