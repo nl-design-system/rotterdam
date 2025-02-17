@@ -8,6 +8,7 @@ import nl.rotterdam.design_system.wicket.components.form_field_error_message.utr
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxBehavior;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -111,8 +112,22 @@ public class UtrechtFormFieldTextbox extends Panel {
             }
         };
 
-        // Create the label
-        Label label = new Label("label", labelModel) {
+        Label labelText = new Label("labelText", labelModel) {
+            @Override
+            protected void onComponentTag(ComponentTag tag) {
+                super.onComponentTag(tag);
+            }
+        };
+
+        WebMarkupContainer label = new WebMarkupContainer("label") {
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+
+                add(new UtrechtFormLabelBehavior());
+                add(labelText);
+            }
+
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
@@ -124,13 +139,6 @@ public class UtrechtFormFieldTextbox extends Panel {
                         disabled ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
                     )
                 );
-            }
-        };
-
-        Label labelText = new Label("labelText", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
             }
         };
 
@@ -165,7 +173,7 @@ public class UtrechtFormFieldTextbox extends Panel {
         // Add all components
         add(control);
         add(label);
-        add(labelText);
+        label.add(labelText);
         add(description);
         add(errorMessage);
     }
