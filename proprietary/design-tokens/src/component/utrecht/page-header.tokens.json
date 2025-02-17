@@ -1,0 +1,11 @@
+{
+  "utrecht": {
+    "page-header": {
+      "content": {
+        "max-inline-size": {
+          "value": "{basis.page.max-inline-size}"
+        }
+      }
+    }
+  }
+}
