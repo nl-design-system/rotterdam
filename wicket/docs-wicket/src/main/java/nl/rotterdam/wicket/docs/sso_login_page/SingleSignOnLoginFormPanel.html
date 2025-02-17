@@ -4,29 +4,23 @@
   <form wicket:id="loginForm">
     <div wicket:id="feedback">Feedback goes here</div>
     <div>
-      <div>
+      <wicket:container wicket:id="username"></wicket:container>
+      <wicket:container wicket:id="password"></wicket:container>
+      <!-- <div>
         <label wicket:for="username">
           <wicket:label>Name</wicket:label>
         </label>
         <input type="text" wicket:id="username" placeholder="someone@example.com" />
-      </div>
-
+      </div> -->
+      <!--
       <div>
         <label wicket:for="password">
           <wicket:label>Password</wicket:label>
         </label>
         <input type="password" wicket:id="password" placeholder="password" />
-      </div>
+      </div> -->
 
-      <div>
-        <label wicket:for="rememberMe">
-          <wicket:label>Remember me</wicket:label>
-        </label>
-        <input type="checkbox" wicket:id="rememberMe" />
-        <span>Onthoud mij 14 dagen</span>
-      </div>
-
-      <wicket:container wicket:id="rememberMeNlDesign">
+      <wicket:container wicket:id="rememberMe">
         <!-- label, checkbox and validation goes here -->
       </wicket:container>
 

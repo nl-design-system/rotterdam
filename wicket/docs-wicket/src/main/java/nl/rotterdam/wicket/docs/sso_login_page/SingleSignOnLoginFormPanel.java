@@ -3,7 +3,8 @@ package nl.rotterdam.wicket.docs.sso_login_page;
 import nl.rotterdam.design_system.wicket.components.button.utrecht.UtrechtButton;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
-import org.apache.wicket.markup.html.form.CheckBox;
+import nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht.UtrechtFormFieldTextbox;
+// import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.RequiredTextField;
@@ -23,7 +24,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
 
         Model<String> username = Model.of("");
         Model<String> password = Model.of("");
-        Model<Boolean> rememberMe = Model.of(false);
+        Model<Boolean> rememberMe = Model.of(true);
 
         add(
             new Form<Void>("loginForm") {
@@ -34,12 +35,11 @@ public class SingleSignOnLoginFormPanel extends Panel {
 
                     add(
                         new FeedbackPanel("feedback"),
-                        new RequiredTextField<>("username", username)
+                        new UtrechtFormFieldTextbox("username", username, "Gebruikersnaam").setRequired(true),
+                        new UtrechtFormFieldTextbox("password", password, "Wachtwoord")
                             .setRequired(true)
-                            .setLabel(Model.of("Gebruikersnaam")),
-                        new PasswordTextField("password", password).setRequired(true).setLabel(Model.of("Wachtwoord")),
-                        new CheckBox("rememberMe", rememberMe).setLabel(Model.of("Onthoud mij")),
-                        new UtrechtFormFieldCheckbox("rememberMeNlDesign", rememberMe, "Onthoud mij").setRequired(true),
+                            .setInputType("password"),
+                        new UtrechtFormFieldCheckbox("rememberMe", rememberMe, "Onthoud mij").setRequired(true),
                         actionGroup
                     );
                     actionGroup.add(new UtrechtButton("submit"));
