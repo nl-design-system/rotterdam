@@ -2,31 +2,15 @@
   <h1>Inloggen</h1>
   <p>Login met je organisatieaccount.</p>
   <form wicket:id="loginForm">
-    <div wicket:id="feedback">Feedback goes here</div>
     <div>
       <wicket:container wicket:id="username"></wicket:container>
       <wicket:container wicket:id="password"></wicket:container>
-      <!-- <div>
-        <label wicket:for="username">
-          <wicket:label>Name</wicket:label>
-        </label>
-        <input type="text" wicket:id="username" placeholder="someone@example.com" />
-      </div> -->
-      <!--
-      <div>
-        <label wicket:for="password">
-          <wicket:label>Password</wicket:label>
-        </label>
-        <input type="password" wicket:id="password" placeholder="password" />
-      </div> -->
-
-      <wicket:container wicket:id="rememberMe">
-        <!-- label, checkbox and validation goes here -->
-      </wicket:container>
+      <wicket:container wicket:id="rememberMe"></wicket:container>
 
       <div wicket:id="actionGroup">
         <button type="submit" wicket:id="submit">Submit</button>
       </div>
+      <div wicket:id="feedback">Feedback goes here</div>
     </div>
   </form>
 </wicket:panel>
