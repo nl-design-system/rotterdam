@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
+import java.util.UUID;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
@@ -13,8 +14,6 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
-import java.util.UUID;
-
 public class UtrechtFormFieldTextbox extends Panel {
 
     private final TextField<String> control;
@@ -25,6 +24,7 @@ public class UtrechtFormFieldTextbox extends Panel {
     private final String fieldId;
     private final String descriptionId;
     private final String errorMessageId;
+    private String inputType;
 
     public static final String FORM_FIELD_CLASSNAME = "utrecht-form-field";
     public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
@@ -99,6 +99,9 @@ public class UtrechtFormFieldTextbox extends Panel {
                 }
                 if (isInvalid()) {
                     tag.put("aria-invalid", "true");
+                }
+                if (inputType != "") {
+                    tag.put("type", inputType);
                 }
             }
 
@@ -194,5 +197,11 @@ public class UtrechtFormFieldTextbox extends Panel {
 
     public TextField getTextField() {
         return control;
+    }
+
+    public UtrechtFormFieldTextbox setInputType(String arg) {
+        inputType = arg;
+
+        return this;
     }
 }
