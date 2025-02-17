@@ -1,19 +1,20 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import css.HTMLUtil;
+import java.util.UUID;
 import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
+import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelType;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
-
-import java.util.UUID;
 
 public class UtrechtFormFieldCheckbox extends Panel {
 
@@ -50,7 +51,6 @@ public class UtrechtFormFieldCheckbox extends Panel {
     ) {
         super(id);
         add(new UtrechtFormFieldBehavior());
-        add(new UtrechtFormLabelBehavior());
         add(new UtrechtFormFieldDescriptionBehavior());
         add(new UtrechtFormFieldErrorMessageBehavior());
         add(new UtrechtCheckboxBehavior());
@@ -108,9 +108,22 @@ public class UtrechtFormFieldCheckbox extends Panel {
                 // TODO: Add `CHECKBOX_DISABLED_CLASSNAME` class name
             }
         };
+        Label labelText = new Label("labelText", labelModel) {
+            @Override
+            protected void onComponentTag(ComponentTag tag) {
+                super.onComponentTag(tag);
+            }
+        };
 
-        // Create the label
-        Label label = new Label("label", labelModel) {
+        WebMarkupContainer label = new WebMarkupContainer("label") {
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+
+                add(new UtrechtFormLabelBehavior(UtrechtFormLabelType.CHECKBOX));
+                add(labelText);
+            }
+
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
@@ -122,13 +135,6 @@ public class UtrechtFormFieldCheckbox extends Panel {
                         disabled ? UtrechtFormFieldCheckbox.FORM_LABEL_DISABLED_CLASSNAME : null
                     )
                 );
-            }
-        };
-
-        Label labelText = new Label("labelText", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
             }
         };
 
@@ -170,7 +176,7 @@ public class UtrechtFormFieldCheckbox extends Panel {
         };
 
         // Add all components
-        add(checkbox);
+        label.add(checkbox);
         add(label);
         add(labelText);
         add(description);
