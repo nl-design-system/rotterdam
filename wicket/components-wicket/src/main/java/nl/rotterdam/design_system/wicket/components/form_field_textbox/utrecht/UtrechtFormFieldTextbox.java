@@ -66,9 +66,6 @@ public class UtrechtFormFieldTextbox extends Panel {
         descriptionId = UUID.randomUUID().toString();
         errorMessageId = UUID.randomUUID().toString();
 
-        // TODO: Implement disabled state
-        boolean disabled = false;
-
         // TODO: Implement indeterminate state, when someone needs it.
 
         // Create the text input
@@ -82,7 +79,7 @@ public class UtrechtFormFieldTextbox extends Panel {
                     HTMLUtil.className(
                         UtrechtFormFieldTextbox.TEXTBOX_CLASSNAME,
                         UtrechtFormFieldTextbox.FORM_FIELD_INPUT_CLASSNAME,
-                        disabled ? UtrechtFormFieldTextbox.CHECKBOX_DISABLED_CLASSNAME : null,
+                        isDisabled() ? UtrechtFormFieldTextbox.CHECKBOX_DISABLED_CLASSNAME : null,
                         isInvalid() ? UtrechtFormFieldTextbox.INVALID_CLASSNAME : null
                     )
                 );
@@ -133,12 +130,13 @@ public class UtrechtFormFieldTextbox extends Panel {
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
+                // TODO: use 'wicket for' attribute
                 tag.put("for", controlId);
                 tag.put(
                     "class",
                     HTMLUtil.className(
                         UtrechtFormFieldTextbox.FORM_LABEL_CLASSNAME,
-                        disabled ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
+                        isDisabled() ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
                     )
                 );
             }
@@ -180,6 +178,10 @@ public class UtrechtFormFieldTextbox extends Panel {
             description,
             errorMessage
         );
+    }
+
+    private boolean isDisabled() {
+        return !(isEnabled() && isEnableAllowed());
     }
 
     protected boolean isInvalid() {
