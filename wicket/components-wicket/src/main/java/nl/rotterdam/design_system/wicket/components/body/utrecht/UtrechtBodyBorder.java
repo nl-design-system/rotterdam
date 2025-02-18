@@ -6,6 +6,6 @@ public class UtrechtBodyBorder extends Border {
 
     public UtrechtBodyBorder(String id) {
         super(id);
-        add(new UtrechtBodyBehavior());
+        add(UtrechtBodyBehavior.INSTANCE);
     }
 }

@@ -50,9 +50,9 @@ public class UtrechtFormFieldTextbox extends Panel {
         IModel<String> errorModel
     ) {
         super(id);
-        add(new UtrechtFormFieldBehavior());
+        add(UtrechtFormFieldBehavior.INSTANCE);
         add(new UtrechtFormLabelBehavior());
-        add(new UtrechtFormFieldDescriptionBehavior());
+        add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
         add(new UtrechtFormFieldErrorMessageBehavior());
         add(new UtrechtTextboxBehavior());
         errorMessageModel = errorModel;

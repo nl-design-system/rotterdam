@@ -1,21 +1,14 @@
 package nl.rotterdam.design_system.wicket.components.body.utrecht;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
+import nl.rotterdam.design_system.wicket.components.base.HeaderItemRenderingBehavior;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class UtrechtBodyBehavior extends Behavior {
+public class UtrechtBodyBehavior extends HeaderItemRenderingBehavior {
 
-    public static final CssReferenceHeaderItem CSS =
-        cssReferenceHeaderItem(UtrechtBodyBehavior.class, "@utrecht/body-css/dist/index.css");
+    public static final UtrechtBodyBehavior INSTANCE = new UtrechtBodyBehavior();
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-
-        response.render(CSS);
+    private UtrechtBodyBehavior() {
+        addHeaderItem(cssReferenceHeaderItem(UtrechtBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
     }
 }

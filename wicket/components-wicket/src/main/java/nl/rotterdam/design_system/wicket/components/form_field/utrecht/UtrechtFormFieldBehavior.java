@@ -1,23 +1,14 @@
 package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
+import nl.rotterdam.design_system.wicket.components.base.HeaderItemRenderingBehavior;
 
-// TODO: make it a singleton, create base class
-public class UtrechtFormFieldBehavior extends Behavior {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(UtrechtFormFieldBehavior.class, "@utrecht/form-field-css/dist/index.css")
-    );
+public class UtrechtFormFieldBehavior extends HeaderItemRenderingBehavior {
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
+    public static final UtrechtFormFieldBehavior INSTANCE = new UtrechtFormFieldBehavior();
 
-        response.render(CSS);
+    private UtrechtFormFieldBehavior() {
+        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldBehavior.class, "@utrecht/form-field-css/dist/index.css"));
     }
 }

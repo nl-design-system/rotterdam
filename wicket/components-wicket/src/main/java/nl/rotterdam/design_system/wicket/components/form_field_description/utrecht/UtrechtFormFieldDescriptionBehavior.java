@@ -1,26 +1,16 @@
 package nl.rotterdam.design_system.wicket.components.form_field_description.utrecht;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
+import nl.rotterdam.design_system.wicket.components.base.HeaderItemRenderingBehavior;
 
-// TODO: make it a singleton, create base class
-public class UtrechtFormFieldDescriptionBehavior extends Behavior {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(
-            UtrechtFormFieldDescriptionBehavior.class,
-            "@utrecht/form-field-description-css/dist/index.css"
-        )
-    );
+public class UtrechtFormFieldDescriptionBehavior extends HeaderItemRenderingBehavior {
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
+    public static final UtrechtFormFieldDescriptionBehavior INSTANCE = new UtrechtFormFieldDescriptionBehavior();
 
-        response.render(CSS);
+    private UtrechtFormFieldDescriptionBehavior() {
+        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldDescriptionBehavior.class,
+            "@utrecht/form-field-description-css/dist/index.css"));
     }
+
 }
