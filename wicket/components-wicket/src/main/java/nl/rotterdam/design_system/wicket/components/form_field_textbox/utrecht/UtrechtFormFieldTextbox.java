@@ -7,11 +7,13 @@ import nl.rotterdam.design_system.wicket.components.form_field_error_message.utr
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxBehavior;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.util.string.Strings;
 
 import java.util.UUID;
 
@@ -25,6 +27,7 @@ public class UtrechtFormFieldTextbox extends Panel {
     private final String fieldId;
     private final String descriptionId;
     private final String errorMessageId;
+    private String inputType;
 
     public static final String FORM_FIELD_CLASSNAME = "utrecht-form-field";
     public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
@@ -47,9 +50,9 @@ public class UtrechtFormFieldTextbox extends Panel {
         IModel<String> errorModel
     ) {
         super(id);
-        add(new UtrechtFormFieldBehavior());
+        add(UtrechtFormFieldBehavior.INSTANCE);
         add(new UtrechtFormLabelBehavior());
-        add(new UtrechtFormFieldDescriptionBehavior());
+        add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
         add(new UtrechtFormFieldErrorMessageBehavior());
         add(new UtrechtTextboxBehavior());
         errorMessageModel = errorModel;
@@ -62,9 +65,6 @@ public class UtrechtFormFieldTextbox extends Panel {
         controlId = UUID.randomUUID().toString();
         descriptionId = UUID.randomUUID().toString();
         errorMessageId = UUID.randomUUID().toString();
-
-        // TODO: Implement disabled state
-        Boolean disabled = false;
 
         // TODO: Implement indeterminate state, when someone needs it.
 
@@ -79,7 +79,7 @@ public class UtrechtFormFieldTextbox extends Panel {
                     HTMLUtil.className(
                         UtrechtFormFieldTextbox.TEXTBOX_CLASSNAME,
                         UtrechtFormFieldTextbox.FORM_FIELD_INPUT_CLASSNAME,
-                        disabled ? UtrechtFormFieldTextbox.CHECKBOX_DISABLED_CLASSNAME : null,
+                        isDisabled() ? UtrechtFormFieldTextbox.CHECKBOX_DISABLED_CLASSNAME : null,
                         isInvalid() ? UtrechtFormFieldTextbox.INVALID_CLASSNAME : null
                     )
                 );
@@ -100,6 +100,9 @@ public class UtrechtFormFieldTextbox extends Panel {
                 if (isInvalid()) {
                     tag.put("aria-invalid", "true");
                 }
+                if (!Strings.isEmpty(inputType)) {
+                    tag.put("type", inputType);
+                }
             }
 
             protected void onDisabled(final ComponentTag tag) {
@@ -108,26 +111,34 @@ public class UtrechtFormFieldTextbox extends Panel {
             }
         };
 
-        // Create the label
-        Label label = new Label("label", labelModel) {
+        Label labelText = new Label("labelText", labelModel) {
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
+            }
+        };
+
+        WebMarkupContainer label = new WebMarkupContainer("label") {
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+
+                add(new UtrechtFormLabelBehavior());
+                add(labelText);
+            }
+
+            @Override
+            protected void onComponentTag(ComponentTag tag) {
+                super.onComponentTag(tag);
+                // TODO: use 'wicket for' attribute
                 tag.put("for", controlId);
                 tag.put(
                     "class",
                     HTMLUtil.className(
                         UtrechtFormFieldTextbox.FORM_LABEL_CLASSNAME,
-                        disabled ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
+                        isDisabled() ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
                     )
                 );
-            }
-        };
-
-        Label labelText = new Label("labelText", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
             }
         };
 
@@ -160,11 +171,17 @@ public class UtrechtFormFieldTextbox extends Panel {
         };
 
         // Add all components
-        add(control);
-        add(label);
-        add(labelText);
-        add(description);
-        add(errorMessage);
+        add(
+            control,
+            label,
+            labelText,
+            description,
+            errorMessage
+        );
+    }
+
+    private boolean isDisabled() {
+        return !(isEnabled() && isEnableAllowed());
     }
 
     protected boolean isInvalid() {
@@ -194,5 +211,11 @@ public class UtrechtFormFieldTextbox extends Panel {
 
     public TextField getTextField() {
         return control;
+    }
+
+    public UtrechtFormFieldTextbox setInputType(String arg) {
+        inputType = arg;
+
+        return this;
     }
 }

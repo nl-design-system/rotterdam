@@ -723,13 +723,15 @@ importers:
         specifier: 1.4.0
         version: 1.4.0
 
+  wicket/components-wicket/target/classes/css/@gemeente-rotterdam/web-components-stencil/loader: {}
+
   wicket/components-wicket/target/classes/nl/rotterdam/design_system/wicket/components/icon/rotterdam/@gemeente-rotterdam/web-components-stencil/loader: {}
 
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
-        specifier: 1.0.0-alpha.35
-        version: 1.0.0-alpha.35
+        specifier: workspace:*
+        version: link:../../proprietary/design-tokens
 
   wicket/docs-wicket:
     devDependencies:
@@ -1767,9 +1769,6 @@ packages:
     resolution: {integrity: sha512-QLVzeZSHOxyVKZJS7E54nQmv5Ub4MxBZBDEGeHc53SO1CtTPie2kdu97kKdmy+QgtqvY1s9VK0NQSTVAJKZiew==}
     peerDependencies:
       react: ^18.0.0
-
-  '@gemeente-rotterdam/design-tokens@1.0.0-alpha.35':
-    resolution: {integrity: sha512-PCeByC6lefxcvxd5aModHD8psz5x9zzNGtzVkKFClG22FrrP73vY5y7lcR0S/zWlqbMkoK9jT0Zuir5aAwquYw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -9184,8 +9183,6 @@ snapshots:
     dependencies:
       date-fns: 3.6.0
       react: 18.3.1
-
-  '@gemeente-rotterdam/design-tokens@1.0.0-alpha.35': {}
 
   '@humanfs/core@0.19.1': {}
 
