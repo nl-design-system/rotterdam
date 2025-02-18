@@ -1,12 +1,13 @@
 package nl.rotterdam.design_system.wicket.components.form_label.utrecht;
 
-import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+
+// TODO: make it a singleton, create base class
 public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
