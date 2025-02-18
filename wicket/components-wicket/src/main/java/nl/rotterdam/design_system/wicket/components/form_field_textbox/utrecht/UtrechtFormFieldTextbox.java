@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
-import java.util.UUID;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
@@ -14,6 +13,9 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.util.string.Strings;
+
+import java.util.UUID;
 
 public class UtrechtFormFieldTextbox extends Panel {
 
@@ -65,7 +67,7 @@ public class UtrechtFormFieldTextbox extends Panel {
         errorMessageId = UUID.randomUUID().toString();
 
         // TODO: Implement disabled state
-        Boolean disabled = false;
+        boolean disabled = false;
 
         // TODO: Implement indeterminate state, when someone needs it.
 
@@ -101,7 +103,7 @@ public class UtrechtFormFieldTextbox extends Panel {
                 if (isInvalid()) {
                     tag.put("aria-invalid", "true");
                 }
-                if (inputType != "") {
+                if (!Strings.isEmpty(inputType)) {
                     tag.put("type", inputType);
                 }
             }
@@ -171,11 +173,13 @@ public class UtrechtFormFieldTextbox extends Panel {
         };
 
         // Add all components
-        add(control);
-        add(label);
-        label.add(labelText);
-        add(description);
-        add(errorMessage);
+        add(
+            control,
+            label,
+            labelText,
+            description,
+            errorMessage
+        );
     }
 
     protected boolean isInvalid() {
