@@ -14,7 +14,8 @@
     @include utrecht-button--pressed;
   }
 
-  &:disabled {
+  &:disabled,
+  &[aria-disabled="true"] {
     @include utrecht-button--disabled;
   }
 

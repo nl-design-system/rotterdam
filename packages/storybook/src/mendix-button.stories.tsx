@@ -1,22 +1,39 @@
 /* @license CC0-1.0 */
 
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@utrecht/component-library-react/dist/css-module';
 import '@gemeente-rotterdam/mendix-css/dist/mendix-nl-design-system-rotterdam-theme.css';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button, ButtonProps } from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
   id: 'mendix-button',
-  args: {
-    children: '',
-  },
   argTypes: {
-    children: {
+    disabled: {
+      name: 'Disabled',
+      control: { type: 'radio' },
+      defaultValue: '',
+      description: 'Disabled state',
+      options: [true, false],
+      type: {
+        name: 'boolean',
+        required: false,
+      },
+    },
+    label: {
       name: 'Content',
       defaultValue: '',
       description: 'Button text',
       type: {
         name: 'string',
         required: true,
+      },
+    },
+    title: {
+      name: 'Tooltip',
+      defaultValue: 'Tooltip text',
+      description: 'Default HTML tooltip text',
+      type: {
+        name: 'string',
+        required: false,
       },
     },
   },
@@ -33,17 +50,19 @@ type Story = StoryObj<typeof meta>;
 export const DefaultButton: Story = {
   name: 'Default button',
   args: {
-    children: 'Label',
+    disabled: false,
+    label: 'Button',
+    title: '',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton3 btn-default"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton3"
-      data-disabled="false"
+      className="btn mx-button btn-default"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
-      Button
+      {props.label}
     </button>
   ),
 };
@@ -51,18 +70,18 @@ export const DefaultButton: Story = {
 export const DefaultDisabledButton: Story = {
   name: 'Disabled button',
   args: {
-    children: 'Label',
+    disabled: true,
+    label: 'Button',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton3 btn-default"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton3"
-      data-disabled="false"
-      disabled
+      className="btn mx-button btn-default"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
-      Button
+      {props.label}
     </button>
   ),
 };
@@ -93,13 +112,13 @@ export const InverseButton: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton4 btn-inverse"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton4"
-      data-disabled="false"
+      className="btn mx-button btn-inverse"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
       Inverse button
     </button>
@@ -111,13 +130,13 @@ export const PrimaryButton: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton5 btn-primary"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton5"
-      data-disabled="false"
+      className="btn mx-button btn-primary"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
       Primary button
     </button>
@@ -129,13 +148,13 @@ export const InfoButton: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton6 btn-info"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton6"
-      data-disabled="false"
+      className="btn mx-button btn-info"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
       Info button
     </button>
@@ -146,13 +165,13 @@ export const SuccessButton: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton7 btn-success"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton7"
-      data-disabled="false"
+      className="btn mx-button btn-success"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
       Success button
     </button>
@@ -163,13 +182,13 @@ export const WarningButton: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton8 btn-warning"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton8"
-      data-disabled="false"
+      className="btn mx-button btn-warning"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
       Warning button
     </button>
@@ -181,13 +200,13 @@ export const DangerButton: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <button
       type="button"
-      className="btn mx-button mx-name-actionButton9 btn-danger"
-      title=""
-      data-button-id="18.Forms.Home_Anonymous.actionButton9"
-      data-disabled="false"
+      className="btn mx-button btn-danger"
+      title={props.title}
+      data-disabled={props.disabled}
+      disabled={props.disabled}
     >
       Danger button
     </button>
@@ -199,14 +218,14 @@ export const ButtonAsLink: Story = {
   args: {
     children: 'Label',
   },
-  render: () => (
+  render: (props: ButtonProps) => (
     <a
-      className="mx-link mx-name-actionButton10"
+      className="mx-link"
       href="#"
       role="button"
-      title=""
-      data-button-id="16.Forms.Home_Anonymous.actionButton10"
-      data-disabled="false"
+      title={props.title}
+      data-disabled={props.disabled}
+      // disabled={props.disabled}
     >
       Button that looks like a link
     </a>
@@ -222,11 +241,10 @@ export const ButtonAsLinkWithIcon: Story = {
   },
   render: () => (
     <a
-      className="mx-link mx-name-actionButton10"
+      className="mx-link"
       href="#"
       role="button"
       title=""
-      data-button-id="16.Forms.Home_Anonymous.actionButton10"
       data-disabled="false"
     >
       Button that looks like a link

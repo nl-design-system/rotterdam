@@ -49,7 +49,7 @@
     "@utrecht/textbox-css": "1.5.0",
     "postcss-discard-duplicates": "7.0.1",
     "rimraf": "6.0.1",
-    "rollup": "4.29.1",
+    "rollup": "4.34.7",
     "rollup-plugin-postcss": "4.0.2"
   }
 }

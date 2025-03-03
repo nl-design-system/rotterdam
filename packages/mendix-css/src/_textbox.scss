@@ -1,6 +1,20 @@
 @import "~@utrecht/textbox-css/src/mixin";
 
-.form-control {
-  @include utrecht-textbox;
-  @include utrecht-textbox--html-input;
+.mx-textbox {
+  .form-control {
+    @include utrecht-textbox;
+    @include utrecht-textbox--html-input;
+
+    &:hover {
+      @include utrecht-textbox--focus;
+    }
+
+    &:focus {
+      @include utrecht-textbox--focus;
+    }
+
+    &:focus-visible {
+      @include utrecht-textbox--focus-visible;
+    }
+  }
 }
