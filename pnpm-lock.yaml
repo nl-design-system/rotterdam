@@ -353,8 +353,8 @@ importers:
   packages/storybook:
     devDependencies:
       '@gemeente-denhaag/action':
-        specifier: 0.1.2
-        version: 0.1.2(react@18.3.1)
+        specifier: 4.0.0
+        version: 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@gemeente-denhaag/sidenav':
         specifier: 0.1.0-alpha.240
         version: 0.1.0-alpha.240(react@18.3.1)
@@ -722,8 +722,6 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.4.0
         version: 1.4.0
-
-  wicket/components-wicket/target/classes/nl/rotterdam/design_system/wicket/components/icon/rotterdam/@gemeente-rotterdam/web-components-stencil/loader: {}
 
   wicket/design-tokens-wicket:
     devDependencies:
@@ -1735,38 +1733,47 @@ packages:
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
 
-  '@gemeente-denhaag/action@0.1.2':
-    resolution: {integrity: sha512-UPnsJF2Rcs3YTCwf/WOAcg4H1i9BBCSWBgINZ/eRvz8q8YccP6/3ov2DLwMv/NfggmR/IeTE67CnJgXCnvo18A==}
-
-  '@gemeente-denhaag/button@0.2.3':
-    resolution: {integrity: sha512-2DWmo5zECa7EQddHKkf8u/Wx14MybEqLG06jQWjIJkXVhXrsym+sylzy0AHtmDFsuIU/ypUUBCOyurH3TeZh2w==}
+  '@gemeente-denhaag/action@4.0.0':
+    resolution: {integrity: sha512-SHrEkybNz5wo1vucW2r8oly+rwcYUS8u/jSq3hGhfIon85iNNuRv4/oXig4G9eVryiJnFySOr/Iz+vbvXEyilQ==}
     peerDependencies:
-      react: ^18.0.0
+      react: 18 || 19
+      react-dom: 18 || 19
 
-  '@gemeente-denhaag/icons@1.0.0':
-    resolution: {integrity: sha512-JiYnISVVn++G6p18TlxV+u4z+vAbA1IInGaCa/8aOrgGsroAwyKcqJ/TvZvoMjRs+sLWkhM9keQRtE4UDlcWOA==}
+  '@gemeente-denhaag/button@3.0.0':
+    resolution: {integrity: sha512-aEOIaObdzYmB3vtCjZE8UBT2IJ172kFjn/xmKsV3w6I1sUM/cXgDze6y844PFzhVOauawFWF+RFvQtc68CqGXQ==}
     peerDependencies:
-      react: ^18.0.0
+      react: 18 || 19
+      react-dom: 18 || 19
 
-  '@gemeente-denhaag/link@0.2.3':
-    resolution: {integrity: sha512-j69w1yZEJG6ipMJlcyAZecG3Iz0Vqgu2WZAEgyxPko4r4MYZGOQDCRNV1CAtkM24uYuRPqnIgBtz6Jh6RTFs7g==}
+  '@gemeente-denhaag/icons@4.0.0':
+    resolution: {integrity: sha512-GhVfng4dzWV+ASxlho+059HCcZkfuKAee40m+s9tMo/hS933XZlfYmHkzlKGZzkUd9bekBMZdHxguh+1EA9QBg==}
     peerDependencies:
-      react: ^18.0.0
+      react: 18 || 19
+      react-dom: 18 || 19
+
+  '@gemeente-denhaag/link@4.0.0':
+    resolution: {integrity: sha512-RYm++8L9V5N+9e4EBTJr2zIgkycRidQlZkAunxMhSLRznUU4QNUohWOdRI6F3hbb7nGy2ic4pCz5I13JxnVqpg==}
+    peerDependencies:
+      react: 18 || 19
+      react-dom: 18 || 19
 
   '@gemeente-denhaag/sidenav@0.1.0-alpha.218':
     resolution: {integrity: sha512-KK6mZBwbVFwPaSU1XJ3ok0t3zr/d9C1E0SuAVfJwn7DH6GwYK6SRiTrQM/MUdMIFrOZa8RmGI+QfSMrtl6cyKg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
       react: ^18.0.0
 
   '@gemeente-denhaag/sidenav@0.1.0-alpha.240':
     resolution: {integrity: sha512-IZrD8WeJ8oX8tveBmv6NxTjYM1/MDm3iW5EhA2LSH4I7XpKIumnEL+tfpRLZIOGlp4cQw+oBwjYCF0kJocWcOA==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
       react: ^18.0.0
 
-  '@gemeente-denhaag/utils@0.2.3-alpha.421':
-    resolution: {integrity: sha512-QLVzeZSHOxyVKZJS7E54nQmv5Ub4MxBZBDEGeHc53SO1CtTPie2kdu97kKdmy+QgtqvY1s9VK0NQSTVAJKZiew==}
+  '@gemeente-denhaag/utils@3.0.0':
+    resolution: {integrity: sha512-q+eFSG3pvpmGxzlivIwVfzQUUuCjVfLXFxNhmhFJZFAHsfd6v+3EU63JcIdLR+biS+K3WSDfJSQ/FRRdOpcDtg==}
     peerDependencies:
-      react: ^18.0.0
+      react: 18 || 19
+      react-dom: 18 || 19
 
   '@gemeente-rotterdam/design-tokens@1.0.0-alpha.35':
     resolution: {integrity: sha512-PCeByC6lefxcvxd5aModHD8psz5x9zzNGtzVkKFClG22FrrP73vY5y7lcR0S/zWlqbMkoK9jT0Zuir5aAwquYw==}
@@ -2436,6 +2443,7 @@ packages:
 
   '@storybook/testing-library@0.2.2':
     resolution: {integrity: sha512-L8sXFJUHmrlyU2BsWWZGuAjv39Jl1uAqUHdxmN42JY15M4+XCMjGlArdCCjDe1wpTSW6USYISA9axjZojgtvnw==}
+    deprecated: In Storybook 8, this package functionality has been integrated to a new package called @storybook/test, which uses Vitest APIs for an improved experience. When upgrading to Storybook 8 with 'npx storybook@latest upgrade', you will get prompted and will get an automigration for the new package. Please migrate when you can.
 
   '@storybook/theming@8.4.7':
     resolution: {integrity: sha512-99rgLEjf7iwfSEmdqlHkSG3AyLcK0sfExcr0jnc6rLiAkBhzuIsvcHjjUwkR210SOCgXqBPW0ZA6uhnuyppHLw==}
@@ -2816,6 +2824,7 @@ packages:
 
   '@utrecht/components@7.4.0':
     resolution: {integrity: sha512-LWFJjJ7TF0eaoWq5TGrg7rNYnG+G5yIEJhuiwFlbICwSx2n+gZVbAE1dAW8YG2mGqveXZk38hBC2FWNE1tj1BQ==}
+    deprecated: 'The @utrecht/components package has been deprecated. To migrate: the SCSS files are now only available in the npm package for the specific component. For example: @utrecht/button-css/src/_mixin.scss. The entire component library is now available in @utrecht/component-library-css/dist/index.css.'
 
   '@utrecht/custom-checkbox-css@1.1.1':
     resolution: {integrity: sha512-nU6T1eDEFSWBXmJ3eUuAlKy/0gPygXrGZhVmk7HUwyP+H0J6kAZd75t7d/ZlIjwzz5cWPF7uUbGD5637Z7KgHg==}
@@ -2835,6 +2844,9 @@ packages:
 
   '@utrecht/focus-ring-css@2.3.0':
     resolution: {integrity: sha512-HYsULqosoFp9zMypvGuEaGpsl01cW6qKGIYGQa9FZCcCtwXcS0dqFEcjeZJ1yue0RJsk0QuGVBrQOXjsNPNkBg==}
+
+  '@utrecht/focus-ring-css@2.3.1':
+    resolution: {integrity: sha512-mmZeNnp2VeYVrnG0uhgkLcX2nVuMW0+oZjJ7lCI1FFODpj3ORmtTi7N5UNjhM3Pyppg5LdDwqMM6jF9clPg5Yg==}
 
   '@utrecht/form-field-checkbox-react@1.0.7':
     resolution: {integrity: sha512-MAvd2GV8kwuN1b8Up72LrKI7b/wG5ueNjMFw0bLCgX6tfgWy9TCKCymupfzSgs5W2VSZRoqFD1FB10BBFHwZOg==}
@@ -3818,9 +3830,6 @@ packages:
   date-fns@2.30.0:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
-
-  date-fns@3.6.0:
-    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
 
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
@@ -4832,6 +4841,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.3:
     resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
@@ -5936,6 +5946,7 @@ packages:
   npmlog@6.0.2:
     resolution: {integrity: sha512-/vBvz5Jfr9dT/aFWd0FIRf+T/Q2WBsLENygUaFUqstqsycmZAP/t5BvFJTK0viFmSUxiUKTUplWy5vt+rvKIxg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -6648,6 +6659,7 @@ packages:
   read-package-json@6.0.4:
     resolution: {integrity: sha512-AEtWXYfopBj2z5N5PbkAOeNHRPUg5q+Nen7QLxV8M2zJq1ym6/lCz3fYNTCXe19puu2d06jfHhrP7v/S2PtMMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    deprecated: This package is no longer supported. Please use @npmcli/package-json instead.
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -9148,29 +9160,35 @@ snapshots:
       '@lit-labs/react': 1.2.1
       react: 18.3.1
 
-  '@gemeente-denhaag/action@0.1.2(react@18.3.1)':
+  '@gemeente-denhaag/action@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@gemeente-denhaag/button': 0.2.3(react@18.3.1)
-      '@gemeente-denhaag/icons': 1.0.0(react@18.3.1)
-      '@gemeente-denhaag/link': 0.2.3(react@18.3.1)
-      '@gemeente-denhaag/utils': 0.2.3-alpha.421(react@18.3.1)
-      date-fns: 3.6.0
-    transitivePeerDependencies:
-      - react
-
-  '@gemeente-denhaag/button@0.2.3(react@18.3.1)':
-    dependencies:
-      '@gemeente-denhaag/icons': 1.0.0(react@18.3.1)
+      '@gemeente-denhaag/button': 3.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@gemeente-denhaag/icons': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@gemeente-denhaag/link': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@gemeente-denhaag/utils': 3.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      clsx: 2.1.1
+      date-fns: 4.1.0
       react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
-  '@gemeente-denhaag/icons@1.0.0(react@18.3.1)':
+  '@gemeente-denhaag/button@3.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@gemeente-denhaag/icons': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/focus-ring-css': 2.3.1
+      clsx: 2.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@gemeente-denhaag/icons@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      clsx: 2.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@gemeente-denhaag/link@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
-
-  '@gemeente-denhaag/link@0.2.3(react@18.3.1)':
-    dependencies:
-      '@gemeente-denhaag/icons': 1.0.0(react@18.3.1)
-      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@gemeente-denhaag/sidenav@0.1.0-alpha.218(react@18.3.1)':
     dependencies:
@@ -9180,10 +9198,11 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  '@gemeente-denhaag/utils@0.2.3-alpha.421(react@18.3.1)':
+  '@gemeente-denhaag/utils@3.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      date-fns: 3.6.0
+      date-fns: 4.1.0
       react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@gemeente-rotterdam/design-tokens@1.0.0-alpha.35': {}
 
@@ -10429,6 +10448,8 @@ snapshots:
 
   '@utrecht/focus-ring-css@2.3.0': {}
 
+  '@utrecht/focus-ring-css@2.3.1': {}
+
   '@utrecht/form-field-checkbox-react@1.0.7(@babel/runtime@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.26.0
@@ -11574,8 +11595,6 @@ snapshots:
   date-fns@2.30.0:
     dependencies:
       '@babel/runtime': 7.26.0
-
-  date-fns@3.6.0: {}
 
   date-fns@4.1.0: {}
 
