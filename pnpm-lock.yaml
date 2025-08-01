@@ -332,8 +332,8 @@ importers:
         specifier: 1.4.0
         version: 1.4.0
       '@utrecht/textarea-css':
-        specifier: 2.2.0
-        version: 2.2.0
+        specifier: 2.3.2
+        version: 2.3.2
       '@utrecht/textbox-css':
         specifier: 1.5.0
         version: 1.5.0
@@ -714,16 +714,14 @@ importers:
         specifier: 1.1.0
         version: 1.1.0
       '@utrecht/textarea-css':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 2.3.2
+        version: 2.3.2
       '@utrecht/textbox-css':
         specifier: 1.1.0
         version: 1.1.0
       '@utrecht/unordered-list-css':
         specifier: 1.4.0
         version: 1.4.0
-
-  wicket/components-wicket/target/classes/nl/rotterdam/design_system/wicket/components/icon/rotterdam/@gemeente-rotterdam/web-components-stencil/loader: {}
 
   wicket/design-tokens-wicket:
     devDependencies:
@@ -1755,11 +1753,13 @@ packages:
 
   '@gemeente-denhaag/sidenav@0.1.0-alpha.218':
     resolution: {integrity: sha512-KK6mZBwbVFwPaSU1XJ3ok0t3zr/d9C1E0SuAVfJwn7DH6GwYK6SRiTrQM/MUdMIFrOZa8RmGI+QfSMrtl6cyKg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
       react: ^18.0.0
 
   '@gemeente-denhaag/sidenav@0.1.0-alpha.240':
     resolution: {integrity: sha512-IZrD8WeJ8oX8tveBmv6NxTjYM1/MDm3iW5EhA2LSH4I7XpKIumnEL+tfpRLZIOGlp4cQw+oBwjYCF0kJocWcOA==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
       react: ^18.0.0
 
@@ -2436,6 +2436,7 @@ packages:
 
   '@storybook/testing-library@0.2.2':
     resolution: {integrity: sha512-L8sXFJUHmrlyU2BsWWZGuAjv39Jl1uAqUHdxmN42JY15M4+XCMjGlArdCCjDe1wpTSW6USYISA9axjZojgtvnw==}
+    deprecated: In Storybook 8, this package functionality has been integrated to a new package called @storybook/test, which uses Vitest APIs for an improved experience. When upgrading to Storybook 8 with 'npx storybook@latest upgrade', you will get prompted and will get an automigration for the new package. Please migrate when you can.
 
   '@storybook/theming@8.4.7':
     resolution: {integrity: sha512-99rgLEjf7iwfSEmdqlHkSG3AyLcK0sfExcr0jnc6rLiAkBhzuIsvcHjjUwkR210SOCgXqBPW0ZA6uhnuyppHLw==}
@@ -2816,6 +2817,7 @@ packages:
 
   '@utrecht/components@7.4.0':
     resolution: {integrity: sha512-LWFJjJ7TF0eaoWq5TGrg7rNYnG+G5yIEJhuiwFlbICwSx2n+gZVbAE1dAW8YG2mGqveXZk38hBC2FWNE1tj1BQ==}
+    deprecated: 'The @utrecht/components package has been deprecated. To migrate: the SCSS files are now only available in the npm package for the specific component. For example: @utrecht/button-css/src/_mixin.scss. The entire component library is now available in @utrecht/component-library-css/dist/index.css.'
 
   '@utrecht/custom-checkbox-css@1.1.1':
     resolution: {integrity: sha512-nU6T1eDEFSWBXmJ3eUuAlKy/0gPygXrGZhVmk7HUwyP+H0J6kAZd75t7d/ZlIjwzz5cWPF7uUbGD5637Z7KgHg==}
@@ -2991,11 +2993,8 @@ packages:
   '@utrecht/table-css@1.4.0':
     resolution: {integrity: sha512-D2JvmGY9uf2/N/wiq4XbX5/9Gz5iTIsjiJF4huFmP+XRB7zzSwPTWgC/AdQWtIUiYlWQMFvvB6bOMtCIUq9eKA==}
 
-  '@utrecht/textarea-css@1.1.0':
-    resolution: {integrity: sha512-SL5fUf3ygYA70VC4mT4TSN6WHU95ESECUQyO4w3J942tLxvmfNHpdmMv1iBkyqo+xlM8Q1EP7oDKbkABBK5ceA==}
-
-  '@utrecht/textarea-css@2.2.0':
-    resolution: {integrity: sha512-OFqAtwMpkRd+ME8Z9IIQiDd0rgrog88yOTgkQTTjWnKFzxDaq64CvY4SF78vzfco3cxMb4JqBPy4F7VOq55Kqw==}
+  '@utrecht/textarea-css@2.3.2':
+    resolution: {integrity: sha512-//1PLWGMvTqS6exirU0OUO3l9odc7S2Wg1kg4I82v5oeoniUbn2gNgVfvDonPx4l9IywPNhIjlMM/9VfgU8T+Q==}
 
   '@utrecht/textbox-css@1.1.0':
     resolution: {integrity: sha512-APQW299fyoNZQ/hYW8F9uET4JvzhXMbUBWT59h6sc/wwsbDBWku+ufgN4wrsYTqGSPExFKfffzRGuniaqyvBxA==}
@@ -4832,6 +4831,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.3:
     resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
@@ -5936,6 +5936,7 @@ packages:
   npmlog@6.0.2:
     resolution: {integrity: sha512-/vBvz5Jfr9dT/aFWd0FIRf+T/Q2WBsLENygUaFUqstqsycmZAP/t5BvFJTK0viFmSUxiUKTUplWy5vt+rvKIxg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -6648,6 +6649,7 @@ packages:
   read-package-json@6.0.4:
     resolution: {integrity: sha512-AEtWXYfopBj2z5N5PbkAOeNHRPUg5q+Nen7QLxV8M2zJq1ym6/lCz3fYNTCXe19puu2d06jfHhrP7v/S2PtMMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    deprecated: This package is no longer supported. Please use @npmcli/package-json instead.
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -10556,9 +10558,7 @@ snapshots:
 
   '@utrecht/table-css@1.4.0': {}
 
-  '@utrecht/textarea-css@1.1.0': {}
-
-  '@utrecht/textarea-css@2.2.0': {}
+  '@utrecht/textarea-css@2.3.2': {}
 
   '@utrecht/textbox-css@1.1.0': {}
 
