@@ -40,8 +40,8 @@ importers:
         specifier: 7.37.5
         version: 7.37.5(eslint@9.34.0)
       globals:
-        specifier: 15.14.0
-        version: 15.14.0
+        specifier: 16.3.0
+        version: 16.3.0
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -722,6 +722,7 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.5.1
         version: 1.5.1
+
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
@@ -4720,8 +4721,8 @@ packages:
     resolution: {integrity: sha512-1+gLErljJFhbOVyaetcwJiJ4+eLe45S2E7P5UiZ9xGfeq3ATQf5DOv9G7MH3gGbKQLkzmNh2DxfZwLdw+j6oTQ==}
     engines: {node: '>=18'}
 
-  globals@15.14.0:
-    resolution: {integrity: sha512-OkToC372DtlQeje9/zHIo5CT8lRP/FUgEOKBEhU4e0abL7J7CD24fD9ohiLN5hagG/kWCYj4K5oaxxtj2Z0Dig==}
+  globals@16.3.0:
+    resolution: {integrity: sha512-bqWEnJ1Nt3neqx2q5SFfGS8r/ahumIakg3HcwtNlrVlwXIeNumWn/c7Pn/wKzGhf6SaW6H6uWXLqC30STCMchQ==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -12991,7 +12992,7 @@ snapshots:
 
   globals@15.12.0: {}
 
-  globals@15.14.0: {}
+  globals@16.3.0: {}
 
   globalthis@1.0.4:
     dependencies:
