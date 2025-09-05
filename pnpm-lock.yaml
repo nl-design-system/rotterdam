@@ -356,8 +356,8 @@ importers:
         specifier: 0.1.2
         version: 0.1.2(react@18.3.1)
       '@gemeente-denhaag/sidenav':
-        specifier: 0.1.0-alpha.240
-        version: 0.1.0-alpha.240(react@18.3.1)
+        specifier: 2.0.0
+        version: 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@gemeente-rotterdam/assets':
         specifier: workspace:*
         version: link:../../proprietary/assets
@@ -588,8 +588,8 @@ importers:
   wicket/components-wicket:
     devDependencies:
       '@gemeente-denhaag/sidenav':
-        specifier: 0.1.0-alpha.218
-        version: 0.1.0-alpha.218(react@18.3.1)
+        specifier: 2.0.0
+        version: 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@gemeente-rotterdam/web-components-stencil':
         specifier: workspace:*
         version: link:../../packages/web-components-stencil
@@ -722,6 +722,7 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.5.1
         version: 1.5.1
+
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
@@ -1727,17 +1728,12 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@gemeente-denhaag/sidenav@0.1.0-alpha.218':
-    resolution: {integrity: sha512-KK6mZBwbVFwPaSU1XJ3ok0t3zr/d9C1E0SuAVfJwn7DH6GwYK6SRiTrQM/MUdMIFrOZa8RmGI+QfSMrtl6cyKg==}
+  '@gemeente-denhaag/sidenav@2.0.0':
+    resolution: {integrity: sha512-en7J1FxYG5xuu/2nvANraFS3nbRxKNi6+vxRPqSi9lPYH1ChG2EBCjbVOe7riarEcb++tglQkIjx6HRcivgctw==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
-      react: ^18.0.0
-
-  '@gemeente-denhaag/sidenav@0.1.0-alpha.240':
-    resolution: {integrity: sha512-IZrD8WeJ8oX8tveBmv6NxTjYM1/MDm3iW5EhA2LSH4I7XpKIumnEL+tfpRLZIOGlp4cQw+oBwjYCF0kJocWcOA==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    peerDependencies:
-      react: ^18.0.0
+      react: 18 || 19
+      react-dom: 18 || 19
 
   '@gemeente-denhaag/utils@0.2.3-alpha.421':
     resolution: {integrity: sha512-QLVzeZSHOxyVKZJS7E54nQmv5Ub4MxBZBDEGeHc53SO1CtTPie2kdu97kKdmy+QgtqvY1s9VK0NQSTVAJKZiew==}
@@ -9482,13 +9478,11 @@ snapshots:
       '@gemeente-denhaag/icons': 1.0.0(react@18.3.1)
       react: 18.3.1
 
-  '@gemeente-denhaag/sidenav@0.1.0-alpha.218(react@18.3.1)':
+  '@gemeente-denhaag/sidenav@2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
+      clsx: 2.1.1
       react: 18.3.1
-
-  '@gemeente-denhaag/sidenav@0.1.0-alpha.240(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@gemeente-denhaag/utils@0.2.3-alpha.421(react@18.3.1)':
     dependencies:
