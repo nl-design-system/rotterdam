@@ -389,8 +389,8 @@ importers:
         specifier: 8.4.7
         version: 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/addon-actions':
-        specifier: 8.4.7
-        version: 8.4.7(storybook@8.4.7(prettier@3.6.2))
+        specifier: 9.0.8
+        version: 9.0.8
       '@storybook/addon-designs':
         specifier: 8.0.4
         version: 8.0.4(@storybook/blocks@8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2)))(@storybook/components@8.4.7(storybook@8.4.7(prettier@3.6.2)))(@storybook/theming@8.6.14(storybook@8.4.7(prettier@3.6.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2342,10 +2342,8 @@ packages:
     peerDependencies:
       storybook: ^8.4.7
 
-  '@storybook/addon-actions@8.4.7':
-    resolution: {integrity: sha512-mjtD5JxcPuW74T6h7nqMxWTvDneFtokg88p6kQ5OnC1M259iAXb//yiSZgu/quunMHPCXSiqn4FNOSgASTSbsA==}
-    peerDependencies:
-      storybook: ^8.4.7
+  '@storybook/addon-actions@9.0.8':
+    resolution: {integrity: sha512-LFePu7PPnWN0Il/uoUpmA5T0J0C7d6haJIbg0pXrjxW2MQVSYXE4S4LSUz8fOImltBDV3xAl6tLPYHFj6VcrOA==}
 
   '@storybook/addon-designs@8.0.4':
     resolution: {integrity: sha512-BrEWks1BRnZis2e8OoE1LhFS+x2d094Tzpbb3jQBve2IfDv/X006RSuy1WyplNxskdYdBESCH45MlRn4lhP5ew==}
@@ -2729,9 +2727,6 @@ packages:
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
-
-  '@types/uuid@9.0.7':
-    resolution: {integrity: sha512-WUtIVRUZ9i5dYXefDEAI7sh9/O7jGvHg7Df/5O/gtH3Yabe5odI3UWopVR1qbPXQtvOxWu3mM4XxlYeZtMWF4g==}
 
   '@types/yargs-parser@21.0.0':
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
@@ -6477,10 +6472,6 @@ packages:
     resolution: {integrity: sha512-4UGewrYgqDFw9vV6zNV+ADmPAUAfJPKtGvb/VdpQAx25X5f3xXdGdyOEVFwkl8Hl/tl7+xbeHqSEM+D5/TirUg==}
     engines: {node: '>=10'}
 
-  polished@4.2.2:
-    resolution: {integrity: sha512-Sz2Lkdxz6F2Pgnpi9U5Ng/WdWAUZxmHrNPoVlm3aAemxoy2Qy7LGjQg4uf8qKelDAUW94F4np3iH2YPf2qefcQ==}
-    engines: {node: '>=10'}
-
   polished@4.3.1:
     resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}
     engines: {node: '>=10'}
@@ -8038,10 +8029,6 @@ packages:
 
   util@0.12.5:
     resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
-
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
-    hasBin: true
 
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
@@ -10189,14 +10176,7 @@ snapshots:
       axe-core: 4.7.2
       storybook: 8.4.7(prettier@3.6.2)
 
-  '@storybook/addon-actions@8.4.7(storybook@8.4.7(prettier@3.6.2))':
-    dependencies:
-      '@storybook/global': 5.0.0
-      '@types/uuid': 9.0.7
-      dequal: 2.0.3
-      polished: 4.2.2
-      storybook: 8.4.7(prettier@3.6.2)
-      uuid: 9.0.1
+  '@storybook/addon-actions@9.0.8': {}
 
   '@storybook/addon-designs@8.0.4(@storybook/blocks@8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2)))(@storybook/components@8.4.7(storybook@8.4.7(prettier@3.6.2)))(@storybook/theming@8.6.14(storybook@8.4.7(prettier@3.6.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -10634,8 +10614,6 @@ snapshots:
   '@types/trusted-types@2.0.7': {}
 
   '@types/unist@2.0.11': {}
-
-  '@types/uuid@9.0.7': {}
 
   '@types/yargs-parser@21.0.0': {}
 
@@ -15217,10 +15195,6 @@ snapshots:
     dependencies:
       irregular-plurals: 3.5.0
 
-  polished@4.2.2:
-    dependencies:
-      '@babel/runtime': 7.28.3
-
   polished@4.3.1:
     dependencies:
       '@babel/runtime': 7.28.3
@@ -16970,8 +16944,6 @@ snapshots:
       is-generator-function: 1.0.10
       is-typed-array: 1.1.13
       which-typed-array: 1.1.15
-
-  uuid@9.0.1: {}
 
   v8-compile-cache-lib@3.0.1: {}
 
