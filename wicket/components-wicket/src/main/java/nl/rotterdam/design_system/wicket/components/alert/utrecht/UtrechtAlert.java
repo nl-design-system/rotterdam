@@ -1,16 +1,17 @@
 package nl.rotterdam.design_system.wicket.components.alert.utrecht;
 
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
-public class UtrechtAlert extends Panel {
 
-    public static final String SLOT_ID = "slot";
+public class UtrechtAlert extends GenericPanel<String> {
 
-    public UtrechtAlert(String id, IModel<String> textContent, UtrechtAlertType type) {
-        super(id);
+    private static final String MESSAGE_ID = "message";
+
+    public UtrechtAlert(String id, IModel<String> model, UtrechtAlertType type) {
+        super(id, model);
         add(UtrechtAlertBehavior.utrechtAlert(type));
-        add(new Label(SLOT_ID, textContent));
+        add(new Label(MESSAGE_ID, model));
     }
 }
