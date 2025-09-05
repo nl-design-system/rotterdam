@@ -572,8 +572,8 @@ importers:
         specifier: 4.50.0
         version: 4.50.0
       rollup-plugin-import-css:
-        specifier: 3.5.8
-        version: 3.5.8(rollup@4.50.0)
+        specifier: 4.0.2
+        version: 4.0.2(rollup@4.50.0)
       rollup-plugin-postcss:
         specifier: 4.0.2
         version: 4.0.2(postcss@8.5.6)(ts-node@10.9.2(@types/node@22.18.0)(typescript@5.9.2))
@@ -722,6 +722,7 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.5.1
         version: 1.5.1
+
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
@@ -2145,6 +2146,15 @@ packages:
 
   '@rollup/pluginutils@5.2.0':
     resolution: {integrity: sha512-qWJ2ZTbmumwiLFomfzTyt5Kng4hwPi9rwCYN4SHb6eaRU1KNO4ccxINHr/VhH4GgPlt1XfSTLX2LBTme8ne4Zw==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+
+  '@rollup/pluginutils@5.3.0':
+    resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
@@ -6987,8 +6997,8 @@ packages:
     resolution: {integrity: sha512-JAYYhzCcmGjmCzo3LEHSDE3RAPHKIeBdpqRhiyZSv5o/3wFhktUOzYAWg/uUKyEu5dEaVaql6UOmaqHx1qKrZA==}
     engines: {node: '>=16.0.0'}
 
-  rollup-plugin-import-css@3.5.8:
-    resolution: {integrity: sha512-a3YsZnwHz66mRHCKHjaPCSfWczczvS/HTkgDc+Eogn0mt/0JZXz0WjK0fzM5WwBpVtOqHB4/gHdmEY40ILsaVg==}
+  rollup-plugin-import-css@4.0.2:
+    resolution: {integrity: sha512-ud+/BxNpzjZD8Ak/GSCezC1LRbGXaKFKNjDwJu9NMX1dQlrT0J/vmNfuYq1zX2lTbwtTyPlnGVctIm6wGRDx2A==}
     engines: {node: '>=16'}
     peerDependencies:
       rollup: ^2.x.x || ^3.x.x || ^4.x.x
@@ -9990,6 +10000,14 @@ snapshots:
       rollup: 4.50.0
 
   '@rollup/pluginutils@5.2.0(rollup@4.50.0)':
+    dependencies:
+      '@types/estree': 1.0.8
+      estree-walker: 2.0.2
+      picomatch: 4.0.3
+    optionalDependencies:
+      rollup: 4.50.0
+
+  '@rollup/pluginutils@5.3.0(rollup@4.50.0)':
     dependencies:
       '@types/estree': 1.0.8
       estree-walker: 2.0.2
@@ -15677,9 +15695,9 @@ snapshots:
       - bluebird
       - supports-color
 
-  rollup-plugin-import-css@3.5.8(rollup@4.50.0):
+  rollup-plugin-import-css@4.0.2(rollup@4.50.0):
     dependencies:
-      '@rollup/pluginutils': 5.1.4(rollup@4.50.0)
+      '@rollup/pluginutils': 5.3.0(rollup@4.50.0)
       rollup: 4.50.0
 
   rollup-plugin-inject@3.0.2:
