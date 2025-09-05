@@ -34,6 +34,6 @@
     "rollup": "4.50.0",
     "rollup-plugin-import-css": "4.0.2",
     "rollup-plugin-postcss": "4.0.2",
-    "style-dictionary": "4.3.0"
+    "style-dictionary": "5.0.4"
   }
 }
