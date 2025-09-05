@@ -121,8 +121,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: 19.1.1
+        version: 19.1.1(react@18.3.1)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -192,7 +192,7 @@ importers:
         version: 6.8.0
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -218,8 +218,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: 19.1.1
+        version: 19.1.1(react@18.3.1)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -393,7 +393,7 @@ importers:
         version: 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/addon-designs':
         specifier: 8.0.4
-        version: 8.0.4(@storybook/blocks@8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2)))(@storybook/components@8.4.7(storybook@8.4.7(prettier@3.6.2)))(@storybook/theming@8.6.14(storybook@8.4.7(prettier@3.6.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 8.0.4(@storybook/blocks@8.6.14(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2)))(@storybook/components@8.4.7(storybook@8.4.7(prettier@3.6.2)))(@storybook/theming@8.6.14(storybook@8.4.7(prettier@3.6.2)))(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       '@storybook/addon-docs':
         specifier: 8.4.7
         version: 8.4.7(@types/react@18.3.18)(storybook@8.4.7(prettier@3.6.2))
@@ -411,16 +411,16 @@ importers:
         version: 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/blocks':
         specifier: 8.6.14
-        version: 8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
+        version: 8.6.14(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
       '@storybook/manager-api':
         specifier: 8.6.14
         version: 8.6.14(storybook@8.4.7(prettier@3.6.2))
       '@storybook/react':
         specifier: 8.4.7
-        version: 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)
+        version: 8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)
       '@storybook/react-vite':
         specifier: 8.4.7
-        version: 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.50.0)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))
+        version: 8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(rollup@4.50.0)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))
       '@storybook/testing-library':
         specifier: 0.2.2
         version: 0.2.2
@@ -431,11 +431,11 @@ importers:
         specifier: 18.3.18
         version: 18.3.18
       '@types/react-dom':
-        specifier: 18.3.5
-        version: 18.3.5(@types/react@18.3.18)
+        specifier: 19.1.9
+        version: 19.1.9(@types/react@18.3.18)
       '@utrecht/component-library-react':
         specifier: 8.0.4
-        version: 8.0.4(@babel/runtime@7.28.3)(date-fns@2.30.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 8.0.4(@babel/runtime@7.28.3)(date-fns@2.30.0)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       '@utrecht/components':
         specifier: 7.4.0
         version: 7.4.0
@@ -446,8 +446,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: 19.1.1
+        version: 19.1.1(react@18.3.1)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -476,14 +476,14 @@ importers:
         specifier: 18.3.18
         version: 18.3.18
       '@types/react-dom':
-        specifier: 18.3.5
-        version: 18.3.5(@types/react@18.3.18)
+        specifier: 19.1.9
+        version: 19.1.9(@types/react@18.3.18)
       react:
         specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: 19.1.1
+        version: 19.1.1(react@18.3.1)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -722,6 +722,7 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.5.1
         version: 1.5.1
+
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
@@ -2697,10 +2698,10 @@ packages:
   '@types/prop-types@15.7.5':
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  '@types/react-dom@18.3.5':
-    resolution: {integrity: sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q==}
+  '@types/react-dom@19.1.9':
+    resolution: {integrity: sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==}
     peerDependencies:
-      '@types/react': ^18.0.0
+      '@types/react': ^19.0.0
 
   '@types/react@18.3.18':
     resolution: {integrity: sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ==}
@@ -6815,6 +6816,11 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-dom@19.1.1:
+    resolution: {integrity: sha512-Dlq/5LAZgF0Gaz6yiqZCf6VCcZs1ghAJyrsu84Q/GT0gV+mCxbfmKNoGRKBYMJ8IEdGPqu49YWXD02GCknEDkw==}
+    peerDependencies:
+      react: ^19.1.1
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -7188,6 +7194,9 @@ packages:
 
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+
+  scheduler@0.26.0:
+    resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
   schema-utils@4.3.2:
     resolution: {integrity: sha512-Gn/JaSk/Mt9gYubxTtSn/QCV4em9mpAPiR1rqy/Ocu19u/G9J5WWdNoUT4SiV6mFC3y6cxyFcFwdzPM3FgxGAQ==}
@@ -10146,15 +10155,15 @@ snapshots:
       storybook: 8.4.7(prettier@3.6.2)
       uuid: 9.0.1
 
-  '@storybook/addon-designs@8.0.4(@storybook/blocks@8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2)))(@storybook/components@8.4.7(storybook@8.4.7(prettier@3.6.2)))(@storybook/theming@8.6.14(storybook@8.4.7(prettier@3.6.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@storybook/addon-designs@8.0.4(@storybook/blocks@8.6.14(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2)))(@storybook/components@8.4.7(storybook@8.4.7(prettier@3.6.2)))(@storybook/theming@8.6.14(storybook@8.4.7(prettier@3.6.2)))(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@figspec/react': 1.0.3(react@18.3.1)
     optionalDependencies:
-      '@storybook/blocks': 8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
+      '@storybook/blocks': 8.6.14(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
       '@storybook/components': 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/theming': 8.6.14(storybook@8.4.7(prettier@3.6.2))
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@storybook/addon-docs@8.4.7(@types/react@18.3.18)(storybook@8.4.7(prettier@3.6.2))':
     dependencies:
@@ -10212,14 +10221,14 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/blocks@8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))':
+  '@storybook/blocks@8.6.14(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))':
     dependencies:
-      '@storybook/icons': 1.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/icons': 1.4.0(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       storybook: 8.4.7(prettier@3.6.2)
       ts-dedent: 2.2.0
     optionalDependencies:
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@storybook/builder-vite@8.4.7(storybook@8.4.7(prettier@3.6.2))(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))':
     dependencies:
@@ -10269,10 +10278,10 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/icons@1.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@storybook/icons@1.4.0(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@storybook/instrumenter@8.6.14(storybook@8.4.7(prettier@3.6.2))':
     dependencies:
@@ -10298,17 +10307,23 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       storybook: 8.4.7(prettier@3.6.2)
 
-  '@storybook/react-vite@8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.50.0)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))':
+  '@storybook/react-dom-shim@8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))':
+    dependencies:
+      react: 18.3.1
+      react-dom: 19.1.1(react@18.3.1)
+      storybook: 8.4.7(prettier@3.6.2)
+
+  '@storybook/react-vite@8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(rollup@4.50.0)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))':
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.4.2(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))
       '@rollup/pluginutils': 5.1.4(rollup@4.50.0)
       '@storybook/builder-vite': 8.4.7(storybook@8.4.7(prettier@3.6.2))(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.6.1))
-      '@storybook/react': 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)
+      '@storybook/react': 8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)
       find-up: 5.0.0
       magic-string: 0.30.5
       react: 18.3.1
       react-docgen: 7.0.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
       resolve: 1.22.8
       storybook: 8.4.7(prettier@3.6.2)
       tsconfig-paths: 4.2.0
@@ -10319,16 +10334,16 @@ snapshots:
       - supports-color
       - typescript
 
-  '@storybook/react@8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)':
+  '@storybook/react@8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)':
     dependencies:
       '@storybook/components': 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/global': 5.0.0
       '@storybook/manager-api': 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/preview-api': 8.4.7(storybook@8.4.7(prettier@3.6.2))
-      '@storybook/react-dom-shim': 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
+      '@storybook/react-dom-shim': 8.4.7(react-dom@19.1.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
       '@storybook/theming': 8.4.7(storybook@8.4.7(prettier@3.6.2))
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
       storybook: 8.4.7(prettier@3.6.2)
     optionalDependencies:
       typescript: 5.9.2
@@ -10410,15 +10425,15 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       '@testing-library/dom': 10.4.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.18
-      '@types/react-dom': 18.3.5(@types/react@18.3.18)
+      '@types/react-dom': 19.1.9(@types/react@18.3.18)
 
   '@testing-library/user-event@14.5.2(@testing-library/dom@10.4.0)':
     dependencies:
@@ -10562,7 +10577,7 @@ snapshots:
 
   '@types/prop-types@15.7.5': {}
 
-  '@types/react-dom@18.3.5(@types/react@18.3.18)':
+  '@types/react-dom@19.1.9(@types/react@18.3.18)':
     dependencies:
       '@types/react': 18.3.18
 
@@ -10820,67 +10835,67 @@ snapshots:
 
   '@utrecht/button-group-css@1.5.0': {}
 
-  '@utrecht/button-react@2.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/button-react@2.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/calendar-css@1.4.0': {}
 
-  '@utrecht/calendar-react@1.0.8(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/calendar-react@1.0.8(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
-      '@utrecht/button-react': 2.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/button-react': 2.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       '@utrecht/calendar-css': 1.4.0
       clsx: 2.1.1
       date-fns: 2.30.0
       lodash-es: 4.17.21
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/checkbox-css@1.6.1': {}
 
-  '@utrecht/checkbox-react@1.0.5(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/checkbox-react@1.0.5(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/code-block-css@1.5.1': {}
 
   '@utrecht/column-layout-css@1.5.1': {}
 
-  '@utrecht/combobox-react@0.0.5(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/combobox-react@0.0.5(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
-  '@utrecht/component-library-react@8.0.4(@babel/runtime@7.28.3)(date-fns@2.30.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/component-library-react@8.0.4(@babel/runtime@7.28.3)(date-fns@2.30.0)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
-      '@utrecht/button-react': 2.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/calendar-react': 1.0.8(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/checkbox-react': 1.0.5(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/combobox-react': 0.0.5(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/fieldset-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-checkbox-react': 1.0.7(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-description-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-error-message-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-label-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/link-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/listbox-react': 1.0.7(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/radio-button-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/textbox-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/button-react': 2.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/calendar-react': 1.0.8(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/checkbox-react': 1.0.5(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/combobox-react': 0.0.5(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/fieldset-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-checkbox-react': 1.0.7(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-description-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-error-message-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-label-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/link-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/listbox-react': 1.0.7(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/radio-button-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/textbox-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       lodash.chunk: 4.2.0
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
     optionalDependencies:
       date-fns: 2.30.0
 
@@ -10892,62 +10907,62 @@ snapshots:
 
   '@utrecht/data-badge-css@1.0.1': {}
 
-  '@utrecht/fieldset-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/fieldset-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/focus-ring-css@2.3.1': {}
 
-  '@utrecht/form-field-checkbox-react@1.0.7(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/form-field-checkbox-react@1.0.7(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
-      '@utrecht/checkbox-react': 1.0.5(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-description-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-error-message-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-field-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@utrecht/form-label-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/checkbox-react': 1.0.5(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-description-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-error-message-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-field-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
+      '@utrecht/form-label-react': 1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/form-field-css@1.5.1': {}
 
   '@utrecht/form-field-description-css@1.5.1': {}
 
-  '@utrecht/form-field-description-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/form-field-description-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/form-field-error-message-css@1.5.1': {}
 
-  '@utrecht/form-field-error-message-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/form-field-error-message-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
-  '@utrecht/form-field-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/form-field-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/form-label-css@1.6.1': {}
 
-  '@utrecht/form-label-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/form-label-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/heading-1-css@1.5.1': {}
 
@@ -10973,19 +10988,19 @@ snapshots:
 
   '@utrecht/link-list-css@2.3.1': {}
 
-  '@utrecht/link-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/link-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
-  '@utrecht/listbox-react@1.0.7(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/listbox-react@1.0.7(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/logo-css@1.4.1': {}
 
@@ -11011,12 +11026,12 @@ snapshots:
 
   '@utrecht/radio-button-css@1.6.1': {}
 
-  '@utrecht/radio-button-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/radio-button-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/root-css@1.2.1': {}
 
@@ -11032,12 +11047,12 @@ snapshots:
 
   '@utrecht/textbox-css@1.5.0': {}
 
-  '@utrecht/textbox-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@utrecht/textbox-react@1.0.4(@babel/runtime@7.28.3)(react-dom@19.1.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       clsx: 2.1.1
       react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.1.1(react@18.3.1)
 
   '@utrecht/unordered-list-css@1.5.1': {}
 
@@ -15480,6 +15495,11 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
+  react-dom@19.1.1(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      scheduler: 0.26.0
+
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
@@ -15930,6 +15950,8 @@ snapshots:
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
+
+  scheduler@0.26.0: {}
 
   schema-utils@4.3.2:
     dependencies:
