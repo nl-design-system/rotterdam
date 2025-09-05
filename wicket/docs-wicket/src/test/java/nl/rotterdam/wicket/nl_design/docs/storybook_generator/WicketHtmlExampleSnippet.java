@@ -1,6 +1,7 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import javax.annotation.Nullable;
+
+import org.jspecify.annotations.Nullable;
 
 import static java.util.Objects.requireNonNull;
 
