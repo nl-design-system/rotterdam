@@ -723,8 +723,6 @@ importers:
         specifier: 1.4.0
         version: 1.4.0
 
-  wicket/components-wicket/target/classes/nl/rotterdam/design_system/wicket/components/icon/rotterdam/@gemeente-rotterdam/web-components-stencil/loader: {}
-
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
