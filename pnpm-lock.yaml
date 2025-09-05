@@ -52,8 +52,8 @@ importers:
         specifier: 0.45.0
         version: 0.45.0
       npm-check-updates:
-        specifier: 17.1.13
-        version: 17.1.13
+        specifier: 18.0.3
+        version: 18.0.3
       npm-package-json-lint:
         specifier: 8.0.0
         version: 8.0.0(typescript@5.9.2)
@@ -722,6 +722,7 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.5.1
         version: 1.5.1
+
   wicket/design-tokens-wicket:
     devDependencies:
       '@gemeente-rotterdam/design-tokens':
@@ -6080,8 +6081,8 @@ packages:
     resolution: {integrity: sha512-Vq0eyEQy+elFpzsKjMss9kxqb9tG3YHg4dsyWuUENuzvSUWe1TCnW/vV9FkhvBk/brEDoDiVd+M1Btosa6ImdQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  npm-check-updates@17.1.13:
-    resolution: {integrity: sha512-m9Woo2J5XVab0VcQpYvrQ0hx3ySI1mGbiHR595mc6Lr1/FIaTWvv+oU+T1WKSfXRiluKC/V5P6Bdk5agaYpqqg==}
+  npm-check-updates@18.0.3:
+    resolution: {integrity: sha512-IMZWxgAa5gpDVEle2KOZOMLfCu2/9FV+xsXQjPFt2OV0dyZixn0OJrZ9NxUcWgr/ZTGogmZtE0Cb8x2wlsVULg==}
     engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
     hasBin: true
 
@@ -14713,7 +14714,7 @@ snapshots:
     dependencies:
       npm-normalize-package-bin: 3.0.1
 
-  npm-check-updates@17.1.13: {}
+  npm-check-updates@18.0.3: {}
 
   npm-install-checks@6.1.1:
     dependencies:
