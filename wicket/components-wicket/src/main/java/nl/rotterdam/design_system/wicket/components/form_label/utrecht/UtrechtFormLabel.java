@@ -13,4 +13,10 @@ public class UtrechtFormLabel extends Panel {
         add(new UtrechtFormLabelBehavior());
         add(new Label(SLOT_ID, textContent));
     }
+
+    public UtrechtFormLabel(String id, IModel<?> textContent, UtrechtFormLabelType type) {
+        super(id);
+        add(new UtrechtFormLabelBehavior(type));
+        add(new Label(SLOT_ID, textContent));
+    }
 }
