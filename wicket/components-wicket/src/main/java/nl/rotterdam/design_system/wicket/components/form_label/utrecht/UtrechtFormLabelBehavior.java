@@ -5,7 +5,6 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-// TODO: make it a singleton, create base class
 public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(

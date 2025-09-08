@@ -36,8 +36,10 @@ public class FormFieldLabelExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleFormFieldLabel());
-        add(exampleFormFieldLabelCheckbox());
-        add(exampleFormFieldLabelRadio());
+        add(
+            exampleFormFieldLabel(),
+            exampleFormFieldLabelCheckbox(),
+            exampleFormFieldLabelRadio()
+        );
     }
 }
