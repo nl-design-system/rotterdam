@@ -1,7 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
@@ -50,10 +50,10 @@ public class UtrechtFormFieldTextbox extends Panel {
         IModel<String> errorModel
     ) {
         super(id);
-        add(UtrechtFormFieldBehavior.INSTANCE);
-        add(new UtrechtFormLabelBehavior());
+        add(UtrechtFormFieldContainerBehavior.INSTANCE_TEXT);
+        add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
         add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
-        add(new UtrechtFormFieldErrorMessageBehavior());
+        add(UtrechtFormFieldErrorMessageBehavior.INSTANCE);
         add(new UtrechtTextboxBehavior());
         errorMessageModel = errorModel;
 
@@ -123,7 +123,7 @@ public class UtrechtFormFieldTextbox extends Panel {
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new UtrechtFormLabelBehavior());
+                add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
                 add(labelText);
             }
 

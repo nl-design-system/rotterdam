@@ -12,12 +12,19 @@ public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
         "@utrecht/form-label-css/dist/index.css"
     );
 
-    public UtrechtFormLabelBehavior() {
+    public static final UtrechtFormLabelBehavior INSTANCE_CHECKBOX = new UtrechtFormLabelBehavior(UtrechtFormLabelType.CHECKBOX);
+
+    public static final UtrechtFormLabelBehavior INSTANCE_RADIO = new UtrechtFormLabelBehavior(UtrechtFormLabelType.RADIO);
+
+    // Text has, by default, no specific type class
+    public static final UtrechtFormLabelBehavior INSTANCE_DEFAULT = new UtrechtFormLabelBehavior();
+
+    private UtrechtFormLabelBehavior() {
         super("label", "utrecht-form-label");
         addHeaderItem(CSS);
     }
 
-    public UtrechtFormLabelBehavior(UtrechtFormLabelType type) {
+    private UtrechtFormLabelBehavior(UtrechtFormLabelType type) {
         super("label", "utrecht-form-label", "utrecht-form-label--" + type.type);
         addHeaderItem(CSS);
     }
