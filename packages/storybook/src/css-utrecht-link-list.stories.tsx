@@ -1,28 +1,26 @@
 /* @license CC0-1.0 */
 
-import { RodsIconArrowRight } from '@gemeente-rotterdam/web-components-react';
 import type { Meta, StoryObj } from '@storybook/react';
+import RodsIconArrowRight from '@gemeente-rotterdam/web-components-react/dist/RodsIconArrowRight';
 import { LinkList } from '@utrecht/component-library-react/dist/css-module';
 import readme from './link-list.md?raw';
 
 const meta = {
-  title: 'CSS Component/Link list',
   id: 'css-utrecht-link-list',
-  component: LinkList,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: LinkList,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Flink-list',
     docs: {
@@ -31,6 +29,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Link list',
 } satisfies Meta<typeof LinkList>;
 
 export default meta;
@@ -43,10 +43,10 @@ export const Default: Story = {
     icon: () => <RodsIconArrowRight />,
     links: [
       {
-        href: '#',
         children: 'Direct regelen',
+        href: '#',
       },
-      { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+      { children: 'Meer informatie op Rotterdam.nl', href: '#' },
     ],
   },
 };

@@ -5,23 +5,21 @@ import { NavBar, NavList, NavListLink } from '@utrecht/component-library-react/d
 import readme from './badge-list.md?raw';
 
 const meta = {
-  title: 'CSS Component/Nav bar',
   id: 'css-utrecht-nav-bar',
-  component: NavBar,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: NavBar,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fnav-bar',
     docs: {
@@ -30,6 +28,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Nav bar',
 } satisfies Meta<typeof NavBar>;
 
 export default meta;
@@ -39,14 +39,14 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Default',
   args: {
-    children: [
+    children: (
       <NavList>
         <NavListLink href="#">Translate</NavListLink>
         <NavListLink href="#">Unilever Nederland Holding B.V.</NavListLink>
         <NavListLink href="#">Uitloggen</NavListLink>
         <NavListLink href="#">Winkelmandje</NavListLink>
-      </NavList>,
-    ],
+      </NavList>
+    ),
   },
   parameters: {
     design: {

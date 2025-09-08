@@ -5,23 +5,21 @@ import { Textbox } from '@utrecht/component-library-react/dist/css-module';
 import readme from './textbox.md?raw';
 
 const meta = {
-  title: 'CSS Component/Textbox',
   id: 'css-utrecht-textbox',
-  component: Textbox,
+  args: {
+    defaultValue: '',
+  },
   argTypes: {
     defaultValue: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    defaultValue: '',
-  },
-  tags: ['autodocs'],
+  component: Textbox,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Ftextbox',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Textbox',
 } satisfies Meta<typeof Textbox>;
 
 export default meta;
@@ -48,7 +48,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=435-13663&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-4752&t=5SS9SJ1KhfLkhqSu-4',
     },
   },
 };

@@ -1,28 +1,28 @@
 /* @license CC0-1.0 */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { DataBadge, Link } from '@utrecht/component-library-react/dist/css-module';
 import readme from './data-badge.md?raw';
 
+const LinkDecorator: Decorator = (Story) => <Link href="#">{Story()}</Link>;
+
 const meta = {
-  title: 'CSS Component/Data badge',
   id: 'css-utrecht-data-badge',
-  component: DataBadge,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       description: 'Data badge text',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: DataBadge,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fdata-badge',
     design: {
@@ -35,6 +35,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Data badge',
 } satisfies Meta<typeof DataBadge>;
 
 export default meta;
@@ -49,7 +51,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=8202-9795',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-5876&t=EXoPmctpkctdqa4z-4',
     },
   },
 };
@@ -59,7 +61,7 @@ export const BadgeAsLink: Story = {
   args: {
     children: 'sustainability',
   },
-  decorators: [(Story) => <Link href="#">{Story()}</Link>],
+  decorators: [LinkDecorator],
   parameters: {
     design: {
       type: 'figma',

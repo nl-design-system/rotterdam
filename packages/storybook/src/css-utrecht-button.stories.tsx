@@ -5,24 +5,22 @@ import { Button } from '@utrecht/component-library-react/dist/css-module';
 import readme from './button.md?raw';
 
 const meta = {
-  title: 'CSS Component/Button',
   id: 'css-utrecht-button',
-  component: Button,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       description: 'Button text',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: Button,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fbutton',
     design: {
@@ -35,6 +33,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Button',
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -49,7 +49,7 @@ export const DefaultButton: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=772-28425&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-56&t=5SS9SJ1KhfLkhqSu-4',
     },
   },
 };

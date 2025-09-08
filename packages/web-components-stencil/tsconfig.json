@@ -4,11 +4,15 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "outDir": "dist",
+    "module": "ESNext",
     "target": "es2017",
     "jsx": "react",
     "jsxFactory": "h",
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "src",
+    "src/**/*.tsx"
+  ],
   "exclude": ["**/node_modules/*", "dist", "loader", "**/*.spec.ts", "**/*.spec.tsx"]
 }

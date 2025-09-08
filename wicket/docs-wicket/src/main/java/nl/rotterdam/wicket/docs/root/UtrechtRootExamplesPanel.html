@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Root component</h1>
+    <div>
+      <p>Eerste component van de pagina, op het niveau van het <code>html</code>-element.</p>
+    </div>
+
+    <section data-testid="utrechtRoot">
+      <h2>Root</h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <div wicket:id="utrechtRoot"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>
+</body>
+</html>

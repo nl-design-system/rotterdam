@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Ordered List component</h1>
+    <div>
+      <p>Lijst waarvan de volgorde van items betekenis heeft.</p>
+    </div>
+
+    <section data-testid="utrechtOrderedListWebMarkupContainer">
+      <h2>Ordered List</h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <ol wicket:id="utrechtOrderedListWebMarkupContainer">
+            <li wicket:id="listItem">
+              <wicket:container wicket:id="label"></wicket:container>
+            </li>
+          </ol>
+        </template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>
+</body>
+</html>

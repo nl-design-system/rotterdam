@@ -2,27 +2,25 @@
 
 import { ActionSingle } from '@gemeente-denhaag/action';
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
-import {
-  RodsIconArrowLeft,
-  RodsIconArrowRight,
-  RodsIconBox,
-  RodsIconChevronRight,
-  RodsIconCoins,
-  RodsIconDocument,
-  RodsIconEnvelope,
-  RodsIconGlobe,
-  RodsIconInbox,
-  RodsIconLogOut,
-  RodsIconMijnLoket,
-  RodsIconMoney2,
-  RodsIconOverview,
-  RodsIconParking,
-  RodsIconSearch,
-  RodsIconShoppingCart,
-  RodsIconSummary,
-  RodsIconUser,
-  RodsLogoImage,
-} from '@gemeente-rotterdam/web-components-react';
+import RodsIconArrowLeft from '@gemeente-rotterdam/web-components-react/dist/RodsIconArrowLeft';
+import RodsIconArrowRight from '@gemeente-rotterdam/web-components-react/dist/RodsIconArrowRight';
+import RodsIconBox from '@gemeente-rotterdam/web-components-react/dist/RodsIconBox';
+import RodsIconChevronRight from '@gemeente-rotterdam/web-components-react/dist/RodsIconChevronRight';
+import RodsIconCoins from '@gemeente-rotterdam/web-components-react/dist/RodsIconCoins';
+import RodsIconDocument from '@gemeente-rotterdam/web-components-react/dist/RodsIconDocument';
+import RodsIconEnvelope from '@gemeente-rotterdam/web-components-react/dist/RodsIconEnvelope';
+import RodsIconGlobe from '@gemeente-rotterdam/web-components-react/dist/RodsIconGlobe';
+import RodsIconInbox from '@gemeente-rotterdam/web-components-react/dist/RodsIconInbox';
+import RodsIconLogOut from '@gemeente-rotterdam/web-components-react/dist/RodsIconLogOut';
+import RodsIconMijnLoket from '@gemeente-rotterdam/web-components-react/dist/RodsIconMijnLoket';
+import RodsIconMoney2 from '@gemeente-rotterdam/web-components-react/dist/RodsIconMoney2';
+import RodsIconOverview from '@gemeente-rotterdam/web-components-react/dist/RodsIconOverview';
+import RodsIconParking from '@gemeente-rotterdam/web-components-react/dist/RodsIconParking';
+import RodsIconSearch from '@gemeente-rotterdam/web-components-react/dist/RodsIconSearch';
+import RodsIconShoppingCart from '@gemeente-rotterdam/web-components-react/dist/RodsIconShoppingCart';
+import RodsIconSummary from '@gemeente-rotterdam/web-components-react/dist/RodsIconSummary';
+import RodsIconUser from '@gemeente-rotterdam/web-components-react/dist/RodsIconUser';
+import RodsLogoImage from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImage';
 import { Meta, StoryObj } from '@storybook/react';
 import '@gemeente-rotterdam/components-css/grid/index.scss';
 import './index.scss';
@@ -44,8 +42,8 @@ import {
 } from '@utrecht/component-library-react/dist/css-module';
 
 const meta = {
-  title: 'Template/Mijn Loket',
   id: 'template-mijn-loket',
+  decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
   parameters: {
     design: {
       type: 'figma',
@@ -53,7 +51,7 @@ const meta = {
     },
     layout: 'fullscreen',
   },
-  decorators: [(Story) => <div style={{ minInlineSize: '1280px' }}>{Story()}</div>],
+  title: 'Template/Mijn Loket',
 } satisfies Meta;
 
 export default meta;
@@ -206,6 +204,7 @@ export const Default: Story = {
                   yesterday: 'gisteren',
                 }}
                 link="#"
+                locale="nl-NL"
                 now="2023-09-28T19:47:36.593Z"
                 relativeDate
               >
@@ -220,6 +219,7 @@ export const Default: Story = {
                   yesterday: 'gisteren',
                 }}
                 link="#"
+                locale="nl-NL"
                 now="2023-03-00T19:47:36.593Z"
                 relativeDate
               >
@@ -234,6 +234,7 @@ export const Default: Story = {
                   yesterday: 'gisteren',
                 }}
                 link="#"
+                locale="nl-NL"
                 now="2023-03-00T19:47:36.593Z"
                 relativeDate
               >
@@ -252,8 +253,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>
@@ -265,8 +266,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>
@@ -278,8 +279,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>
@@ -291,8 +292,8 @@ export const Default: Story = {
                 <LinkList
                   icon={() => <RodsIconArrowRight />}
                   links={[
-                    { href: '#', children: 'Direct regelen' },
-                    { href: '#', children: 'Meer informatie op Rotterdam.nl' },
+                    { children: 'Direct regelen', href: '#' },
+                    { children: 'Meer informatie op Rotterdam.nl', href: '#' },
                   ]}
                 />
               </div>

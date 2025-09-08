@@ -1,4 +1,4 @@
-import tokens from "@gemeente-rotterdam/design-tokens/dist/index.tokens.json";
+import tokens from "@gemeente-rotterdam/design-tokens/dist/tokens.json";
 import { ColorItem, ColorPalette, Markdown, Meta } from "@storybook/blocks";
 import markdown from "./color.md?raw";
 import { FigmaLink } from "../../config/FigmaBlock";
@@ -15,46 +15,46 @@ export const extendedColors = Object.entries(tokens["rods"]["color"]).filter(
 
 <Markdown>{markdown}</Markdown>
 
-<FigmaLink href="https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=415-12199" />
+<FigmaLink href="https://www.figma.com/design/RiVsTfcbmnKSU2BGqQBI9n/RODS-fundament?node-id=1-254&t=QH8m3AiVV8aa5Esk-4" />
 
 <ColorPalette>
   {Object.entries(baseColors).map(([key, token]) => (
-    <ColorItem title={key} colors={[token]} />
+    <ColorItem key={key} title={key} colors={[token.value]} />
   ))}
 </ColorPalette>
 
 ## Grays
 
 <ColorPalette>
-  <ColorItem title="Gray" colors={Object.values(grayTones)} />
+  <ColorItem title="Gray" colors={Object.values(grayTones).map((token) => token.value)} />
 </ColorPalette>
 
 ## Notification colors
 
-<FigmaLink href="https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=431-13653" />
+<FigmaLink href="https://www.figma.com/design/RiVsTfcbmnKSU2BGqQBI9n/RODS-fundament?node-id=1-375&t=QH8m3AiVV8aa5Esk-4" />
 
 <ColorPalette>
   {notificationColors.map(([name, tokens]) => (
-    <ColorItem title={name} colors={Object.values(tokens)} />
+    <ColorItem key={name} title={name} colors={Object.values(tokens).map((token) => token.value)} />
   ))}
 </ColorPalette>
 
 ## Colors for illustrations and infographics
 
-<FigmaLink href="https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=468-19799" />
+<FigmaLink href="https://www.figma.com/design/RiVsTfcbmnKSU2BGqQBI9n/RODS-fundament?node-id=1-290&t=QH8m3AiVV8aa5Esk-4" />
 
 <ColorPalette>
   {extendedColors.map(([name, tokens]) => (
-    <ColorItem title={name} colors={Object.values(tokens)} />
+    <ColorItem key={name} title={name} colors={Object.values(tokens).map((token) => token.value)} />
   ))}
 </ColorPalette>
 
 ## Colors for skin tones
 
-<FigmaLink href="https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=28801-7125" />
+<FigmaLink href="https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=28801-7125" /> *
 
 <ColorPalette>
   {skinColors.map(([name, tokens]) => (
-    <ColorItem title={name} colors={Object.values(tokens)} />
+    <ColorItem key={name} title={name} colors={Object.values(tokens).map((token) => token.value)} />
   ))}
 </ColorPalette>

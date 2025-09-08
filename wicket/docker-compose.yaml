@@ -1,0 +1,24 @@
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src
+      - ./target:/app/target
+      - ./pom.xml:/app/pom.xml
+    environment:
+      - CATALINA_OPTS=-Xmx512m
+      - JAVA_OPTS=-Dwicket.configuration=DEVELOPMENT
+    networks:
+      - wicket-network
+    command: catalina.sh run
+
+volumes:
+  maven-repo:
+
+networks:
+  wicket-network:
+    driver: bridge

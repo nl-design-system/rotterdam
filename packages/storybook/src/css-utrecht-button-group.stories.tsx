@@ -5,28 +5,26 @@ import { Button, ButtonGroup, LinkButton } from '@utrecht/component-library-reac
 import readme from './button-group.md?raw';
 
 const meta = {
-  title: 'CSS Component/Button group',
   id: 'css-utrecht-button-group',
-  component: ButtonGroup,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: ButtonGroup,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fbutton-group',
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=771-28224',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-56&t=EXoPmctpkctdqa4z-4',
     },
     docs: {
       description: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Button group',
 } satisfies Meta<typeof ButtonGroup>;
 
 export default meta;
@@ -43,11 +43,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Default',
   args: {
-    children: [
-      <Button appearance="primary-action-button">Primary</Button>,
-      <Button appearance="secondary-action-button">Label</Button>,
-      <Button>Label</Button>,
-      <LinkButton>Text button</LinkButton>,
-    ],
+    children: (
+      <>
+        <Button appearance="primary-action-button">Primary</Button>
+        <Button appearance="secondary-action-button">Label</Button>
+        <Button>Label</Button>
+        <LinkButton>Text button</LinkButton>
+      </>
+    ),
   },
 };

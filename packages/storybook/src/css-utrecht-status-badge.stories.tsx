@@ -5,30 +5,32 @@ import { StatusBadge } from '@utrecht/component-library-react/dist/css-module';
 import readme from './status-badge.md?raw';
 
 const meta = {
-  title: 'CSS Component/Status badge',
   id: 'css-utrecht-status-badge',
-  component: StatusBadge,
+  args: {
+    children: '',
+    status: 'fixme',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
     className: {
       name: 'Appearance',
       control: {
-        type: 'select',
         labels: {
-          'Light blue': 'utrecht-status-badge--rods-light-yellow',
           Blue: 'utrecht-status-badge--rods-blue',
           'Dark blue': 'utrecht-status-badge--rods-dark-blue',
-          'Green blue': 'utrecht-status-badge--rods-green-blue',
-          Red: 'utrecht-status-badge--rods-red',
           'Dark yellow': 'utrecht-status-badge--rods-dark-yellow',
+          'Green blue': 'utrecht-status-badge--rods-green-blue',
+          'Light blue': 'utrecht-status-badge--rods-light-yellow',
+          Red: 'utrecht-status-badge--rods-red',
         },
+        type: 'select',
       },
       options: [
         'utrecht-status-badge--rods-light-yellow',
@@ -40,11 +42,7 @@ const meta = {
       ],
     },
   },
-  args: {
-    children: '',
-    status: 'fixme',
-  },
-  tags: ['autodocs'],
+  component: StatusBadge,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fstatus-badge',
     design: {
@@ -57,6 +55,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Status badge',
 } satisfies Meta<typeof StatusBadge>;
 
 export default meta;
@@ -72,7 +72,7 @@ export const LightBlue: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=23506-12391&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-5900&t=EXoPmctpkctdqa4z-4',
     },
   },
 };

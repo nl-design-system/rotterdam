@@ -6,9 +6,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   build: {
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/index.ts'),
       name: 'Components React',
+      // Could also be a dictionary or array of multiple entry points
+      entry: resolve(__dirname, 'src/css-module/index.ts'),
       // the proper extensions will be added
       fileName: 'components-react',
     },

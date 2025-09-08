@@ -1,0 +1,5 @@
+@import "~@utrecht/form-label-css/src/mixin";
+
+.control-label {
+  @include utrecht-form-label;
+}

@@ -5,28 +5,26 @@ import { Heading } from '@utrecht/component-library-react/dist/css-module';
 import readme from './heading.md?raw';
 
 const meta = {
-  title: 'CSS Component/Heading',
   id: 'css-utrecht-heading',
-  component: Heading,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: Heading,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Fheading',
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/?node-id=415-12207',
+      url: 'https://www.figma.com/design/RiVsTfcbmnKSU2BGqQBI9n/RODS-fundament?node-id=1-2957&t=y0jresab3mn2Swvw-4',
     },
     docs: {
       description: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Heading',
 } satisfies Meta<typeof Heading>;
 
 export default meta;

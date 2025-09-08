@@ -1,0 +1,6 @@
+@import "~@utrecht/table-css/src/mixin";
+
+.table {
+  @include utrecht-table;
+  @include utrecht-table--html-table;
+}

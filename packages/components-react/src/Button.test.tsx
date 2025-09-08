@@ -1,7 +1,7 @@
+import { describe, expect, it } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import { createRef } from 'react';
 import { Button } from './Button';
-import '@testing-library/jest-dom';
 
 describe('Button', () => {
   it('renders a button role element', () => {

@@ -1,14 +1,19 @@
 {
+  "name": "@gemeente-rotterdam/icon",
   "version": "1.0.0-alpha.0",
   "author": "Community for NL Design System",
   "description": "Icons for the Municipality of Rotterdam based on the NL Design System architecture",
   "license": "EUPL-1.2",
-  "name": "@gemeente-rotterdam/icon",
   "files": [
     "dist/",
     "loader/"
   ],
   "private": true,
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "components/icon"
+  },
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm run build:svg && npm run build:components",
@@ -19,7 +24,7 @@
   "devDependencies": {
     "lodash": "4.17.21",
     "minimist": "1.2.8",
-    "rimraf": "5.0.7",
+    "rimraf": "6.0.1",
     "svgo": "3.3.2"
   },
   "keywords": [

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Rotterdam Icon component</h1>
+    <div>
+      <p>Toont een SVG icoon uit de iconenset van gemeente Rotterdam.</p>
+    </div>
+
+    <section data-testid="rodsIconset">
+      <h2>Icon</h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <ul wicket:id="rodsIconset">
+            <li wicket:id="iconItem">
+              <span wicket:id="icon"></span>
+              <code wicket:id="label"></code>
+            </li>
+          </ul>
+        </template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>
+</body>
+</html>

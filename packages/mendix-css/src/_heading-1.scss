@@ -1,0 +1,5 @@
+@import "~@utrecht/heading-1-css/src/mixin";
+
+h1 {
+  @include utrecht-heading-1;
+}

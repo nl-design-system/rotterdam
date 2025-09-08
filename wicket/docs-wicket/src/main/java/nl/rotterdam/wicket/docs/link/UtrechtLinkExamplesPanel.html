@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Link component</h1>
+    <div>
+      <p>Toont een tekstlabel dat informeert over de in te vullen informatie.</p>
+    </div>
+
+    <section data-testid="link">
+      <h2>Link met <code>Link</code></h2>
+      <div>
+        <div>
+          <p>Voorbeeld van een "vanilla" <code>Link</code> van Apache Wicket, ter referentie.</p>
+        </div>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="link">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="linkExternal">
+      <h2>Link met <code>ExternalLink</code></h2>
+      <div>
+        <p>Voorbeeld van een "vanilla" <code>ExternalLink</code> van Apache Wicket, ter referentie.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="linkExternal">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtLink">
+      <h2>Link met <code>Link</code></h2>
+      <div>
+        <p>Voorbeeld van de <code>UtrechtLink</code> class.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtLink">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtLinkExternal">
+      <h2>Link met <code>ExternalLink</code></h2>
+      <div>
+        <p>Voorbeeld van de <code>UtrechtExternalLink</code> class.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtLinkExternal">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtBookmarkableLink">
+      <h2>Link met <code>BookmarkableLink</code></h2>
+      <div>
+        <p>Voorbeeld van de <code>UtrechtBookmarkableLink</code> class.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtBookmarkableLink">Mijn Loket</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtBookmarkableLinkCurrent">
+      <h2>Link met <code>BookmarkableLink</code> naar de huidige pagina</h2>
+      <div>
+        <p>
+          Voorbeeld van de <code>UtrechtBookmarkableLink</code> class die naar de huidige pagina verwijst.
+          Automatisch wordt <code>aria-current</code> toegevoegd.
+        </p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtBookmarkableLinkCurrent">Componenten · rotterdam.nl</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtLinkBehavior">
+      <h2>Link met <code>Link</code></h2>
+      <div>
+        <p>Voorbeeld van de <code>Link</code> met een <code>UtrechtLinkBehavior</code>.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtLinkBehavior">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtLinkExternalBehavior">
+      <h2>Link met <code>ExternalLink</code></h2>
+      <div>
+        <p>Voorbeeld van de <code>ExternalLink</code> met een <code>UtrechtLinkBehavior</code>.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtLinkExternalBehavior">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtLinkPlaceholder">
+      <h2>Placeholder Link met <code>UtrechtLink</code></h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtLinkPlaceholder">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtLinkExternalPlaceholder">
+      <h2>Placeholder Link met <code>UtrechtLinkExternal</code></h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtLinkExternalPlaceholder">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtBookmarkableLinkPlaceholder">
+      <h2>Placeholder Link met <code>UtrechtBookmarkableLink</code></h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template><a wicket:id="utrechtBookmarkableLinkPlaceholder">Link tekst</a></template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>
+</body>
+</html>

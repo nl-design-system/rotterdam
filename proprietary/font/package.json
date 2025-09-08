@@ -1,22 +1,24 @@
 {
-  "version": "1.0.0-alpha.0",
+  "name": "@gemeente-rotterdam/font",
+  "version": "1.0.0-alpha.4",
   "author": "Community for NL Design System",
   "description": "Font assets",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "name": "@gemeente-rotterdam/font",
+  "license": "SEE LICENSE IN ./LICENSE.md",
   "main": "dist/index.css",
   "keywords": [
     "nl-design-system"
   ],
-  "private": true,
+  "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "src"
   ],
   "repository": {
     "type": "git+ssh",
-    "url": "git@github.com:nl-design-system/example.git"
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "proprietary/font"
   }
 }

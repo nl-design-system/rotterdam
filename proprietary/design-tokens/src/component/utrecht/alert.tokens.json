@@ -33,6 +33,9 @@
       "icon": {
         "color": { "value": "{rods.color.notification.neutral.icon-color}" },
         "gap": { "value": "12px" },
+        "size": {
+          "value": "32px"
+        },
         "error": {
           "color": { "value": "{rods.color.notification.alert.icon-color}" }
         },

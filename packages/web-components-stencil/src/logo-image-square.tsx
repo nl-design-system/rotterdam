@@ -4,12 +4,13 @@
  * Copyright (c) 2023 Frameless B.V.
  */
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import { Component, h } from '@stencil/core';
 
 @Component({
-  tag: 'rods-logo-image-square',
-  styleUrl: 'logo-image.scss',
   shadow: true,
+  styleUrl: 'logo-image.scss',
+  tag: 'rods-logo-image-square',
 })
 export class LogoImageSquare {
   render() {

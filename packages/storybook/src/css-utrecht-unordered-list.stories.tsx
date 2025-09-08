@@ -5,23 +5,21 @@ import { UnorderedList, UnorderedListItem } from '@utrecht/component-library-rea
 import readme from './unordered-list.md?raw';
 
 const meta = {
-  title: 'CSS Component/Unordered list',
   id: 'css-utrecht-unordered-list',
-  component: UnorderedList,
+  args: {
+    children: '',
+  },
   argTypes: {
     children: {
       name: 'Content',
+      defaultValue: '',
       type: {
         name: 'string',
         required: true,
       },
-      defaultValue: '',
     },
   },
-  args: {
-    children: '',
-  },
-  tags: ['autodocs'],
+  component: UnorderedList,
   parameters: {
     bugs: 'https://github.com/nl-design-system/rotterdam/labels/component%2Funordered-list',
     design: {
@@ -34,6 +32,8 @@ const meta = {
       },
     },
   },
+  tags: ['autodocs'],
+  title: 'CSS Component/Unordered list',
 } satisfies Meta<typeof UnorderedList>;
 
 export default meta;
@@ -43,22 +43,24 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   name: 'Unordered list',
   args: {
-    children: [
-      <UnorderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </UnorderedListItem>,
-      <UnorderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </UnorderedListItem>,
-      <UnorderedListItem>
-        In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
-      </UnorderedListItem>,
-    ],
+    children: (
+      <>
+        <UnorderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </UnorderedListItem>
+        <UnorderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </UnorderedListItem>
+        <UnorderedListItem>
+          In deze app staan niet de dagen waarop wij de wijkcontainers legen, alleen de huiscontainers (kliko’s)
+        </UnorderedListItem>
+      </>
+    ),
   },
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ZWSC4gCrOXRUR9UX3aoZ8x/Gemeente-Rotterdam-Design-System?type=design&node-id=174-1308&mode=design&t=yvzUSkFQYQmWSHsQ-4',
+      url: 'https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-component?node-id=1-3754&t=5SS9SJ1KhfLkhqSu-4',
     },
   },
 };

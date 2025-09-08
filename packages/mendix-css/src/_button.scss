@@ -1,0 +1,93 @@
+@import "~@utrecht/button-css/src/mixin";
+
+@mixin utrecht-button--html-button {
+  &[type="submit"] {
+    /* lower priority specificty than busy and disabled cursor */
+    @include utrecht-button--submit;
+  }
+
+  &[aria-busy="true"] {
+    @include utrecht-button--busy;
+  }
+
+  &[aria-pressed="true"] {
+    @include utrecht-button--pressed;
+  }
+
+  &:disabled {
+    @include utrecht-button--disabled;
+  }
+
+  &:focus-visible {
+    @include utrecht-button--focus-visible;
+  }
+
+  &:focus:not(:disabled, [aria-disabled="true"]) {
+    @include utrecht-button--focus;
+  }
+
+  &:hover:not(:disabled, [aria-disabled="true"]) {
+    @include utrecht-button--hover;
+  }
+
+  &:active:not(:disabled, [aria-disabled="true"]) {
+    @include utrecht-button--active;
+  }
+}
+
+@mixin utrecht-button-appearance($modifier) {
+  --_utrecht-button-appearance-active-background-color: var(--utrecht-button-#{$modifier}-active-background-color);
+  --_utrecht-button-appearance-active-border-color: var(--utrecht-button-#{$modifier}-active-border-color);
+  --_utrecht-button-appearance-active-color: var(--utrecht-button-#{$modifier}-active-color);
+  --_utrecht-button-appearance-background-color: var(--utrecht-button-#{$modifier}-background-color);
+  --_utrecht-button-appearance-border-color: var(--utrecht-button-#{$modifier}-border-color);
+  --_utrecht-button-appearance-border-width: var(--utrecht-button-#{$modifier}-border-width);
+  --_utrecht-button-appearance-color: var(--utrecht-button-#{$modifier}-color);
+  --_utrecht-button-appearance-font-weight: var(--utrecht-button-#{$modifier}-font-weight);
+  --_utrecht-button-appearance-disabled-background-color: var(--utrecht-button-#{$modifier}-disabled-background-color);
+  --_utrecht-button-appearance-disabled-border-color: var(--utrecht-button-#{$modifier}-disabled-border-color);
+  --_utrecht-button-appearance-disabled-color: var(--utrecht-button-#{$modifier}-disabled-color);
+  --_utrecht-button-appearance-focus-background-color: var(--utrecht-button-#{$modifier}-focus-background-color);
+  --_utrecht-button-appearance-focus-border-color: var(--utrecht-button-#{$modifier}-focus-border-color);
+  --_utrecht-button-appearance-focus-color: var(--utrecht-button-#{$modifier}-focus-color);
+  --_utrecht-button-appearance-hover-background-color: var(--utrecht-button-#{$modifier}-hover-background-color);
+  --_utrecht-button-appearance-hover-border-color: var(--utrecht-button-#{$modifier}-hover-border-color);
+  --_utrecht-button-appearance-hover-color: var(--utrecht-button-#{$modifier}-hover-color);
+  --_utrecht-button-appearance-pressed-background-color: var(--utrecht-button-#{$modifier}-pressed-background-color);
+  --_utrecht-button-appearance-pressed-border-color: var(--utrecht-button-#{$modifier}-pressed-border-color);
+  --_utrecht-button-appearance-pressed-color: var(--utrecht-button-#{$modifier}-pressed-color);
+}
+
+.btn,
+.mx-button {
+  @include utrecht-button;
+  @include utrecht-button--html-button;
+}
+
+.btn-primary {
+  @include utrecht-button-appearance("primary-action");
+}
+
+.btn-secondary {
+  @include utrecht-button-appearance("secondary-action");
+}
+
+.btn-inverse {
+  @include utrecht-button-appearance("subtle");
+}
+
+.btn-info {
+  @include utrecht-button-appearance("info");
+}
+
+.btn-success {
+  @include utrecht-button-appearance("success");
+}
+
+.btn-warning {
+  @include utrecht-button-appearance("warning");
+}
+
+.btn-danger {
+  @include utrecht-button-appearance("danger");
+}

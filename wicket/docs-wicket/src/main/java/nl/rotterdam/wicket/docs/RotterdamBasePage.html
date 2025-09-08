@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html" class="utrecht-root rods-theme" lang="nl" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title wicket:id="title"></title>
+  <link rel="shortcut icon" href="img/favicon.png" />
+</head>
+<body class="utrecht-body">
+<wicket:extend>
+  <wicket:container wicket:id="utrechtPageLayout">
+    <wicket:container wicket:id="utrechtPageHeader">
+      <wicket:container wicket:id="utrechtLogo">
+        <a wicket:id="logoLink">
+          <wicket:container wicket:id="rotterdamLogoImage"></wicket:container>
+        </a>
+      </wicket:container>
+    </wicket:container>
+    <wicket:container wicket:id="utrechtPageBody">
+      <div style="margin-inline: auto; max-width: 40em">
+        <wicket:child />
+      </div>
+    </wicket:container>
+    <wicket:container wicket:id="utrechtPageFooter">Page footer</wicket:container>
+  </wicket:container>
+  <script type="module"></script>
+</wicket:extend>
+</body>
+</html>

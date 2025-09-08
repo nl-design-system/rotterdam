@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Form Field Label component</h1>
+    <div>
+      <p>Toont een tekstlabel dat informeert over de in te vullen informatie.</p>
+    </div>
+
+    <section data-testid="utrechtFormFieldLabel">
+      <h2>Form Field Label</h2>
+      <div>
+        <ul>
+          <li>Plaats het label voor het invoerveld, behalve voor checkbox options en radio options.</li>
+          <li>Plaats de checkbox of radio button in de form label.</li>
+          <li>Koppel de label met de form control met "for" en "id".</li>
+        </ul>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <div wicket:id="utrechtFormFieldLabel"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>
+</body>
+</html>

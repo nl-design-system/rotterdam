@@ -4,10 +4,8 @@
     "noEmit": true
   },
   "include": [
-    "next-env.d.ts",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx",
-    "../../node_modules/.pnpm/@types+jest@29.5.1/node_modules/@types/jest/index.d.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": ["**/node_modules/*"]
 }
