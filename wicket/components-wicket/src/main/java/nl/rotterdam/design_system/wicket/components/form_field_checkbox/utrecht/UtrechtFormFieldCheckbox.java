@@ -65,6 +65,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
                 checkbox.setMarkupId(checkboxId);
+                checkbox.setOutputMarkupId(true);
 
                 tag.put(
                     "class",

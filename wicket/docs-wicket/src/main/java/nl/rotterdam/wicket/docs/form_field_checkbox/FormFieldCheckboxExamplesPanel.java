@@ -17,8 +17,8 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
         return new UtrechtFormFieldCheckbox(
             "utrechtFormFieldCheckbox",
             Model.of(false),
-            Model.of("Akkoord"),
-            Model.of("U gaat akkoord met de algemene voorwaarden.")
+            Model.of("Ik ga akkoord met de algemene voorwaarden"),
+            Model.of()
         );
     }
 
@@ -27,8 +27,8 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
         UtrechtFormFieldCheckbox component = new UtrechtFormFieldCheckbox(
             "utrechtFormFieldCheckboxInvalid",
             Model.of(false),
-            Model.of("Akkoord"),
-            Model.of("U gaat akkoord met de algemene voorwaarden.")
+            Model.of("Ik ga akkoord met de algemene voorwaarden"),
+            Model.of("U kunt ons echt vertrouwen!")
         );
         component.getCheckbox().error("U moet akkoord gaan met de algemene voorwaarden, anders kunt u niet verder.");
         return component;
