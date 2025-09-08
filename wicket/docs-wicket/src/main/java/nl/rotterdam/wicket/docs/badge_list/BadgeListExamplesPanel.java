@@ -1,6 +1,7 @@
 package nl.rotterdam.wicket.docs.badge_list;
 
 import java.util.List;
+
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBehavior;
 import nl.rotterdam.design_system.wicket.components.data_badge.utrecht.UtrechtDataBadgeBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;

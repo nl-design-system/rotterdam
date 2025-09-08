@@ -51,7 +51,7 @@ public class UtrechtButton extends Button {
             new UtrechtButtonBehavior() {
                 @Override
                 public String[] getClassNames() {
-                    return new String[] {
+                    return new String[]{
                         "utrecht-button",
                         appearance != null ? "utrecht-button--" + appearance.appearance : "",
                         hint != null ? "utrecht-button--" + hint.hint : "",

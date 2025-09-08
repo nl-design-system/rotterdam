@@ -56,7 +56,7 @@ public class RotterdamBasePage extends DocsBasePage {
         pageFooter = new UtrechtPageFooterBorder("utrechtPageFooter");
         pageLayout.add(pageFooter);
 
-        String[] titleParts = new String[] { this.errorTitle, this.stepTitle, this.pageTitle, this.siteTitle };
+        String[] titleParts = new String[]{this.errorTitle, this.stepTitle, this.pageTitle, this.siteTitle};
 
         add(
             new Label(
@@ -68,7 +68,8 @@ public class RotterdamBasePage extends DocsBasePage {
         );
     }
 
-    public RotterdamBasePage() {}
+    public RotterdamBasePage() {
+    }
 
     @Override
     public void renderHead(IHeaderResponse response) {

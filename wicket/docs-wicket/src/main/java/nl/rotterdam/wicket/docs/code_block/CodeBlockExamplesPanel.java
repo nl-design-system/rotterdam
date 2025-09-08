@@ -18,17 +18,17 @@ public class CodeBlockExamplesPanel extends Panel {
             "utrechtCodeBlock",
             Model.of(
                 """
-                <!DOCTYPE html>
-                <html lang="nl" dir="ltr">
-                  <head>
-                    <title>NL Design System</title>
-                    <meta charset="utf-8"/>
-                  </head>
-                  <body>
-                    <h1>NL Design System</h1>
-                  </body>
-                </html>
-                """
+                    <!DOCTYPE html>
+                    <html lang="nl" dir="ltr">
+                      <head>
+                        <title>NL Design System</title>
+                        <meta charset="utf-8"/>
+                      </head>
+                      <body>
+                        <h1>NL Design System</h1>
+                      </body>
+                    </html>
+                    """
             )
         );
     }

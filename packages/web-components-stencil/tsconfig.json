@@ -10,6 +10,9 @@
     "jsxFactory": "h",
     "skipLibCheck": true
   },
-  "include": ["src", "src/**/*.tsx"],
+  "include": [
+    "src",
+    "src/**/*.tsx"
+  ],
   "exclude": ["**/node_modules/*", "dist", "loader", "**/*.spec.ts", "**/*.spec.tsx"]
 }

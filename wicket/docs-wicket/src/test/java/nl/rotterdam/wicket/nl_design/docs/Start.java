@@ -41,20 +41,20 @@ public class Start {
         try {
             System.out.println(
                 """
-                ╭──────────────────────────────────────────────────────────────────────────────────────────╮
-                │                                                                                          │
-                │   Development server has started for:                                                    │
-                │   NL Design System community components for Apache Wicket                                │
-                │                                                                                          │
-                │    Local:            http://localhost:1234/                                              │
-                │                                                                                          │
-                │   Restart this server to see any changes you have made to components or design tokens.   │
-                │                                                                                          │
-                │   Read the latest documentation:                                                         │
-                │   https://github.com/nl-design-system/rotterdam/blob/main/wicket/README.md               │
-                │                                                                                          │
-                ╰──────────────────────────────────────────────────────────────────────────────────────────╯
-                """.replace("1234", Integer.toString(PORT))
+                    ╭──────────────────────────────────────────────────────────────────────────────────────────╮
+                    │                                                                                          │
+                    │   Development server has started for:                                                    │
+                    │   NL Design System community components for Apache Wicket                                │
+                    │                                                                                          │
+                    │    Local:            http://localhost:1234/                                              │
+                    │                                                                                          │
+                    │   Restart this server to see any changes you have made to components or design tokens.   │
+                    │                                                                                          │
+                    │   Read the latest documentation:                                                         │
+                    │   https://github.com/nl-design-system/rotterdam/blob/main/wicket/README.md               │
+                    │                                                                                          │
+                    ╰──────────────────────────────────────────────────────────────────────────────────────────╯
+                    """.replace("1234", Integer.toString(PORT))
             );
             server.start();
             System.in.read();

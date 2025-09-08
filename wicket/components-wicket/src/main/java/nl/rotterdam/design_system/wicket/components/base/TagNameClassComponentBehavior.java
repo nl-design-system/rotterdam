@@ -2,6 +2,7 @@ package nl.rotterdam.design_system.wicket.components.base;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;

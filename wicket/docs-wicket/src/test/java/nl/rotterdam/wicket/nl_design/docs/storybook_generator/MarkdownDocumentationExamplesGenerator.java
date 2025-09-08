@@ -6,6 +6,7 @@ import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
+
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -78,11 +80,11 @@ public class MarkdownDocumentationExamplesGenerator {
 
         gitHubComponentPath =
             "https://github.com/nl-design-system/rotterdam/blob/main/wicket/components-wicket/" +
-            relativePathInDocsWicketFromModuleRoot;
+                relativePathInDocsWicketFromModuleRoot;
 
         gitHubExamplePath =
             "https://github.com/nl-design-system/rotterdam/blob/main/wicket/docs-wicket/" +
-            relativePathInDocsWicketFromModuleRoot;
+                relativePathInDocsWicketFromModuleRoot;
         try {
             headingPanel = examplePanelClass.getConstructor(String.class).newInstance("panelId");
         } catch (Exception e) {
@@ -150,15 +152,15 @@ public class MarkdownDocumentationExamplesGenerator {
     private void writeStoryBookFile() throws IOException {
         String content = String.format(
             """
-            {/* @license CC0-1.0 */}
-
-            import { Markdown, Meta } from "@storybook/blocks";
-            import markdown from "./%s.md?raw";
-
-            <Meta title="Apache Wicket/%s" />
-
-            <Markdown>{markdown}</Markdown>
-            """,
+                {/* @license CC0-1.0 */}
+                
+                import { Markdown, Meta } from "@storybook/blocks";
+                import markdown from "./%s.md?raw";
+                
+                <Meta title="Apache Wicket/%s" />
+                
+                <Markdown>{markdown}</Markdown>
+                """,
             componentName,
             componentTitle
         );
@@ -212,18 +214,18 @@ public class MarkdownDocumentationExamplesGenerator {
     private String wrapInDemoJavaPanelWithOnInitialize(String statement) {
         return String.format(
             """
-            public class ExamplePanel extends Panel {
-
-                public ExamplePanel(String id) {
-                    super(id);
-                }
-
-                @Override
-                protected void onInitialize() {
-                    super.onInitialize();
-                    add(%s);
-                }
-            }""",
+                public class ExamplePanel extends Panel {
+                
+                    public ExamplePanel(String id) {
+                        super(id);
+                    }
+                
+                    @Override
+                    protected void onInitialize() {
+                        super.onInitialize();
+                        add(%s);
+                    }
+                }""",
             removeSemicolon(statement)
         );
     }
@@ -252,4 +254,5 @@ public class MarkdownDocumentationExamplesGenerator {
     }
 }
 
-record WicketComponentExample(String javaCode, WicketHtmlExampleSnippet htmlSnippet, String wicketId) {}
+record WicketComponentExample(String javaCode, WicketHtmlExampleSnippet htmlSnippet, String wicketId) {
+}

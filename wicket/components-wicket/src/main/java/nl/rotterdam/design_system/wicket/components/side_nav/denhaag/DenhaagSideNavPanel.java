@@ -42,51 +42,51 @@ public class DenhaagSideNavPanel extends Panel {
 
                                 add(DENHAAG_SIDE_NAV_LIST_BEHAVIOR); // TODO should be singleton
                                 add(
-                                        new ListView<>(
-                                                "denhaagSideNavItem",
-                                                sideNavRecords
+                                    new ListView<>(
+                                        "denhaagSideNavItem",
+                                        sideNavRecords
+                                    ) {
+                                        @Override
+                                        protected void populateItem(
+                                            ListItem<DenhaagSideNavRecord<? extends IRequestablePage>> item
                                         ) {
-                                            @Override
-                                            protected void populateItem(
-                                                    ListItem<DenhaagSideNavRecord<? extends IRequestablePage>> item
-                                            ) {
-                                                item.add(new DenhaagSideNavItemBehavior()); // TODO: should be singleton
-                                                DenhaagSideNavRecord<? extends IRequestablePage> record =
-                                                        item.getModelObject();
-                                                String naam = record.label();
+                                            item.add(new DenhaagSideNavItemBehavior()); // TODO: should be singleton
+                                            DenhaagSideNavRecord<? extends IRequestablePage> record =
+                                                item.getModelObject();
+                                            String naam = record.label();
 
-                                                // TODO: How do I type this?
-                                                @SuppressWarnings({"rawtypes", "unchecked"})
-                                                DenhaagSideNavLink<?> link = new DenhaagSideNavLink(
-                                                        "denhaagSideNavLink",
-                                                        record.target()
+                                            // TODO: How do I type this?
+                                            @SuppressWarnings({"rawtypes", "unchecked"})
+                                            DenhaagSideNavLink<?> link = new DenhaagSideNavLink(
+                                                "denhaagSideNavLink",
+                                                record.target()
+                                            );
+
+                                            // Optionally add an icon
+                                            if (record.icon() != null) {
+                                                WebMarkupContainer icon = new WebMarkupContainer(
+                                                    "denhaagSideNavLinkIcon"
                                                 );
-
-                                                // Optionally add an icon
-                                                if (record.icon() != null) {
-                                                    WebMarkupContainer icon = new WebMarkupContainer(
-                                                            "denhaagSideNavLinkIcon"
-                                                    );
-                                                    icon.add(new RotterdamIconBehavior(record.icon()));
-                                                    link.add(icon);
-                                                } else {
-                                                    link.add(new Label("denhaagSideNavLinkIcon", ""));
-                                                }
-
-                                                // Add the link text
-                                                link.add(new Label("denhaagSideNavLinkLabel", naam));
-
-                                                // Optionally add a number badge
-                                                UtrechtNumberBadge numberBadge = new UtrechtNumberBadge(
-                                                        "denhaagSideNavLinkNumberBadge",
-                                                        record.numberBadge()
-                                                );
-                                                numberBadge.setVisible(record.numberBadge() >= 1);
-                                                link.add(numberBadge);
-
-                                                item.add(link);
+                                                icon.add(new RotterdamIconBehavior(record.icon()));
+                                                link.add(icon);
+                                            } else {
+                                                link.add(new Label("denhaagSideNavLinkIcon", ""));
                                             }
+
+                                            // Add the link text
+                                            link.add(new Label("denhaagSideNavLinkLabel", naam));
+
+                                            // Optionally add a number badge
+                                            UtrechtNumberBadge numberBadge = new UtrechtNumberBadge(
+                                                "denhaagSideNavLinkNumberBadge",
+                                                record.numberBadge()
+                                            );
+                                            numberBadge.setVisible(record.numberBadge() >= 1);
+                                            link.add(numberBadge);
+
+                                            item.add(link);
                                         }
+                                    }
                                 );
                             }
                         }

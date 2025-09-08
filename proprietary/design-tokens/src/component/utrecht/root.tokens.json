@@ -1,8 +1,12 @@
 {
   "utrecht": {
     "root": {
-      "background-color": { "value": "{rods.color.base.white}" },
-      "color": { "value": "{rods.color.gray.tint-11}" }
+      "background-color": {
+        "value": "{rods.color.base.white}"
+      },
+      "color": {
+        "value": "{rods.color.gray.tint-11}"
+      }
     }
   }
 }

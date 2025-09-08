@@ -1,6 +1,7 @@
 package nl.rotterdam.wicket.docs.side_nav;
 
 import java.io.Serializable;
+
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 
 public record SideNavRecord<C>(
@@ -10,4 +11,5 @@ public record SideNavRecord<C>(
     long numberBadge,
     String numberBadgeLabel
 )
-    implements Serializable {}
+    implements Serializable {
+}

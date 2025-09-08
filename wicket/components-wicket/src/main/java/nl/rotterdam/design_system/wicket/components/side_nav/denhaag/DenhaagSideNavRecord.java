@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.side_nav.denhaag;
 
 import java.io.Serializable;
+
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 
 public record DenhaagSideNavRecord<C>(
@@ -10,4 +11,5 @@ public record DenhaagSideNavRecord<C>(
     long numberBadge,
     String numberBadgeLabel
 )
-    implements Serializable {}
+    implements Serializable {
+}
