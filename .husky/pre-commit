@@ -1,1 +1,13 @@
-pnpm exec lint-staged
+#
+# pnpm exec lint-staged
+
+# lint-staged failed:
+# ✖ prettier --check:
+# checking formatting...
+# [warn] wicket/components-wicket/src/main/java/nl/rotterdam/design_system/wicket/components/heading/utrecht/README.md
+# [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+# ✖ eslint --no-error-on-unmatched-pattern failed without output (SIGKILL).
+# ✖ prettier --check:
+# Checking formatting...
+#
+# ✖ npmPkgJsonLint --allowEmptyTargets failed without output (SIGKILL).
