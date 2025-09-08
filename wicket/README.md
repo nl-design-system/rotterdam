@@ -59,3 +59,18 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
   `HeadingExamplesPanel` voor een voorbeeld.
 - Voeg de storybook en markdown codegenerator toe aan
   `GenerateMarkdownAndStorybookExamples`
+
+## Workspace dependencies resolven
+
+NL Design System gebruikt pnpm workspaces. Deze dependencies worden niet automatisch
+herkend door Maven. Je kunt ze handmatig installeren vanuit de root-folder met:
+
+```shell
+pnpm run build
+```
+
+Draai daarna nog expliciet een Maven build:
+
+```shell
+./mvnw package
+```
