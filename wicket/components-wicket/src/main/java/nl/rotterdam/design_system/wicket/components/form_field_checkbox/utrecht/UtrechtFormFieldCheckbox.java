@@ -26,9 +26,13 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
     public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
     public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
+
+
     public static final String CHECKBOX_CUSTOM_CLASSNAME =
         "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
     public static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
+
+    public static final String CHECKBOX_REQUIRED_CLASSNAME = "utrecht-checkbox--required";
     public static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
     public static final String FORM_FIELD_INPUT_CLASSNAME = "utrecht-form-field__input";
 
@@ -46,8 +50,6 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
     ) {
         super(id);
         add(UtrechtFormFieldContainerBehavior.INSTANCE_CHECKBOX);
-
-        // TODO: Implement indeterminate state, when someone needs it.
 
         checkbox = createCheckbox(model, descriptionModel);
         descriptionLabel = createDescriptionLabel(descriptionModel);
@@ -140,6 +142,14 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         return checkbox;
     }
 
+    public Component getDescriptionLabel() {
+        return descriptionLabel;
+    }
+
+    public Component getErrorMessageLabel() {
+        return errorMessageLabel;
+    }
+
     private CheckBox createCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
         return new CheckBox("checkbox", model) {
 
@@ -158,7 +168,8 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
                         UtrechtFormFieldCheckbox.CHECKBOX_CUSTOM_CLASSNAME,
                         UtrechtFormFieldCheckbox.FORM_FIELD_INPUT_CLASSNAME,
                         isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
-                        isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
+                        isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null,
+                        isRequired() ? UtrechtFormFieldCheckbox.CHECKBOX_REQUIRED_CLASSNAME : null
                     )
                 );
 
