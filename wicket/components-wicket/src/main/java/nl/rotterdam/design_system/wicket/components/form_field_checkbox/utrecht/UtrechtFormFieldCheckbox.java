@@ -2,10 +2,12 @@ package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
+import nl.rotterdam.design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
+import org.apache.wicket.Component;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -19,8 +21,8 @@ import org.apache.wicket.model.Model;
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
     private final CheckBox checkbox;
-    private final Label descriptionLabel;
-    private final Label errorMessageLabel;
+    private final Component descriptionLabel;
+    private final Component errorMessageLabel;
 
     public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
     public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
@@ -52,45 +54,31 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         errorMessageLabel = createErrorMessageLabel(model);
 
         add(
+
             createOuterLabelAndCheckbox(labelModel),
             descriptionLabel,
             errorMessageLabel
         );
     }
 
-    private Label createDescriptionLabel(IModel<String> descriptionModel) {
-        return new Label("description", descriptionModel) {
-
-            {
-                setOutputMarkupId(true);
-                add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
-            }
-
-            @Override
-            public boolean isVisible() {
-                return getDefaultModelObject() != null;
-            }
-        };
+    private Component createDescriptionLabel(IModel<String> descriptionModel) {
+        return new Label("description", descriptionModel)
+            .setOutputMarkupId(true)
+            .add(HideWhenModelIsNullBehavior.INSTANCE)
+            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
     }
 
-    private Label createErrorMessageLabel(IModel<Boolean> model) {
+    private Component createErrorMessageLabel(IModel<Boolean> model) {
+        // TODO only shows the first feedback message. Is multiple messages desired by parkeren or afspraak?
         return new Label("error",
             model.map(x -> {
                 FeedbackMessage first = checkbox.getFeedbackMessages().first(FeedbackMessage.ERROR);
                 return first != null ? first.getMessage().toString() : null;
             })
-        ) {
-
-            {
-                setOutputMarkupId(true);
-                add(UtrechtFormFieldErrorMessageBehavior.INSTANCE);
-            }
-
-            @Override
-            public boolean isVisible() {
-                return getDefaultModelObject() != null;
-            }
-        };
+        )
+            .setOutputMarkupId(true)
+            .add(HideWhenModelIsNullBehavior.INSTANCE)
+            .add(UtrechtFormFieldErrorMessageBehavior.INSTANCE);
     }
 
     private WebMarkupContainer createOuterLabelAndCheckbox(IModel<String> labelModel) {
@@ -169,7 +157,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
                     HTMLUtil.className(
                         UtrechtFormFieldCheckbox.CHECKBOX_CUSTOM_CLASSNAME,
                         UtrechtFormFieldCheckbox.FORM_FIELD_INPUT_CLASSNAME,
-                        isEnabledInHierarchy() ?  null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
+                        isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
                         isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
                     )
                 );

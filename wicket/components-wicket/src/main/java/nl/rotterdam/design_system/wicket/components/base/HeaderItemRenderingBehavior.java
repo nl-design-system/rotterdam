@@ -7,15 +7,16 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import static java.util.Objects.requireNonNull;
 
 public abstract class HeaderItemRenderingBehavior extends Behavior {
 
     private final List<CssReferenceHeaderItem> headerItems = new ArrayList<>();
 
     public void addHeaderItem(CssReferenceHeaderItem headerItem) {
-        if (headerItem == null) {
-            throw new RuntimeException("Header item cannot be null");
-        }
+        requireNonNull(headerItem, "Header item cannot be null");
         headerItems.add(headerItem);
     }
 
