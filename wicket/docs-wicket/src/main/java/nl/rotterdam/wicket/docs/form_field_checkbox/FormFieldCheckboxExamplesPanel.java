@@ -30,7 +30,7 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
             Model.of("Ik ga akkoord met de algemene voorwaarden"),
             Model.of("U kunt ons echt vertrouwen!")
         );
-        component.getCheckbox().error("U moet akkoord gaan met de algemene voorwaarden, anders kunt u niet verder.");
+        component.getControl().error("U moet akkoord gaan met de algemene voorwaarden, anders kunt u niet verder.");
         return component;
     }
 

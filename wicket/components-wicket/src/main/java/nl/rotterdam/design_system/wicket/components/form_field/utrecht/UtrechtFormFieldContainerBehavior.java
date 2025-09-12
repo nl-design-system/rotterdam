@@ -6,17 +6,7 @@ import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderIte
 
 public class UtrechtFormFieldContainerBehavior extends TagNameClassComponentBehavior {
 
-    private static final String FORM_FIELD_CHECKBOX_CLASSNAME = "utrecht-form-field--checkbox";
-
-    public static final UtrechtFormFieldContainerBehavior INSTANCE_TEXT = new UtrechtFormFieldContainerBehavior();
-
-    public static final UtrechtFormFieldContainerBehavior INSTANCE_CHECKBOX = new UtrechtFormFieldContainerBehavior(FORM_FIELD_CHECKBOX_CLASSNAME);
-
-    private UtrechtFormFieldContainerBehavior(String inputTypeSpecificClassName) {
-        super("div", "utrecht-form-field", inputTypeSpecificClassName);
-        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldContainerBehavior.class, "@utrecht/form-field-css/dist/index.css"));
-    }
-
+    public static final UtrechtFormFieldContainerBehavior INSTANCE = new UtrechtFormFieldContainerBehavior();
 
     private UtrechtFormFieldContainerBehavior() {
         super("div", "utrecht-form-field");

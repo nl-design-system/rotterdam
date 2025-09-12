@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.util.tester.WicketTestCase;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.util.Objects;
@@ -21,7 +22,11 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
     }
 
     protected static String formatTidy(String htmlWithOneContainerElement) {
-        Element renderedElement = Jsoup.parseBodyFragment(htmlWithOneContainerElement).body().firstElementChild();
+        Document document = Jsoup.parseBodyFragment(htmlWithOneContainerElement);
+        document.outputSettings()
+            .prettyPrint(true)
+            .indentAmount(4);
+        Element renderedElement = document.body().firstElementChild();
         Objects.requireNonNull(renderedElement, "There must be an element");
         return renderedElement.toString();
     }

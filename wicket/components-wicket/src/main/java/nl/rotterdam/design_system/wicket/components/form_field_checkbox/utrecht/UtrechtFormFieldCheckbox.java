@@ -1,7 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
+import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses;
@@ -20,7 +20,7 @@ import org.apache.wicket.model.IModel;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
-    private final CheckBox checkbox;
+    private final CheckBox control;
     private final Component descriptionLabel;
     private final Component errorMessageLabel;
 
@@ -29,9 +29,10 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
     private static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
     private static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
     private static final IModel<String> EMPTY_DESCRIPTION_MODEL = () -> null;
+    private final IModel<String> labelModel;
 
-    public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelText) {
-        this(id, model, labelText, EMPTY_DESCRIPTION_MODEL);
+    public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
+        this(id, model, labelModel, EMPTY_DESCRIPTION_MODEL);
     }
 
     public UtrechtFormFieldCheckbox(
@@ -41,24 +42,13 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         IModel<String> descriptionModel
     ) {
         super(id);
-        add(UtrechtFormFieldContainerBehavior.INSTANCE_CHECKBOX);
+        this.labelModel = labelModel;
 
-        checkbox = new UtrechtCheckBox(model, descriptionModel);
-        descriptionLabel = createDescriptionLabel(descriptionModel);
-        errorMessageLabel = createErrorMessageLabel(checkbox);
-
-        add(
-            new LabelAndCheckboxContainer(labelModel),
-            descriptionLabel,
-            errorMessageLabel
-        );
-    }
-
-    private static Component createDescriptionLabel(IModel<String> descriptionModel) {
-        return new Label("description", descriptionModel)
-            .setOutputMarkupId(true)
-            .add(HideWhenModelIsNullBehavior.INSTANCE)
+        control = new UtrechtCheckBox(model, descriptionModel);
+        descriptionLabel = new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
+
+        errorMessageLabel = createErrorMessageLabel(control);
     }
 
     private static Component createErrorMessageLabel(FormComponent<?> componentWithFeedback) {
@@ -76,7 +66,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
     }
 
     protected boolean isInvalid() {
-        return checkbox.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
+        return control.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
     }
 
     @Override
@@ -94,15 +84,27 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
     protected void onInitialize() {
         super.onInitialize();
         setOutputMarkupId(true);
+
+        add(
+            UtrechtFormFieldContainerBehavior.INSTANCE,
+            UtrechtCheckboxContainerBehavior.INSTANCE
+        );
+
+        add(
+            new LabelAndCheckboxContainer(labelModel),
+            descriptionLabel,
+            errorMessageLabel
+        );
+
     }
 
     public UtrechtFormFieldCheckbox setRequired(boolean required) {
-        checkbox.setRequired(required);
+        control.setRequired(required);
         return this;
     }
 
-    public CheckBox getCheckbox() {
-        return checkbox;
+    public CheckBox getControl() {
+        return control;
     }
 
     public Component getDescriptionLabel() {
@@ -120,7 +122,6 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         public UtrechtCheckBox(IModel<Boolean> model, IModel<String> descriptionModel) {
             super("checkbox", model);
             this.descriptionModel = descriptionModel;
-            add(UtrechtCheckboxBehavior.INSTANCE);
             setOutputMarkupId(true);
         }
 
@@ -176,14 +177,14 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
             add(
                 new Label("labelText", labelModel),
-                checkbox
+                control
             );
         }
 
         @Override
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
-            tag.put("for", checkbox.getMarkupId());
+            tag.put("for", control.getMarkupId());
             tag.put(
                 "class",
                 HTMLUtil.className(

@@ -1,14 +1,12 @@
 <wicket:panel xmlns:wicket="http://wicket.apache.org">
-  <div class="utrecht-form-field">
-    <div class="utrecht-form-field__label utrecht-form-field__label">
+    <div class="utrecht-form-field__label">
       <label wicket:id="label">
-        <wicket:container wicket:id="labelText"></wicket:container>
+        Naam
       </label>
     </div>
+    <div wicket:id="description">Voor en achternaam</div>
+  <div wicket:id="error"></div>
     <div class="utrecht-form-field__input">
       <input wicket:id="control" type="text" />
     </div>
-    <div wicket:id="description" class="utrecht-form-field-description utrecht-form-field__description"></div>
-    <div wicket:id="error" class="utrecht-form-field-error-message utrecht-form-field__error-message"></div>
-  </div>
 </wicket:panel>

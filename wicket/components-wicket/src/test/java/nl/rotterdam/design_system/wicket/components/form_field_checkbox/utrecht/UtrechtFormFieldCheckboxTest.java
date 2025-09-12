@@ -1,8 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
-import org.apache.wicket.core.util.string.ComponentRenderer;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 import org.junit.jupiter.api.Test;
 
@@ -15,10 +13,10 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
     void shouldRenderCorrectHTMLForCheckboxWithLabel() {
 
         // from https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field-checkbox--docs#label
-        // with minimal changes:
+        // with minimal changes with Wicket:
         // - attribute ordening
-        // - added id attributes; wicket ajax needs them
-        // - set input name the way wicket needs them.
+        // - added id attributes; Wicket ajax needs them
+        // - set input name the way Wicket needs them.
         // language=HTML
         var htmlFromReference = """ 
         <div id="utrecht-checkbox-field" class="utrecht-form-field utrecht-form-field--checkbox">
@@ -56,10 +54,10 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
     void shouldRenderCorrectHTMLForCheckboxWithLabelAndDescriptionAndError() {
 
         // from https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field-checkbox--docs#invalid
-        // with minimal changes:
+        // with minimal changes with Wicket:
         // - attribute ordening
-        // - added id attributes; wicket ajax needs them
-        // - set input name the way wicket needs them.
+        // - added id attributes; Wicket ajax needs them
+        // - set input name the way Wicket needs them.
         // language=HTML
         var htmlFromReference = """ 
 
@@ -103,7 +101,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
             Model.of("U kunt ons echt vertrouwen!")
         );
         component.setRequired(true);
-        component.getCheckbox().error("U moet akkoord gaan met de algemene voorwaarden, anders kunt u niet verder.");
+        component.getControl().error("U moet akkoord gaan met de algemene voorwaarden, anders kunt u niet verder.");
 
         setSubjectUnderTestIds(component);
 
@@ -114,7 +112,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
     private void setSubjectUnderTestIds(UtrechtFormFieldCheckbox component) {
         component.setMarkupId("utrecht-checkbox-field");
-        component.getCheckbox().setMarkupId("checkbox-sample");
+        component.getControl().setMarkupId("checkbox-sample");
         component.getDescriptionLabel().setMarkupId("description-label");
         component.getErrorMessageLabel().setMarkupId("error-message-label");
     }
