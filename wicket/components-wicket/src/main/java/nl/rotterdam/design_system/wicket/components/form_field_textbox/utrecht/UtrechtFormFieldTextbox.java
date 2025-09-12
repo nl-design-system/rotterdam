@@ -16,6 +16,8 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_INVALID_CLASSNAME;
+
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
 
     private final TextField<T> control;
@@ -23,11 +25,9 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
     private final Component errorMessageLabel;
     private String inputType;
     private final Component label;
-    public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
     public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
     public static final String TEXTBOX_CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
     public static final String TEXTBOX_DISABLED_CLASSNAME = "utrecht-textbox--disabled";
-    public static final String INVALID_CLASSNAME = "utrecht-textbox--invalid";
 
     public UtrechtFormFieldTextbox(String id, IModel<T> model, String labelText) {
         this(id, model, Model.of(labelText), null);
@@ -113,7 +113,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
         tag.put(
             "class",
             HTMLUtil.className(
-                isInvalid() ? UtrechtFormFieldTextbox.FORM_FIELD_INVALID_CLASSNAME : null
+                isInvalid() ? FORM_FIELD_INVALID_CLASSNAME : null
             )
         );
     }
@@ -141,7 +141,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
         return errorMessageLabel;
     }
 
-    private class UtrechtTextbox extends TextField<T> {
+    class UtrechtTextbox extends TextField<T> {
+        public static final String INVALID_CLASSNAME = "utrecht-textbox--invalid";
 
         private final IModel<String> descriptionModel;
 
@@ -158,7 +159,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
                 HTMLUtil.className(
                     UtrechtFormFieldTextbox.TEXTBOX_CLASSNAME,
                     isDisabled() ? UtrechtFormFieldTextbox.TEXTBOX_DISABLED_CLASSNAME : null,
-                    isInvalid() ? UtrechtFormFieldTextbox.INVALID_CLASSNAME : null
+                    isInvalid() ? INVALID_CLASSNAME : null
                 )
             );
 

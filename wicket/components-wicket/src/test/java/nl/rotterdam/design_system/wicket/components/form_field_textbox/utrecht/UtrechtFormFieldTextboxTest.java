@@ -1,9 +1,12 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses;
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
@@ -51,7 +54,32 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
         String actualRenderedMarkup = renderComponentInTestPanel(component);
 
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
+    }
 
+    @Test
+    void invalidRenderingAddsCorrectCssClasses() {
+
+        var component = new UtrechtFormFieldTextbox<>(
+            "component",
+            Model.of("I ❤️ Martine"),
+            Model.of("Naam"),
+            Model.of("Voornaam en achternaam.")
+        );
+
+        setSubjectUnderTestIds(component);
+
+        component.getTextField().error("Verwijder de emoji-tekens uit de naam");
+
+        String actualRenderedMarkup = renderComponentInTestPanel(component);
+
+        TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "utrecht-textbox-field");
+
+        assertThat(fieldTag.getAttribute("class"))
+            .contains(UtrechtFormFieldCssClasses.FORM_FIELD_INVALID_CLASSNAME);
+
+        TagTester textboxTag = fieldTag.getChild("input");
+        assertThat(textboxTag.getAttribute("class"))
+            .contains(UtrechtFormFieldTextbox.UtrechtTextbox.INVALID_CLASSNAME);
     }
 
     private void setSubjectUnderTestIds(UtrechtFormFieldTextbox<?> component) {
