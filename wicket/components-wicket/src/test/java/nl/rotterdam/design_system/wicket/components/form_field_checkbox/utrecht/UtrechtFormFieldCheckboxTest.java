@@ -42,20 +42,12 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
         UtrechtFormFieldCheckbox component = new UtrechtFormFieldCheckbox(
             "component",
             Model.of(false),
-            "Ik ga akkoord met de algemene voorwaarden"
+            Model.of("Ik ga akkoord met de algemene voorwaarden")
         );
 
         setSubjectUnderTestIds(component);
 
         String actualRenderedMarkup = renderComponentInTestPanel(component);
-
-
-        System.out.println("Actual markup:");
-
-        System.out.println(actualRenderedMarkup);
-
-        System.out.println("Tidy markup:");
-        System.out.println(formatTidy(actualRenderedMarkup));
 
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
     }

@@ -36,7 +36,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                         new UtrechtFormFieldTextbox("password", password, "Wachtwoord")
                             .setRequired(true)
                             .setInputType("password"),
-                        new UtrechtFormFieldCheckbox("rememberMe", rememberMe, "Onthoud mij").setRequired(true),
+                        new UtrechtFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij")).setRequired(true),
                         actionGroup
                     );
                     actionGroup.add(new UtrechtButton("submit"));

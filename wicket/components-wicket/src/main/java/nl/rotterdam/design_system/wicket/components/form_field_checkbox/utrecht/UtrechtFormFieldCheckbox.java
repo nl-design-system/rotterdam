@@ -17,22 +17,21 @@ import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.FormComponent;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
     private final CheckBox checkbox;
     private final Component descriptionLabel;
     private final Component errorMessageLabel;
+
     private static final String CHECKBOX_CUSTOM_CLASSNAME =
         "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
     private static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
     private static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
-
     private static final IModel<String> EMPTY_DESCRIPTION_MODEL = () -> null;
 
-    public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, String labelText) {
-        this(id, model, Model.of(labelText), EMPTY_DESCRIPTION_MODEL);
+    public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelText) {
+        this(id, model, labelText, EMPTY_DESCRIPTION_MODEL);
     }
 
     public UtrechtFormFieldCheckbox(
