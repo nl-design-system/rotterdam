@@ -12,12 +12,12 @@ import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UtrechtFormFieldCheckboxTest {
 
+class UtrechtFormFieldCheckboxTest {
 
     @BeforeEach
     void setUp() {
-        assertWicketThreadStarted();
+        startWicket();
     }
 
     @Test
@@ -82,23 +82,23 @@ class UtrechtFormFieldCheckboxTest {
                       type="checkbox"
                       name="static:component:label:checkbox"
                       id="checkbox-sample"
-                      class="utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-form-field__input utrecht-checkbox--invalid utrecht-checkbox--required"
-                      aria-describedby="error-message-label"
-                      aria-invalid="true"
+                      class="utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-form-field__input utrecht-checkbox--invalid"
+                      aria-describedby="description-label error-message-label"
                       aria-required="true"
+                      aria-invalid="true"
                     />
                     Ik ga akkoord met de algemene voorwaarden
                   </label>
                 </p>
                 <div
-                  class="utrecht-form-field-description utrecht-form-field__description"
                   id="description-label"
+                  class="utrecht-form-field-description utrecht-form-field__description"
                 >
                   U kunt ons echt vertrouwen!
                 </div>
                 <div
-                  class="utrecht-form-field-error-message utrecht-form-field__error-message"
                   id="error-message-label"
+                  class="utrecht-form-field-error-message utrecht-form-field__error-message"
                 >
                   U moet akkoord gaan met de algemene voorwaarden, anders kunt u niet verder.
                 </div>
@@ -121,8 +121,6 @@ class UtrechtFormFieldCheckboxTest {
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
     }
 
-
-
     private void setSubjectUnderTestIds(UtrechtFormFieldCheckbox component) {
         component.setMarkupId("utrecht-checkbox-field");
         component.getCheckbox().setMarkupId("checkbox-sample");
@@ -136,7 +134,7 @@ class UtrechtFormFieldCheckboxTest {
         return renderedElement.toString();
     }
 
-    private static void assertWicketThreadStarted() {
+    private static void startWicket() {
         new WicketTester(new ComponentsWicketTestApplication());
     }
 }

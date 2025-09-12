@@ -1,32 +1,19 @@
 package nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
+import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 
-// TODO: extend from standard class
-public class UtrechtFormFieldErrorMessageBehavior extends Behavior {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(
-            UtrechtFormFieldErrorMessageBehavior.class,
-            "@utrecht/form-field-error-message-css/dist/index.css"
-        )
-    );
+public class UtrechtFormFieldErrorMessageBehavior extends TagNameClassComponentBehavior {
 
     public static final UtrechtFormFieldErrorMessageBehavior INSTANCE = new UtrechtFormFieldErrorMessageBehavior();
 
     private UtrechtFormFieldErrorMessageBehavior() {
+        super("div", "utrecht-form-field-error-message utrecht-form-field__error-message");
+
+        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldErrorMessageBehavior.class,
+            "@utrecht/form-field-error-message-css/dist/index.css"));
 
     }
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-
-        response.render(CSS);
-    }
 }
