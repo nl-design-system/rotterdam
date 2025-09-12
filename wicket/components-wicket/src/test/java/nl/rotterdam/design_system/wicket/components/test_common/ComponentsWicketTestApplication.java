@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.test_common;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.markup.html.HTML5Attributes;

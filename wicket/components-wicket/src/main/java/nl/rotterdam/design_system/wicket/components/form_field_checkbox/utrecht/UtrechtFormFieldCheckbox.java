@@ -4,6 +4,7 @@ import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
 import nl.rotterdam.design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
@@ -23,13 +24,10 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
     private final CheckBox checkbox;
     private final Component descriptionLabel;
     private final Component errorMessageLabel;
-    private static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
-    private static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
     private static final String CHECKBOX_CUSTOM_CLASSNAME =
         "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
     private static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
     private static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
-    private static final String FORM_FIELD_INPUT_CLASSNAME = "utrecht-form-field__input";
 
     private static final IModel<String> EMPTY_DESCRIPTION_MODEL = () -> null;
 
@@ -88,7 +86,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         tag.put(
             "class",
             HTMLUtil.className(
-                isInvalid() ? UtrechtFormFieldCheckbox.FORM_FIELD_INVALID_CLASSNAME : null
+                isInvalid() ? UtrechtFormFieldCssClasses.FORM_FIELD_INVALID_CLASSNAME : null
             )
         );
     }
@@ -123,7 +121,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         public UtrechtCheckBox(IModel<Boolean> model, IModel<String> descriptionModel) {
             super("checkbox", model);
             this.descriptionModel = descriptionModel;
-            add(new UtrechtCheckboxBehavior());
+            add(UtrechtCheckboxBehavior.INSTANCE);
             setOutputMarkupId(true);
         }
 
@@ -131,14 +129,16 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
 
+            String className = HTMLUtil.className(
+                UtrechtFormFieldCheckbox.CHECKBOX_CUSTOM_CLASSNAME,
+                UtrechtFormFieldCssClasses.FORM_FIELD_INPUT_CLASSNAME,
+                isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
+                isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
+            );
+
             tag.put(
                 "class",
-                HTMLUtil.className(
-                    UtrechtFormFieldCheckbox.CHECKBOX_CUSTOM_CLASSNAME,
-                    UtrechtFormFieldCheckbox.FORM_FIELD_INPUT_CLASSNAME,
-                    isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
-                    isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
-                )
+                className
             );
 
             String ariaDescribedBy = HTMLUtil.idRefs(
@@ -188,7 +188,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
             tag.put(
                 "class",
                 HTMLUtil.className(
-                    isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.FORM_LABEL_DISABLED_CLASSNAME
+                    isEnabledInHierarchy() ? null : UtrechtFormFieldCssClasses.FORM_LABEL_DISABLED_CLASSNAME
                 )
             );
         }

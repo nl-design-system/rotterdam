@@ -1,24 +1,15 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.core.util.string.ComponentRenderer;
+import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.util.tester.WicketTester;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class UtrechtFormFieldCheckboxTest {
-
-    @BeforeEach
-    void setUp() {
-        startWicket();
-    }
+class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
     @Test
     void shouldRenderCorrectHTMLForCheckboxWithLabel() {
@@ -56,7 +47,15 @@ class UtrechtFormFieldCheckboxTest {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = ComponentRenderer.renderComponent(new UtrechtFormFieldCheckboxTestPanel(component)).toString();
+        String actualRenderedMarkup = renderComponentInTestPanel(component);
+
+
+        System.out.println("Actual markup:");
+
+        System.out.println(actualRenderedMarkup);
+
+        System.out.println("Tidy markup:");
+        System.out.println(formatTidy(actualRenderedMarkup));
 
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
     }
@@ -64,7 +63,7 @@ class UtrechtFormFieldCheckboxTest {
     @Test
     void shouldRenderCorrectHTMLForCheckboxWithLabelAndDescriptionAndError() {
 
-        // from https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field-checkbox--docs#label
+        // from https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field-checkbox--docs#invalid
         // with minimal changes:
         // - attribute ordening
         // - added id attributes; wicket ajax needs them
@@ -116,7 +115,7 @@ class UtrechtFormFieldCheckboxTest {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = ComponentRenderer.renderComponent(new UtrechtFormFieldCheckboxTestPanel(component)).toString();
+        String actualRenderedMarkup = renderComponentInTestPanel(component);
 
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
     }
@@ -128,13 +127,4 @@ class UtrechtFormFieldCheckboxTest {
         component.getErrorMessageLabel().setMarkupId("error-message-label");
     }
 
-    private static String formatTidy(String htmlWithOneContainerElement) {
-        Element renderedElement = Jsoup.parseBodyFragment(htmlWithOneContainerElement).body().firstElementChild();
-        Objects.requireNonNull(renderedElement, "There must be an element");
-        return renderedElement.toString();
-    }
-
-    private static void startWicket() {
-        new WicketTester(new ComponentsWicketTestApplication());
-    }
 }

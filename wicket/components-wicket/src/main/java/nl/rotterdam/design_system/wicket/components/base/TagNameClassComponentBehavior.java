@@ -15,6 +15,7 @@ public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingB
     }
 
 
+    // TODO make read only, provide one way to make it flexible
     public String[] getClassNames() {
         return classNames;
     }
@@ -26,7 +27,7 @@ public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingB
             tag.setName(expectedTagName);
         }
 
-        if (!tag.isClose()) {
+        if (!tag.isClose() && getClassNames().length > 0) {
             tag.append("class", String.join(" ", this.getClassNames()), " ");
         }
     }

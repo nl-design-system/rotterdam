@@ -2,27 +2,26 @@ package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
-import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
-import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxBehavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
 import java.util.UUID;
 
-public class UtrechtFormFieldTextbox extends Panel {
+public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
 
-    private final TextField<String> control;
-    private final Label description;
+    private final TextField<T> control;
+    private final Label descriptionLabel;
     private final IModel<String> errorMessageModel;
-    private final Label errorMessage;
+    private final Label errorMessageLabel;
     private final String controlId;
     private final String fieldId;
     private final String descriptionId;
@@ -36,24 +35,22 @@ public class UtrechtFormFieldTextbox extends Panel {
     public static final String TEXTBOX_CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
     public static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-textbox--disabled";
     public static final String INVALID_CLASSNAME = "utrecht-textbox--invalid";
-    public static final String FORM_FIELD_INPUT_CLASSNAME = "utrecht-form-field__input";
 
-    public UtrechtFormFieldTextbox(String id, IModel<String> model, String labelText) {
+    public UtrechtFormFieldTextbox(String id, IModel<T> model, String labelText) {
         this(id, model, Model.of(labelText), null, null);
     }
 
     public UtrechtFormFieldTextbox(
         String id,
-        IModel<String> model,
+        IModel<T> model,
         IModel<String> labelModel,
         IModel<String> descriptionModel,
         IModel<String> errorModel
     ) {
         super(id);
         add(UtrechtFormFieldContainerBehavior.INSTANCE_TEXT);
-        add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
-        add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
-        add(UtrechtFormFieldErrorMessageBehavior.INSTANCE);
+
+
         add(new UtrechtTextboxBehavior());
         errorMessageModel = errorModel;
 
@@ -69,7 +66,7 @@ public class UtrechtFormFieldTextbox extends Panel {
         // TODO: Implement indeterminate state, when someone needs it.
 
         // Create the text input
-        control = new TextField<>("control", model) {
+        control = new TextField<T>("control", model) {
             @Override
             protected void onComponentTag(ComponentTag tag) {
                 super.onComponentTag(tag);
@@ -78,7 +75,7 @@ public class UtrechtFormFieldTextbox extends Panel {
                     "class",
                     HTMLUtil.className(
                         UtrechtFormFieldTextbox.TEXTBOX_CLASSNAME,
-                        UtrechtFormFieldTextbox.FORM_FIELD_INPUT_CLASSNAME,
+                        UtrechtFormFieldCssClasses.FORM_FIELD_INPUT_CLASSNAME,
                         isDisabled() ? UtrechtFormFieldTextbox.CHECKBOX_DISABLED_CLASSNAME : null,
                         isInvalid() ? UtrechtFormFieldTextbox.INVALID_CLASSNAME : null
                     )
@@ -143,7 +140,7 @@ public class UtrechtFormFieldTextbox extends Panel {
         };
 
         // Create description and error message
-        description = new Label("description", descriptionModel) {
+        descriptionLabel = new Label("description", descriptionModel) {
             {
                 setMarkupId(descriptionId);
             }
@@ -159,7 +156,7 @@ public class UtrechtFormFieldTextbox extends Panel {
             }
         };
 
-        errorMessage = new Label("error", errorModel) {
+        errorMessageLabel = new Label("error", errorModel) {
             {
                 setMarkupId(errorMessageId);
             }
@@ -175,8 +172,8 @@ public class UtrechtFormFieldTextbox extends Panel {
             control,
             label,
             labelText,
-            description,
-            errorMessage
+            descriptionLabel,
+            errorMessageLabel
         );
     }
 
@@ -217,5 +214,13 @@ public class UtrechtFormFieldTextbox extends Panel {
         inputType = arg;
 
         return this;
+    }
+
+    public Label getDescriptionLabel() {
+        return descriptionLabel;
+    }
+
+    public Label getErrorMessageLabel() {
+        return errorMessageLabel;
     }
 }
