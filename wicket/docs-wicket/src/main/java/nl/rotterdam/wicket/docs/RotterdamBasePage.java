@@ -16,6 +16,8 @@ import org.apache.wicket.markup.html.link.Link;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+
 public class RotterdamBasePage extends DocsBasePage {
 
     protected UtrechtPageLayoutBorder pageLayout;
@@ -79,6 +81,6 @@ public class RotterdamBasePage extends DocsBasePage {
         // - Body for <body>
 
         response.render(UtrechtRootBehavior.CSS);
-        response.render(UtrechtBodyBehavior.CSS);
+        response.render(cssReferenceHeaderItem(UtrechtBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
     }
 }

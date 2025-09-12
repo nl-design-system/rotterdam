@@ -1,6 +1,5 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import com.google.common.base.Charsets;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -10,6 +9,7 @@ import java.nio.file.Path;
 import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class HtmlDocumentationExtractor {
 
@@ -17,7 +17,7 @@ public class HtmlDocumentationExtractor {
 
     public HtmlDocumentationExtractor(Path path) {
         try {
-            document = Jsoup.parse(path, Charsets.UTF_8.name());
+            document = Jsoup.parse(path, UTF_8.name());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,25 +1,29 @@
 package nl.rotterdam.design_system.wicket.components.form_field_description.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
 
-public class UtrechtFormFieldDescriptionBehavior extends Behavior {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(
-            UtrechtFormFieldDescriptionBehavior.class,
-            "@utrecht/form-field-description-css/dist/index.css"
-        )
-    );
+public class UtrechtFormFieldDescriptionBehavior extends TagNameClassComponentBehavior {
+
+    public static final UtrechtFormFieldDescriptionBehavior INSTANCE = new UtrechtFormFieldDescriptionBehavior();
 
     @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-
-        response.render(CSS);
+    public void bind(Component component) {
+        component.setOutputMarkupId(true);
     }
+
+    @Override
+    public void onConfigure(Component component) {
+        component.setVisible(component.getDefaultModelObject() != null);
+    }
+
+    private UtrechtFormFieldDescriptionBehavior() {
+        // TODO asked on Slack, why with '-' and '__'? https://codefornl.slack.com/archives/C01DAT4TRPF/p1757681150681179
+        super("div", "utrecht-form-field-description", "utrecht-form-field__description");
+        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldDescriptionBehavior.class,
+            "@utrecht/form-field-description-css/dist/index.css"));
+    }
+
 }
