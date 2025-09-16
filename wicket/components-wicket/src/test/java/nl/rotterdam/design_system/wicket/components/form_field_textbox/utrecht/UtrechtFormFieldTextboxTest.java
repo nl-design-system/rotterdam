@@ -32,12 +32,12 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
                     <div id="description-label" class="utrecht-form-field-description utrecht-form-field__description">Voornaam en achternaam.</div>
                     <div class="utrecht-form-field__input">
                       <input
-                        type="text"
                         value=""
-                        name="static:component:control"
+                        name="static:component:input-container:control"
                         id="input-text"
                         class="utrecht-textbox utrecht-textbox--html-input"
                         aria-describedby="description-label"
+                        type="text"
                       />
                     </div>
                   </div>""";
@@ -72,6 +72,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         String actualRenderedMarkup = renderComponentInTestPanel(component);
 
+        System.out.println("Actual rendered markup:\n" + actualRenderedMarkup);
         TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "utrecht-textbox-field");
 
         assertThat(fieldTag.getAttribute("class"))
@@ -85,8 +86,8 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
     private void setSubjectUnderTestIds(UtrechtFormFieldTextbox<?> component) {
         component.setMarkupId("utrecht-textbox-field");
         component.getTextField().setMarkupId("input-text");
-        component.getDescriptionLabel().setMarkupId("description-label");
-        component.getErrorMessageLabel().setMarkupId("error-message-label");
+        component.getDescriptionComponent().setMarkupId("description-label");
+        component.getErrorMessageComponent().setMarkupId("error-message-label");
     }
 
 }

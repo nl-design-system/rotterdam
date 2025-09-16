@@ -5,7 +5,7 @@ package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
  * <p><a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field--docs">Read more</a>
  * </p>
  *
- * Typically has the following nested elements / children:
+ * Typically has the following nested components:
  * <dl>
  *     <dt>Label (required)</dt>
  *     <dd>A label for the form field.</dd>
@@ -26,7 +26,12 @@ package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
  *     with a maximum number of characters, the number of characters remaining</dd>
  * </dl>
  *
- * All of those elements have a BEM nested style class as defined in {@link UtrechtFormFieldCssClasses}.
+ * <p>We use the suffix 'component' for the nested elements to make it explicit we're referring to NLDS components.</p>
+ * <p>All of those elements have a BEM nested style class as defined in {@link UtrechtFormFieldCssClasses}.</p>
+ *
+ * <p>All CSS class names must be defined as constants in Java code. Don't specify them in HTML files</p>
+ **
+ *
  */
 public interface UtrechtFormField {
 

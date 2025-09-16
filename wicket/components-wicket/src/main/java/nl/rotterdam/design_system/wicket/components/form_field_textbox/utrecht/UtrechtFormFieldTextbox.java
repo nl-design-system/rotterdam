@@ -11,6 +11,7 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.GenericPanel;
@@ -19,15 +20,17 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
-    private final TextField<T> control;
-    private final Component descriptionLabel;
-    private final Component errorMessageLabel;
-    private String inputType;
-    private final Component label;
-    public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
+    private String inputType = "text";
+
+    private final Component labelComponent;
+    private final Component descriptionComponent;
+    private final Component errorMessageComponent;
+    private final Component inputComponent;
+    private final UtrechtTextbox textbox;
 
     public UtrechtFormFieldTextbox(String id, IModel<T> model, String labelText) {
         this(id, model, Model.of(labelText), null);
@@ -41,39 +44,35 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     ) {
         super(id);
 
+        textbox = new UtrechtTextbox(model, descriptionModel);
         // Create the text input
-        control = new UtrechtTextbox(model, descriptionModel);
-        label = createLabel(labelModel);
-        descriptionLabel = new Label("description", descriptionModel)
-            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+        labelComponent = createLabelBlock(labelModel);
+        descriptionComponent = createDescriptionBlock(descriptionModel);
+        inputComponent = createInputBlock(textbox);
+        errorMessageComponent = createErrorMessageBlock();
+    }
 
-        errorMessageLabel = UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", control)
+    private static Component createInputBlock(TextField<?> inputTextbox) {
+        return new WebMarkupContainer("input-container")
+            .add(inputTextbox)
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
+    }
+
+    private Component createErrorMessageBlock() {
+        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", inputComponent)
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
-    private Component createLabel(IModel<String> labelModel) {
-        return new Label("label", labelModel) {
+    private static Component createDescriptionBlock(IModel<String> descriptionModel) {
+        return new Label("description", descriptionModel)
+            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+    }
 
-            @Override
-            protected void onInitialize() {
-                super.onInitialize();
-
-                add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
-            }
-
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-                tag.put("for", control.getMarkupId());
-                tag.put(
-                    "class",
-                    HTMLUtil.className(
-                        isDisabled() ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
-                    )
-                );
-            }
-        };
+    private Component createLabelBlock(IModel<String> labelModel) {
+        return new WebMarkupContainer("label-container")
+            .add(new TextboxLabel(labelModel))
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME));
     }
 
     @Override
@@ -88,20 +87,19 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
 
         // Add all components
         add(
-            control,
-            label,
-            descriptionLabel,
-            errorMessageLabel
+            inputComponent,
+            labelComponent,
+            descriptionComponent,
+            errorMessageComponent
         );
-
     }
 
     private boolean isDisabled() {
-        return !(isEnabled() && isEnableAllowed());
+        return !(isEnabledInHierarchy());
     }
 
     protected boolean isInvalid() {
-        return control.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
+        return getTextField().getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
     }
 
     @Override
@@ -116,12 +114,12 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     }
 
     public UtrechtFormFieldTextbox<T> setRequired(boolean required) {
-        control.setRequired(required);
+        getTextField().setRequired(required);
         return this;
     }
 
     public TextField<T> getTextField() {
-        return control;
+        return textbox;
     }
 
     public UtrechtFormFieldTextbox<T> setInputType(String type) {
@@ -130,12 +128,20 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return this;
     }
 
-    public Component getDescriptionLabel() {
-        return descriptionLabel;
+    public Component getDescriptionComponent() {
+        return descriptionComponent;
     }
 
-    public Component getErrorMessageLabel() {
-        return errorMessageLabel;
+    public Component getErrorMessageComponent() {
+        return errorMessageComponent;
+    }
+
+    public Component getLabelComponent() {
+        return labelComponent;
+    }
+
+    public Component getInputComponent() {
+        return inputComponent;
     }
 
     class UtrechtTextbox extends TextField<T> {
@@ -166,8 +172,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
             );
 
             String ariaDescribedBy = HTMLUtil.idRefs(
-                descriptionModel != null && descriptionModel.getObject() != null ? descriptionLabel.getMarkupId() : null,
-                isInvalid() ? errorMessageLabel.getMarkupId() : null
+                descriptionModel != null && descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
+                isInvalid() ? errorMessageComponent.getMarkupId() : null
             );
 
             // Do not render an empty `aria-describedby` attribute.
@@ -184,6 +190,32 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
             if (!Strings.isEmpty(inputType)) {
                 tag.put("type", inputType);
             }
+        }
+    }
+
+    private class TextboxLabel extends Label {
+
+        public TextboxLabel(IModel<String> labelModel) {
+            super("label", labelModel);
+        }
+
+        @Override
+        protected void onInitialize() {
+            super.onInitialize();
+
+            add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
+        }
+
+        @Override
+        protected void onComponentTag(ComponentTag tag) {
+            super.onComponentTag(tag);
+            tag.put("for", textbox.getMarkupId());
+            tag.put(
+                "class",
+                HTMLUtil.className(
+                    isDisabled() ? FORM_LABEL_STATE_DISABLED_CLASSNAME : null
+                )
+            );
         }
     }
 }
