@@ -10,27 +10,29 @@ import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFo
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.WicketTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
+import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
 
     private final CheckBox inputComponent;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
-    private static final IModel<String> EMPTY_DESCRIPTION_MODEL = () -> null;
     private final Component labelComponent;
 
     public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
-        this(id, model, labelModel, EMPTY_DESCRIPTION_MODEL);
+        this(id, model, labelModel, EMPTY_STRING_MODEL);
     }
 
     public UtrechtFormFieldCheckbox(
@@ -40,6 +42,9 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         IModel<String> descriptionModel
     ) {
         super(id);
+
+        requireNonNull(labelModel);
+        requireNonNull(descriptionModel);
 
         inputComponent = createInputComponent(model, descriptionModel);
         labelComponent = createLabelComponent(labelModel);
@@ -78,6 +83,11 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
+
+        if (tag instanceof WicketTag wicketTag) {
+            throw new IllegalStateException("utrecht-form-field must be a normal HTML element, not a Wicket tag: " + wicketTag);
+        }
+
         tag.put(
             "class",
             HTMLUtil.className(

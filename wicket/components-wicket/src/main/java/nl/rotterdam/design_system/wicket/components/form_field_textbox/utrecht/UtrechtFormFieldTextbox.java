@@ -10,16 +10,18 @@ import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextb
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.WicketTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
+import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
@@ -31,8 +33,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     private final Component inputComponent;
     private final UtrechtTextbox textbox;
 
-    public UtrechtFormFieldTextbox(String id, IModel<T> model, String labelText) {
-        this(id, model, Model.of(labelText), null);
+    public UtrechtFormFieldTextbox(String id, IModel<T> model, IModel<String> labelText) {
+        this(id, model, labelText, EMPTY_STRING_MODEL);
     }
 
     public UtrechtFormFieldTextbox(
@@ -42,6 +44,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         IModel<String> descriptionModel
     ) {
         super(id);
+        requireNonNull(labelModel);
+        requireNonNull(descriptionModel);
 
         textbox = new UtrechtTextbox(model, descriptionModel);
         // Create the text input
@@ -104,6 +108,11 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
+
+        if (tag instanceof WicketTag wicketTag) {
+            throw new IllegalStateException("utrecht-form-field must be a normal HTML element, not a Wicket tag: " + wicketTag);
+        }
+
         tag.put(
             "class",
             HTMLUtil.className(

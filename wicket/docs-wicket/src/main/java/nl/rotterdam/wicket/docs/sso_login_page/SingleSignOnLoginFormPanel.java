@@ -9,6 +9,8 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
+import java.time.LocalTime;
+
 public class SingleSignOnLoginFormPanel extends Panel {
 
     public SingleSignOnLoginFormPanel(String id) {
@@ -32,11 +34,13 @@ public class SingleSignOnLoginFormPanel extends Panel {
 
                     add(
                         new FeedbackPanel("feedback"),
-                        new UtrechtFormFieldTextbox("username", username, "Gebruikersnaam").setRequired(true),
-                        new UtrechtFormFieldTextbox("password", password, "Wachtwoord")
+                        new UtrechtFormFieldTextbox<>("username", username, Model.of("Gebruikersnaam"))
+                            .setRequired(true),
+                        new UtrechtFormFieldTextbox<>("password", password, Model.of("Wachtwoord"))
                             .setRequired(true)
                             .setInputType("password"),
-                        new UtrechtFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij")).setRequired(true),
+                        new UtrechtFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij"))
+                            .setRequired(true),
                         actionGroup
                     );
                     actionGroup.add(new UtrechtButton("submit"));
@@ -52,7 +56,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                 protected void onSubmit() {
                     super.onSubmit();
 
-                    info("Submitted!");
+                    info("Submitted for user: " + username.getObject() + " at time: " + LocalTime.now());
 
                     System.out.println("Received username: " + username.getObject());
                     System.out.println("Received rememberMe: " + rememberMe.getObject());
