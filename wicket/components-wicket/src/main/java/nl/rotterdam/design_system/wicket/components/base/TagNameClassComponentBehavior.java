@@ -24,7 +24,7 @@ public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingB
         super.onComponentTag(component, tag);
 
         if (!expectedTagName.equals(tag.getName())) {
-            tag.setName(expectedTagName);
+            throw new RuntimeException("Expected tag name '" + expectedTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
         }
 
         if (!tag.isClose() && getClassNames().length > 0) {

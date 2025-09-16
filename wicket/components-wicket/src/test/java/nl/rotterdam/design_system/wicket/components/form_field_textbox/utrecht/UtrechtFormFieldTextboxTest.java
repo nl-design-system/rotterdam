@@ -22,7 +22,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
         // - aria-describedby added, it was missing but I think it is needed.
         // language=HTML
         var htmlFromReference = """
-            <div id="utrecht-textbox-field" class="utrecht-form-field utrecht-form-field--text">
+                  <div id="utrecht-textbox-field" class="utrecht-form-field utrecht-form-field--text">
                     <div class="utrecht-form-field__label">
                       <label
                         for="input-text"
