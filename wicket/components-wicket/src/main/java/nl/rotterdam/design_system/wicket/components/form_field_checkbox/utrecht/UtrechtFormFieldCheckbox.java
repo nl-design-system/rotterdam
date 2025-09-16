@@ -7,6 +7,7 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import org.apache.wicket.Component;
+import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -15,6 +16,8 @@ import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
@@ -45,9 +48,11 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
         control = new UtrechtCheckBox(model, descriptionModel);
         descriptionLabel = new Label("description", descriptionModel)
-            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
+            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
 
-        errorMessageLabel = createErrorMessageLabel("error", control);
+        errorMessageLabel = createErrorMessageLabel("error", control)
+        .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
     protected boolean isInvalid() {
@@ -116,7 +121,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> {
 
             String className = HTMLUtil.className(
                 UtrechtFormFieldCheckbox.CHECKBOX_CUSTOM_CLASSNAME,
-                UtrechtFormFieldCssClasses.FORM_FIELD_INPUT_CLASSNAME,
+                UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME,
                 isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
                 isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
             );

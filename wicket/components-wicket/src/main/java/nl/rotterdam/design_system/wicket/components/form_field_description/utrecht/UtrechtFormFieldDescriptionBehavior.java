@@ -20,10 +20,8 @@ public class UtrechtFormFieldDescriptionBehavior extends TagNameClassComponentBe
     }
 
     private UtrechtFormFieldDescriptionBehavior() {
-        // TODO asked on Slack, why with '-' and '__'? https://codefornl.slack.com/archives/C01DAT4TRPF/p1757681150681179
-        super("div", "utrecht-form-field-description", "utrecht-form-field__description");
+        super("div", "utrecht-form-field-description");
         addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldDescriptionBehavior.class,
             "@utrecht/form-field-description-css/dist/index.css"));
     }
-
 }

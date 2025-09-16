@@ -7,6 +7,7 @@ import nl.rotterdam.design_system.wicket.components.form_field_description.utrec
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxContainerBehavior;
 import org.apache.wicket.Component;
+import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.basic.Label;
@@ -16,7 +17,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_INVALID_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
 
@@ -26,8 +27,6 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
     private String inputType;
     private final Component label;
     public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
-    public static final String TEXTBOX_CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
-    public static final String TEXTBOX_DISABLED_CLASSNAME = "utrecht-textbox--disabled";
 
     public UtrechtFormFieldTextbox(String id, IModel<T> model, String labelText) {
         this(id, model, Model.of(labelText), null);
@@ -45,9 +44,11 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
         control = new UtrechtTextbox(model, descriptionModel);
         label = createLabel(labelModel);
         descriptionLabel = new Label("description", descriptionModel)
-            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE);
+            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
 
-        errorMessageLabel = UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", control);
+        errorMessageLabel = UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", control)
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
     private Component createLabel(IModel<String> labelModel) {
@@ -142,7 +143,12 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
     }
 
     class UtrechtTextbox extends TextField<T> {
+
+        public static final String CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
+
         public static final String INVALID_CLASSNAME = "utrecht-textbox--invalid";
+
+        public static final String DISABLED_CLASSNAME = "utrecht-textbox--disabled";
 
         private final IModel<String> descriptionModel;
 
@@ -157,8 +163,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
             tag.put(
                 "class",
                 HTMLUtil.className(
-                    UtrechtFormFieldTextbox.TEXTBOX_CLASSNAME,
-                    isDisabled() ? UtrechtFormFieldTextbox.TEXTBOX_DISABLED_CLASSNAME : null,
+                    CLASSNAME,
+                    isDisabled() ? DISABLED_CLASSNAME : null,
                     isInvalid() ? INVALID_CLASSNAME : null
                 )
             );
@@ -182,11 +188,6 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
             if (!Strings.isEmpty(inputType)) {
                 tag.put("type", inputType);
             }
-        }
-
-        protected void onDisabled(final ComponentTag tag) {
-            tag.put("disabled", "disabled");
-            // TODO: Add `CHECKBOX_DISABLED_CLASSNAME` class name
         }
     }
 }
