@@ -26,10 +26,9 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
 
     private final CheckBox inputComponent;
     private final Component descriptionComponent;
-    private final Component errorMessageLabel;
-
+    private final Component errorMessageComponent;
     private static final IModel<String> EMPTY_DESCRIPTION_MODEL = () -> null;
-    private final IModel<String> labelModel;
+    private final Component labelComponent;
 
     public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
         this(id, model, labelModel, EMPTY_DESCRIPTION_MODEL);
@@ -42,13 +41,18 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         IModel<String> descriptionModel
     ) {
         super(id);
-        this.labelModel = labelModel;
 
         inputComponent = createInputComponent(model, descriptionModel);
-
+        labelComponent = createLabelComponent(labelModel);
         descriptionComponent = createDescriptionComponent(descriptionModel);
+        errorMessageComponent = createErrorMessageComponent();
+    }
 
-        errorMessageLabel = createErrorMessageComponent();
+    private Component createLabelComponent(IModel<String> labelModel) {
+        return new WebMarkupContainer("label-container")
+            .add(new LabelAndCheckboxContainer(labelModel))
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
+            .add(AttributeAppender.append("class", "utrecht-form-field__label--checkbox"));
     }
 
     private Component createErrorMessageComponent() {
@@ -94,11 +98,10 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         );
 
         add(
-            new LabelAndCheckboxContainer(labelModel),
+            labelComponent,
             descriptionComponent,
-            errorMessageLabel
+            errorMessageComponent
         );
-
     }
 
     public UtrechtFormFieldCheckbox setRequired(boolean required) {
@@ -114,8 +117,8 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         return descriptionComponent;
     }
 
-    public Component getErrorMessageLabel() {
-        return errorMessageLabel;
+    public Component getErrorMessageComponent() {
+        return errorMessageComponent;
     }
 
     private class UtrechtCheckBox extends CheckBox {
@@ -147,7 +150,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
 
             String ariaDescribedBy = HTMLUtil.idRefs(
                 descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
-                isInvalid() ? errorMessageLabel.getMarkupId() : null
+                isInvalid() ? errorMessageComponent.getMarkupId() : null
             );
 
             // Do not render an empty `aria-describedby` attribute.
