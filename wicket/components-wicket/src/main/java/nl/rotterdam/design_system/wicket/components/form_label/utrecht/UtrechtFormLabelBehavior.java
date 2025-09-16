@@ -1,9 +1,13 @@
 package nl.rotterdam.design_system.wicket.components.form_label.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
+import java.util.List;
+
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 
 public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
 
@@ -27,6 +31,15 @@ public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
     private UtrechtFormLabelBehavior(UtrechtFormLabelType type) {
         super("label", "utrecht-form-label", "utrecht-form-label--" + type.type);
         addHeaderItem(CSS);
+    }
+
+
+    @Override
+    protected List<String> dynamicClassNames(Component component) {
+        if (!component.isEnabledInHierarchy()) {
+            return List.of(FORM_LABEL_STATE_DISABLED_CLASSNAME);
+        }
+        return List.of();
     }
 
 }

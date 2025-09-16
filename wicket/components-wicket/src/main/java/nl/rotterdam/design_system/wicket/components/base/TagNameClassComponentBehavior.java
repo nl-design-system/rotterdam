@@ -3,33 +3,65 @@ package nl.rotterdam.design_system.wicket.components.base;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 
+import java.util.Collection;
+import java.util.List;
+
 public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingBehavior {
 
     private final String expectedTagName;
     private final String[] classNames;
-
 
     public TagNameClassComponentBehavior(String expectedTagName, String... classNames) {
         this.expectedTagName = expectedTagName;
         this.classNames = classNames;
     }
 
-
-    // TODO make read only, provide one way to make it flexible
-    public String[] getClassNames() {
-        return classNames;
-    }
-
-    public void onComponentTag(Component component, ComponentTag tag) {
+    public final void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
         if (!expectedTagName.equals(tag.getName())) {
             throw new RuntimeException("Expected tag name '" + expectedTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
         }
 
-        if (!tag.isClose() && getClassNames().length > 0) {
-            tag.append("class", String.join(" ", this.getClassNames()), " ");
+        if (tag.isClose()) {
+            return;
         }
+
+        List<String> dynamicClassNames = dynamicClassNames(component);
+
+        if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
+            tag.append("class", joinAll(classNames, dynamicClassNames), " ");
+        }
+    }
+
+    /**
+     * Efficient conversion of an array and a collection to a single space-separated string.
+     */
+    private static String joinAll(String[] arr, Collection<String> col) {
+        StringBuilder sb = new StringBuilder();
+
+        for (String s : arr) {
+            if (s != null && !s.isEmpty()) {
+                if (!sb.isEmpty()) sb.append(' ');
+                sb.append(s);
+            }
+        }
+
+        for (String s : col) {
+            if (s != null && !s.isEmpty()) {
+                if (!sb.isEmpty()) sb.append(' ');
+                sb.append(s);
+            }
+        }
+
+        return sb.toString();
+    }
+
+    /**
+     * Add dynamic classes based on the state of the component.
+     */
+    protected List<String> dynamicClassNames(Component component) {
+        return List.of();
     }
 
 }

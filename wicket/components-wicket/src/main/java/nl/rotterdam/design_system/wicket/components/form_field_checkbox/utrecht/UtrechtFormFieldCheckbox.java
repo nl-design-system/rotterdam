@@ -4,7 +4,6 @@ import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import org.apache.wicket.Component;
@@ -25,6 +24,8 @@ import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.Ut
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
+
+    private static final String LABEL_CHECKBOX_CLASSNAME = "utrecht-form-field__label--checkbox";
 
     private final CheckBox inputComponent;
     private final Component descriptionComponent;
@@ -56,7 +57,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer(labelModel))
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
-            .add(AttributeAppender.append("class", "utrecht-form-field__label--checkbox"));
+            .add(AttributeAppender.append("class", LABEL_CHECKBOX_CLASSNAME));
     }
 
     private Component createErrorMessageComponent() {
@@ -91,7 +92,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         tag.put(
             "class",
             HTMLUtil.className(
-                isInvalid() ? UtrechtFormFieldCssClasses.FORM_FIELD_STATE_INVALID_CLASSNAME : null
+                isInvalid() ? FORM_FIELD_STATE_INVALID_CLASSNAME : null
             )
         );
     }
@@ -192,7 +193,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             add(UtrechtFormLabelBehavior.INSTANCE_CHECKBOX);
 
             add(
-                new Label("labelText", labelModel),
+                new Label("label-text", labelModel),
                 inputComponent
             );
         }
@@ -204,7 +205,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             tag.put(
                 "class",
                 HTMLUtil.className(
-                    isEnabledInHierarchy() ? null : FORM_LABEL_STATE_DISABLED_CLASSNAME
+                    inputComponent.isEnabledInHierarchy() ? null : FORM_LABEL_STATE_DISABLED_CLASSNAME
                 )
             );
         }

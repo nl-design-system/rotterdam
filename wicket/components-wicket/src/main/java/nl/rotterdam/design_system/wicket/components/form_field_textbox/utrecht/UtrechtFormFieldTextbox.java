@@ -97,10 +97,6 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         );
     }
 
-    private boolean isDisabled() {
-        return !(isEnabledInHierarchy());
-    }
-
     private boolean isInvalid() {
         return textbox.hasErrorMessage();
     }
@@ -213,7 +209,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
             tag.put(
                 "class",
                 HTMLUtil.className(
-                    isDisabled() ? FORM_LABEL_STATE_DISABLED_CLASSNAME : null
+                    textbox.isEnabledInHierarchy() ? null :  FORM_LABEL_STATE_DISABLED_CLASSNAME
                 )
             );
         }

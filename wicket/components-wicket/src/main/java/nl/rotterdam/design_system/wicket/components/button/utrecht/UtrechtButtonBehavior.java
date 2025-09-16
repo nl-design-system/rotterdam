@@ -7,12 +7,14 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
 public class UtrechtButtonBehavior extends TagNameClassComponentBehavior {
 
+    public static final UtrechtButtonBehavior INSTANCE = new UtrechtButtonBehavior();
+
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         UtrechtButtonBehavior.class,
         "@utrecht/button-css/dist/index.css"
     );
 
-    public UtrechtButtonBehavior() {
+    private UtrechtButtonBehavior() {
         super("button", "utrecht-button", "utrecht-button--html-button");
         addHeaderItem(CSS);
     }
