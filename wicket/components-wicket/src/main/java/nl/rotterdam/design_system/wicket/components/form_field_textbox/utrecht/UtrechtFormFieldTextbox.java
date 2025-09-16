@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
@@ -19,7 +20,7 @@ import org.apache.wicket.util.string.Strings;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 
-public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
+public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
     private final TextField<T> control;
     private final Component descriptionLabel;
@@ -103,18 +104,13 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> {
         return control.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
     }
 
-    // TODO isRequired() should add classes? verify this
-    protected boolean isRequired() {
-        return control.isRequired();
-    }
-
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
         tag.put(
             "class",
             HTMLUtil.className(
-                isInvalid() ? FORM_FIELD_INVALID_CLASSNAME : null
+                isInvalid() ? FORM_FIELD_STATE_INVALID_CLASSNAME : null
             )
         );
     }
