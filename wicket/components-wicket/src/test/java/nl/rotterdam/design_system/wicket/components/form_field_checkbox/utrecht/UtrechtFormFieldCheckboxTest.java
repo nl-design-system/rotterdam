@@ -71,7 +71,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
                       type="checkbox"
                       name="static:component:label:checkbox"
                       id="checkbox-sample"
-                      class="utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-form-field__input utrecht-checkbox--invalid"
+                      class="utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-checkbox--invalid utrecht-form-field__input"
                       aria-describedby="description-label error-message-label"
                       aria-required="true"
                       aria-invalid="true"
@@ -113,7 +113,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
     private void setSubjectUnderTestIds(UtrechtFormFieldCheckbox component) {
         component.setMarkupId("utrecht-checkbox-field");
         component.getControl().setMarkupId("checkbox-sample");
-        component.getDescriptionLabel().setMarkupId("description-label");
+        component.getDescriptionComponent().setMarkupId("description-label");
         component.getErrorMessageLabel().setMarkupId("error-message-label");
     }
 

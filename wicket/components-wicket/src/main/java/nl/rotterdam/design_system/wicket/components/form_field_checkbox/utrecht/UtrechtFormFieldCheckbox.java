@@ -18,19 +18,16 @@ import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
 
-    private final CheckBox control;
-    private final Component descriptionLabel;
+    private final CheckBox inputComponent;
+    private final Component descriptionComponent;
     private final Component errorMessageLabel;
 
-    private static final String CHECKBOX_CUSTOM_CLASSNAME =
-        "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
-    private static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
-    private static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
     private static final IModel<String> EMPTY_DESCRIPTION_MODEL = () -> null;
     private final IModel<String> labelModel;
 
@@ -47,17 +44,32 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         super(id);
         this.labelModel = labelModel;
 
-        control = new UtrechtCheckBox(model, descriptionModel);
-        descriptionLabel = new Label("description", descriptionModel)
+        inputComponent = createInputComponent(model, descriptionModel);
+
+        descriptionComponent = createDescriptionComponent(descriptionModel);
+
+        errorMessageLabel = createErrorMessageComponent();
+    }
+
+    private Component createErrorMessageComponent() {
+        return createErrorMessageLabel("error", inputComponent)
+            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
+    }
+
+    private static Component createDescriptionComponent(IModel<String> descriptionModel) {
+        return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+    }
 
-        errorMessageLabel = createErrorMessageLabel("error", control)
-        .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
+    private CheckBox createInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
+        final CheckBox control = new UtrechtCheckBox(model, descriptionModel);
+        control.add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
+        return control;
     }
 
     protected boolean isInvalid() {
-        return control.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
+        return inputComponent.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
     }
 
     @Override
@@ -83,23 +95,23 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
 
         add(
             new LabelAndCheckboxContainer(labelModel),
-            descriptionLabel,
+            descriptionComponent,
             errorMessageLabel
         );
 
     }
 
     public UtrechtFormFieldCheckbox setRequired(boolean required) {
-        control.setRequired(required);
+        inputComponent.setRequired(required);
         return this;
     }
 
     public CheckBox getControl() {
-        return control;
+        return inputComponent;
     }
 
-    public Component getDescriptionLabel() {
-        return descriptionLabel;
+    public Component getDescriptionComponent() {
+        return descriptionComponent;
     }
 
     public Component getErrorMessageLabel() {
@@ -107,6 +119,11 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     }
 
     private class UtrechtCheckBox extends CheckBox {
+
+        private static final String DEFAULT_CLASS_NAMES =
+            "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
+        private static final String DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
+        private static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
 
         private final IModel<String> descriptionModel;
 
@@ -121,19 +138,15 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             super.onComponentTag(tag);
 
             String className = HTMLUtil.className(
-                UtrechtFormFieldCheckbox.CHECKBOX_CUSTOM_CLASSNAME,
-                UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME,
-                isEnabledInHierarchy() ? null : UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME,
-                isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
+                DEFAULT_CLASS_NAMES,
+                isEnabledInHierarchy() ? null : DISABLED_CLASSNAME,
+                isInvalid() ? INVALID_CLASSNAME : null
             );
 
-            tag.put(
-                "class",
-                className
-            );
+            tag.put("class",  className);
 
             String ariaDescribedBy = HTMLUtil.idRefs(
-                descriptionModel.getObject() != null ? descriptionLabel.getMarkupId() : null,
+                descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
                 isInvalid() ? errorMessageLabel.getMarkupId() : null
             );
 
@@ -168,14 +181,14 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
 
             add(
                 new Label("labelText", labelModel),
-                control
+                inputComponent
             );
         }
 
         @Override
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
-            tag.put("for", control.getMarkupId());
+            tag.put("for", inputComponent.getMarkupId());
             tag.put(
                 "class",
                 HTMLUtil.className(
