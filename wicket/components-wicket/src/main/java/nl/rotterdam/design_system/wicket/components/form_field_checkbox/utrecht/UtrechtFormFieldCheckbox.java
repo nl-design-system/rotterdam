@@ -9,7 +9,6 @@ import nl.rotterdam.design_system.wicket.components.form_field_description.utrec
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
-import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -73,7 +72,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     }
 
     protected boolean isInvalid() {
-        return inputComponent.getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
+        return inputComponent.hasErrorMessage();
     }
 
     @Override
@@ -143,14 +142,14 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             String className = HTMLUtil.className(
                 DEFAULT_CLASS_NAMES,
                 isEnabledInHierarchy() ? null : DISABLED_CLASSNAME,
-                isInvalid() ? INVALID_CLASSNAME : null
+                hasErrorMessage() ? INVALID_CLASSNAME : null
             );
 
             tag.put("class",  className);
 
             String ariaDescribedBy = HTMLUtil.idRefs(
                 descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
-                isInvalid() ? errorMessageComponent.getMarkupId() : null
+                hasErrorMessage() ? errorMessageComponent.getMarkupId() : null
             );
 
             // Do not render an empty `aria-describedby` attribute.
@@ -161,7 +160,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             if (isRequired()) {
                 tag.put("aria-required", "true");
             }
-            if (isInvalid()) {
+            if (hasErrorMessage()) {
                 tag.put("aria-invalid", "true");
             }
         }

@@ -9,7 +9,6 @@ import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxContainerBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
-import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -98,8 +97,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return !(isEnabledInHierarchy());
     }
 
-    protected boolean isInvalid() {
-        return getTextField().getFeedbackMessages().hasMessage(FeedbackMessage.ERROR);
+    private boolean isInvalid() {
+        return textbox.hasErrorMessage();
     }
 
     @Override
@@ -136,14 +135,6 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return errorMessageComponent;
     }
 
-    public Component getLabelComponent() {
-        return labelComponent;
-    }
-
-    public Component getInputComponent() {
-        return inputComponent;
-    }
-
     class UtrechtTextbox extends TextField<T> {
 
         public static final String CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
@@ -166,8 +157,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
                 "class",
                 HTMLUtil.className(
                     CLASSNAME,
-                    isDisabled() ? DISABLED_CLASSNAME : null,
-                    isInvalid() ? INVALID_CLASSNAME : null
+                    isEnabledInHierarchy() ? null :  DISABLED_CLASSNAME,
+                    hasErrorMessage() ? INVALID_CLASSNAME : null
                 )
             );
 
