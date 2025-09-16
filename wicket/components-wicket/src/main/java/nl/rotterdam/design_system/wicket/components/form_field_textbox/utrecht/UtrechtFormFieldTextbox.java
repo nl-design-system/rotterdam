@@ -26,7 +26,6 @@ import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
     private String inputType = "text";
-
     private final Component labelComponent;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
@@ -132,12 +131,24 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return this;
     }
 
+    @Override
     public Component getDescriptionComponent() {
         return descriptionComponent;
     }
 
+    @Override
     public Component getErrorMessageComponent() {
         return errorMessageComponent;
+    }
+
+    @Override
+    public Component getInputComponent() {
+        return inputComponent;
+    }
+
+    @Override
+    public Component getLabelComponent() {
+        return labelComponent;
     }
 
     class UtrechtTextbox extends TextField<T> {

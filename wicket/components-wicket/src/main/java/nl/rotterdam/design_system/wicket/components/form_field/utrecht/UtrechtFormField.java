@@ -1,5 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
 
+import org.apache.wicket.Component;
+
 /**
  * A container for Utrecht form field elements.
  * <p><a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field--docs">Read more</a>
@@ -42,5 +44,13 @@ package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
  *
  */
 public interface UtrechtFormField {
+
+    Component getDescriptionComponent();
+
+    Component getErrorMessageComponent();
+
+    Component getLabelComponent();
+
+    Component getInputComponent();
 
 }

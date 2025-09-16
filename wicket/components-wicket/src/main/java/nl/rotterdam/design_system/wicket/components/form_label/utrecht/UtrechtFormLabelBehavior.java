@@ -8,6 +8,7 @@ import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.UTRECHT_FORM_LABEL;
 
 public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
 
@@ -29,7 +30,7 @@ public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior {
     }
 
     private UtrechtFormLabelBehavior(UtrechtFormLabelType type) {
-        super("label", "utrecht-form-label", "utrecht-form-label--" + type.type);
+        super("label", UTRECHT_FORM_LABEL, type.fullClassName);
         addHeaderItem(CSS);
     }
 

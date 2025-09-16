@@ -53,6 +53,8 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         String actualRenderedMarkup = renderComponentInTestPanel(component);
 
+        verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
+
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
     }
 
@@ -72,7 +74,8 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         String actualRenderedMarkup = renderComponentInTestPanel(component);
 
-        System.out.println("Actual rendered markup:\n" + actualRenderedMarkup);
+        verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
+
         TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "utrecht-textbox-field");
 
         assertThat(fieldTag.getAttribute("class"))

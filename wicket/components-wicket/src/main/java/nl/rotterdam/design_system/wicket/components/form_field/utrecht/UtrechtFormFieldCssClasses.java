@@ -1,6 +1,8 @@
 package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
 
 public class UtrechtFormFieldCssClasses {
+
+    public static final String UTRECHT_FORM_FIELD_CLASSNAME = "utrecht-form-field";
     public static final String FORM_FIELD_STATE_INVALID_CLASSNAME = "utrecht-form-field--invalid";
     public static final String FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME = "utrecht-form-field__input";
     public static final String FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME = "utrecht-form-field__description";

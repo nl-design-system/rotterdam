@@ -123,12 +123,24 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         return inputComponent;
     }
 
+    @Override
     public Component getDescriptionComponent() {
         return descriptionComponent;
     }
 
+    @Override
+    public Component getLabelComponent() {
+        return labelComponent;
+    }
+
+    @Override
     public Component getErrorMessageComponent() {
         return errorMessageComponent;
+    }
+
+    @Override
+    public CheckBox getInputComponent() {
+        return inputComponent;
     }
 
     private class UtrechtCheckBox extends CheckBox {
