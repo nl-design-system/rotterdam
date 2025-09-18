@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from '@utrecht/component-library-react/dist/css-module';
-import readme from './button.md?raw';
+import readme from './checkbox.md?raw';
 
 const meta = {
   id: 'css-utrecht-checkbox',
@@ -10,7 +10,6 @@ const meta = {
   argTypes: {
     defaultValue: {
       name: 'Content',
-      defaultValue: '',
       type: {
         name: 'string',
         required: true,
