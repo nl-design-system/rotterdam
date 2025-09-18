@@ -21,12 +21,12 @@ import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
+import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxClassNames.UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
 
-    private static final String LABEL_CHECKBOX_CLASSNAME = "utrecht-form-field__label--checkbox";
     private final UtrechtCheckbox inputComponent;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
@@ -68,7 +68,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer(labelModel))
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
-            .add(AttributeAppender.append("class", LABEL_CHECKBOX_CLASSNAME));
+            .add(AttributeAppender.append("class", UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME));
     }
 
     private Component createErrorMessageComponent() {
