@@ -203,6 +203,7 @@ public class MarkdownDocumentationExamplesGenerator {
         });
 
         Files.write(markdownReadmeFile.toPath(), lines);
+        System.out.println("Written to file: " + markdownReadmeFile.getAbsolutePath());
     }
 
     private String convertToMarkdown(String html) {

@@ -6,7 +6,7 @@ import org.apache.wicket.markup.ComponentTag;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingBehavior {
+public abstract class TagNameClassComponentBehavior<T extends Component> extends HeaderItemRenderingBehavior {
 
     private final String expectedTagName;
     private final String[] classNames;
@@ -27,7 +27,7 @@ public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingB
             return;
         }
 
-        List<String> dynamicClassNames = dynamicClassNames(component);
+        List<String> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
 
         if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
             tag.append("class", joinAll(classNames, dynamicClassNames), " ");
@@ -60,7 +60,7 @@ public abstract class TagNameClassComponentBehavior extends HeaderItemRenderingB
     /**
      * Add dynamic classes based on the state of the component.
      */
-    protected List<String> dynamicClassNames(Component component) {
+    protected List<String> customizeComponentAndReturnClasses(T component, ComponentTag tag) {
         return List.of();
     }
 

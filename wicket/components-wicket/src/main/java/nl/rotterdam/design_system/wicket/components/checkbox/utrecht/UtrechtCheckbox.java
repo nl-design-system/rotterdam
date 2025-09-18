@@ -9,12 +9,14 @@ import org.jspecify.annotations.Nullable;
 
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 
-public class UtrechtCheckBox extends CheckBox {
-
-    private static final String DEFAULT_CLASS_NAMES =
-        "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
-    private static final String DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
-    private static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
+/**
+ * Implementation of <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox</a>.
+ *
+ * <p>Based on <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-checkbox--docs">
+ *     implementation of Utrecht
+ *  </a></p>
+ */
+public class UtrechtCheckbox extends CheckBox {
 
     private final IModel<String> descriptionModel;
 
@@ -24,11 +26,11 @@ public class UtrechtCheckBox extends CheckBox {
     @Nullable
     private final Component errorMessageComponent;
 
-    public UtrechtCheckBox(String id, IModel<Boolean> model) {
+    public UtrechtCheckbox(String id, IModel<Boolean> model) {
         this(id, model, EMPTY_STRING_MODEL, null, null);
     }
 
-    public UtrechtCheckBox(String id, IModel<Boolean> model,
+    public UtrechtCheckbox(String id, IModel<Boolean> model,
                            IModel<String> descriptionModel,
                            @Nullable Component descriptionComponent,
                            @Nullable Component errorMessageComponent) {
@@ -40,16 +42,14 @@ public class UtrechtCheckBox extends CheckBox {
     }
 
     @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(UtrechtCheckboxBehavior.INSTANCE);
+    }
+
+    @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
-
-        String className = HTMLUtil.className(
-            DEFAULT_CLASS_NAMES,
-            isEnabledInHierarchy() ? null : DISABLED_CLASSNAME,
-            hasErrorMessage() ? INVALID_CLASSNAME : null
-        );
-
-        tag.put("class", className);
 
         String ariaDescribedBy = HTMLUtil.idRefs(
             descriptionComponent != null && descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
@@ -61,11 +61,5 @@ public class UtrechtCheckBox extends CheckBox {
             tag.put("aria-describedby", ariaDescribedBy);
         }
 
-        if (isRequired()) {
-            tag.put("aria-required", "true");
-        }
-        if (hasErrorMessage()) {
-            tag.put("aria-invalid", "true");
-        }
     }
 }

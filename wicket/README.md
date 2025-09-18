@@ -44,7 +44,7 @@ docker compose up --build --remove-orphans
 
 Open de server op [localhost:8080](http://localhost:8080/).
 
-## Learning more about Apache Wicket
+## Meer leren over Wicket
 
 - [Wicket 10.x Reference Guide](https://nightlies.apache.org/wicket/guide/10.x/single.html)
 

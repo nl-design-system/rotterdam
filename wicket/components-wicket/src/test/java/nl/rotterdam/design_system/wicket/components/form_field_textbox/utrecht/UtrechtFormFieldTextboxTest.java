@@ -51,7 +51,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = renderComponentInTestPanel(component);
+        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
 
@@ -72,7 +72,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         component.getTextField().error("Verwijder de emoji-tekens uit de naam");
 
-        String actualRenderedMarkup = renderComponentInTestPanel(component);
+        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
 

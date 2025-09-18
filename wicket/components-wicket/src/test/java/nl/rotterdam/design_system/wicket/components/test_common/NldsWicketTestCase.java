@@ -1,14 +1,11 @@
 package nl.rotterdam.design_system.wicket.components.test_common;
 
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses;
-import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses;
 import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTestCase;
-import org.assertj.core.api.Assertions;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -39,8 +36,8 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         // TODO there is more to validate here.
     }
 
-    protected static String renderComponentInTestPanel(Component component) {
-        return ComponentRenderer.renderComponent(new FormComponentTestPanel(component)).toString();
+    protected static String renderFormFieldComponentInTestPanel(UtrechtFormField component) {
+        return ComponentRenderer.renderComponent(new FormComponentTestPanel((Component) component)).toString();
     }
 
     protected static String formatTidy(String htmlWithOneContainerElement) {

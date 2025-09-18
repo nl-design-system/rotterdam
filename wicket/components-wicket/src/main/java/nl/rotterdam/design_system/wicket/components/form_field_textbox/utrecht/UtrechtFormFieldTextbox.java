@@ -6,7 +6,7 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
-import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxContainerBehavior;
+import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxFormFieldBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.ComponentTag;
@@ -84,7 +84,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
 
         add(
             UtrechtFormFieldContainerBehavior.INSTANCE,
-            UtrechtTextboxContainerBehavior.INSTANCE
+            UtrechtTextboxFormFieldBehavior.INSTANCE
         );
 
         // Add all components

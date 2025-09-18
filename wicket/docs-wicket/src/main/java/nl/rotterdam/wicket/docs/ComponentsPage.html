@@ -1,8 +1,11 @@
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<head><title>whatever</title></head>
+<body>
 <wicket:extend>
   <div style="margin-inline: auto; max-width: 40em">
     <div class="theme-container">
       <label
-        >Selecteer thema
+      >Selecteer thema
         <select id="activeTheme" wicket:id="activeTheme">
           <option value="voorbeeld-gemeente">Voorbeeld gemeente</option>
         </select>
@@ -27,6 +30,7 @@
     <wicket:container wicket:id="buttonGroupExamplesPanel"></wicket:container>
     <wicket:container wicket:id="codeBlockExamplesPanel"></wicket:container>
     <wicket:container wicket:id="columnLayoutExamplesPanel"></wicket:container>
+    <wicket:container wicket:id="checkboxExamplesPanel"></wicket:container>
     <wicket:container wicket:id="formFieldCheckboxExamplesPanel"></wicket:container>
     <wicket:container wicket:id="formFieldLabelExamplesPanel"></wicket:container>
     <wicket:container wicket:id="formFieldTextboxExamplesPanel"></wicket:container>
@@ -53,3 +57,6 @@
     <p><a href="#" wicket:id="refreshStatefulPageLink">Link to trigger Wicket stateful page refresh</a></p>
   </div>
 </wicket:extend>
+
+</body>
+</html>

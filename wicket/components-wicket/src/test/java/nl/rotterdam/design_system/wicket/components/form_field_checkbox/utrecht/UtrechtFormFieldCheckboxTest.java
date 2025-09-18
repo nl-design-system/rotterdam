@@ -29,7 +29,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
                 type="checkbox"
                 name="static:component:label-container:label:checkbox"
                 id="checkbox-sample"
-                class="utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-form-field__input"
+                class="utrecht-form-field__input utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom"
               />
               Ik ga akkoord met de algemene voorwaarden
             </label>
@@ -45,7 +45,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = renderComponentInTestPanel(component);
+        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
 
@@ -73,8 +73,8 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
                       type="checkbox"
                       name="static:component:label-container:label:checkbox"
                       id="checkbox-sample"
-                      class="utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-checkbox--invalid utrecht-form-field__input"
                       aria-describedby="description-label error-message-label"
+                      class="utrecht-form-field__input utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom utrecht-checkbox--invalid"
                       aria-required="true"
                       aria-invalid="true"
                     />
@@ -107,7 +107,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-         String actualRenderedMarkup = renderComponentInTestPanel(component);
+        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
 

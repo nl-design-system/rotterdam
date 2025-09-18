@@ -1,7 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckBox;
+import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
@@ -27,7 +27,7 @@ import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
 
     private static final String LABEL_CHECKBOX_CLASSNAME = "utrecht-form-field__label--checkbox";
-    private final UtrechtCheckBox inputComponent;
+    private final UtrechtCheckbox inputComponent;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
     private final Component labelComponent;
@@ -82,8 +82,8 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
     }
 
-    private UtrechtCheckBox createInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
-        final UtrechtCheckBox control = new UtrechtCheckBox("checkbox", model, descriptionModel, descriptionComponent, errorMessageComponent);
+    private UtrechtCheckbox createInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
+        final UtrechtCheckbox control = new UtrechtCheckbox("checkbox", model, descriptionModel, descriptionComponent, errorMessageComponent);
         control.add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
         return control;
     }
