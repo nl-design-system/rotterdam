@@ -20,4 +20,10 @@ public class UtrechtFormFieldErrorMessageFactory {
             .setOutputMarkupId(true)
             .add(UtrechtFormFieldErrorMessageBehavior.INSTANCE);
     }
+
+    public static Component createErrorMessageLabel(String id) {
+        return new Label(id)
+            .setOutputMarkupId(true)
+            .add(UtrechtFormFieldErrorMessageBehavior.INSTANCE);
+    }
 }

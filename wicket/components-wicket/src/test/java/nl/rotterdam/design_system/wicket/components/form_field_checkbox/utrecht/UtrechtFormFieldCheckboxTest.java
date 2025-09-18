@@ -107,10 +107,9 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = renderComponentInTestPanel(component);
+         String actualRenderedMarkup = renderComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
-
 
         assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
     }
