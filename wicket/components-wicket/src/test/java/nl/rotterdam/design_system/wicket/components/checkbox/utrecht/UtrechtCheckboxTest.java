@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.checkbox.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
+import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
 import org.junit.jupiter.api.Test;
@@ -12,9 +13,9 @@ class UtrechtCheckboxTest extends NldsWicketTestCase {
     @Test
     void renders() {
 
-        UtrechtCheckbox checkbox = new UtrechtCheckbox("checkbox", () -> false);
-        checkbox.setMarkup(Markup.of("<input type='checkbox' wicket:id='checkbox'/>"));
-        checkbox.setMarkupId("checkbox");
+        Component checkbox = new UtrechtCheckbox("checkbox", () -> false)
+            .setMarkup(Markup.of("<input type='checkbox' wicket:id='checkbox'/>"))
+            .setMarkupId("checkbox");
 
         // language=HTML
         String expectedOutput = """
