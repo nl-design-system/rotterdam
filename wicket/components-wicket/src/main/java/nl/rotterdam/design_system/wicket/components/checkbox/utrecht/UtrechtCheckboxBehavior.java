@@ -27,10 +27,10 @@ public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<Check
     @Override
     protected List<String> customizeComponentAndReturnClasses(CheckBox component, ComponentTag tag) {
 
-        List<String> clasNames = new ArrayList<>();
+        List<String> classNames = new ArrayList<>();
 
         if (!component.isEnabledInHierarchy()) {
-            clasNames.add(DISABLED_CLASSNAME);
+            classNames.add(DISABLED_CLASSNAME);
             tag.put("disabled", "");
         }
 
@@ -39,10 +39,10 @@ public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<Check
         }
 
         if (component.hasErrorMessage()) {
-            clasNames.add(INVALID_CLASSNAME);
+            classNames.add(INVALID_CLASSNAME);
             tag.put("aria-invalid", "true");
         }
 
-        return clasNames;
+        return classNames;
     }
 }
