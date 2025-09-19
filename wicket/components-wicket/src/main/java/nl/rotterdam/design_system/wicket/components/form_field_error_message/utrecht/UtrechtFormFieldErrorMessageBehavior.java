@@ -6,7 +6,7 @@ import org.apache.wicket.Component;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class UtrechtFormFieldErrorMessageBehavior extends TagNameClassComponentBehavior {
+public class UtrechtFormFieldErrorMessageBehavior extends TagNameClassComponentBehavior<Component> {
 
     public static final UtrechtFormFieldErrorMessageBehavior INSTANCE = new UtrechtFormFieldErrorMessageBehavior();
 

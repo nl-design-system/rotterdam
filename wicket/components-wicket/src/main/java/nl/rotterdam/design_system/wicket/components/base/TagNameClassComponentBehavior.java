@@ -11,7 +11,7 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
     private final String requiredTagName;
     private final String[] classNames;
 
-    public TagNameClassComponentBehavior(String requiredTagName, String... classNames) {
+    protected TagNameClassComponentBehavior(String requiredTagName, String... classNames) {
         this.requiredTagName = requiredTagName;
         this.classNames = classNames;
     }

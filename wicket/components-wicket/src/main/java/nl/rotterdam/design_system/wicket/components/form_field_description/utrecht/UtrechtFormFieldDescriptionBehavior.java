@@ -5,7 +5,7 @@ import org.apache.wicket.Component;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class UtrechtFormFieldDescriptionBehavior extends TagNameClassComponentBehavior {
+public class UtrechtFormFieldDescriptionBehavior extends TagNameClassComponentBehavior<Component> {
 
     public static final UtrechtFormFieldDescriptionBehavior INSTANCE = new UtrechtFormFieldDescriptionBehavior();
 
