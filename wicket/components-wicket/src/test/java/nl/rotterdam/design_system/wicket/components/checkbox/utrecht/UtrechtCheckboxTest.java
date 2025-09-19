@@ -6,19 +6,17 @@ import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class UtrechtCheckboxTest extends NldsWicketTestCase {
 
     @Test
-    void renders() {
+    void renderMinimal() {
 
         Component checkbox = new UtrechtCheckbox("checkbox", () -> false)
             .setMarkup(Markup.of("<input type='checkbox' wicket:id='checkbox'/>"))
             .setMarkupId("checkbox");
 
         // language=HTML
-        String expectedOutput = """
+        String expectedHtmlFragment = """
             <input
                 type="checkbox"
                 name="checkbox"
@@ -27,9 +25,10 @@ class UtrechtCheckboxTest extends NldsWicketTestCase {
             />
             """;
 
-        String actualOutput = ComponentRenderer.renderComponent(checkbox).toString();
+        String actualHtmlFragment = ComponentRenderer.renderComponent(checkbox).toString();
 
-        assertEquals(formatTidy(expectedOutput), formatTidy(actualOutput));
-
+        assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
+
+
 }

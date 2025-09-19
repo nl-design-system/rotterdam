@@ -18,7 +18,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
         // - added id attributes; Wicket ajax needs them
         // - set input name the way Wicket needs them.
         // language=HTML
-        var htmlFromReference = """ 
+        var expectedHtmlFragment = """ 
         <div id="utrecht-checkbox-field" class="utrecht-form-field utrecht-form-field--checkbox">
           <p class="utrecht-form-field__label utrecht-form-field__label--checkbox">
             <label
@@ -45,11 +45,11 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
+        String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
+        verifyUtrechtFormFieldContract(component, actualHtmlFragment);
 
-        assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
+        assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
     @Test
@@ -61,7 +61,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
         // - added id attributes; Wicket ajax needs them
         // - set input name the way Wicket needs them.
         // language=HTML
-        var htmlFromReference = """ 
+        var expectedHtmlFragment = """ 
 
             <div id="utrecht-checkbox-field" class="utrecht-form-field--invalid utrecht-form-field utrecht-form-field--checkbox">
                 <p class="utrecht-form-field__label utrecht-form-field__label--checkbox">
@@ -107,11 +107,11 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
+        String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
+        verifyUtrechtFormFieldContract(component, actualHtmlFragment);
 
-        assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
+        assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
     private void setSubjectUnderTestIds(UtrechtFormFieldCheckbox component) {

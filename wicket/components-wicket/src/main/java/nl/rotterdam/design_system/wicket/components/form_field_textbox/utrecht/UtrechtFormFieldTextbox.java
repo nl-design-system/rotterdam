@@ -2,11 +2,11 @@ package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldContainerBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
-import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxFormFieldBehavior;
+import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextbox;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.ComponentTag;
@@ -30,7 +30,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
     private final Component inputComponent;
-    private final UtrechtTextbox textbox;
+    private final FormFieldTextbox textbox;
 
     public UtrechtFormFieldTextbox(String id, IModel<T> model, IModel<String> labelText) {
         this(id, model, labelText, EMPTY_STRING_MODEL);
@@ -46,7 +46,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         requireNonNull(labelModel);
         requireNonNull(descriptionModel);
 
-        textbox = new UtrechtTextbox(model, descriptionModel);
+        textbox = new FormFieldTextbox(model, descriptionModel);
         // Create the text input
         labelComponent = newLabelComponent(labelModel);
         descriptionComponent = newDescriptionComponent(descriptionModel);
@@ -83,8 +83,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         setOutputMarkupId(true);
 
         add(
-            UtrechtFormFieldContainerBehavior.INSTANCE,
-            UtrechtTextboxFormFieldBehavior.INSTANCE
+            UtrechtFormFieldBehavior.INSTANCE,
+            UtrechtFormFieldTextboxBehavior.INSTANCE
         );
 
         add(
@@ -143,17 +143,11 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return labelComponent;
     }
 
-    class UtrechtTextbox extends TextField<T> {
-
-        public static final String CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
-
-        public static final String INVALID_CLASSNAME = "utrecht-textbox--invalid";
-
-        public static final String DISABLED_CLASSNAME = "utrecht-textbox--disabled";
+    class FormFieldTextbox extends UtrechtTextbox<T> {
 
         private final IModel<String> descriptionModel;
 
-        public UtrechtTextbox(IModel<T> model, IModel<String> descriptionModel) {
+        public FormFieldTextbox(IModel<T> model, IModel<String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }
@@ -161,17 +155,9 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         @Override
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
-            tag.put(
-                "class",
-                HTMLUtil.className(
-                    CLASSNAME,
-                    isEnabledInHierarchy() ? null :  DISABLED_CLASSNAME,
-                    hasErrorMessage() ? INVALID_CLASSNAME : null
-                )
-            );
 
             String ariaDescribedBy = HTMLUtil.idRefs(
-                descriptionModel != null && descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
+                 descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
                 isInvalid() ? errorMessageComponent.getMarkupId() : null
             );
 
@@ -180,12 +166,6 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
                 tag.put("aria-describedby", ariaDescribedBy);
             }
 
-            if (isRequired()) {
-                tag.put("aria-required", "true");
-            }
-            if (isInvalid()) {
-                tag.put("aria-invalid", "true");
-            }
             if (!Strings.isEmpty(inputType)) {
                 tag.put("type", inputType);
             }

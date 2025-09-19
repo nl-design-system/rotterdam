@@ -1,13 +1,13 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
+import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxClasses;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_STATE_INVALID_CLASSNAME;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
@@ -19,9 +19,9 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
         // - attribute ordening
         // - added id attributes; Wicket ajax needs them
         // - set input name the way Wicket needs them.
-        // - aria-describedby added, it was missing but I think it is needed.
+        // - aria-describedby added, it was missing, but I think it is needed.
         // language=HTML
-        var htmlFromReference = """
+        var expectedHtmlFragment = """
                   <div id="utrecht-textbox-field" class="utrecht-form-field utrecht-form-field--text">
                     <div class="utrecht-form-field__label">
                       <label
@@ -35,9 +35,9 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
                         value=""
                         name="static:component:input-container:control"
                         id="input-text"
-                        class="utrecht-textbox utrecht-textbox--html-input"
                         aria-describedby="description-label"
                         type="text"
+                        class="utrecht-textbox utrecht-textbox--html-input"
                       />
                     </div>
                   </div>""";
@@ -51,11 +51,11 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
+        String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
+        verifyUtrechtFormFieldContract(component, actualHtmlFragment);
 
-        assertEquals(formatTidy(htmlFromReference), formatTidy(actualRenderedMarkup));
+        assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
     @Test
@@ -83,7 +83,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         TagTester textboxTag = fieldTag.getChild("input");
         assertThat(textboxTag.getAttribute("class"))
-            .contains(UtrechtFormFieldTextbox.UtrechtTextbox.INVALID_CLASSNAME);
+            .contains(UtrechtTextboxClasses.INVALID_CLASSNAME);
     }
 
     private void setSubjectUnderTestIds(UtrechtFormFieldTextbox<?> component) {

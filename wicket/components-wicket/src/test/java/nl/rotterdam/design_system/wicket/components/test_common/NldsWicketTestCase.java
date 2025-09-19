@@ -15,6 +15,7 @@ import java.util.Objects;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.UTRECHT_FORM_FIELD_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.UTRECHT_FORM_LABEL;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class NldsWicketTestCase extends WicketTestCase {
 
@@ -30,7 +31,7 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         TagTester tester = TagTester.createTagByAttribute(actualOutput, "id", utrechtFormField.getMarkupId());
         assertThat(tester.getAttribute("class")).contains(UTRECHT_FORM_FIELD_CLASSNAME);
 
-        // assert label is present, as label has no id yet we just assert full content
+        // assert label is present, as label has no id we just assert full content
         assertThat(actualOutput).contains(UTRECHT_FORM_LABEL);
 
         // TODO there is more to validate here.
@@ -50,7 +51,12 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         return renderedElement.toString();
     }
 
-
-
+    /**
+     * Asserts that two HTML fragments are the same, ignoring differences in formatting and whitespace.
+     */
+    protected static void assertHtmlFragmentSame(String expectedHtmlFragment, String actualHtmlFragment) {
+        // TODO: ignore attribute order, css class order
+        assertEquals(formatTidy(expectedHtmlFragment), formatTidy(actualHtmlFragment));
+    }
 
 }
