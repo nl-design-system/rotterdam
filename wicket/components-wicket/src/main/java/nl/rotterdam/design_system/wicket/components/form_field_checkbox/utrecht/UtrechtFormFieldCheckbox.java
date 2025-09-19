@@ -50,6 +50,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         descriptionComponent = newDescriptionComponent(descriptionModel);
         errorMessageComponent = newErrorMessageComponent();
         inputComponent = newInputComponent(model, descriptionModel);
+        inputComponent.setLabel(labelModel);
         bindErrorMessageModelToInputComponentFeedbackMessages();
         labelComponent = newLabelComponent(labelModel);
     }
@@ -169,10 +170,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
 
             add(UtrechtFormLabelBehavior.INSTANCE_CHECKBOX);
 
-            add(
-                new Label("label-text", labelModel),
-                inputComponent
-            );
+            add(inputComponent);
         }
 
         @Override
