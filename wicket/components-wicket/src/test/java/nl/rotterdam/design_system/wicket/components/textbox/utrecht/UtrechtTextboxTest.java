@@ -4,7 +4,10 @@ import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCa
 import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
+import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class UtrechtTextboxTest extends NldsWicketTestCase {
 
@@ -17,7 +20,7 @@ class UtrechtTextboxTest extends NldsWicketTestCase {
         // language=HTML
         String expectedHtmlFragment = """
             <input value="Carola"
-              name="control"
+              name="firstName"
               id="firstName"
               class="utrecht-textbox utrecht-textbox--html-input">
             """;
@@ -27,4 +30,22 @@ class UtrechtTextboxTest extends NldsWicketTestCase {
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
+    @Test
+    void renderInvalid() {
+
+        Component firstNameInput = new UtrechtTextbox<>("firstName", () -> "Carola")
+            .setMarkup(Markup.of("<input wicket:id='firstName'/>"))
+            .setMarkupId("firstName");
+
+        firstNameInput.error("We moeten weten hoe je heet");
+
+        // language=HTML
+        String actualHtmlFragment = ComponentRenderer.renderComponent(firstNameInput).toString();
+
+        TagTester fieldTag = TagTester.createTagByName(actualHtmlFragment, "input");
+
+        assertThat(fieldTag.getAttribute("class"))
+            .contains(UtrechtTextboxClasses.INVALID_CLASSNAME);
+
+    }
 }

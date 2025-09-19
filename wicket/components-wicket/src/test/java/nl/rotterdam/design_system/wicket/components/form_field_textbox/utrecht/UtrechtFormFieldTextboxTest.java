@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
-import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxClasses;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
@@ -80,10 +79,6 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         assertThat(fieldTag.getAttribute("class"))
             .contains(FORM_FIELD_STATE_INVALID_CLASSNAME);
-
-        TagTester textboxTag = fieldTag.getChild("input");
-        assertThat(textboxTag.getAttribute("class"))
-            .contains(UtrechtTextboxClasses.INVALID_CLASSNAME);
     }
 
     private void setSubjectUnderTestIds(UtrechtFormFieldTextbox<?> component) {
