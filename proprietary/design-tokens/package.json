@@ -18,7 +18,6 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
-    "prebuild": "npm run clean",
     "build": "npm-run-all --sequential build:style-dictionary build:scss",
     "build:scss": "rollup -c rollup.config.mjs",
     "build:style-dictionary": "node ./style-dictionary.mjs",
