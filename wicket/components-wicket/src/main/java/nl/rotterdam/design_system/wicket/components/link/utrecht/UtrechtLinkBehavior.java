@@ -4,8 +4,9 @@ import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderIte
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
+import org.apache.wicket.markup.html.link.AbstractLink;
 
-public class UtrechtLinkBehavior extends TagNameClassComponentBehavior {
+public class UtrechtLinkBehavior extends TagNameClassComponentBehavior<AbstractLink> {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         UtrechtLinkBehavior.class,

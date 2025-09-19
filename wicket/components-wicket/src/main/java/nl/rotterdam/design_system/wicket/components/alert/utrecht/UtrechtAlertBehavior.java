@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.alert.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
@@ -8,7 +9,7 @@ import java.util.Map;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class UtrechtAlertBehavior extends TagNameClassComponentBehavior {
+public class UtrechtAlertBehavior extends TagNameClassComponentBehavior<Component> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(UtrechtAlertBehavior.class, "@utrecht/alert-css/dist/index.css");
 

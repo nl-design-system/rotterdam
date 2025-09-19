@@ -4,6 +4,7 @@ import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModul
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
 import java.io.File;
@@ -11,8 +12,10 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
@@ -90,18 +93,12 @@ public class MarkdownDocumentationExamplesGenerator {
         }
     }
 
-    private static String removeSemicolon(String statement) {
-        if (!statement.endsWith(";")) {
-            return statement;
-        }
-
-        return statement.substring(0, statement.length() - 1);
-    }
-
     private static String extractJavaCode(MethodDeclaration x) {
-        String temp = x.getBody().orElseThrow().toString().replaceFirst("return", "").replaceFirst("\\{", "");
-        temp = temp.substring(0, temp.lastIndexOf("}"));
-        return temp.trim();
+        return x.clone()
+            .setName("createComponent")
+            .setStatic(false)
+            .setAnnotations(new NodeList<>())
+            .toString();
     }
 
     public void generate() {
@@ -203,6 +200,7 @@ public class MarkdownDocumentationExamplesGenerator {
         });
 
         Files.write(markdownReadmeFile.toPath(), lines);
+        System.out.println("Written to file: " + markdownReadmeFile.getAbsolutePath());
     }
 
     private String convertToMarkdown(String html) {
@@ -210,6 +208,13 @@ public class MarkdownDocumentationExamplesGenerator {
     }
 
     private String wrapInDemoJavaPanelWithOnInitialize(String statement) {
+
+        String formattedStatement = Arrays.stream(statement
+                .split(System.lineSeparator())
+            ).map(s -> "    " + s)
+            .collect(Collectors.joining(System.lineSeparator()));
+
+
         return String.format(
             """
             public class ExamplePanel extends Panel {
@@ -221,10 +226,13 @@ public class MarkdownDocumentationExamplesGenerator {
                 @Override
                 protected void onInitialize() {
                     super.onInitialize();
-                    add(%s);
+                    add(createComponent());
                 }
+               \s
+            %s
+            
             }""",
-            removeSemicolon(statement)
+            formattedStatement
         );
     }
 

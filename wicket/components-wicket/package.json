@@ -21,6 +21,7 @@
   "devDependencies": {
     "@gemeente-denhaag/sidenav": "2.0.0",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
+    "@gemeente-rotterdam/design-tokens": "workspace:*",
     "@nl-design-system-candidate/paragraph-css": "2.1.1",
     "@nl-design-system-unstable/voorbeeld-design-tokens": "3.3.4",
     "@utrecht/alert-css": "2.4.0",
@@ -37,6 +38,7 @@
     "@utrecht/form-field-css": "1.5.1",
     "@utrecht/form-field-description-css": "1.5.1",
     "@utrecht/form-field-error-message-css": "1.5.1",
+    "@utrecht/form-label-css": "1.6.1",
     "@utrecht/heading-1-css": "1.5.1",
     "@utrecht/heading-2-css": "1.5.1",
     "@utrecht/heading-3-css": "1.5.1",

@@ -1,27 +1,48 @@
 package nl.rotterdam.design_system.wicket.components.checkbox.utrecht;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
+import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.form.CheckBox;
 
-public class UtrechtCheckboxBehavior extends Behavior {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(UtrechtCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.css")
-    );
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxClassNames.*;
 
-    public static final CssReferenceHeaderItem CSS2 = CssHeaderItem.forReference(
-        new CssResourceReference(UtrechtCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.css")
-    );
+/**
+ * Applies NL Design System checkbox styles to a Wicket CheckBox component.
+ *
+ * <p>Some characteristics are not taken into account, so to be fully compliant use {@link UtrechtCheckbox}.</p>
+ */
+public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
+
+    public static final UtrechtCheckboxBehavior INSTANCE = new UtrechtCheckboxBehavior();
+    private UtrechtCheckboxBehavior() {
+        super("input", DEFAULT_CLASS_NAMES);
+        addHeaderItem(cssReferenceHeaderItem(UtrechtCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(UtrechtCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.css"));
+    }
 
     @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
+    protected List<String> customizeComponentAndReturnClasses(CheckBox component, ComponentTag tag) {
 
-        response.render(CSS);
-        response.render(CSS2);
+        List<String> classNames = new ArrayList<>();
+
+        if (!component.isEnabledInHierarchy()) {
+            classNames.add(DISABLED_CLASSNAME);
+            tag.put("disabled", "");
+        }
+
+        if (component.isRequired()) {
+            tag.put("aria-required", "true");
+        }
+
+        if (component.hasErrorMessage()) {
+            classNames.add(INVALID_CLASSNAME);
+            tag.put("aria-invalid", "true");
+        }
+
+        return classNames;
     }
 }

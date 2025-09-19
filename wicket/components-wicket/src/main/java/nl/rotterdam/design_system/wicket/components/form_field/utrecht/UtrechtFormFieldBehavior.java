@@ -1,22 +1,17 @@
 package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
 
-public class UtrechtFormFieldBehavior extends Behavior {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.UTRECHT_FORM_FIELD_CLASSNAME;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(UtrechtFormFieldBehavior.class, "@utrecht/form-field-css/dist/index.css")
-    );
+public class UtrechtFormFieldBehavior extends TagNameClassComponentBehavior<Component> {
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
+    public static final UtrechtFormFieldBehavior INSTANCE = new UtrechtFormFieldBehavior();
 
-        response.render(CSS);
+    private UtrechtFormFieldBehavior() {
+        super("div", UTRECHT_FORM_FIELD_CLASSNAME);
+        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldBehavior.class, "@utrecht/form-field-css/dist/index.css"));
     }
 }

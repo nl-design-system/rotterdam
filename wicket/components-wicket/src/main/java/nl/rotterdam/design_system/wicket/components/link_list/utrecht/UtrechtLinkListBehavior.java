@@ -1,11 +1,12 @@
 package nl.rotterdam.design_system.wicket.components.link_list.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class UtrechtLinkListBehavior extends TagNameClassComponentBehavior {
+public class UtrechtLinkListBehavior extends TagNameClassComponentBehavior<Component> {
 
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(

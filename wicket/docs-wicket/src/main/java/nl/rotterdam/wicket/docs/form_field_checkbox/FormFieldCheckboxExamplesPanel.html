@@ -1,23 +1,41 @@
 <!doctype html>
 <html lang="nl" xmlns:wicket="http://wicket.apache.org">
-  <body>
-    <wicket:panel>
-      <section class="stories">
-        <h1>Form Field Checkbox component</h1>
-        <div>
-          <p>Formulierveld om te kiezen tussen "wel" of "niet".</p>
-        </div>
+<head>
+  <title>Checkbox example</title>
+</head>
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Form Field Checkbox component</h1>
+    <div>
+      <p>Formulierveld om te kiezen tussen "wel" of "niet".</p>
+    </div>
 
-        <section data-testid="utrechtFormFieldCheckbox">
-          <h2>Form Field Checkbox</h2>
-          <div>
-            <p>Voorbeeld.</p>
-          </div>
-          <rods-story-canvas
-            ><template> <div wicket:id="utrechtFormFieldCheckbox"></div> </template>
-          </rods-story-canvas>
-        </section>
-      </section>
-    </wicket:panel>
-  </body>
+    <section data-testid="utrechtFormFieldCheckbox">
+      <h2>Form Field Checkbox</h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="utrechtFormFieldCheckbox"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="utrechtFormFieldCheckboxInvalid">
+      <h2>Form Field Checkbox Invalid</h2>
+      <div>
+        <p>Voorbeeld.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <div wicket:id="utrechtFormFieldCheckboxInvalid"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>
+</body>
 </html>
