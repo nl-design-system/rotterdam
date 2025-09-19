@@ -10,6 +10,7 @@ public class UtrechtTextboxFormFieldBehavior extends TagNameClassComponentBehavi
     public static final UtrechtTextboxFormFieldBehavior INSTANCE = new UtrechtTextboxFormFieldBehavior();
 
     private UtrechtTextboxFormFieldBehavior() {
+        // TODO this is incorrect. Style should be loaded on Textbox.
         super("div", "utrecht-form-field--text");
         addHeaderItem(cssReferenceHeaderItem(UtrechtTextboxFormFieldBehavior.class, "@utrecht/textbox-css/dist/index.css"));
     }
