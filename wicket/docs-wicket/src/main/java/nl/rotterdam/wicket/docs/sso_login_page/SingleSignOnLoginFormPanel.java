@@ -30,8 +30,6 @@ public class SingleSignOnLoginFormPanel extends Panel {
                 @Override
                 protected void onInitialize() {
                     super.onInitialize();
-                    UtrechtButtonGroupBorder actionGroup = new UtrechtButtonGroupBorder("actionGroup");
-
                     add(
                         new FeedbackPanel("feedback"),
                         new UtrechtFormFieldTextbox<>("username", username, Model.of("Gebruikersnaam"))
@@ -41,9 +39,9 @@ public class SingleSignOnLoginFormPanel extends Panel {
                             .setInputType("password"),
                         new UtrechtFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij"))
                             .setRequired(true),
-                        actionGroup
+                        new UtrechtButtonGroupBorder("actionGroup")
+                            .add(new UtrechtButton("submit"))
                     );
-                    actionGroup.add(new UtrechtButton("submit"));
                 }
 
                 @Override
