@@ -20,7 +20,7 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
         super.onComponentTag(component, tag);
 
         if (!requiredTagName.equals(tag.getName())) {
-            throw new RuntimeException("Expected tag name '" + requiredTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
+            throw new IllegalStateException("Expected tag name '" + requiredTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
         }
 
         if (tag.isClose()) {
