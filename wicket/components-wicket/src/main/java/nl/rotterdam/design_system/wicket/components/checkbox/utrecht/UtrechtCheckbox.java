@@ -18,26 +18,8 @@ import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.
  */
 public class UtrechtCheckbox extends CheckBox {
 
-    private final IModel<String> descriptionModel;
-
-    @Nullable
-    private final Component descriptionComponent;
-
-    @Nullable
-    private final Component errorMessageComponent;
-
     public UtrechtCheckbox(String id, IModel<Boolean> model) {
-        this(id, model, EMPTY_STRING_MODEL, null, null);
-    }
-
-    public UtrechtCheckbox(String id, IModel<Boolean> model,
-                           IModel<String> descriptionModel,
-                           @Nullable Component descriptionComponent,
-                           @Nullable Component errorMessageComponent) {
         super(id, model);
-        this.descriptionModel = descriptionModel;
-        this.descriptionComponent = descriptionComponent;
-        this.errorMessageComponent = errorMessageComponent;
         setOutputMarkupId(true);
     }
 
@@ -47,19 +29,4 @@ public class UtrechtCheckbox extends CheckBox {
         add(UtrechtCheckboxBehavior.INSTANCE);
     }
 
-    @Override
-    protected void onComponentTag(ComponentTag tag) {
-        super.onComponentTag(tag);
-
-        String ariaDescribedBy = HTMLUtil.idRefs(
-            descriptionComponent != null && descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
-            errorMessageComponent != null && hasErrorMessage() ? errorMessageComponent.getMarkupId() : null
-        );
-
-        // Do not render an empty `aria-describedby` attribute.
-        if (!ariaDescribedBy.isEmpty()) {
-            tag.put("aria-describedby", ariaDescribedBy);
-        }
-
-    }
 }

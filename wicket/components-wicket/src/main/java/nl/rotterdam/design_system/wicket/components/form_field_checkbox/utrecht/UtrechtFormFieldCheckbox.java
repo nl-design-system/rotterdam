@@ -83,7 +83,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     }
 
     private UtrechtCheckbox createInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
-        final UtrechtCheckbox control = new UtrechtCheckbox("checkbox", model, descriptionModel, descriptionComponent, errorMessageComponent);
+        final UtrechtCheckbox control = new FormFieldCheckbox( model, descriptionModel);
         control.add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
         return control;
     }
@@ -187,4 +187,30 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             );
         }
     }
+
+    class FormFieldCheckbox extends UtrechtCheckbox {
+
+        private final IModel<String> descriptionModel;
+
+        public FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
+            super("checkbox", model);
+            this.descriptionModel = descriptionModel;
+        }
+
+        @Override
+        protected void onComponentTag(ComponentTag tag) {
+            super.onComponentTag(tag);
+
+            String ariaDescribedBy = HTMLUtil.idRefs(
+                descriptionComponent != null && descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
+                errorMessageComponent != null && hasErrorMessage() ? errorMessageComponent.getMarkupId() : null
+            );
+
+            // Do not render an empty `aria-describedby` attribute.
+            if (!ariaDescribedBy.isEmpty()) {
+                tag.put("aria-describedby", ariaDescribedBy);
+            }
+        }
+    }
+
 }
