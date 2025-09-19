@@ -8,19 +8,19 @@ import java.util.List;
 
 public abstract class TagNameClassComponentBehavior<T extends Component> extends HeaderItemRenderingBehavior {
 
-    private final String expectedTagName;
+    private final String requiredTagName;
     private final String[] classNames;
 
-    public TagNameClassComponentBehavior(String expectedTagName, String... classNames) {
-        this.expectedTagName = expectedTagName;
+    public TagNameClassComponentBehavior(String requiredTagName, String... classNames) {
+        this.requiredTagName = requiredTagName;
         this.classNames = classNames;
     }
 
     public final void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
-        if (!expectedTagName.equals(tag.getName())) {
-            throw new RuntimeException("Expected tag name '" + expectedTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
+        if (!requiredTagName.equals(tag.getName())) {
+            throw new RuntimeException("Expected tag name '" + requiredTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
         }
 
         if (tag.isClose()) {
