@@ -47,11 +47,11 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         requireNonNull(labelModel);
         requireNonNull(descriptionModel);
 
-        descriptionComponent = createDescriptionComponent(descriptionModel);
-        errorMessageComponent = createErrorMessageComponent();
-        inputComponent = createInputComponent(model, descriptionModel);
+        descriptionComponent = newDescriptionComponent(descriptionModel);
+        errorMessageComponent = newErrorMessageComponent();
+        inputComponent = newInputComponent(model, descriptionModel);
         bindErrorMessageModelToInputComponentFeedbackMessages();
-        labelComponent = createLabelComponent(labelModel);
+        labelComponent = newLabelComponent(labelModel);
     }
 
     private void bindErrorMessageModelToInputComponentFeedbackMessages() {
@@ -64,25 +64,25 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         });
     }
 
-    private Component createLabelComponent(IModel<String> labelModel) {
+    private Component newLabelComponent(IModel<String> labelModel) {
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer(labelModel))
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
             .add(AttributeAppender.append("class", UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME));
     }
 
-    private Component createErrorMessageComponent() {
+    private Component newErrorMessageComponent() {
         return createErrorMessageLabel("error")
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
-    private static Component createDescriptionComponent(IModel<String> descriptionModel) {
+    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
     }
 
-    private UtrechtCheckbox createInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
+    private UtrechtCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
         final UtrechtCheckbox control = new FormFieldCheckbox( model, descriptionModel);
         control.add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
         return control;

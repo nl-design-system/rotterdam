@@ -60,6 +60,11 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
 - Voeg de storybook en markdown codegenerator toe aan
   `GenerateMarkdownAndStorybookExamples`
 
+### Regels
+
+- Geef geen componenten door aan andere Wicket componenten (via constructors).
+- Voor methodes die componenten maken: prefix met new. Net als Wicket, zie bijvoorbeeld AjaxPagingNavigation
+
 ## Workspace dependencies resolven
 
 NL Design System gebruikt pnpm workspaces. Deze dependencies worden niet automatisch

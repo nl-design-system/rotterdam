@@ -48,30 +48,30 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
 
         textbox = new UtrechtTextbox(model, descriptionModel);
         // Create the text input
-        labelComponent = createLabelBlock(labelModel);
-        descriptionComponent = createDescriptionBlock(descriptionModel);
-        inputComponent = createInputBlock(textbox);
-        errorMessageComponent = createErrorMessageBlock();
+        labelComponent = newLabelComponent(labelModel);
+        descriptionComponent = newDescriptionComponent(descriptionModel);
+        inputComponent = newInputComponent(textbox);
+        errorMessageComponent = newErrorMessageComponent();
     }
 
-    private static Component createInputBlock(TextField<?> inputTextbox) {
+    private static Component newInputComponent(TextField<?> inputTextbox) {
         return new WebMarkupContainer("input-container")
             .add(inputTextbox)
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
     }
 
-    private Component createErrorMessageBlock() {
+    private Component newErrorMessageComponent() {
         return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", inputComponent)
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
-    private static Component createDescriptionBlock(IModel<String> descriptionModel) {
+    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
     }
 
-    private Component createLabelBlock(IModel<String> labelModel) {
+    private Component newLabelComponent(IModel<String> labelModel) {
         return new WebMarkupContainer("label-container")
             .add(new TextboxLabel(labelModel))
             .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME));
