@@ -10,7 +10,6 @@ import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextb
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.WicketTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
@@ -22,6 +21,7 @@ import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
@@ -87,7 +87,6 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
             UtrechtTextboxFormFieldBehavior.INSTANCE
         );
 
-        // Add all components
         add(
             inputComponent,
             labelComponent,
@@ -104,16 +103,9 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
 
-        if (tag instanceof WicketTag wicketTag) {
-            throw new IllegalStateException("utrecht-form-field must be a normal HTML element, not a Wicket tag: " + wicketTag);
-        }
+        assertIsRegularHtmlTag(tag);
 
-        tag.put(
-            "class",
-            HTMLUtil.className(
-                isInvalid() ? FORM_FIELD_STATE_INVALID_CLASSNAME : null
-            )
-        );
+        tag.put("class", HTMLUtil.className(isInvalid() ? FORM_FIELD_STATE_INVALID_CLASSNAME : null));
     }
 
     public UtrechtFormFieldTextbox<T> setRequired(boolean required) {

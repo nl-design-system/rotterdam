@@ -10,7 +10,6 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.WicketTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
@@ -24,6 +23,7 @@ import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.Ut
 import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxClassNames.UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
 
@@ -97,9 +97,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
 
-        if (tag instanceof WicketTag wicketTag) {
-            throw new IllegalStateException("utrecht-form-field must be a normal HTML element, not a Wicket tag: " + wicketTag);
-        }
+        assertIsRegularHtmlTag(tag);
 
         tag.put(
             "class",
