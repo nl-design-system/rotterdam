@@ -4,14 +4,22 @@ import nl.rotterdam.design_system.wicket.components.button.utrecht.UtrechtButton
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht.UtrechtFormFieldTextbox;
+import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.validation.validator.StringValidator;
 
 import java.time.LocalTime;
 
 public class SingleSignOnLoginFormPanel extends Panel {
+
+
+   private final Model<String> sampleMinLength8 = Model.of("min 8");
+   private final Model<String> username = Model.of("");
+   private final Model<String> password = Model.of("");
+   private final Model<Boolean> rememberMe = Model.of(true);
 
     public SingleSignOnLoginFormPanel(String id) {
         super(id);
@@ -20,10 +28,6 @@ public class SingleSignOnLoginFormPanel extends Panel {
     @Override
     protected void onInitialize() {
         super.onInitialize();
-
-        Model<String> username = Model.of("");
-        Model<String> password = Model.of("");
-        Model<Boolean> rememberMe = Model.of(true);
 
         add(
             new Form<Void>("loginForm") {
@@ -39,6 +43,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                             .setInputType("password"),
                         new UtrechtFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij"))
                             .setRequired(true),
+                        newMinLength8(sampleMinLength8),
                         new UtrechtButtonGroupBorder("actionGroup")
                             .add(new UtrechtButton("submit"))
                     );
@@ -59,7 +64,18 @@ public class SingleSignOnLoginFormPanel extends Panel {
                     System.out.println("Received username: " + username.getObject());
                     System.out.println("Received rememberMe: " + rememberMe.getObject());
                 }
+                private Component newMinLength8(Model<String> sampleMinLength8) {
+                    UtrechtFormFieldTextbox<String> textbox = new UtrechtFormFieldTextbox<>("minLength8", sampleMinLength8, Model.of("Minimale lengte 8 tekens"))
+                        .setRequired(true);
+
+                    textbox.getTextField().add(StringValidator.minimumLength(8));
+
+                    return textbox;
+                }
             }
+
         );
     }
+
+
 }

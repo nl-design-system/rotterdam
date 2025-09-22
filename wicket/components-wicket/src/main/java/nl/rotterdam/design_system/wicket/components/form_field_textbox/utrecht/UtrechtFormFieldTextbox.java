@@ -46,6 +46,8 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         requireNonNull(descriptionModel);
 
         textbox = new FormFieldTextbox(model, descriptionModel);
+        textbox.setLabel(labelModel);
+
         // Create the text input
         labelComponent = newLabelComponent(labelModel);
         descriptionComponent = newDescriptionComponent(descriptionModel);
@@ -60,7 +62,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     }
 
     private Component newErrorMessageComponent() {
-        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", inputComponent)
+        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", textbox)
             .add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
     }
 

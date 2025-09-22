@@ -19,10 +19,6 @@ public class ComponentsWicketTestApplication extends WebApplication {
         // Avoid <wicket:panel> in the output HTML
         getMarkupSettings().setStripWicketTags(true);
 
-        // A listener to instantiations of FormComponents to add HTML5 attributes.
-        getComponentInstantiationListeners().add(new HTML5Attributes.InstantiationListener());
-
-
     }
 
 }
