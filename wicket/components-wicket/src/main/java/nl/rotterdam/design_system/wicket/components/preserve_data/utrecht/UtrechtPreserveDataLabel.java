@@ -5,8 +5,7 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 
-import static nl.rotterdam.design_system.wicket.components.attribute_appender.AttributeAppenders.appendCssClassBehavior;
-import static nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataCssClasses.UTRECHT_PRESERVE_DATA_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataCss.DEFAULT;
 
 /**
  *  Mark the given model to be preserved and show it 'as is'.
@@ -30,6 +29,6 @@ public class UtrechtPreserveDataLabel extends Label {
     protected void onInitialize() {
         super.onInitialize();
         add(AttributeModifier.replace("translate", "no"));
-        add(appendCssClassBehavior(UTRECHT_PRESERVE_DATA_CLASS_NAME));
+        add(DEFAULT.asBehavior());
     }
 }

@@ -4,6 +4,7 @@ import org.apache.wicket.markup.ComponentTag;
 
 public enum ComponentTagUtils {
     ;
+    @Deprecated
     public static void appendCssClassesTo(ComponentTag tag, String cssClasses) {
         tag.append("class", cssClasses, " ");
     }

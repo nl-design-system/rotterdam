@@ -1,15 +1,17 @@
 package nl.rotterdam.design_system.wicket.components.form_label.utrecht;
 
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.UTRECHT_FORM_LABEL_CHECKBOX_CLASS_NAME;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.UTRECHT_FORM_LABEL_RADIO_CLASS_NAME;
+import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
+
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.UTRECHT_FORM_LABEL_CHECKBOX;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.UTRECHT_FORM_LABEL_RADIO;
 
 public enum UtrechtFormLabelType {
-    CHECKBOX(UTRECHT_FORM_LABEL_CHECKBOX_CLASS_NAME),
-    RADIO(UTRECHT_FORM_LABEL_RADIO_CLASS_NAME);
+    CHECKBOX(UTRECHT_FORM_LABEL_CHECKBOX),
+    RADIO(UTRECHT_FORM_LABEL_RADIO);
 
-    final String fullClassName;
+    final CssClassNames fullClassName;
 
-    UtrechtFormLabelType(String fullClassName) {
+    UtrechtFormLabelType(CssClassNames fullClassName) {
         this.fullClassName = fullClassName;
     }
 

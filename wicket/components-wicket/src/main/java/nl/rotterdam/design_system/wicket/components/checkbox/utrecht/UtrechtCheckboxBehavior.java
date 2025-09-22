@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.checkbox.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.CheckBox;
 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxClasses.*;
+import static nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxCss.*;
 
 /**
  * Applies NL Design System checkbox styles to a Wicket CheckBox component.
@@ -19,18 +20,18 @@ public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<Check
 
     public static final UtrechtCheckboxBehavior INSTANCE = new UtrechtCheckboxBehavior();
     private UtrechtCheckboxBehavior() {
-        super("input", DEFAULT_CLASS_NAMES);
+        super("input", DEFAULT);
         addHeaderItem(cssReferenceHeaderItem(UtrechtCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.css"));
         addHeaderItem(cssReferenceHeaderItem(UtrechtCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.css"));
     }
 
     @Override
-    protected List<String> customizeComponentAndReturnClasses(CheckBox component, ComponentTag tag) {
+    protected List<CssClassNames> customizeComponentAndReturnClasses(CheckBox component, ComponentTag tag) {
 
-        List<String> classNames = new ArrayList<>();
+        List<CssClassNames> classNames = new ArrayList<>();
 
         if (!component.isEnabledInHierarchy()) {
-            classNames.add(DISABLED_CLASS_NAME);
+            classNames.add(DISABLED);
             tag.put("disabled", "");
         }
 
@@ -39,7 +40,7 @@ public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<Check
         }
 
         if (component.hasErrorMessage()) {
-            classNames.add(INVALID_CLASS_NAME);
+            classNames.add(INVALID);
             tag.put("aria-invalid", "true");
         }
 

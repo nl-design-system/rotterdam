@@ -16,13 +16,11 @@ import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
 import static java.util.Objects.requireNonNull;
-import static nl.rotterdam.design_system.wicket.components.attribute_appender.AttributeAppenders.appendCssClassBehavior;
-import static nl.rotterdam.design_system.wicket.components.component_tag.ComponentTagUtils.appendCssClassesTo;
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.*;
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.FORM_FIELD_NESTED_BLOCK_INPUT_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.*;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
-import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxClasses.UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASS_NAME;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.FORM_LABEL_STATE_DISABLED_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxCss.UTRECHT_FORM_FIELD_LABEL_CHECKBOX;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -69,24 +67,24 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer())
-            .add(appendCssClassBehavior(FORM_FIELD_NESTED_BLOCK_LABEL_CLASS_NAME))
-            .add(appendCssClassBehavior(UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASS_NAME));
+            .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior())
+            .add(UTRECHT_FORM_FIELD_LABEL_CHECKBOX.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
         return createErrorMessageLabel("error")
-            .add(appendCssClassBehavior(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASS_NAME));
+            .add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
     }
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
-            .add(appendCssClassBehavior(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASS_NAME));
+            .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
     }
 
     private UtrechtCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
         final UtrechtCheckbox control = new FormFieldCheckbox( model, descriptionModel);
-        control.add(appendCssClassBehavior(FORM_FIELD_NESTED_BLOCK_INPUT_CLASS_NAME));
+        control.add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
         return control;
     }
 
@@ -101,7 +99,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         assertIsRegularHtmlTag(tag);
 
         if (isInvalid()) {
-            appendCssClassesTo(tag, FORM_FIELD_STATE_INVALID_CLASS_NAME);
+            INVALID.appendTo(tag);
         }
     }
 
@@ -173,7 +171,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             tag.put("for", inputComponent.getMarkupId());
 
             if (!inputComponent.isEnabledInHierarchy()) {
-                appendCssClassesTo(tag, FORM_LABEL_STATE_DISABLED_CLASS_NAME);
+                FORM_LABEL_STATE_DISABLED.appendTo(tag);
             }
         }
     }

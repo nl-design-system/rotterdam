@@ -17,7 +17,7 @@ public class UtrechtFormFieldErrorMessageBehavior extends TagNameClassComponentB
     }
 
     private UtrechtFormFieldErrorMessageBehavior() {
-        super("div", "utrecht-form-field-error-message");
+        super("div", UtrechtFormFieldErrorCss.DEFAULT);
 
         addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldErrorMessageBehavior.class,
             "@utrecht/form-field-error-message-css/dist/index.css"));

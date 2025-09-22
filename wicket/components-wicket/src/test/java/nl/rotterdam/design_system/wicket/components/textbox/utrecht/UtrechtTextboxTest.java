@@ -7,7 +7,7 @@ import org.apache.wicket.markup.Markup;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxCss.INVALID;
 
 class UtrechtTextboxTest extends NldsWicketTestCase {
 
@@ -44,7 +44,6 @@ class UtrechtTextboxTest extends NldsWicketTestCase {
 
         TagTester fieldTag = TagTester.createTagByName(actualHtmlFragment, "input");
 
-        assertThat(fieldTag.getAttribute("class"))
-            .contains(UtrechtTextboxClasses.INVALID_CLASS_NAME);
+        assertHasCss(fieldTag, INVALID);
     }
 }

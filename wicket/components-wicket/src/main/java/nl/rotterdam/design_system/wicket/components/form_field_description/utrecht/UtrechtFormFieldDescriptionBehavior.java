@@ -20,7 +20,7 @@ public class UtrechtFormFieldDescriptionBehavior extends TagNameClassComponentBe
     }
 
     private UtrechtFormFieldDescriptionBehavior() {
-        super("div", "utrecht-form-field-description");
+        super("div", UtrechtFormFieldDescriptionCss.DEFAULT);
         addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldDescriptionBehavior.class,
             "@utrecht/form-field-description-css/dist/index.css"));
     }

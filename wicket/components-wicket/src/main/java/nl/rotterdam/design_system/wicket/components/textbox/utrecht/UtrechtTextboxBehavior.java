@@ -2,6 +2,7 @@ package nl.rotterdam.design_system.wicket.components.textbox.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems;
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.form.TextField;
@@ -16,20 +17,20 @@ public class UtrechtTextboxBehavior extends TagNameClassComponentBehavior<TextFi
     public static final UtrechtTextboxBehavior INSTANCE = new UtrechtTextboxBehavior();
 
     private UtrechtTextboxBehavior() {
-        super("input", UtrechtTextboxClasses.DEFAULT_CLASS_NAMES);
+        super("input", UtrechtTextboxCss.DEFAULT);
         addHeaderItem(CSS_REFERENCE);
     }
 
     @Override
-    protected List<String> customizeComponentAndReturnClasses(TextField<?> component, ComponentTag tag) {
+    protected List<CssClassNames> customizeComponentAndReturnClasses(TextField<?> component, ComponentTag tag) {
 
-        List<String> classes = new ArrayList<>();
+        List<CssClassNames> classes = new ArrayList<>();
         if (!component.isEnabledInHierarchy()) {
-            classes.add(UtrechtTextboxClasses.DISABLED_CLASS_NAME);
+            classes.add(UtrechtTextboxCss.DISABLED);
         }
 
         if (component.hasErrorMessage()) {
-            classes.add(UtrechtTextboxClasses.INVALID_CLASS_NAME);
+            classes.add(UtrechtTextboxCss.INVALID);
         }
 
         if (component.isRequired()) {

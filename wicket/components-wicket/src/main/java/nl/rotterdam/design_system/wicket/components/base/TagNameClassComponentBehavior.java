@@ -1,10 +1,13 @@
 package nl.rotterdam.design_system.wicket.components.base;
 
+import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static nl.rotterdam.design_system.wicket.components.component_tag.ComponentTagUtils.appendCssClassesTo;
 
@@ -13,6 +16,14 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
     private final String requiredTagName;
     private final String[] classNames;
 
+    protected TagNameClassComponentBehavior(String requiredTagName, CssClassNames... classNames) {
+        this(requiredTagName, Arrays.stream(classNames).map(CssClassNames::getClassNames).toArray(String[]::new));
+    }
+
+    /**
+     * @deprecated use {@link #TagNameClassComponentBehavior(String, CssClassNames...)} instead.
+     */
+    @Deprecated
     protected TagNameClassComponentBehavior(String requiredTagName, String... classNames) {
         this.requiredTagName = requiredTagName;
         this.classNames = classNames;
@@ -30,10 +41,10 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
         }
 
         @SuppressWarnings("unchecked")
-        List<String> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
+        List<CssClassNames> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
 
         if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
-            appendCssClassesTo(tag, joinAll(classNames, dynamicClassNames));
+            appendCssClassesTo(tag, joinAll(classNames, dynamicClassNames.stream().map(CssClassNames::getClassNames).collect(Collectors.toList())));
         }
     }
 
@@ -63,7 +74,7 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
     /**
      * Add dynamic classes based on the state of the component.
      */
-    protected List<String> customizeComponentAndReturnClasses(T component, ComponentTag tag) {
+    protected List<CssClassNames> customizeComponentAndReturnClasses(T component, ComponentTag tag) {
         return List.of();
     }
 

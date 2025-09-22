@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_label.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
@@ -8,8 +9,8 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.FORM_LABEL_STATE_DISABLED_CLASS_NAME;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.UTRECHT_FORM_LABEL_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.DEFAULT;
 
 public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior<Component> {
 
@@ -26,20 +27,20 @@ public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior<Comp
     public static final UtrechtFormLabelBehavior INSTANCE_DEFAULT = new UtrechtFormLabelBehavior();
 
     private UtrechtFormLabelBehavior() {
-        super("label", "utrecht-form-label");
+        super("label", DEFAULT);
         addHeaderItem(CSS);
     }
 
     private UtrechtFormLabelBehavior(UtrechtFormLabelType type) {
-        super("label", UTRECHT_FORM_LABEL_CLASS_NAME, type.fullClassName);
+        super("label", DEFAULT, type.fullClassName);
         addHeaderItem(CSS);
     }
 
 
     @Override
-    protected List<String> customizeComponentAndReturnClasses(Component component, ComponentTag tag) {
+    protected List<CssClassNames> customizeComponentAndReturnClasses(Component component, ComponentTag tag) {
         if (!component.isEnabledInHierarchy()) {
-            return List.of(FORM_LABEL_STATE_DISABLED_CLASS_NAME);
+            return List.of(FORM_LABEL_STATE_DISABLED);
         }
         return List.of();
     }

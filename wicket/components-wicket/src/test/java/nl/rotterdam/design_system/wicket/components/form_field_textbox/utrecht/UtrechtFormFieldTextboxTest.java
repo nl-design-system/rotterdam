@@ -5,8 +5,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
 
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.FORM_FIELD_STATE_INVALID_CLASS_NAME;
-import static org.assertj.core.api.Assertions.assertThat;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
 
 class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
@@ -77,8 +76,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
 
         TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "utrecht-textbox-field");
 
-        assertThat(fieldTag.getAttribute("class"))
-            .contains(FORM_FIELD_STATE_INVALID_CLASS_NAME);
+        assertHasCss(fieldTag, INVALID);
     }
 
     private void setSubjectUnderTestIds(UtrechtFormFieldTextbox<?> component) {
