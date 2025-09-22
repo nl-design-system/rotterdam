@@ -7,6 +7,7 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.design_system.wicket.components.component_tag.ComponentTagUtils.appendCssClassesTo;
 
 public class UtrechtOrderedListBehavior extends Behavior {
 
@@ -31,7 +32,7 @@ public class UtrechtOrderedListBehavior extends Behavior {
 
         if (!tag.isClose()) {
             tag.put("role", "list");
-            tag.append("class", className, " ");
+            appendCssClassesTo(tag, className);
         }
     }
 

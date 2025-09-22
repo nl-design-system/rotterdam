@@ -6,6 +6,8 @@ import org.apache.wicket.markup.ComponentTag;
 import java.util.Collection;
 import java.util.List;
 
+import static nl.rotterdam.design_system.wicket.components.component_tag.ComponentTagUtils.appendCssClassesTo;
+
 public abstract class TagNameClassComponentBehavior<T extends Component> extends HeaderItemRenderingBehavior {
 
     private final String requiredTagName;
@@ -27,10 +29,11 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
             return;
         }
 
+        @SuppressWarnings("unchecked")
         List<String> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
 
         if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
-            tag.append("class", joinAll(classNames, dynamicClassNames), " ");
+            appendCssClassesTo(tag, joinAll(classNames, dynamicClassNames));
         }
     }
 

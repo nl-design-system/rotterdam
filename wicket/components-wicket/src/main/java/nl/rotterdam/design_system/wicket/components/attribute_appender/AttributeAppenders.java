@@ -10,7 +10,7 @@ public enum AttributeAppenders {
      * Shortcut method to append a CSS class to a component.
      * Prevents having to duplicate 'class' literal in code.
      */
-    public static Behavior appendCssClass(String cssClass) {
+    public static Behavior appendCssClassBehavior(String cssClass) {
         return new AttributeAppender("class", cssClass).setSeparator(" ");
     }
 }

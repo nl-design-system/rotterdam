@@ -1,11 +1,14 @@
 package nl.rotterdam.design_system.wicket.components.button.utrecht;
 
 import css.HTMLUtil;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.model.IModel;
 
-// TODO unstable, not ready for production
+import static nl.rotterdam.design_system.wicket.components.component_state.State.NEEDS_REFACTORING;
+
+@NlComponentState(NEEDS_REFACTORING)
 public class UtrechtButton extends Button {
 
     public boolean busy = false;
