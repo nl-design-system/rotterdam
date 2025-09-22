@@ -10,13 +10,13 @@ Applying design elements from this project is strictly prohibited for organisati
 
 ## How to use Rotterdam Design System
 
-Rotterdam is using components from the NL Design System community, candidate and hall-of-fame. This means multiple npm packages might need to be installed to have access to all components in your application. Read the [developer getting started documentation](https://nldesignsystem.nl/meedoen/als-developer/aan-de-slag) on the NL Design System website to learn more.
+Rotterdam is using components from the NL Design System community, candidate and hall-of-fame. This means multiple npm packages might need to be installed to have access to all components in your application. Read the [developer getting started documentation](https://nldesignsystem.nl/handboek/developer/aan-de-slag/) on the NL Design System website to learn more.
 
 The [Rotterdam Storybook](https://nl-design-system.github.io/rotterdam/) gives guidance on which components to use and which packages to include.
 
 ### In HTML
 
-This example is using the [unpkg.com CDN](unpkg.com) for prototyping. This is a bit slower as the latest version is automatically chosen. For production you shouldn't use this CDN.
+This example is using the [unpkg.com CDN](https://unpkg.com/) for prototyping. This is a bit slower as the latest version is automatically chosen. For production you shouldn't use this CDN.
 
 Include the Design Token CSS variables:
 
@@ -40,7 +40,7 @@ Combine it with the CSS packages from the NL Design System community:
 <!-- and Rotterdam CSS if extra components are needed -->
 ```
 
-And use the [code snipped provided in Storybook](http://localhost:6006/?path=/docs/css-utrecht-button--docs) to get the identical component in code:
+And use the [code snippet provided in Storybook](?path=/docs/css-utrecht-button--docs) to get the identical component in code:
 
 ```html
 <!-- Set the rods-theme to include Rotterdam styling for all NL Design System components -->
