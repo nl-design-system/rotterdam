@@ -3,4 +3,9 @@ import markdown from "../../../../README.md?raw";
 
 <Meta title="Rotterdam/Rotterdam Design System" />
 
-<Markdown>{markdown}</Markdown>
+<Markdown>
+  {markdown
+    .replaceAll("(CODE_OF_CONDUCT.md)", "(?path=/docs/rotterdam-code-of-conduct--docs)")
+    .replaceAll("(LICENSE.md)", "(?path=/docs/rotterdam-open-source-license--docs)")
+    .replaceAll("(NOTICE.md)", "(?path=/docs/rotterdam-toestemming-gebruik-huisstijl--docs)")}
+</Markdown>
