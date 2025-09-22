@@ -8,7 +8,6 @@ import nl.rotterdam.design_system.wicket.components.form_field_description.utrec
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextbox;
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -18,6 +17,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.util.string.Strings;
 
 import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.design_system.wicket.components.attribute_appender.AttributeAppenders.appendCssClass;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
@@ -57,24 +57,24 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     private static Component newInputComponent(TextField<?> inputTextbox) {
         return new WebMarkupContainer("input-container")
             .add(inputTextbox)
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
     }
 
     private Component newErrorMessageComponent() {
         return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", inputComponent)
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
     }
 
     private Component newLabelComponent(IModel<String> labelModel) {
         return new WebMarkupContainer("label-container")
             .add(new TextboxLabel(labelModel))
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME));
     }
 
     @Override

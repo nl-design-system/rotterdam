@@ -7,7 +7,6 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -17,6 +16,7 @@ import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
 import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.design_system.wicket.components.attribute_appender.AttributeAppenders.appendCssClass;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
@@ -68,24 +68,24 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer())
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
-            .add(AttributeAppender.append("class", UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
+            .add(appendCssClass(UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME));
     }
 
     private Component newErrorMessageComponent() {
         return createErrorMessageLabel("error")
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
     }
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
-            .add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
     }
 
     private UtrechtCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
         final UtrechtCheckbox control = new FormFieldCheckbox( model, descriptionModel);
-        control.add(AttributeAppender.append("class", FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
+        control.add(appendCssClass(FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
         return control;
     }
 
