@@ -17,11 +17,11 @@ import org.apache.wicket.model.IModel;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.design_system.wicket.components.attribute_appender.AttributeAppenders.appendCssClass;
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.*;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.FORM_FIELD_NESTED_BLOCK_INPUT_CLASS_NAME;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
-import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxClassNames.UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxClasses.UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.FORM_LABEL_STATE_DISABLED_CLASS_NAME;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -68,24 +68,24 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer())
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME))
-            .add(appendCssClass(UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_LABEL_CLASS_NAME))
+            .add(appendCssClass(UTRECHT_FORM_FIELD_LABEL_CHECKBOX_CLASS_NAME));
     }
 
     private Component newErrorMessageComponent() {
         return createErrorMessageLabel("error")
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASS_NAME));
     }
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASS_NAME));
     }
 
     private UtrechtCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
         final UtrechtCheckbox control = new FormFieldCheckbox( model, descriptionModel);
-        control.add(appendCssClass(FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
+        control.add(appendCssClass(FORM_FIELD_NESTED_BLOCK_INPUT_CLASS_NAME));
         return control;
     }
 
@@ -99,7 +99,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
 
         assertIsRegularHtmlTag(tag);
 
-        tag.put("class", HTMLUtil.className(isInvalid() ? FORM_FIELD_STATE_INVALID_CLASSNAME : null));
+        tag.put("class", HTMLUtil.className(isInvalid() ? FORM_FIELD_STATE_INVALID_CLASS_NAME : null));
     }
 
     @Override
@@ -171,7 +171,7 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
             tag.put(
                 "class",
                 HTMLUtil.className(
-                    inputComponent.isEnabledInHierarchy() ? null : FORM_LABEL_STATE_DISABLED_CLASSNAME
+                    inputComponent.isEnabledInHierarchy() ? null : FORM_LABEL_STATE_DISABLED_CLASS_NAME
                 )
             );
         }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxClassNames.*;
+import static nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxClasses.*;
 
 /**
  * Applies NL Design System checkbox styles to a Wicket CheckBox component.
@@ -30,7 +30,7 @@ public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<Check
         List<String> classNames = new ArrayList<>();
 
         if (!component.isEnabledInHierarchy()) {
-            classNames.add(DISABLED_CLASSNAME);
+            classNames.add(DISABLED_CLASS_NAME);
             tag.put("disabled", "");
         }
 
@@ -39,7 +39,7 @@ public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<Check
         }
 
         if (component.hasErrorMessage()) {
-            classNames.add(INVALID_CLASSNAME);
+            classNames.add(INVALID_CLASS_NAME);
             tag.put("aria-invalid", "true");
         }
 

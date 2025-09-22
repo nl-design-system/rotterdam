@@ -45,7 +45,6 @@ class UtrechtTextboxTest extends NldsWicketTestCase {
         TagTester fieldTag = TagTester.createTagByName(actualHtmlFragment, "input");
 
         assertThat(fieldTag.getAttribute("class"))
-            .contains(UtrechtTextboxClasses.INVALID_CLASSNAME);
-
+            .contains(UtrechtTextboxClasses.INVALID_CLASS_NAME);
     }
 }

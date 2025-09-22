@@ -31,7 +31,7 @@ import org.apache.wicket.Component;
  *
  * <p>We use the suffix 'component' for the nested elements to make it explicit we're referring to NLDS components.</p>
  *
- * <p>All of those elements have a BEM nested style class as defined in {@link UtrechtFormFieldCssClasses}.</p>
+ * <p>All of those elements have a BEM nested style class as defined in {@link UtrechtFormFieldCssClassNames}.</p>
  *
  * <p>Do: define CSS class names as constant in Java. Don't specify them in HTML.</p>
  *

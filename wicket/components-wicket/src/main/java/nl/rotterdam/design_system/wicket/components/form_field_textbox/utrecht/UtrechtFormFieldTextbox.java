@@ -18,8 +18,8 @@ import org.apache.wicket.util.string.Strings;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.design_system.wicket.components.attribute_appender.AttributeAppenders.appendCssClass;
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.*;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.*;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.FORM_LABEL_STATE_DISABLED_CLASS_NAME;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -57,24 +57,24 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     private static Component newInputComponent(TextField<?> inputTextbox) {
         return new WebMarkupContainer("input-container")
             .add(inputTextbox)
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_INPUT_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_INPUT_CLASS_NAME));
     }
 
     private Component newErrorMessageComponent() {
         return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", inputComponent)
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE_CLASS_NAME));
     }
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_DESCRIPTION_CLASS_NAME));
     }
 
     private Component newLabelComponent(IModel<String> labelModel) {
         return new WebMarkupContainer("label-container")
             .add(new TextboxLabel(labelModel))
-            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_LABEL_CLASSNAME));
+            .add(appendCssClass(FORM_FIELD_NESTED_BLOCK_LABEL_CLASS_NAME));
     }
 
     @Override
@@ -105,7 +105,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
 
         assertIsRegularHtmlTag(tag);
 
-        tag.put("class", HTMLUtil.className(isInvalid() ? FORM_FIELD_STATE_INVALID_CLASSNAME : null));
+        tag.put("class", HTMLUtil.className(isInvalid() ? FORM_FIELD_STATE_INVALID_CLASS_NAME : null));
     }
 
     public UtrechtFormFieldTextbox<T> setRequired(boolean required) {
@@ -192,7 +192,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
             tag.put(
                 "class",
                 HTMLUtil.className(
-                    textbox.isEnabledInHierarchy() ? null :  FORM_LABEL_STATE_DISABLED_CLASSNAME
+                    textbox.isEnabledInHierarchy() ? null : FORM_LABEL_STATE_DISABLED_CLASS_NAME
                 )
             );
         }

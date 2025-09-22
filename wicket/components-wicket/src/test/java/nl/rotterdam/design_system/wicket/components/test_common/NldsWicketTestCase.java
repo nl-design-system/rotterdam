@@ -12,8 +12,8 @@ import org.jsoup.nodes.Element;
 
 import java.util.Objects;
 
-import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClasses.UTRECHT_FORM_FIELD_CLASSNAME;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.UTRECHT_FORM_LABEL;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCssClassNames.UTRECHT_FORM_FIELD_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.UTRECHT_FORM_LABEL_CLASS_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -29,10 +29,10 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
 
         // assert root has utrecht-form-field class
         TagTester tester = TagTester.createTagByAttribute(actualOutput, "id", utrechtFormField.getMarkupId());
-        assertThat(tester.getAttribute("class")).contains(UTRECHT_FORM_FIELD_CLASSNAME);
+        assertThat(tester.getAttribute("class")).contains(UTRECHT_FORM_FIELD_CLASS_NAME);
 
         // assert label is present, as label has no id we just assert full content
-        assertThat(actualOutput).contains(UTRECHT_FORM_LABEL);
+        assertThat(actualOutput).contains(UTRECHT_FORM_LABEL_CLASS_NAME);
 
         // TODO there is more to validate here.
     }

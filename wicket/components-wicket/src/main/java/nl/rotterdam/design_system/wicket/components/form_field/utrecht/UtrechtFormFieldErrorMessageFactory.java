@@ -6,7 +6,9 @@ import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 
-public class UtrechtFormFieldErrorMessageFactory {
+public enum UtrechtFormFieldErrorMessageFactory {
+    ;
+
     public static Component createErrorMessageLabel(String id, Component componentWithFeedback) {
         // TODO a form component can have multiple error messages. Currently only shows the first feedback message.
         //  Is multiple messages desired by first applications?

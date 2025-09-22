@@ -25,11 +25,11 @@ public class UtrechtTextboxBehavior extends TagNameClassComponentBehavior<TextFi
 
         List<String> classes = new ArrayList<>();
         if (!component.isEnabledInHierarchy()) {
-            classes.add(UtrechtTextboxClasses.DISABLED_CLASSNAME);
+            classes.add(UtrechtTextboxClasses.DISABLED_CLASS_NAME);
         }
 
         if (component.hasErrorMessage()) {
-            classes.add(UtrechtTextboxClasses.INVALID_CLASSNAME);
+            classes.add(UtrechtTextboxClasses.INVALID_CLASS_NAME);
         }
 
         if (component.isRequired()) {

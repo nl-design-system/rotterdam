@@ -8,8 +8,8 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.FORM_LABEL_STATE_DISABLED_CLASSNAME;
-import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClasses.UTRECHT_FORM_LABEL;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.FORM_LABEL_STATE_DISABLED_CLASS_NAME;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCssClassNames.UTRECHT_FORM_LABEL_CLASS_NAME;
 
 public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior<Component> {
 
@@ -31,7 +31,7 @@ public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior<Comp
     }
 
     private UtrechtFormLabelBehavior(UtrechtFormLabelType type) {
-        super("label", UTRECHT_FORM_LABEL, type.fullClassName);
+        super("label", UTRECHT_FORM_LABEL_CLASS_NAME, type.fullClassName);
         addHeaderItem(CSS);
     }
 
@@ -39,7 +39,7 @@ public class UtrechtFormLabelBehavior extends TagNameClassComponentBehavior<Comp
     @Override
     protected List<String> customizeComponentAndReturnClasses(Component component, ComponentTag tag) {
         if (!component.isEnabledInHierarchy()) {
-            return List.of(FORM_LABEL_STATE_DISABLED_CLASSNAME);
+            return List.of(FORM_LABEL_STATE_DISABLED_CLASS_NAME);
         }
         return List.of();
     }
