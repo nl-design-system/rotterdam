@@ -167,7 +167,6 @@ public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements U
         @Override
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
-            // TODO is for done by Wicket? Verify if works without too
             tag.put("for", inputComponent.getMarkupId());
 
             if (!inputComponent.isEnabledInHierarchy()) {
