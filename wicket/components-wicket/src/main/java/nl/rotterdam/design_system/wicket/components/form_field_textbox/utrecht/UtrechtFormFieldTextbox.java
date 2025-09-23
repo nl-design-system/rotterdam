@@ -49,7 +49,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         textbox.setLabel(labelModel);
 
         // Create the text input
-        labelComponent = newLabelComponent(labelModel);
+        labelComponent = newLabelComponent();
         descriptionComponent = newDescriptionComponent(descriptionModel);
         inputComponent = newInputComponent(textbox);
         errorMessageComponent = newErrorMessageComponent();
@@ -72,9 +72,9 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
     }
 
-    private Component newLabelComponent(IModel<String> labelModel) {
+    private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
-            .add(new TextboxLabel(labelModel))
+            .add(new TextboxLabel())
             .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior());
     }
 
@@ -175,10 +175,10 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         }
     }
 
-    private class TextboxLabel extends Label {
+    private class TextboxLabel extends WebMarkupContainer {
 
-        public TextboxLabel(IModel<String> labelModel) {
-            super("label", labelModel);
+        public TextboxLabel() {
+            super("label");
         }
 
         @Override
