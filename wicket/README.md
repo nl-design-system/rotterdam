@@ -14,13 +14,13 @@ Installeer Java 21 en Maven 3.x
 ### Documentatie starten
 
 ```shell
-./mvnw install  && ./mvnw exec:java@runDocs -pl :docs-wicket
+../mvnw install  && ../mvnw exec:java@runDocs -pl :docs-wicket
 ```
 
 ### Storybook documentatie genereren
 
 ```shell
-./mvnw install && ./mvnw exec:java@generateStoryBook -pl :docs-wicket
+../mvnw install && ../mvnw exec:java@generateStoryBook -pl :docs-wicket
 ```
 
 ### Maven uitvoeren met pnpm
@@ -77,5 +77,5 @@ pnpm run build
 Draai daarna nog expliciet een Maven build:
 
 ```shell
-./mvnw package
+../mvnw package
 ```
