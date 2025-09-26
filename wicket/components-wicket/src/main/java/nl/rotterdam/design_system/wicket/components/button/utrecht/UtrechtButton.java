@@ -1,10 +1,15 @@
 package nl.rotterdam.design_system.wicket.components.button.utrecht;
 
-import org.apache.wicket.Component;
+import css.HTMLUtil;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.model.IModel;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class UtrechtButton extends Button {
 
     public boolean busy = false;
@@ -41,36 +46,30 @@ public class UtrechtButton extends Button {
     @Override
     public void onInitialize() {
         super.onInitialize();
-        boolean isEnabled = this.isEnabled();
-        boolean isBusy = this.busy;
-        UtrechtButtonAppearance appearance = this.appearance;
-        UtrechtButtonHint hint = this.hint;
-        Boolean isPressed = this.pressed;
 
-        add(
-            new UtrechtButtonBehavior() {
-                @Override
-                public String[] getClassNames() {
-                    return new String[] {
-                        "utrecht-button",
-                        appearance != null ? "utrecht-button--" + appearance.appearance : "",
-                        hint != null ? "utrecht-button--" + hint.hint : "",
-                        isEnabled ? "" : "utrecht-button--disabled",
-                        isPressed != null && isPressed == true ? "utrecht-button--pressed" : "",
-                        isBusy ? "utrecht-button--busy" : "",
-                    };
-                }
-
-                @Override
-                public void onComponentTag(Component component, ComponentTag tag) {
-                    super.onComponentTag(component, tag);
-
-                    // Create a toggle button when the nullable boolean `isPressed` is a boolean.
-                    if (isPressed != null) {
-                        tag.put("aria-pressed", isPressed ? "true" : "false");
-                    }
-                }
-            }
-        );
+        add(UtrechtButtonBehavior.INSTANCE);
     }
+
+    @Override
+    protected void onComponentTag(ComponentTag tag) {
+        super.onComponentTag(tag);
+
+        tag.append("class",
+            HTMLUtil.className(
+                "utrecht-button",
+                appearance != null ? "utrecht-button--" + appearance.appearance : "",
+                hint != null ? "utrecht-button--" + hint.hint : "",
+                isEnabledInHierarchy() ? "" : "utrecht-button--disabled",
+                pressed != null && pressed ? "utrecht-button--pressed" : "",
+                this.busy ? "utrecht-button--busy" : ""
+            ),
+            " "
+        );
+
+        if (pressed != null) {
+            tag.put("aria-pressed", pressed ? "true" : "false");
+        }
+    }
+
+
 }

@@ -1,51 +1,84 @@
 package nl.rotterdam.design_system.wicket.components.base;
 
-import java.util.ArrayList;
-import java.util.List;
+import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
 
-public abstract class TagNameClassComponentBehavior extends Behavior {
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
-    private final String expectedTagName;
+import static nl.rotterdam.design_system.wicket.components.component_tag.ComponentTagUtils.appendCssClassesTo;
+
+public abstract class TagNameClassComponentBehavior<T extends Component> extends HeaderItemRenderingBehavior {
+
+    private final String requiredTagName;
     private final String[] classNames;
 
-    private final List<CssReferenceHeaderItem> headerItems = new ArrayList<>();
+    protected TagNameClassComponentBehavior(String requiredTagName, CssClassNames... classNames) {
+        this(requiredTagName, Arrays.stream(classNames).map(CssClassNames::getClassNames).toArray(String[]::new));
+    }
 
-    public TagNameClassComponentBehavior(String expectedTagName, String... classNames) {
-        this.expectedTagName = expectedTagName;
+    /**
+     * @deprecated use {@link #TagNameClassComponentBehavior(String, CssClassNames...)} instead.
+     */
+    @Deprecated(since = "2025-09-20", forRemoval = true)
+    protected TagNameClassComponentBehavior(String requiredTagName, String... classNames) {
+        this.requiredTagName = requiredTagName;
         this.classNames = classNames;
     }
 
-    public void addHeaderItem(CssReferenceHeaderItem headerItem) {
-        if (headerItem == null) {
-            throw new RuntimeException("Header item cannot be null");
-        }
-        headerItems.add(headerItem);
-    }
-
-    public String[] getClassNames() {
-        return classNames;
-    }
-
-    public void onComponentTag(Component component, ComponentTag tag) {
+    public final void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
-        if (!expectedTagName.equals(tag.getName())) {
-            tag.setName(expectedTagName);
+        if (!requiredTagName.equals(tag.getName())) {
+            throw new IllegalStateException("Expected tag name '" + requiredTagName + "' but found '" + tag.getName() + "' for component: " + component.getId());
         }
 
-        if (!tag.isClose()) {
-            tag.append("class", String.join(" ", this.getClassNames()), " ");
+        if (tag.isClose()) {
+            return;
+        }
+
+        @SuppressWarnings("unchecked")
+        List<CssClassNames> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
+
+        if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
+            appendCssClassesTo(
+                tag,
+                joinAll(classNames, dynamicClassNames.stream().map(CssClassNames::getClassNames).toList())
+            );
         }
     }
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-        headerItems.forEach(response::render);
+    /**
+     * Efficient conversion of an array and a collection to a single space-separated string.
+     */
+    private static String joinAll(String[] arr, Collection<String> col) {
+        StringBuilder sb = new StringBuilder();
+
+        for (String s : arr) {
+            if (s != null && !s.isEmpty()) {
+                if (!sb.isEmpty()) sb.append(' ');
+                sb.append(s);
+            }
+        }
+
+        for (String s : col) {
+            if (s != null && !s.isEmpty()) {
+                if (!sb.isEmpty()) sb.append(' ');
+                sb.append(s);
+            }
+        }
+
+        return sb.toString();
     }
+
+    /**
+     * Add dynamic classes based on the state of the component.
+     */
+    protected List<CssClassNames> customizeComponentAndReturnClasses(T component, ComponentTag tag) {
+        return List.of();
+    }
+
 }

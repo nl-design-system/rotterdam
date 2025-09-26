@@ -1,25 +1,27 @@
 package nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
+import nl.rotterdam.design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.request.resource.CssResourceReference;
 
-public class UtrechtFormFieldErrorMessageBehavior extends Behavior {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-    public static final CssReferenceHeaderItem CSS = CssHeaderItem.forReference(
-        new CssResourceReference(
-            UtrechtFormFieldErrorMessageBehavior.class,
-            "@utrecht/form-field-error-message-css/dist/index.css"
-        )
-    );
+public class UtrechtFormFieldErrorMessageBehavior extends TagNameClassComponentBehavior<Component> {
+
+    public static final UtrechtFormFieldErrorMessageBehavior INSTANCE = new UtrechtFormFieldErrorMessageBehavior();
+
 
     @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-
-        response.render(CSS);
+    public void bind(Component component) {
+        component.add(HideWhenModelIsNullBehavior.INSTANCE);
     }
+
+    private UtrechtFormFieldErrorMessageBehavior() {
+        super("div", UtrechtFormFieldErrorCss.DEFAULT);
+
+        addHeaderItem(cssReferenceHeaderItem(UtrechtFormFieldErrorMessageBehavior.class,
+            "@utrecht/form-field-error-message-css/dist/index.css"));
+
+    }
+
 }

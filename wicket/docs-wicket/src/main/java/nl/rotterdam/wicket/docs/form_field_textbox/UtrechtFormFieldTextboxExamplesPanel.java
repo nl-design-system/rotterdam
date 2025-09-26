@@ -14,43 +14,34 @@ public class UtrechtFormFieldTextboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldTextbox() {
-        return new UtrechtFormFieldTextbox(
+        return new UtrechtFormFieldTextbox<>(
             "utrechtFormFieldTextbox",
             Model.of("Hello world!"),
             Model.of("I agree"),
-            Model.of("Description"),
-            Model.of("error")
+            Model.of("Description")
         );
     }
 
     @ComponentExample
     private static Component exampleFormFieldTextboxRequired() {
-        UtrechtFormFieldTextbox formField = new UtrechtFormFieldTextbox(
+        return new UtrechtFormFieldTextbox<>(
             "utrechtFormFieldTextboxRequired",
             Model.of("Hello world!"),
             Model.of("I agree"),
-            Model.of("Description"),
-            Model.of("error")
-        );
-
-        formField.setRequired(true);
-
-        return formField;
+            Model.of("Description")
+        )
+            .setRequired(true);
     }
 
     @ComponentExample
     private static Component exampleFormFieldTextboxDisabled() {
-        UtrechtFormFieldTextbox formField = new UtrechtFormFieldTextbox(
+        return new UtrechtFormFieldTextbox<>(
             "utrechtFormFieldTextboxDisabled",
             Model.of("Hello world!"),
             Model.of("I agree"),
-            Model.of("Description"),
-            Model.of("error")
-        );
-
-        // formField.setDisabled(true);
-
-        return formField;
+            Model.of("Description")
+        )
+            .setEnabled(false);
     }
 
     @Override

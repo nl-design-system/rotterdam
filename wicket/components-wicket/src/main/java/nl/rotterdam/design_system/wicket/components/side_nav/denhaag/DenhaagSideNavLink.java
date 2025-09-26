@@ -1,9 +1,14 @@
 package nl.rotterdam.design_system.wicket.components.side_nav.denhaag;
 
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Page;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class DenhaagSideNavLink<T> extends BookmarkablePageLink<T> {
 
     public boolean placeholder = false;

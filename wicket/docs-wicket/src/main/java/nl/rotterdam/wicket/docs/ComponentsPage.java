@@ -6,6 +6,7 @@ import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
 import nl.rotterdam.wicket.docs.button.UtrechtButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
+import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
@@ -87,6 +88,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new ButtonGroupExamplesPanel("buttonGroupExamplesPanel"),
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
+            new CheckboxExamplesPanel("checkboxExamplesPanel"),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
             new UtrechtFormFieldTextboxExamplesPanel("formFieldTextboxExamplesPanel"),

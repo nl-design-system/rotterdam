@@ -14,13 +14,13 @@ Installeer Java 21 en Maven 3.x
 ### Documentatie starten
 
 ```shell
-mvn install  && mvn exec:java@runDocs -pl :docs-wicket
+./mvnw install  && ./mvnw exec:java@runDocs -pl :docs-wicket
 ```
 
 ### Storybook documentatie genereren
 
 ```shell
-mvn install && mvn exec:java@generateStoryBook -pl :docs-wicket
+./mvnw install && ./mvnw exec:java@generateStoryBook -pl :docs-wicket
 ```
 
 ### Maven uitvoeren met pnpm
@@ -44,7 +44,7 @@ docker compose up --build --remove-orphans
 
 Open de server op [localhost:8080](http://localhost:8080/).
 
-## Learning more about Apache Wicket
+## Meer leren over Wicket
 
 - [Wicket 10.x Reference Guide](https://nightlies.apache.org/wicket/guide/10.x/single.html)
 
@@ -59,3 +59,23 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
   `HeadingExamplesPanel` voor een voorbeeld.
 - Voeg de storybook en markdown codegenerator toe aan
   `GenerateMarkdownAndStorybookExamples`
+
+### Regels
+
+- Geef geen componenten door aan andere Wicket componenten (via constructors).
+- Voor methodes die componenten maken: prefix met new. Net als Wicket, zie bijvoorbeeld AjaxPagingNavigation
+
+## Workspace dependencies resolven
+
+NL Design System gebruikt pnpm workspaces. Deze dependencies worden niet automatisch
+herkend door Maven. Je kunt ze handmatig installeren vanuit de root-folder met:
+
+```shell
+pnpm run build
+```
+
+Draai daarna nog expliciet een Maven build:
+
+```shell
+./mvnw package
+```

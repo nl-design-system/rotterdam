@@ -18,7 +18,6 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
-    "prebuild": "npm run clean",
     "build": "npm-run-all --sequential build:style-dictionary build:scss",
     "build:scss": "rollup -c rollup.config.mjs",
     "build:style-dictionary": "node ./style-dictionary.mjs",
@@ -29,10 +28,10 @@
     "@tokens-studio/sd-transforms": "1.2.9",
     "chokidar-cli": "3.0.0",
     "npm-run-all": "4.1.5",
-    "postcss-discard-duplicates": "7.0.1",
+    "postcss-discard-duplicates": "7.0.2",
     "rimraf": "6.0.1",
-    "rollup": "4.29.1",
-    "rollup-plugin-import-css": "3.5.8",
+    "rollup": "4.50.0",
+    "rollup-plugin-import-css": "4.0.2",
     "rollup-plugin-postcss": "4.0.2",
     "style-dictionary": "4.3.0"
   }
