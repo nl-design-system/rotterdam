@@ -332,8 +332,8 @@ importers:
         specifier: 1.6.1
         version: 1.6.1
       '@utrecht/textarea-css':
-        specifier: 2.2.0
-        version: 2.2.0
+        specifier: 2.3.2
+        version: 2.3.2
       '@utrecht/textbox-css':
         specifier: 1.5.0
         version: 1.5.0
@@ -720,8 +720,8 @@ importers:
         specifier: 1.6.1
         version: 1.6.1
       '@utrecht/textarea-css':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 2.3.2
+        version: 2.3.2
       '@utrecht/textbox-css':
         specifier: 1.1.0
         version: 1.1.0
@@ -1735,6 +1735,7 @@ packages:
     resolution: {integrity: sha512-j69w1yZEJG6ipMJlcyAZecG3Iz0Vqgu2WZAEgyxPko4r4MYZGOQDCRNV1CAtkM24uYuRPqnIgBtz6Jh6RTFs7g==}
     peerDependencies:
       react: ^18.0.0
+
 
   '@gemeente-denhaag/sidenav@2.0.0':
     resolution: {integrity: sha512-en7J1FxYG5xuu/2nvANraFS3nbRxKNi6+vxRPqSi9lPYH1ChG2EBCjbVOe7riarEcb++tglQkIjx6HRcivgctw==}
@@ -3171,11 +3172,8 @@ packages:
   '@utrecht/table-css@1.6.1':
     resolution: {integrity: sha512-IEEB3JX19/FxAOyZHA/88h1GROSYsr3YxDIXsP+ea3sVUSyEcoUP0jgiKjcRV198Ad3p3+T07p79HhIuS+AhLw==}
 
-  '@utrecht/textarea-css@1.1.0':
-    resolution: {integrity: sha512-SL5fUf3ygYA70VC4mT4TSN6WHU95ESECUQyO4w3J942tLxvmfNHpdmMv1iBkyqo+xlM8Q1EP7oDKbkABBK5ceA==}
-
-  '@utrecht/textarea-css@2.2.0':
-    resolution: {integrity: sha512-OFqAtwMpkRd+ME8Z9IIQiDd0rgrog88yOTgkQTTjWnKFzxDaq64CvY4SF78vzfco3cxMb4JqBPy4F7VOq55Kqw==}
+  '@utrecht/textarea-css@2.3.2':
+    resolution: {integrity: sha512-//1PLWGMvTqS6exirU0OUO3l9odc7S2Wg1kg4I82v5oeoniUbn2gNgVfvDonPx4l9IywPNhIjlMM/9VfgU8T+Q==}
 
   '@utrecht/textbox-css@1.1.0':
     resolution: {integrity: sha512-APQW299fyoNZQ/hYW8F9uET4JvzhXMbUBWT59h6sc/wwsbDBWku+ufgN4wrsYTqGSPExFKfffzRGuniaqyvBxA==}
@@ -11070,9 +11068,7 @@ snapshots:
 
   '@utrecht/table-css@1.6.1': {}
 
-  '@utrecht/textarea-css@1.1.0': {}
-
-  '@utrecht/textarea-css@2.2.0': {}
+  '@utrecht/textarea-css@2.3.2': {}
 
   '@utrecht/textbox-css@1.1.0': {}
 
