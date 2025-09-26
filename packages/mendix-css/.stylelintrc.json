@@ -1,7 +1,0 @@
-{
-  "extends": "../../.stylelintrc.json",
-  "rules": {
-    "scss/dollar-variable-pattern": null,
-    "selector-class-pattern": null
-  }
-}

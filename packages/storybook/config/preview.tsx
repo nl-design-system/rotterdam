@@ -49,7 +49,6 @@ const preview: Preview = {
           'Template',
           'Apache Wicket',
           ['Aan de slag', 'README'],
-          'Mendix',
           ['README'],
         ],
       },

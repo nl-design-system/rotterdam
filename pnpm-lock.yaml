@@ -266,90 +266,6 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))
 
-  packages/mendix-css:
-    devDependencies:
-      '@gemeente-rotterdam/components-css':
-        specifier: workspace:*
-        version: link:../components-css
-      '@gemeente-rotterdam/design-tokens':
-        specifier: workspace:*
-        version: link:../../proprietary/design-tokens
-      '@mendix/atlas':
-        specifier: https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz
-        version: https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz
-      '@utrecht/badge-css':
-        specifier: 1.4.1
-        version: 1.4.1
-      '@utrecht/badge-data-css':
-        specifier: 1.4.0
-        version: 1.4.0
-      '@utrecht/breadcrumb-nav-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/button-css':
-        specifier: 2.2.0
-        version: 2.2.0
-      '@utrecht/custom-checkbox-css':
-        specifier: 1.3.2
-        version: 1.3.2
-      '@utrecht/focus-ring-css':
-        specifier: 2.3.1
-        version: 2.3.1
-      '@utrecht/form-label-css':
-        specifier: 1.6.1
-        version: 1.6.1
-      '@utrecht/heading-1-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-2-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-3-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-4-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-5-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-6-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-css':
-        specifier: 1.4.1
-        version: 1.4.1
-      '@utrecht/link-css':
-        specifier: 1.6.1
-        version: 1.6.1
-      '@utrecht/paragraph-css':
-        specifier: 2.2.0
-        version: 2.2.0
-      '@utrecht/radio-button-css':
-        specifier: 1.6.1
-        version: 1.6.1
-      '@utrecht/table-css':
-        specifier: 1.6.1
-        version: 1.6.1
-      '@utrecht/textarea-css':
-        specifier: 2.2.0
-        version: 2.2.0
-      '@utrecht/textbox-css':
-        specifier: 1.5.0
-        version: 1.5.0
-      postcss-discard-duplicates:
-        specifier: 7.0.2
-        version: 7.0.2(postcss@8.5.6)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      rollup:
-        specifier: 4.50.0
-        version: 4.50.0
-      rollup-plugin-postcss:
-        specifier: 4.0.2
-        version: 4.0.2(postcss@8.5.6)(ts-node@10.9.2(@types/node@22.18.0)(typescript@5.9.2))
-
   packages/storybook:
     devDependencies:
       '@gemeente-denhaag/action':
@@ -376,9 +292,6 @@ importers:
       '@gemeente-rotterdam/icon':
         specifier: workspace:*
         version: link:../../components/icon
-      '@gemeente-rotterdam/mendix-css':
-        specifier: workspace:*
-        version: link:../mendix-css
       '@gemeente-rotterdam/web-components-react':
         specifier: workspace:*
         version: link:../web-components-react
@@ -1952,11 +1865,6 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@mendix/atlas@https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz':
-    resolution: {tarball: https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz}
-    version: 0.0.0
-    engines: {node: '>=16'}
-
   '@nl-design-system-candidate/paragraph-css@2.1.1':
     resolution: {integrity: sha512-Ig5TAMA6nol5pWC8KjzQ9gMemHKAZAGNqso65CdMeGdBT3Q6YGYWg42XopWhIQ/iWh/cKiwZHht1X41SKctRHQ==}
 
@@ -2920,12 +2828,6 @@ packages:
   '@utrecht/alert-css@2.4.0':
     resolution: {integrity: sha512-2vrm2Y8yNIPu1VNmEGP7BJkxEFaSPobQ+hcPkQs2TJiPybzX+ut7ZCcm3KaxmE6LSVjIOLSbLXe2YW/fP2g/Rw==}
 
-  '@utrecht/badge-css@1.4.1':
-    resolution: {integrity: sha512-tVONx5fYvxA4OMM1HVts4KpQATNJE5e7+Ov5bHZE7jsMOyo6yd/FfNxeay5cqVEvw6RIt+zRr6tW+oQkhJZNvw==}
-
-  '@utrecht/badge-data-css@1.4.0':
-    resolution: {integrity: sha512-ewxf14Orm5RVxrxQ4PS0T4+iG3HmbLfZDabJ4VC1yD1BTTD4lpMbUo1/t7BMenEYWlvodUoEIyj+k6E3NzsXtA==}
-
   '@utrecht/badge-list-css@2.2.1':
     resolution: {integrity: sha512-C1HCRQ12CTuuFvmbcUEYsI8SuXe1X7y/oC9OyHznfyIJYkINm9NZ/30WIu99fgd/GkwjFyQoy24J990zteM3PQ==}
 
@@ -2937,9 +2839,6 @@ packages:
 
   '@utrecht/button-css@1.1.0':
     resolution: {integrity: sha512-1NtKfwHmpaTmkv28fGRoVtT4Y9BER2TDE1jMuDGhL727DROQTXDKZB7ZEZMuLUqtxPInbyskZeJHMaA18CJbIA==}
-
-  '@utrecht/button-css@2.2.0':
-    resolution: {integrity: sha512-Fooo1EN8Dla4XKdqAnvSI3yCqnh4XkwX0jmMWgm9czcyj4ahVYayEIz7zEg34J8Gd5bMbFmeakyaIU9/A9YAvQ==}
 
   '@utrecht/button-group-css@1.5.0':
     resolution: {integrity: sha512-8HGQ+CPDoxFM7n+ArsCixFEpw0Uykf4YxLc18L3tE5yw2+pBdrLVieh+wBghg2QtfsQJs5tpLZbw76wyaVENmg==}
@@ -3019,9 +2918,6 @@ packages:
       react: '18'
       react-dom: '18'
 
-  '@utrecht/focus-ring-css@2.3.1':
-    resolution: {integrity: sha512-mmZeNnp2VeYVrnG0uhgkLcX2nVuMW0+oZjJ7lCI1FFODpj3ORmtTi7N5UNjhM3Pyppg5LdDwqMM6jF9clPg5Yg==}
-
   '@utrecht/form-field-checkbox-react@1.0.7':
     resolution: {integrity: sha512-MAvd2GV8kwuN1b8Up72LrKI7b/wG5ueNjMFw0bLCgX6tfgWy9TCKCymupfzSgs5W2VSZRoqFD1FB10BBFHwZOg==}
     peerDependencies:
@@ -3087,9 +2983,6 @@ packages:
   '@utrecht/heading-6-css@1.5.1':
     resolution: {integrity: sha512-4r3Kd+Hej5ugLdiVCKlcN6xdXxzL8X/saW0pfK+3qPqGmhU3TV3r2axJqxLA9Q5NTDabZZuZeDZiqfwKcVsWIA==}
 
-  '@utrecht/heading-css@1.4.1':
-    resolution: {integrity: sha512-NK9Sfk45qE2vtkIz5FTQGqaMAyymD832ykZ/y4QKlg+kEQUcOZyJkXNLjOCueUswSQVGIufIdXtMwEG+mF4P1Q==}
-
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
 
@@ -3146,14 +3039,8 @@ packages:
   '@utrecht/paragraph-css@1.1.0':
     resolution: {integrity: sha512-HxkYL/W0tkHngucdBFHOK8t7OmUmlnz4uIXP4GBXdA299Hp+RGb/1vaH5A2RaIN0P7/4v6EkuV4lquOcHx0K0Q==}
 
-  '@utrecht/paragraph-css@2.2.0':
-    resolution: {integrity: sha512-jgFsFdz7xcqO14IhYEFx37dh4n1GjCfJM9iQsvo/Yr4zrknQHpGBWQcXMb548W19/4yHMnQnsSnivQGDbPdSug==}
-
   '@utrecht/preserve-data-css@1.3.1':
     resolution: {integrity: sha512-O4TdW3df2AJGHunXB5AzEGDi8u8RsdmSbhyVMO5XeVIjiCVztajiyXnRqfuFX7+OA0EZ5E3NUSjPuXnSEJnkQA==}
-
-  '@utrecht/radio-button-css@1.6.1':
-    resolution: {integrity: sha512-AQVGKD100iVjBan4mIx/QOBflgZUdZpNVRxrrCE8eXwgzXCSGlg++Veqx9Z+88vH38CEl+evQynVBdssIydVAA==}
 
   '@utrecht/radio-button-react@1.0.4':
     resolution: {integrity: sha512-pUcep0QygWwWAmdc44A3xI46ohZxIS7THjCQrJaO7EshTXfUOG8gqRkOaKmfTFLUjIENBCIIxVWWFI+hGAxRFA==}
@@ -3174,14 +3061,8 @@ packages:
   '@utrecht/textarea-css@1.1.0':
     resolution: {integrity: sha512-SL5fUf3ygYA70VC4mT4TSN6WHU95ESECUQyO4w3J942tLxvmfNHpdmMv1iBkyqo+xlM8Q1EP7oDKbkABBK5ceA==}
 
-  '@utrecht/textarea-css@2.2.0':
-    resolution: {integrity: sha512-OFqAtwMpkRd+ME8Z9IIQiDd0rgrog88yOTgkQTTjWnKFzxDaq64CvY4SF78vzfco3cxMb4JqBPy4F7VOq55Kqw==}
-
   '@utrecht/textbox-css@1.1.0':
     resolution: {integrity: sha512-APQW299fyoNZQ/hYW8F9uET4JvzhXMbUBWT59h6sc/wwsbDBWku+ufgN4wrsYTqGSPExFKfffzRGuniaqyvBxA==}
-
-  '@utrecht/textbox-css@1.5.0':
-    resolution: {integrity: sha512-30VUpY1FsJVveas9vxBLb/dEeTE2bWIdZ6TSGgMmfFF/Nyp1phUIxqN4jZBsAjw1pstbfYrMpLlcSSSDJTdtRQ==}
 
   '@utrecht/textbox-react@1.0.4':
     resolution: {integrity: sha512-uquWQu33bJrWS/z/nQzZA/Tkk6wzI2Oae/eVMZEx2nRtzR14YCHYB26LMDQGe0gsK5t59kNtZHcwhWkR0Nnt1w==}
@@ -9786,8 +9667,6 @@ snapshots:
       '@types/react': 18.3.18
       react: 18.3.1
 
-  '@mendix/atlas@https://github.com/mendix/atlas/archive/refs/tags/atlas-web-content-v3.6.0.tar.gz': {}
-
   '@nl-design-system-candidate/paragraph-css@2.1.1': {}
 
   '@nl-design-system-unstable/voorbeeld-design-tokens@3.3.4': {}
@@ -10850,10 +10729,6 @@ snapshots:
 
   '@utrecht/alert-css@2.4.0': {}
 
-  '@utrecht/badge-css@1.4.1': {}
-
-  '@utrecht/badge-data-css@1.4.0': {}
-
   '@utrecht/badge-list-css@2.2.1': {}
 
   '@utrecht/body-css@1.2.1': {}
@@ -10861,8 +10736,6 @@ snapshots:
   '@utrecht/breadcrumb-nav-css@1.5.1': {}
 
   '@utrecht/button-css@1.1.0': {}
-
-  '@utrecht/button-css@2.2.0': {}
 
   '@utrecht/button-group-css@1.5.0': {}
 
@@ -10945,8 +10818,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@utrecht/focus-ring-css@2.3.1': {}
-
   '@utrecht/form-field-checkbox-react@1.0.7(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.3
@@ -11007,8 +10878,6 @@ snapshots:
 
   '@utrecht/heading-6-css@1.5.1': {}
 
-  '@utrecht/heading-css@1.4.1': {}
-
   '@utrecht/heading-group-css@1.5.1': {}
 
   '@utrecht/html-content-css@1.4.1': {}
@@ -11051,11 +10920,7 @@ snapshots:
 
   '@utrecht/paragraph-css@1.1.0': {}
 
-  '@utrecht/paragraph-css@2.2.0': {}
-
   '@utrecht/preserve-data-css@1.3.1': {}
-
-  '@utrecht/radio-button-css@1.6.1': {}
 
   '@utrecht/radio-button-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -11072,11 +10937,7 @@ snapshots:
 
   '@utrecht/textarea-css@1.1.0': {}
 
-  '@utrecht/textarea-css@2.2.0': {}
-
   '@utrecht/textbox-css@1.1.0': {}
-
-  '@utrecht/textbox-css@1.5.0': {}
 
   '@utrecht/textbox-react@1.0.4(@babel/runtime@7.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
