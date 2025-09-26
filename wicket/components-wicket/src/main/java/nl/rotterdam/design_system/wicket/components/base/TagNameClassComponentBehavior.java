@@ -44,7 +44,10 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
         List<CssClassNames> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
 
         if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
-            appendCssClassesTo(tag, joinAll(classNames, dynamicClassNames.stream().map(CssClassNames::getClassNames).collect(Collectors.toList())));
+            appendCssClassesTo(
+                tag,
+                joinAll(classNames, dynamicClassNames.stream().map(CssClassNames::getClassNames).toList())
+            );
         }
     }
 
