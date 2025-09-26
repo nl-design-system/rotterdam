@@ -4,7 +4,6 @@ import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderIte
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;

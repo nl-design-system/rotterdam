@@ -5,7 +5,6 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Estaf
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;

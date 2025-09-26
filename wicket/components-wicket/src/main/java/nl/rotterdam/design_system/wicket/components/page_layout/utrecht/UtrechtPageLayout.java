@@ -4,7 +4,6 @@ import nl.rotterdam.design_system.wicket.components.component_state.NlComponentS
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.panel.Panel;
 
-import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.HELP_WANTED;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 

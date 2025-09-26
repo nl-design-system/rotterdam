@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.button.utrecht;
 
 import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Button;
@@ -9,7 +8,6 @@ import org.apache.wicket.model.IModel;
 
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class UtrechtButton extends Button {

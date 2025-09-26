@@ -1,6 +1,5 @@
 package nl.rotterdam.design_system.wicket.components.link_list.utrecht;
 
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;

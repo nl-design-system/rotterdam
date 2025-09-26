@@ -4,8 +4,6 @@ import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCa
 import org.apache.wicket.model.Model;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 
 class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
 

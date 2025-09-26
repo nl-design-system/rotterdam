@@ -1,6 +1,5 @@
 package nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht;
 
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import org.apache.wicket.Component;

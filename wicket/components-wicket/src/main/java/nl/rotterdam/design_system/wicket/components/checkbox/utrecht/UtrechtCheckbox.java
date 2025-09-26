@@ -1,18 +1,11 @@
 package nl.rotterdam.design_system.wicket.components.checkbox.utrecht;
 
-import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.model.IModel;
-import org.jspecify.annotations.Nullable;
 
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 
 /**
  * Implementation of <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox</a>.

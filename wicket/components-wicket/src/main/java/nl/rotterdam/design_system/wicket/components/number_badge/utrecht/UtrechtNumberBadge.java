@@ -2,7 +2,6 @@ package nl.rotterdam.design_system.wicket.components.number_badge.utrecht;
 
 import java.io.Serializable;
 
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;

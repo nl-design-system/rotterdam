@@ -1,7 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.body.utrecht;
 
 import nl.rotterdam.design_system.wicket.components.base.HeaderItemRenderingBehavior;
-import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
