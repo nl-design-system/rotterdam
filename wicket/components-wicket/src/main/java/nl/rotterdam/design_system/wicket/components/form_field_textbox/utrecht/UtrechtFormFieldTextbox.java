@@ -1,198 +1,205 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
-import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
-import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxBehavior;
+import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextbox;
+import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
+import org.apache.wicket.util.string.Strings;
 
-import java.util.UUID;
+import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.*;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
+import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
-public class UtrechtFormFieldTextbox extends Panel {
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
+public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
-    private final TextField<String> control;
-    private final Label description;
-    private final IModel<String> errorMessageModel;
-    private final Label errorMessage;
-    private final String controlId;
-    private final String fieldId;
-    private final String descriptionId;
-    private final String errorMessageId;
+    private String inputType = "text";
+    private final Component labelComponent;
+    private final Component descriptionComponent;
+    private final Component errorMessageComponent;
+    private final Component inputComponent;
+    private final FormFieldTextbox textbox;
 
-    public static final String FORM_FIELD_CLASSNAME = "utrecht-form-field";
-    public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
-    public static final String FORM_LABEL_CLASSNAME = "utrecht-form-label";
-    public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
-    public static final String TEXTBOX_CLASSNAME = "utrecht-textbox utrecht-textbox--html-input";
-    public static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-textbox--disabled";
-    public static final String INVALID_CLASSNAME = "utrecht-textbox--invalid";
-    public static final String FORM_FIELD_INPUT_CLASSNAME = "utrecht-form-field__input";
-
-    public UtrechtFormFieldTextbox(String id, IModel<String> model, String labelText) {
-        this(id, model, Model.of(labelText), null, null);
+    public UtrechtFormFieldTextbox(String id, IModel<T> model, IModel<String> labelText) {
+        this(id, model, labelText, EMPTY_STRING_MODEL);
     }
 
     public UtrechtFormFieldTextbox(
         String id,
-        IModel<String> model,
+        IModel<T> model,
         IModel<String> labelModel,
-        IModel<String> descriptionModel,
-        IModel<String> errorModel
+        IModel<String> descriptionModel
     ) {
         super(id);
-        add(new UtrechtFormFieldBehavior());
-        add(new UtrechtFormLabelBehavior());
-        add(new UtrechtFormFieldDescriptionBehavior());
-        add(new UtrechtFormFieldErrorMessageBehavior());
-        add(new UtrechtTextboxBehavior());
-        errorMessageModel = errorModel;
+        requireNonNull(labelModel);
+        requireNonNull(descriptionModel);
 
-        // Generate unique IDs `for` and `aria-describedby` ID references
-        fieldId = UUID.randomUUID().toString();
-
-        setMarkupId(fieldId);
-
-        controlId = UUID.randomUUID().toString();
-        descriptionId = UUID.randomUUID().toString();
-        errorMessageId = UUID.randomUUID().toString();
-
-        // TODO: Implement disabled state
-        Boolean disabled = false;
-
-        // TODO: Implement indeterminate state, when someone needs it.
+        textbox = new FormFieldTextbox(model, descriptionModel);
+        textbox.setLabel(labelModel);
 
         // Create the text input
-        control = new TextField<>("control", model) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-                control.setMarkupId(controlId);
-                tag.put(
-                    "class",
-                    HTMLUtil.className(
-                        UtrechtFormFieldTextbox.TEXTBOX_CLASSNAME,
-                        UtrechtFormFieldTextbox.FORM_FIELD_INPUT_CLASSNAME,
-                        disabled ? UtrechtFormFieldTextbox.CHECKBOX_DISABLED_CLASSNAME : null,
-                        isInvalid() ? UtrechtFormFieldTextbox.INVALID_CLASSNAME : null
-                    )
-                );
-
-                String ariaDescribedBy = HTMLUtil.idRefs(
-                    descriptionModel != null && descriptionModel.getObject() != null ? descriptionId : null,
-                    isInvalid() ? errorMessageId : null
-                );
-
-                // Do not render an empty `aria-describedby` attribute.
-                if (!ariaDescribedBy.isEmpty()) {
-                    tag.put("aria-describedby", ariaDescribedBy);
-                }
-
-                if (isRequired()) {
-                    tag.put("aria-required", "true");
-                }
-                if (isInvalid()) {
-                    tag.put("aria-invalid", "true");
-                }
-            }
-
-            protected void onDisabled(final ComponentTag tag) {
-                tag.put("disabled", "disabled");
-                // TODO: Add `CHECKBOX_DISABLED_CLASSNAME` class name
-            }
-        };
-
-        // Create the label
-        Label label = new Label("label", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-                tag.put("for", controlId);
-                tag.put(
-                    "class",
-                    HTMLUtil.className(
-                        UtrechtFormFieldTextbox.FORM_LABEL_CLASSNAME,
-                        disabled ? UtrechtFormFieldTextbox.FORM_LABEL_DISABLED_CLASSNAME : null
-                    )
-                );
-            }
-        };
-
-        Label labelText = new Label("labelText", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-            }
-        };
-
-        // Create description and error message
-        description = new Label("description", descriptionModel) {
-            {
-                setMarkupId(descriptionId);
-            }
-
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-            }
-
-            @Override
-            public boolean isVisible() {
-                return getDefaultModelObject() != null;
-            }
-        };
-
-        errorMessage = new Label("error", errorModel) {
-            {
-                setMarkupId(errorMessageId);
-            }
-
-            @Override
-            public boolean isVisible() {
-                return getDefaultModelObject() != null;
-            }
-        };
-
-        // Add all components
-        add(control);
-        add(label);
-        add(labelText);
-        add(description);
-        add(errorMessage);
+        labelComponent = newLabelComponent();
+        descriptionComponent = newDescriptionComponent(descriptionModel);
+        inputComponent = newInputComponent(textbox);
+        errorMessageComponent = newErrorMessageComponent();
     }
 
-    protected boolean isInvalid() {
-        return errorMessageModel != null && errorMessageModel.getObject() != null;
+    private static Component newInputComponent(TextField<?> inputTextbox) {
+        return new WebMarkupContainer("input-container")
+            .add(inputTextbox)
+            .add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
     }
 
-    protected boolean isRequired() {
-        return control.isRequired();
+    private Component newErrorMessageComponent() {
+        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", textbox)
+            .add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
+    }
+
+    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
+        return new Label("description", descriptionModel)
+            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
+    }
+
+    private Component newLabelComponent() {
+        return new WebMarkupContainer("label-container")
+            .add(new TextboxLabel())
+            .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior());
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        setOutputMarkupId(true);
+
+        add(
+            UtrechtFormFieldBehavior.INSTANCE,
+            UtrechtFormFieldTextboxBehavior.INSTANCE
+        );
+
+        add(
+            inputComponent,
+            labelComponent,
+            descriptionComponent,
+            errorMessageComponent
+        );
+    }
+
+    private boolean isInvalid() {
+        return textbox.hasErrorMessage();
     }
 
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
-        tag.put(
-            "class",
-            HTMLUtil.className(
-                UtrechtFormFieldTextbox.FORM_FIELD_CLASSNAME,
-                isInvalid() ? UtrechtFormFieldTextbox.FORM_FIELD_INVALID_CLASSNAME : null
-            )
-        );
+
+        assertIsRegularHtmlTag(tag);
+
+        if (isInvalid()) {
+            INVALID.appendTo(tag);
+        }
     }
 
-    public UtrechtFormFieldTextbox setRequired(boolean required) {
-        control.setRequired(required);
+    public UtrechtFormFieldTextbox<T> setRequired(boolean required) {
+        getTextField().setRequired(required);
         return this;
     }
 
-    public TextField getTextField() {
-        return control;
+    public TextField<T> getTextField() {
+        return textbox;
+    }
+
+    public UtrechtFormFieldTextbox<T> setInputType(String type) {
+        inputType = type;
+
+        return this;
+    }
+
+    @Override
+    public Component getDescriptionComponent() {
+        return descriptionComponent;
+    }
+
+    @Override
+    public Component getErrorMessageComponent() {
+        return errorMessageComponent;
+    }
+
+    @Override
+    public Component getInputComponent() {
+        return inputComponent;
+    }
+
+    @Override
+    public Component getLabelComponent() {
+        return labelComponent;
+    }
+
+    class FormFieldTextbox extends UtrechtTextbox<T> {
+
+        private final IModel<String> descriptionModel;
+
+        public FormFieldTextbox(IModel<T> model, IModel<String> descriptionModel) {
+            super("control", model);
+            this.descriptionModel = descriptionModel;
+        }
+
+        @Override
+        protected void onComponentTag(ComponentTag tag) {
+            super.onComponentTag(tag);
+
+            String ariaDescribedBy = HTMLUtil.idRefs(
+                 descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
+                isInvalid() ? errorMessageComponent.getMarkupId() : null
+            );
+
+            // Do not render an empty `aria-describedby` attribute.
+            if (!ariaDescribedBy.isEmpty()) {
+                tag.put("aria-describedby", ariaDescribedBy);
+            }
+
+            if (!Strings.isEmpty(inputType)) {
+                tag.put("type", inputType);
+            }
+        }
+    }
+
+    private class TextboxLabel extends WebMarkupContainer {
+
+        public TextboxLabel() {
+            super("label");
+        }
+
+        @Override
+        protected void onInitialize() {
+            super.onInitialize();
+
+            add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
+        }
+
+        @Override
+        protected void onComponentTag(ComponentTag tag) {
+            super.onComponentTag(tag);
+            tag.put("for", textbox.getMarkupId());
+
+            if (!textbox.isEnabledInHierarchy()) {
+                FORM_LABEL_STATE_DISABLED.appendTo(tag);
+            }
+        }
     }
 }

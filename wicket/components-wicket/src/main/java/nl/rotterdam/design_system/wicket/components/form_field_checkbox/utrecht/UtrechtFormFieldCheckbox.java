@@ -1,215 +1,207 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
 
 import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxBehavior;
+import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckbox;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
-import nl.rotterdam.design_system.wicket.components.form_field_error_message.utrecht.UtrechtFormFieldErrorMessageBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
+import org.apache.wicket.Component;
+import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
-import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 
-import java.util.UUID;
+import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.*;
+import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
+import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckboxCss.UTRECHT_FORM_FIELD_LABEL_CHECKBOX;
+import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
+import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
-public class UtrechtFormFieldCheckbox extends Panel {
 
-    private final CheckBox checkbox;
-    private final Label description;
-    private final IModel<String> errorMessageModel;
-    private final Label errorMessage;
-    private final String checkboxId;
-    private final String fieldId;
-    private final String descriptionId;
-    private final String errorMessageId;
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
+public class UtrechtFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
 
-    public static final String FORM_FIELD_CLASSNAME = "utrecht-form-field";
-    public static final String FORM_FIELD_CHECKBOX_CLASSNAME = "utrecht-form-field--checkbox";
-    public static final String FORM_FIELD_INVALID_CLASSNAME = "utrecht-form-field--invalid";
-    public static final String FORM_LABEL_CLASSNAME = "utrecht-form-label utrecht-form-label--checkbox";
-    public static final String FORM_LABEL_DISABLED_CLASSNAME = "utrecht-form-label--disabled";
-    public static final String CHECKBOX_CLASSNAME =
-        "utrecht-checkbox utrecht-checkbox--html-input utrecht-checkbox--custom";
-    public static final String CHECKBOX_DISABLED_CLASSNAME = "utrecht-checkbox--disabled";
-    public static final String INVALID_CLASSNAME = "utrecht-checkbox--invalid";
-    public static final String FORM_FIELD_INPUT_CLASSNAME = "utrecht-form-field__input";
+    private final UtrechtCheckbox inputComponent;
+    private final Component descriptionComponent;
+    private final Component errorMessageComponent;
+    private final Component labelComponent;
 
-    public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, String labelText) {
-        this(id, model, Model.of(labelText), null, null);
+    public UtrechtFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
+        this(id, model, labelModel, EMPTY_STRING_MODEL);
     }
 
     public UtrechtFormFieldCheckbox(
         String id,
         IModel<Boolean> model,
         IModel<String> labelModel,
-        IModel<String> descriptionModel,
-        IModel<String> errorModel
+        IModel<String> descriptionModel
     ) {
         super(id);
-        add(new UtrechtFormFieldBehavior());
-        add(new UtrechtFormLabelBehavior());
-        add(new UtrechtFormFieldDescriptionBehavior());
-        add(new UtrechtFormFieldErrorMessageBehavior());
-        add(new UtrechtCheckboxBehavior());
 
-        errorMessageModel = errorModel;
+        requireNonNull(labelModel);
+        requireNonNull(descriptionModel);
 
-        // Generate unique IDs `for` and `aria-describedby` ID references
-        fieldId = UUID.randomUUID().toString();
-        checkboxId = UUID.randomUUID().toString();
-        descriptionId = UUID.randomUUID().toString();
-        errorMessageId = UUID.randomUUID().toString();
+        descriptionComponent = newDescriptionComponent(descriptionModel);
+        errorMessageComponent = newErrorMessageComponent();
+        inputComponent = newInputComponent(model, descriptionModel);
+        inputComponent.setLabel(labelModel);
+        bindErrorMessageModelToInputComponentFeedbackMessages();
+        labelComponent = newLabelComponent();
+    }
 
-        // TODO: Implement disabled state
-        Boolean disabled = false;
+    private void bindErrorMessageModelToInputComponentFeedbackMessages() {
+        // there is a bidirectional relationship between the input component and the error message component:
+        // the input component holds the feedback messages, the error message component displays them.
+        // Therefore, we need to bind the error message component's model to the input component's feedback messages.
+        errorMessageComponent.setDefaultModel(() -> {
+            FeedbackMessage first = inputComponent.getFeedbackMessages().first(FeedbackMessage.ERROR);
+            return first != null ? first.getMessage().toString() : null;
+        });
+    }
 
-        // TODO: Implement indeterminate state, when someone needs it.
+    private Component newLabelComponent() {
+        return new WebMarkupContainer("label-container")
+            .add(new LabelAndCheckboxContainer())
+            .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior())
+            .add(UTRECHT_FORM_FIELD_LABEL_CHECKBOX.asBehavior());
+    }
 
-        // Create the checkbox input
-        checkbox = new CheckBox("checkbox", model) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-                checkbox.setMarkupId(checkboxId);
+    private Component newErrorMessageComponent() {
+        return createErrorMessageLabel("error")
+            .add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
+    }
 
-                tag.put(
-                    "class",
-                    HTMLUtil.className(
-                        UtrechtFormFieldCheckbox.CHECKBOX_CLASSNAME,
-                        UtrechtFormFieldCheckbox.FORM_FIELD_INPUT_CLASSNAME,
-                        disabled ? UtrechtFormFieldCheckbox.CHECKBOX_DISABLED_CLASSNAME : null,
-                        isInvalid() ? UtrechtFormFieldCheckbox.INVALID_CLASSNAME : null
-                    )
-                );
+    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
+        return new Label("description", descriptionModel)
+            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
+    }
 
-                String ariaDescribedBy = HTMLUtil.idRefs(
-                    descriptionModel != null && descriptionModel.getObject() != null ? descriptionId : null,
-                    isInvalid() ? errorMessageId : null
-                );
-
-                // Do not render an empty `aria-describedby` attribute.
-                if (!ariaDescribedBy.isEmpty()) {
-                    tag.put("aria-describedby", ariaDescribedBy);
-                }
-
-                if (isRequired()) {
-                    tag.put("aria-required", "true");
-                }
-                if (isInvalid()) {
-                    tag.put("aria-invalid", "true");
-                }
-            }
-
-            protected void onDisabled(final ComponentTag tag) {
-                tag.put("disabled", "disabled");
-                // TODO: Add `CHECKBOX_DISABLED_CLASSNAME` class name
-            }
-        };
-
-        // Create the label
-        Label label = new Label("label", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-                tag.put("for", checkboxId);
-                tag.put(
-                    "class",
-                    HTMLUtil.className(
-                        UtrechtFormFieldCheckbox.FORM_LABEL_CLASSNAME,
-                        disabled ? UtrechtFormFieldCheckbox.FORM_LABEL_DISABLED_CLASSNAME : null
-                    )
-                );
-            }
-        };
-
-        Label labelText = new Label("labelText", labelModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-            }
-        };
-
-        // Create description and error message
-        description = new Label("description", descriptionModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-            }
-
-            @Override
-            protected void onInitialize() {
-                super.onInitialize();
-                setMarkupId(descriptionId);
-            }
-
-            @Override
-            public boolean isVisible() {
-                return getDefaultModelObject() != null;
-            }
-        };
-
-        errorMessage = new Label("error", errorModel) {
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-                super.onComponentTag(tag);
-            }
-
-            @Override
-            protected void onInitialize() {
-                super.onInitialize();
-                UtrechtFormFieldCheckbox.this.setMarkupId(errorMessageId);
-            }
-
-            @Override
-            public boolean isVisible() {
-                return getDefaultModelObject() != null;
-            }
-        };
-
-        // Add all components
-        add(checkbox);
-        add(label);
-        add(labelText);
-        add(description);
-        add(errorMessage);
+    private UtrechtCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
+        final UtrechtCheckbox control = new FormFieldCheckbox( model, descriptionModel);
+        control.add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
+        return control;
     }
 
     protected boolean isInvalid() {
-        return errorMessageModel != null && errorMessageModel.getObject() != null;
-    }
-
-    protected boolean isRequired() {
-        return checkbox.isRequired();
+        return inputComponent.hasErrorMessage();
     }
 
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
-        tag.put(
-            "class",
-            HTMLUtil.className(
-                UtrechtFormFieldCheckbox.FORM_FIELD_CLASSNAME,
-                UtrechtFormFieldCheckbox.FORM_FIELD_CHECKBOX_CLASSNAME,
-                isInvalid() ? UtrechtFormFieldCheckbox.FORM_FIELD_INVALID_CLASSNAME : null
-            )
-        );
+
+        assertIsRegularHtmlTag(tag);
+
+        if (isInvalid()) {
+            INVALID.appendTo(tag);
+        }
     }
 
     @Override
     protected void onInitialize() {
         super.onInitialize();
-        setMarkupId(fieldId);
+        setOutputMarkupId(true);
+
+        add(
+            UtrechtFormFieldBehavior.INSTANCE,
+            UtrechtCheckboxFormFieldBehavior.INSTANCE
+        );
+
+        add(
+            labelComponent,
+            descriptionComponent,
+            errorMessageComponent
+        );
     }
 
     public UtrechtFormFieldCheckbox setRequired(boolean required) {
-        checkbox.setRequired(required);
+        inputComponent.setRequired(required);
         return this;
     }
 
-    public CheckBox getCheckbox() {
-        return checkbox;
+    public CheckBox getControl() {
+        return inputComponent;
     }
+
+    @Override
+    public Component getDescriptionComponent() {
+        return descriptionComponent;
+    }
+
+    @Override
+    public Component getLabelComponent() {
+        return labelComponent;
+    }
+
+    @Override
+    public Component getErrorMessageComponent() {
+        return errorMessageComponent;
+    }
+
+    @Override
+    public CheckBox getInputComponent() {
+        return inputComponent;
+    }
+
+    private class LabelAndCheckboxContainer extends WebMarkupContainer {
+
+        public LabelAndCheckboxContainer() {
+            super("label");
+        }
+
+        @Override
+        protected void onInitialize() {
+            super.onInitialize();
+
+            add(UtrechtFormLabelBehavior.INSTANCE_CHECKBOX);
+
+            add(inputComponent);
+        }
+
+        @Override
+        protected void onComponentTag(ComponentTag tag) {
+            super.onComponentTag(tag);
+            tag.put("for", inputComponent.getMarkupId());
+
+            if (!inputComponent.isEnabledInHierarchy()) {
+                FORM_LABEL_STATE_DISABLED.appendTo(tag);
+            }
+        }
+    }
+
+    class FormFieldCheckbox extends UtrechtCheckbox {
+
+        private final IModel<String> descriptionModel;
+
+        public FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
+            super("checkbox", model);
+            this.descriptionModel = descriptionModel;
+        }
+
+        @Override
+        protected void onComponentTag(ComponentTag tag) {
+            super.onComponentTag(tag);
+
+            String ariaDescribedBy = HTMLUtil.idRefs(
+                descriptionComponent != null && descriptionModel.getObject() != null ? descriptionComponent.getMarkupId() : null,
+                errorMessageComponent != null && hasErrorMessage() ? errorMessageComponent.getMarkupId() : null
+            );
+
+            // Do not render an empty `aria-describedby` attribute.
+            if (!ariaDescribedBy.isEmpty()) {
+                tag.put("aria-describedby", ariaDescribedBy);
+            }
+        }
+    }
+
 }

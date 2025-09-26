@@ -1,5 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.link_list.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -11,8 +12,11 @@ import org.apache.wicket.request.component.IRequestablePage;
 
 import java.util.List;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.design_system.wicket.components.link_list.utrecht.UtrechtLinkListBehavior.UTRECHT_LINK_LIST_BEHAVIOR;
 
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class UtrechtLinkListPanel extends Panel {
 
     public List<UtrechtLinkListRecord<? extends IRequestablePage>> links;

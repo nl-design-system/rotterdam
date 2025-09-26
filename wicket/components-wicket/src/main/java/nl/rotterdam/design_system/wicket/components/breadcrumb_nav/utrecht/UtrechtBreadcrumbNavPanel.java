@@ -1,5 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -13,7 +14,10 @@ import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht.UtrechtBreadcrumbNavItemBehavior.UTRECHT_BREADCRUMB_NAV_ITEM_BEHAVIOR;
 import static nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht.UtrechtBreadcrumbNavListBehavior.UTRECHT_BREADCRUMB_NAV_LIST_BEHAVIOR;
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class UtrechtBreadcrumbNavPanel extends Panel {
 
     public List<UtrechtBreadcrumbNavRecord<? extends IRequestablePage>> links;

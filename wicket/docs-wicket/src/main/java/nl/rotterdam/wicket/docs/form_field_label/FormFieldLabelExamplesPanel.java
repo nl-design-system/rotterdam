@@ -1,6 +1,7 @@
 package nl.rotterdam.wicket.docs.form_field_label;
 
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabel;
+import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -17,10 +18,28 @@ public class FormFieldLabelExamplesPanel extends Panel {
         return new UtrechtFormLabel("utrechtFormFieldLabel", Model.of("Voornaam"));
     }
 
+    @ComponentExample
+    private static Component exampleFormFieldLabelCheckbox() {
+        return new UtrechtFormLabel(
+            "utrechtFormFieldLabelCheckbox",
+            Model.of("Optie 1"),
+            UtrechtFormLabelBehavior.INSTANCE_CHECKBOX
+        );
+    }
+
+    @ComponentExample
+    private static Component exampleFormFieldLabelRadio() {
+        return new UtrechtFormLabel("utrechtFormFieldLabelRadio", Model.of("Optie 1"), UtrechtFormLabelBehavior.INSTANCE_RADIO);
+    }
+
     @Override
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleFormFieldLabel());
+        add(
+            exampleFormFieldLabel(),
+            exampleFormFieldLabelCheckbox(),
+            exampleFormFieldLabelRadio()
+        );
     }
 }
