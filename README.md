@@ -4,19 +4,19 @@
 
 **This project is very much WORK IN PROGRESS and all components are released as _alpha_ version. Always define the exact version you want to use, and test for breaking changes before upgrading to a newer alpha release.**
 
-This project is part of a community iniative to use NL Design System components for projects that need to adhere to the Rotterdam Design System. Teams from the central Municipality of Rotterdam, as well as those who are contracted by them to develop websites and apps, are able to collaborate via this project.
+This project is part of a community indicative to use NL Design System components for projects that need to adhere to the Rotterdam Design System. Teams from the central Municipality of Rotterdam, as well as those who are contracted by them to develop websites and apps, are able to collaborate via this project.
 
 Applying design elements from this project is strictly prohibited for organisations that are not part of the Municipality of Rotterdam. These excluded elements can be found in the `/proprietary` directory.
 
 ## How to use Rotterdam Design System
 
-Rotterdam is using components from the NL Design System community, candidate and hall-of-fame. This means multiple npm packages might need to be installed to have access to all components in your application. Read the [developer getting started documentation](https://nldesignsystem.nl/meedoen/als-developer/aan-de-slag) on the NL Design System website to learn more.
+Rotterdam is using components from the NL Design System community, candidate and hall-of-fame. This means multiple npm packages might need to be installed to have access to all components in your application. Read the [developer getting started documentation](https://nldesignsystem.nl/handboek/developer/aan-de-slag/) on the NL Design System website to learn more.
 
 The [Rotterdam Storybook](https://nl-design-system.github.io/rotterdam/) gives guidance on which components to use and which packages to include.
 
 ### In HTML
 
-This example is using the [unpkg.com CDN](unpkg.com) for prototyping. This is a bit slower as the latest version is automatically chosen. For production you shouldn't use this CDN.
+This example is using the [unpkg.com CDN](https://unpkg.com/) for prototyping. This is a bit slower as the latest version is automatically chosen. For production, you shouldn't use this CDN.
 
 Include the Design Token CSS variables:
 
@@ -40,7 +40,7 @@ Combine it with the CSS packages from the NL Design System community:
 <!-- and Rotterdam CSS if extra components are needed -->
 ```
 
-And use the [code snipped provided in Storybook](http://localhost:6006/?path=/docs/css-utrecht-button--docs) to get the identical component in code:
+And use the [code snippet provided in Storybook](?path=/docs/css-utrecht-button--docs) to get the identical component in code:
 
 ```html
 <!-- Set the rods-theme to include Rotterdam styling for all NL Design System components -->
@@ -78,11 +78,11 @@ To check if `pnpm` is installed use
 pnpm -v
 ```
 
-This repository uses `pnpm` to install packages and to manage the workflows in this monorepository. Installation of this tool is a prerequisite for developing in the packages. Follow the most recent guide on [https://pnpm.io/installation](https://pnpm.io/installation).
+This repository uses `pnpm` to install packages and to manage the workflows in this monorepo. Installation of this tool is a prerequisite for developing in the packages. Follow the most recent guide on [https://pnpm.io/installation](https://pnpm.io/installation).
 
 #### 2. Install dependencies
 
-In the workspace root the install script will ensure all dependencies for `packages` and `proprietary`-packages are installed
+In the workspace root the installation script will ensure all dependencies for `packages` and `proprietary`-packages are installed
 
 ```zsh
 pnpm install
@@ -155,11 +155,11 @@ Icons can also be found in this package as they are made available as a webcompo
 
 #### Web-components-react
 
-For all components a React component rendering a webcomponent is convenient for Rotterdam Design System. Use when a React-webcomponent does not already exist in the NL Design System ecosystem a wrapper can be build around an existing CSS component from the community or `web-components-stencil`.
+For all components a React component rendering a webcomponent is convenient for Rotterdam Design System. Use when a React-webcomponent does not already exist in the NL Design System ecosystem a wrapper can be built around an existing CSS component from the community or `web-components-stencil`.
 
 ### Proprietary packages
 
-The open source license does NOT apply to files in this directory. These are properietary assets to Rotterdam and can only be used by people who have permission to do so.
+The open source license does NOT apply to files in this directory. These are proprietary assets to Rotterdam and can only be used by people who have permission to do so.
 
 #### Design-tokens
 
