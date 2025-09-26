@@ -1,5 +1,6 @@
 package nl.rotterdam.design_system.wicket.components.side_nav.denhaag;
 
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -11,8 +12,12 @@ import org.apache.wicket.request.component.IRequestablePage;
 
 import java.util.List;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.design_system.wicket.components.side_nav.denhaag.DenhaagSideNavListBehavior.DENHAAG_SIDE_NAV_LIST_BEHAVIOR;
 
+
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class DenhaagSideNavPanel extends Panel {
 
     public List<DenhaagSideNavRecord<? extends IRequestablePage>> sideNavRecords;

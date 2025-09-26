@@ -1,7 +1,12 @@
 package nl.rotterdam.design_system.wicket.components.root.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.border.Border;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class UtrechtRootBorder extends Border {
 
     public UtrechtRootBorder(String id) {

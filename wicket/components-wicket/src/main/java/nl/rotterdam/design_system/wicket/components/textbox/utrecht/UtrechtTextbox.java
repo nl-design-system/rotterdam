@@ -1,9 +1,15 @@
 
 package nl.rotterdam.design_system.wicket.components.textbox.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
 public class UtrechtTextbox<T> extends TextField<T> {
 
     public UtrechtTextbox(String id, IModel<T> model) {

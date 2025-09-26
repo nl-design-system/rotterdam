@@ -1,5 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.icon.rotterdam;
 
+import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
@@ -9,6 +11,10 @@ import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceType;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class RotterdamIconBehavior extends Behavior {
 
     public static final RotterdamIconBehavior ADD_IMAGE = new RotterdamIconBehavior(RotterdamIconType.ADD_IMAGE);

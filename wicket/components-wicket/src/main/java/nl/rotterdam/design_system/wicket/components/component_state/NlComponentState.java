@@ -1,5 +1,10 @@
 package nl.rotterdam.design_system.wicket.components.component_state;
 
+/**
+ * Annotates the state of a component in both Wicket and NL Design Estafette Model state terms.
+ */
 public @interface NlComponentState {
-    State value();
+    WicketState wicketState();
+    EstafetteState estafetteState();
+
 }

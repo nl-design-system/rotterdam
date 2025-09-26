@@ -1,15 +1,20 @@
 package nl.rotterdam.design_system.wicket.components.form_label.utrecht;
 
+import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
+
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 /**
  * Een label voor een formulier element.
  * Wordt nog niet overal gebruikt.
  * <p/>
- * TODO bepaal waar dit voor bedoeld is
  */
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
 public class UtrechtFormLabel extends Panel {
 
     public static final String SLOT_ID = "slot";

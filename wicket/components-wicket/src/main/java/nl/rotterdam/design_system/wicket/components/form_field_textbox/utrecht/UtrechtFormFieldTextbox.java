@@ -1,6 +1,8 @@
 package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
 
 import css.HTMLUtil;
+import nl.rotterdam.design_system.wicket.components.component_state.EstafetteState;
+import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
@@ -17,11 +19,15 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.util.string.Strings;
 
 import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.*;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
 public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
     private String inputType = "text";
