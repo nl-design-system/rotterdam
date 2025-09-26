@@ -10,7 +10,7 @@ public enum ComponentTagUtils {
      * @deprecated use {@link nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames} with an
      * enum instead. Use of CSS literals is discouraged.
      */
-    @Deprecated
+    @Deprecated(forRemoval = true, since = "2025-09-20")
     public static void appendCssClassesTo(ComponentTag tag, String cssClasses) {
         tag.append("class", cssClasses, " ");
     }

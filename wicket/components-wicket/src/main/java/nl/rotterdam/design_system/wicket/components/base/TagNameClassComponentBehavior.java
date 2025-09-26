@@ -23,7 +23,7 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
     /**
      * @deprecated use {@link #TagNameClassComponentBehavior(String, CssClassNames...)} instead.
      */
-    @Deprecated
+    @Deprecated(since = "2025-09-20", forRemoval = true)
     protected TagNameClassComponentBehavior(String requiredTagName, String... classNames) {
         this.requiredTagName = requiredTagName;
         this.classNames = classNames;
