@@ -1,6 +1,6 @@
-package nl.rotterdam.design_system.wicket.components.button.utrecht;
+package nl.rotterdam.design_system.wicket.components.button;
 
-public enum UtrechtButtonAppearance {
+public enum NlButtonAppearance {
     PRIMARY_ACTION("primary-action"),
     SECONDARY_ACTION("secondary-action"),
     SUBTLE("subtle"),
@@ -8,7 +8,7 @@ public enum UtrechtButtonAppearance {
 
     final String appearance;
 
-    UtrechtButtonAppearance(String appearance) {
+    NlButtonAppearance(String appearance) {
         this.appearance = appearance;
     }
 }

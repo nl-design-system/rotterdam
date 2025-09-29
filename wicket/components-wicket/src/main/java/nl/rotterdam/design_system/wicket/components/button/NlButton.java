@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.button.utrecht;
+package nl.rotterdam.design_system.wicket.components.button;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
@@ -10,28 +10,28 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Estaf
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
-public class UtrechtButton extends Button {
+public class NlButton extends Button {
 
     public boolean busy = false;
-    public UtrechtButtonAppearance appearance = null;
-    public UtrechtButtonHint hint = null;
+    public NlButtonAppearance appearance = null;
+    public NlButtonHint hint = null;
 
     // Pressed is a nullable boolean
     public Boolean pressed = null;
 
-    public UtrechtButton(String id) {
+    public NlButton(String id) {
         this(id, null);
     }
 
-    public UtrechtButton(final String id, final IModel<String> model) {
+    public NlButton(final String id, final IModel<String> model) {
         super(id, model);
     }
 
-    public void setAppearance(UtrechtButtonAppearance appearance) {
+    public void setAppearance(NlButtonAppearance appearance) {
         this.appearance = appearance;
     }
 
-    public void setHint(UtrechtButtonHint hint) {
+    public void setHint(NlButtonHint hint) {
         this.hint = hint;
     }
 
@@ -47,7 +47,7 @@ public class UtrechtButton extends Button {
     public void onInitialize() {
         super.onInitialize();
 
-        add(UtrechtButtonBehavior.INSTANCE);
+        add(NlButtonBehavior.INSTANCE);
     }
 
     @Override

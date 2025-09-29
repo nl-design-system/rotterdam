@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.sso_login_page;
 
-import nl.rotterdam.design_system.wicket.components.button.utrecht.UtrechtButton;
+import nl.rotterdam.design_system.wicket.components.button.NlButton;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht.UtrechtFormFieldTextbox;
@@ -45,7 +45,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                             .setRequired(true),
                         newMinLength8(sampleMinLength8),
                         new UtrechtButtonGroupBorder("actionGroup")
-                            .add(new UtrechtButton("submit"))
+                            .add(new NlButton("submit"))
                     );
                 }
 
