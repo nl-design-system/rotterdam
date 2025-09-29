@@ -1,6 +1,0 @@
-@import "~@utrecht/textbox-css/src/mixin";
-
-.form-control {
-  @include utrecht-textbox;
-  @include utrecht-textbox--html-input;
-}
