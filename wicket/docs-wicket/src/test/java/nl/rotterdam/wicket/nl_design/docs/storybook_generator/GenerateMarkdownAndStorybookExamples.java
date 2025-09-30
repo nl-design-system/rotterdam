@@ -3,10 +3,10 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
-import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckbox;
+import nl.rotterdam.design_system.wicket.components.checkbox.NlCheckbox;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
-import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.NlFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabel;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
@@ -120,7 +120,7 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateCheckboxComponent() {
         new MarkdownDocumentationExamplesGenerator(
             CheckboxExamplesPanel.class,
-            UtrechtCheckbox.class,
+            NlCheckbox.class,
             "checkbox",
             "Checkbox"
         ).generate();
@@ -149,7 +149,7 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateFormFieldCheckboxComponent() {
         new MarkdownDocumentationExamplesGenerator(
             FormFieldCheckboxExamplesPanel.class,
-            UtrechtFormFieldCheckbox.class,
+            NlFormFieldCheckbox.class,
             "form-field-checkbox",
             "Form Field Checkbox"
         ).generate();

@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.checkbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.checkbox;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
@@ -9,20 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckboxCss.*;
+import static nl.rotterdam.design_system.wicket.components.checkbox.NlCheckboxCss.*;
 
 /**
  * Applies NL Design System checkbox styles to a Wicket CheckBox component.
  *
- * <p>Some characteristics are not taken into account, so to be fully compliant use {@link UtrechtCheckbox}.</p>
+ * <p>Some characteristics are not taken into account, so to be fully compliant use {@link NlCheckbox}.</p>
  */
-public class UtrechtCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
+public class NlCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
 
-    public static final UtrechtCheckboxBehavior INSTANCE = new UtrechtCheckboxBehavior();
-    private UtrechtCheckboxBehavior() {
+    public static final NlCheckboxBehavior INSTANCE = new NlCheckboxBehavior();
+    private NlCheckboxBehavior() {
         super("input", DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(UtrechtCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.css"));
-        addHeaderItem(cssReferenceHeaderItem(UtrechtCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(NlCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(NlCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.css"));
     }
 
     @Override

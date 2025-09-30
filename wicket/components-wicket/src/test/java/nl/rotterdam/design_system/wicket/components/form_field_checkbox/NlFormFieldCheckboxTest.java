@@ -1,11 +1,12 @@
-package nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.form_field_checkbox;
 
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.NlFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
 import org.junit.jupiter.api.Test;
 
 
-class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
+class NlFormFieldCheckboxTest extends NldsWicketTestCase {
 
     @Test
     void shouldRenderCorrectHTMLForCheckboxWithLabel() {
@@ -35,7 +36,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
         </div>""";
 
 
-        UtrechtFormFieldCheckbox component = new UtrechtFormFieldCheckbox(
+        NlFormFieldCheckbox component = new NlFormFieldCheckbox(
             "component",
             Model.of(false),
             Model.of("Ik ga akkoord met de algemene voorwaarden")
@@ -94,7 +95,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
               </div>;""";
 
 
-        UtrechtFormFieldCheckbox component = new UtrechtFormFieldCheckbox(
+        NlFormFieldCheckbox component = new NlFormFieldCheckbox(
             "component",
             Model.of(false),
             Model.of("Ik ga akkoord met de algemene voorwaarden"),
@@ -112,7 +113,7 @@ class UtrechtFormFieldCheckboxTest extends NldsWicketTestCase {
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
-    private void setSubjectUnderTestIds(UtrechtFormFieldCheckbox component) {
+    private void setSubjectUnderTestIds(NlFormFieldCheckbox component) {
         component.setMarkupId("utrecht-checkbox-field");
         component.getControl().setMarkupId("checkbox-sample");
         component.getDescriptionComponent().setMarkupId("description-label");

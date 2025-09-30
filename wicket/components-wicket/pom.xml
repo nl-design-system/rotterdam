@@ -189,7 +189,7 @@
                     <include>@utrecht/checkbox-css/dist/*.css</include>
                     <include>@utrecht/custom-checkbox-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/design_system/wicket/components/checkbox/utrecht</targetPath>
+                <targetPath>nl/rotterdam/design_system/wicket/components/checkbox</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>

@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.form_field_checkbox;
 
-import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.NlFormFieldCheckbox;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -14,8 +14,8 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldCheckbox() {
-        return new UtrechtFormFieldCheckbox(
-            "utrechtFormFieldCheckbox",
+        return new NlFormFieldCheckbox(
+            "nlFormFieldCheckbox",
             Model.of(false),
             Model.of("Ik ga akkoord met de algemene voorwaarden"),
             Model.of()
@@ -24,8 +24,8 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldCheckboxInvalid() {
-        UtrechtFormFieldCheckbox component = new UtrechtFormFieldCheckbox(
-            "utrechtFormFieldCheckboxInvalid",
+        NlFormFieldCheckbox component = new NlFormFieldCheckbox(
+            "nlFormFieldCheckboxInvalid",
             Model.of(false),
             Model.of("Ik ga akkoord met de algemene voorwaarden"),
             Model.of("U kunt ons echt vertrouwen!")

@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.checkbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.checkbox;
 
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.form.CheckBox;
@@ -15,9 +15,9 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Wicke
  *  </a></p>
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
-public class UtrechtCheckbox extends CheckBox {
+public class NlCheckbox extends CheckBox {
 
-    public UtrechtCheckbox(String id, IModel<Boolean> model) {
+    public NlCheckbox(String id, IModel<Boolean> model) {
         super(id, model);
         setOutputMarkupId(true);
     }
@@ -25,7 +25,7 @@ public class UtrechtCheckbox extends CheckBox {
     @Override
     protected void onInitialize() {
         super.onInitialize();
-        add(UtrechtCheckboxBehavior.INSTANCE);
+        add(NlCheckboxBehavior.INSTANCE);
     }
 
 }
