@@ -4,7 +4,7 @@ import css.DesignSystemTheme;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
-import nl.rotterdam.wicket.docs.button.NlButtonExamplesPanel;
+import nl.rotterdam.wicket.docs.button.ButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
@@ -84,7 +84,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new AlertExamplesPanel("alertExamplesPanel"),
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
             new BodyExamplesPanel("bodyExamplesPanel"),
-            new NlButtonExamplesPanel("buttonExamplesPanel"),
+            new ButtonExamplesPanel("buttonExamplesPanel"),
             new ButtonGroupExamplesPanel("buttonGroupExamplesPanel"),
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),

@@ -7,9 +7,9 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class NlButtonExamplesPanel extends Panel {
+public class ButtonExamplesPanel extends Panel {
 
-    public NlButtonExamplesPanel(String id) {
+    public ButtonExamplesPanel(String id) {
         super(id);
     }
 
