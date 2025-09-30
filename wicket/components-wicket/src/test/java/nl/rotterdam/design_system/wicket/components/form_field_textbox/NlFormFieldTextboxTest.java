@@ -1,5 +1,6 @@
-package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.form_field_textbox;
 
+import nl.rotterdam.design_system.wicket.components.form_field_textbox.NlFormFieldTextbox;
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
 
-class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
+class NlFormFieldTextboxTest extends NldsWicketTestCase {
 
     @Test
     void rendersNaamWithLabelAndDescriptionAsDefinedInReferenceGuide() {
@@ -40,7 +41,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
                     </div>
                   </div>""";
 
-        var component = new UtrechtFormFieldTextbox<>(
+        var component = new NlFormFieldTextbox<>(
             "component",
             Model.of(""),
             Model.of("Naam"),
@@ -59,7 +60,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
     @Test
     void invalidRenderingAddsCorrectCssClasses() {
 
-        var component = new UtrechtFormFieldTextbox<>(
+        var component = new NlFormFieldTextbox<>(
             "component",
             Model.of("I ❤️ Martine"),
             Model.of("Naam"),
@@ -79,7 +80,7 @@ class UtrechtFormFieldTextboxTest extends NldsWicketTestCase {
         assertHasCss(fieldTag, INVALID);
     }
 
-    private void setSubjectUnderTestIds(UtrechtFormFieldTextbox<?> component) {
+    private void setSubjectUnderTestIds(NlFormFieldTextbox<?> component) {
         component.setMarkupId("utrecht-textbox-field");
         component.getTextField().setMarkupId("input-text");
         component.getDescriptionComponent().setMarkupId("description-label");

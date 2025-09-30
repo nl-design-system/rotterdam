@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.textbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.textbox;
 
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.Component;
@@ -7,13 +7,13 @@ import org.apache.wicket.markup.Markup;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
 
-import static nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextboxCss.INVALID;
+import static nl.rotterdam.design_system.wicket.components.textbox.NlTextboxCss.INVALID;
 
-class UtrechtTextboxTest extends NldsWicketTestCase {
+class NlTextboxTest extends NldsWicketTestCase {
 
     @Test
     void renderMinimal() {
-        Component firstNameInput = new UtrechtTextbox<>("firstName", () -> "Carola")
+        Component firstNameInput = new NlTextbox<>("firstName", () -> "Carola")
             .setMarkup(Markup.of("<input wicket:id='firstName'/>"))
             .setMarkupId("firstName");
 
@@ -33,7 +33,7 @@ class UtrechtTextboxTest extends NldsWicketTestCase {
     @Test
     void renderInvalid() {
 
-        Component firstNameInput = new UtrechtTextbox<>("firstName", () -> "Carola")
+        Component firstNameInput = new NlTextbox<>("firstName", () -> "Carola")
             .setMarkup(Markup.of("<input wicket:id='firstName'/>"))
             .setMarkupId("firstName");
 

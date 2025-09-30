@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.form_field_textbox;
 
-import nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht.UtrechtFormFieldTextbox;
+import nl.rotterdam.design_system.wicket.components.form_field_textbox.NlFormFieldTextbox;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -14,7 +14,7 @@ public class UtrechtFormFieldTextboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldTextbox() {
-        return new UtrechtFormFieldTextbox<>(
+        return new NlFormFieldTextbox<>(
             "utrechtFormFieldTextbox",
             Model.of("Hello world!"),
             Model.of("I agree"),
@@ -24,7 +24,7 @@ public class UtrechtFormFieldTextboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldTextboxRequired() {
-        return new UtrechtFormFieldTextbox<>(
+        return new NlFormFieldTextbox<>(
             "utrechtFormFieldTextboxRequired",
             Model.of("Hello world!"),
             Model.of("I agree"),
@@ -35,7 +35,7 @@ public class UtrechtFormFieldTextboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldTextboxDisabled() {
-        return new UtrechtFormFieldTextbox<>(
+        return new NlFormFieldTextbox<>(
             "utrechtFormFieldTextboxDisabled",
             Model.of("Hello world!"),
             Model.of("I agree"),

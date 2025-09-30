@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.form_field_textbox.utrecht;
+package nl.rotterdam.design_system.wicket.components.form_field_textbox;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
@@ -7,7 +7,7 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
-import nl.rotterdam.design_system.wicket.components.textbox.utrecht.UtrechtTextbox;
+import nl.rotterdam.design_system.wicket.components.textbox.NlTextbox;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -26,7 +26,7 @@ import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
-public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
+public class NlFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
 
     private String inputType = "text";
     private final Component labelComponent;
@@ -35,11 +35,11 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
     private final Component inputComponent;
     private final FormFieldTextbox textbox;
 
-    public UtrechtFormFieldTextbox(String id, IModel<T> model, IModel<String> labelText) {
+    public NlFormFieldTextbox(String id, IModel<T> model, IModel<String> labelText) {
         this(id, model, labelText, EMPTY_STRING_MODEL);
     }
 
-    public UtrechtFormFieldTextbox(
+    public NlFormFieldTextbox(
         String id,
         IModel<T> model,
         IModel<String> labelModel,
@@ -89,7 +89,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
 
         add(
             UtrechtFormFieldBehavior.INSTANCE,
-            UtrechtFormFieldTextboxBehavior.INSTANCE
+            NlFormFieldTextboxBehavior.INSTANCE
         );
 
         add(
@@ -115,7 +115,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         }
     }
 
-    public UtrechtFormFieldTextbox<T> setRequired(boolean required) {
+    public NlFormFieldTextbox<T> setRequired(boolean required) {
         getTextField().setRequired(required);
         return this;
     }
@@ -124,7 +124,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return textbox;
     }
 
-    public UtrechtFormFieldTextbox<T> setInputType(String type) {
+    public NlFormFieldTextbox<T> setInputType(String type) {
         inputType = type;
 
         return this;
@@ -150,7 +150,7 @@ public class UtrechtFormFieldTextbox<T> extends GenericPanel<T> implements Utrec
         return labelComponent;
     }
 
-    class FormFieldTextbox extends UtrechtTextbox<T> {
+    class FormFieldTextbox extends NlTextbox<T> {
 
         private final IModel<String> descriptionModel;
 
