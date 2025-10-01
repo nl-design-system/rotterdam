@@ -329,8 +329,8 @@ importers:
         specifier: 8.6.14
         version: 8.6.14(storybook@8.4.7(prettier@3.6.2))
       '@storybook/react':
-        specifier: 8.4.7
-        version: 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)
+        specifier: 9.1.9
+        version: 9.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)
       '@storybook/react-vite':
         specifier: 8.4.7
         version: 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.50.0)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))
@@ -1649,7 +1649,6 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-
   '@gemeente-denhaag/sidenav@2.0.0':
     resolution: {integrity: sha512-en7J1FxYG5xuu/2nvANraFS3nbRxKNi6+vxRPqSi9lPYH1ChG2EBCjbVOe7riarEcb++tglQkIjx6HRcivgctw==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
@@ -2406,6 +2405,13 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.4.7
 
+  '@storybook/react-dom-shim@9.1.9':
+    resolution: {integrity: sha512-RFaB+N63XXEEo8l5INlvWnqxDUH7UGZ++MOsFsVUqfn7lAzxfR9HcJTGN3WOyIDBoS0vD3+LfnplqFyQU/anuw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      storybook: ^9.1.9
+
   '@storybook/react-vite@8.4.7':
     resolution: {integrity: sha512-iiY9iLdMXhDnilCEVxU6vQsN72pW3miaf0WSenOZRyZv3HdbpgOxI0qapOS0KCyRUnX9vTlmrSPTMchY4cAeOg==}
     engines: {node: '>=18.0.0'}
@@ -2427,6 +2433,18 @@ packages:
     peerDependenciesMeta:
       '@storybook/test':
         optional: true
+      typescript:
+        optional: true
+
+  '@storybook/react@9.1.9':
+    resolution: {integrity: sha512-S06dZv8ebUmCrIP2GfIqD3g1F5LKBf0Lc1daSd2++2MI6i8zw8kZ8IAGg5bYrWb0nk56JHALCwXAzsGyRepEww==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      storybook: ^9.1.9
+      typescript: '>= 4.9.x'
+    peerDependenciesMeta:
       typescript:
         optional: true
 
@@ -10162,6 +10180,12 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       storybook: 8.4.7(prettier@3.6.2)
 
+  '@storybook/react-dom-shim@9.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      storybook: 8.4.7(prettier@3.6.2)
+
   '@storybook/react-vite@8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.50.0)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))':
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.4.2(typescript@5.9.2)(vite@6.0.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))
@@ -10191,6 +10215,16 @@ snapshots:
       '@storybook/preview-api': 8.4.7(storybook@8.4.7(prettier@3.6.2))
       '@storybook/react-dom-shim': 8.4.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
       '@storybook/theming': 8.4.7(storybook@8.4.7(prettier@3.6.2))
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      storybook: 8.4.7(prettier@3.6.2)
+    optionalDependencies:
+      typescript: 5.9.2
+
+  '@storybook/react@9.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))(typescript@5.9.2)':
+    dependencies:
+      '@storybook/global': 5.0.0
+      '@storybook/react-dom-shim': 9.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.7(prettier@3.6.2))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       storybook: 8.4.7(prettier@3.6.2)
