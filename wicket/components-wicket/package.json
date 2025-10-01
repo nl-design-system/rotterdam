@@ -23,7 +23,7 @@
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
     "@nl-design-system-candidate/paragraph-css": "2.1.1",
-    "@nl-design-system-unstable/voorbeeld-design-tokens": "3.3.4",
+    "@nl-design-system-unstable/voorbeeld-design-tokens": "6.0.0",
     "@utrecht/alert-css": "2.4.0",
     "@utrecht/badge-list-css": "2.2.1",
     "@utrecht/body-css": "1.2.1",
