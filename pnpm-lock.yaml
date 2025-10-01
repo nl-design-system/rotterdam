@@ -467,8 +467,8 @@ importers:
   proprietary/design-tokens:
     devDependencies:
       '@tokens-studio/sd-transforms':
-        specifier: 1.2.9
-        version: 1.2.9(style-dictionary@4.3.0)
+        specifier: 2.0.1
+        version: 2.0.1(style-dictionary@4.3.0)
       chokidar-cli:
         specifier: 3.0.0
         version: 3.0.0
@@ -1649,7 +1649,6 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-
   '@gemeente-denhaag/sidenav@2.0.0':
     resolution: {integrity: sha512-en7J1FxYG5xuu/2nvANraFS3nbRxKNi6+vxRPqSi9lPYH1ChG2EBCjbVOe7riarEcb++tglQkIjx6HRcivgctw==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
@@ -2490,14 +2489,14 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@tokens-studio/sd-transforms@1.2.9':
-    resolution: {integrity: sha512-doRL3tjhwmSck/9fH0X1mlBA6derw+8wpmi5hbG2vhAmvc8F89MxIN6JCKSIbVIJNvaprDVlQqSzXLG7Ug7F9A==}
+  '@tokens-studio/sd-transforms@2.0.1':
+    resolution: {integrity: sha512-SMTLiEL8/aGk5t/oSwHi+lyMcV0MF7gF9wSruw0yfCxgJ+ee7Ohj+qxHu9uCItZ0fASjTuHRGmTZmjJL/fIAGg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      style-dictionary: ^4.1.4
+      style-dictionary: ^5.0.0
 
-  '@tokens-studio/types@0.5.1':
-    resolution: {integrity: sha512-LdCF9ZH5ej4Gb6n58x5fTkhstxjXDZc1SWteMWY6EiddLQJVONMIgYOrWrf1extlkSLjagX8WS0B63bAqeltnA==}
+  '@tokens-studio/types@0.5.2':
+    resolution: {integrity: sha512-rzMcZP0bj2E5jaa7Fj0LGgYHysoCrbrxILVbT0ohsCUH5uCHY/u6J7Qw/TE0n6gR9Js/c9ZO9T8mOoz0HdLMbA==}
 
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -3694,9 +3693,6 @@ packages:
 
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
-
-  colorjs.io@0.4.5:
-    resolution: {integrity: sha512-yCtUNCmge7llyfd/Wou19PMAcf5yC3XXhgFoAh6zsO2pGswhUPBaaUh8jzgHnXtXuZyFKzXZNAnyF5i+apICow==}
 
   colorjs.io@0.5.2:
     resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
@@ -10292,17 +10288,17 @@ snapshots:
     dependencies:
       '@testing-library/dom': 9.3.4
 
-  '@tokens-studio/sd-transforms@1.2.9(style-dictionary@4.3.0)':
+  '@tokens-studio/sd-transforms@2.0.1(style-dictionary@4.3.0)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
-      '@tokens-studio/types': 0.5.1
-      colorjs.io: 0.4.5
+      '@tokens-studio/types': 0.5.2
+      colorjs.io: 0.5.2
       expr-eval-fork: 2.0.2
       is-mergeable-object: 1.1.1
       style-dictionary: 4.3.0
 
-  '@tokens-studio/types@0.5.1': {}
+  '@tokens-studio/types@0.5.2': {}
 
   '@tootallnate/once@2.0.0': {}
 
@@ -11716,8 +11712,6 @@ snapshots:
   colord@2.9.3: {}
 
   colorette@2.0.20: {}
-
-  colorjs.io@0.4.5: {}
 
   colorjs.io@0.5.2: {}
 
