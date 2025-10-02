@@ -10,7 +10,7 @@ import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class NlTextboxBehavior extends TagNameClassComponentBehavior<TextField<?>> {
+class NlTextboxBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
     public static final NlTextboxBehavior INSTANCE = new NlTextboxBehavior();
 

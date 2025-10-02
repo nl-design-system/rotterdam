@@ -1,9 +1,12 @@
-package nl.rotterdam.design_system.wicket.components.form_field.utrecht;
+package nl.rotterdam.design_system.wicket.components.form_field;
 
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss;
 import org.apache.wicket.Component;
 
 /**
- * A container for Utrecht form field elements.
+ * A container for NL Form field elements; currently all fields are based on the Utrecht design system, but the concepts
+ * of form field and its subcontainers is independent of implementation.
+ *
  * <p><a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field--docs">Read more</a>
  * </p>
  *

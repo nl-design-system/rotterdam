@@ -5,10 +5,11 @@ import nl.rotterdam.design_system.wicket.components.component_state.NlComponentS
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
 
-@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class NlTextbox<T> extends TextField<T> {
 
     public NlTextbox(String id, IModel<T> model) {

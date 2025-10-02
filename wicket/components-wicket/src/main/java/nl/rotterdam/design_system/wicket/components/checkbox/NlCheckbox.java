@@ -4,8 +4,10 @@ import nl.rotterdam.design_system.wicket.components.component_state.NlComponentS
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.model.IModel;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 /**
  * Implementation of <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox</a>.
@@ -14,7 +16,7 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Wicke
  *     implementation of Utrecht
  *  </a></p>
  */
-@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class NlCheckbox extends CheckBox {
 
     public NlCheckbox(String id, IModel<Boolean> model) {

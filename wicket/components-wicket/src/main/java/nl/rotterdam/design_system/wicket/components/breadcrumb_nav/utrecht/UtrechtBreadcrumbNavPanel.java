@@ -14,10 +14,11 @@ import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht.UtrechtBreadcrumbNavItemBehavior.UTRECHT_BREADCRUMB_NAV_ITEM_BEHAVIOR;
 import static nl.rotterdam.design_system.wicket.components.breadcrumb_nav.utrecht.UtrechtBreadcrumbNavListBehavior.UTRECHT_BREADCRUMB_NAV_LIST_BEHAVIOR;
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class UtrechtBreadcrumbNavPanel extends Panel {
 
     public List<UtrechtBreadcrumbNavRecord<? extends IRequestablePage>> links;

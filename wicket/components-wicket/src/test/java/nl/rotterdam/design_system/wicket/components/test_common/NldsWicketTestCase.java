@@ -1,7 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.test_common;
 
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.NlFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.NlFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss;
 import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;

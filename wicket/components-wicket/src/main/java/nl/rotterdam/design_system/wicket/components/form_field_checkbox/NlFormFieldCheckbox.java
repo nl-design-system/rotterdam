@@ -2,8 +2,9 @@ package nl.rotterdam.design_system.wicket.components.form_field_checkbox;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.checkbox.NlCheckbox;
+import nl.rotterdam.design_system.wicket.components.component_state.Community;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.NlFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.NlFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
@@ -17,6 +18,7 @@ import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 
 import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.*;
@@ -27,7 +29,7 @@ import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 
-@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlFormField {
 
     private final NlCheckbox inputComponent;
