@@ -43,7 +43,7 @@ import org.apache.wicket.Component;
  * </ul>
  *
  */
-public interface UtrechtFormField {
+public interface NlFormField {
 
     Component getDescriptionComponent();
 

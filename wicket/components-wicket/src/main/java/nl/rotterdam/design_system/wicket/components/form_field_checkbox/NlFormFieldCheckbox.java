@@ -3,7 +3,7 @@ package nl.rotterdam.design_system.wicket.components.form_field_checkbox;
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.checkbox.NlCheckbox;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.NlFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
@@ -28,7 +28,7 @@ import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentT
 
 
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
-public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements UtrechtFormField {
+public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlFormField {
 
     private final NlCheckbox inputComponent;
     private final Component descriptionComponent;

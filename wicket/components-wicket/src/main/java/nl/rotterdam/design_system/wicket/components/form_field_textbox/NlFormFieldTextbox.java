@@ -2,7 +2,7 @@ package nl.rotterdam.design_system.wicket.components.form_field_textbox;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.NlFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
@@ -25,8 +25,8 @@ import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.Ut
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
-@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY)
-public class NlFormFieldTextbox<T> extends GenericPanel<T> implements UtrechtFormField {
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, communityImplementationName = "utrecht")
+public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormField {
 
     private String inputType = "text";
     private final Component labelComponent;

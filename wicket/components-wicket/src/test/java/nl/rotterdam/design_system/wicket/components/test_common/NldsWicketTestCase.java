@@ -1,7 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.test_common;
 
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
-import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.utrecht.NlFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss;
 import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
@@ -24,7 +24,7 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         return new ComponentsWicketTestApplication();
     }
 
-    protected void verifyUtrechtFormFieldContract(UtrechtFormField component, String actualOutput) {
+    protected void verifyUtrechtFormFieldContract(NlFormField component, String actualOutput) {
         Component utrechtFormField = (Component) component;
 
         // assert root has utrecht-form-field class
@@ -37,7 +37,7 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         // TODO there is more to validate here.
     }
 
-    protected static String renderFormFieldComponentInTestPanel(UtrechtFormField component) {
+    protected static String renderFormFieldComponentInTestPanel(NlFormField component) {
         return ComponentRenderer.renderComponent(new FormComponentTestPanel((Component) component)).toString();
     }
 
