@@ -1,24 +1,22 @@
 package nl.rotterdam.design_system.wicket.components.textbox;
 
-import nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems;
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.form.TextField;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NlTextboxBehavior extends TagNameClassComponentBehavior<TextField<?>> {
+import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-    private static final CssReferenceHeaderItem CSS_REFERENCE = CssReferenceHeaderItems.cssReferenceHeaderItem(NlTextboxBehavior.class, "@utrecht/textbox-css/dist/index.css");
+public class NlTextboxBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
     public static final NlTextboxBehavior INSTANCE = new NlTextboxBehavior();
 
     private NlTextboxBehavior() {
         super("input", NlTextboxCss.DEFAULT);
-        addHeaderItem(CSS_REFERENCE);
+        addHeaderItem(cssReferenceHeaderItem(NlTextboxBehavior.class, "@utrecht/textbox-css/dist/index.css"));
     }
 
     @Override
