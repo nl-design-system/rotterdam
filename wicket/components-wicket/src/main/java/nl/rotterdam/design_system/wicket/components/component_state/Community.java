@@ -1,10 +1,12 @@
 package nl.rotterdam.design_system.wicket.components.component_state;
 
+/**
+ * Communities die bijdragen. Hebben een Git repository onder de nl-design-system organisatie
+ * of zijn anderszins betrokken
+ */
 public enum Community {
     AMSTERDAM("Gemeente Amsterdam"),
     DEN_HAAG("Gemeente Den Haag"),
-    EINDHOVEN("Gemeente Eindhoven"),
-
     KERNTEAM("Kernteam NL Design System"),
     LUX("Logius"),
     ROTTERDAM("Gemeente Rotterdam"),
@@ -12,8 +14,7 @@ public enum Community {
     TILBURG("Gemeente Tilburg"),
     UTRECHT("Gemeente Utrecht");
 
-
-    Community(String name) {
+    Community(@SuppressWarnings("unused") String name) {
 
     }
 }
