@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
@@ -13,7 +14,7 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Wicke
  * Wordt nog niet overal gebruikt.
  * <p/>
  */
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class UtrechtFormLabel extends Panel {
 
     public static final String SLOT_ID = "slot";

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<head>
+  <title>whatever</title>
+</head>
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Button component</h1>
+        <div>
+          <p>Biedt de mogelijkheid om een actie uit te voeren.</p>
+        </div>
+
+        <section data-testid="nlButton">
+          <h2>Button</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="nlButton">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="nlButtonDisabled">
+          <h2>Disabled Button</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="nlButtonDisabled">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="nlButtonBusy">
+          <h2>Busy Button</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="nlButtonBusy">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="nlButtonToggle">
+          <h2>Toggle Button</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="nlButtonToggle">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="nlButtonPressed">
+          <h2>Pressed Toggle Button</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="nlButtonPressed">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="nlButtonIconStart">
+          <h2>Button met Icon Start</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="nlButtonIconStart">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 23V13H15V23H13Z" />
+                  <path d="M17 23V13H19V23H17Z" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M20 4H12V8H5V10H8V28H24V10H27V8H20V4ZM10 26V10H22V26H10ZM18 6H14V8H18V6Z"
+                  />
+                </svg>
+
+                Click me
+              </button>
+            </template></rods-story-canvas
+          >
+        </section>
+      </section>
+
+      <section data-testid="nlButtonPrimaryAction">
+        <h2>Primary Action Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="nlButtonPrimaryAction">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="nlButtonSecondaryAction">
+        <h2>Secondary Action Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="nlButtonSecondaryAction">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="nlButtonSubtle">
+        <h2>Subtle Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="nlButtonSubtle">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="nlButtonPrimaryActionDanger">
+        <h2>Primary Action + Danger Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="nlButtonPrimaryActionDanger">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="nlButtonSubmit">
+        <h2>Submit Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="nlButtonSubmit">Submit</button>
+          </template></rods-story-canvas
+        >
+      </section>
+    </wicket:panel>
+  </body>
+</html>

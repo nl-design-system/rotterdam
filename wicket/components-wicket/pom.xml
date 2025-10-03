@@ -172,7 +172,7 @@
                 <includes>
                     <include>@utrecht/button-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/design_system/wicket/components/button/utrecht</targetPath>
+                <targetPath>nl/rotterdam/design_system/wicket/components/button</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -189,7 +189,7 @@
                     <include>@utrecht/checkbox-css/dist/*.css</include>
                     <include>@utrecht/custom-checkbox-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/design_system/wicket/components/checkbox/utrecht</targetPath>
+                <targetPath>nl/rotterdam/design_system/wicket/components/checkbox</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -394,7 +394,7 @@
                 <includes>
                     <include>@utrecht/textbox-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/design_system/wicket/components/textbox/utrecht</targetPath>
+                <targetPath>nl/rotterdam/design_system/wicket/components/text_input</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>

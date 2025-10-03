@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>design-tokens-wicket</artifactId>
+    <description>Design Tokens JAR with Design Tokens for Rotterdam</description>
 
     <dependencies>
         <dependency>

@@ -1,7 +1,9 @@
 package nl.rotterdam.design_system.wicket.components.badge_list.utrecht;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
@@ -9,7 +11,7 @@ import nl.rotterdam.design_system.wicket.components.component_state.NlComponentS
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
-@NlComponentState(wicketState = UNSTABLE, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class UtrechtBadgeListBehavior extends TagNameClassComponentBehavior<Component> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
