@@ -79,7 +79,7 @@
     "watch:storybook": "pnpm --filter @gemeente-rotterdam/storybook run storybook",
     "watch:style-dictionary": "pnpm --filter @gemeente-rotterdam/design-tokens run watch",
     "wicket:build": "./mvnw install -N && ./mvnw --no-transfer-progress --offline clean install && pnpm run wicket:build-docs",
-    "wicket:install-and-build": "./mvnw  --no-transfer-progress install && pnpm run wicket:build-docs",
+    "wicket:install-and-build": "./mvnw install -N && ./mvnw --no-transfer-progress install && pnpm run wicket:build-docs",
     "wicket:build-docs": "./mvnw  exec:java@generateStoryBook -pl :docs-wicket",
     "wicket:clean": "./mvnw  clean",
     "wicket:install": "./mvnw  --no-transfer-progress dependency:go-offline",
