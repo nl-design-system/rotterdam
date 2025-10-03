@@ -8,6 +8,8 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.text_input.NlTextInput;
+import nl.rotterdam.design_system.wicket.components.wcag_input.InputPurposeBehavior;
+import nl.rotterdam.design_system.wicket.components.wcag_input.WcagInputPurpose;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -159,6 +161,11 @@ public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormFi
     @Override
     public Component getLabelComponent() {
         return labelComponent;
+    }
+
+    public NlFormFieldTextInput<T> setInputPurpose(WcagInputPurpose wcagInputPurpose) {
+        getTextField().add(new InputPurposeBehavior(wcagInputPurpose));
+        return this;
     }
 
     class FormFieldTexInput extends NlTextInput<T> {

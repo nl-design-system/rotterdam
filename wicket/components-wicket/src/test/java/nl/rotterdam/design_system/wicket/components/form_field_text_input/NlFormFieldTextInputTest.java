@@ -1,6 +1,7 @@
 package nl.rotterdam.design_system.wicket.components.form_field_text_input;
 
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
+import nl.rotterdam.design_system.wicket.components.wcag_input.WcagInputPurpose;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,8 @@ class NlFormFieldTextInputTest extends NldsWicketTestCase {
                         id="input-text"
                         aria-describedby="description-label"
                         type="text"
+                        autocomplete="name"
+                        spellcheck="false"
                         class="utrecht-textbox utrecht-textbox--html-input"
                       />
                     </div>
@@ -45,7 +48,8 @@ class NlFormFieldTextInputTest extends NldsWicketTestCase {
             Model.of(""),
             Model.of("Naam"),
             Model.of("Voornaam en achternaam.")
-        );
+        )
+            .setInputPurpose(WcagInputPurpose.NAME);
 
         setSubjectUnderTestIds(component);
 
