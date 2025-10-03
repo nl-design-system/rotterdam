@@ -78,12 +78,12 @@
     "update-major": "npm-check-updates --configFileName .ncurc.major.cjs",
     "watch:storybook": "pnpm --filter @gemeente-rotterdam/storybook run storybook",
     "watch:style-dictionary": "pnpm --filter @gemeente-rotterdam/design-tokens run watch",
-    "wicket:build": "mvn --no-transfer-progress --offline clean install && pnpm run wicket:build-docs",
-    "wicket:install-and-build": "mvn --no-transfer-progress clean install && pnpm run wicket:build-docs",
-    "wicket:build-docs": "mvn exec:java@generateStoryBook -pl :docs-wicket",
-    "wicket:clean": "mvn clean",
-    "wicket:install": "mvn --no-transfer-progress dependency:go-offline",
-    "wicket:dev": "mvn exec:java@runDocs -pl :docs-wicket"
+    "wicket:build": "./mvnw --no-transfer-progress --offline clean install && pnpm run wicket:build-docs",
+    "wicket:install-and-build": "./mvnw  --no-transfer-progress install && pnpm run wicket:build-docs",
+    "wicket:build-docs": "./mvnw  exec:java@generateStoryBook -pl :docs-wicket",
+    "wicket:clean": "./mvnw  clean",
+    "wicket:install": "./mvnw  --no-transfer-progress dependency:go-offline",
+    "wicket:dev": "./mvnw  exec:java@runDocs -pl :docs-wicket"
   },
   "dependencies": {
     "http-server": "14.1.1"
