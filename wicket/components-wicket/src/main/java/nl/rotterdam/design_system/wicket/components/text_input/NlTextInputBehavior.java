@@ -3,6 +3,7 @@ package nl.rotterdam.design_system.wicket.components.text_input;
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.form.TextField;
 
 import java.util.ArrayList;
@@ -12,11 +13,15 @@ import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderIte
 
 class NlTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
+    static final CssReferenceHeaderItem CSS_HEADER_ITEM = cssReferenceHeaderItem(NlTextInputBehavior.class, "@utrecht/textbox-css/dist/index.css");
+
+
     public static final NlTextInputBehavior INSTANCE = new NlTextInputBehavior();
+
 
     private NlTextInputBehavior() {
         super("input", NlTextInputCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(NlTextInputBehavior.class, "@utrecht/textbox-css/dist/index.css"));
+        addHeaderItem(CSS_HEADER_ITEM);
     }
 
     @Override
