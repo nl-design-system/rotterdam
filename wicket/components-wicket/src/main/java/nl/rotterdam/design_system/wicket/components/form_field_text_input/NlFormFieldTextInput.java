@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.form_field_textbox;
+package nl.rotterdam.design_system.wicket.components.form_field_text_input;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
@@ -7,7 +7,7 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
-import nl.rotterdam.design_system.wicket.components.textbox.NlTextbox;
+import nl.rotterdam.design_system.wicket.components.text_input.NlTextInput;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -26,21 +26,31 @@ import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.Ut
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
+/**
+ * <a href="https://nldesignsystem.nl/form-field/">Form Field</a>
+ * <a href="https://nldesignsystem.nl/text-input/">Text Input</a> NL Design System implementation.
+ *
+ * <p>Uses the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-textbox--docs">
+ *     Utrecht Textbox</a>  community implementation.
+ * </p>
+ *
+ * @param <T> the model object type
+ */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormField {
+public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormField {
 
     private String inputType = "text";
     private final Component labelComponent;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
     private final Component inputComponent;
-    private final FormFieldTextbox textbox;
+    private final FormFieldTexInput textInput;
 
-    public NlFormFieldTextbox(String id, IModel<T> model, IModel<String> labelText) {
+    public NlFormFieldTextInput(String id, IModel<T> model, IModel<String> labelText) {
         this(id, model, labelText, EMPTY_STRING_MODEL);
     }
 
-    public NlFormFieldTextbox(
+    public NlFormFieldTextInput(
         String id,
         IModel<T> model,
         IModel<String> labelModel,
@@ -50,24 +60,24 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
         requireNonNull(labelModel);
         requireNonNull(descriptionModel);
 
-        textbox = new FormFieldTextbox(model, descriptionModel);
-        textbox.setLabel(labelModel);
+        textInput = new FormFieldTexInput(model, descriptionModel);
+        textInput.setLabel(labelModel);
 
         // Create the text input
         labelComponent = newLabelComponent();
         descriptionComponent = newDescriptionComponent(descriptionModel);
-        inputComponent = newInputComponent(textbox);
+        inputComponent = newInputComponent(textInput);
         errorMessageComponent = newErrorMessageComponent();
     }
 
-    private static Component newInputComponent(TextField<?> inputTextbox) {
+    private static Component newInputComponent(TextField<?> textInput) {
         return new WebMarkupContainer("input-container")
-            .add(inputTextbox)
+            .add(textInput)
             .add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
-        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", textbox)
+        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", textInput)
             .add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
     }
 
@@ -79,7 +89,7 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
 
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
-            .add(new TextboxLabel())
+            .add(new TextInputLabel())
             .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior());
     }
 
@@ -90,7 +100,7 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
 
         add(
             UtrechtFormFieldBehavior.INSTANCE,
-            NlFormFieldTextboxBehavior.INSTANCE
+            NlFormFieldTextInputBehavior.INSTANCE
         );
 
         add(
@@ -102,7 +112,7 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
     }
 
     private boolean isInvalid() {
-        return textbox.hasErrorMessage();
+        return textInput.hasErrorMessage();
     }
 
     @Override
@@ -116,16 +126,16 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
         }
     }
 
-    public NlFormFieldTextbox<T> setRequired(boolean required) {
+    public NlFormFieldTextInput<T> setRequired(boolean required) {
         getTextField().setRequired(required);
         return this;
     }
 
     public TextField<T> getTextField() {
-        return textbox;
+        return textInput;
     }
 
-    public NlFormFieldTextbox<T> setInputType(String type) {
+    public NlFormFieldTextInput<T> setInputType(String type) {
         inputType = type;
 
         return this;
@@ -151,11 +161,11 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
         return labelComponent;
     }
 
-    class FormFieldTextbox extends NlTextbox<T> {
+    class FormFieldTexInput extends NlTextInput<T> {
 
         private final IModel<String> descriptionModel;
 
-        public FormFieldTextbox(IModel<T> model, IModel<String> descriptionModel) {
+        public FormFieldTexInput(IModel<T> model, IModel<String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }
@@ -180,9 +190,9 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
         }
     }
 
-    private class TextboxLabel extends WebMarkupContainer {
+    private class TextInputLabel extends WebMarkupContainer {
 
-        public TextboxLabel() {
+        public TextInputLabel() {
             super("label");
         }
 
@@ -196,9 +206,9 @@ public class NlFormFieldTextbox<T> extends GenericPanel<T> implements NlFormFiel
         @Override
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
-            tag.put("for", textbox.getMarkupId());
+            tag.put("for", textInput.getMarkupId());
 
-            if (!textbox.isEnabledInHierarchy()) {
+            if (!textInput.isEnabledInHierarchy()) {
                 FORM_LABEL_STATE_DISABLED.appendTo(tag);
             }
         }

@@ -1,22 +1,22 @@
-package nl.rotterdam.wicket.docs.form_field_textbox;
+package nl.rotterdam.wicket.docs.form_field_text_input;
 
-import nl.rotterdam.design_system.wicket.components.form_field_textbox.NlFormFieldTextbox;
+import nl.rotterdam.design_system.wicket.components.form_field_text_input.NlFormFieldTextInput;
 import nl.rotterdam.design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class FormFieldTextboxExamplesPanel extends Panel {
+public class FormFieldTextInputExamplesPanel extends Panel {
 
-    public FormFieldTextboxExamplesPanel(String id) {
+    public FormFieldTextInputExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextbox() {
-        return new NlFormFieldTextbox<>(
-            "nlFormFieldTextbox",
+    private static Component exampleFormFieldTextInput() {
+        return new NlFormFieldTextInput<>(
+            "formFieldTextInput",
             Model.of("Koen"),
             Model.of("Voornaam"),
             Model.of("Vul je voornaam in.")
@@ -24,9 +24,9 @@ public class FormFieldTextboxExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextboxRequired() {
-        return new NlFormFieldTextbox<>(
-            "nlFormFieldTextboxRequired",
+    private static Component exampleFormFieldTextInputRequired() {
+        return new NlFormFieldTextInput<>(
+            "formFieldTextInputRequired",
             DefaultModels.EMPTY_STRING_MODEL,
             Model.of("Email")
         )
@@ -35,9 +35,9 @@ public class FormFieldTextboxExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextboxDisabled() {
-        return new NlFormFieldTextbox<>(
-            "nlFormFieldTextboxDisabled",
+    private static Component exampleFormFieldTextInputDisabled() {
+        return new NlFormFieldTextInput<>(
+            "formFieldTextInputDisabled",
             Model.of("Hello world!"),
             Model.of("I agree"),
             Model.of("Description")
@@ -49,8 +49,8 @@ public class FormFieldTextboxExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleFormFieldTextbox());
-        add(exampleFormFieldTextboxRequired());
-        add(exampleFormFieldTextboxDisabled());
+        add(exampleFormFieldTextInput());
+        add(exampleFormFieldTextInputRequired());
+        add(exampleFormFieldTextInputDisabled());
     }
 }

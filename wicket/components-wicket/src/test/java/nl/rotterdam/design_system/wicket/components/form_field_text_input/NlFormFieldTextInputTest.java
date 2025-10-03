@@ -1,6 +1,5 @@
-package nl.rotterdam.design_system.wicket.components.form_field_textbox;
+package nl.rotterdam.design_system.wicket.components.form_field_text_input;
 
-import nl.rotterdam.design_system.wicket.components.form_field_textbox.NlFormFieldTextbox;
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
 
-class NlFormFieldTextboxTest extends NldsWicketTestCase {
+class NlFormFieldTextInputTest extends NldsWicketTestCase {
 
     @Test
     void rendersNaamWithLabelAndDescriptionAsDefinedInReferenceGuide() {
@@ -21,7 +20,7 @@ class NlFormFieldTextboxTest extends NldsWicketTestCase {
         // - aria-describedby added, it was missing, but I think it is needed.
         // language=HTML
         var expectedHtmlFragment = """
-                  <div id="utrecht-textbox-field" class="utrecht-form-field utrecht-form-field--text">
+                  <div id="form-field-name" class="utrecht-form-field utrecht-form-field--text">
                     <div class="utrecht-form-field__label">
                       <label
                         for="input-text"
@@ -41,7 +40,7 @@ class NlFormFieldTextboxTest extends NldsWicketTestCase {
                     </div>
                   </div>""";
 
-        var component = new NlFormFieldTextbox<>(
+        var component = new NlFormFieldTextInput<>(
             "component",
             Model.of(""),
             Model.of("Naam"),
@@ -60,7 +59,7 @@ class NlFormFieldTextboxTest extends NldsWicketTestCase {
     @Test
     void invalidRenderingAddsCorrectCssClasses() {
 
-        var component = new NlFormFieldTextbox<>(
+        var component = new NlFormFieldTextInput<>(
             "component",
             Model.of("I ❤️ Martine"),
             Model.of("Naam"),
@@ -75,13 +74,13 @@ class NlFormFieldTextboxTest extends NldsWicketTestCase {
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
 
-        TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "utrecht-textbox-field");
+        TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "form-field-name");
 
         assertHasCss(fieldTag, INVALID);
     }
 
-    private void setSubjectUnderTestIds(NlFormFieldTextbox<?> component) {
-        component.setMarkupId("utrecht-textbox-field");
+    private void setSubjectUnderTestIds(NlFormFieldTextInput<?> component) {
+        component.setMarkupId("form-field-name");
         component.getTextField().setMarkupId("input-text");
         component.getDescriptionComponent().setMarkupId("description-label");
         component.getErrorMessageComponent().setMarkupId("error-message-label");

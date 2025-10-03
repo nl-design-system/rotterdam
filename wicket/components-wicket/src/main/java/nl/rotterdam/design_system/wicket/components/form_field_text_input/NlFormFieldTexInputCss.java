@@ -1,9 +1,9 @@
-package nl.rotterdam.design_system.wicket.components.form_field_textbox;
+package nl.rotterdam.design_system.wicket.components.form_field_text_input;
 
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.jspecify.annotations.NonNull;
 
-enum NlFormFieldTextboxCss implements CssClassNames {
+enum NlFormFieldTexInputCss implements CssClassNames {
 
     UTRECHT_FORM_FIELD_TEXT("utrecht-form-field--text");
 
@@ -14,7 +14,7 @@ enum NlFormFieldTextboxCss implements CssClassNames {
         return classNames;
     }
 
-    NlFormFieldTextboxCss(String classNames) {
+    NlFormFieldTexInputCss(String classNames) {
         this.classNames = classNames;
     }
 }

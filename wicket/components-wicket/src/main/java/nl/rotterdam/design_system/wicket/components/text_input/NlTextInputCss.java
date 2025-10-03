@@ -1,9 +1,9 @@
-package nl.rotterdam.design_system.wicket.components.textbox;
+package nl.rotterdam.design_system.wicket.components.text_input;
 
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.jspecify.annotations.NonNull;
 
-enum NlTextboxCss implements CssClassNames {
+enum NlTextInputCss implements CssClassNames {
 
    DEFAULT("utrecht-textbox utrecht-textbox--html-input"),
    INVALID("utrecht-textbox--invalid"),
@@ -17,7 +17,7 @@ enum NlTextboxCss implements CssClassNames {
         return classNames;
     }
 
-    NlTextboxCss(String classNames) {
+    NlTextInputCss(String classNames) {
        this.classNames = classNames;
    }
 }
