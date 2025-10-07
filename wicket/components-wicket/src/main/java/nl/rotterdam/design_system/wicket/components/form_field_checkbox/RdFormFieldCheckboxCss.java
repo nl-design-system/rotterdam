@@ -3,7 +3,7 @@ package nl.rotterdam.design_system.wicket.components.form_field_checkbox;
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.jspecify.annotations.NonNull;
 
-enum NlFormFieldCheckboxCss implements CssClassNames {
+enum RdFormFieldCheckboxCss implements CssClassNames {
 
     UTRECHT_FORM_FIELD_CHECKBOX("utrecht-form-field--checkbox"),
     UTRECHT_FORM_FIELD_LABEL_CHECKBOX("utrecht-form-field__label--checkbox");
@@ -15,7 +15,7 @@ enum NlFormFieldCheckboxCss implements CssClassNames {
         return classNames;
     }
 
-    NlFormFieldCheckboxCss(String classNames) {
+    RdFormFieldCheckboxCss(String classNames) {
         this.classNames = classNames;
     }
 

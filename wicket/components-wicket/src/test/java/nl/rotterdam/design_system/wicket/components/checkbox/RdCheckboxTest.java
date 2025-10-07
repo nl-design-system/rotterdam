@@ -1,18 +1,17 @@
 package nl.rotterdam.design_system.wicket.components.checkbox;
 
-import nl.rotterdam.design_system.wicket.components.checkbox.NlCheckbox;
 import nl.rotterdam.design_system.wicket.components.test_common.NldsWicketTestCase;
 import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
 import org.junit.jupiter.api.Test;
 
-class NlCheckboxTest extends NldsWicketTestCase {
+class RdCheckboxTest extends NldsWicketTestCase {
 
     @Test
     void renderMinimal() {
 
-        Component checkbox = new NlCheckbox("checkbox", () -> false)
+        Component checkbox = new RdCheckbox("checkbox", () -> false)
             .setMarkup(Markup.of("<input type='checkbox' wicket:id='checkbox'/>"))
             .setMarkupId("checkbox");
 

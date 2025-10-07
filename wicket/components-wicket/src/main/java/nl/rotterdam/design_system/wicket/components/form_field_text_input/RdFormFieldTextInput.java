@@ -2,7 +2,7 @@ package nl.rotterdam.design_system.wicket.components.form_field_text_input;
 
 import css.HTMLUtil;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.design_system.wicket.components.form_field.NlFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.RdFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
@@ -37,7 +37,7 @@ import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentT
  * @param <T> the model object type
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormField {
+public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormField {
 
     private String inputType = "text";
     private final Component labelComponent;
@@ -46,11 +46,11 @@ public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormFi
     private final Component inputComponent;
     private final FormFieldTexInput textInput;
 
-    public NlFormFieldTextInput(String id, IModel<T> model, IModel<String> labelText) {
+    public RdFormFieldTextInput(String id, IModel<T> model, IModel<String> labelText) {
         this(id, model, labelText, EMPTY_STRING_MODEL);
     }
 
-    public NlFormFieldTextInput(
+    public RdFormFieldTextInput(
         String id,
         IModel<T> model,
         IModel<String> labelModel,
@@ -100,7 +100,7 @@ public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormFi
 
         add(
             UtrechtFormFieldBehavior.INSTANCE,
-            NlFormFieldTextInputBehavior.INSTANCE
+            RdFormFieldTextInputBehavior.INSTANCE
         );
 
         add(
@@ -126,7 +126,7 @@ public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormFi
         }
     }
 
-    public NlFormFieldTextInput<T> setRequired(boolean required) {
+    public RdFormFieldTextInput<T> setRequired(boolean required) {
         getTextField().setRequired(required);
         return this;
     }
@@ -135,7 +135,7 @@ public class NlFormFieldTextInput<T> extends GenericPanel<T> implements NlFormFi
         return textInput;
     }
 
-    public NlFormFieldTextInput<T> setInputType(String type) {
+    public RdFormFieldTextInput<T> setInputType(String type) {
         inputType = type;
 
         return this;

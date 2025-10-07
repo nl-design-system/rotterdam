@@ -46,7 +46,7 @@ import org.apache.wicket.Component;
  * </ul>
  *
  */
-public interface NlFormField {
+public interface RdFormField {
 
     Component getDescriptionComponent();
 

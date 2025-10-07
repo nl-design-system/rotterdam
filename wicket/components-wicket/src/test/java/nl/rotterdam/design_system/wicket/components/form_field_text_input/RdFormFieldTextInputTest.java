@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
 
-class NlFormFieldTextInputTest extends NldsWicketTestCase {
+class RdFormFieldTextInputTest extends NldsWicketTestCase {
 
     @Test
     void rendersNaamWithLabelAndDescriptionAsDefinedInReferenceGuide() {
@@ -40,7 +40,7 @@ class NlFormFieldTextInputTest extends NldsWicketTestCase {
                     </div>
                   </div>""";
 
-        var component = new NlFormFieldTextInput<>(
+        var component = new RdFormFieldTextInput<>(
             "component",
             Model.of(""),
             Model.of("Naam"),
@@ -52,14 +52,15 @@ class NlFormFieldTextInputTest extends NldsWicketTestCase {
         String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualHtmlFragment);
-
+        // left:         <input value="" name="static:component:input-container:control" id="input-text" aria-describedby="description-label" type="text" class="utrecht-textbox utrecht-textbox--html-input">
+        // right:        <input value="" name="static:component:input-container:control" id="input-text" aria-describedby="description-label" type="text" class="utrecht-textbox utrecht-textbox--html-input">
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
     @Test
     void invalidRenderingAddsCorrectCssClasses() {
 
-        var component = new NlFormFieldTextInput<>(
+        var component = new RdFormFieldTextInput<>(
             "component",
             Model.of("I ❤️ Martine"),
             Model.of("Naam"),
@@ -79,7 +80,7 @@ class NlFormFieldTextInputTest extends NldsWicketTestCase {
         assertHasCss(fieldTag, INVALID);
     }
 
-    private void setSubjectUnderTestIds(NlFormFieldTextInput<?> component) {
+    private void setSubjectUnderTestIds(RdFormFieldTextInput<?> component) {
         component.setMarkupId("form-field-name");
         component.getTextField().setMarkupId("input-text");
         component.getDescriptionComponent().setMarkupId("description-label");

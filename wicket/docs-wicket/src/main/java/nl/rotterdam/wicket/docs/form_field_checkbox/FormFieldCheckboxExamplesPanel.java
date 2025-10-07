@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.form_field_checkbox;
 
-import nl.rotterdam.design_system.wicket.components.form_field_checkbox.NlFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckbox;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -14,7 +14,7 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldCheckbox() {
-        return new NlFormFieldCheckbox(
+        return new RdFormFieldCheckbox(
             "nlFormFieldCheckbox",
             Model.of(false),
             Model.of("Ik ga akkoord met de algemene voorwaarden"),
@@ -24,7 +24,7 @@ public class FormFieldCheckboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldCheckboxInvalid() {
-        NlFormFieldCheckbox component = new NlFormFieldCheckbox(
+        RdFormFieldCheckbox component = new RdFormFieldCheckbox(
             "nlFormFieldCheckboxInvalid",
             Model.of(false),
             Model.of("Ik ga akkoord met de algemene voorwaarden"),

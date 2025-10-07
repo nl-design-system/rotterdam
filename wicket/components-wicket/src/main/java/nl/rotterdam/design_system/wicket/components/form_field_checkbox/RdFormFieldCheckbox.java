@@ -1,10 +1,9 @@
 package nl.rotterdam.design_system.wicket.components.form_field_checkbox;
 
 import css.HTMLUtil;
-import nl.rotterdam.design_system.wicket.components.checkbox.NlCheckbox;
-import nl.rotterdam.design_system.wicket.components.component_state.Community;
+import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.design_system.wicket.components.form_field.NlFormField;
+import nl.rotterdam.design_system.wicket.components.form_field.RdFormField;
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
@@ -23,25 +22,25 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Estaf
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.*;
 import static nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
-import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.NlFormFieldCheckboxCss.UTRECHT_FORM_FIELD_LABEL_CHECKBOX;
+import static nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.UTRECHT_FORM_FIELD_LABEL_CHECKBOX;
 import static nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlFormField {
+public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdFormField {
 
-    private final NlCheckbox inputComponent;
+    private final RdCheckbox inputComponent;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
     private final Component labelComponent;
 
-    public NlFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
+    public RdFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
         this(id, model, labelModel, EMPTY_STRING_MODEL);
     }
 
-    public NlFormFieldCheckbox(
+    public RdFormFieldCheckbox(
         String id,
         IModel<Boolean> model,
         IModel<String> labelModel,
@@ -88,8 +87,8 @@ public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlForm
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
     }
 
-    private NlCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
-        final NlCheckbox control = new FormFieldCheckbox( model, descriptionModel);
+    private RdCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
+        final RdCheckbox control = new FormFieldCheckbox( model, descriptionModel);
         control.add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
         return control;
     }
@@ -116,7 +115,7 @@ public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlForm
 
         add(
             UtrechtFormFieldBehavior.INSTANCE,
-            NlCheckboxFormFieldBehavior.INSTANCE
+            RdCheckboxFormFieldBehavior.INSTANCE
         );
 
         add(
@@ -126,7 +125,7 @@ public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlForm
         );
     }
 
-    public NlFormFieldCheckbox setRequired(boolean required) {
+    public RdFormFieldCheckbox setRequired(boolean required) {
         inputComponent.setRequired(required);
         return this;
     }
@@ -181,7 +180,7 @@ public class NlFormFieldCheckbox extends GenericPanel<Boolean> implements NlForm
         }
     }
 
-    class FormFieldCheckbox extends NlCheckbox {
+    class FormFieldCheckbox extends RdCheckbox {
 
         private final IModel<String> descriptionModel;
 

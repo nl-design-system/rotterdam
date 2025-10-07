@@ -1,9 +1,9 @@
 package nl.rotterdam.wicket.docs.sso_login_page;
 
-import nl.rotterdam.design_system.wicket.components.button.NlButton;
+import nl.rotterdam.design_system.wicket.components.button.RdButton;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
-import nl.rotterdam.design_system.wicket.components.form_field_checkbox.NlFormFieldCheckbox;
-import nl.rotterdam.design_system.wicket.components.form_field_text_input.NlFormFieldTextInput;
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_text_input.RdFormFieldTextInput;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -36,16 +36,16 @@ public class SingleSignOnLoginFormPanel extends Panel {
                     super.onInitialize();
                     add(
                         new FeedbackPanel("feedback"),
-                        new NlFormFieldTextInput<>("username", username, Model.of("Gebruikersnaam"))
+                        new RdFormFieldTextInput<>("username", username, Model.of("Gebruikersnaam"))
                             .setRequired(true),
-                        new NlFormFieldTextInput<>("password", password, Model.of("Wachtwoord"))
+                        new RdFormFieldTextInput<>("password", password, Model.of("Wachtwoord"))
                             .setRequired(true)
                             .setInputType("password"),
-                        new NlFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij"))
+                        new RdFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij"))
                             .setRequired(true),
                         newMinLength8(sampleMinLength8),
                         new UtrechtButtonGroupBorder("actionGroup")
-                            .add(new NlButton("submit"))
+                            .add(new RdButton("submit"))
                     );
                 }
 
@@ -65,7 +65,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                     System.out.println("Received rememberMe: " + rememberMe.getObject());
                 }
                 private Component newMinLength8(Model<String> sampleMinLength8) {
-                    NlFormFieldTextInput<String> input = new NlFormFieldTextInput<>("minLength8", sampleMinLength8, Model.of("Minimale lengte 8 tekens"))
+                    RdFormFieldTextInput<String> input = new RdFormFieldTextInput<>("minLength8", sampleMinLength8, Model.of("Minimale lengte 8 tekens"))
                         .setRequired(true);
 
                     input.getTextField().add(StringValidator.minimumLength(8));

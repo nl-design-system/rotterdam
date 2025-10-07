@@ -6,16 +6,16 @@ import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBe
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.form.Button;
 
-class NlButtonBehavior extends TagNameClassComponentBehavior<Button> {
+class RdButtonBehavior extends TagNameClassComponentBehavior<Button> {
 
     static final CssReferenceHeaderItem CSS_HEADER_ITEM = cssReferenceHeaderItem(
-        NlButtonBehavior.class,
+        RdButtonBehavior.class,
         "@utrecht/button-css/dist/index.css"
     );
 
-    public static final NlButtonBehavior INSTANCE = new NlButtonBehavior();
+    public static final RdButtonBehavior INSTANCE = new RdButtonBehavior();
 
-    private NlButtonBehavior() {
+    private RdButtonBehavior() {
         super("button", "utrecht-button", "utrecht-button--html-button");
         addHeaderItem(CSS_HEADER_ITEM);
     }

@@ -1,8 +1,8 @@
 package nl.rotterdam.wicket.docs.button;
 
-import nl.rotterdam.design_system.wicket.components.button.NlButton;
-import nl.rotterdam.design_system.wicket.components.button.NlButtonAppearance;
-import nl.rotterdam.design_system.wicket.components.button.NlButtonHint;
+import nl.rotterdam.design_system.wicket.components.button.RdButton;
+import nl.rotterdam.design_system.wicket.components.button.RdButtonAppearance;
+import nl.rotterdam.design_system.wicket.components.button.RdButtonHint;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -15,75 +15,75 @@ public class ButtonExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component nlButton() {
-        return new NlButton("nlButton");
+        return new RdButton("nlButton");
     }
 
     @ComponentExample
     private static Component nlButtonDisabled() {
-        NlButton button = new NlButton("nlButtonDisabled");
+        RdButton button = new RdButton("nlButtonDisabled");
         button.setEnabled(false);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonBusy() {
-        NlButton button = new NlButton("nlButtonBusy");
+        RdButton button = new RdButton("nlButtonBusy");
         button.setBusy(true);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonToggle() {
-        NlButton button = new NlButton("nlButtonToggle");
+        RdButton button = new RdButton("nlButtonToggle");
         button.setPressed(false);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonPressed() {
-        NlButton button = new NlButton("nlButtonPressed");
+        RdButton button = new RdButton("nlButtonPressed");
         button.setPressed(true);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonIconStart() {
-        NlButton button = new NlButton("nlButtonIconStart");
+        RdButton button = new RdButton("nlButtonIconStart");
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonPrimaryAction() {
-        NlButton button = new NlButton("nlButtonPrimaryAction");
-        button.setAppearance(NlButtonAppearance.PRIMARY_ACTION);
+        RdButton button = new RdButton("nlButtonPrimaryAction");
+        button.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonSecondaryAction() {
-        NlButton button = new NlButton("nlButtonSecondaryAction");
-        button.setAppearance(NlButtonAppearance.SECONDARY_ACTION);
+        RdButton button = new RdButton("nlButtonSecondaryAction");
+        button.setAppearance(RdButtonAppearance.SECONDARY_ACTION);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonSubtle() {
-        NlButton button = new NlButton("nlButtonSubtle");
-        button.setAppearance(NlButtonAppearance.SUBTLE);
+        RdButton button = new RdButton("nlButtonSubtle");
+        button.setAppearance(RdButtonAppearance.SUBTLE);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonPrimaryActionDanger() {
-        NlButton button = new NlButton("nlButtonPrimaryActionDanger");
-        button.setAppearance(NlButtonAppearance.PRIMARY_ACTION);
-        button.setHint(NlButtonHint.DANGER);
+        RdButton button = new RdButton("nlButtonPrimaryActionDanger");
+        button.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
+        button.setHint(RdButtonHint.DANGER);
         return button;
     }
 
     @ComponentExample
     private static Component nlButtonSubmit() {
-        NlButton button = new NlButton("nlButtonSubmit") {
+        RdButton button = new RdButton("nlButtonSubmit") {
             // @Override
             // protected void onSubmit() {
             //     info("Submitted!");

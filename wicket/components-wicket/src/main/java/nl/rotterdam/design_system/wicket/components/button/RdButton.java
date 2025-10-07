@@ -11,28 +11,28 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Estaf
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class NlButton extends Button {
+public class RdButton extends Button {
 
     public boolean busy = false;
-    public NlButtonAppearance appearance = null;
-    public NlButtonHint hint = null;
+    public RdButtonAppearance appearance = null;
+    public RdButtonHint hint = null;
 
     // Pressed is a nullable boolean
     public Boolean pressed = null;
 
-    public NlButton(String id) {
+    public RdButton(String id) {
         this(id, null);
     }
 
-    public NlButton(final String id, final IModel<String> model) {
+    public RdButton(final String id, final IModel<String> model) {
         super(id, model);
     }
 
-    public void setAppearance(NlButtonAppearance appearance) {
+    public void setAppearance(RdButtonAppearance appearance) {
         this.appearance = appearance;
     }
 
-    public void setHint(NlButtonHint hint) {
+    public void setHint(RdButtonHint hint) {
         this.hint = hint;
     }
 
@@ -48,7 +48,7 @@ public class NlButton extends Button {
     public void onInitialize() {
         super.onInitialize();
 
-        add(NlButtonBehavior.INSTANCE);
+        add(RdButtonBehavior.INSTANCE);
     }
 
     @Override

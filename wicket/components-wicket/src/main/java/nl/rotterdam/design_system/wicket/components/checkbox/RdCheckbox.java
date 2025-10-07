@@ -7,7 +7,6 @@ import org.apache.wicket.model.IModel;
 import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 /**
  * Implementation of <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox</a>.
@@ -17,9 +16,9 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Wicke
  *  </a></p>
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class NlCheckbox extends CheckBox {
+public class RdCheckbox extends CheckBox {
 
-    public NlCheckbox(String id, IModel<Boolean> model) {
+    public RdCheckbox(String id, IModel<Boolean> model) {
         super(id, model);
         setOutputMarkupId(true);
     }
@@ -27,7 +26,7 @@ public class NlCheckbox extends CheckBox {
     @Override
     protected void onInitialize() {
         super.onInitialize();
-        add(NlCheckboxBehavior.INSTANCE);
+        add(RdCheckboxBehavior.INSTANCE);
     }
 
 }
