@@ -31,7 +31,7 @@
                         your build log. -->
                         <id>install-node-and-corepack</id>
                         <goals>
-                            <goal>install-node-and-corepack</goal>
+                                <goal>install-node-and-corepack</goal>
                         </goals>
                         <!-- optional: default phase is "generate-resources" -->
                         <phase>generate-resources</phase>
@@ -53,7 +53,9 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <arguments>pnpm run build</arguments>
+                            <!-- uses package.json "scripts"/"build" script cannot use that as pnpm calling pnpm
+                            is not supported from Maven. -->
+                            <arguments>pnpm --recursive run build</arguments>
                         </configuration>
                     </execution>
                 </executions>
