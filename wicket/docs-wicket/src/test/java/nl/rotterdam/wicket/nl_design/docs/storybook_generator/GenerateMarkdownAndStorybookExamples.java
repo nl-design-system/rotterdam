@@ -2,7 +2,7 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
-import nl.rotterdam.design_system.wicket.components.button_group.RdActionGroup;
+import nl.rotterdam.design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
@@ -29,7 +29,7 @@ import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
-import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
+import nl.rotterdam.wicket.docs.action_group.ActionGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
@@ -109,12 +109,12 @@ public class GenerateMarkdownAndStorybookExamples {
     }
 
     @Test
-    void generateButtonGroupComponent() {
+    void generateActionGroupComponent() {
         new MarkdownDocumentationExamplesGenerator(
-            ButtonGroupExamplesPanel.class,
+            ActionGroupExamplesPanel.class,
             RdActionGroup.class,
-            "button-group",
-            "Button Group"
+            "action-group",
+            "Action Group"
         ).generate();
     }
 

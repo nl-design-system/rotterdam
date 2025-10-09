@@ -1,4 +1,4 @@
-package nl.rotterdam.design_system.wicket.components.button_group;
+package nl.rotterdam.design_system.wicket.components.action_group;
 
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.jspecify.annotations.NonNull;

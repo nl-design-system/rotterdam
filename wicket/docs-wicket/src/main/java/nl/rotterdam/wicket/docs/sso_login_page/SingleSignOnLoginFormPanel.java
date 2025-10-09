@@ -1,7 +1,7 @@
 package nl.rotterdam.wicket.docs.sso_login_page;
 
 import nl.rotterdam.design_system.wicket.components.button.RdButton;
-import nl.rotterdam.design_system.wicket.components.button_group.RdActionGroup;
+import nl.rotterdam.design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_field_text_input.RdFormFieldTextInput;
 import org.apache.wicket.Component;

@@ -1,25 +1,25 @@
-package nl.rotterdam.wicket.docs.button_group;
+package nl.rotterdam.wicket.docs.action_group;
 
 import nl.rotterdam.design_system.wicket.components.button.RdButton;
-import nl.rotterdam.design_system.wicket.components.button_group.RdActionGroup;
+import nl.rotterdam.design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class ButtonGroupExamplesPanel extends Panel {
+public class ActionGroupExamplesPanel extends Panel {
 
-    public ButtonGroupExamplesPanel(String id) {
+    public ActionGroupExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
-    private static Component exampleButtonGroup() {
-        return new RdActionGroup("buttonGroup")
+    private static Component exampleActionGroup() {
+        return new RdActionGroup("actionGroup")
             .add(new RdButton("button") {
                 @Override
                 public void onSubmit() {
                     super.onSubmit();
-                    System.out.println("ButtonGroupExamplesPanel.onSubmit called");
+                    System.out.println("ActionGroupExamplesPanel.onSubmit called");
                 }
             });
     }
@@ -28,6 +28,6 @@ public class ButtonGroupExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleButtonGroup());
+        add(exampleActionGroup());
     }
 }

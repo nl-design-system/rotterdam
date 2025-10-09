@@ -1,11 +1,10 @@
-package nl.rotterdam.design_system.wicket.components.button_group;
+package nl.rotterdam.design_system.wicket.components.action_group;
 
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.border.Border;
 
 import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 /**
