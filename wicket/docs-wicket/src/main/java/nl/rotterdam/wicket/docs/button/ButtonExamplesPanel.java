@@ -48,8 +48,7 @@ public class ButtonExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component nlButtonIconStart() {
-        RdButton button = new RdButton("nlButtonIconStart");
-        return button;
+        return new RdButton("nlButtonIconStart");
     }
 
     @ComponentExample

@@ -2,7 +2,7 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
-import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
+import nl.rotterdam.design_system.wicket.components.button_group.RdActionGroup;
 import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
@@ -112,7 +112,7 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateButtonGroupComponent() {
         new MarkdownDocumentationExamplesGenerator(
             ButtonGroupExamplesPanel.class,
-            UtrechtButtonGroupBorder.class,
+            RdActionGroup.class,
             "button-group",
             "Button Group"
         ).generate();

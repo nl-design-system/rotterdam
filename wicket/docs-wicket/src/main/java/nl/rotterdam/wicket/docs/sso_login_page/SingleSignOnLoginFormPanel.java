@@ -1,7 +1,7 @@
 package nl.rotterdam.wicket.docs.sso_login_page;
 
 import nl.rotterdam.design_system.wicket.components.button.RdButton;
-import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
+import nl.rotterdam.design_system.wicket.components.button_group.RdActionGroup;
 import nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckbox;
 import nl.rotterdam.design_system.wicket.components.form_field_text_input.RdFormFieldTextInput;
 import org.apache.wicket.Component;
@@ -44,7 +44,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                         new RdFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij"))
                             .setRequired(true),
                         newMinLength8(sampleMinLength8),
-                        new UtrechtButtonGroupBorder("actionGroup")
+                        new RdActionGroup("actionGroup")
                             .add(new RdButton("submit"))
                     );
                 }
@@ -52,7 +52,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                 @Override
                 protected void onError() {
                     super.onError();
-                    error("On error called. Only possible in classic browsers who don't support 'required' attribute.");
+                    error("On error called.");
                 }
 
                 @Override

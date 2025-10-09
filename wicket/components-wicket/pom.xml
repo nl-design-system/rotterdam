@@ -180,7 +180,7 @@
                 <includes>
                     <include>@utrecht/button-group-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/design_system/wicket/components/button_group/utrecht</targetPath>
+                <targetPath>nl/rotterdam/design_system/wicket/components/button_group</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
