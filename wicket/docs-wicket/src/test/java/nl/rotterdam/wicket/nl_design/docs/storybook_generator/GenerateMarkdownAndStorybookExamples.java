@@ -343,7 +343,7 @@ public class GenerateMarkdownAndStorybookExamples {
             FormFieldTextInputExamplesPanel.class,
             RdFormFieldTextInput.class,
             "form-field-text-input",
-            "Form Field TextInput"
+            "Form Field Text Input"
         ).generate();
     }
 
