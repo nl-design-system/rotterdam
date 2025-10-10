@@ -14,76 +14,76 @@ public class ButtonExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component nlButton() {
-        return new RdButton("nlButton");
+    private static Component button() {
+        return new RdButton("button");
     }
 
     @ComponentExample
-    private static Component nlButtonDisabled() {
-        RdButton button = new RdButton("nlButtonDisabled");
+    private static Component buttonDisabled() {
+        RdButton button = new RdButton("buttonDisabled");
         button.setEnabled(false);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonBusy() {
-        RdButton button = new RdButton("nlButtonBusy");
+    private static Component buttonBusy() {
+        RdButton button = new RdButton("buttonBusy");
         button.setBusy(true);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonToggle() {
-        RdButton button = new RdButton("nlButtonToggle");
+    private static Component buttonToggle() {
+        RdButton button = new RdButton("buttonToggle");
         button.setPressed(false);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonPressed() {
-        RdButton button = new RdButton("nlButtonPressed");
+    private static Component buttonPressed() {
+        RdButton button = new RdButton("buttonPressed");
         button.setPressed(true);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonIconStart() {
-        RdButton button = new RdButton("nlButtonIconStart");
+    private static Component buttonIconStart() {
+        RdButton button = new RdButton("buttonIconStart");
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonPrimaryAction() {
-        RdButton button = new RdButton("nlButtonPrimaryAction");
+    private static Component buttonPrimaryAction() {
+        RdButton button = new RdButton("buttonPrimaryAction");
         button.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonSecondaryAction() {
-        RdButton button = new RdButton("nlButtonSecondaryAction");
+    private static Component buttonSecondaryAction() {
+        RdButton button = new RdButton("buttonSecondaryAction");
         button.setAppearance(RdButtonAppearance.SECONDARY_ACTION);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonSubtle() {
-        RdButton button = new RdButton("nlButtonSubtle");
+    private static Component buttonSubtle() {
+        RdButton button = new RdButton("buttonSubtle");
         button.setAppearance(RdButtonAppearance.SUBTLE);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonPrimaryActionDanger() {
-        RdButton button = new RdButton("nlButtonPrimaryActionDanger");
+    private static Component buttonPrimaryActionDanger() {
+        RdButton button = new RdButton("buttonPrimaryActionDanger");
         button.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
         button.setHint(RdButtonHint.DANGER);
         return button;
     }
 
     @ComponentExample
-    private static Component nlButtonSubmit() {
-        RdButton button = new RdButton("nlButtonSubmit") {
+    private static Component buttonSubmit() {
+        RdButton button = new RdButton("buttonSubmit") {
             // @Override
             // protected void onSubmit() {
             //     info("Submitted!");
@@ -98,16 +98,16 @@ public class ButtonExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(nlButton());
-        add(nlButtonDisabled());
-        add(nlButtonBusy());
-        add(nlButtonToggle());
-        add(nlButtonPressed());
-        add(nlButtonIconStart());
-        add(nlButtonPrimaryAction());
-        add(nlButtonSecondaryAction());
-        add(nlButtonSubtle());
-        add(nlButtonPrimaryActionDanger());
-        add(nlButtonSubmit());
+        add(button());
+        add(buttonDisabled());
+        add(buttonBusy());
+        add(buttonToggle());
+        add(buttonPressed());
+        add(buttonIconStart());
+        add(buttonPrimaryAction());
+        add(buttonSecondaryAction());
+        add(buttonSubtle());
+        add(buttonPrimaryActionDanger());
+        add(buttonSubmit());
     }
 }
