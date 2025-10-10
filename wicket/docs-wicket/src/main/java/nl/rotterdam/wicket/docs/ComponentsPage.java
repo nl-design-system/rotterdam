@@ -4,14 +4,14 @@ import css.DesignSystemTheme;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
-import nl.rotterdam.wicket.docs.button.UtrechtButtonExamplesPanel;
+import nl.rotterdam.wicket.docs.button.ButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
-import nl.rotterdam.wicket.docs.form_field_textbox.UtrechtFormFieldTextboxExamplesPanel;
+import nl.rotterdam.wicket.docs.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
@@ -84,14 +84,14 @@ public class ComponentsPage extends RotterdamBasePage {
             new AlertExamplesPanel("alertExamplesPanel"),
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
             new BodyExamplesPanel("bodyExamplesPanel"),
-            new UtrechtButtonExamplesPanel("buttonExamplesPanel"),
+            new ButtonExamplesPanel("buttonExamplesPanel"),
             new ButtonGroupExamplesPanel("buttonGroupExamplesPanel"),
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
             new CheckboxExamplesPanel("checkboxExamplesPanel"),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
-            new UtrechtFormFieldTextboxExamplesPanel("formFieldTextboxExamplesPanel"),
+            new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
             new HeadingExamplesPanel("headingExamplesPanel"),
             new HeadingGroupExamplesPanel("headingGroupExamplesPanel")
         );

@@ -12,11 +12,12 @@ import org.apache.wicket.request.component.IRequestablePage;
 
 import java.util.List;
 
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.design_system.wicket.components.link_list.utrecht.UtrechtLinkListBehavior.UTRECHT_LINK_LIST_BEHAVIOR;
 
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class UtrechtLinkListPanel extends Panel {
 
     public List<UtrechtLinkListRecord<? extends IRequestablePage>> links;

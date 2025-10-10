@@ -14,7 +14,7 @@
   },
   "engines": {
     "node": "^22",
-    "pnpm": "^9"
+    "pnpm": "^10"
   },
   "workspaces": [
     "./wicket/",
@@ -78,15 +78,15 @@
     "update-major": "npm-check-updates --configFileName .ncurc.major.cjs",
     "watch:storybook": "pnpm --filter @gemeente-rotterdam/storybook run storybook",
     "watch:style-dictionary": "pnpm --filter @gemeente-rotterdam/design-tokens run watch",
-    "wicket:build": "mvn --no-transfer-progress --offline clean install && pnpm run wicket:build-docs",
-    "wicket:install-and-build": "mvn --no-transfer-progress clean install && pnpm run wicket:build-docs",
-    "wicket:build-docs": "mvn exec:java@generateStoryBook -pl :docs-wicket",
-    "wicket:clean": "mvn clean",
-    "wicket:install": "mvn --no-transfer-progress dependency:go-offline",
-    "wicket:dev": "mvn exec:java@runDocs -pl :docs-wicket"
+    "wicket:build": "./mvnw install -N && ./mvnw --no-transfer-progress --offline clean install && pnpm run wicket:build-docs",
+    "wicket:install-and-build": "./mvnw install -N && ./mvnw --no-transfer-progress install && pnpm run wicket:build-docs",
+    "wicket:build-docs": "./mvnw  exec:java@generateStoryBook -pl :docs-wicket",
+    "wicket:clean": "./mvnw  clean",
+    "wicket:install": "./mvnw  --no-transfer-progress dependency:go-offline",
+    "wicket:dev": "./mvnw  exec:java@runDocs -pl :docs-wicket"
   },
   "dependencies": {
     "http-server": "14.1.1"
   },
-  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74"
+  "packageManager": "pnpm@10.17.0+sha512.fce8a3dd29a4ed2ec566fb53efbb04d8c44a0f05bc6f24a73046910fb9c3ce7afa35a0980500668fa3573345bd644644fa98338fa168235c80f4aa17aa17fbef"
 }

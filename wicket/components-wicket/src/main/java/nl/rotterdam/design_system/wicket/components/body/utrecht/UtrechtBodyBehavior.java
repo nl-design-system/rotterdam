@@ -4,10 +4,12 @@ import nl.rotterdam.design_system.wicket.components.base.HeaderItemRenderingBeha
 import nl.rotterdam.design_system.wicket.components.component_state.NlComponentState;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+import static nl.rotterdam.design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class UtrechtBodyBehavior extends HeaderItemRenderingBehavior {
 
     public static final UtrechtBodyBehavior INSTANCE = new UtrechtBodyBehavior();

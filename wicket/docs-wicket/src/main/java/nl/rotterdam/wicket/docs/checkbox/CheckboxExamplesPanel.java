@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.checkbox;
 
-import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckbox;
+import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.form.CheckBox;
@@ -15,7 +15,7 @@ public class CheckboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleCheckbox() {
-        return new UtrechtCheckbox(
+        return new RdCheckbox(
             "checkbox",
             Model.of(false)
         );
@@ -23,7 +23,7 @@ public class CheckboxExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleCheckboxInvalid() {
-        CheckBox component = new UtrechtCheckbox(
+        CheckBox component = new RdCheckbox(
             "checkboxInvalid",
             Model.of(false)
         );

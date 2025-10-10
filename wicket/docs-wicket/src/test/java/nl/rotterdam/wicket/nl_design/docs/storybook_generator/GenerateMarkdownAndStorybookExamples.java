@@ -2,11 +2,13 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
+import nl.rotterdam.design_system.wicket.components.button.RdButton;
 import nl.rotterdam.design_system.wicket.components.button_group.utrecht.UtrechtButtonGroupBorder;
-import nl.rotterdam.design_system.wicket.components.checkbox.utrecht.UtrechtCheckbox;
+import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
-import nl.rotterdam.design_system.wicket.components.form_field_checkbox.utrecht.UtrechtFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckbox;
+import nl.rotterdam.design_system.wicket.components.form_field_text_input.RdFormFieldTextInput;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabel;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
@@ -28,12 +30,14 @@ import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
+import nl.rotterdam.wicket.docs.button.ButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.button_group.ButtonGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
+import nl.rotterdam.wicket.docs.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
@@ -107,6 +111,16 @@ public class GenerateMarkdownAndStorybookExamples {
     }
 
     @Test
+    void generateButtonComponent() {
+        new MarkdownDocumentationExamplesGenerator(
+            ButtonExamplesPanel.class,
+            RdButton.class,
+            "button",
+            "Button"
+        ).generate();
+    }
+
+    @Test
     void generateButtonGroupComponent() {
         new MarkdownDocumentationExamplesGenerator(
             ButtonGroupExamplesPanel.class,
@@ -120,7 +134,7 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateCheckboxComponent() {
         new MarkdownDocumentationExamplesGenerator(
             CheckboxExamplesPanel.class,
-            UtrechtCheckbox.class,
+            RdCheckbox.class,
             "checkbox",
             "Checkbox"
         ).generate();
@@ -149,7 +163,7 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateFormFieldCheckboxComponent() {
         new MarkdownDocumentationExamplesGenerator(
             FormFieldCheckboxExamplesPanel.class,
-            UtrechtFormFieldCheckbox.class,
+            RdFormFieldCheckbox.class,
             "form-field-checkbox",
             "Form Field Checkbox"
         ).generate();
@@ -298,6 +312,19 @@ public class GenerateMarkdownAndStorybookExamples {
             "Separator"
         ).generate();
     }
+
+
+    @Test
+    void generateFormFieldTextInput() {
+        new MarkdownDocumentationExamplesGenerator(
+            FormFieldTextInputExamplesPanel.class,
+            RdFormFieldTextInput.class,
+            "form-field-text-input",
+            "Form Field TextInput"
+        ).generate();
+    }
+
+
 
     @Test
     void generateUtrechtOrderedList() {
