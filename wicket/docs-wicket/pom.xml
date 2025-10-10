@@ -56,6 +56,11 @@
             <artifactId>junit-platform-launcher</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.googlecode.wicketforge</groupId>
+            <artifactId>wicketforge-annotations</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-tester</artifactId>
             <scope>test</scope>
@@ -89,9 +94,7 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>
-                                nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain
-                            </mainClass>
+                            <mainClass>nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain</mainClass>
                             <classpathScope>test</classpathScope>
                         </configuration>
                     </execution>

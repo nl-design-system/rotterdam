@@ -89,6 +89,11 @@
                 <artifactId>flexmark-all</artifactId>
                 <version>0.64.8</version>
             </dependency>
+            <dependency>
+                <groupId>com.googlecode.wicketforge</groupId>
+                <artifactId>wicketforge-annotations</artifactId>
+                <version>1.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
