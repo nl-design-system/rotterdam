@@ -11,9 +11,9 @@ import static nl.rotterdam.design_system.wicket.components.component_state.Wicke
 
 
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class NlTextInput<T> extends TextField<T> {
+public class RdTextInput<T> extends TextField<T> {
 
-    public NlTextInput(String id, IModel<T> model) {
+    public RdTextInput(String id, IModel<T> model) {
         super(id, model);
     }
 
@@ -21,7 +21,7 @@ public class NlTextInput<T> extends TextField<T> {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(NlTextInputBehavior.INSTANCE);
+        add(RdTextInputBehavior.INSTANCE);
     }
 
 }

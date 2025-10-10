@@ -7,13 +7,13 @@ import org.apache.wicket.markup.Markup;
 import org.apache.wicket.util.tester.TagTester;
 import org.junit.jupiter.api.Test;
 
-import static nl.rotterdam.design_system.wicket.components.text_input.NlTextInputCss.INVALID;
+import static nl.rotterdam.design_system.wicket.components.text_input.RdTextInputCss.INVALID;
 
-class NlTextInputTest extends NldsWicketTestCase {
+class RdTextInputTest extends NldsWicketTestCase {
 
     @Test
     void renderMinimal() {
-        Component firstNameInput = new NlTextInput<>("firstName", () -> "Carola")
+        Component firstNameInput = new RdTextInput<>("firstName", () -> "Carola")
             .setMarkup(Markup.of("<input wicket:id='firstName'/>"))
             .setMarkupId("firstName");
 
@@ -33,7 +33,7 @@ class NlTextInputTest extends NldsWicketTestCase {
     @Test
     void renderInvalid() {
 
-        Component firstNameInput = new NlTextInput<>("firstName", () -> "Carola")
+        Component firstNameInput = new RdTextInput<>("firstName", () -> "Carola")
             .setMarkup(Markup.of("<input wicket:id='firstName'/>"))
             .setMarkupId("firstName");
 

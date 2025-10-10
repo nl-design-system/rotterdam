@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static nl.rotterdam.design_system.wicket.components.test_common.WicketAssertions.assertHeaderItemExists;
 
-class NlTextInputBehaviorTest extends NldsWicketTestCase {
+class RdTextInputBehaviorTest extends NldsWicketTestCase {
 
     @Test
     void assertResourceReferenceExists() {
-        assertHeaderItemExists(NlTextInputBehavior.CSS_HEADER_ITEM);
+        assertHeaderItemExists(RdTextInputBehavior.CSS_HEADER_ITEM);
     }
 
 }

@@ -7,7 +7,7 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
-import nl.rotterdam.design_system.wicket.components.text_input.NlTextInput;
+import nl.rotterdam.design_system.wicket.components.text_input.RdTextInput;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -161,7 +161,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         return labelComponent;
     }
 
-    class FormFieldTexInput extends NlTextInput<T> {
+    class FormFieldTexInput extends RdTextInput<T> {
 
         private final IModel<String> descriptionModel;
 
