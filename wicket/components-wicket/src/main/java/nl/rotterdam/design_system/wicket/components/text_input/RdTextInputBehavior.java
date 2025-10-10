@@ -3,7 +3,6 @@ package nl.rotterdam.design_system.wicket.components.text_input;
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.form.TextField;
 
 import java.util.ArrayList;
@@ -11,17 +10,14 @@ import java.util.List;
 
 import static nl.rotterdam.design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-class NlTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
-
-    static final CssReferenceHeaderItem CSS_HEADER_ITEM = cssReferenceHeaderItem(NlTextInputBehavior.class, "@utrecht/textbox-css/dist/index.css");
+class RdTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
 
-    public static final NlTextInputBehavior INSTANCE = new NlTextInputBehavior();
+    public static final RdTextInputBehavior INSTANCE = new RdTextInputBehavior();
 
-
-    private NlTextInputBehavior() {
-        super("input", NlTextInputCss.DEFAULT);
-        addHeaderItem(CSS_HEADER_ITEM);
+    private RdTextInputBehavior() {
+        super("input", RdTextInputCss.DEFAULT);
+        addHeaderItem(cssReferenceHeaderItem(RdTextInputBehavior.class, "@utrecht/textbox-css/dist/index.css"));
     }
 
     @Override
@@ -29,11 +25,12 @@ class NlTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
         List<CssClassNames> classes = new ArrayList<>();
         if (!component.isEnabledInHierarchy()) {
-            classes.add(NlTextInputCss.DISABLED);
+
+            classes.add(RdTextInputCss.DISABLED);
         }
 
         if (component.hasErrorMessage()) {
-            classes.add(NlTextInputCss.INVALID);
+            classes.add(RdTextInputCss.INVALID);
         }
 
         if (component.isRequired()) {

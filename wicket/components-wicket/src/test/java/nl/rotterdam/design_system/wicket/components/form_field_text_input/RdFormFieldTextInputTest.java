@@ -52,8 +52,6 @@ class RdFormFieldTextInputTest extends NldsWicketTestCase {
         String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualHtmlFragment);
-        // left:         <input value="" name="static:component:input-container:control" id="input-text" aria-describedby="description-label" type="text" class="utrecht-textbox utrecht-textbox--html-input">
-        // right:        <input value="" name="static:component:input-container:control" id="input-text" aria-describedby="description-label" type="text" class="utrecht-textbox utrecht-textbox--html-input">
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 

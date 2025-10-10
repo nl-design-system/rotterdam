@@ -3,6 +3,7 @@ package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
 import nl.rotterdam.design_system.wicket.components.action_group.RdActionGroup;
+import nl.rotterdam.design_system.wicket.components.button.RdButton;
 import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
@@ -30,6 +31,7 @@ import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
 import nl.rotterdam.wicket.docs.action_group.ActionGroupExamplesPanel;
+import nl.rotterdam.wicket.docs.button.ButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
@@ -105,6 +107,16 @@ public class GenerateMarkdownAndStorybookExamples {
             BodyExamplesPanel.class,
             "body",
             "Body"
+        ).generate();
+    }
+
+    @Test
+    void generateButtonComponent() {
+        new MarkdownDocumentationExamplesGenerator(
+            ButtonExamplesPanel.class,
+            RdButton.class,
+            "button",
+            "Button"
         ).generate();
     }
 

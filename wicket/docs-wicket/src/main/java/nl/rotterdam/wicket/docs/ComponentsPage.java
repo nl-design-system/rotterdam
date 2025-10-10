@@ -1,11 +1,11 @@
 package nl.rotterdam.wicket.docs;
 
 import css.DesignSystemTheme;
+import nl.rotterdam.wicket.docs.action_group.ActionGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
 import nl.rotterdam.wicket.docs.body.BodyExamplesPanel;
 import nl.rotterdam.wicket.docs.button.ButtonExamplesPanel;
-import nl.rotterdam.wicket.docs.action_group.ActionGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
