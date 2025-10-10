@@ -16,7 +16,7 @@ class RdButtonBehavior extends TagNameClassComponentBehavior<Button> {
     public static final RdButtonBehavior INSTANCE = new RdButtonBehavior();
 
     private RdButtonBehavior() {
-        super("button", "utrecht-button", "utrecht-button--html-button");
+        super("button", RdButtonCss.DEFAULT);
         addHeaderItem(CSS_HEADER_ITEM);
     }
 }

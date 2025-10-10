@@ -17,9 +17,23 @@
             <p>Voorbeeld.</p>
           </div>
           <rods-story-canvas
-            ><template>
-              <button wicket:id="nlButton">Click me</button>
-            </template></rods-story-canvas
+          ><template>
+            <button wicket:id="nlButton">Click me</button>
+          </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="formOfAjaxButton">
+          <h2>Ajax button. Gebruik wanneer je de submit via Ajax wilt laten verlopen.</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+          ><template>
+            <form wicket:id="formOfAjaxButton">
+            <button wicket:id="ajaxButton">Click me</button>
+            </form>
+          </template></rods-story-canvas
           >
         </section>
 

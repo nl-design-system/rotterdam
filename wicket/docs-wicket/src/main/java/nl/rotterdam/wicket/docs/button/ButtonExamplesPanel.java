@@ -1,10 +1,13 @@
 package nl.rotterdam.wicket.docs.button;
 
+import nl.rotterdam.design_system.wicket.components.button.RdAjaxButton;
 import nl.rotterdam.design_system.wicket.components.button.RdButton;
 import nl.rotterdam.design_system.wicket.components.button.RdButtonAppearance;
 import nl.rotterdam.design_system.wicket.components.button.RdButtonHint;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class ButtonExamplesPanel extends Panel {
@@ -16,6 +19,24 @@ public class ButtonExamplesPanel extends Panel {
     @ComponentExample
     private static Component nlButton() {
         return new RdButton("nlButton");
+    }
+
+    @ComponentExample
+    private static Component formAndAjaxButton() {
+        return new Form<Void>("formOfAjaxButton") {
+
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+                add(new RdAjaxButton("ajaxButton") {
+
+                    @Override
+                    protected void onSubmit(AjaxRequestTarget target) {
+                        System.out.println("ajaxButton submitted");
+                    }
+                });
+            }
+        };
     }
 
     @ComponentExample
@@ -97,16 +118,19 @@ public class ButtonExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(nlButton());
-        add(nlButtonDisabled());
-        add(nlButtonBusy());
-        add(nlButtonToggle());
-        add(nlButtonPressed());
-        add(nlButtonIconStart());
-        add(nlButtonPrimaryAction());
-        add(nlButtonSecondaryAction());
-        add(nlButtonSubtle());
-        add(nlButtonPrimaryActionDanger());
-        add(nlButtonSubmit());
+        add(
+            nlButton(),
+            formAndAjaxButton(),
+            nlButtonDisabled(),
+            nlButtonBusy(),
+            nlButtonToggle(),
+            nlButtonPressed(),
+            nlButtonIconStart(),
+            nlButtonPrimaryAction(),
+            nlButtonSecondaryAction(),
+            nlButtonSubtle(),
+            nlButtonPrimaryActionDanger(),
+            nlButtonSubmit()
+        );
     }
 }
