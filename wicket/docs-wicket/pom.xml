@@ -88,6 +88,7 @@
                         <goals>
                             <goal>java</goal>
                         </goals>
+                        <phase>generate-resources</phase>
                         <configuration>
                             <mainClass>
                                 nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain
@@ -128,12 +129,4 @@
             </testResource>
         </testResources>
     </build>
-    <repositories>
-        <repository>
-            <id>maven_central</id>
-            <name>Maven Central</name>
-            <url>https://repo.maven.apache.org/maven2/</url>
-        </repository>
-    </repositories>
-
 </project>
