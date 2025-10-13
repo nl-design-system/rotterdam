@@ -56,7 +56,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         IModel<String> labelModel,
         IModel<String> descriptionModel
     ) {
-        super(id);
+        super(id, model);
         requireNonNull(labelModel);
         requireNonNull(descriptionModel);
 
