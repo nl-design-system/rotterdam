@@ -9,9 +9,9 @@ import org.apache.wicket.model.util.ListModel;
 
 import java.util.List;
 
-public class DataSummaryExamples extends Panel {
+public class DataSummaryExamplesPanel extends Panel {
 
-    public DataSummaryExamples(String id) {
+    public DataSummaryExamplesPanel(String id) {
         super(id);
     }
 

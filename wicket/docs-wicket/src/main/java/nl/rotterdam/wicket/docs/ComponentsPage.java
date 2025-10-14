@@ -9,7 +9,7 @@ import nl.rotterdam.wicket.docs.button.ButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
-import nl.rotterdam.wicket.docs.data_summary.DataSummaryExamples;
+import nl.rotterdam.wicket.docs.data_summary.DataSummaryExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_text_input.FormFieldTextInputExamplesPanel;
@@ -93,7 +93,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
-            new DataSummaryExamples("dataSummaryExamplesPanel"),
+            new DataSummaryExamplesPanel("dataSummaryExamplesPanel"),
             new HeadingExamplesPanel("headingExamplesPanel"),
             new HeadingGroupExamplesPanel("headingGroupExamplesPanel")
         );
