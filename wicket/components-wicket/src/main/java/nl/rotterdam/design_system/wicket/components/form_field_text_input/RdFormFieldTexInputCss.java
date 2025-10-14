@@ -5,7 +5,7 @@ import org.jspecify.annotations.NonNull;
 
 enum RdFormFieldTexInputCss implements CssClassNames {
 
-    UTRECHT_FORM_FIELD_TEXT("utrecht-form-field--text");
+    DEFAULT("utrecht-form-field--text");
 
     private final String classNames;
 

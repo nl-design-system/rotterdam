@@ -2,6 +2,7 @@ package nl.rotterdam.design_system.wicket.components.text_input;
 
 import nl.rotterdam.design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.design_system.wicket.components.css_class_names.CssClassNames;
+import nl.rotterdam.design_system.wicket.components.read_only.ReadOnlyModelHolder;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.TextField;
 
@@ -38,6 +39,13 @@ class RdTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
         }
         if (component.hasErrorMessage()) {
             tag.put("aria-invalid", "true");
+        }
+
+        if (component instanceof ReadOnlyModelHolder modelHolder) {
+            if (modelHolder.getReadOnlyModel().getObject() == Boolean.TRUE) {
+                tag.put("readonly", "readonly");
+                classes.add(RdTextInputCss.READ_ONLY);
+            }
         }
 
         return classes;

@@ -39,11 +39,22 @@ public class FormFieldTextInputExamplesPanel extends Panel {
     private static Component exampleFormFieldTextInputDisabled() {
         return new RdFormFieldTextInput<>(
             "formFieldTextInputDisabled",
-            Model.of("Hello world!"),
-            Model.of("I agree"),
-            Model.of("Description")
+            Model.of("Willem-Alexander van Oranje-Nassau"),
+            Model.of("Naam"),
+            Model.of("Je volledig naam.")
         )
             .setEnabled(false);
+    }
+
+    @ComponentExample
+    private static Component exampleFormFieldTextInputReadonly() {
+        return new RdFormFieldTextInput<>(
+            "formFieldTextInputReadonly",
+            Model.of("Willem-Alexander van Oranje-Nassau"),
+            Model.of("Volledige naam"),
+            Model.of("Je volledige naam.")
+        )
+            .readOnly(Model.of(true));
     }
 
     @ComponentExample
@@ -69,6 +80,7 @@ public class FormFieldTextInputExamplesPanel extends Panel {
             exampleFormFieldTextInput(),
             exampleFormFieldTextInputRequired(),
             exampleFormFieldTextInputDisabled(),
+            exampleFormFieldTextInputReadonly(),
             exampleFormFieldTextInputWithAutocompleteConfigured()
         );
     }

@@ -78,6 +78,13 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         return this;
     }
 
+    public RdFormFieldTextInput<T> readOnly(IModel<Boolean> readOnlyModel) {
+        // TODO consider to change the semantics. Hide textInput, show label
+        textInput.setReadOnlyModel(readOnlyModel);
+        return this;
+    }
+
+
     private static Component newInputComponent(TextField<?> textInput) {
         return new WebMarkupContainer("input-container")
             .add(textInput)
