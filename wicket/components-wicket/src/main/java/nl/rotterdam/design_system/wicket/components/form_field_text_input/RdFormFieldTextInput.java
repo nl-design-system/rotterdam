@@ -44,7 +44,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
     private final Component inputComponent;
-    private final FormFieldTexInput textInput;
+    private final FormFieldTextInput textInput;
 
     public RdFormFieldTextInput(String id, IModel<T> model, IModel<String> labelText) {
         this(id, model, labelText, EMPTY_STRING_MODEL);
@@ -60,7 +60,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         requireNonNull(labelModel);
         requireNonNull(descriptionModel);
 
-        textInput = new FormFieldTexInput(model, descriptionModel);
+        textInput = new FormFieldTextInput(model, descriptionModel);
         textInput.setLabel(labelModel);
 
         // Create the text input
@@ -68,6 +68,14 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         descriptionComponent = newDescriptionComponent(descriptionModel);
         inputComponent = newInputComponent(textInput);
         errorMessageComponent = newErrorMessageComponent();
+    }
+
+    // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
+    //  as serializable attributes but leads to slightly better Wicket livecycle.
+    public RdFormFieldTextInput<T> configureTextInput(DoWithTextInputCallback<T> callback) {
+        callback.doWithTextInput(textInput, this);
+
+        return this;
     }
 
     private static Component newInputComponent(TextField<?> textInput) {
@@ -161,11 +169,11 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         return labelComponent;
     }
 
-    class FormFieldTexInput extends RdTextInput<T> {
+    class FormFieldTextInput extends RdTextInput<T> {
 
         private final IModel<String> descriptionModel;
 
-        public FormFieldTexInput(IModel<T> model, IModel<String> descriptionModel) {
+        public FormFieldTextInput(IModel<T> model, IModel<String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }
