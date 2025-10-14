@@ -49,7 +49,7 @@ class RdFormFieldTextInputTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
+        String actualHtmlFragment = renderComponentInDivTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualHtmlFragment);
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
@@ -69,7 +69,7 @@ class RdFormFieldTextInputTest extends NldsWicketTestCase {
 
         component.getTextField().error("Verwijder de emoji-tekens uit de naam");
 
-        String actualRenderedMarkup = renderFormFieldComponentInTestPanel(component);
+        String actualRenderedMarkup = renderComponentInDivTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
 

@@ -43,7 +43,7 @@ class RdFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
+        String actualHtmlFragment = renderComponentInDivTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualHtmlFragment);
 
@@ -105,7 +105,7 @@ class RdFormFieldCheckboxTest extends NldsWicketTestCase {
 
         setSubjectUnderTestIds(component);
 
-        String actualHtmlFragment = renderFormFieldComponentInTestPanel(component);
+        String actualHtmlFragment = renderComponentInDivTestPanel(component);
 
         verifyUtrechtFormFieldContract(component, actualHtmlFragment);
 

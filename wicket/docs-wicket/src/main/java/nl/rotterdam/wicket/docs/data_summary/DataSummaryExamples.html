@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<head>
+  <title>whatever</title>
+</head>
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Data Summary</h1>
+        <div>
+          <p>Geeft een lijst van items met hun label en hun waarde.</p>
+        </div>
+
+        <section data-testid="basic">
+          <h2>Basis voorbeeld</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <dl wicket:id="basic">Click me</dl>
+            </template></rods-story-canvas
+          >
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

@@ -31,5 +31,7 @@ public class GenerateMarkdownAndStorybookExamplesMain {
         // Print the summary
         TestExecutionSummary summary = listener.getSummary();
         summary.printTo(new PrintWriter(System.out));
+
+        System.out.println("Completed storybook generation");
     }
 }

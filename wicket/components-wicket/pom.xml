@@ -195,6 +195,14 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>@utrecht/data-list-css/dist/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/design_system/wicket/components/data_summary</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
                     <include>@utrecht/code-block-css/dist/*.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/design_system/wicket/components/code_block/utrecht</targetPath>
