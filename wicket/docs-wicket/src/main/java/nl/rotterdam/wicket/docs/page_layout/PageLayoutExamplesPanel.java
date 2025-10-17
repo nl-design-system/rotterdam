@@ -5,15 +5,15 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class UtrechtPageLayoutExamplesPanel extends Panel {
+public class PageLayoutExamplesPanel extends Panel {
 
-    public UtrechtPageLayoutExamplesPanel(String id) {
+    public PageLayoutExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
     private static Component examplePageLayout() {
-        return new UtrechtPageLayoutBorder("utrechtPageLayout");
+        return new UtrechtPageLayoutBorder("pageLayout");
     }
 
     @Override

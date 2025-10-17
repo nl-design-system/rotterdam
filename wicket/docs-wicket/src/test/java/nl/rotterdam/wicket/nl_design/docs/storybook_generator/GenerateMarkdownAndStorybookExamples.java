@@ -45,18 +45,18 @@ import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
-import nl.rotterdam.wicket.docs.logo.UtrechtLogoExamplesPanel;
+import nl.rotterdam.wicket.docs.logo.LogoExamplesPanel;
 import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
-import nl.rotterdam.wicket.docs.number_badge.UtrechtNumberBadgeExamplesPanel;
-import nl.rotterdam.wicket.docs.ordered_list.UtrechtOrderedListExamplesPanel;
-import nl.rotterdam.wicket.docs.page_body.UtrechtPageBodyExamplesPanel;
-import nl.rotterdam.wicket.docs.page_footer.UtrechtPageFooterExamplesPanel;
-import nl.rotterdam.wicket.docs.page_layout.UtrechtPageLayoutExamplesPanel;
-import nl.rotterdam.wicket.docs.preserve_data.UtrechtPreserveDataExamplesPanel;
-import nl.rotterdam.wicket.docs.root.UtrechtRootExamplesPanel;
-import nl.rotterdam.wicket.docs.separator.UtrechtSeparatorExamplesPanel;
+import nl.rotterdam.wicket.docs.number_badge.NumberBadgeExamplesPanel;
+import nl.rotterdam.wicket.docs.ordered_list.OrderedListExamplesPanel;
+import nl.rotterdam.wicket.docs.page_body.PageBodyExamplesPanel;
+import nl.rotterdam.wicket.docs.page_footer.PageFooterExamplesPanel;
+import nl.rotterdam.wicket.docs.page_layout.PageLayoutExamplesPanel;
+import nl.rotterdam.wicket.docs.preserve_data.PreserveDataExamplesPanel;
+import nl.rotterdam.wicket.docs.root.RootExamplesPanel;
+import nl.rotterdam.wicket.docs.separator.SeparatorExamplesPanel;
 import nl.rotterdam.wicket.docs.text_input.TextInputExamplesPanel;
-import nl.rotterdam.wicket.docs.unordered_list.UtrechtUnorderedListExamplesPanel;
+import nl.rotterdam.wicket.docs.unordered_list.UnorderedListExamplesPanel;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -260,91 +260,91 @@ public class GenerateMarkdownAndStorybookExamples {
     }
 
     @Test
-    void generateUtrechtLogo() {
+    void generateLogo() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtLogoExamplesPanel.class,
+            LogoExamplesPanel.class,
             UtrechtLogoBorder.class,
-            "utrecht-logo",
+            "logo",
             "Logo"
         ).generate();
     }
 
     @Test
-    void generateUtrechtIcon() {
+    void generateIcon() {
         new MarkdownDocumentationExamplesGenerator(
             IconExamplesPanel.class,
             UtrechtIconBorder.class,
-            "utrecht-icon",
+            "icon",
             "Icon"
         ).generate();
     }
 
     @Test
-    void generateUtrechtNumberBadge() {
+    void generateNumberBadge() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtNumberBadgeExamplesPanel.class,
+            NumberBadgeExamplesPanel.class,
             UtrechtNumberBadge.class,
-            "utrecht-number-badge",
+            "number-badge",
             "Number Badge"
         ).generate();
     }
 
     @Test
-    void generateUtrechtPageBody() {
+    void generatePageBody() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtPageBodyExamplesPanel.class,
+            PageBodyExamplesPanel.class,
             UtrechtPageBodyBorder.class,
-            "utrecht-page-body",
+            "page-body",
             "Page Body"
         ).generate();
     }
 
     @Test
-    void generateUtrechtPageFooter() {
+    void generatePageFooter() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtPageFooterExamplesPanel.class,
+            PageFooterExamplesPanel.class,
             UtrechtPageFooterBorder.class,
-            "utrecht-page-footer",
+            "page-footer",
             "Page Footer"
         ).generate();
     }
 
     @Test
-    void generateUtrechtPageLayout() {
+    void generatePageLayout() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtPageLayoutExamplesPanel.class,
+            PageLayoutExamplesPanel.class,
             UtrechtPageLayoutBorder.class,
-            "utrecht-page-layout",
+            "page-layout",
             "Page Layout"
         ).generate();
     }
 
     @Test
-    void generateUtrechtPreserveData() {
+    void generatePreserveData() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtPreserveDataExamplesPanel.class,
+            PreserveDataExamplesPanel.class,
             UtrechtPreserveDataLabel.class,
-            "utrecht-preserve-data",
+            "preserve-data",
             "Preserve Data"
         ).generate();
     }
 
     @Test
-    void generateUtrechtRoot() {
+    void generateRoot() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtRootExamplesPanel.class,
+            RootExamplesPanel.class,
             UtrechtRootBorder.class,
-            "utrecht-root",
+            "root",
             "Root"
         ).generate();
     }
 
     @Test
-    void generateUtrechtSeparator() {
+    void generateSeparator() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtSeparatorExamplesPanel.class,
+            SeparatorExamplesPanel.class,
             UtrechtSeparator.class,
-            "utrecht-separator",
+            "separator",
             "Separator"
         ).generate();
     }
@@ -363,21 +363,21 @@ public class GenerateMarkdownAndStorybookExamples {
 
 
     @Test
-    void generateUtrechtOrderedList() {
+    void generateOrderedList() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtOrderedListExamplesPanel.class,
+            OrderedListExamplesPanel.class,
             UtrechtOrderedList.class,
-            "utrecht-ordered-list",
+            "ordered-list",
             "Ordered List"
         ).generate();
     }
 
     @Test
-    void generateUtrechtUnorderedList() {
+    void generateUnorderedList() {
         new MarkdownDocumentationExamplesGenerator(
-            UtrechtUnorderedListExamplesPanel.class,
+            UnorderedListExamplesPanel.class,
             UtrechtUnorderedList.class,
-            "utrecht-unordered-list",
+            "unordered-list",
             "Unordered List"
         ).generate();
     }

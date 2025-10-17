@@ -12,14 +12,14 @@ public class BodyExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleBodyExample() {
-        return new UtrechtBodyBorder("utrechtBody");
+    private static Component exampleBody() {
+        return new UtrechtBodyBorder("body");
     }
 
     @Override
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleBodyExample());
+        add(exampleBody());
     }
 }
