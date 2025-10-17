@@ -168,11 +168,6 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         return this;
     }
 
-    public RdFormFieldTextInput<T> add(final Component... children) {
-        super.add(children);
-        return this;
-    }
-
     @Override
     public Component getErrorMessageComponent() {
         return errorMessageComponent;
