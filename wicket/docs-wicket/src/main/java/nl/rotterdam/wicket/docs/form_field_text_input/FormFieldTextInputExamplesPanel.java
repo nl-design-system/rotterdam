@@ -47,17 +47,6 @@ public class FormFieldTextInputExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextInputReadonly() {
-        return new RdFormFieldTextInput<>(
-            "formFieldTextInputReadonly",
-            Model.of("Willem-Alexander van Oranje-Nassau"),
-            Model.of("Volledige naam"),
-            Model.of("Je volledige naam.")
-        )
-            .readOnly(Model.of(true));
-    }
-
-    @ComponentExample
     private static Component exampleFormFieldTextInputWithAutocompleteConfigured() {
         return new RdFormFieldTextInput<>(
             "formFieldTextInputWithAutocompleteConfigured",
@@ -80,7 +69,6 @@ public class FormFieldTextInputExamplesPanel extends Panel {
             exampleFormFieldTextInput(),
             exampleFormFieldTextInputRequired(),
             exampleFormFieldTextInputDisabled(),
-            exampleFormFieldTextInputReadonly(),
             exampleFormFieldTextInputWithAutocompleteConfigured()
         );
     }

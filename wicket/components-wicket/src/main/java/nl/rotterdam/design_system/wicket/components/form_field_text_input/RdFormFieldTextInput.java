@@ -9,6 +9,7 @@ import nl.rotterdam.design_system.wicket.components.form_field_description.utrec
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.design_system.wicket.components.text_input.RdTextInput;
 import org.apache.wicket.Component;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -75,12 +76,6 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
     public RdFormFieldTextInput<T> configureTextInput(DoWithTextInputCallback<T> callback) {
         callback.doWithTextInput(textInput, this);
 
-        return this;
-    }
-
-    public RdFormFieldTextInput<T> readOnly(IModel<Boolean> readOnlyModel) {
-        // TODO consider to change the semantics. Hide textInput, show label
-        textInput.setReadOnlyModel(readOnlyModel);
         return this;
     }
 
@@ -159,6 +154,17 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
     @Override
     public Component getDescriptionComponent() {
         return descriptionComponent;
+    }
+
+    @Override
+    public RdFormFieldTextInput<T> add(Behavior... behaviors) {
+        super.add(behaviors);
+        return this;
+    }
+
+    public RdFormFieldTextInput<T> add(final Component... children) {
+        super.add(children);
+        return this;
     }
 
     @Override
