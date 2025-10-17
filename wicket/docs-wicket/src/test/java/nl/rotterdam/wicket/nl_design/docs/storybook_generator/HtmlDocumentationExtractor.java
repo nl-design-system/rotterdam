@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Locale;
 import java.util.Optional;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -40,6 +41,13 @@ public class HtmlDocumentationExtractor {
     }
 
     public String extractHeader() {
-        return requireNonNull(document.selectFirst("h1 + div")).html();
+        Element documentationDiv = requireNonNull(document.selectFirst("h1 + div"));
+        documentationDiv.select("a[href='#']").forEach((otherComponentLink) -> {
+            var replacementUri = "?path=/docs/apache-wicket-" +
+                    otherComponentLink.text().toLowerCase(Locale.ENGLISH).replace(' ', '-') +
+                    "--docs";
+            otherComponentLink.attribute("href").setValue(replacementUri);
+        });
+        return documentationDiv.html();
     }
 }
