@@ -54,7 +54,6 @@ class RdDataSummaryTest extends NldsWicketTestCase {
             </dl>
             """;
 
-
         RdDataSummary component = new RdDataSummary("component",
             new ListModel<>(
                 List.of(
@@ -69,9 +68,5 @@ class RdDataSummaryTest extends NldsWicketTestCase {
         String actualHtmlFragment = renderComponentInDlTestPanel(component);
 
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
-        System.out.println("Actual html:");
-        System.out.println(actualHtmlFragment);
-
-
     }
 }
