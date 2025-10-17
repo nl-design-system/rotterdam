@@ -13,7 +13,7 @@ public class HeadingGroupExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleHeadingGroup() {
-        return new UtrechtHeadingGroupBorder("utrechtHeadingGroup");
+        return new UtrechtHeadingGroupBorder("headingGroup");
     }
 
     @Override

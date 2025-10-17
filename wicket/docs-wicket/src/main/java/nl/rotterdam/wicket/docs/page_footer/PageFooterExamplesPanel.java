@@ -5,15 +5,15 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class UtrechtPageFooterExamplesPanel extends Panel {
+public class PageFooterExamplesPanel extends Panel {
 
-    public UtrechtPageFooterExamplesPanel(String id) {
+    public PageFooterExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
     private static Component examplePageFooter() {
-        return new UtrechtPageFooterBorder("utrechtPageFooter");
+        return new UtrechtPageFooterBorder("pageFooter");
     }
 
     @Override

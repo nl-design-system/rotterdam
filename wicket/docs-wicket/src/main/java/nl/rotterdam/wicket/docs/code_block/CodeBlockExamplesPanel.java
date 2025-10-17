@@ -15,7 +15,7 @@ public class CodeBlockExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleCodeBlock() {
         return new UtrechtCodeBlock(
-            "utrechtCodeBlock",
+            "codeBlock",
             Model.of(
                 """
                 <!DOCTYPE html>

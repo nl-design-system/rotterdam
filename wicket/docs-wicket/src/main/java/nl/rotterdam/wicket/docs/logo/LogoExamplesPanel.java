@@ -5,15 +5,15 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class UtrechtLogoExamplesPanel extends Panel {
+public class LogoExamplesPanel extends Panel {
 
-    public UtrechtLogoExamplesPanel(String id) {
+    public LogoExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
     private static Component exampleLogo() {
-        return new UtrechtLogoBorder("utrechtLogo");
+        return new UtrechtLogoBorder("logo");
     }
 
     @Override

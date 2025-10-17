@@ -14,9 +14,9 @@ public class AlertExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleAlertAlert() {
+    private static Component exampleAlertError() {
         return new UtrechtAlert(
-            "utrechtAlertAlert",
+            "alertError",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -27,7 +27,7 @@ public class AlertExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleAlertWarning() {
         return new UtrechtAlert(
-            "utrechtAlertWarning",
+            "alertWarning",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -38,7 +38,7 @@ public class AlertExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleAlertOk() {
         return new UtrechtAlert(
-            "utrechtAlertOk",
+            "alertOk",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -49,7 +49,7 @@ public class AlertExamplesPanel extends Panel {
     @ComponentExample
     private static Component exampleAlertInfo() {
         return new UtrechtAlert(
-            "utrechtAlertInfo",
+            "alertInfo",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -61,7 +61,7 @@ public class AlertExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleAlertAlert());
+        add(exampleAlertError());
         add(exampleAlertWarning());
         add(exampleAlertOk());
         add(exampleAlertInfo());

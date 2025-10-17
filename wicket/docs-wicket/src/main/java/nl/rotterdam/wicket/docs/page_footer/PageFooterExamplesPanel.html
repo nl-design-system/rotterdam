@@ -3,21 +3,19 @@
   <body>
     <wicket:panel>
       <section class="stories">
-        <h1>Body component</h1>
+        <h1>Page Footer component</h1>
         <div>
-          <p>Component op het niveau van het <code>body</code> HTML-element.</p>
+          <p>Informatie en links onder de pagina.</p>
         </div>
 
-        <section data-testid="body">
-          <h2>Body</h2>
+        <section data-testid="pageFooter">
+          <h2>Page Footer</h2>
           <div>
             <p>Voorbeeld.</p>
           </div>
           <rods-story-canvas
-            ><template>
-              <div wicket:id="body">Lorem ipsum dolor sit amet</div>
-            </template></rods-story-canvas
-          >
+            ><template> <div wicket:id="pageFooter"></div> </template>
+          </rods-story-canvas>
         </section>
       </section>
     </wicket:panel>

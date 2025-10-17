@@ -6,21 +6,21 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class UtrechtParagraphExamplesPanel extends Panel {
+public class ParagraphExamplesPanel extends Panel {
 
-    public UtrechtParagraphExamplesPanel(String id) {
+    public ParagraphExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
     private static Component exampleParagraph() {
-        return new UtrechtParagraph("utrechtParagraph", "Lorem ipsum dolor sit amet");
+        return new UtrechtParagraph("paragraph", "Lorem ipsum dolor sit amet");
     }
 
     @ComponentExample
     private static Component exampleParagraphLead() {
         return new UtrechtParagraph(
-            "utrechtParagraphLead",
+            "paragraphLead",
             "Lorem ipsum dolor sit amet",
             UtrechtParagraphAppearance.LEAD
         );

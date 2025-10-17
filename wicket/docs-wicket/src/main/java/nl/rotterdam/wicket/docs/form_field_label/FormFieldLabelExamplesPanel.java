@@ -15,13 +15,13 @@ public class FormFieldLabelExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldLabel() {
-        return new UtrechtFormLabel("utrechtFormFieldLabel", Model.of("Voornaam"));
+        return new UtrechtFormLabel("formFieldLabel", Model.of("Voornaam"));
     }
 
     @ComponentExample
     private static Component exampleFormFieldLabelCheckbox() {
         return new UtrechtFormLabel(
-            "utrechtFormFieldLabelCheckbox",
+            "formFieldLabelCheckbox",
             Model.of("Optie 1"),
             UtrechtFormLabelBehavior.INSTANCE_CHECKBOX
         );
@@ -29,7 +29,7 @@ public class FormFieldLabelExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleFormFieldLabelRadio() {
-        return new UtrechtFormLabel("utrechtFormFieldLabelRadio", Model.of("Optie 1"), UtrechtFormLabelBehavior.INSTANCE_RADIO);
+        return new UtrechtFormLabel("formFieldLabelRadio", Model.of("Optie 1"), UtrechtFormLabelBehavior.INSTANCE_RADIO);
     }
 
     @Override

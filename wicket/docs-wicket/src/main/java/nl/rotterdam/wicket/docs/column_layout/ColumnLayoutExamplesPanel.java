@@ -13,7 +13,7 @@ public class ColumnLayoutExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleColumnLayout() {
-        return new UtrechtColumnLayoutBorder("utrechtColumnLayout");
+        return new UtrechtColumnLayoutBorder("columnLayout");
     }
 
     @Override

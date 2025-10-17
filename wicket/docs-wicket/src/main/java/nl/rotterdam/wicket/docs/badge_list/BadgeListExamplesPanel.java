@@ -21,7 +21,7 @@ public class BadgeListExamplesPanel extends Panel {
     private static Component exampleBadgeList() {
         List<String> namen = List.of("duurzaamheid", "schoon, heel en veilig");
 
-        return new WebMarkupContainer("utrechtBadgeListWebMarkupContainer") {
+        return new WebMarkupContainer("badgeList") {
             @Override
             protected void onInitialize() {
                 super.onInitialize();

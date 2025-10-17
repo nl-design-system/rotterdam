@@ -13,7 +13,7 @@ public class IconExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleIconComponent() {
-        return new UtrechtIconBorder("utrechtIcon");
+        return new UtrechtIconBorder("icon");
     }
 
     @Override

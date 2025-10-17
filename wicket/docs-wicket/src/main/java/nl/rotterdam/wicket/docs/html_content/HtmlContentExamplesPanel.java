@@ -13,7 +13,7 @@ public class HtmlContentExamplesPanel extends Panel {
 
     @ComponentExample
     private static Component exampleHtmlContent() {
-        return new UtrechtHtmlContentBorder("utrechtHtmlContent");
+        return new UtrechtHtmlContentBorder("htmlContent");
     }
 
     @Override

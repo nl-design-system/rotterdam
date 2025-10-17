@@ -8,6 +8,6 @@ public class RotterdamHtmlPage extends RotterdamBasePage {
     protected void onInitialize() {
         super.onInitialize();
 
-        pageBody.add(new UtrechtHtmlContentBorder("utrechtHtml"));
+        pageBody.add(new UtrechtHtmlContentBorder("html"));
     }
 }
