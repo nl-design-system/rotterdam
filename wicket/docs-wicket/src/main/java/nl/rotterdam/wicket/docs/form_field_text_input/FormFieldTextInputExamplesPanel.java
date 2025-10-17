@@ -54,7 +54,7 @@ public class FormFieldTextInputExamplesPanel extends Panel {
             Model.of("Voornaam"),
             Model.of("Vul je voornaam in.")
         )
-            .configureTextInput((input, formField) ->
+            .withTextInput((input, formField) ->
                 input.add(
                     AttributeModifier.replace("autocomplete", "given-name"),
                     AttributeModifier.replace("spellcheck", "false")

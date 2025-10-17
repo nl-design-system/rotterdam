@@ -71,9 +71,15 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         errorMessageComponent = newErrorMessageComponent();
     }
 
-    // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
-    //  as serializable attributes but leads to slightly better Wicket livecycle.
-    public RdFormFieldTextInput<T> configureTextInput(DoWithTextInputCallback<T> callback) {
+    /**
+     * Initialize the text input in the callback. TextInput and FormField are in scope.
+     *
+     * <p>By using this callback you can initialize the Component in a fluent api style, without intermediary
+     * assignments.</p>
+     */
+    public RdFormFieldTextInput<T> withTextInput(WithTextInputCallback<T> callback) {
+        // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
+        //  as serializable attributes but leads to slightly better Wicket livecycle.
         callback.doWithTextInput(textInput, this);
 
         return this;
