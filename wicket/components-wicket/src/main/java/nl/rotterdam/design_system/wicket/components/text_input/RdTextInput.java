@@ -23,5 +23,4 @@ public class RdTextInput<T> extends TextField<T> {
 
         add(RdTextInputBehavior.INSTANCE);
     }
-
 }

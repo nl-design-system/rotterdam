@@ -8,6 +8,7 @@ import nl.rotterdam.design_system.wicket.components.form_field.utrecht.UtrechtFo
 import nl.rotterdam.design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
 import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import org.apache.wicket.Component;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -127,6 +128,12 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     public RdFormFieldCheckbox setRequired(boolean required) {
         inputComponent.setRequired(required);
+        return this;
+    }
+
+    @Override
+    public RdFormFieldCheckbox add(Behavior... behaviors) {
+        super.add(behaviors);
         return this;
     }
 

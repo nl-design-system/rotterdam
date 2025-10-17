@@ -34,13 +34,27 @@
         <section data-testid="formFieldTextInputDisabled">
           <h2>Form Field TextInput Disabled</h2>
           <div>
-            <p>Voorbeeld.</p>
+            <p>Een form field in disabled mode. Wordt zo gerenderd door Wicket
+              setEnabled(false) te gebruiken.</p>
           </div>
           <rods-story-canvas
-            ><template> <div wicket:id="formFieldTextInputDisabled"></div> </template>
+          ><template> <div wicket:id="formFieldTextInputDisabled"></div> </template>
           </rods-story-canvas>
         </section>
       </section>
+
+      <section data-testid="formFieldTextInputWithAutocompleteConfigured">
+        <h2>Form Field TextInput with autocomplete enabled and spell check disabled.</h2>
+        <div>
+          <p>Met configureTextInput() kan je dit regelen zonder een
+            <a href="https://java-design-patterns.com/patterns/fluent-interface/">
+              fluent code style</a> te laten varen.</p>
+        </div>
+        <rods-story-canvas
+        ><template> <div wicket:id="formFieldTextInputWithAutocompleteConfigured"></div> </template>
+        </rods-story-canvas>
+      </section>
+
     </wicket:panel>
   </body>
 </html>

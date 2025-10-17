@@ -14,7 +14,13 @@ public enum Community {
     TILBURG("Gemeente Tilburg"),
     UTRECHT("Gemeente Utrecht");
 
-    Community(@SuppressWarnings("unused") String name) {
+    private final String name;
 
+    Community(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

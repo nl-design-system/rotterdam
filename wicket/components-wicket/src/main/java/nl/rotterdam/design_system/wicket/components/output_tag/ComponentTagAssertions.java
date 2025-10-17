@@ -9,4 +9,5 @@ public class ComponentTagAssertions {
             throw new IllegalStateException("utrecht-form-field must be a regular HTML element, not a Wicket tag: " + tag);
         }
     }
+
 }

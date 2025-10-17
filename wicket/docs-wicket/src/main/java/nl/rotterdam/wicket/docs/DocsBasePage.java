@@ -1,5 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
+import css.LoadAndActivateRodsThemeBehavior;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -20,10 +21,16 @@ public abstract class DocsBasePage extends WebPage {
     }
 
     @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        add(LoadAndActivateRodsThemeBehavior.INSTANCE);
+    }
+
+    @Override
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
 
-        response.render(THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM);
         response.render(THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM);
         response.render(DOCS_CSS_HEADER_ITEM);
     }

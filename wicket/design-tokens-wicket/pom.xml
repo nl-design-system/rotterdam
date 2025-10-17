@@ -73,6 +73,16 @@
         <resources>
             <resource>
                 <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
                     <include>@gemeente-rotterdam/design-tokens/dist/theme.css</include>

@@ -7,7 +7,8 @@ enum RdTextInputCss implements CssClassNames {
 
    DEFAULT("utrecht-textbox utrecht-textbox--html-input"),
    INVALID("utrecht-textbox--invalid"),
-   DISABLED("utrecht-textbox--disabled");
+   DISABLED("utrecht-textbox--disabled"),
+    READ_ONLY("utrecht-textbox--readonly");
 
    private final String classNames;
 

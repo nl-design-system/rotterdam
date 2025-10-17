@@ -37,8 +37,12 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         // TODO there is more to validate here.
     }
 
-    protected static String renderFormFieldComponentInTestPanel(RdFormField component) {
-        return ComponentRenderer.renderComponent(new FormComponentTestPanel((Component) component)).toString();
+    protected static String renderComponentInDivTestPanel(Component component) {
+        return ComponentRenderer.renderComponent(new DivComponentTestPanel(component)).toString();
+    }
+
+    protected static String renderComponentInDlTestPanel(Component component) {
+        return ComponentRenderer.renderComponent(new DlComponentTestPanel((Component) component)).toString();
     }
 
     protected static String formatTidy(String htmlWithOneContainerElement) {
