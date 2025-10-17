@@ -23,7 +23,8 @@ import static nl.rotterdam.design_system.wicket.components.output_tag.ComponentT
  * Simple <a href="https://nldesignsystem.nl/data-summary/">Data Summary</a> implementation based on
  * <a href="https://www.npmjs.com/package/@utrecht/data-list-css">Utrecht Data-List</a>.
  *
- * <p>Only supports one key and one value per item.</p>
+ * <p>Only supports one key and one value per item. No actions, no support for multiple keys and values, no multiline
+ * items.</p>
  */
 @NlComponentState(wicketState = UNSTABLE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
@@ -94,7 +95,6 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
                     super("value", model.map(SummaryItemValue::value));
 
                     valueModel = model;
-
                 }
 
                 @Override
@@ -104,7 +104,6 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
                     if (!valueModel.getObject().translate()) {
                         add(AttributeModifier.replace("translate", "no"));
                     }
-
                 }
             }
         }

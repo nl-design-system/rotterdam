@@ -10,6 +10,5 @@ public record SummaryItem(String label, SummaryItemValue value) implements Seria
         this(label.getObject(), value);
     }
 
-
 }
 

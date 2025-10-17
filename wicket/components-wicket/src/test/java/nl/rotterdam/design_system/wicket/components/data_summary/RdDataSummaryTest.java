@@ -43,6 +43,14 @@ class RdDataSummaryTest extends NldsWicketTestCase {
                   de Vos
                 </dd>
               </div>
+              <div class="utrecht-data-list__item">
+                <dt class="utrecht-data-list__item-key">Opmerkingen</dt>
+                <dd
+                  class="utrecht-data-list__item-value utrecht-data-list__item-value--html-dd"
+                >
+                  Heeft een geheim adres
+                </dd>
+              </div>
             </dl>
             """;
 
@@ -52,7 +60,8 @@ class RdDataSummaryTest extends NldsWicketTestCase {
                 List.of(
                     new SummaryItem("BSN", new SummaryItemValue("111111110", false)),
                     new SummaryItem("Voornaam", new SummaryItemValue("Corné", false)),
-                    new SummaryItem("Achternaam", new SummaryItemValue("de Vos", false))
+                    new SummaryItem("Achternaam", new SummaryItemValue("de Vos", false)),
+                    new SummaryItem("Opmerkingen", new SummaryItemValue("Heeft een geheim adres", true))
                 )
             )
         );
