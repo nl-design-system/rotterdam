@@ -93,7 +93,7 @@
                         <goals>
                             <goal>java</goal>
                         </goals>
-                        <phase>generate-resources</phase>
+                        <phase>process-test-classes</phase>
                         <configuration>
                             <mainClass>nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain</mainClass>
                             <classpathScope>test</classpathScope>
