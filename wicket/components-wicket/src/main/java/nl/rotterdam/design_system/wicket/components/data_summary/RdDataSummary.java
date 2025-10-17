@@ -37,7 +37,12 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
         super.onInitialize();
         add(RdDataSummaryBehavior.INSTANCE);
         add(new RdDataSummaryListView(getModel()));
+    }
 
+    @Override
+    protected void onConfigure() {
+        super.onConfigure();
+        setVisible(!getModelObject().isEmpty());
     }
 
     @Override
