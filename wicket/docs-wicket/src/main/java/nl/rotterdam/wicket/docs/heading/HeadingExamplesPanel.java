@@ -3,7 +3,6 @@ package nl.rotterdam.wicket.docs.heading;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
@@ -18,11 +17,13 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component example10DefaultModel() {
-        return new UtrechtHeading(
+    private static UtrechtHeading example10DefaultModel() {
+        UtrechtHeading component = new UtrechtHeading(
             "headingDefaultModel",
             3
-        ).setDefaultModel(Model.of("Text via defaultModel"));
+        );
+        component.setDefaultModel(Model.of("Text via defaultModel"));
+        return component;
     }
 
     @ComponentExample

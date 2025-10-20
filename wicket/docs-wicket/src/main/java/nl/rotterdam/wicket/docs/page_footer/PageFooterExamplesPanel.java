@@ -2,7 +2,6 @@ package nl.rotterdam.wicket.docs.page_footer;
 
 import nl.rotterdam.design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class PageFooterExamplesPanel extends Panel {
@@ -12,7 +11,7 @@ public class PageFooterExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component examplePageFooter() {
+    private static UtrechtPageFooterBorder examplePageFooter() {
         return new UtrechtPageFooterBorder("pageFooter");
     }
 

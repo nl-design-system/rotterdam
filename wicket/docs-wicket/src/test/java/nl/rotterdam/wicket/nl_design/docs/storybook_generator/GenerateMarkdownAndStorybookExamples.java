@@ -1,32 +1,5 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
-import nl.rotterdam.design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBorder;
-import nl.rotterdam.design_system.wicket.components.action_group.RdActionGroup;
-import nl.rotterdam.design_system.wicket.components.button.RdButton;
-import nl.rotterdam.design_system.wicket.components.checkbox.RdCheckbox;
-import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
-import nl.rotterdam.design_system.wicket.components.column_layout.utrecht.UtrechtColumnLayoutBorder;
-import nl.rotterdam.design_system.wicket.components.data_summary.RdDataSummary;
-import nl.rotterdam.design_system.wicket.components.form_field_checkbox.RdFormFieldCheckbox;
-import nl.rotterdam.design_system.wicket.components.form_field_text_input.RdFormFieldTextInput;
-import nl.rotterdam.design_system.wicket.components.form_label.utrecht.UtrechtFormLabel;
-import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
-import nl.rotterdam.design_system.wicket.components.heading_group.utrecht.UtrechtHeadingGroupBorder;
-import nl.rotterdam.design_system.wicket.components.html_content.utrecht.UtrechtHtmlContentBorder;
-import nl.rotterdam.design_system.wicket.components.icon.utrecht.UtrechtIconBorder;
-import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
-import nl.rotterdam.design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
-import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
-import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedList;
-import nl.rotterdam.design_system.wicket.components.page_body.utrecht.UtrechtPageBodyBorder;
-import nl.rotterdam.design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
-import nl.rotterdam.design_system.wicket.components.page_layout.utrecht.UtrechtPageLayoutBorder;
-import nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
-import nl.rotterdam.design_system.wicket.components.root.utrecht.UtrechtRootBorder;
-import nl.rotterdam.design_system.wicket.components.separator.utrecht.UtrechtSeparator;
-import nl.rotterdam.design_system.wicket.components.text_input.RdTextInput;
-import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedList;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.DocsApplication;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
@@ -84,7 +57,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateAlertComponent() {
         new MarkdownDocumentationExamplesGenerator(
             AlertExamplesPanel.class,
-            UtrechtAlert.class,
             "alert",
             "Alert"
         ).generate();
@@ -97,7 +69,6 @@ public class GenerateMarkdownAndStorybookExamples {
 
         new MarkdownDocumentationExamplesGenerator(
             BadgeListExamplesPanel.class,
-            UtrechtBadgeListBorder.class,
             "badge-list",
             "Badge List",
             renderedHtml
@@ -108,7 +79,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateBodyComponent() {
         new MarkdownDocumentationExamplesGenerator(
             BodyExamplesPanel.class,
-            BodyExamplesPanel.class,
             "body",
             "Body"
         ).generate();
@@ -118,7 +88,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateButtonComponent() {
         new MarkdownDocumentationExamplesGenerator(
             ButtonExamplesPanel.class,
-            RdButton.class,
             "button",
             "Button"
         ).generate();
@@ -128,7 +97,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateActionGroupComponent() {
         new MarkdownDocumentationExamplesGenerator(
             ActionGroupExamplesPanel.class,
-            RdActionGroup.class,
             "action-group",
             "Action Group"
         ).generate();
@@ -138,7 +106,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateCheckboxComponent() {
         new MarkdownDocumentationExamplesGenerator(
             CheckboxExamplesPanel.class,
-            RdCheckbox.class,
             "checkbox",
             "Checkbox"
         ).generate();
@@ -148,7 +115,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateCodeBlockComponent() {
         new MarkdownDocumentationExamplesGenerator(
             CodeBlockExamplesPanel.class,
-            UtrechtCodeBlock.class,
             "code-block",
             "Code Block"
         ).generate();
@@ -158,7 +124,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateColumnLayoutComponent() {
         new MarkdownDocumentationExamplesGenerator(
             ColumnLayoutExamplesPanel.class,
-            UtrechtColumnLayoutBorder.class,
             "column-layout",
             "Column Layout"
         ).generate();
@@ -168,7 +133,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateDataSummaryComponent() {
         new MarkdownDocumentationExamplesGenerator(
             DataSummaryExamplesPanel.class,
-            RdDataSummary.class,
             "data-summary",
             "Data Summary"
         ).generate();
@@ -179,7 +143,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateFormFieldCheckboxComponent() {
         new MarkdownDocumentationExamplesGenerator(
             FormFieldCheckboxExamplesPanel.class,
-            RdFormFieldCheckbox.class,
             "form-field-checkbox",
             "Form Field Checkbox"
         ).generate();
@@ -189,7 +152,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateFormFieldLabelComponent() {
         new MarkdownDocumentationExamplesGenerator(
             FormFieldLabelExamplesPanel.class,
-            UtrechtFormLabel.class,
             "form-field-label",
             "Form Field Label"
         ).generate();
@@ -199,7 +161,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateFormFieldTextInputComponent() {
         new MarkdownDocumentationExamplesGenerator(
             FormFieldTextInputExamplesPanel.class,
-            RdFormFieldTextInput.class,
             "form-field-text-input",
             "Form Field Text Input"
         ).generate();
@@ -212,7 +173,6 @@ public class GenerateMarkdownAndStorybookExamples {
 
         new MarkdownDocumentationExamplesGenerator(
             HeadingExamplesPanel.class,
-            UtrechtHeading.class,
             "heading",
             "Heading",
             renderedHtml
@@ -223,7 +183,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateHeadingGroupComponent() {
         new MarkdownDocumentationExamplesGenerator(
             HeadingGroupExamplesPanel.class,
-            UtrechtHeadingGroupBorder.class,
             "heading-group",
             "Heading Group"
         ).generate();
@@ -233,7 +192,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateHtmlContentComponent() {
         new MarkdownDocumentationExamplesGenerator(
             HtmlContentExamplesPanel.class,
-            UtrechtHtmlContentBorder.class,
             "html-content",
             "HTML Content"
         ).generate();
@@ -243,7 +201,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateRotterdamLogoImage() {
         new MarkdownDocumentationExamplesGenerator(
             RotterdamLogoImageExamplesPanel.class,
-            RotterdamLogoImage.class,
             "rotterdam-logo-image",
             "Rotterdam Logo Image"
         ).generate();
@@ -253,7 +210,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateTextInputComponent() {
         new MarkdownDocumentationExamplesGenerator(
             TextInputExamplesPanel.class,
-            RdTextInput.class,
             "text input",
             "Text Input"
         ).generate();
@@ -263,7 +219,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateLogo() {
         new MarkdownDocumentationExamplesGenerator(
             LogoExamplesPanel.class,
-            UtrechtLogoBorder.class,
             "logo",
             "Logo"
         ).generate();
@@ -273,7 +228,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateIcon() {
         new MarkdownDocumentationExamplesGenerator(
             IconExamplesPanel.class,
-            UtrechtIconBorder.class,
             "icon",
             "Icon"
         ).generate();
@@ -283,7 +237,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateNumberBadge() {
         new MarkdownDocumentationExamplesGenerator(
             NumberBadgeExamplesPanel.class,
-            UtrechtNumberBadge.class,
             "number-badge",
             "Number Badge"
         ).generate();
@@ -293,7 +246,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generatePageBody() {
         new MarkdownDocumentationExamplesGenerator(
             PageBodyExamplesPanel.class,
-            UtrechtPageBodyBorder.class,
             "page-body",
             "Page Body"
         ).generate();
@@ -303,7 +255,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generatePageFooter() {
         new MarkdownDocumentationExamplesGenerator(
             PageFooterExamplesPanel.class,
-            UtrechtPageFooterBorder.class,
             "page-footer",
             "Page Footer"
         ).generate();
@@ -313,7 +264,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generatePageLayout() {
         new MarkdownDocumentationExamplesGenerator(
             PageLayoutExamplesPanel.class,
-            UtrechtPageLayoutBorder.class,
             "page-layout",
             "Page Layout"
         ).generate();
@@ -323,7 +273,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generatePreserveData() {
         new MarkdownDocumentationExamplesGenerator(
             PreserveDataExamplesPanel.class,
-            UtrechtPreserveDataLabel.class,
             "preserve-data",
             "Preserve Data"
         ).generate();
@@ -333,7 +282,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateRoot() {
         new MarkdownDocumentationExamplesGenerator(
             RootExamplesPanel.class,
-            UtrechtRootBorder.class,
             "root",
             "Root"
         ).generate();
@@ -343,7 +291,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateSeparator() {
         new MarkdownDocumentationExamplesGenerator(
             SeparatorExamplesPanel.class,
-            UtrechtSeparator.class,
             "separator",
             "Separator"
         ).generate();
@@ -354,7 +301,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateFormFieldTextInput() {
         new MarkdownDocumentationExamplesGenerator(
             FormFieldTextInputExamplesPanel.class,
-            RdFormFieldTextInput.class,
             "form-field-text-input",
             "Form Field Text Input"
         ).generate();
@@ -366,7 +312,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateOrderedList() {
         new MarkdownDocumentationExamplesGenerator(
             OrderedListExamplesPanel.class,
-            UtrechtOrderedList.class,
             "ordered-list",
             "Ordered List"
         ).generate();
@@ -376,7 +321,6 @@ public class GenerateMarkdownAndStorybookExamples {
     void generateUnorderedList() {
         new MarkdownDocumentationExamplesGenerator(
             UnorderedListExamplesPanel.class,
-            UtrechtUnorderedList.class,
             "unordered-list",
             "Unordered List"
         ).generate();

@@ -1,12 +1,15 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
-
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.stmt.BlockStmt;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.junit.platform.commons.support.ModifierSupport;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -15,13 +18,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.util.string.Strings;
-import org.junit.platform.commons.support.ModifierSupport;
+
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
 
 public class MarkdownDocumentationExamplesGenerator {
 
@@ -31,36 +32,26 @@ public class MarkdownDocumentationExamplesGenerator {
     private final Panel headingPanel;
     private final String componentName;
     private final String componentTitle;
-    private final String componentNameCapitalized;
     private final HtmlDocumentationExtractor documentationExtractor;
     private final String gitHubExamplePath;
     private final String gitHubComponentPath;
 
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> examplePanelClass,
-        /*
-          When you have a Behavior and a component, put them in the same package.
-         */
-        Class<? extends Component> componentClass,
         String componentName,
         String componentTitle
     ) {
-        this(examplePanelClass, componentClass, componentName, componentTitle, null);
+        this(examplePanelClass, componentName, componentTitle, null);
     }
 
     public MarkdownDocumentationExamplesGenerator(
         Class<? extends Panel> examplePanelClass,
-        /*
-          When you have a Behavior and a component, put them in the same package.
-         */
-        Class<? extends Component> componentClass,
         String componentName,
         String componentTitle,
         String renderedHtml
     ) {
         this.componentName = componentName;
         this.componentTitle = componentTitle;
-        this.componentNameCapitalized = Strings.capitalize(componentName);
 
         String moduleRootPath = resolveModuleRootPath(GenerateMarkdownAndStorybookExamples.class).getAbsolutePath();
 
@@ -93,12 +84,25 @@ public class MarkdownDocumentationExamplesGenerator {
         }
     }
 
-    private static String extractJavaCode(MethodDeclaration x) {
-        return x.clone()
-            .setName("createComponent")
-            .setStatic(false)
-            .setAnnotations(new NodeList<>())
-            .toString();
+    private static String extractJavaCode(MethodDeclaration declaration) {
+        return declaration.getBody()
+            .map(BlockStmt::getStatements)
+            .map((it) -> it.stream()
+                .map(Object::toString)
+                .map((statementText) -> {
+                    String statementTextWithReplacedReturn;
+                    if (statementText.matches("return [a-zA-Z]+;")) {
+                        statementTextWithReplacedReturn = null;
+                    } else if (statementText.startsWith("return ")) {
+                        statementTextWithReplacedReturn = declaration.getType().toString() + " component = " + statementText.substring("return ".length());
+                    } else {
+                        statementTextWithReplacedReturn = statementText;
+                    }
+                    return statementTextWithReplacedReturn;
+                })
+                .filter(Objects::nonNull)
+                .collect(Collectors.joining(System.lineSeparator())))
+            .orElse("");
     }
 
     public void generate() {
@@ -209,31 +213,8 @@ public class MarkdownDocumentationExamplesGenerator {
 
     private String wrapInDemoJavaPanelWithOnInitialize(String statement) {
 
-        String formattedStatement = Arrays.stream(statement
-                .split(System.lineSeparator())
-            ).map(s -> "    " + s)
+        return Arrays.stream(statement.split(System.lineSeparator()))
             .collect(Collectors.joining(System.lineSeparator()));
-
-
-        return String.format(
-            """
-            public class ExamplePanel extends Panel {
-
-                public ExamplePanel(String id) {
-                    super(id);
-                }
-
-                @Override
-                protected void onInitialize() {
-                    super.onInitialize();
-                    add(createComponent());
-                }
-               \s
-            %s
-            
-            }""",
-            formattedStatement
-        );
     }
 
     private WicketComponentExample generateMethodUnchecked(MethodDeclaration methodDeclaration, Panel headingPanel)

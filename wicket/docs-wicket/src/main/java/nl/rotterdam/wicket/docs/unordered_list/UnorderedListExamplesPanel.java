@@ -1,15 +1,15 @@
 package nl.rotterdam.wicket.docs.unordered_list;
 
-import java.util.List;
 import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListBehavior;
 import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
+
+import java.util.List;
 
 public class UnorderedListExamplesPanel extends Panel {
 
@@ -18,7 +18,7 @@ public class UnorderedListExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleUnorderedList() {
+    private static WebMarkupContainer exampleUnorderedList() {
         List<String> namen = List.of(
             "Binnen 5 werkdagen krijgt u een eerste bericht.",
             "Na uiterlijk 4 weken geeft de gemeente een inhoudelijke reactie."

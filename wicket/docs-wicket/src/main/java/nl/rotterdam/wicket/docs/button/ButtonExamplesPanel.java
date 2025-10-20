@@ -5,7 +5,6 @@ import nl.rotterdam.design_system.wicket.components.button.RdButton;
 import nl.rotterdam.design_system.wicket.components.button.RdButtonAppearance;
 import nl.rotterdam.design_system.wicket.components.button.RdButtonHint;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -17,13 +16,13 @@ public class ButtonExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component button() {
+    private static RdButton button() {
         return new RdButton("button");
     }
 
     @ComponentExample
-    private static Component formAndAjaxButton() {
-        return new Form<Void>("formOfAjaxButton") {
+    private static Form<Void> formAndAjaxButton() {
+        return new Form<>("formOfAjaxButton") {
 
             @Override
             protected void onInitialize() {
@@ -40,71 +39,70 @@ public class ButtonExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component buttonDisabled() {
-        RdButton button = new RdButton("buttonDisabled");
-        button.setEnabled(false);
-        return button;
+    private static RdButton buttonDisabled() {
+        RdButton component = new RdButton("buttonDisabled");
+        component.setEnabled(false);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonBusy() {
-        RdButton button = new RdButton("buttonBusy");
-        button.setBusy(true);
-        return button;
+    private static RdButton buttonBusy() {
+        RdButton component = new RdButton("buttonBusy");
+        component.setBusy(true);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonToggle() {
-        RdButton button = new RdButton("buttonToggle");
-        button.setPressed(false);
-        return button;
+    private static RdButton buttonToggle() {
+        RdButton component = new RdButton("buttonToggle");
+        component.setPressed(false);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonPressed() {
-        RdButton button = new RdButton("buttonPressed");
-        button.setPressed(true);
-        return button;
+    private static RdButton buttonPressed() {
+        RdButton component = new RdButton("buttonPressed");
+        component.setPressed(true);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonIconStart() {
-        RdButton button = new RdButton("buttonIconStart");
-        return button;
+    private static RdButton buttonIconStart() {
+        return new RdButton("buttonIconStart");
     }
 
     @ComponentExample
-    private static Component buttonPrimaryAction() {
-        RdButton button = new RdButton("buttonPrimaryAction");
-        button.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
-        return button;
+    private static RdButton buttonPrimaryAction() {
+        RdButton component = new RdButton("buttonPrimaryAction");
+        component.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonSecondaryAction() {
-        RdButton button = new RdButton("buttonSecondaryAction");
-        button.setAppearance(RdButtonAppearance.SECONDARY_ACTION);
-        return button;
+    private static RdButton buttonSecondaryAction() {
+        RdButton component = new RdButton("buttonSecondaryAction");
+        component.setAppearance(RdButtonAppearance.SECONDARY_ACTION);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonSubtle() {
-        RdButton button = new RdButton("buttonSubtle");
-        button.setAppearance(RdButtonAppearance.SUBTLE);
-        return button;
+    private static RdButton buttonSubtle() {
+        RdButton component = new RdButton("buttonSubtle");
+        component.setAppearance(RdButtonAppearance.SUBTLE);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonPrimaryActionDanger() {
-        RdButton button = new RdButton("buttonPrimaryActionDanger");
-        button.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
-        button.setHint(RdButtonHint.DANGER);
-        return button;
+    private static RdButton buttonPrimaryActionDanger() {
+        RdButton component = new RdButton("buttonPrimaryActionDanger");
+        component.setAppearance(RdButtonAppearance.PRIMARY_ACTION);
+        component.setHint(RdButtonHint.DANGER);
+        return component;
     }
 
     @ComponentExample
-    private static Component buttonSubmit() {
-        RdButton button = new RdButton("buttonSubmit") {
+    private static RdButton buttonSubmit() {
+        RdButton component = new RdButton("buttonSubmit") {
             // @Override
             // protected void onSubmit() {
             //     info("Submitted!");
@@ -112,7 +110,7 @@ public class ButtonExamplesPanel extends Panel {
             // }
         };
         // TODO: Find out how this works
-        return button;
+        return component;
     }
 
     @Override

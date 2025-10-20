@@ -1,15 +1,15 @@
 package nl.rotterdam.wicket.docs.ordered_list;
 
-import java.util.List;
 import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListBehavior;
 import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
+
+import java.util.List;
 
 public class OrderedListExamplesPanel extends Panel {
 
@@ -18,7 +18,7 @@ public class OrderedListExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleOrderedList() {
+    private static WebMarkupContainer exampleOrderedList() {
         List<String> namen = List.of("Adam", "Noah", "Mohammed", "Zayn", "James");
 
         return new WebMarkupContainer("orderedListWebMarkupContainer") {
