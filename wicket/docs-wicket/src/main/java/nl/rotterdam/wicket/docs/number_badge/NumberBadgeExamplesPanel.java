@@ -2,7 +2,6 @@ package nl.rotterdam.wicket.docs.number_badge;
 
 import nl.rotterdam.design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
@@ -13,7 +12,7 @@ public class NumberBadgeExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleNumberBadge() {
+    private static UtrechtNumberBadge exampleNumberBadge() {
         return new UtrechtNumberBadge("numberBadge", Model.of("42"));
     }
 

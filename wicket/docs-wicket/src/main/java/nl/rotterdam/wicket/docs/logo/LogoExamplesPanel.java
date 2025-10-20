@@ -2,7 +2,6 @@ package nl.rotterdam.wicket.docs.logo;
 
 import nl.rotterdam.design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class LogoExamplesPanel extends Panel {
@@ -12,7 +11,7 @@ public class LogoExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleLogo() {
+    private static UtrechtLogoBorder exampleLogo() {
         return new UtrechtLogoBorder("logo");
     }
 
