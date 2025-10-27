@@ -178,7 +178,7 @@ public class MarkdownDocumentationExamplesGenerator {
                 "",
                 "[Broncode van dit voorbeeld](" + gitHubExamplePath + ")",
                 "",
-                "[Broncode van de component](" + gitHubComponentPath + ")"
+                "[Broncode van het component](" + gitHubComponentPath + ")"
             )
         );
 
