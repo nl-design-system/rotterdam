@@ -1,0 +1,20 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+  <h1>Inloggen</h1>
+  <p>Login met je organisatieaccount.</p>
+  <form wicket:id="loginForm">
+    <div style="display: flex; row-gap: 1em; flex-direction: column">
+      <div wicket:id="username"></div>
+
+      <div wicket:id="password"></div>
+
+      <div wicket:id="minLength8">min length 8</div>
+
+      <div wicket:id="rememberMe"></div>
+
+      <div wicket:id="actionGroup">
+        <button type="submit" wicket:id="submit">Submit</button>
+      </div>
+      <div wicket:id="feedback">Feedback goes here</div>
+    </div>
+  </form>
+</wicket:panel>

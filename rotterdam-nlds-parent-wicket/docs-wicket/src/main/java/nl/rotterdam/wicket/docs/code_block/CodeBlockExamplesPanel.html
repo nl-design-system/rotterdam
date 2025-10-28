@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Code Block component</h1>
+        <div>
+          <p>Toont één of meerdere regels computercode en behoudt de opmaak van deze code.</p>
+        </div>
+
+        <section data-testid="codeBlock">
+          <h2>Code Block</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template><pre wicket:id="codeBlock"></pre></template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>
