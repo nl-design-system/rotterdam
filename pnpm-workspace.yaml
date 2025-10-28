@@ -26,6 +26,23 @@ minimumReleaseAgeExclude:
   - '@nl-design-system-community/*'
   - '@nl-design-system-unstable/*'
 
+overrides:
+  cross-spawn@<6.0.6: '>=6.0.6'
+  esbuild@<=0.24.2: '>=0.25.0'
+  form-data@>=4.0.0 <4.0.4: '>=4.0.4'
+  postcss@<7.0.36: '>=7.0.36'
+  postcss@<8.4.31: '>=8.4.31'
+  tar@<6.2.1: '>=6.2.1'
+  tmp@<=0.2.3: '>=0.2.4'
+  vite@>=6.0.0 <6.0.12: '>=6.0.12'
+  vite@>=6.0.0 <6.0.13: '>=6.0.13'
+  vite@>=6.0.0 <6.0.14: '>=6.0.14'
+  vite@>=6.0.0 <6.0.15: '>=6.0.15'
+  vite@>=6.0.0 <=6.0.8: '>=6.0.9'
+  vite@>=6.0.0 <=6.1.5: '>=6.1.6'
+  vite@>=6.0.0 <=6.3.5: '>=6.3.6'
+  vite@>=6.0.0 <=6.4.0: '>=6.4.1'
+
 # Configure pnpm to save exact version numbers (not including ^ or ~) in package.json. Lock dependencies to specific
 # versions to ensure reproducible installs and prevent automatic upgrades to newer minor or patch releases.
 saveExact: true
