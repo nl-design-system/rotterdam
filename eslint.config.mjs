@@ -164,7 +164,7 @@ export default tseslint.config(
   },
   {
     name: "rotterdam/wicket",
-    files: ["wicket/*/src/**/*.js"],
+    files: ["rotterdam-nlds-parent-wicket/*/src/**/*.js"],
     languageOptions: {
       globals: {
         ...globals.browser,

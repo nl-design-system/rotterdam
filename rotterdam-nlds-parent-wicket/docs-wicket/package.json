@@ -1,0 +1,24 @@
+{
+  "version": "0.0.0",
+  "author": "Community for NL Design System",
+  "description": "Apache Wicket documentation for a design system based on the NL Design System architecture",
+  "license": "EUPL-1.2",
+  "name": "@gemeente-rotterdam/docs-wicket",
+  "keywords": [
+    "nl-design-system",
+    "Apache Wicket"
+  ],
+  "private": true,
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket"
+  },
+  "devDependencies": {
+    "@nl-design-system-unstable/voorbeeld-design-tokens": "3.3.4",
+    "rimraf": "6.0.1"
+  },
+  "scripts": {
+    "clean": "rimraf stories/* target"
+  }
+}

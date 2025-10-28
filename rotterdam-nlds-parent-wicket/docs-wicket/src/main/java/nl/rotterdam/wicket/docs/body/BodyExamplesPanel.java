@@ -1,0 +1,24 @@
+package nl.rotterdam.wicket.docs.body;
+
+import nl.rotterdam.nl_design_system.wicket.components.body.utrecht.UtrechtBodyBorder;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import org.apache.wicket.markup.html.panel.Panel;
+
+public class BodyExamplesPanel extends Panel {
+
+    public BodyExamplesPanel(String id) {
+        super(id);
+    }
+
+    @ComponentExample
+    private static UtrechtBodyBorder exampleBody() {
+        return new UtrechtBodyBorder("body");
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        add(exampleBody());
+    }
+}
