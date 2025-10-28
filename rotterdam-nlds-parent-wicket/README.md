@@ -65,17 +65,16 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
 - Geef geen componenten door aan andere Wicket componenten (via constructors).
 - Voor methodes die componenten maken: prefix met new. Net als Wicket, zie bijvoorbeeld AjaxPagingNavigation
 
-## Workspace dependencies resolven
+## PNPM Workspace dependencies resolven
 
-NL Design System gebruikt pnpm workspaces. Deze dependencies worden niet automatisch
-herkend door Maven. Je kunt ze handmatig installeren vanuit de root-folder met:
+NL Design System gebruikt pnpm voor nodejs projecten. Pnpm ondersteunt meerdere npm projecten binnen een repository.
 
-```shell
-pnpm run build
-```
+De Maven build bouwt ook de benodigde pnpm modules, zodat je in Maven de binaries krijgt van NPM sources in
+de repository.
 
-Draai daarna nog expliciet een Maven build:
+Voer de Maven build vanuit de root van het project uit om de laatste wijzigingen van pnpm modules te verkrijgen:
 
 ```shell
-../mvnw package
+cd nl-design-system-rotterdam
+./mvnw install
 ```
