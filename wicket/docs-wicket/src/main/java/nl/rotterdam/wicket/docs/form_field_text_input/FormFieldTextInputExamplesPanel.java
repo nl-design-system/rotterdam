@@ -4,7 +4,6 @@ import nl.rotterdam.design_system.wicket.components.form_field_text_input.RdForm
 import nl.rotterdam.design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.AttributeModifier;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
@@ -15,7 +14,7 @@ public class FormFieldTextInputExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextInput() {
+    private static RdFormFieldTextInput<String> exampleFormFieldTextInput() {
         return new RdFormFieldTextInput<>(
             "formFieldTextInput",
             Model.of("Koen"),
@@ -25,7 +24,7 @@ public class FormFieldTextInputExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextInputRequired() {
+    private static RdFormFieldTextInput<String> exampleFormFieldTextInputRequired() {
         return new RdFormFieldTextInput<>(
             "formFieldTextInputRequired",
             DefaultModels.EMPTY_STRING_MODEL,
@@ -36,18 +35,19 @@ public class FormFieldTextInputExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextInputDisabled() {
-        return new RdFormFieldTextInput<>(
+    private static RdFormFieldTextInput<String> exampleFormFieldTextInputDisabled() {
+        RdFormFieldTextInput<String> component = new RdFormFieldTextInput<>(
             "formFieldTextInputDisabled",
             Model.of("Willem-Alexander van Oranje-Nassau"),
             Model.of("Naam"),
             Model.of("Je volledig naam.")
-        )
-            .setEnabled(false);
+        );
+        component.setEnabled(false);
+        return component;
     }
 
     @ComponentExample
-    private static Component exampleFormFieldTextInputWithAutocompleteConfigured() {
+    private static RdFormFieldTextInput<String> exampleFormFieldTextInputWithAutocompleteConfigured() {
         return new RdFormFieldTextInput<>(
             "formFieldTextInputWithAutocompleteConfigured",
             Model.of(""),

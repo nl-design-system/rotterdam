@@ -3,7 +3,6 @@ package nl.rotterdam.wicket.docs.heading;
 import nl.rotterdam.design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
@@ -18,17 +17,19 @@ public class HeadingExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component example10DefaultModel() {
-        return new UtrechtHeading(
-            "utrechtHeadingDefaultModel",
+    private static UtrechtHeading example10DefaultModel() {
+        UtrechtHeading component = new UtrechtHeading(
+            "headingDefaultModel",
             3
-        ).setDefaultModel(Model.of("Text via defaultModel"));
+        );
+        component.setDefaultModel(Model.of("Text via defaultModel"));
+        return component;
     }
 
     @ComponentExample
     private static UtrechtHeading example09ModelConstructor() {
         return new UtrechtHeading(
-            "utrechtHeadingModelConstructor",
+            "headingModelConstructor",
             Model.of("Text via model constructor"),
             3
         );
@@ -45,13 +46,13 @@ public class HeadingExamplesPanel extends Panel {
 
     @ComponentExample
     private static UtrechtHeading example06Heading6() {
-        return new UtrechtHeading("utrechtLabel6", "Een label met kop 6", 6);
+        return new UtrechtHeading("label6", "Een label met kop 6", 6);
     }
 
     @ComponentExample
     private static UtrechtHeading example07H3MetDivTag() {
         return new UtrechtHeading(
-            "utrechtLabel3MetDivTag",
+            "label3MetDivTag",
             "div wordt vervangen met h3",
             3
         );
@@ -59,27 +60,27 @@ public class HeadingExamplesPanel extends Panel {
 
     @ComponentExample
     private static UtrechtHeading example05Heading5() {
-        return new UtrechtHeading("utrechtLabel5", "Een label met kop 5", 5);
+        return new UtrechtHeading("label5", "Een label met kop 5", 5);
     }
 
     @ComponentExample
     private static UtrechtHeading example04Heading4() {
-        return new UtrechtHeading("utrechtLabel4", "Een label met kop 4", 4);
+        return new UtrechtHeading("label4", "Een label met kop 4", 4);
     }
 
     @ComponentExample
     private static UtrechtHeading example03Heading3() {
-        return new UtrechtHeading("utrechtLabel3", "Een label met kop 3", 3);
+        return new UtrechtHeading("label3", "Een label met kop 3", 3);
     }
 
     @ComponentExample
     private static UtrechtHeading example02Heading2() {
-        return new UtrechtHeading("utrechtLabel2", "Een label met kop 2", 2);
+        return new UtrechtHeading("label2", "Een label met kop 2", 2);
     }
 
     @ComponentExample
     private static UtrechtHeading example01Heading1() {
-        return new UtrechtHeading("utrechtLabel1", "Een label met kop 1", 1);
+        return new UtrechtHeading("label1", "Een label met kop 1", 1);
     }
 
     @Override

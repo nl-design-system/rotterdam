@@ -8,6 +8,7 @@
     "nl-design-system",
     "Apache Wicket"
   ],
+  "private": true,
   "repository": {
     "type": "git+ssh",
     "url": "git@github.com:nl-design-system/rotterdam.git",

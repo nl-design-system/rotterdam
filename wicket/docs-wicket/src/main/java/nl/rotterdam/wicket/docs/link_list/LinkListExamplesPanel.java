@@ -11,9 +11,9 @@ import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
-public class UtrechtLinkListExamplesPanel extends Panel {
+public class LinkListExamplesPanel extends Panel {
 
-    public UtrechtLinkListExamplesPanel(String id) {
+    public LinkListExamplesPanel(String id) {
         super(id);
     }
 
@@ -30,7 +30,7 @@ public class UtrechtLinkListExamplesPanel extends Panel {
             new UtrechtLinkListRecord<>(null, "Mijn gegevens", RotterdamPlaceholderPage.class)
         );
 
-        return new UtrechtLinkListPanel("utrechtLinkList", links);
+        return new UtrechtLinkListPanel("linkList", links);
     }
 
     @ComponentExample
@@ -46,7 +46,7 @@ public class UtrechtLinkListExamplesPanel extends Panel {
             new UtrechtLinkListRecord<>(RotterdamIconType.USER, "Mijn gegevens", RotterdamPlaceholderPage.class)
         );
 
-        return new UtrechtLinkListPanel("utrechtLinkListIcon", links);
+        return new UtrechtLinkListPanel("linkListIcon", links);
     }
 
     @Override

@@ -3,7 +3,6 @@ package nl.rotterdam.wicket.docs.alert;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.design_system.wicket.components.alert.utrecht.UtrechtAlertType;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
@@ -14,9 +13,9 @@ public class AlertExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleAlertAlert() {
+    private static UtrechtAlert exampleAlertError() {
         return new UtrechtAlert(
-            "utrechtAlertAlert",
+            "alertError",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -25,9 +24,9 @@ public class AlertExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleAlertWarning() {
+    private static UtrechtAlert exampleAlertWarning() {
         return new UtrechtAlert(
-            "utrechtAlertWarning",
+            "alertWarning",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -36,9 +35,9 @@ public class AlertExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleAlertOk() {
+    private static UtrechtAlert exampleAlertOk() {
         return new UtrechtAlert(
-            "utrechtAlertOk",
+            "alertOk",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -47,9 +46,9 @@ public class AlertExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleAlertInfo() {
+    private static UtrechtAlert exampleAlertInfo() {
         return new UtrechtAlert(
-            "utrechtAlertInfo",
+            "alertInfo",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
@@ -61,7 +60,7 @@ public class AlertExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleAlertAlert());
+        add(exampleAlertError());
         add(exampleAlertWarning());
         add(exampleAlertOk());
         add(exampleAlertInfo());

@@ -1,40 +1,37 @@
-package nl.rotterdam.wicket.docs.unordered_list;
+package nl.rotterdam.wicket.docs.ordered_list;
 
-import java.util.List;
-import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListBehavior;
-import nl.rotterdam.design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListItemBehavior;
+import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListBehavior;
+import nl.rotterdam.design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class UtrechtUnorderedListExamplesPanel extends Panel {
+import java.util.List;
 
-    public UtrechtUnorderedListExamplesPanel(String id) {
+public class OrderedListExamplesPanel extends Panel {
+
+    public OrderedListExamplesPanel(String id) {
         super(id);
     }
 
     @ComponentExample
-    private static Component exampleUnorderedList() {
-        List<String> namen = List.of(
-            "Binnen 5 werkdagen krijgt u een eerste bericht.",
-            "Na uiterlijk 4 weken geeft de gemeente een inhoudelijke reactie."
-        );
+    private static WebMarkupContainer exampleOrderedList() {
+        List<String> namen = List.of("Adam", "Noah", "Mohammed", "Zayn", "James");
 
-        return new WebMarkupContainer("utrechtUnorderedListWebMarkupContainer") {
+        return new WebMarkupContainer("orderedListWebMarkupContainer") {
             @Override
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new UtrechtUnorderedListBehavior()); // TODO should be singleton
+                add(new UtrechtOrderedListBehavior()); // TODO should be singleton
                 add(
                     new ListView<>("listItem", namen) {
                         @Override
                         protected void populateItem(ListItem<String> item) {
-                            item.add(new UtrechtUnorderedListItemBehavior()); // TODO: should be singleton
+                            item.add(new UtrechtOrderedListItemBehavior()); // TODO: should be singleton
                             String naam = item.getModelObject();
                             // item.add(naam);
                             item.add(new Label("label", naam));
@@ -49,6 +46,6 @@ public class UtrechtUnorderedListExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleUnorderedList());
+        add(exampleOrderedList());
     }
 }

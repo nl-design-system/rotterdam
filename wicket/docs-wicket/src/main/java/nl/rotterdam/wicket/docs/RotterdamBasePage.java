@@ -36,13 +36,13 @@ public class RotterdamBasePage extends DocsBasePage {
         super.onInitialize();
 
         // Build up the page layout
-        pageLayout = new UtrechtPageLayoutBorder("utrechtPageLayout");
+        pageLayout = new UtrechtPageLayoutBorder("pageLayout");
         add(pageLayout);
 
-        pageHeader = new UtrechtPageHeaderBorder("utrechtPageHeader");
+        pageHeader = new UtrechtPageHeaderBorder("pageHeader");
         pageLayout.add(pageHeader);
 
-        logo = new UtrechtLogoBorder("utrechtLogo");
+        logo = new UtrechtLogoBorder("logo");
         pageHeader.add(logo);
 
         // Use Apache Wicket API to determine the internal homepage
@@ -52,10 +52,10 @@ public class RotterdamBasePage extends DocsBasePage {
 
         logoLink.add(new RotterdamLogoImage("rotterdamLogoImage"));
 
-        pageBody = new UtrechtPageBodyBorder("utrechtPageBody");
+        pageBody = new UtrechtPageBodyBorder("pageBody");
         pageLayout.add(pageBody);
 
-        pageFooter = new UtrechtPageFooterBorder("utrechtPageFooter");
+        pageFooter = new UtrechtPageFooterBorder("pageFooter");
         pageLayout.add(pageFooter);
 
         String[] titleParts = new String[] { this.errorTitle, this.stepTitle, this.pageTitle, this.siteTitle };

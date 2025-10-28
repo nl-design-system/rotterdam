@@ -7,20 +7,20 @@
   </head>
   <body class="utrecht-body">
     <wicket:extend>
-      <wicket:container wicket:id="utrechtPageLayout">
-        <wicket:container wicket:id="utrechtPageHeader">
-          <wicket:container wicket:id="utrechtLogo">
+      <wicket:container wicket:id="pageLayout">
+        <wicket:container wicket:id="pageHeader">
+          <wicket:container wicket:id="logo">
             <a wicket:id="logoLink">
               <wicket:container wicket:id="rotterdamLogoImage"> </wicket:container>
             </a>
           </wicket:container>
         </wicket:container>
-        <wicket:container wicket:id="utrechtPageBody">
+        <wicket:container wicket:id="pageBody">
           <div style="margin-inline: auto; max-width: 40em">
             <wicket:child />
           </div>
         </wicket:container>
-        <wicket:container wicket:id="utrechtPageFooter">Page footer</wicket:container>
+        <wicket:container wicket:id="pageFooter">Page footer</wicket:container>
       </wicket:container>
       <script type="module"></script>
     </wicket:extend>

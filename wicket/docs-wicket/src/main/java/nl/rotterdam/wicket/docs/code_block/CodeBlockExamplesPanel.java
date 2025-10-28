@@ -2,7 +2,6 @@ package nl.rotterdam.wicket.docs.code_block;
 
 import nl.rotterdam.design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
@@ -13,9 +12,9 @@ public class CodeBlockExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleCodeBlock() {
+    private static UtrechtCodeBlock exampleCodeBlock() {
         return new UtrechtCodeBlock(
-            "utrechtCodeBlock",
+            "codeBlock",
             Model.of(
                 """
                 <!DOCTYPE html>
