@@ -31,6 +31,13 @@ public class GenerateMarkdownAndStorybookExamplesMain {
         TestExecutionSummary summary = listener.getSummary();
         summary.printTo(new PrintWriter(System.out));
 
+        if (!summary.getFailures().isEmpty()) {
+            summary.getFailures().forEach(failure -> {
+                System.err.println("Failure: " + failure.getTestIdentifier().getDisplayName() + " failure: " + failure.getException());
+            });
+            throw  new RuntimeException("Markdown generation failed, there are the following failures");
+        }
+
         System.out.println("Completed storybook generation");
     }
 }
