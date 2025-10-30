@@ -291,7 +291,7 @@ importers:
         version: link:../../proprietary/design-tokens
       '@gemeente-rotterdam/docs-wicket':
         specifier: workspace:*
-        version: link:../../wicket/docs-wicket
+        version: link:../../rotterdam-nlds-parent-wicket/docs-wicket
       '@gemeente-rotterdam/font':
         specifier: workspace:*
         version: link:../../proprietary/font
@@ -502,9 +502,24 @@ importers:
 
   proprietary/font: {}
 
-  wicket: {}
+  rotterdam-nlds-parent-wicket: {}
 
-  wicket/components-wicket:
+  rotterdam-nlds-parent-wicket/docs-wicket:
+    devDependencies:
+      '@nl-design-system-unstable/voorbeeld-design-tokens':
+        specifier: 3.3.4
+        version: 3.3.4
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
+  rotterdam-nlds-parent-wicket/rotterdam-nlds-css-wicket:
+    devDependencies:
+      '@gemeente-rotterdam/design-tokens':
+        specifier: workspace:*
+        version: link:../../proprietary/design-tokens
+
+  rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket:
     devDependencies:
       '@gemeente-denhaag/sidenav':
         specifier: 2.0.0
@@ -515,12 +530,6 @@ importers:
       '@gemeente-rotterdam/web-components-stencil':
         specifier: workspace:*
         version: link:../../packages/web-components-stencil
-      '@nl-design-system-candidate/paragraph-css':
-        specifier: 2.1.1
-        version: 2.1.1
-      '@nl-design-system-unstable/voorbeeld-design-tokens':
-        specifier: 3.3.4
-        version: 3.3.4
       '@utrecht/alert-css':
         specifier: 2.4.0
         version: 2.4.0
@@ -650,18 +659,6 @@ importers:
       '@utrecht/unordered-list-css':
         specifier: 1.5.1
         version: 1.5.1
-
-  wicket/design-tokens-wicket:
-    devDependencies:
-      '@gemeente-rotterdam/design-tokens':
-        specifier: workspace:*
-        version: link:../../proprietary/design-tokens
-
-  wicket/docs-wicket:
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
 packages:
 
@@ -1889,9 +1886,6 @@ packages:
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
-
-  '@nl-design-system-candidate/paragraph-css@2.1.1':
-    resolution: {integrity: sha512-Ig5TAMA6nol5pWC8KjzQ9gMemHKAZAGNqso65CdMeGdBT3Q6YGYWg42XopWhIQ/iWh/cKiwZHht1X41SKctRHQ==}
 
   '@nl-design-system-unstable/voorbeeld-design-tokens@3.3.4':
     resolution: {integrity: sha512-POlUBxviNooS6NpzyH6v3MJ+WwQEqMYj3VcJcX4oDRdRsxoYgsq4GDm3C55IhJ12nPKnd/F5DD+RBomviSkgxg==}
@@ -9579,8 +9573,6 @@ snapshots:
       '@types/mdx': 2.0.13
       '@types/react': 18.3.18
       react: 18.3.1
-
-  '@nl-design-system-candidate/paragraph-css@2.1.1': {}
 
   '@nl-design-system-unstable/voorbeeld-design-tokens@3.3.4': {}
 

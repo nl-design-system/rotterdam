@@ -17,8 +17,8 @@
     "pnpm": "^10"
   },
   "workspaces": [
-    "./wicket/",
-    "./wicket/*",
+    "./rotterdam-nlds-parent-wicket/",
+    "./rotterdam-nlds-parent-wicket/*",
     "./packages/*",
     "./components/*",
     "./proprietary/*"
