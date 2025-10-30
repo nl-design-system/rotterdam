@@ -615,8 +615,8 @@ importers:
         specifier: 2.3.1
         version: 2.3.1
       '@utrecht/ordered-list-css':
-        specifier: 1.4.0
-        version: 1.4.0
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/page-body-css':
         specifier: 0.1.1
         version: 0.1.1
@@ -3039,8 +3039,8 @@ packages:
   '@utrecht/number-badge-css@2.3.1':
     resolution: {integrity: sha512-19YBkbO8CqHrkjZESyIE4lcbilawirkiU4aDiJ4w411geBibDqoHOrM1+uKAlIaCBEUJp9UnFMX8X34Il2xryQ==}
 
-  '@utrecht/ordered-list-css@1.4.0':
-    resolution: {integrity: sha512-rRgqDu1v4o0WEmefsz2PC3aaP3aVMk75mrFaJax4YiMSQe8Co1GpjVrDPykHxgOUvdOPBimFfh1ZKXRyZuKLwg==}
+  '@utrecht/ordered-list-css@3.0.1':
+    resolution: {integrity: sha512-FTLzofVJlkl4ypJz2QoWTwepXN+yX3Y3exL+69SpiwjAXSkRYkJ1agd0W6BZVH+JQ60u8+uApOKQpgx2Bh3ImQ==}
 
   '@utrecht/page-body-css@0.1.1':
     resolution: {integrity: sha512-uJFUi2IFjRCV/O4NmhRUBGk4cM3+p+D+eumkCwn6mLv+20/vQAhZqfb0Fj/TTx7R/kSY0Oa8izualDaPB/iZzQ==}
@@ -10828,7 +10828,7 @@ snapshots:
 
   '@utrecht/number-badge-css@2.3.1': {}
 
-  '@utrecht/ordered-list-css@1.4.0': {}
+  '@utrecht/ordered-list-css@3.0.1': {}
 
   '@utrecht/page-body-css@0.1.1': {}
 
