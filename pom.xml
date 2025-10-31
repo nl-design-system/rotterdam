@@ -28,6 +28,17 @@
         <pnpm.version>10.17.0</pnpm.version>
     </properties>
 
+    <developers>
+        <developer>
+            <id>team-mijnloket</id>
+            <name>team-mijnloket</name>
+            <email>todo-team-email-adres@example.com</email>
+            <organization>Gemeente Rotterdam</organization>
+            <organizationUrl>https://www.rotterdam.nl</organizationUrl>
+        </developer>
+    </developers>
+
+
     <build>
         <plugins>
             <plugin>
