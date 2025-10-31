@@ -10,7 +10,8 @@
     </parent>
 
     <artifactId>rotterdam-nlds-css-wicket</artifactId>
-    <description>Design Tokens JAR with Design Tokens for Rotterdam</description>
+    <name>NL Design System Theme CSS for Gemeente Rotterdam</name>
+    <description>Compiled CSS Theme for Rotterdam plus Wicket Behavior to activate it.</description>
 
     <dependencies>
         <dependency>

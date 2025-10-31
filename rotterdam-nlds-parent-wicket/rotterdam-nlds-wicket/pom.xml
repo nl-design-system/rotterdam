@@ -10,6 +10,10 @@
     </parent>
 
     <artifactId>rotterdam-nlds-wicket</artifactId>
+    <name>NL Design System Wicket Components made by Rotterdam</name>
+    <description>Wicket components from NL Design System components, which is intended for use by all organizations
+        working with NL Design System and Apache Wicket.
+    </description>
 
     <dependencies>
         <dependency>
