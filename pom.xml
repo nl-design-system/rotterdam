@@ -14,6 +14,13 @@
         <module>rotterdam-nlds-parent-wicket</module>
     </modules>
 
+    <licenses>
+        <license>
+            <name> EUPL-1.2 license</name>
+            <url>https://eupl.eu/1.2/en/</url>
+        </license>
+    </licenses>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
