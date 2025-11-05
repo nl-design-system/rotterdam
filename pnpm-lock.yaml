@@ -521,6 +521,9 @@ importers:
 
   rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket:
     devDependencies:
+      '@amsterdam/design-system-css':
+        specifier: 2.1.0
+        version: 2.1.0
       '@gemeente-denhaag/sidenav':
         specifier: 2.0.0
         version: 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -664,6 +667,12 @@ packages:
 
   '@adobe/css-tools@4.4.4':
     resolution: {integrity: sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg==}
+
+  '@amsterdam/design-system-css@2.1.0':
+    resolution: {integrity: sha512-y54KixyNRAk27g+YrxS/rBKcF1sTy+uza4A4hEc4BtHx4EqfC4I81UUVP6Zf85N2BCNkE216UiIPcI/KHjXdJQ==}
+    peerDependencies:
+      '@amsterdam/design-system-assets': 1.1.0
+      '@amsterdam/design-system-tokens': 2.1.0
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -8024,6 +8033,8 @@ packages:
 snapshots:
 
   '@adobe/css-tools@4.4.4': {}
+
+  '@amsterdam/design-system-css@2.1.0': {}
 
   '@babel/code-frame@7.27.1':
     dependencies:

@@ -20,6 +20,7 @@
   },
   "scripts": {},
   "devDependencies": {
+    "@amsterdam/design-system-css": "2.1.0",
     "@gemeente-denhaag/sidenav": "2.0.0",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",

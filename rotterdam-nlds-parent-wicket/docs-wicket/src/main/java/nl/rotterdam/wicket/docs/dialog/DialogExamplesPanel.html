@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Dialog component</h1>
+        <div>
+          <p>Toont een combinatie van een titel en ondersteunende tekst.</p>
+        </div>
+
+        <section data-testid="modalDialog">
+          <h2>Modal Dialog</h2>
+          <div>
+            <p>Voorbeeld.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+            <form wicket:id="modalDialogForm">
+              <button wicket:id="show">Tonen</button>
+              <dialog wicket:id="modalDialog">
+                <p>De inhoud van het dialoogvenster.</p>
+              </dialog>
+            </form>
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

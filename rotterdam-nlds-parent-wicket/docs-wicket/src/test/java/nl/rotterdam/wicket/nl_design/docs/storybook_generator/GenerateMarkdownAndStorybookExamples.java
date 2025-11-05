@@ -11,6 +11,7 @@ import nl.rotterdam.wicket.docs.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.data_summary.DataSummaryExamplesPanel;
+import nl.rotterdam.wicket.docs.dialog.DialogExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_text_input.FormFieldTextInputExamplesPanel;
@@ -18,6 +19,7 @@ import nl.rotterdam.wicket.docs.heading.HeadingExamplesPanel;
 import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
+import nl.rotterdam.wicket.docs.icon_button.IconButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.logo.LogoExamplesPanel;
 import nl.rotterdam.wicket.docs.logo_image.RotterdamLogoImageExamplesPanel;
 import nl.rotterdam.wicket.docs.number_badge.NumberBadgeExamplesPanel;
@@ -79,6 +81,11 @@ public class GenerateMarkdownAndStorybookExamples {
     @Test
     void generateButtonComponent() {
         new MarkdownDocumentationExamplesGenerator(ButtonExamplesPanel.class, "button", "Button").generate();
+    }
+
+    @Test
+    void generateIconButtonComponent() {
+        new MarkdownDocumentationExamplesGenerator(IconButtonExamplesPanel.class, "iconButton", "Icon Button").generate();
     }
 
     @Test
@@ -198,6 +205,11 @@ public class GenerateMarkdownAndStorybookExamples {
     @Test
     void generateIcon() {
         new MarkdownDocumentationExamplesGenerator(IconExamplesPanel.class, "icon", "Icon").generate();
+    }
+
+    @Test
+    void generateModalDialog() {
+        new MarkdownDocumentationExamplesGenerator(DialogExamplesPanel.class, "modal dialog", "Modal Dialog").generate();
     }
 
     @Test

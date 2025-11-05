@@ -45,6 +45,7 @@ public class DocsApplication extends WebApplication {
             .add(CSPDirective.FONT_SRC, CSPDirectiveSrcValue.SELF)
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.UNSAFE_INLINE)
             .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.SELF)
+            .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.NONCE)
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF);
         mountPage("sso", SingleSignOnLoginPage.class);
         mountPage("rotterdam-base-page", RotterdamBasePage.class);

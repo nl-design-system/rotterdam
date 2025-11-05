@@ -1,6 +1,5 @@
 package nl.rotterdam.wicket.docs;
 
-import java.util.Arrays;
 import nl.rotterdam.wicket.docs.action_group.ActionGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.alert.AlertExamplesPanel;
 import nl.rotterdam.wicket.docs.badge_list.BadgeListExamplesPanel;
@@ -11,6 +10,7 @@ import nl.rotterdam.wicket.docs.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.wicket.docs.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.wicket.docs.css.DesignSystemTheme;
 import nl.rotterdam.wicket.docs.data_summary.DataSummaryExamplesPanel;
+import nl.rotterdam.wicket.docs.dialog.DialogExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.wicket.docs.form_field_text_input.FormFieldTextInputExamplesPanel;
@@ -19,6 +19,7 @@ import nl.rotterdam.wicket.docs.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.wicket.docs.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.wicket.docs.icon.IconExamplesPanel;
 import nl.rotterdam.wicket.docs.icon.RodsIconExamplesPanel;
+import nl.rotterdam.wicket.docs.icon_button.IconButtonExamplesPanel;
 import nl.rotterdam.wicket.docs.link.LinkExamplesPanel;
 import nl.rotterdam.wicket.docs.link_list.LinkListExamplesPanel;
 import nl.rotterdam.wicket.docs.logo.LogoExamplesPanel;
@@ -46,6 +47,8 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
 
 public class ComponentsPage extends RotterdamBasePage {
 
@@ -85,6 +88,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
             new BodyExamplesPanel("bodyExamplesPanel"),
             new ButtonExamplesPanel("buttonExamplesPanel"),
+            new IconButtonExamplesPanel("iconButtonExamplesPanel"),
             new ActionGroupExamplesPanel("actionGroupExamplesPanel"),
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
@@ -104,6 +108,7 @@ public class ComponentsPage extends RotterdamBasePage {
         pageBody.add(new LinkExamplesPanel("linkExamplesPanel"));
         pageBody.add(new LinkListExamplesPanel("linkListExamplesPanel"));
         pageBody.add(new LogoExamplesPanel("logoExamplesPanel"));
+        pageBody.add(new DialogExamplesPanel("modalDialogExamplesPanel"));
         pageBody.add(new NumberBadgeExamplesPanel("numberBadgeExamplesPanel"));
         pageBody.add(new OrderedListExamplesPanel("orderedListExamplesPanel"));
         pageBody.add(new PageBodyExamplesPanel("pageBodyExamplesPanel"));
