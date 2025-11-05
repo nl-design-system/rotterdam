@@ -44,7 +44,12 @@ public abstract class RdDialogBorder extends Border {
 
     private static final String FOOTER_CONTENT_ID = "footerContent";
 
+    @NonNull
     private final IModel<String> closeButtonLabelModel;
+
+    @NonNull
+    private final WebMarkupContainer content;
+
     @NonNull
     private final Component heading;
 
@@ -61,7 +66,7 @@ public abstract class RdDialogBorder extends Border {
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */
-    public RdDialogBorder(String id, IModel<?> titleModel, RdDialogHeadingLevel headingLevel) {
+    public RdDialogBorder(@NonNull String id, @NonNull IModel<?> titleModel, @NonNull RdDialogHeadingLevel headingLevel) {
         super(id, titleModel);
         Objects.requireNonNull(titleModel);
 
@@ -69,6 +74,7 @@ public abstract class RdDialogBorder extends Border {
 
         setOutputMarkupId(true);
 
+        content = newContent();
         heading = newHeading(headingLevel);
         closeButton = newCloseButton(headingLevel);
     }
@@ -83,7 +89,7 @@ public abstract class RdDialogBorder extends Border {
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */
-    public RdDialogBorder(String id, IModel<?> titleModel, IModel<String> closeButtonLabelModel, RdDialogHeadingLevel headingLevel) {
+    public RdDialogBorder(@NonNull String id, @NonNull IModel<?> titleModel, @NonNull IModel<String> closeButtonLabelModel, @NonNull RdDialogHeadingLevel headingLevel) {
         super(id, titleModel);
         Objects.requireNonNull(titleModel);
         Objects.requireNonNull(closeButtonLabelModel);
@@ -92,6 +98,7 @@ public abstract class RdDialogBorder extends Border {
 
         setOutputMarkupId(true);
 
+        content = newContent();
         heading = newHeading(headingLevel);
         closeButton = newCloseButton(headingLevel);
     }
@@ -102,9 +109,10 @@ public abstract class RdDialogBorder extends Border {
 
         add(RdDialogBehavior.INSTANCE);
 
-        addToBorder(heading);
-        addToBorder(closeButton);
-        addToBorder(newFooterContent(FOOTER_CONTENT_ID));
+        addToBorder(content);
+        content.add(heading);
+        content.add(closeButton);
+        content.add(newFooterContent(FOOTER_CONTENT_ID));
     }
 
     /**
@@ -137,6 +145,7 @@ public abstract class RdDialogBorder extends Border {
      * @param id the Wicket ID for the footer content component.
      * @return the footer content component.
      */
+    @NonNull
     protected abstract Component newFooterContent(String id);
 
     /**
@@ -146,7 +155,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    protected abstract void onClose(AjaxRequestTarget target);
+    protected abstract void onClose(@NonNull AjaxRequestTarget target);
 
     /**
      * <p>
@@ -156,7 +165,9 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    public void show(AjaxRequestTarget target) {
+    public void show(@NonNull AjaxRequestTarget target) {
+        content.setVisible(true);
+        target.add(content);
         target.appendJavaScript("document.getElementById('" + getMarkupId() + "').show();");
     }
 
@@ -168,7 +179,9 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    public void showModal(AjaxRequestTarget target) {
+    public void showModal(@NonNull AjaxRequestTarget target) {
+        content.setVisible(true);
+        target.add(content);
         target.appendJavaScript("document.getElementById('" + getMarkupId() + "').showModal();");
     }
 
@@ -179,15 +192,25 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    public void close(AjaxRequestTarget target) {
+    public void close(@NonNull AjaxRequestTarget target) {
+        content.setVisible(false);
+        target.add(content);
         target.appendJavaScript("document.getElementById('" + getMarkupId() + "').close();");
     }
 
-    private Component newHeading(RdDialogHeadingLevel headingLevel) {
+    private @NonNull WebMarkupContainer newContent() {
+        var content = new WebMarkupContainer("content");
+        content.setOutputMarkupPlaceholderTag(true);
+        // Dialog content only needs to be visible if it is shown.
+        content.setVisible(false);
+        return content;
+    }
+
+    private @NonNull Component newHeading(RdDialogHeadingLevel headingLevel) {
         return new UtrechtHeading("title", getDefaultModel(), headingLevel.getLevel());
     }
 
-    private Component newCloseButton(RdDialogHeadingLevel headingLevel) {
+    private @NonNull Component newCloseButton(@NonNull RdDialogHeadingLevel headingLevel) {
         var closeButton = new RdIconAjaxButtonBorder("closeButton", closeButtonLabelModel) {
             @Override
             protected void onSubmit(AjaxRequestTarget target) {

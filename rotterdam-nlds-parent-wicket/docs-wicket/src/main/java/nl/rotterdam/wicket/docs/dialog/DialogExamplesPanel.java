@@ -10,6 +10,7 @@ import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
+import org.jspecify.annotations.NonNull;
 
 import static nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance.PRIMARY_ACTION;
 
@@ -23,7 +24,7 @@ public class DialogExamplesPanel extends Panel {
     private static RdDialogBorder exampleModalDialog() {
         return new DialogExamplesPanel.RdDialogBorder("modalDialog", new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
             @Override
-            protected Component newFooterContent(String id) {
+            protected @NonNull Component newFooterContent(String id) {
                 var dialogThis = this;
                 // The markup provider will be a different component in production code
                 var footerContentFragment = new Fragment(id, "dialogButton", this);
@@ -39,7 +40,7 @@ public class DialogExamplesPanel extends Panel {
             }
 
             @Override
-            protected void onClose(AjaxRequestTarget target) {
+            protected void onClose(@NonNull AjaxRequestTarget target) {
                 close(target);
             }
         };

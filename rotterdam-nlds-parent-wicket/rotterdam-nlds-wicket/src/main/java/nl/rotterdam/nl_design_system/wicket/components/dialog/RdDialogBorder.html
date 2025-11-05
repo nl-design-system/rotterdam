@@ -1,10 +1,12 @@
 <wicket:border xmlns:wicket="http://wicket.apache.org">
-  <header class="ams-dialog__header"><h1 wicket:id="title">Dialog title</h1>
-    <button wicket:id="closeButton"><span wicket:id="icon"></span></button>
-  </header>
-  <div class="ams-dialog__body"><wicket:body></wicket:body></div>
-  <footer class="ams-dialog__footer">
-    <div wicket:id="footerContent">Button(s)</div>
-  </footer>
+  <div wicket:id="content">
+    <header class="ams-dialog__header"><h1 wicket:id="title">Dialog title</h1>
+      <button wicket:id="closeButton"><span wicket:id="icon"></span></button>
+    </header>
+    <div class="ams-dialog__body"><wicket:body></wicket:body></div>
+    <footer class="ams-dialog__footer">
+      <div wicket:id="footerContent">Button(s)</div>
+    </footer>
+  </div>
   <wicket:child></wicket:child>
 </wicket:border>
