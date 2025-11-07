@@ -112,6 +112,30 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>@amsterdam/design-system-css/dist/dialog/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/dialog</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@amsterdam/design-system-css/dist/icon-button/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/icon_button</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@amsterdam/design-system-css/dist/visually-hidden/*.css</include>
+                </includes>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/visually_hidden</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
                     <include>@gemeente-denhaag/sidenav/dist/*.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/side_nav/denhaag</targetPath>

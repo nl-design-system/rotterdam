@@ -1,0 +1,12 @@
+wicket\:body,
+wicket\:border,
+wicket\:child,
+wicket\:container,
+wicket\:enclosure,
+wicket\:extend,
+wicket\:fragment,
+wicket\:link,
+wicket\:message,
+wicket\:panel {
+  display: contents;
+}

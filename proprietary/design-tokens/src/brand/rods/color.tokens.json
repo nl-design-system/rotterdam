@@ -23,6 +23,26 @@
           "comment": "Base/Gray"
         }
       },
+      "background": {
+        "value": "{rods.color.base.white}"
+      },
+      "interactive": {
+        "contrast": {
+          "value": "{rods.color.base.black}"
+        },
+        "default": {
+          "value": "{rods.color.base.black}"
+        },
+        "disabled": {
+          "value": "{rods.color.base.gray}"
+        },
+        "hover": {
+          "value": "{rods.color.base.green}"
+        },
+        "inverse": {
+          "value": "yellow"
+        }
+      },
       "notification": {
         "neutral": {
           "background-color": { "value": "#E8F4FB" },
