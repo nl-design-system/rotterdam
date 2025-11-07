@@ -1,0 +1,12 @@
+{
+  "rods": {
+    "cursor": {
+      "disabled": {
+        "value": "wait"
+      },
+      "interactive": {
+        "value": "default"
+      }
+    }
+  }
+}

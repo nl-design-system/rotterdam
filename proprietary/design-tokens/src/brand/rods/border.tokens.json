@@ -1,0 +1,10 @@
+{
+  "rods": {
+    "border": {
+      "width": {
+        "zero": { "value": 0 },
+        "m": { "value": "{rods.space.scale.1}" }
+      }
+    }
+  }
+}

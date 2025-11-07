@@ -1,5 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
+import nl.rotterdam.nl_design_system.wicket.html.WicketElementDisplayContentsHeaderContributor;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import nl.rotterdam.wicket.docs.sso_login_page.SingleSignOnLoginPage;
 import org.apache.wicket.csp.CSPDirective;
@@ -16,6 +17,9 @@ public class DocsApplication extends WebApplication {
 
         // Avoid <wicket:panel> in the output HTML
         getMarkupSettings().setStripWicketTags(true);
+        if (usesDevelopmentConfig()) {
+            getHeaderContributorListeners().add(WicketElementDisplayContentsHeaderContributor.INSTANCE);
+        }
 
         // Configure our own fance error page
         getExceptionSettings().setUnexpectedExceptionDisplay(ExceptionSettings.SHOW_EXCEPTION_PAGE);
@@ -45,6 +49,7 @@ public class DocsApplication extends WebApplication {
             .add(CSPDirective.FONT_SRC, CSPDirectiveSrcValue.SELF)
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.UNSAFE_INLINE)
             .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.SELF)
+            .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.NONCE)
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF);
         mountPage("sso", SingleSignOnLoginPage.class);
         mountPage("rotterdam-base-page", RotterdamBasePage.class);
