@@ -2,5 +2,6 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <entry key="Button">Knop</entry>
+    <entry key="Dialog">Dialoogvenster</entry>
     <entry key="Modal dialog">Modaal dialoogvenster</entry>
 </properties>

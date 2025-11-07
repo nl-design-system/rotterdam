@@ -15,6 +15,8 @@ public class DocsApplication extends WebApplication {
     public void init() {
         super.init();
 
+        // Avoid <wicket:panel> in the output HTML
+        getMarkupSettings().setStripWicketTags(true);
         if (usesDevelopmentConfig()) {
             getHeaderContributorListeners().add(WicketElementDisplayContentsHeaderContributor.INSTANCE);
         }

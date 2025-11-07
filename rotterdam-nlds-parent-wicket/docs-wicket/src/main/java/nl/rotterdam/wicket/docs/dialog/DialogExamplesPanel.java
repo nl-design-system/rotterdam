@@ -22,6 +22,32 @@ public class DialogExamplesPanel extends Panel {
     }
 
     @ComponentExample
+    private static RdDialogBorder exampleDialog() {
+        return new DialogExamplesPanel.RdDialogBorder("dialog", new StringResourceModel("Dialog"), RdDialogHeadingLevel.LEVEL_3) {
+            @Override
+            protected @NonNull Component newFooterContent(String id) {
+                var dialogThis = this;
+                // The markup provider will be a different component in production code
+                var footerContentFragment = new Fragment(id, "dialogButton", this);
+                RdAjaxButton button = new RdAjaxButton("button", new StringResourceModel("Button")) {
+                    @Override
+                    protected void onSubmit(AjaxRequestTarget target) {
+                        dialogThis.close(target);
+                    }
+                };
+                button.setAppearance(PRIMARY_ACTION);
+                footerContentFragment.add(button);
+                return footerContentFragment;
+            }
+
+            @Override
+            protected void onClose(@NonNull AjaxRequestTarget target) {
+                close(target);
+            }
+        };
+    }
+
+    @ComponentExample
     private static RdDialogBorder exampleModalDialog() {
         return new DialogExamplesPanel.RdDialogBorder("modalDialog", new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
             @Override
@@ -51,18 +77,38 @@ public class DialogExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        var form = new Form<Void>("modalDialogForm");
-        add(form);
+        addDialogSection();
+        addModalDialogSection();
+    }
 
-        var dialog = exampleModalDialog();
+    private void addDialogSection() {
+        var dialogForm = new Form<Void>("dialogForm");
+        add(dialogForm);
 
-        form.add(new RdAjaxButton("show") {
+        var dialog = exampleDialog();
+
+        dialogForm.add(new RdAjaxButton("show") {
             @Override
             protected void onSubmit(AjaxRequestTarget target) {
-                dialog.showModal(target);
+                dialog.show(target);
             }
         });
-        form.add(dialog);
+        dialogForm.add(dialog);
+    }
+
+    private void addModalDialogSection() {
+        var modalDialogForm = new Form<Void>("modalDialogForm");
+        add(modalDialogForm);
+
+        var modalDialog = exampleModalDialog();
+
+        modalDialogForm.add(new RdAjaxButton("showModal") {
+            @Override
+            protected void onSubmit(AjaxRequestTarget target) {
+                modalDialog.showModal(target);
+            }
+        });
+        modalDialogForm.add(modalDialog);
     }
 
     private abstract static class RdDialogBorder extends nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogBorder {
