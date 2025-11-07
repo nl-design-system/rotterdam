@@ -6,6 +6,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class ActionGroupExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdActionGroup.class;
 
     public ActionGroupExamplesPanel(String id) {
         super(id);

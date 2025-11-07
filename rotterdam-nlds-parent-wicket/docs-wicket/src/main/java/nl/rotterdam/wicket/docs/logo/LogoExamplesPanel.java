@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class LogoExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtLogoBorder.class;
 
     public LogoExamplesPanel(String id) {
         super(id);

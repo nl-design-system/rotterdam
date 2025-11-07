@@ -1,6 +1,5 @@
 package nl.rotterdam.wicket.docs.data_summary;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.RdDataSummary;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.SummaryItem;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.SummaryItemValue;
@@ -8,7 +7,10 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.util.ListModel;
 
+import java.util.List;
+
 public class DataSummaryExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdDataSummary.class;
 
     public DataSummaryExamplesPanel(String id) {
         super(id);

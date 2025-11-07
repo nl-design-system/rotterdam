@@ -6,6 +6,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class NumberBadgeExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtNumberBadge.class;
 
     public NumberBadgeExamplesPanel(String id) {
         super(id);

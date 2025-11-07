@@ -7,6 +7,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class FormFieldLabelExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtFormLabel.class;
 
     public FormFieldLabelExamplesPanel(String id) {
         super(id);

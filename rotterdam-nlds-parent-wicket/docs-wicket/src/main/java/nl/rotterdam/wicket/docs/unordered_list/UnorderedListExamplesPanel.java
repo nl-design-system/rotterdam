@@ -1,6 +1,5 @@
 package nl.rotterdam.wicket.docs.unordered_list;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
@@ -10,7 +9,10 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 
+import java.util.List;
+
 public class UnorderedListExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtUnorderedListBehavior.class;
 
     public UnorderedListExamplesPanel(String id) {
         super(id);

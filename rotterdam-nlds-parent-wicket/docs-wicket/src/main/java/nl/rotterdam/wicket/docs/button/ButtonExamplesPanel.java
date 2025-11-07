@@ -10,6 +10,7 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class ButtonExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdButton.class;
 
     public ButtonExamplesPanel(String id) {
         super(id);

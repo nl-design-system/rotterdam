@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class BodyExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtBodyBorder.class;
 
     public BodyExamplesPanel(String id) {
         super(id);

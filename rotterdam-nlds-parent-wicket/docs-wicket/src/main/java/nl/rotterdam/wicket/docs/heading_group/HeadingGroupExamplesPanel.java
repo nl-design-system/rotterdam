@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class HeadingGroupExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtHeadingGroupBorder.class;
 
     public HeadingGroupExamplesPanel(String id) {
         super(id);

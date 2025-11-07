@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class ColumnLayoutExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtColumnLayoutBorder.class;
 
     public ColumnLayoutExamplesPanel(String id) {
         super(id);

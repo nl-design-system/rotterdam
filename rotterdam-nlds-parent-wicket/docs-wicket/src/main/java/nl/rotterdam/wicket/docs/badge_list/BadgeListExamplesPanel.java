@@ -1,6 +1,5 @@
 package nl.rotterdam.wicket.docs.badge_list;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.data_badge.utrecht.UtrechtDataBadgeBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
@@ -10,7 +9,10 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 
+import java.util.List;
+
 public class BadgeListExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtBadgeListBehavior.class;
 
     public BadgeListExamplesPanel(String id) {
         super(id);

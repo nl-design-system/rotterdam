@@ -208,8 +208,8 @@ public class GenerateMarkdownAndStorybookExamples {
     }
 
     @Test
-    void generateModalDialog() {
-        new MarkdownDocumentationExamplesGenerator(DialogExamplesPanel.class, "modal dialog", "Modal Dialog").generate();
+    void generateDialog() {
+        new MarkdownDocumentationExamplesGenerator(DialogExamplesPanel.class, "modal dialog", "(Modal) Dialog").generate();
     }
 
     @Test

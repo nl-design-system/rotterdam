@@ -6,6 +6,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class CodeBlockExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtCodeBlock.class;
 
     public CodeBlockExamplesPanel(String id) {
         super(id);

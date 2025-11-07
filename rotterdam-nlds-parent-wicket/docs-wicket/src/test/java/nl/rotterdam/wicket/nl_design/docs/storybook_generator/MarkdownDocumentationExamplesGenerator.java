@@ -1,15 +1,19 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
-
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.junit.platform.commons.support.ModifierSupport;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,10 +22,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.junit.platform.commons.support.ModifierSupport;
+
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
 
 public class MarkdownDocumentationExamplesGenerator {
 
@@ -54,6 +56,10 @@ public class MarkdownDocumentationExamplesGenerator {
 
         String moduleRootPath = resolveModuleRootPath(GenerateMarkdownAndStorybookExamples.class).getAbsolutePath();
 
+        var componentClass = getComponentClassFromPanel(examplePanelClass);
+        String relativePathInWicketComponentsModuleRoot =
+            "/src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
+
         String relativePathInDocsWicketFromModuleRoot =
             "/src/main/java/" + examplePanelClass.getPackageName().replace(".", "/") + "/";
 
@@ -71,16 +77,31 @@ public class MarkdownDocumentationExamplesGenerator {
 
         gitHubComponentPath =
             "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/" +
-            relativePathInDocsWicketFromModuleRoot;
+                relativePathInWicketComponentsModuleRoot;
 
         gitHubExamplePath =
             "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/docs-wicket/" +
-            relativePathInDocsWicketFromModuleRoot;
+                relativePathInDocsWicketFromModuleRoot;
         try {
             headingPanel = examplePanelClass.getConstructor(String.class).newInstance("panelId");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static Class<?> getComponentClassFromPanel(Class<? extends Panel> examplePanelClass) {
+        Class<?> componentClass;
+        try {
+            var componentClassField = examplePanelClass.getDeclaredField("COMPONENT_CLASS");
+            int modifiers = componentClassField.getModifiers();
+            if (!Modifier.isPublic(modifiers) || !Modifier.isStatic(modifiers)) {
+                throw new IllegalStateException("Field COMPONENT_CLASS must be public and static.");
+            }
+            componentClass = (Class<?>) componentClassField.get(null);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        return componentClass;
     }
 
     private static String extractJavaCode(MethodDeclaration declaration) {

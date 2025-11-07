@@ -6,6 +6,8 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class PreserveDataExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtPreserveDataLabel.class;
+
 
     public PreserveDataExamplesPanel(String id) {
         super(id);

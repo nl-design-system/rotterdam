@@ -15,6 +15,7 @@ import org.jspecify.annotations.NonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance.PRIMARY_ACTION;
 
 public class DialogExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdDialogBorder.class;
 
     public DialogExamplesPanel(String id) {
         super(id);

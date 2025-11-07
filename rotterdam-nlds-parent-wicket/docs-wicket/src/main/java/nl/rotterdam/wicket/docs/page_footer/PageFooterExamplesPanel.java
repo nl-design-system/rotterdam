@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class PageFooterExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtPageFooterBorder.class;
 
     public PageFooterExamplesPanel(String id) {
         super(id);

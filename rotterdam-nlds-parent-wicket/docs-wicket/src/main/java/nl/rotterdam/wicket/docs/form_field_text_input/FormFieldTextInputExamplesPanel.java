@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class FormFieldTextInputExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdFormFieldTextInput.class;
 
     public FormFieldTextInputExamplesPanel(String id) {
         super(id);

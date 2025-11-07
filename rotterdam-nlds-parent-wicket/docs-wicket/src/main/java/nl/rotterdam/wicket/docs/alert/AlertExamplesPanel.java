@@ -7,6 +7,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class AlertExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtAlert.class;
 
     public AlertExamplesPanel(String id) {
         super(id);

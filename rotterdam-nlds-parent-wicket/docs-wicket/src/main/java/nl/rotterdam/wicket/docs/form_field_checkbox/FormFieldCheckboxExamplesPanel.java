@@ -6,6 +6,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class FormFieldCheckboxExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdFormFieldCheckbox.class;
 
     public FormFieldCheckboxExamplesPanel(String id) {
         super(id);

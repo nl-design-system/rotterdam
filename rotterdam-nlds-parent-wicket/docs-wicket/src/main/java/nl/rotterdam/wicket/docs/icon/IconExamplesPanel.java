@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class IconExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtIconBorder.class;
 
     public IconExamplesPanel(String id) {
         super(id);

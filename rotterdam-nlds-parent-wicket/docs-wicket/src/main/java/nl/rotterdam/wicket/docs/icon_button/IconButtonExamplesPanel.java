@@ -11,6 +11,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class IconButtonExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdIconButtonBorder.class;
 
     public IconButtonExamplesPanel(String id) {
         super(id);

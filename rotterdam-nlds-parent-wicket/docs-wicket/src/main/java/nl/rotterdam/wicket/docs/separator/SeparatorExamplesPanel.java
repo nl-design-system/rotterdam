@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class SeparatorExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = UtrechtSeparator.class;
 
     public SeparatorExamplesPanel(String id) {
         super(id);

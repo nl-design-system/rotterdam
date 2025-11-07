@@ -6,6 +6,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class CheckboxExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RdCheckbox.class;
 
     public CheckboxExamplesPanel(String id) {
         super(id);

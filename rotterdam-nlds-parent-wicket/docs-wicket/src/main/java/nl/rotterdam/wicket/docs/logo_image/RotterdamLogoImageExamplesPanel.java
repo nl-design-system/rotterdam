@@ -5,6 +5,7 @@ import nl.rotterdam.wicket.docs.ComponentExample;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class RotterdamLogoImageExamplesPanel extends Panel {
+    public static final Class<?> COMPONENT_CLASS = RotterdamLogoImage.class;
 
     public RotterdamLogoImageExamplesPanel(String id) {
         super(id);
