@@ -48,8 +48,7 @@ public abstract class RdIconAjaxButtonBorder extends AjaxButtonBorder {
      * @param model the model for the accessibility label.
      */
     public RdIconAjaxButtonBorder(final String id, final IModel<String> model) {
-        super(id, model);
-        requireNonNull(model);
+        super(id, requireNonNull(model));
 
         add(RdIconButtonBehavior.INSTANCE);
 

@@ -48,8 +48,7 @@ public abstract class RdIconButtonBorder extends ButtonBorder {
      * @param model the model for the accessibility label.
      */
     public RdIconButtonBorder(final String id, final IModel<String> model) {
-        super(id, model);
-        requireNonNull(model);
+        super(id, requireNonNull(model));
 
         add(RdIconButtonBehavior.INSTANCE);
 

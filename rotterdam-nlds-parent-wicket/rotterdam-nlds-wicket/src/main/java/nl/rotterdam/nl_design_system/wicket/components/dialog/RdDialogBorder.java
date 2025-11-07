@@ -13,8 +13,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
 import org.jspecify.annotations.NonNull;
 
-import java.util.Objects;
-
+import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.AMSTERDAM;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
@@ -67,8 +66,7 @@ public abstract class RdDialogBorder extends Border {
      *                     icon button.
      */
     public RdDialogBorder(@NonNull String id, @NonNull IModel<?> titleModel, @NonNull RdDialogHeadingLevel headingLevel) {
-        super(id, titleModel);
-        Objects.requireNonNull(titleModel);
+        super(id, requireNonNull(titleModel));
 
         closeButtonLabelModel = new StringResourceModel("Close", this);
 
@@ -90,11 +88,9 @@ public abstract class RdDialogBorder extends Border {
      *                     icon button.
      */
     public RdDialogBorder(@NonNull String id, @NonNull IModel<?> titleModel, @NonNull IModel<String> closeButtonLabelModel, @NonNull RdDialogHeadingLevel headingLevel) {
-        super(id, titleModel);
-        Objects.requireNonNull(titleModel);
-        Objects.requireNonNull(closeButtonLabelModel);
+        super(id, requireNonNull(titleModel));
 
-        this.closeButtonLabelModel = closeButtonLabelModel;
+        this.closeButtonLabelModel = requireNonNull(closeButtonLabelModel);
 
         setOutputMarkupId(true);
 
@@ -110,9 +106,11 @@ public abstract class RdDialogBorder extends Border {
         add(RdDialogBehavior.INSTANCE);
 
         addToBorder(content);
-        content.add(heading);
-        content.add(closeButton);
-        content.add(newFooterContent(FOOTER_CONTENT_ID));
+        content.add(
+            heading,
+            closeButton,
+            newFooterContent(FOOTER_CONTENT_ID)
+        );
     }
 
     /**
