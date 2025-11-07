@@ -38,6 +38,11 @@
         </developer>
     </developers>
 
+    <scm>
+        <connection>scm:git:git://github.com/nl-design-system/rotterdam.git</connection>
+        <developerConnection>scm:git:ssh://github.com:nl-design-system/rotterdam.git</developerConnection>
+        <url>https://github.com/nl-design-system/rotterdam/tree/main</url>
+    </scm>
 
     <build>
         <plugins>
