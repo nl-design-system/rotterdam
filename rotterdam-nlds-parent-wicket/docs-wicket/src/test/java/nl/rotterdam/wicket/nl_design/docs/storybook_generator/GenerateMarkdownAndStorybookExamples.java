@@ -209,7 +209,7 @@ public class GenerateMarkdownAndStorybookExamples {
 
     @Test
     void generateDialog() {
-        new MarkdownDocumentationExamplesGenerator(DialogExamplesPanel.class, "modal dialog", "(Modal) Dialog").generate();
+        new MarkdownDocumentationExamplesGenerator(DialogExamplesPanel.class, "dialog", "Dialog (and Modal Dialog)").generate();
     }
 
     @Test
