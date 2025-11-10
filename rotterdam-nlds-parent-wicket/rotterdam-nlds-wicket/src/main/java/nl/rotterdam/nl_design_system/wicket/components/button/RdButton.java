@@ -17,9 +17,6 @@ public class RdButton extends Button {
     public RdButtonAppearance appearance = null;
     public RdButtonHint hint = null;
 
-    // Pressed is a nullable boolean
-    public Boolean pressed = null;
-
     public RdButton(String id) {
         this(id, null);
     }
@@ -40,10 +37,6 @@ public class RdButton extends Button {
         this.busy = busy;
     }
 
-    public void setPressed(Boolean pressed) {
-        this.pressed = pressed;
-    }
-
     @Override
     public void onInitialize() {
         super.onInitialize();
@@ -60,12 +53,7 @@ public class RdButton extends Button {
             .append(appearance != null, () -> "utrecht-button--" + appearance.appearance)
             .append(hint != null, () -> "utrecht-button--" + hint.hint)
             .append(!isEnabledInHierarchy(), "utrecht-button--disabled")
-            .append(pressed != null && pressed, "utrecht-button--pressed")
             .append(busy, "utrecht-button--busy")
             .use(classes -> tag.append("class", classes, " "));
-
-        if (pressed != null) {
-            tag.put("aria-pressed", pressed ? "true" : "false");
-        }
     }
 }

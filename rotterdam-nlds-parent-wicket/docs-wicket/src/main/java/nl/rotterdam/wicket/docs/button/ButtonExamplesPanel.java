@@ -57,20 +57,6 @@ public class ButtonExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdButton buttonToggle() {
-        RdButton component = new RdButton("buttonToggle");
-        component.setPressed(false);
-        return component;
-    }
-
-    @ComponentExample
-    private static RdButton buttonPressed() {
-        RdButton component = new RdButton("buttonPressed");
-        component.setPressed(true);
-        return component;
-    }
-
-    @ComponentExample
     private static RdButton buttonIconStart() {
         return new RdButton("buttonIconStart");
     }
@@ -125,8 +111,6 @@ public class ButtonExamplesPanel extends ExamplesPanel {
         add(formAndAjaxButton());
         add(buttonDisabled());
         add(buttonBusy());
-        add(buttonToggle());
-        add(buttonPressed());
         add(buttonIconStart());
         add(buttonPrimaryAction());
         add(buttonSecondaryAction());

@@ -18,8 +18,6 @@ public class RdAjaxButton extends AjaxButton {
     public RdButtonAppearance appearance = null;
     public RdButtonHint hint = null;
 
-    public Boolean pressed = null;
-
     public RdAjaxButton(String id) {
         super(id);
     }
@@ -48,10 +46,6 @@ public class RdAjaxButton extends AjaxButton {
         this.busy = busy;
     }
 
-    public void setPressed(Boolean pressed) {
-        this.pressed = pressed;
-    }
-
     @Override
     protected void onInitialize() {
         super.onInitialize();
@@ -67,12 +61,7 @@ public class RdAjaxButton extends AjaxButton {
             .append(appearance != null, () -> "utrecht-button--" + appearance.appearance)
             .append(hint != null, () -> "utrecht-button--" + hint.hint)
             .append(!isEnabledInHierarchy(), "utrecht-button--disabled")
-            .append(pressed != null && pressed, "utrecht-button--pressed")
             .append(busy, "utrecht-button--busy")
             .use(classes -> tag.append("class", classes, " "));
-
-        if (pressed != null) {
-            tag.put("aria-pressed", pressed ? "true" : "false");
-        }
     }
 }
