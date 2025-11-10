@@ -2,13 +2,17 @@ package nl.rotterdam.wicket.docs.preserve_data;
 
 import nl.rotterdam.nl_design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class PreserveDataExamplesPanel extends Panel {
-
+public class PreserveDataExamplesPanel extends ExamplesPanel {
     public PreserveDataExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtPreserveDataLabel.class;
     }
 
     @ComponentExample

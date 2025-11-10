@@ -1,23 +1,29 @@
 package nl.rotterdam.wicket.docs.icon;
 
-import java.util.Arrays;
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.markup.html.panel.Panel;
 
-public class RodsIconExamplesPanel extends Panel {
+import java.util.Arrays;
+import java.util.List;
+
+public class RodsIconExamplesPanel extends ExamplesPanel {
 
     public RodsIconExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RotterdamIconBehavior.class;
     }
 
     @ComponentExample

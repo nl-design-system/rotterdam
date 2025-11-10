@@ -1,19 +1,24 @@
 package nl.rotterdam.wicket.docs.badge_list;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.data_badge.utrecht.UtrechtDataBadgeBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.markup.html.panel.Panel;
 
-public class BadgeListExamplesPanel extends Panel {
+import java.util.List;
 
+public class BadgeListExamplesPanel extends ExamplesPanel {
     public BadgeListExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtBadgeListBehavior.class;
     }
 
     @ComponentExample

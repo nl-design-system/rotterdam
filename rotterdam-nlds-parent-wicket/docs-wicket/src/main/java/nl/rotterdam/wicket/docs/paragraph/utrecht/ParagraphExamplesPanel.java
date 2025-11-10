@@ -3,13 +3,18 @@ package nl.rotterdam.wicket.docs.paragraph.utrecht;
 import nl.rotterdam.nl_design_system.wicket.components.paragraph.utrecht.UtrechtParagraph;
 import nl.rotterdam.nl_design_system.wicket.components.paragraph.utrecht.UtrechtParagraphAppearance;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
 
-public class ParagraphExamplesPanel extends Panel {
+public class ParagraphExamplesPanel extends ExamplesPanel {
 
     public ParagraphExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtParagraph.class;
     }
 
     @ComponentExample

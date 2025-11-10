@@ -3,13 +3,17 @@ package nl.rotterdam.wicket.docs.form_field_label;
 import nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabel;
 import nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class FormFieldLabelExamplesPanel extends Panel {
-
+public class FormFieldLabelExamplesPanel extends ExamplesPanel {
     public FormFieldLabelExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtFormLabel.class;
     }
 
     @ComponentExample

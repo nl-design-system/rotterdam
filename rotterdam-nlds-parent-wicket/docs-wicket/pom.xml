@@ -119,6 +119,13 @@
                                 <include>**/*</include>
                             </includes>
                         </fileset>
+                        <!-- Clean stories directory -->
+                        <fileset>
+                            <directory>${project.basedir}/stories</directory>
+                            <includes>
+                                <include>**/*.md*</include>
+                            </includes>
+                        </fileset>
                     </filesets>
                 </configuration>
             </plugin>

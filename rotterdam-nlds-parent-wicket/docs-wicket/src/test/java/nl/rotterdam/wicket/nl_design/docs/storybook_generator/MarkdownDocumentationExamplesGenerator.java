@@ -1,12 +1,16 @@
 package nl.rotterdam.wicket.nl_design.docs.storybook_generator;
 
-import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
-
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.junit.platform.commons.support.ModifierSupport;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -18,17 +22,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.junit.platform.commons.support.ModifierSupport;
+
+import static nl.rotterdam.wicket.nl_design.docs.ModuleRootResolver.resolveModuleRootPath;
 
 public class MarkdownDocumentationExamplesGenerator {
 
     private final File exampleJavaFile;
     private final File markdownReadmeFile;
     private final File markdownStorybookFile;
-    private final Panel headingPanel;
+    private final ExamplesPanel examplePanel;
     private final String componentName;
     private final String componentTitle;
     private final HtmlDocumentationExtractor documentationExtractor;
@@ -36,7 +38,7 @@ public class MarkdownDocumentationExamplesGenerator {
     private final String gitHubComponentPath;
 
     public MarkdownDocumentationExamplesGenerator(
-        Class<? extends Panel> examplePanelClass,
+        Class<? extends ExamplesPanel> examplePanelClass,
         String componentName,
         String componentTitle
     ) {
@@ -44,7 +46,7 @@ public class MarkdownDocumentationExamplesGenerator {
     }
 
     public MarkdownDocumentationExamplesGenerator(
-        Class<? extends Panel> examplePanelClass,
+        Class<? extends ExamplesPanel> examplePanelClass,
         String componentName,
         String componentTitle,
         String renderedHtml
@@ -69,15 +71,18 @@ public class MarkdownDocumentationExamplesGenerator {
         markdownReadmeFile = new File(moduleRootPath + "/stories/" + componentName + ".md");
         markdownStorybookFile = new File(moduleRootPath + "/stories/" + componentName + ".mdx");
 
-        gitHubComponentPath =
-            "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/" +
-            relativePathInDocsWicketFromModuleRoot;
-
         gitHubExamplePath =
             "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/docs-wicket/" +
-            relativePathInDocsWicketFromModuleRoot;
+                relativePathInDocsWicketFromModuleRoot;
         try {
-            headingPanel = examplePanelClass.getConstructor(String.class).newInstance("panelId");
+            examplePanel = examplePanelClass.getConstructor(String.class).newInstance("panelId");
+
+            var componentClass = examplePanel.getImplementationClass();
+            var relativePathInWicketComponentsModuleRoot =
+                "/src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
+            gitHubComponentPath =
+                "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/" +
+                    relativePathInWicketComponentsModuleRoot;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -140,7 +145,7 @@ public class MarkdownDocumentationExamplesGenerator {
             .stream()
             .map(method -> {
                 try {
-                    return generateMethodUnchecked(method, headingPanel);
+                    return generateMethodUnchecked(method, examplePanel);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -223,9 +228,9 @@ public class MarkdownDocumentationExamplesGenerator {
         );
     }
 
-    private WicketComponentExample generateMethodUnchecked(MethodDeclaration methodDeclaration, Panel headingPanel)
+    private WicketComponentExample generateMethodUnchecked(MethodDeclaration methodDeclaration, ExamplesPanel examplePanel)
         throws Exception {
-        String wicketId = getWicketId(headingPanel, methodDeclaration);
+        String wicketId = getWicketId(examplePanel, methodDeclaration);
 
         return new WicketComponentExample(
             extractJavaCode(methodDeclaration),

@@ -1,18 +1,22 @@
 package nl.rotterdam.wicket.docs.heading;
 
-import static nl.rotterdam.nl_design_system.wicket.components.heading.utrecht.UtrechtHeadingBehavior.heading;
-
 import nl.rotterdam.nl_design_system.wicket.components.heading.utrecht.UtrechtHeading;
 import nl.rotterdam.nl_design_system.wicket.components.preserve_data.utrecht.UtrechtPreserveDataLabel;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class HeadingExamplesPanel extends Panel {
+import static nl.rotterdam.nl_design_system.wicket.components.heading.utrecht.UtrechtHeadingBehavior.heading;
 
+public class HeadingExamplesPanel extends ExamplesPanel {
     public HeadingExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtHeading.class;
     }
 
     @ComponentExample

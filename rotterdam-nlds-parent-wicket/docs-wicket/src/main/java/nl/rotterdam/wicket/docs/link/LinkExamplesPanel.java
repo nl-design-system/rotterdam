@@ -6,17 +6,22 @@ import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtLink;
 import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtLinkBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ComponentsPage;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class LinkExamplesPanel extends Panel {
+public class LinkExamplesPanel extends ExamplesPanel {
 
     public LinkExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return Link.class;
     }
 
     @ComponentExample
