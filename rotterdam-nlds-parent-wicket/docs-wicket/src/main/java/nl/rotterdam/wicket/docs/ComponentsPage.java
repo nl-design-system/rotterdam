@@ -108,7 +108,7 @@ public class ComponentsPage extends RotterdamBasePage {
         pageBody.add(new LinkExamplesPanel("linkExamplesPanel"));
         pageBody.add(new LinkListExamplesPanel("linkListExamplesPanel"));
         pageBody.add(new LogoExamplesPanel("logoExamplesPanel"));
-        pageBody.add(new DialogExamplesPanel("modalDialogExamplesPanel"));
+        pageBody.add(new DialogExamplesPanel("dialogExamplesPanel"));
         pageBody.add(new NumberBadgeExamplesPanel("numberBadgeExamplesPanel"));
         pageBody.add(new OrderedListExamplesPanel("orderedListExamplesPanel"));
         pageBody.add(new PageBodyExamplesPanel("pageBodyExamplesPanel"));
