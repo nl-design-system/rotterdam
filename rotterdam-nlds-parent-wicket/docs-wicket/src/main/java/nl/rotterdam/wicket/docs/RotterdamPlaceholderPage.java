@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
-import nl.rotterdam.nl_design_system.wicket.components.html_content.utrecht.UtrechtHtmlContentBorder;
+import nl.rotterdam.nl_design_system.wicket.components.html_content.RdHtmlContentBorder;
 
 public class RotterdamPlaceholderPage extends RotterdamBasePage {
 
@@ -8,6 +8,6 @@ public class RotterdamPlaceholderPage extends RotterdamBasePage {
     protected void onInitialize() {
         super.onInitialize();
 
-        pageBody.add(new UtrechtHtmlContentBorder("html"));
+        pageBody.add(new RdHtmlContentBorder("html"));
     }
 }

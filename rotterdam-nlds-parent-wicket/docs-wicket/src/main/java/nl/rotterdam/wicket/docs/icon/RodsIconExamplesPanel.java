@@ -2,8 +2,8 @@ package nl.rotterdam.wicket.docs.icon;
 
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
-import nl.rotterdam.nl_design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.unordered_list.utrecht.UtrechtUnorderedListItemBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.unordered_list.RdUnorderedListBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.unordered_list.RdUnorderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.Component;
@@ -37,12 +37,12 @@ public class RodsIconExamplesPanel extends ExamplesPanel {
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new UtrechtUnorderedListBehavior());
+                add(new RdUnorderedListBehavior());
                 add(
                     new ListView<>("iconItem", icons) {
                         @Override
                         protected void populateItem(ListItem<RotterdamIconType> item) {
-                            item.add(new UtrechtUnorderedListItemBehavior()); // TODO: should be singleton
+                            item.add(new RdUnorderedListItemBehavior()); // TODO: should be singleton
                             RotterdamIconType iconType = item.getModelObject();
                             // item.add(naam);
                             // item.add(new RotterdamIconBehavior(iconType))

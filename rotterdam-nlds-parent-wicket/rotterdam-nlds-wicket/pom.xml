@@ -134,7 +134,7 @@
                 <includes>
                     <include>@gemeente-denhaag/sidenav/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/side_nav/denhaag</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/side_nav</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -151,7 +151,7 @@
                 <includes>
                     <include>@utrecht/alert-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/alert/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/alert</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -159,7 +159,7 @@
                 <includes>
                     <include>@utrecht/badge-list-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/badge_list/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/badge_list</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -167,7 +167,7 @@
                 <includes>
                     <include>@utrecht/body-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/body/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/body</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -175,7 +175,7 @@
                 <includes>
                     <include>@utrecht/breadcrumb-nav-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/breadcrumb_nav/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/breadcrumb_nav</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -216,7 +216,7 @@
                 <includes>
                     <include>@utrecht/code-block-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/code_block/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/code_block</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -224,7 +224,7 @@
                 <includes>
                     <include>@utrecht/column-layout-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/column_layout/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/column_layout</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -232,7 +232,7 @@
                 <includes>
                     <include>@utrecht/data-badge-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/data_badge/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/data_badge</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -240,7 +240,7 @@
                 <includes>
                     <include>@utrecht/form-field-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -248,7 +248,7 @@
                 <includes>
                     <include>@utrecht/form-field-description-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field_description/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field_description</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -256,7 +256,7 @@
                 <includes>
                     <include>@utrecht/form-field-error-message-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field_error_message/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field_error_message</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -264,7 +264,7 @@
                 <includes>
                     <include>@utrecht/form-label-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_label/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_label</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -277,7 +277,7 @@
                     <include>@utrecht/heading-5-css/dist/*.css</include>
                     <include>@utrecht/heading-6-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/heading/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/heading</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -285,7 +285,7 @@
                 <includes>
                     <include>@utrecht/heading-group-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/heading_group/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/heading_group</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -293,7 +293,7 @@
                 <includes>
                     <include>@utrecht/html-content-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/html_content/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/html_content</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -301,7 +301,7 @@
                 <includes>
                     <include>@utrecht/icon/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/icon/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/icon</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -309,7 +309,7 @@
                 <includes>
                     <include>@utrecht/link-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/link/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/link</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -317,7 +317,7 @@
                 <includes>
                     <include>@utrecht/link-list-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/link_list/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/link_list</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -325,7 +325,7 @@
                 <includes>
                     <include>@utrecht/logo-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/logo/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/logo</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -333,7 +333,7 @@
                 <includes>
                     <include>@utrecht/number-badge-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/number_badge/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/number_badge</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -341,7 +341,7 @@
                 <includes>
                     <include>@utrecht/ordered-list-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/ordered_list/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/ordered_list</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -349,7 +349,7 @@
                 <includes>
                     <include>@utrecht/page-body-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_body/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_body</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -357,7 +357,7 @@
                 <includes>
                     <include>@utrecht/page-footer-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_footer/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_footer</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -365,7 +365,7 @@
                 <includes>
                     <include>@utrecht/page-header-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_header/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_header</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -373,7 +373,7 @@
                 <includes>
                     <include>@utrecht/page-layout-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_layout/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_layout</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -381,7 +381,7 @@
                 <includes>
                     <include>@utrecht/paragraph-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/paragraph/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/paragraph</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -389,7 +389,7 @@
                 <includes>
                     <include>@utrecht/preserve-data-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/preserve_data/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/preserve_data</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -397,7 +397,7 @@
                 <includes>
                     <include>@utrecht/root-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/root/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/root</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -405,7 +405,7 @@
                 <includes>
                     <include>@utrecht/separator-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/separator/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/separator</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
@@ -421,7 +421,7 @@
                 <includes>
                     <include>@utrecht/unordered-list-css/dist/*.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/unordered_list/utrecht</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/unordered_list</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>

@@ -4,23 +4,23 @@ import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.UTRECHT_FORM_FIELD_LABEL_CHECKBOX;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory.createErrorMessageLabel;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.FORM_FIELD_LABEL_CHECKBOX;
+import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 import nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormField;
-import nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelBehavior;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
@@ -84,7 +84,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer())
             .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior())
-            .add(UTRECHT_FORM_FIELD_LABEL_CHECKBOX.asBehavior());
+            .add(FORM_FIELD_LABEL_CHECKBOX.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
@@ -93,7 +93,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
-            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(RdFormFieldDescriptionBehavior.INSTANCE)
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
     }
 
@@ -123,7 +123,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         super.onInitialize();
         setOutputMarkupId(true);
 
-        add(UtrechtFormFieldBehavior.INSTANCE, RdCheckboxFormFieldBehavior.INSTANCE);
+        add(RdFormFieldBehavior.INSTANCE, RdCheckboxFormFieldBehavior.INSTANCE);
 
         add(labelComponent, descriptionComponent, errorMessageComponent);
     }
@@ -173,7 +173,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         protected void onInitialize() {
             super.onInitialize();
 
-            add(UtrechtFormLabelBehavior.INSTANCE_CHECKBOX);
+            add(RdFormLabelBehavior.INSTANCE_CHECKBOX);
 
             add(inputComponent);
         }

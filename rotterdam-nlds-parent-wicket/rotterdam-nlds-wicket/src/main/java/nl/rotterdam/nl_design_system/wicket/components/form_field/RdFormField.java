@@ -1,6 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field;
 
-import nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss;
 import org.apache.wicket.Component;
 
 /**
@@ -34,7 +33,7 @@ import org.apache.wicket.Component;
  *
  * <p>We use the suffix 'component' for the nested elements to make it explicit we're referring to NLDS components.</p>
  *
- * <p>All of those elements have a BEM nested style class as defined in {@link UtrechtFormFieldCss}.</p>
+ * <p>All of those elements have a BEM nested style class as defined in {@link RdFormFieldCss}.</p>
  *
  * <p>Do: define CSS class names as constant in Java. Don't specify them in HTML.</p>
  *

@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.separator;
 
-import nl.rotterdam.nl_design_system.wicket.components.separator.utrecht.UtrechtSeparator;
+import nl.rotterdam.nl_design_system.wicket.components.separator.RdSeparator;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 
@@ -11,12 +11,12 @@ public class SeparatorExamplesPanel extends ExamplesPanel {
 
     @Override
     public Class<?> getImplementationClass() {
-        return UtrechtSeparator.class;
+        return RdSeparator.class;
     }
 
     @ComponentExample
-    private static UtrechtSeparator exampleSeparator() {
-        return new UtrechtSeparator("separator");
+    private static RdSeparator exampleSeparator() {
+        return new RdSeparator("separator");
     }
 
     @Override

@@ -29,11 +29,11 @@ import nl.rotterdam.wicket.docs.ordered_list.OrderedListExamplesPanel;
 import nl.rotterdam.wicket.docs.page_body.PageBodyExamplesPanel;
 import nl.rotterdam.wicket.docs.page_footer.PageFooterExamplesPanel;
 import nl.rotterdam.wicket.docs.page_layout.PageLayoutExamplesPanel;
-import nl.rotterdam.wicket.docs.paragraph.utrecht.ParagraphExamplesPanel;
+import nl.rotterdam.wicket.docs.paragraph.ParagraphExamplesPanel;
 import nl.rotterdam.wicket.docs.preserve_data.PreserveDataExamplesPanel;
 import nl.rotterdam.wicket.docs.root.RootExamplesPanel;
 import nl.rotterdam.wicket.docs.separator.SeparatorExamplesPanel;
-import nl.rotterdam.wicket.docs.side_nav.DenhaagSideNavExamplesPanel;
+import nl.rotterdam.wicket.docs.side_nav.RdSideNavExamplesPanel;
 import nl.rotterdam.wicket.docs.unordered_list.UnorderedListExamplesPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -83,7 +83,7 @@ public class ComponentsPage extends RotterdamBasePage {
 
         // Add the component stories. You can add multiple components with just one add, making it easier to read.
         pageBody.add(
-            new DenhaagSideNavExamplesPanel("denhaagSideNavExamplesPanel"),
+            new RdSideNavExamplesPanel("sideNavExamplesPanel"),
             new AlertExamplesPanel("alertExamplesPanel"),
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
             new BodyExamplesPanel("bodyExamplesPanel"),
