@@ -1,13 +1,13 @@
 package nl.rotterdam.wicket.docs.heading;
 
-import static nl.rotterdam.nl_design_system.wicket.components.heading.RdHeadingBehavior.heading;
-
 import nl.rotterdam.nl_design_system.wicket.components.heading.RdHeading;
 import nl.rotterdam.nl_design_system.wicket.components.preserve_data.RdPreserveDataLabel;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.Model;
+
+import static nl.rotterdam.nl_design_system.wicket.components.heading.RdHeadingBehavior.heading;
 
 public class HeadingExamplesPanel extends ExamplesPanel {
     public HeadingExamplesPanel(String id) {
@@ -39,11 +39,6 @@ public class HeadingExamplesPanel extends ExamplesPanel {
     @ComponentExample
     private static RdHeading example06Heading6() {
         return new RdHeading("label6", "Een label met kop 6", 6);
-    }
-
-    @ComponentExample
-    private static RdHeading example07H3MetDivTag() {
-        return new RdHeading("label3MetDivTag", "div wordt vervangen met h3", 3);
     }
 
     @ComponentExample
@@ -82,7 +77,6 @@ public class HeadingExamplesPanel extends ExamplesPanel {
             example04Heading4(),
             example05Heading5(),
             example06Heading6(),
-            example07H3MetDivTag(),
             example08KeepExistingClass(),
             example09ModelConstructor(),
             example10DefaultModel(),
