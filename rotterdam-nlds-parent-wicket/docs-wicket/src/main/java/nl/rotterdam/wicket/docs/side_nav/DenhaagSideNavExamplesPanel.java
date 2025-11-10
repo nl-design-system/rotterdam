@@ -1,15 +1,14 @@
 package nl.rotterdam.wicket.docs.side_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.side_nav.denhaag.DenhaagSideNavListBehavior.DENHAAG_SIDE_NAV_LIST_BEHAVIOR;
-
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.denhaag.DenhaagSideNavBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.denhaag.DenhaagSideNavItemBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.denhaag.DenhaagSideNavLink;
+import nl.rotterdam.nl_design_system.wicket.components.side_nav.denhaag.DenhaagSideNavPanel;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import nl.rotterdam.wicket.docs.RotterdamPlaceholderPage;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import org.apache.wicket.Component;
@@ -17,12 +16,20 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.markup.html.panel.Panel;
 
-public class DenhaagSideNavExamplesPanel extends Panel {
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.side_nav.denhaag.DenhaagSideNavListBehavior.DENHAAG_SIDE_NAV_LIST_BEHAVIOR;
+
+public class DenhaagSideNavExamplesPanel extends ExamplesPanel {
 
     public DenhaagSideNavExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return DenhaagSideNavPanel.class;
     }
 
     @ComponentExample

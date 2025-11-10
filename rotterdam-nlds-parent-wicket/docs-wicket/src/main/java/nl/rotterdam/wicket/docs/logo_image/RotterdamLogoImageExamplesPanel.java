@@ -2,13 +2,16 @@ package nl.rotterdam.wicket.docs.logo_image;
 
 import nl.rotterdam.nl_design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 
-public class RotterdamLogoImageExamplesPanel extends Panel {
-    public static final Class<?> COMPONENT_CLASS = RotterdamLogoImage.class;
-
+public class RotterdamLogoImageExamplesPanel extends ExamplesPanel {
     public RotterdamLogoImageExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RotterdamLogoImage.class;
     }
 
     @ComponentExample

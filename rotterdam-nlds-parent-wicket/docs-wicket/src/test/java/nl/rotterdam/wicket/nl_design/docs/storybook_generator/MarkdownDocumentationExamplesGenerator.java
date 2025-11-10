@@ -6,6 +6,7 @@ import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.vladsch.flexmark.html2md.converter.FlexmarkHtmlConverter;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.junit.platform.commons.support.ModifierSupport;
@@ -13,7 +14,6 @@ import org.junit.platform.commons.support.ModifierSupport;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +30,7 @@ public class MarkdownDocumentationExamplesGenerator {
     private final File exampleJavaFile;
     private final File markdownReadmeFile;
     private final File markdownStorybookFile;
-    private final Panel examplePanel;
+    private final ExamplesPanel examplePanel;
     private final String componentName;
     private final String componentTitle;
     private final HtmlDocumentationExtractor documentationExtractor;
@@ -38,7 +38,7 @@ public class MarkdownDocumentationExamplesGenerator {
     private final String gitHubComponentPath;
 
     public MarkdownDocumentationExamplesGenerator(
-        Class<? extends Panel> examplePanelClass,
+        Class<? extends ExamplesPanel> examplePanelClass,
         String componentName,
         String componentTitle
     ) {
@@ -46,7 +46,7 @@ public class MarkdownDocumentationExamplesGenerator {
     }
 
     public MarkdownDocumentationExamplesGenerator(
-        Class<? extends Panel> examplePanelClass,
+        Class<? extends ExamplesPanel> examplePanelClass,
         String componentName,
         String componentTitle,
         String renderedHtml
@@ -55,10 +55,6 @@ public class MarkdownDocumentationExamplesGenerator {
         this.componentTitle = componentTitle;
 
         String moduleRootPath = resolveModuleRootPath(GenerateMarkdownAndStorybookExamples.class).getAbsolutePath();
-
-        var componentClass = getComponentClassFromPanel(examplePanelClass);
-        String relativePathInWicketComponentsModuleRoot =
-            "/src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
 
         String relativePathInDocsWicketFromModuleRoot =
             "/src/main/java/" + examplePanelClass.getPackageName().replace(".", "/") + "/";
@@ -75,33 +71,21 @@ public class MarkdownDocumentationExamplesGenerator {
         markdownReadmeFile = new File(moduleRootPath + "/stories/" + componentName + ".md");
         markdownStorybookFile = new File(moduleRootPath + "/stories/" + componentName + ".mdx");
 
-        gitHubComponentPath =
-            "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/" +
-                relativePathInWicketComponentsModuleRoot;
-
         gitHubExamplePath =
             "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/docs-wicket/" +
                 relativePathInDocsWicketFromModuleRoot;
         try {
             examplePanel = examplePanelClass.getConstructor(String.class).newInstance("panelId");
+
+            var componentClass = examplePanel.getImplementationClass();
+            var relativePathInWicketComponentsModuleRoot =
+                "/src/main/java/" + componentClass.getPackageName().replace(".", "/") + "/";
+            gitHubComponentPath =
+                "https://github.com/nl-design-system/rotterdam/blob/main/rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/" +
+                    relativePathInWicketComponentsModuleRoot;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private static Class<?> getComponentClassFromPanel(Class<? extends Panel> examplePanelClass) {
-        Class<?> componentClass;
-        try {
-            var componentClassField = examplePanelClass.getDeclaredField("COMPONENT_CLASS");
-            int modifiers = componentClassField.getModifiers();
-            if (!Modifier.isPublic(modifiers) || !Modifier.isStatic(modifiers)) {
-                throw new IllegalStateException("Field COMPONENT_CLASS must be public and static.");
-            }
-            componentClass = (Class<?>) componentClassField.get(null);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-        return componentClass;
     }
 
     private static String extractJavaCode(MethodDeclaration declaration) {
@@ -244,7 +228,7 @@ public class MarkdownDocumentationExamplesGenerator {
         );
     }
 
-    private WicketComponentExample generateMethodUnchecked(MethodDeclaration methodDeclaration, Panel examplePanel)
+    private WicketComponentExample generateMethodUnchecked(MethodDeclaration methodDeclaration, ExamplesPanel examplePanel)
         throws Exception {
         String wicketId = getWicketId(examplePanel, methodDeclaration);
 

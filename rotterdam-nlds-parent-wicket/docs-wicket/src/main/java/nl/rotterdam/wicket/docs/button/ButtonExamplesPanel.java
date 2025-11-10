@@ -5,15 +5,18 @@ import nl.rotterdam.nl_design_system.wicket.components.button.RdButton;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonHint;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.panel.Panel;
 
-public class ButtonExamplesPanel extends Panel {
-    public static final Class<?> COMPONENT_CLASS = RdButton.class;
-
+public class ButtonExamplesPanel extends ExamplesPanel {
     public ButtonExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdButton.class;
     }
 
     @ComponentExample

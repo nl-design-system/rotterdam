@@ -1,20 +1,26 @@
 package nl.rotterdam.wicket.docs.link_list;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.link_list.utrecht.UtrechtLinkListPanel;
 import nl.rotterdam.nl_design_system.wicket.components.link_list.utrecht.UtrechtLinkListRecord;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import nl.rotterdam.wicket.docs.RotterdamPlaceholderPage;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
-public class LinkListExamplesPanel extends Panel {
+import java.util.List;
+
+public class LinkListExamplesPanel extends ExamplesPanel {
 
     public LinkListExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtLinkListPanel.class;
     }
 
     @ComponentExample

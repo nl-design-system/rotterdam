@@ -2,13 +2,16 @@ package nl.rotterdam.wicket.docs.body;
 
 import nl.rotterdam.nl_design_system.wicket.components.body.utrecht.UtrechtBodyBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 
-public class BodyExamplesPanel extends Panel {
-    public static final Class<?> COMPONENT_CLASS = UtrechtBodyBorder.class;
-
+public class BodyExamplesPanel extends ExamplesPanel {
     public BodyExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtBodyBorder.class;
     }
 
     @ComponentExample

@@ -4,16 +4,19 @@ import nl.rotterdam.nl_design_system.wicket.components.data_summary.RdDataSummar
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.SummaryItem;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.SummaryItemValue;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.util.ListModel;
 
 import java.util.List;
 
-public class DataSummaryExamplesPanel extends Panel {
-    public static final Class<?> COMPONENT_CLASS = RdDataSummary.class;
-
+public class DataSummaryExamplesPanel extends ExamplesPanel {
     public DataSummaryExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdDataSummary.class;
     }
 
     @ComponentExample

@@ -3,15 +3,18 @@ package nl.rotterdam.wicket.docs.form_field_text_input;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_text_input.RdFormFieldTextInput;
 import nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.AttributeModifier;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class FormFieldTextInputExamplesPanel extends Panel {
-    public static final Class<?> COMPONENT_CLASS = RdFormFieldTextInput.class;
-
+public class FormFieldTextInputExamplesPanel extends ExamplesPanel {
     public FormFieldTextInputExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdFormFieldTextInput.class;
     }
 
     @ComponentExample

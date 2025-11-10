@@ -3,14 +3,17 @@ package nl.rotterdam.wicket.docs.alert;
 import nl.rotterdam.nl_design_system.wicket.components.alert.utrecht.UtrechtAlert;
 import nl.rotterdam.nl_design_system.wicket.components.alert.utrecht.UtrechtAlertType;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class AlertExamplesPanel extends Panel {
-    public static final Class<?> COMPONENT_CLASS = UtrechtAlert.class;
-
+public class AlertExamplesPanel extends ExamplesPanel {
     public AlertExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return UtrechtAlert.class;
     }
 
     @ComponentExample
