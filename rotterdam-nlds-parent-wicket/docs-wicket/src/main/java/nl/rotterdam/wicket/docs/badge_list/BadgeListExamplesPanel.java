@@ -1,15 +1,14 @@
 package nl.rotterdam.wicket.docs.badge_list;
 
-import nl.rotterdam.nl_design_system.wicket.components.badge_list.utrecht.UtrechtBadgeListBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.data_badge.utrecht.UtrechtDataBadgeBehavior;
+import java.util.List;
+import nl.rotterdam.nl_design_system.wicket.components.badge_list.RdBadgeListBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.data_badge.RdDataBadgeBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-
-import java.util.List;
 
 public class BadgeListExamplesPanel extends ExamplesPanel {
     public BadgeListExamplesPanel(String id) {
@@ -18,7 +17,7 @@ public class BadgeListExamplesPanel extends ExamplesPanel {
 
     @Override
     public Class<?> getImplementationClass() {
-        return UtrechtBadgeListBehavior.class;
+        return RdBadgeListBehavior.class;
     }
 
     @ComponentExample
@@ -30,12 +29,12 @@ public class BadgeListExamplesPanel extends ExamplesPanel {
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new UtrechtBadgeListBehavior()); // TODO should be singleton
+                add(new RdBadgeListBehavior()); // TODO should be singleton
                 add(
                     new ListView<>("listItem", namen) {
                         @Override
                         protected void populateItem(ListItem<String> item) {
-                            item.add(new UtrechtDataBadgeBehavior()); // TODO: should be singleton
+                            item.add(new RdDataBadgeBehavior()); // TODO: should be singleton
                             String naam = item.getModelObject();
                             // item.add(naam);
                             item.add(new Label("label", naam));

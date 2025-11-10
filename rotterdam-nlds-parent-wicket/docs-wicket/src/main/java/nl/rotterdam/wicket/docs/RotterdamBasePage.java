@@ -4,15 +4,15 @@ import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeader
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
-import nl.rotterdam.nl_design_system.wicket.components.body.utrecht.UtrechtBodyBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtBookmarkableLink;
-import nl.rotterdam.nl_design_system.wicket.components.logo.utrecht.UtrechtLogoBorder;
+import nl.rotterdam.nl_design_system.wicket.components.body.RdBodyBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdBookmarkableLink;
+import nl.rotterdam.nl_design_system.wicket.components.logo.RdLogoBorder;
 import nl.rotterdam.nl_design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
-import nl.rotterdam.nl_design_system.wicket.components.page_body.utrecht.UtrechtPageBodyBorder;
-import nl.rotterdam.nl_design_system.wicket.components.page_footer.utrecht.UtrechtPageFooterBorder;
-import nl.rotterdam.nl_design_system.wicket.components.page_header.utrecht.UtrechtPageHeaderBorder;
-import nl.rotterdam.nl_design_system.wicket.components.page_layout.utrecht.UtrechtPageLayoutBorder;
-import nl.rotterdam.nl_design_system.wicket.components.root.utrecht.UtrechtRootBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.page_body.RdPageBodyBorder;
+import nl.rotterdam.nl_design_system.wicket.components.page_footer.RdPageFooterBorder;
+import nl.rotterdam.nl_design_system.wicket.components.page_header.RdPageHeaderBorder;
+import nl.rotterdam.nl_design_system.wicket.components.page_layout.RdPageLayoutBorder;
+import nl.rotterdam.nl_design_system.wicket.components.root.RdRootBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
@@ -21,10 +21,10 @@ public class RotterdamBasePage extends DocsBasePage {
 
     protected static final String titlePartSeparator = " · ";
 
-    protected UtrechtPageLayoutBorder pageLayout;
-    protected UtrechtPageHeaderBorder pageHeader;
-    protected UtrechtPageBodyBorder pageBody;
-    protected UtrechtPageFooterBorder pageFooter;
+    protected RdPageLayoutBorder pageLayout;
+    protected RdPageHeaderBorder pageHeader;
+    protected RdPageBodyBorder pageBody;
+    protected RdPageFooterBorder pageFooter;
     protected String pageTitle;
     protected String stepTitle;
     protected String errorTitle;
@@ -34,26 +34,26 @@ public class RotterdamBasePage extends DocsBasePage {
         super.onInitialize();
 
         // Build up the page layout
-        pageLayout = new UtrechtPageLayoutBorder("pageLayout");
+        pageLayout = new RdPageLayoutBorder("pageLayout");
         add(pageLayout);
 
-        pageHeader = new UtrechtPageHeaderBorder("pageHeader");
+        pageHeader = new RdPageHeaderBorder("pageHeader");
         pageLayout.add(pageHeader);
 
-        UtrechtLogoBorder logo = new UtrechtLogoBorder("logo");
+        RdLogoBorder logo = new RdLogoBorder("logo");
         pageHeader.add(logo);
 
         // Use Apache Wicket API to determine the internal homepage
         // TODO: Allow configuring an external homepage URL, outside of this application.
-        Link<?> logoLink = new UtrechtBookmarkableLink<>("logoLink", getApplication().getHomePage());
+        Link<?> logoLink = new RdBookmarkableLink<>("logoLink", getApplication().getHomePage());
         logo.add(logoLink);
 
         logoLink.add(new RotterdamLogoImage("rotterdamLogoImage"));
 
-        pageBody = new UtrechtPageBodyBorder("pageBody");
+        pageBody = new RdPageBodyBorder("pageBody");
         pageLayout.add(pageBody);
 
-        pageFooter = new UtrechtPageFooterBorder("pageFooter");
+        pageFooter = new RdPageFooterBorder("pageFooter");
         pageLayout.add(pageFooter);
 
         String siteTitle = "rotterdam.nl";
@@ -79,7 +79,7 @@ public class RotterdamBasePage extends DocsBasePage {
         // - Root for <html>
         // - Body for <body>
 
-        response.render(UtrechtRootBehavior.CSS);
-        response.render(cssReferenceHeaderItem(UtrechtBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
+        response.render(RdRootBehavior.CSS);
+        response.render(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
     }
 }

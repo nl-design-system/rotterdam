@@ -4,21 +4,21 @@ import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormField;
-import nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory;
-import nl.rotterdam.nl_design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory;
+import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.text_input.RdTextInput;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
@@ -105,14 +105,14 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
     }
 
     private Component newErrorMessageComponent() {
-        return UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel("error", textInput).add(
+        return RdFormFieldErrorMessageFactory.createErrorMessageLabel("error", textInput).add(
             FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior()
         );
     }
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
-            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(RdFormFieldDescriptionBehavior.INSTANCE)
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
     }
 
@@ -127,7 +127,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         super.onInitialize();
         setOutputMarkupId(true);
 
-        add(UtrechtFormFieldBehavior.INSTANCE, RdFormFieldTextInputBehavior.INSTANCE);
+        add(RdFormFieldBehavior.INSTANCE, RdFormFieldTextInputBehavior.INSTANCE);
 
         add(inputComponent, labelComponent, descriptionComponent, errorMessageComponent);
     }
@@ -222,7 +222,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         protected void onInitialize() {
             super.onInitialize();
 
-            add(UtrechtFormLabelBehavior.INSTANCE_DEFAULT);
+            add(RdFormLabelBehavior.INSTANCE_DEFAULT);
         }
 
         @Override

@@ -1,7 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.dialog;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.heading.utrecht.UtrechtHeading;
+import nl.rotterdam.nl_design_system.wicket.components.heading.RdHeading;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconAjaxButtonBorder;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconButtonSize;
@@ -205,7 +205,7 @@ public abstract class RdDialogBorder extends Border {
     }
 
     private @NonNull Component newHeading(RdDialogHeadingLevel headingLevel) {
-        return new UtrechtHeading("title", getDefaultModel(), headingLevel.getLevel());
+        return new RdHeading("title", getDefaultModel(), headingLevel.getLevel());
     }
 
     private @NonNull Component newCloseButton(@NonNull RdDialogHeadingLevel headingLevel) {

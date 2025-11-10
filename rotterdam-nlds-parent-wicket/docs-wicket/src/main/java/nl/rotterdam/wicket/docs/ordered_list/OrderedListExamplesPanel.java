@@ -1,15 +1,14 @@
 package nl.rotterdam.wicket.docs.ordered_list;
 
-import nl.rotterdam.nl_design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.ordered_list.utrecht.UtrechtOrderedListItemBehavior;
+import java.util.List;
+import nl.rotterdam.nl_design_system.wicket.components.ordered_list.RdOrderedListBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.ordered_list.RdOrderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-
-import java.util.List;
 
 public class OrderedListExamplesPanel extends ExamplesPanel {
     public OrderedListExamplesPanel(String id) {
@@ -18,7 +17,7 @@ public class OrderedListExamplesPanel extends ExamplesPanel {
 
     @Override
     public Class<?> getImplementationClass() {
-        return UtrechtOrderedListBehavior.class;
+        return RdOrderedListItemBehavior.class;
     }
 
     @ComponentExample
@@ -30,12 +29,12 @@ public class OrderedListExamplesPanel extends ExamplesPanel {
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new UtrechtOrderedListBehavior()); // TODO should be singleton
+                add(new RdOrderedListBehavior()); // TODO should be singleton
                 add(
                     new ListView<>("listItem", namen) {
                         @Override
                         protected void populateItem(ListItem<String> item) {
-                            item.add(new UtrechtOrderedListItemBehavior()); // TODO: should be singleton
+                            item.add(new RdOrderedListItemBehavior()); // TODO: should be singleton
                             String naam = item.getModelObject();
                             // item.add(naam);
                             item.add(new Label("label", naam));

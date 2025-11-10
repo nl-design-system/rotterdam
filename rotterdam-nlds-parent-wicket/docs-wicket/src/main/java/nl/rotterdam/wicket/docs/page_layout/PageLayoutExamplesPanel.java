@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.page_layout;
 
-import nl.rotterdam.nl_design_system.wicket.components.page_layout.utrecht.UtrechtPageLayoutBorder;
+import nl.rotterdam.nl_design_system.wicket.components.page_layout.RdPageLayoutBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 
@@ -11,12 +11,12 @@ public class PageLayoutExamplesPanel extends ExamplesPanel {
 
     @Override
     public Class<?> getImplementationClass() {
-        return UtrechtPageLayoutBorder.class;
+        return RdPageLayoutBorder.class;
     }
 
     @ComponentExample
-    private static UtrechtPageLayoutBorder examplePageLayout() {
-        return new UtrechtPageLayoutBorder("pageLayout");
+    private static RdPageLayoutBorder examplePageLayout() {
+        return new RdPageLayoutBorder("pageLayout");
     }
 
     @Override
