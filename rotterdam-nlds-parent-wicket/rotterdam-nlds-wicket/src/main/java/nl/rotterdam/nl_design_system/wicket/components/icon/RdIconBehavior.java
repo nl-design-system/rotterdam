@@ -1,23 +1,16 @@
 package nl.rotterdam.nl_design_system.wicket.components.icon;
 
+import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
+
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
+public class RdIconBehavior extends TagNameClassComponentBehavior<RdIconBorder> {
 
-public class RdIconBehavior extends Behavior {
+    public static final RdIconBehavior INSTANCE = new RdIconBehavior();
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
-        RdIconBehavior.class,
-        "@utrecht/icon/dist/index.css"
-    );
-
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
-        super.renderHead(component, response);
-
-        response.render(CSS);
+    private RdIconBehavior() {
+        super("span", RdIconCss.DEFAULT);
+        addHeaderItem(cssReferenceHeaderItem(RdIconBehavior.class, "@utrecht/icon/dist/index.css"));
     }
+
 }
