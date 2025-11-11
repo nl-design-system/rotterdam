@@ -1,6 +1,6 @@
-package nl.rotterdam.nl_design_system.css.wicket;
+package nl.rotterdam.nl_design_system.rotterdam_css.wicket;
 
-import static nl.rotterdam.nl_design_system.css.wicket.NldsRotterdamDesignSystemThemeCssReference.THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM;
+import static nl.rotterdam.nl_design_system.rotterdam_css.wicket.NldsRotterdamDesignSystemThemeCssReference.THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;

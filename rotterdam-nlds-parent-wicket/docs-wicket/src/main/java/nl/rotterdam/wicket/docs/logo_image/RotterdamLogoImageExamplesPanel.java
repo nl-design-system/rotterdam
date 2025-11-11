@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.logo_image;
 
-import nl.rotterdam.nl_design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 

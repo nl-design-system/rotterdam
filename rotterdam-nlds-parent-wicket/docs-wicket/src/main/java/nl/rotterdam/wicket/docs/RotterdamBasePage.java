@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import nl.rotterdam.nl_design_system.wicket.components.body.RdBodyBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.link.RdBookmarkableLink;
 import nl.rotterdam.nl_design_system.wicket.components.logo.RdLogoBorder;
-import nl.rotterdam.nl_design_system.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.nl_design_system.wicket.components.page_body.RdPageBodyBorder;
 import nl.rotterdam.nl_design_system.wicket.components.page_footer.RdPageFooterBorder;
 import nl.rotterdam.nl_design_system.wicket.components.page_header.RdPageHeaderBorder;

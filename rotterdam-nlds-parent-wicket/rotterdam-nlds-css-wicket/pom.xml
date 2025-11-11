@@ -106,7 +106,7 @@
                 <includes>
                     <include>@gemeente-rotterdam/design-tokens/dist/theme.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/css/wicket</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/rotterdam_css/wicket</targetPath>
             </resource>
         </resources>
     </build>
