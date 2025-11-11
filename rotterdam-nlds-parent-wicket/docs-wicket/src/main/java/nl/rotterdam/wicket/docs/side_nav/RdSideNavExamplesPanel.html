@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Side Navigation component</h1>
+        <div>
+          <p>Toont een hiërarchische, verticale navigatie aan de zijkant van een pagina.</p>
+        </div>
+
+        <section data-testid="sideNav">
+          <h2>Side Navigation</h2>
+          <rods-story-canvas>
+            <template>
+              <nav wicket:id="sideNav">
+                <ul wicket:id="sideNavList">
+                  <li wicket:id="sideNavItem">
+                    <a wicket:id="sideNavLink">
+                      <span wicket:id="sideNavLinkIcon"></span>
+                      <span wicket:id="sideNavLinkLabel"></span>
+                      <span wicket:id="sideNavLinkNumberBadge"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

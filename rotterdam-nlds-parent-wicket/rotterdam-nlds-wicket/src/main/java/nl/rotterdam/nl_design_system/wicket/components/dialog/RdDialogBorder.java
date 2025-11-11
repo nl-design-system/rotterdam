@@ -1,10 +1,10 @@
 package nl.rotterdam.nl_design_system.wicket.components.dialog;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.heading.utrecht.UtrechtHeading;
+import nl.rotterdam.nl_design_system.wicket.components.heading.RdHeading;
+import nl.rotterdam.nl_design_system.wicket.components.icon.RdIconBorder;
 import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconAjaxButtonBorder;
-import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconButtonSize;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -74,7 +74,7 @@ public abstract class RdDialogBorder extends Border {
 
         content = newContent();
         heading = newHeading(headingLevel);
-        closeButton = newCloseButton(headingLevel);
+        closeButton = newCloseButton();
     }
 
     /**
@@ -96,7 +96,7 @@ public abstract class RdDialogBorder extends Border {
 
         content = newContent();
         heading = newHeading(headingLevel);
-        closeButton = newCloseButton(headingLevel);
+        closeButton = newCloseButton();
     }
 
     @Override
@@ -205,27 +205,26 @@ public abstract class RdDialogBorder extends Border {
     }
 
     private @NonNull Component newHeading(RdDialogHeadingLevel headingLevel) {
-        return new UtrechtHeading("title", getDefaultModel(), headingLevel.getLevel());
+        return new RdHeading("title", getDefaultModel(), headingLevel.getLevel());
     }
 
-    private @NonNull Component newCloseButton(@NonNull RdDialogHeadingLevel headingLevel) {
+    private @NonNull Component newCloseButton() {
         var closeButton = new RdIconAjaxButtonBorder("closeButton", closeButtonLabelModel) {
             @Override
             protected void onSubmit(AjaxRequestTarget target) {
                 onClose(target);
             }
         };
-        closeButton.setHeadingLevel(switch (headingLevel) {
-            case LEVEL_1 -> RdIconButtonSize.HEADING_1;
-            case LEVEL_2 -> RdIconButtonSize.HEADING_2;
-            case LEVEL_3 -> RdIconButtonSize.HEADING_3;
-            case LEVEL_4 -> RdIconButtonSize.HEADING_4;
-            case LEVEL_5 -> RdIconButtonSize.HEADING_5;
-            case LEVEL_6 -> RdIconButtonSize.HEADING_6;
-        });
-        var icon = new WebMarkupContainer("icon");
-        icon.add(RotterdamIconBehavior.CLOSE);
-        closeButton.add(icon);
+
+        var icon = new RdIconBorder("icon");
+
+        var closeSymbol = new WebMarkupContainer("close");
+        closeSymbol.add(RotterdamIconBehavior.CLOSE);
+
+        closeButton.add(
+            icon.add(closeSymbol)
+        );
+
         return closeButton;
     }
 }

@@ -2,13 +2,17 @@ package nl.rotterdam.wicket.docs.checkbox;
 
 import nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class CheckboxExamplesPanel extends Panel {
-
+public class CheckboxExamplesPanel extends ExamplesPanel {
     public CheckboxExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdCheckbox.class;
     }
 
     @ComponentExample

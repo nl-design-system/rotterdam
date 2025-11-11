@@ -4,16 +4,20 @@ import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamI
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconAjaxButtonBorder;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconButtonBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class IconButtonExamplesPanel extends Panel {
-
+public class IconButtonExamplesPanel extends ExamplesPanel {
     public IconButtonExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdIconButtonBorder.class;
     }
 
     @ComponentExample

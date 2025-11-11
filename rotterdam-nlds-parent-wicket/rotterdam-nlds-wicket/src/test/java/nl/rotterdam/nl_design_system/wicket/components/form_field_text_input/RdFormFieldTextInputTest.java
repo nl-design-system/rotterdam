@@ -1,8 +1,8 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
 
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
 import static nl.rotterdam.nl_design_system.wicket.test_common.CssClassNamesAssertions.assertHasCss;
-import static nl.rotterdam.nl_design_system.wicket.test_common.FormFieldAssertions.verifyUtrechtFormFieldContract;
+import static nl.rotterdam.nl_design_system.wicket.test_common.FormFieldAssertions.verifyFormFieldContract;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
@@ -52,7 +52,7 @@ class RdFormFieldTextInputTest extends NldsWicketTestCase {
 
         String actualHtmlFragment = renderComponentInDivTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualHtmlFragment);
+        verifyFormFieldContract(component, actualHtmlFragment);
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
@@ -71,7 +71,7 @@ class RdFormFieldTextInputTest extends NldsWicketTestCase {
 
         String actualRenderedMarkup = renderComponentInDivTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualRenderedMarkup);
+        verifyFormFieldContract(component, actualRenderedMarkup);
 
         TagTester fieldTag = TagTester.createTagByAttribute(actualRenderedMarkup, "id", "form-field-name");
 

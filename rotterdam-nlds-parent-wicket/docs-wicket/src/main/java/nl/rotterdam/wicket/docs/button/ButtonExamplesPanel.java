@@ -5,14 +5,18 @@ import nl.rotterdam.nl_design_system.wicket.components.button.RdButton;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonHint;
 import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.panel.Panel;
 
-public class ButtonExamplesPanel extends Panel {
-
+public class ButtonExamplesPanel extends ExamplesPanel {
     public ButtonExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdButton.class;
     }
 
     @ComponentExample
@@ -49,20 +53,6 @@ public class ButtonExamplesPanel extends Panel {
     private static RdButton buttonBusy() {
         RdButton component = new RdButton("buttonBusy");
         component.setBusy(true);
-        return component;
-    }
-
-    @ComponentExample
-    private static RdButton buttonToggle() {
-        RdButton component = new RdButton("buttonToggle");
-        component.setPressed(false);
-        return component;
-    }
-
-    @ComponentExample
-    private static RdButton buttonPressed() {
-        RdButton component = new RdButton("buttonPressed");
-        component.setPressed(true);
         return component;
     }
 
@@ -121,8 +111,6 @@ public class ButtonExamplesPanel extends Panel {
         add(formAndAjaxButton());
         add(buttonDisabled());
         add(buttonBusy());
-        add(buttonToggle());
-        add(buttonPressed());
         add(buttonIconStart());
         add(buttonPrimaryAction());
         add(buttonSecondaryAction());

@@ -1,19 +1,23 @@
 package nl.rotterdam.wicket.docs.code_block;
 
-import nl.rotterdam.nl_design_system.wicket.components.code_block.utrecht.UtrechtCodeBlock;
+import nl.rotterdam.nl_design_system.wicket.components.code_block.RdCodeBlock;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class CodeBlockExamplesPanel extends Panel {
-
+public class CodeBlockExamplesPanel extends ExamplesPanel {
     public CodeBlockExamplesPanel(String id) {
         super(id);
     }
 
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdCodeBlock.class;
+    }
+
     @ComponentExample
-    private static UtrechtCodeBlock exampleCodeBlock() {
-        return new UtrechtCodeBlock(
+    private static RdCodeBlock exampleCodeBlock() {
+        return new RdCodeBlock(
             "codeBlock",
             Model.of(
                 """

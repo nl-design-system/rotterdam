@@ -1,19 +1,23 @@
 package nl.rotterdam.wicket.docs.number_badge;
 
-import nl.rotterdam.nl_design_system.wicket.components.number_badge.utrecht.UtrechtNumberBadge;
+import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class NumberBadgeExamplesPanel extends Panel {
-
+public class NumberBadgeExamplesPanel extends ExamplesPanel {
     public NumberBadgeExamplesPanel(String id) {
         super(id);
     }
 
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdNumberBadge.class;
+    }
+
     @ComponentExample
-    private static UtrechtNumberBadge exampleNumberBadge() {
-        return new UtrechtNumberBadge("numberBadge", Model.of("42"));
+    private static RdNumberBadge exampleNumberBadge() {
+        return new RdNumberBadge("numberBadge", Model.of("42"));
     }
 
     @Override

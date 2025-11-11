@@ -1,58 +1,62 @@
 package nl.rotterdam.wicket.docs.alert;
 
-import nl.rotterdam.nl_design_system.wicket.components.alert.utrecht.UtrechtAlert;
-import nl.rotterdam.nl_design_system.wicket.components.alert.utrecht.UtrechtAlertType;
+import nl.rotterdam.nl_design_system.wicket.components.alert.RdAlert;
+import nl.rotterdam.nl_design_system.wicket.components.alert.RdAlertType;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class AlertExamplesPanel extends Panel {
-
+public class AlertExamplesPanel extends ExamplesPanel {
     public AlertExamplesPanel(String id) {
         super(id);
     }
 
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdAlert.class;
+    }
+
     @ComponentExample
-    private static UtrechtAlert exampleAlertError() {
-        return new UtrechtAlert(
+    private static RdAlert exampleAlertError() {
+        return new RdAlert(
             "alertError",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
-            UtrechtAlertType.ERROR
+            RdAlertType.ERROR
         );
     }
 
     @ComponentExample
-    private static UtrechtAlert exampleAlertWarning() {
-        return new UtrechtAlert(
+    private static RdAlert exampleAlertWarning() {
+        return new RdAlert(
             "alertWarning",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
-            UtrechtAlertType.WARNING
+            RdAlertType.WARNING
         );
     }
 
     @ComponentExample
-    private static UtrechtAlert exampleAlertOk() {
-        return new UtrechtAlert(
+    private static RdAlert exampleAlertOk() {
+        return new RdAlert(
             "alertOk",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
-            UtrechtAlertType.OK
+            RdAlertType.OK
         );
     }
 
     @ComponentExample
-    private static UtrechtAlert exampleAlertInfo() {
-        return new UtrechtAlert(
+    private static RdAlert exampleAlertInfo() {
+        return new RdAlert(
             "alertInfo",
             Model.of(
                 "Deze gegevens zijn reeds ingevuld en komen uit Basis Registratie Personen (BRP). Indien deze gegevens niet kloppen, kunt u dit wijzigen in het BRP."
             ),
-            UtrechtAlertType.INFO
+            RdAlertType.INFO
         );
     }
 

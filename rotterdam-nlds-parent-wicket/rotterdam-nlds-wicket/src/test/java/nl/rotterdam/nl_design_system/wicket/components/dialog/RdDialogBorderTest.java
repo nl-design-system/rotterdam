@@ -71,7 +71,10 @@ class RdDialogBorderTest extends NldsWicketTestCase {
                 <div id="content1">
                     <header class="ams-dialog__header">
                         <h%s class="utrecht-heading-%s">Title</h%s>
-                        <button name="dialog:content:closeButton" id="closeButton3" class="ams-icon-button"><span class="ams-visually-hidden">Close</span><span class="ams-icon ams-icon--square ams-icon--heading-%s"><rods-icon-close></rods-icon-close></span></button>
+                        <button name="dialog:content:closeButton" id="closeButton3" class="ams-icon-button"><span class="ams-visually-hidden">Close</span>
+                            <div>
+                                <span class="utrecht-icon"> <rods-icon-close></rods-icon-close> </span>
+                            </div></button>
                     </header>
                     <div class="ams-dialog__body">Content</div>
                     <footer class="ams-dialog__footer">
@@ -79,7 +82,7 @@ class RdDialogBorderTest extends NldsWicketTestCase {
                     </footer>
                 </div>
             </dialog>"""
-            .formatted(levelAsNumber, levelAsNumber, levelAsNumber, levelAsNumber);
+            .formatted(levelAsNumber, levelAsNumber, levelAsNumber);
 
         String actualHtmlFragment = ComponentRenderer.renderComponent(dialog).toString();
 
@@ -111,7 +114,10 @@ class RdDialogBorderTest extends NldsWicketTestCase {
                 <div id="content1">
                     <header class="ams-dialog__header">
                         <h1 class="utrecht-heading-1">Title</h1>
-                        <button name="dialog:content:closeButton" id="closeButton3" class="ams-icon-button"><span class="ams-visually-hidden">Close button label</span><span class="ams-icon ams-icon--square ams-icon--heading-1"><rods-icon-close></rods-icon-close></span></button>
+                        <button name="dialog:content:closeButton" id="closeButton3" class="ams-icon-button"><span class="ams-visually-hidden">Close button label</span>
+                            <div>
+                                <span class="utrecht-icon"> <rods-icon-close></rods-icon-close> </span>
+                            </div></button>
                     </header>
                     <div class="ams-dialog__body">Content</div>
                     <footer class="ams-dialog__footer">

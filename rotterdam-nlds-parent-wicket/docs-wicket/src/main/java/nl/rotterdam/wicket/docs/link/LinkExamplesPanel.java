@@ -1,26 +1,31 @@
 package nl.rotterdam.wicket.docs.link;
 
-import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtBookmarkableLink;
-import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtExternalLink;
-import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtLink;
-import nl.rotterdam.nl_design_system.wicket.components.link.utrecht.UtrechtLinkBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdBookmarkableLink;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdExternalLink;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdLink;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdLinkBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ComponentsPage;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class LinkExamplesPanel extends Panel {
+public class LinkExamplesPanel extends ExamplesPanel {
 
     public LinkExamplesPanel(String id) {
         super(id);
     }
 
+    @Override
+    public Class<?> getImplementationClass() {
+        return Link.class;
+    }
+
     @ComponentExample
-    private static Component exampleLinkLabel() {
+    private static Component exampleStandardLinkLabel() {
         // Vanilla Apache Wicket implementation, for reference
         return new Link<Void>("standardLink") {
             @Override
@@ -31,38 +36,38 @@ public class LinkExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleLinkExternal() {
+    private static Component exampleStandardLinkExternal() {
         // Vanilla Apache Wicket implementation, for reference
         return new ExternalLink("standardLinkExternal", "https://example.com/", "example.com");
     }
 
     @ComponentExample
-    private static Component exampleUtrechtLink() {
-        return new UtrechtLink<>("link", Model.of("Homepage"), ComponentsPage.class);
+    private static Component exampleLink() {
+        return new RdLink<>("link", Model.of("Homepage"), ComponentsPage.class);
     }
 
     @ComponentExample
-    private static Component exampleUtrechtBookmarkableLink() {
-        return new UtrechtBookmarkableLink<>("bookmarkableLink", MijnLoketPage.class);
+    private static Component exampleBookmarkableLink() {
+        return new RdBookmarkableLink<>("bookmarkableLink", MijnLoketPage.class);
     }
 
     @ComponentExample
-    private static Component exampleUtrechtBookmarkableLinkCurrent() {
-        return new UtrechtBookmarkableLink<>("bookmarkableLinkCurrent", ComponentsPage.class);
+    private static Component exampleBookmarkableLinkCurrent() {
+        return new RdBookmarkableLink<>("bookmarkableLinkCurrent", ComponentsPage.class);
     }
 
     @ComponentExample
-    private static Component exampleUtrechtLinkExternal() {
-        return new UtrechtExternalLink("linkExternal", "https://example.com", "example.com");
+    private static Component exampleLinkExternal() {
+        return new RdExternalLink("linkExternal", "https://example.com", "example.com");
     }
 
     @ComponentExample
-    private static Component exampleUtrechtLinkBehavior() {
+    private static Component exampleLinkBehavior() {
         return new Link<>("linkBehavior", Model.of("Homepage")) {
             @Override
             public void onInitialize() {
                 super.onInitialize();
-                add(new UtrechtLinkBehavior());
+                add(new RdLinkBehavior());
             }
 
             @Override
@@ -73,20 +78,20 @@ public class LinkExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleUtrechtLinkExternalBehavior() {
+    private static Component exampleLinkExternalBehavior() {
         return new ExternalLink("linkExternalBehavior", "https://example.com/", "example.com") {
             @Override
             public void onInitialize() {
                 super.onInitialize();
-                add(new UtrechtLinkBehavior());
+                add(new RdLinkBehavior());
             }
         };
     }
 
     @ComponentExample
-    private static Component exampleUtrechtLinkPlaceholder() {
+    private static Component exampleLinkPlaceholder() {
         // `setDisabled()` is default functionality on `Link`
-        UtrechtLink<String, ComponentsPage> link = new UtrechtLink<>(
+        RdLink<String, ComponentsPage> link = new RdLink<>(
             "linkPlaceholder",
             Model.of("Homepage"),
             ComponentsPage.class
@@ -97,9 +102,9 @@ public class LinkExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleUtrechtLinkExternalPlaceholder() {
+    private static Component exampleLinkExternalPlaceholder() {
         // `setDisabled()` is default functionality on `Link`
-        UtrechtExternalLink link = new UtrechtExternalLink(
+        RdExternalLink link = new RdExternalLink(
             "linkExternalPlaceholder",
             "https://example.com/",
             "example.com"
@@ -110,9 +115,9 @@ public class LinkExamplesPanel extends Panel {
     }
 
     @ComponentExample
-    private static Component exampleUtrechtBookmarkableLinkPlaceholder() {
+    private static Component exampleBookmarkableLinkPlaceholder() {
         // `setDisabled()` is default functionality on `Link`
-        UtrechtBookmarkableLink<?> link = new UtrechtBookmarkableLink<>(
+        RdBookmarkableLink<?> link = new RdBookmarkableLink<>(
             "bookmarkableLinkPlaceholder",
             ComponentsPage.class
         );
@@ -125,16 +130,16 @@ public class LinkExamplesPanel extends Panel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(exampleLinkLabel());
+        add(exampleStandardLinkLabel());
+        add(exampleStandardLinkExternal());
+        add(exampleLink());
+        add(exampleBookmarkableLink());
+        add(exampleBookmarkableLinkCurrent());
         add(exampleLinkExternal());
-        add(exampleUtrechtLink());
-        add(exampleUtrechtBookmarkableLink());
-        add(exampleUtrechtBookmarkableLinkCurrent());
-        add(exampleUtrechtLinkExternal());
-        add(exampleUtrechtLinkBehavior());
-        add(exampleUtrechtLinkExternalBehavior());
-        add(exampleUtrechtLinkPlaceholder());
-        add(exampleUtrechtLinkExternalPlaceholder());
-        add(exampleUtrechtBookmarkableLinkPlaceholder());
+        add(exampleLinkBehavior());
+        add(exampleLinkExternalBehavior());
+        add(exampleLinkPlaceholder());
+        add(exampleLinkExternalPlaceholder());
+        add(exampleBookmarkableLinkPlaceholder());
     }
 }

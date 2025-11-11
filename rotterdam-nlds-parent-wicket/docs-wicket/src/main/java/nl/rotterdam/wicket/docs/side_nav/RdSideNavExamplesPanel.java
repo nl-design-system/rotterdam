@@ -1,0 +1,118 @@
+package nl.rotterdam.wicket.docs.side_nav;
+
+import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
+
+import java.util.List;
+import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
+import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
+import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavItemBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavLink;
+import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
+import nl.rotterdam.wicket.docs.ComponentExample;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
+import nl.rotterdam.wicket.docs.RotterdamPlaceholderPage;
+import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
+
+public class RdSideNavExamplesPanel extends ExamplesPanel {
+
+    public RdSideNavExamplesPanel(String id) {
+        super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdSideNavPanel.class;
+    }
+
+    @ComponentExample
+    private static Component exampleSideNav() {
+        List<SideNavRecord<?>> links = List.of(
+            new SideNavRecord<>(RotterdamIconType.OVERVIEW, "Overzicht", MijnLoketPage.class, 0, ""),
+            new SideNavRecord<>(
+                RotterdamIconType.INBOX,
+                "Mijn berichten",
+                RotterdamPlaceholderPage.class,
+                2,
+                "2 nieuwe berichten"
+            ),
+            new SideNavRecord<>(RotterdamIconType.BOX, "Mijn lopende zaken", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.SUMMARY, "Zelf regelen", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.COINS, "Belastingen", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.MONEY_2, "Werk & Inkomen", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.PARKING, "Parkeren", RotterdamPlaceholderPage.class, 0, ""),
+            new SideNavRecord<>(RotterdamIconType.USER, "Mijn gegevens", RotterdamPlaceholderPage.class, 0, "")
+        );
+
+        return new WebMarkupContainer("sideNav") {
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
+                add(new RdSideNavBehavior());
+
+                add(
+                    new WebMarkupContainer("sideNavList") {
+                        @Override
+                        protected void onInitialize() {
+                            super.onInitialize();
+
+                            add(SIDE_NAV_LIST_BEHAVIOR);
+                            add(
+                                new ListView<>("sideNavItem", links) {
+                                    @Override
+                                    protected void populateItem(ListItem<SideNavRecord<?>> item) {
+                                        item.add(new RdSideNavItemBehavior()); // TODO: should be singleton
+                                        SideNavRecord<?> record = item.getModelObject();
+                                        String naam = record.label();
+
+                                        // TODO: How do I type this?
+                                        @SuppressWarnings({ "rawtypes", "unchecked" })
+                                        RdSideNavLink<?> link = new RdSideNavLink(
+                                            "sideNavLink",
+                                            record.target()
+                                        );
+
+                                        // Optionally add an icon
+                                        if (record.icon() != null) {
+                                            WebMarkupContainer icon = new WebMarkupContainer("sideNavLinkIcon");
+                                            icon.add(new RotterdamIconBehavior(record.icon()));
+                                            link.add(icon);
+                                        } else {
+                                            link.add(new Label("sideNavLinkIcon", ""));
+                                        }
+
+                                        // Add the link text
+                                        link.add(new Label("sideNavLinkLabel", naam));
+
+                                        // Optionally add a number badge
+                                        RdNumberBadge numberBadge = new RdNumberBadge(
+                                            "sideNavLinkNumberBadge",
+                                            record.numberBadge()
+                                        );
+                                        numberBadge.setVisible(record.numberBadge() >= 1);
+                                        link.add(numberBadge);
+
+                                        item.add(link);
+                                    }
+                                }
+                            );
+                        }
+                    }
+                );
+            }
+        };
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        add(exampleSideNav());
+    }
+}

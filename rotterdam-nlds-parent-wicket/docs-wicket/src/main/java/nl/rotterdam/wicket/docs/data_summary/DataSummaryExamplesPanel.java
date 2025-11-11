@@ -1,17 +1,22 @@
 package nl.rotterdam.wicket.docs.data_summary;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.RdDataSummary;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.SummaryItem;
 import nl.rotterdam.nl_design_system.wicket.components.data_summary.SummaryItemValue;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.util.ListModel;
 
-public class DataSummaryExamplesPanel extends Panel {
+import java.util.List;
 
+public class DataSummaryExamplesPanel extends ExamplesPanel {
     public DataSummaryExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdDataSummary.class;
     }
 
     @ComponentExample

@@ -2,13 +2,17 @@ package nl.rotterdam.wicket.docs.text_input;
 
 import nl.rotterdam.nl_design_system.wicket.components.text_input.RdTextInput;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.model.Model;
 
-public class TextInputExamplesPanel extends Panel {
-
+public class TextInputExamplesPanel extends ExamplesPanel {
     public TextInputExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdTextInput.class;
     }
 
     @ComponentExample

@@ -3,12 +3,16 @@ package nl.rotterdam.wicket.docs.action_group;
 import nl.rotterdam.nl_design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdButton;
 import nl.rotterdam.wicket.docs.ComponentExample;
-import org.apache.wicket.markup.html.panel.Panel;
+import nl.rotterdam.wicket.docs.ExamplesPanel;
 
-public class ActionGroupExamplesPanel extends Panel {
-
+public class ActionGroupExamplesPanel extends ExamplesPanel {
     public ActionGroupExamplesPanel(String id) {
         super(id);
+    }
+
+    @Override
+    public Class<?> getImplementationClass() {
+        return RdActionGroup.class;
     }
 
     @ComponentExample
