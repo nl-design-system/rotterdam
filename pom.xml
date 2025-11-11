@@ -143,7 +143,7 @@
                         <phase>generate-resources</phase>
                         <configuration>
                             <!-- Pass contents of package.json "scripts"/"build" script.
-                            Cannot use 'pnm run build', as pnpm calling pnpm is not supported from Maven. -->
+                            Cannot use 'pnpm run build', as pnpm calling pnpm is not supported from Maven. -->
                             <arguments>pnpm --recursive run build</arguments>
                         </configuration>
                     </execution>
