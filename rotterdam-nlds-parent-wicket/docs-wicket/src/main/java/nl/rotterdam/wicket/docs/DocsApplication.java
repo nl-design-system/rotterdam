@@ -1,5 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
+import de.agilecoders.wicket.webjars.WicketWebjars;
 import nl.rotterdam.nl_design_system.wicket.html.WicketElementDisplayContentsHeaderContributor;
 import nl.rotterdam.wicket.docs.mijn_loket_page.MijnLoketPage;
 import nl.rotterdam.wicket.docs.sso_login_page.SingleSignOnLoginPage;
@@ -15,13 +16,15 @@ public class DocsApplication extends WebApplication {
     public void init() {
         super.init();
 
+        WicketWebjars.install(this);
+
         // Avoid <wicket:panel> in the output HTML
         getMarkupSettings().setStripWicketTags(true);
         if (usesDevelopmentConfig()) {
             getHeaderContributorListeners().add(WicketElementDisplayContentsHeaderContributor.INSTANCE);
         }
 
-        // Configure our own fance error page
+        // Configure our own fancy error page
         getExceptionSettings().setUnexpectedExceptionDisplay(ExceptionSettings.SHOW_EXCEPTION_PAGE);
 
         /*

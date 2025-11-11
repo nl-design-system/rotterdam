@@ -1,9 +1,6 @@
 package nl.rotterdam.wicket.docs;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.ArrayList;
-import java.util.List;
+import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.IReferenceHeaderItem;
@@ -12,10 +9,14 @@ import org.apache.wicket.markup.head.filter.JavaScriptFilteredIntoFooterHeaderRe
 import org.apache.wicket.markup.html.IHeaderResponseDecorator;
 import org.apache.wicket.request.resource.PackageResource;
 import org.apache.wicket.request.resource.ResourceReference;
-import org.apache.wicket.util.tester.WicketTestCase;
 import org.junit.jupiter.api.Test;
 
-class ComponentsPageTest extends WicketTestCase {
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class ComponentsPageTest extends NldsWicketTestCase {
 
     @Test
     void pageRenders() {

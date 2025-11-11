@@ -1,6 +1,8 @@
 package nl.rotterdam.nl_design_system.wicket.components.link_list;
 
-import java.io.Serializable;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
+import org.apache.wicket.behavior.Behavior;
 
-public record RdLinkListRecord<C>(RotterdamIconType icon, String label, Class<C> target) implements Serializable {}
+import java.io.Serializable;
+import java.util.function.Supplier;
+
+public record RdLinkListRecord<C>(Supplier<Behavior> iconBehaviorSupplier, String label, Class<C> target) implements Serializable {}

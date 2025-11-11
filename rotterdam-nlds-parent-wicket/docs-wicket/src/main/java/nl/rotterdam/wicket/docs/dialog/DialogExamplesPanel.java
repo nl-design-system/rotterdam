@@ -1,15 +1,19 @@
 package nl.rotterdam.wicket.docs.dialog;
 
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
 import nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogHeadingLevel;
 import nl.rotterdam.wicket.docs.ComponentExample;
 import nl.rotterdam.wicket.docs.ExamplesPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
 import org.jspecify.annotations.NonNull;
 
 import static nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance.PRIMARY_ACTION;
@@ -116,7 +120,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
 
     private abstract static class RdDialogBorder extends nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogBorder {
         public RdDialogBorder(String id, IModel<?> titleModel, RdDialogHeadingLevel headingLevel) {
-            super(id, titleModel, headingLevel);
+            super(id, titleModel, (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.CLOSE), headingLevel);
         }
     }
 }

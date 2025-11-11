@@ -1,14 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.link_list;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListBehavior.LINK_LIST_BEHAVIOR;
-
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
@@ -16,14 +9,24 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
+import java.util.List;
+import java.util.function.Supplier;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+import static nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListBehavior.LINK_LIST_BEHAVIOR;
+
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdLinkListPanel extends Panel {
 
     public final List<RdLinkListRecord<? extends IRequestablePage>> links;
+    private final Supplier<Behavior> defautlIconBehaviorSupplier;
 
-    public RdLinkListPanel(String id, List<RdLinkListRecord<? extends IRequestablePage>> links) {
+    public RdLinkListPanel(String id, List<RdLinkListRecord<? extends IRequestablePage>> links, Supplier<Behavior> defautlIconBehaviorSupplier) {
         super(id);
         this.links = links;
+        this.defautlIconBehaviorSupplier = defautlIconBehaviorSupplier;
     }
 
     @Override
@@ -46,9 +49,8 @@ public class RdLinkListPanel extends Panel {
                             ) {
                                 item.add(new RdLinkListItemBehavior()); // TODO: should be singleton
                                 RdLinkListRecord<? extends IRequestablePage> record = item.getModelObject();
-                                String naam = record.label();
+                                var label = record.label();
 
-                                // TODO: How do I type this?
                                 @SuppressWarnings({ "rawtypes", "unchecked" })
                                 RdLinkListLink<?> link = new RdLinkListLink(
                                     "linkListLink",
@@ -56,18 +58,16 @@ public class RdLinkListPanel extends Panel {
                                 );
 
                                 // Optionally add an icon
-                                if (record.icon() != null) {
-                                    WebMarkupContainer icon = new WebMarkupContainer("linkListLinkIcon");
-                                    icon.add(new RotterdamIconBehavior(record.icon()));
-                                    link.add(icon);
+                                WebMarkupContainer icon = new WebMarkupContainer("linkListLinkIcon");
+                                link.add(icon);
+                                if (record.iconBehaviorSupplier() != null) {
+                                    icon.add(record.iconBehaviorSupplier().get());
                                 } else {
-                                    WebMarkupContainer icon = new WebMarkupContainer("linkListLinkIcon");
-                                    icon.add(new RotterdamIconBehavior(RotterdamIconType.CHEVRON_RIGHT));
-                                    link.add(icon);
+                                    icon.add(defautlIconBehaviorSupplier.get());
                                 }
 
                                 // Add the link text
-                                link.add(new Label("linkListLinkLabel", naam));
+                                link.add(new Label("linkListLinkLabel", label));
 
                                 item.add(link);
                             }

@@ -1,10 +1,7 @@
 package nl.rotterdam.wicket.docs.side_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
-
-import java.util.List;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavItemBehavior;
@@ -19,6 +16,10 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
 
 public class RdSideNavExamplesPanel extends ExamplesPanel {
 
@@ -71,7 +72,6 @@ public class RdSideNavExamplesPanel extends ExamplesPanel {
                                         SideNavRecord<?> record = item.getModelObject();
                                         String naam = record.label();
 
-                                        // TODO: How do I type this?
                                         @SuppressWarnings({ "rawtypes", "unchecked" })
                                         RdSideNavLink<?> link = new RdSideNavLink(
                                             "sideNavLink",

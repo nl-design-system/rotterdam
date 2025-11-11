@@ -519,6 +519,12 @@ importers:
         specifier: workspace:*
         version: link:../../proprietary/design-tokens
 
+  rotterdam-nlds-parent-wicket/rotterdam-nlds-extensions-wicket:
+    devDependencies:
+      '@gemeente-rotterdam/web-components-stencil':
+        specifier: workspace:*
+        version: link:../../packages/web-components-stencil
+
   rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket:
     devDependencies:
       '@amsterdam/design-system-css':

@@ -1,15 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavItemBehavior.BREADCRUMB_NAV_ITEM_BEHAVIOR;
-import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavListBehavior.BREADCRUMB_NAV_LIST_BEHAVIOR;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
-import java.util.List;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -17,6 +8,14 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavItemBehavior.BREADCRUMB_NAV_ITEM_BEHAVIOR;
+import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavListBehavior.BREADCRUMB_NAV_LIST_BEHAVIOR;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdBreadcrumbNavPanel extends Panel {
@@ -34,9 +33,8 @@ public class RdBreadcrumbNavPanel extends Panel {
             protected void populateItem(ListItem<RdBreadcrumbNavRecord<? extends IRequestablePage>> item) {
                 item.add(BREADCRUMB_NAV_ITEM_BEHAVIOR);
                 RdBreadcrumbNavRecord<? extends IRequestablePage> record = item.getModelObject();
-                String naam = record.label();
+                var label = record.label();
 
-                // TODO: How do I type this?
                 @SuppressWarnings({ "rawtypes", "unchecked" })
                 RdBreadcrumbNavLink<?> link = new RdBreadcrumbNavLink(
                     "breadcrumbNavLink",
@@ -44,16 +42,16 @@ public class RdBreadcrumbNavPanel extends Panel {
                 );
 
                 // Optionally add an icon
-                if (record.icon() != null) {
-                    WebMarkupContainer icon = new WebMarkupContainer("breadcrumbNavLinkIcon");
-                    icon.add(new RotterdamIconBehavior(record.icon()));
-                    link.add(icon);
+                WebMarkupContainer icon = new WebMarkupContainer("breadcrumbNavLinkIcon");
+                link.add(icon);
+                if (record.iconBehaviorSupplier() != null) {
+                    icon.add(record.iconBehaviorSupplier().get());
                 } else {
-                    link.add(new Label("breadcrumbNavLinkIcon", ""));
+                    icon.setVisible(false);
                 }
 
                 // Add the link text
-                link.add(new Label("breadcrumbNavLinkLabel", naam));
+                link.add(new Label("breadcrumbNavLinkLabel", label));
 
                 item.add(link);
             }

@@ -1,13 +1,9 @@
 package nl.rotterdam.wicket.docs;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_logo.RotterdamLogoImage;
 import nl.rotterdam.nl_design_system.wicket.components.body.RdBodyBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.link.RdBookmarkableLink;
 import nl.rotterdam.nl_design_system.wicket.components.logo.RdLogoBorder;
-import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.logo_image.rotterdam.RotterdamLogoImage;
 import nl.rotterdam.nl_design_system.wicket.components.page_body.RdPageBodyBorder;
 import nl.rotterdam.nl_design_system.wicket.components.page_footer.RdPageFooterBorder;
 import nl.rotterdam.nl_design_system.wicket.components.page_header.RdPageHeaderBorder;
@@ -16,6 +12,11 @@ import nl.rotterdam.nl_design_system.wicket.components.root.RdRootBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 public class RotterdamBasePage extends DocsBasePage {
 

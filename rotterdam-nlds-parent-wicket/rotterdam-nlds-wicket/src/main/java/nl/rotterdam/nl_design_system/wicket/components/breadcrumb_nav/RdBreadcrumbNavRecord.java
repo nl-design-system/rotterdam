@@ -1,7 +1,9 @@
 package nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
 
-import java.io.Serializable;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
+import org.apache.wicket.behavior.Behavior;
 
-public record RdBreadcrumbNavRecord<C>(RotterdamIconType icon, String label, Class<C> target) implements
+import java.io.Serializable;
+import java.util.function.Supplier;
+
+public record RdBreadcrumbNavRecord<C>(Supplier<Behavior> iconBehaviorSupplier, String label, Class<C> target) implements
     Serializable {}
