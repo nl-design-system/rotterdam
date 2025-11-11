@@ -1,0 +1,112 @@
+name: Publish Java artifacts to Maven Central (Sonatype)
+
+on:
+  push:
+    tags:
+      - 'java-*'   # bijv. java-0.1.0, java-0.1.0-alpha
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'Dry run (no upload to Maven Central)?'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    env:
+      # Sonatype credentials (via repo secrets)
+      CENTRAL_SONATYPE_USERNAME: ${{ secrets.CENTRAL_SONATYPE_USERNAME }}
+      CENTRAL_SONATYPE_PASSWORD: ${{ secrets.CENTRAL_SONATYPE_PASSWORD }}
+      # GPG passphrase voor maven-gpg-plugin
+      MAVEN_GPG_PASSPHRASE: ${{ secrets.CENTRAL_SONATYPE_GPG_PASSPHRASE }}
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure Maven Wrapper is executable
+        run: chmod +x mvnw
+
+      - name: Set up Java 21 for Sonatype Central
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+          server-id: central-sonatype
+          server-username: CENTRAL_SONATYPE_USERNAME
+          server-password: CENTRAL_SONATYPE_PASSWORD
+
+          gpg-private-key: ${{ secrets.CENTRAL_SONATYPE_GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.CENTRAL_SONATYPE_GPG_PASSPHRASE }}
+
+      - name: Determine dry-run flag
+        id: dryrun
+        run: |
+          # Default: dry-run=false for tag builds, true/false for manual trigger
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            DRY_RUN_INPUT="${{ github.event.inputs.dry-run }}"
+          else
+            # bij tag push: altijd real release
+            DRY_RUN_INPUT="false"
+          fi
+
+          echo "dry-run input: $DRY_RUN_INPUT"
+
+          if [ "$DRY_RUN_INPUT" = "true" ]; then
+            echo "MAVEN_DRY_RUN=-DcentralDryRun=true" >> $GITHUB_OUTPUT
+          else
+            echo "MAVEN_DRY_RUN=" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+      - name: Check tag vs POM version (only for tag builds)
+        if: startsWith(github.ref, 'refs/tags/java-')
+        run: |
+          TAG_NAME="${GITHUB_REF_NAME}"           # bijv. java-0.1.0
+          VERSION_FROM_TAG="${TAG_NAME#java-}"    # strip "java-"
+
+          VERSION_FROM_POM=$(./mvnw -q \
+            -DforceStdout \
+            -Dexpression=project.version \
+            -DinteractiveMode=false \
+            help:evaluate)
+
+          echo "Tag version:  ${VERSION_FROM_TAG}"
+          echo "POM version:  ${VERSION_FROM_POM}"
+
+          if [ "$VERSION_FROM_TAG" != "$VERSION_FROM_POM" ]; then
+            echo "ERROR: tag version and POM version differ"
+            exit 1
+          fi
+        shell: bash
+
+      - name: Fail if version is SNAPSHOT
+        run: |
+          VERSION_FROM_POM=$(./mvnw -q \
+            -DforceStdout \
+            -Dexpression=project.version \
+            -DinteractiveMode=false \
+            help:evaluate)
+
+          echo "POM version: ${VERSION_FROM_POM}"
+
+          if echo "$VERSION_FROM_POM" | grep -q 'SNAPSHOT'; then
+            echo "ERROR: SNAPSHOT versions may not be deployed to Maven Central"
+            exit 1
+          fi
+        shell: bash
+
+      - name: Publish to Maven Central (Sonatype)
+        run: ./mvnw -B -DskipTests -Pcentral-sonatype-release ${{ steps.dryrun.outputs.MAVEN_DRY_RUN }} deploy

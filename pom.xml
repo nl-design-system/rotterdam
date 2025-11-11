@@ -56,7 +56,6 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central-sonatype</publishingServerId>
-                            <!-- Optioneel, maar handig voor CI: -->
                             <autoPublish>true</autoPublish>
                             <waitUntil>published</waitUntil>
                         </configuration>
