@@ -12,7 +12,6 @@ import org.apache.wicket.model.IModel;
 /**
  * Een label voor een formulier element.
  * Wordt nog niet overal gebruikt.
- * <p/>
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdFormLabel extends Panel {
