@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.css.wicket;
+package nl.rotterdam.nl_design_system.rotterdam_css.wicket;
 
 import static nl.rotterdam.nl_design_system.wicket.test_common.WicketAssertions.assertHeaderItemExists;
 
