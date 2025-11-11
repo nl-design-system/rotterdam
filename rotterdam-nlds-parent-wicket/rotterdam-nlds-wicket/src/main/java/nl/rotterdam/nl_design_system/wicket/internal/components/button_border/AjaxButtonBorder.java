@@ -30,7 +30,7 @@ import org.apache.wicket.model.IModel;
  *     <li>There is no additional warning about this border when Wicket detects a component cycle.</li>
  * </ul>
  * <p>
- * The markup for this button must use <code>&lt;wicket:border&gt</code> (and <code>&lt;wicket:body&gt</code>) just like
+ * The markup for this button must use <code>&lt;wicket:border&gt;</code> (and <code>&lt;wicket:body&gt;</code>) just like
  * <code>Border</code>.
  * </p>
  * <p>

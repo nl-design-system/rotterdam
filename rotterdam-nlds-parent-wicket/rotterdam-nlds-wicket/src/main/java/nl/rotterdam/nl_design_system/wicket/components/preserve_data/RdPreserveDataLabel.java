@@ -14,7 +14,7 @@ import org.apache.wicket.model.IModel;
 /**
  *  Mark the given model to be preserved and show it 'as is'.
  *  Example:
- *  <bdi translate="no" class="utrecht-preserve-data" wicket:id="name">Van Bergenhenegouwen</bdi>
+ * {@code <bdi translate="no" class="utrecht-preserve-data" wicket:id="name">Van Bergenhenegouwen</bdi>}
  */
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
