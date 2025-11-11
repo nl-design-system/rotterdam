@@ -2,7 +2,7 @@ package nl.rotterdam.wicket.docs;
 
 import static nl.rotterdam.wicket.docs.css.NldsVoorbeeldGemeenteThemeCssReference.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
 
-import nl.rotterdam.nl_design_system.css.wicket.ActivateNldsRotterdamDesignSystemThemeBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_css.wicket.ActivateNldsRotterdamDesignSystemThemeBehavior;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
