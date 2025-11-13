@@ -10,6 +10,8 @@
     </parent>
 
     <artifactId>docs-wicket</artifactId>
+    <name>Documentation for NL Design System Wicket implementation</name>
+    <description>Examples to use the components in Wicket. Search for &lt;component&gt;ExamplesPanel to find examples.</description>
 
     <packaging>war</packaging>
 
@@ -74,6 +76,14 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <!-- not deploying docs-wicket war; if you want to run, clone the git repo. -->
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
