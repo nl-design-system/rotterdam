@@ -157,6 +157,10 @@ Icons can also be found in this package as they are made available as a webcompo
 
 For all components a React component rendering a webcomponent is convenient for Rotterdam Design System. Use when a React-webcomponent does not already exist in the NL Design System ecosystem a wrapper can be built around an existing CSS component from the community or `web-components-stencil`.
 
+#### Wicket components
+
+Wicket components are released to Maven Central. SNAPSHOTS are not published.
+
 ### Proprietary packages
 
 The open source license does NOT apply to files in this directory. These are proprietary assets to Rotterdam and can only be used by people who have permission to do so.
