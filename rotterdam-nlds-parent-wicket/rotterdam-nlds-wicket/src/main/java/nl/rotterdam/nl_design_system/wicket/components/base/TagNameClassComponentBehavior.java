@@ -72,6 +72,8 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
 
     /**
      * Add dynamic classes based on the state of the component.
+     * @param component currently being in rendering of componentTag
+     * @param tag the html tag representation
      */
     protected List<CssClassNames> customizeComponentAndReturnClasses(T component, ComponentTag tag) {
         return List.of();

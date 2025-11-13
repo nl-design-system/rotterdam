@@ -13,7 +13,7 @@ class RdButtonBehavior extends TagNameClassComponentBehavior<Button> {
         "@utrecht/button-css/dist/index.css"
     );
 
-    public static final RdButtonBehavior INSTANCE = new RdButtonBehavior();
+    static final RdButtonBehavior INSTANCE = new RdButtonBehavior();
 
     private RdButtonBehavior() {
         super("button", RdButtonCss.DEFAULT);

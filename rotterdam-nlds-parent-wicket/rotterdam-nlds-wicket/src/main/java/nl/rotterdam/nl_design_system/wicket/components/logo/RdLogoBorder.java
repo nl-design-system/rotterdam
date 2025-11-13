@@ -7,9 +7,16 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Co
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
+/**
+ * <a href="https://nldesignsystem.nl/logo/">NL Design System Logo component</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdLogoBorder extends Border {
 
+    /**
+     * Creates instance
+     * @param id Wicket Id
+     */
     public RdLogoBorder(String id) {
         super(id);
         add(RdLogoBehavior.INSTANCE);

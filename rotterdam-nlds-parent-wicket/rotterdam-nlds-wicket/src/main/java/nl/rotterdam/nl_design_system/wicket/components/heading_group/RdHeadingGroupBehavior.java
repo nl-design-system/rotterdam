@@ -4,7 +4,14 @@ import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponen
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
+/**
+ * @see RdHeadingGroupBorder
+ */
 public class RdHeadingGroupBehavior extends TagNameClassComponentBehavior<RdHeadingGroupBorder> {
+
+    /**
+     * Singleton instance.
+     */
     public static final RdHeadingGroupBehavior INSTANCE = new RdHeadingGroupBehavior();
 
     private RdHeadingGroupBehavior() {

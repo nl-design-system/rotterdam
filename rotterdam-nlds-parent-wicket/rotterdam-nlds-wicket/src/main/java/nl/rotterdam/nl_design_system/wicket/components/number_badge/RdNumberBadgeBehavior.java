@@ -8,9 +8,13 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
-public class RdNumberBadgeBehavior extends Behavior {
+/**
+ * @see RdNumberBadge
+ * TODO refactor to extend {@link nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior}
+ */
+class RdNumberBadgeBehavior extends Behavior {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdNumberBadgeBehavior.class,
         "@utrecht/number-badge-css/dist/index.css"
     );

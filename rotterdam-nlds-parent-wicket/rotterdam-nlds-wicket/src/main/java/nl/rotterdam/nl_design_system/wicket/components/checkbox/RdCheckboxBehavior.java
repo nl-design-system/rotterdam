@@ -19,6 +19,9 @@ import org.apache.wicket.markup.html.form.CheckBox;
  */
 public class RdCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
 
+    /**
+     * Singleton instance.
+     */
     public static final RdCheckboxBehavior INSTANCE = new RdCheckboxBehavior();
 
     private RdCheckboxBehavior() {

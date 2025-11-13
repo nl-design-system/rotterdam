@@ -9,10 +9,14 @@ import org.apache.wicket.Page;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
+/**
+ * <a href="https://nldesignsystem.nl/link/">Link</a>for bookmarkable pages.
+ * @param <T> the page class.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdBookmarkableLink<T> extends BookmarkablePageLink<T> {
 
-    public boolean placeholder = false;
+    private boolean placeholder = false;
 
     public <C extends Page> RdBookmarkableLink(String id, Class<C> pageClass) {
         super(id, pageClass);
@@ -22,7 +26,7 @@ public class RdBookmarkableLink<T> extends BookmarkablePageLink<T> {
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(new RdLinkBehavior());
+        add(RdLinkBehavior.INSTANCE);
     }
 
     @Override
@@ -49,7 +53,11 @@ public class RdBookmarkableLink<T> extends BookmarkablePageLink<T> {
         return super.isEnabled() && !this.placeholder;
     }
 
-    public void setPlaceholder(boolean enabled) {
-        this.placeholder = enabled;
+    /**
+     * Should a placeholder be rendered instead of a link?
+     * @param placeholderEnabled true if placeholder should be enabled.
+     */
+    public void setPlaceholder(boolean placeholderEnabled) {
+        this.placeholder = placeholderEnabled;
     }
 }

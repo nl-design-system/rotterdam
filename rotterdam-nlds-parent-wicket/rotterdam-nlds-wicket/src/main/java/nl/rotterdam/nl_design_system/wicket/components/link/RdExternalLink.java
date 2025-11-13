@@ -8,11 +8,20 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.ExternalLink;
 
+/**
+ * <a href="https://nldesignsystem.nl/link/">Link</a> component for links outside the current Wicket application.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdExternalLink extends ExternalLink {
 
-    public boolean placeholder = false;
+    private boolean placeholder = false;
 
+    /**
+     * External link
+     * @param id wicket id
+     * @param href external link to open
+     * @param label label
+     */
     public RdExternalLink(final String id, final String href, final String label) {
         super(id, href, label);
     }
@@ -20,7 +29,7 @@ public class RdExternalLink extends ExternalLink {
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(new RdLinkBehavior());
+        add(RdLinkBehavior.INSTANCE);
     }
 
     @Override
@@ -41,7 +50,11 @@ public class RdExternalLink extends ExternalLink {
         return super.isEnabled() && !this.placeholder;
     }
 
-    public void setPlaceholder(boolean enabled) {
-        this.placeholder = enabled;
+    /**
+     * Sets placeholder if link should be rendered read-only.
+     * @param placeholderEnabled if placeholder should be shown
+     */
+    public void setPlaceholder(boolean placeholderEnabled) {
+        this.placeholder = placeholderEnabled;
     }
 }

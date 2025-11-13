@@ -13,20 +13,40 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Co
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
+/**
+ * <a href="https://nldesignsystem.nl/heading/">NL Design System Heading component</a>.
+ */
 @NlComponentState(wicketState = UNSTABLE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdHeading extends Label {
     private static final Set<String> ALLOWED_TAG_NAMES = Set.of("h1", "h2", "h3", "h4", "h5", "h6");
 
+    /**
+     * Create heading component with the given level
+     * @param id Wicket Id
+     * @param level with inclusive range 1..6
+     */
     public RdHeading(String id, int level) {
         this(id, Model.of((String) null), level);
     }
 
+    /**
+     * Create heading component with the given level
+     * @param id Wicket Id
+     * @param label the text to render
+     * @param level with inclusive range 1..6
+     */
     public RdHeading(String id, Serializable label, int level) {
         this(id, Model.of(label), level);
     }
 
-    public RdHeading(String id, IModel<?> model, int level) {
-        super(id, model);
+    /**
+     * Create heading component with the given level
+     * @param id Wicket Id
+     * @param label the text to render
+     * @param level with inclusive range 1..6
+     */
+    public RdHeading(String id, IModel<?> label, int level) {
+        super(id, label);
         add(RdHeadingBehavior.heading(level));
     }
 

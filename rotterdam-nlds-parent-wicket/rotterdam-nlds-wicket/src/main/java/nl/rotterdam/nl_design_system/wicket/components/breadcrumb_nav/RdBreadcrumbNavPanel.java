@@ -18,11 +18,20 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
+/**
+ * <a href="https://nldesignsystem.nl/breadcrumb-navigation/">Breadcrumb navigation</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdBreadcrumbNavPanel extends Panel {
 
-    public final List<RdBreadcrumbNavRecord<? extends IRequestablePage>> links;
+    private final List<RdBreadcrumbNavRecord<? extends IRequestablePage>> links;
 
+    /**
+     * Create instance with links
+     * @param id Wicket Id
+     * @param links the links
+*              TODO change to IModel.
+     */
     public RdBreadcrumbNavPanel(String id, List<RdBreadcrumbNavRecord<? extends IRequestablePage>> links) {
         super(id);
         this.links = links;

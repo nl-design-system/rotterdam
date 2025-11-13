@@ -5,8 +5,14 @@ import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeader
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.Component;
 
+/**
+ * Apply Form field description behavior to an HTML element.
+ */
 public class RdFormFieldDescriptionBehavior extends TagNameClassComponentBehavior<Component> {
 
+    /**
+     * Singleton instance.
+     */
     public static final RdFormFieldDescriptionBehavior INSTANCE = new RdFormFieldDescriptionBehavior();
 
     @Override

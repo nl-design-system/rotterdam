@@ -14,6 +14,12 @@ import org.apache.wicket.model.IModel;
 public enum RdFormFieldErrorMessageFactory {
     ;
 
+    /**
+     * Creates error message label
+     * @param id wicket Id
+     * @param componentWithFeedback component which can have feedback messages
+     * @return error message label, properly styled according to NL Design System error message style.
+     */
     public static Component createErrorMessageLabel(String id, Component componentWithFeedback) {
         // TODO a form component can have multiple error messages. Currently only shows the first feedback message.
         //  Is multiple messages desired by first applications?
@@ -26,6 +32,11 @@ public enum RdFormFieldErrorMessageFactory {
         return new Label(id, model).setOutputMarkupId(true).add(RdFormFieldErrorMessageBehavior.INSTANCE);
     }
 
+    /**
+     * Create error message label
+     * @param id wicket Id
+     * @return error message label, properly styled according to NL Design System error message style.
+     */
     public static Component createErrorMessageLabel(String id) {
         return new Label(id).setOutputMarkupId(true).add(RdFormFieldErrorMessageBehavior.INSTANCE);
     }

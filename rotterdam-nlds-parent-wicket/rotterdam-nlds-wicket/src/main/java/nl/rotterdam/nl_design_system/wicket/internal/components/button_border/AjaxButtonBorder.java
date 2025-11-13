@@ -38,14 +38,11 @@ import org.apache.wicket.model.IModel;
  * </p>
  */
 public abstract class AjaxButtonBorder extends AjaxButton implements IComponentResolver, IQueueRegion {
-    private static final long serialVersionUID = 1L;
-
     private final BorderBodyContainer body;
 
-    public AjaxButtonBorder(String id) {
-        this(id, null);
-    }
-
+    /**
+     * Create instance with label.
+     */
     public AjaxButtonBorder(String id, IModel<String> model) {
         super(id, model);
 

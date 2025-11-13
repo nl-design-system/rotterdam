@@ -9,7 +9,6 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormF
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -62,26 +61,39 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
     @NonNull
     private final FormFieldTextInput textInput;
 
+    /**
+     * Create instance with label, without description.
+     * @param id wicket Id
+     * @param model writable model
+     * @param labelText label to be shown
+     */
     public RdFormFieldTextInput(String id, IModel<T> model, IModel<String> labelText) {
         this(id, model, labelText, EMPTY_STRING_MODEL);
     }
 
+    /**
+     * Create instance with label, without description.
+     * @param id wicket Id
+     * @param model writable model
+     * @param labelText label to be shown
+     * @param description description text to be rendered, when label is not enough to explain purpose
+     */
     public RdFormFieldTextInput(
         String id,
         IModel<T> model,
-        IModel<String> labelModel,
-        IModel<String> descriptionModel
+        IModel<String> labelText,
+        IModel<String> description
     ) {
         super(id, model);
-        requireNonNull(labelModel);
-        requireNonNull(descriptionModel);
+        requireNonNull(labelText);
+        requireNonNull(description);
 
-        textInput = new FormFieldTextInput(model, descriptionModel);
-        textInput.setLabel(labelModel);
+        textInput = new FormFieldTextInput(model, description);
+        textInput.setLabel(labelText);
 
         // Create the text input
         labelComponent = newLabelComponent();
-        descriptionComponent = newDescriptionComponent(descriptionModel);
+        descriptionComponent = newDescriptionComponent(description);
         inputComponent = newInputComponent(textInput);
         errorMessageComponent = newErrorMessageComponent();
     }
@@ -91,6 +103,9 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
      *
      * <p>By using this callback you can initialize the Component in a fluent api style, without intermediary
      * assignments.</p>
+     * @param callback with custom logic for the current instance
+     *
+     * @return self for chaining
      */
     public RdFormFieldTextInput<T> withTextInput(WithTextInputCallback<T> callback) {
         // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
@@ -147,12 +162,21 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         }
     }
 
+    /**
+     * Marks {@link TextField<T>} as required
+     * @param required if it should be required.
+     * @return self for chaining.
+     */
     public RdFormFieldTextInput<T> setRequired(boolean required) {
-        getTextField().setRequired(required);
+        textInput.setRequired(required);
         return this;
     }
 
-    public TextField<T> getTextField() {
+    /**
+     * Get reference to underlying {@link TextField}
+     * @return the instance
+     */
+    public final TextField<T> getTextField() {
         return textInput;
     }
 
@@ -229,10 +253,6 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
             tag.put("for", textInput.getMarkupId());
-
-            if (!textInput.isEnabledInHierarchy()) {
-                FORM_LABEL_STATE_DISABLED.appendTo(tag);
-            }
         }
     }
 }

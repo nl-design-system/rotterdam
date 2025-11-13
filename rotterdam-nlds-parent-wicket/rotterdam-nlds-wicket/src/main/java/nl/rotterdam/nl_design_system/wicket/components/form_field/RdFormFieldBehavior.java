@@ -24,6 +24,9 @@ public class RdFormFieldBehavior extends TagNameClassComponentBehavior<Component
         "@utrecht/form-field-css/dist/index.css"
     );
 
+    /**
+     * Singleton instance.
+     */
     public static final RdFormFieldBehavior INSTANCE = new RdFormFieldBehavior();
 
     private RdFormFieldBehavior() {

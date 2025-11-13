@@ -9,11 +9,20 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 
+/**
+ * <a href="https://nldesignsystem.nl/alert/">nldesign Alert</a> component.
+ */
 @NlComponentState(wicketState = UNSTABLE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdAlert extends Panel {
 
-    public static final String SLOT_ID = "slot";
+    static final String SLOT_ID = "slot";
 
+    /**
+     * render alert with given type and tex content.
+     * @param id wicket id
+     * @param textContent text of the alert
+     * @param type the type
+     */
     public RdAlert(String id, IModel<String> textContent, RdAlertType type) {
         super(id);
         add(RdAlertBehavior.alert(type));

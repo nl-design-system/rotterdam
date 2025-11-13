@@ -5,7 +5,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormL
 
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
-public enum RdFormLabelType {
+enum RdFormLabelType {
     CHECKBOX(FORM_LABEL_CHECKBOX),
     RADIO(FORM_LABEL_RADIO);
 

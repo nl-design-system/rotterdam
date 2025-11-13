@@ -84,6 +84,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param id the wicket ID.
      * @param titleModel the model with the title to shown in the dialog header.
+     * @param closeButtonLabelModel label for close buton
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */

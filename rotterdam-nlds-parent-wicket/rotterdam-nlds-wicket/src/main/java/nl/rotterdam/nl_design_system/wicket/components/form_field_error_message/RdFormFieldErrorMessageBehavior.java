@@ -6,8 +6,14 @@ import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponen
 import nl.rotterdam.nl_design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import org.apache.wicket.Component;
 
+/**
+ * Apply error message behavior to an HTML markup element.
+ */
 public class RdFormFieldErrorMessageBehavior extends TagNameClassComponentBehavior<Component> {
 
+    /**
+     * Singleton instance.
+     */
     public static final RdFormFieldErrorMessageBehavior INSTANCE = new RdFormFieldErrorMessageBehavior();
 
     @Override

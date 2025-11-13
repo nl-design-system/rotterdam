@@ -13,7 +13,10 @@ public abstract class HeaderItemRenderingBehavior extends Behavior {
 
     private final List<CssReferenceHeaderItem> headerItems = new ArrayList<>();
 
-    public void addHeaderItem(CssReferenceHeaderItem headerItem) {
+    /**
+     * Add a header item to be rendered with {@link #renderHead(Component, IHeaderResponse)}.
+     */
+    protected void addHeaderItem(CssReferenceHeaderItem headerItem) {
         requireNonNull(headerItem, "Header item cannot be null");
         headerItems.add(headerItem);
     }

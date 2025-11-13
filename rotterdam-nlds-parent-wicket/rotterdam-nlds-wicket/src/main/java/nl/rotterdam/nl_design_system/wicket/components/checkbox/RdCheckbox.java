@@ -13,11 +13,16 @@ import org.apache.wicket.model.IModel;
  *
  * <p>Based on <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-checkbox--docs">
  *     implementation of Utrecht
- *  </a></p>
+ *  </a>.</p>
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdCheckbox extends CheckBox {
 
+    /**
+     * Create checkbox with given read and write model.
+     * @param id Wicket Id
+     * @param model writable model
+     */
     public RdCheckbox(String id, IModel<Boolean> model) {
         super(id, model);
         setOutputMarkupId(true);

@@ -106,6 +106,13 @@
                     </filesets>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <failOnError>true</failOnError>
+                </configuration>
+            </plugin>
         </plugins>
         <resources>
             <resource>

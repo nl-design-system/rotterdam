@@ -9,30 +9,56 @@ import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.model.IModel;
+import org.jspecify.annotations.Nullable;
 
+/**
+ * <a  href="https://nldesignsystem.nl/button/">NL Design System button component</a>.
+ * @see RdAjaxButton
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdButton extends Button {
 
-    public boolean busy = false;
-    public RdButtonAppearance appearance = null;
-    public RdButtonHint hint = null;
+    private boolean busy = false;
+    private RdButtonAppearance appearance = null;
+    private RdButtonHint hint = null;
 
+    /**
+     * Create instance without label; label to be set separately in markup or with {@link #setModel(IModel)}.
+     * @param id Wicket Id
+     */
     public RdButton(String id) {
         this(id, null);
     }
 
+    /**
+     * Create instance with label.
+     * @param id Wicket Id
+     * @param model the label
+     */
     public RdButton(final String id, final IModel<String> model) {
         super(id, model);
     }
 
-    public void setAppearance(RdButtonAppearance appearance) {
+    /**
+     * Sets {@link RdButtonAppearance}.
+     * @param appearance new appearance
+     */
+    public void setAppearance(@Nullable RdButtonAppearance appearance) {
         this.appearance = appearance;
     }
 
-    public void setHint(RdButtonHint hint) {
+    /**
+     * Sets {@link RdButtonHint}.
+     * @param hint new hint
+     */
+    public void setHint(@Nullable RdButtonHint hint) {
         this.hint = hint;
     }
 
+    /**
+     * Markeer dat de actie voor deze knop bezig is.
+     * @param busy true als de actie nu bezig is
+     */
     public void setBusy(boolean busy) {
         this.busy = busy;
     }

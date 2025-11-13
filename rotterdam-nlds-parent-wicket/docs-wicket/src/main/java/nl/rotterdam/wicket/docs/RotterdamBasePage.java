@@ -33,6 +33,8 @@ public class RotterdamBasePage extends DocsBasePage {
     protected void onInitialize() {
         super.onInitialize();
 
+        add(RdRootBehavior.INSTANCE);
+
         // Build up the page layout
         pageLayout = new RdPageLayoutBorder("pageLayout");
         add(pageLayout);
@@ -79,7 +81,6 @@ public class RotterdamBasePage extends DocsBasePage {
         // - Root for <html>
         // - Body for <body>
 
-        response.render(RdRootBehavior.CSS);
         response.render(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
     }
 }

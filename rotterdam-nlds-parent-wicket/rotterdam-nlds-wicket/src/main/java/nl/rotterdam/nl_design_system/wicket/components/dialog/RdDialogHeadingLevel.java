@@ -8,6 +8,8 @@ package nl.rotterdam.nl_design_system.wicket.components.dialog;
  *
  * @see RdDialogBorder
  */
+
+@SuppressWarnings("doclint:missing")
 public enum RdDialogHeadingLevel {
     LEVEL_1(1),
     LEVEL_2(2),
@@ -22,6 +24,9 @@ public enum RdDialogHeadingLevel {
         this.level = level;
     }
 
+    /**
+     * Gets the heading level.
+     */
     public int getLevel() {
         return level;
     }

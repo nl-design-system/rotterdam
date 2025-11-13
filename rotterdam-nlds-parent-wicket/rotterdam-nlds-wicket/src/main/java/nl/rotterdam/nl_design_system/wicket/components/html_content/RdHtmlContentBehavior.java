@@ -4,8 +4,14 @@ import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponen
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
+/**
+ * Render HTML content with behavior.
+ */
 public class RdHtmlContentBehavior extends TagNameClassComponentBehavior<RdHtmlContentBorder> {
 
+    /**
+     * Singleton instance.
+     */
     public static final RdHtmlContentBehavior INSTANCE = new RdHtmlContentBehavior();
 
     private RdHtmlContentBehavior() {
