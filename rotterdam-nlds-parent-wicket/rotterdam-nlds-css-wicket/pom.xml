@@ -6,7 +6,7 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>0.0.1-alpha</version>
+        <version>0.0.2-alpha</version>
     </parent>
 
     <artifactId>rotterdam-nlds-css-wicket</artifactId>
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>0.0.1-alpha</version>
+            <version>0.0.2-alpha</version>
             <scope>test</scope>
         </dependency>
         <dependency>
