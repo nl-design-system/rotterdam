@@ -25,6 +25,10 @@
             <artifactId>wicket-request</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
@@ -47,12 +51,7 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>0.0.3-SNAPSHOT</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jspecify</groupId>
-            <artifactId>jspecify</artifactId>
         </dependency>
     </dependencies>
 

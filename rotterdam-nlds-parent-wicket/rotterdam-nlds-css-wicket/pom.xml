@@ -26,7 +26,6 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>0.0.3-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
