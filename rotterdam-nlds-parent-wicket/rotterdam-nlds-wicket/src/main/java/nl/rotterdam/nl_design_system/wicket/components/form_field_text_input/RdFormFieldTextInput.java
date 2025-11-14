@@ -63,7 +63,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
 
     /**
      * Create instance with label, without description.
-     * @param id wicket Id
+     * @param id the Wicket ID
      * @param model writable model
      * @param labelText label to be shown
      */
@@ -73,7 +73,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
 
     /**
      * Create instance with label, without description.
-     * @param id wicket Id
+     * @param id the Wicket ID
      * @param model writable model
      * @param labelText label to be shown
      * @param description description text to be rendered, when label is not enough to explain purpose

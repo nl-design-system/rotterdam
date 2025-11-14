@@ -16,7 +16,7 @@ public class RdHtmlContentBorder extends Border {
 
     /**
      * Create new instance
-     * @param id Wicket Id
+     * @param id the Wicket ID
      */
     public RdHtmlContentBorder(String id) {
         super(id);

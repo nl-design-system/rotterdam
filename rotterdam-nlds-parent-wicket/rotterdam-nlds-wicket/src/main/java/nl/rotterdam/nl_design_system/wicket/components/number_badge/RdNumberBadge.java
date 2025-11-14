@@ -18,7 +18,7 @@ public class RdNumberBadge extends Label {
 
     /**
      * Constructor
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param number data to show
      */
     public RdNumberBadge(String id, Serializable number) {
@@ -27,7 +27,7 @@ public class RdNumberBadge extends Label {
 
     /**
      * Constructor
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param number data to show
      */
     public RdNumberBadge(String id, IModel<?> number) {

@@ -18,7 +18,7 @@ public class RdColumnLayoutBorder extends Border {
 
     /**
      * Creates instance
-     * @param id wicket id
+     * @param id the Wicket ID
      */
     public RdColumnLayoutBorder(String id) {
         super(id);

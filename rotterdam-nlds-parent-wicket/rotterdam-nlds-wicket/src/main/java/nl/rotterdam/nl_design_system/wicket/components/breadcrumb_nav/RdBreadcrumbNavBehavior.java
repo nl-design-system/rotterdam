@@ -8,7 +8,7 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
 class RdBreadcrumbNavBehavior extends TagNameClassComponentBehavior<Component> {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdBreadcrumbNavBehavior.class,
         "@utrecht/breadcrumb-nav-css/dist/index.css"
     );

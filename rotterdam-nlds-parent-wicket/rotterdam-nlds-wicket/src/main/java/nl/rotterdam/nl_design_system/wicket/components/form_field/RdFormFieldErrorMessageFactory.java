@@ -16,7 +16,7 @@ public enum RdFormFieldErrorMessageFactory {
 
     /**
      * Creates error message label
-     * @param id wicket Id
+     * @param id the Wicket ID
      * @param componentWithFeedback component which can have feedback messages
      * @return error message label, properly styled according to NL Design System error message style.
      */
@@ -34,7 +34,7 @@ public enum RdFormFieldErrorMessageFactory {
 
     /**
      * Create error message label
-     * @param id wicket Id
+     * @param id the Wicket ID
      * @return error message label, properly styled according to NL Design System error message style.
      */
     public static Component createErrorMessageLabel(String id) {

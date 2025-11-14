@@ -5,7 +5,7 @@ import org.apache.wicket.Component;
 
 class RdBreadcrumbNavItemBehavior extends TagNameClassComponentBehavior<Component> {
 
-    static final RdBreadcrumbNavItemBehavior BREADCRUMB_NAV_ITEM_BEHAVIOR =
+    static final RdBreadcrumbNavItemBehavior INSTANCE =
         new RdBreadcrumbNavItemBehavior();
 
     private RdBreadcrumbNavItemBehavior() {

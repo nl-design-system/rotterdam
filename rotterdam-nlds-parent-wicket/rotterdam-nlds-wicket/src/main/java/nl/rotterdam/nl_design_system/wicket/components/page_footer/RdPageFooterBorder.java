@@ -15,7 +15,7 @@ public class RdPageFooterBorder extends Border {
 
     /**
      * Creates new instance
-     * @param id Wicket Id
+     * @param id the Wicket ID
      */
     public RdPageFooterBorder(String id) {
         super(id);

@@ -10,9 +10,9 @@ import org.apache.wicket.markup.html.border.Border;
 
 /**
  * Action group has a list of actions, often {@link nl.rotterdam.nl_design_system.wicket.components.button.RdButton}s.
+ * TODO: use https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-action-group--docs
+ *  (also verify that RdButton works properly with it)
  */
-// TODO: use https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-action-group--docs
-// (also verify that RdButton works properly with it)
 @NlComponentState(wicketState = UNSTABLE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdActionGroup extends Border {
 

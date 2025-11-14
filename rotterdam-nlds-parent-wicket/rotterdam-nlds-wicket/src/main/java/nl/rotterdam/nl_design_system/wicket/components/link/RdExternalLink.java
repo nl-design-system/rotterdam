@@ -18,7 +18,7 @@ public class RdExternalLink extends ExternalLink {
 
     /**
      * External link
-     * @param id wicket id
+     * @param id the Wicket ID
      * @param href external link to open
      * @param label label
      */

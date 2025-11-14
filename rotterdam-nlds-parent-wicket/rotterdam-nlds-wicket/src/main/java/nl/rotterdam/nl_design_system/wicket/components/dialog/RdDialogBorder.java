@@ -60,7 +60,7 @@ public abstract class RdDialogBorder extends Border {
      * Create a new dialog border with the given Wicket ID, title model and heading level.
      * </p>
      *
-     * @param id the wicket ID.
+     * @param id the Wicket ID
      * @param titleModel the model with the title to shown in the dialog header.
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
@@ -82,7 +82,7 @@ public abstract class RdDialogBorder extends Border {
      * Create a new dialog border with the given Wicket ID, title model, close button label model and heading level.
      * </p>
      *
-     * @param id the wicket ID.
+     * @param id the Wicket ID
      * @param titleModel the model with the title to shown in the dialog header.
      * @param closeButtonLabelModel label for close buton
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the

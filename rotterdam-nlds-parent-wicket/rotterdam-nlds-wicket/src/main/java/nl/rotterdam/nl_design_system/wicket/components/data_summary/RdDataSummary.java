@@ -29,7 +29,7 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
 
     /**
      * Creates summary.
-     * @param id wicket Id
+     * @param id the Wicket ID
      * @param model the list of {@link SummaryItem}s
      */
     public RdDataSummary(String id, IModel<List<SummaryItem>> model) {

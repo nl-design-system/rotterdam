@@ -15,7 +15,7 @@ public class RdHeadingGroupBorder extends Border {
 
     /**
      * Create new instance.
-     * @param id Wicket ID
+     * @param id the Wicket ID
      */
     public RdHeadingGroupBorder(String id) {
         super(id);

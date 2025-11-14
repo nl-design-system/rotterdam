@@ -21,7 +21,7 @@ public class RdFormLabel extends Panel {
 
     /**
      * Constructor with textContent
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param textContent text to be rendered
      */
     public RdFormLabel(String id, IModel<?> textContent) {
@@ -30,7 +30,7 @@ public class RdFormLabel extends Panel {
 
     /**
      * Constructor with textContent
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param textContent text to be rendered
      * @param formLabelBehavior form field type specific behavior
      */

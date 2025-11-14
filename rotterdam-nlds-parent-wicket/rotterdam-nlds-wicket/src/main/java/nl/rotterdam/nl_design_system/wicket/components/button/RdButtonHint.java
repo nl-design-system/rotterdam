@@ -1,9 +1,9 @@
 package nl.rotterdam.nl_design_system.wicket.components.button;
 
 /**
- * Button hint zoals gedefinieerd door Utrecht.
- * <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-button--docs">Documentatie hier</a>.
- * TODO: vraag na waarom appearance en hint op deze manier uit elkaar getrokken zijn.
+ * Button hint as defined by Utrecht.
+ * <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-button--docs">Documentation</a>.
+ * TODO: ask why appearance and hint are separated this way.
  */
 public enum RdButtonHint {
     /**

@@ -21,7 +21,7 @@ public class RdCodeBlock extends Panel {
 
     /**
      * Create code block with given code.
-     * @param id the Wicket Id
+     * @param id the Wicket ID
      * @param codeContent the code to show
      */
     public RdCodeBlock(String id, IModel<String> codeContent) {

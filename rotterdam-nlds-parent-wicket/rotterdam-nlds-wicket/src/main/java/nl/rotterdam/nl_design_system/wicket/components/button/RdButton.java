@@ -24,7 +24,7 @@ public class RdButton extends Button {
 
     /**
      * Create instance without label; label to be set separately in markup or with {@link #setModel(IModel)}.
-     * @param id Wicket Id
+     * @param id the Wicket ID
      */
     public RdButton(String id) {
         this(id, null);
@@ -32,7 +32,7 @@ public class RdButton extends Button {
 
     /**
      * Create instance with label.
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param model the label
      */
     public RdButton(final String id, final IModel<String> model) {

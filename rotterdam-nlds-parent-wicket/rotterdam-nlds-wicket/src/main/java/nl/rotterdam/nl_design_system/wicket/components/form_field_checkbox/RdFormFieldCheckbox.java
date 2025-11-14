@@ -53,7 +53,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     /**
      * Creates instance with label, without description.
-     * @param id wicket id
+     * @param id the Wicket ID
      * @param model writable model
      * @param labelModel label for checkbox
      */
@@ -64,7 +64,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
     /**
      * Creates instance with label and description.
      *
-     * @param id wicket id
+     * @param id the Wicket ID
      * @param model writable model
      * @param labelModel for the checkbox
      * @param descriptionModel detailed description, additional to label. If it is an empty string, will not be rendered.

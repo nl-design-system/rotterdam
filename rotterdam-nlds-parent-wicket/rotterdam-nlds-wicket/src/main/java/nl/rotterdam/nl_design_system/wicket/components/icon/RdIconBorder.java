@@ -15,7 +15,7 @@ public class RdIconBorder extends Border {
 
     /**
      * Create instance.
-     * @param id Wicket Id
+     * @param id the Wicket ID
      */
     public RdIconBorder(String id) {
         super(id);

@@ -42,7 +42,7 @@ public class BorderBodyContainer extends WebMarkupContainer {
     /**
      * Constructor
      *
-     * @param id the Wicket ID.
+     * @param id the Wicket ID
      */
     public BorderBodyContainer(@NonNull final Component markupProvider, final String id) {
         super(id);

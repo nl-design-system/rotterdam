@@ -22,7 +22,7 @@ public class RdHeading extends Label {
 
     /**
      * Create heading component with the given level
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param level with inclusive range 1..6
      */
     public RdHeading(String id, int level) {
@@ -31,7 +31,7 @@ public class RdHeading extends Label {
 
     /**
      * Create heading component with the given level
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param label the text to render
      * @param level with inclusive range 1..6
      */
@@ -41,7 +41,7 @@ public class RdHeading extends Label {
 
     /**
      * Create heading component with the given level
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param label the text to render
      * @param level with inclusive range 1..6
      */

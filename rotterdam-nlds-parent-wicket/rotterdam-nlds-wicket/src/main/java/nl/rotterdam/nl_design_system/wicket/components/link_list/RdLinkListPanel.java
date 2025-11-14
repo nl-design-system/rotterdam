@@ -26,7 +26,7 @@ public class RdLinkListPanel extends Panel {
 
     /**
      * Creates instance
-     * @param id wicket id
+     * @param id the Wicket ID
      * @param links links to show
      *              TODO use Model
      */

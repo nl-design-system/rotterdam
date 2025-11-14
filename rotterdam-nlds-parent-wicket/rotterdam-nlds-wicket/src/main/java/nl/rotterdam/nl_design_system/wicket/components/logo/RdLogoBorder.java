@@ -15,7 +15,7 @@ public class RdLogoBorder extends Border {
 
     /**
      * Creates instance
-     * @param id Wicket Id
+     * @param id the Wicket ID
      */
     public RdLogoBorder(String id) {
         super(id);

@@ -9,7 +9,7 @@ import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.model.IModel;
 
 /**
- * Implementation of <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox</a>.
+ * <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox component</a>.
  *
  * <p>Based on <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-checkbox--docs">
  *     implementation of Utrecht
@@ -20,7 +20,7 @@ public class RdCheckbox extends CheckBox {
 
     /**
      * Create checkbox with given read and write model.
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param model writable model
      */
     public RdCheckbox(String id, IModel<Boolean> model) {

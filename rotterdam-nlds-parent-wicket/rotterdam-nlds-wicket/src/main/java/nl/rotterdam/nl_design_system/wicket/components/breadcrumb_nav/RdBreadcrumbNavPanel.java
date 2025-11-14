@@ -1,6 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavItemBehavior.BREADCRUMB_NAV_ITEM_BEHAVIOR;
+import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavItemBehavior.INSTANCE;
 import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavListBehavior.BREADCRUMB_NAV_LIST_BEHAVIOR;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
@@ -28,7 +28,7 @@ public class RdBreadcrumbNavPanel extends Panel {
 
     /**
      * Create instance with links
-     * @param id Wicket Id
+     * @param id the Wicket ID
      * @param links the links
 *              TODO change to IModel.
      */
@@ -41,7 +41,7 @@ public class RdBreadcrumbNavPanel extends Panel {
         return new ListView<>("breadcrumbNavItem", links) {
             @Override
             protected void populateItem(ListItem<RdBreadcrumbNavRecord<? extends IRequestablePage>> item) {
-                item.add(BREADCRUMB_NAV_ITEM_BEHAVIOR);
+                item.add(INSTANCE);
                 RdBreadcrumbNavRecord<? extends IRequestablePage> record = item.getModelObject();
                 String naam = record.label();
 

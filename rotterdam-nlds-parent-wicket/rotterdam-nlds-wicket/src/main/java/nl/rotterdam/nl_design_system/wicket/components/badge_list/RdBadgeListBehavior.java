@@ -10,6 +10,11 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
+
+/**
+ * @see RdBadgeListBorder
+ * TODO: use Border class instead of behavior directly (make it package private)
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdBadgeListBehavior extends TagNameClassComponentBehavior<Component> {
 
