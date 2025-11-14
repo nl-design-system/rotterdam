@@ -8,6 +8,7 @@ import org.jspecify.annotations.NonNull;
  * It has public visibility, can be used by library users, d should only be used for Form Fields implemented by
  * {@link Community} Utrecht.
  */
+@SuppressWarnings("doclint:missing")
 public enum RdFormFieldCss implements CssClassNames {
     DEFAULT("utrecht-form-field"),
     INVALID("utrecht-form-field--invalid"),

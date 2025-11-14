@@ -6,9 +6,9 @@ import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponen
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
-public class RdBreadcrumbNavBehavior extends TagNameClassComponentBehavior<Component> {
+class RdBreadcrumbNavBehavior extends TagNameClassComponentBehavior<Component> {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdBreadcrumbNavBehavior.class,
         "@utrecht/breadcrumb-nav-css/dist/index.css"
     );

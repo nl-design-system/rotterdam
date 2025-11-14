@@ -6,13 +6,13 @@
     <artifactId>rotterdam-nlds-parent-wicket</artifactId>
     <name>Rotterdam, NL Design System Wicket Parent</name>
     <description>NL Design System Wicket Parent POM made by Gemeente Rotterdam.</description>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.2-alpha</version>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>nl.rotterdam</groupId>
         <artifactId>rotterdam-nlds-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.2-alpha</version>
     </parent>
 
     <modules>

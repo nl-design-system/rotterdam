@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
-        description: 'Dry run (no upload to Maven Central)?'
+        description: 'Dry run (upload to Maven Central but no publish)?'
         required: true
         default: 'true'
         type: choice
@@ -65,7 +65,7 @@ jobs:
           echo "dry-run input: $DRY_RUN_INPUT"
 
           if [ "$DRY_RUN_INPUT" = "true" ]; then
-            echo "MAVEN_DRY_RUN=-DcentralDryRun=true" >> $GITHUB_OUTPUT
+            echo "MAVEN_DRY_RUN=-Dcentral-publishing.autoPublish=false -Dcentral-publishing.waitUntil=validated" >> $GITHUB_OUTPUT
           else
             echo "MAVEN_DRY_RUN=" >> $GITHUB_OUTPUT
           fi

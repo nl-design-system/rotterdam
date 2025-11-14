@@ -7,14 +7,16 @@ import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassN
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
-public class RdParagraphBehavior extends TagNameClassComponentBehavior<Component> {
+class RdParagraphBehavior extends TagNameClassComponentBehavior<Component> {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdParagraphBehavior.class,
         "@utrecht/paragraph-css/dist/index.css"
     );
 
-    public RdParagraphBehavior() {
+    static final RdParagraphBehavior INSTANCE = new RdParagraphBehavior();
+
+    private RdParagraphBehavior() {
         super("p", RdParagraphCss.DEFAULT);
         addHeaderItem(CSS);
     }

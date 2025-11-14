@@ -46,11 +46,31 @@ import org.apache.wicket.Component;
  *
  */
 public interface RdFormField {
+
+    /**
+     * Additional description if label is not descriptive enough.
+     *
+     * @return the detailed description component, additional to the label
+     */
     Component getDescriptionComponent();
 
+    /**
+     * Error message, for validation messages.
+     *
+     * @return the error message component
+     */
     Component getErrorMessageComponent();
 
+    /**
+     * The label of the form field.
+     * @return the label component
+     */
     Component getLabelComponent();
 
+    /**
+     * The input component, often a container which has nested in it the form control.
+     *
+     * @return the input container component. Could be input type itself, or a div surrounding it.
+     */
     Component getInputComponent();
 }

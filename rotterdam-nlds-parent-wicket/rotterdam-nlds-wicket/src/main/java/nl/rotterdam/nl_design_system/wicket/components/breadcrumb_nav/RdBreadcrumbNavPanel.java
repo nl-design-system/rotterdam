@@ -1,6 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavItemBehavior.BREADCRUMB_NAV_ITEM_BEHAVIOR;
+import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavItemBehavior.INSTANCE;
 import static nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavListBehavior.BREADCRUMB_NAV_LIST_BEHAVIOR;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
@@ -18,11 +18,20 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
+/**
+ * <a href="https://nldesignsystem.nl/breadcrumb-navigation/">Breadcrumb navigation</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdBreadcrumbNavPanel extends Panel {
 
-    public final List<RdBreadcrumbNavRecord<? extends IRequestablePage>> links;
+    private final List<RdBreadcrumbNavRecord<? extends IRequestablePage>> links;
 
+    /**
+     * Create instance with links
+     * @param id the Wicket ID
+     * @param links the links
+*              TODO change to IModel.
+     */
     public RdBreadcrumbNavPanel(String id, List<RdBreadcrumbNavRecord<? extends IRequestablePage>> links) {
         super(id);
         this.links = links;
@@ -32,7 +41,7 @@ public class RdBreadcrumbNavPanel extends Panel {
         return new ListView<>("breadcrumbNavItem", links) {
             @Override
             protected void populateItem(ListItem<RdBreadcrumbNavRecord<? extends IRequestablePage>> item) {
-                item.add(BREADCRUMB_NAV_ITEM_BEHAVIOR);
+                item.add(INSTANCE);
                 RdBreadcrumbNavRecord<? extends IRequestablePage> record = item.getModelObject();
                 String naam = record.label();
 

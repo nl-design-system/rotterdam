@@ -7,9 +7,16 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Co
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
+/**
+ * <a href="https://nldesignsystem.nl/page-footer/">NL Design System Page Footer component</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdPageFooterBorder extends Border {
 
+    /**
+     * Creates new instance
+     * @param id the Wicket ID
+     */
     public RdPageFooterBorder(String id) {
         super(id);
         add(RdPageFooterBehavior.INSTANCE);

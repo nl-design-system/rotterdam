@@ -16,11 +16,20 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
+/**
+ * <a href="https://nldesignsystem.nl/side-navigation/">NL Design System Side Navigation</a> component.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdSideNavPanel extends Panel {
 
-    public final List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords;
+    private final List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords;
 
+    /**
+     * Create new instance
+     * @param id the Wicket ID
+     * @param sideNavRecords records to add
+     *                       TODO refactor to model.
+     */
     public RdSideNavPanel(String id, List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords) {
         super(id);
         this.sideNavRecords = sideNavRecords;
@@ -36,7 +45,7 @@ public class RdSideNavPanel extends Panel {
                 @Override
                 protected void onInitialize() {
                     super.onInitialize();
-                    add(new RdSideNavBehavior());
+                    add(RdSideNavBehavior.INSTANCE);
 
                     add(
                         new WebMarkupContainer("sideNavList") {

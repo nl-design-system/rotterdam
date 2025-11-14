@@ -15,6 +15,7 @@ import org.apache.wicket.markup.head.JavaScriptReferenceType;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@SuppressWarnings("doclint:missing")
 public class RotterdamIconBehavior extends Behavior {
 
     public static final RotterdamIconBehavior ADD_IMAGE = new RotterdamIconBehavior(RotterdamIconType.ADD_IMAGE);

@@ -54,7 +54,7 @@ public class RdSideNavExamplesPanel extends ExamplesPanel {
             @Override
             protected void onInitialize() {
                 super.onInitialize();
-                add(new RdSideNavBehavior());
+                add(RdSideNavBehavior.INSTANCE);
 
                 add(
                     new WebMarkupContainer("sideNavList") {

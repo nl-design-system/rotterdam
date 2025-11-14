@@ -11,13 +11,22 @@ import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
+/**
+ * <a href="https://nldesignsystem.nl/form-field-label/">Form Field Label</a> with behavior.
+ *
+ * <p>Checkbox needs this with different HTML structure compared to other form components.</p>
+ */
+@SuppressWarnings("doclint:missing")
 public class RdFormLabelBehavior extends TagNameClassComponentBehavior<Component> {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdFormLabelBehavior.class,
         "@utrecht/form-label-css/dist/index.css"
     );
 
+    /**
+     * Form field label voor ch
+     */
     public static final RdFormLabelBehavior INSTANCE_CHECKBOX = new RdFormLabelBehavior(
         RdFormLabelType.CHECKBOX
     );
@@ -26,7 +35,9 @@ public class RdFormLabelBehavior extends TagNameClassComponentBehavior<Component
         RdFormLabelType.RADIO
     );
 
-    // Text has, by default, no specific type class
+    /**
+     * Text has, by default, no specific type class
+      */
     public static final RdFormLabelBehavior INSTANCE_DEFAULT = new RdFormLabelBehavior();
 
     private RdFormLabelBehavior() {

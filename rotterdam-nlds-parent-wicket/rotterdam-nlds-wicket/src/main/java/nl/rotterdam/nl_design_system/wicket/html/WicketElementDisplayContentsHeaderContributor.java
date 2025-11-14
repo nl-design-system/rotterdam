@@ -10,11 +10,11 @@
 package nl.rotterdam.nl_design_system.wicket.html;
 
 import org.apache.wicket.RuntimeConfigurationType;
-import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.IHeaderContributor;
-import org.apache.wicket.request.resource.CssResourceReference;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 /**
  * <p>
@@ -32,10 +32,11 @@ public class WicketElementDisplayContentsHeaderContributor implements IHeaderCon
     }
 
     private static final CssReferenceHeaderItem WICKET_ELEMENT_DISPLAY_CONTENTS_CSS_REFERENCE_ITEM =
-            CssHeaderItem.forReference(new CssResourceReference(
-                    WicketElementDisplayContentsHeaderContributor.class,
-                    "wicket-element-display-contents.css"));
+        cssReferenceHeaderItem(WicketElementDisplayContentsHeaderContributor.class, "wicket-element-display-contents.css");
 
+    /**
+     * Singleton instance.
+     */
     public static final WicketElementDisplayContentsHeaderContributor INSTANCE = new WicketElementDisplayContentsHeaderContributor();
 
     @Override

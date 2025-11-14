@@ -10,6 +10,10 @@ import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+/**
+ * @see RdHeading
+ */
+@SuppressWarnings("doclint:missing")
 public class RdHeadingBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem HEADING_1_HEADER_ITEM = cssReferenceHeaderItem(

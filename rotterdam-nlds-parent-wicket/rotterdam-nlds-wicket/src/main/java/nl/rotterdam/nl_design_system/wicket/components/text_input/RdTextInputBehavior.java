@@ -11,7 +11,7 @@ import org.apache.wicket.markup.html.form.TextField;
 
 class RdTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
-    public static final RdTextInputBehavior INSTANCE = new RdTextInputBehavior();
+    static final RdTextInputBehavior INSTANCE = new RdTextInputBehavior();
 
     private RdTextInputBehavior() {
         super("input", RdTextInputCss.DEFAULT);

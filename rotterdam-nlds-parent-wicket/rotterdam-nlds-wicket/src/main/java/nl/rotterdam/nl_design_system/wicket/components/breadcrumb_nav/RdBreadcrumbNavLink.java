@@ -9,10 +9,17 @@ import org.apache.wicket.Page;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
+/**
+ * Link in bread crumb trial.
+ * @param <T> the page class
+ * @deprecated probably we don't need specific page classes for bread crumbs
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@Deprecated(forRemoval = true)
+@SuppressWarnings("doclint:missing")
 public class RdBreadcrumbNavLink<T> extends BookmarkablePageLink<T> {
 
-    public boolean placeholder = false;
+    private boolean placeholder = false;
 
     public <C extends Page> RdBreadcrumbNavLink(String id, Class<C> pageClass) {
         super(id, pageClass);

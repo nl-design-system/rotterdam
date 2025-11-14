@@ -4,9 +4,9 @@ import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponen
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class RdPageFooterBehavior extends TagNameClassComponentBehavior<RdPageFooterBorder> {
+class RdPageFooterBehavior extends TagNameClassComponentBehavior<RdPageFooterBorder> {
 
-    public static final RdPageFooterBehavior INSTANCE = new RdPageFooterBehavior();
+    static final RdPageFooterBehavior INSTANCE = new RdPageFooterBehavior();
 
     private RdPageFooterBehavior() {
         super("footer", RdPageFooterCss.DEFAULT);

@@ -9,14 +9,24 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 
+/**
+ * Code block.
+ * @deprecated no apps we have need this.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@Deprecated(forRemoval = true)
 public class RdCodeBlock extends Panel {
 
-    public static final String SLOT_ID = "slot";
+    private static final String SLOT_ID = "slot";
 
-    public RdCodeBlock(String id, IModel<String> textContent) {
+    /**
+     * Create code block with given code.
+     * @param id the Wicket ID
+     * @param codeContent the code to show
+     */
+    public RdCodeBlock(String id, IModel<String> codeContent) {
         super(id);
-        add(new Label(SLOT_ID, textContent));
+        add(new Label(SLOT_ID, codeContent));
         add(new RdCodeBlockBehavior());
     }
 }

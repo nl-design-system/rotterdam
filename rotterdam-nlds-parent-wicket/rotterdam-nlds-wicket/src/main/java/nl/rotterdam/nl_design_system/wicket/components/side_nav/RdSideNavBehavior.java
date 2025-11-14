@@ -4,16 +4,24 @@ import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeader
 
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.Component;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
+
+/**
+ * @see RdSideNavPanel
+ * TODO: consider making it package private
+ */
 public class RdSideNavBehavior extends TagNameClassComponentBehavior<Component> {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdSideNavBehavior.class,
         "@gemeente-denhaag/sidenav/dist/index.css"
     );
 
-    public RdSideNavBehavior() {
+    public static final Behavior INSTANCE = new RdSideNavBehavior();
+
+    private RdSideNavBehavior() {
         super("nav", RdSideNavCss.DEFAULT);
         addHeaderItem(CSS);
     }

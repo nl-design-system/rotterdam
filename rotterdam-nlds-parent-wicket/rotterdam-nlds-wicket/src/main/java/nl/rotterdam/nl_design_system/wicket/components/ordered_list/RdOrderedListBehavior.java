@@ -8,6 +8,11 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+/**
+ * @deprecated implementation incomplete
+ */
+@Deprecated
+@SuppressWarnings("doclint:missing")
 public class RdOrderedListBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(

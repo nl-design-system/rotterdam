@@ -28,7 +28,7 @@ public abstract class RdIconButtonBorder extends ButtonBorder {
      * <p>
      * Create a new instance with the given Wicket ID and the model for the accessibility label.
      * </p>
-     * @param id the Wicket ID.
+     * @param id the Wicket ID
      * @param model the model for the accessibility label.
      */
     public RdIconButtonBorder(final String id, final IModel<String> model) {

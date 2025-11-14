@@ -7,9 +7,16 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Co
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
+/**
+ * <a href="https://nldesignsystem.nl/heading-group/">NL Design System Heading Group component</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdHeadingGroupBorder extends Border {
 
+    /**
+     * Create new instance.
+     * @param id the Wicket ID
+     */
     public RdHeadingGroupBorder(String id) {
         super(id);
         add(RdHeadingGroupBehavior.INSTANCE);

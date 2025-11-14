@@ -33,12 +33,12 @@ public class UnorderedListExamplesPanel extends ExamplesPanel {
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new RdUnorderedListBehavior()); // TODO should be singleton
+                add(RdUnorderedListBehavior.INSTANCE);
                 add(
                     new ListView<>("listItem", namen) {
                         @Override
                         protected void populateItem(ListItem<String> item) {
-                            item.add(new RdUnorderedListItemBehavior()); // TODO: should be singleton
+                            item.add(RdUnorderedListItemBehavior.INSTANCE);
                             String naam = item.getModelObject();
                             // item.add(naam);
                             item.add(new Label("label", naam));

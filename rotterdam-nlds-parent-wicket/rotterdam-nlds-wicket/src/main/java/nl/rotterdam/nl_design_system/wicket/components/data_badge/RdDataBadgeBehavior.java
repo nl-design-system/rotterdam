@@ -12,10 +12,14 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+/**
+ * <a href="https://nldesignsystem.nl/data-badge/">Data Badge</a> component.
+ * TODO use TagNameClassComponentBehavior.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdDataBadgeBehavior extends Behavior {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdDataBadgeBehavior.class,
         "@utrecht/data-badge-css/dist/index.css"
     );
@@ -23,6 +27,9 @@ public class RdDataBadgeBehavior extends Behavior {
     private final String expectedTagName;
     private final String className;
 
+    /**
+     * Create instance.
+     */
     public RdDataBadgeBehavior() {
         this.expectedTagName = "data";
         this.className = "utrecht-data-badge";

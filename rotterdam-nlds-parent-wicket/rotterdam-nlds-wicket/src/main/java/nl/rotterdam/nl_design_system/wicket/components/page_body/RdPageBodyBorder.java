@@ -7,6 +7,11 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Co
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
+/**
+ * Body vs PageBody, unclear what should be used.
+ * @deprecated  what is difference between Body and PageBody?
+ */
+@Deprecated
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdPageBodyBorder extends Border {
 

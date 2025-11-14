@@ -10,11 +10,18 @@ import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.component.IRequestablePage;
 
+/**
+ * @deprecated overlaps with {@link RdBookmarkableLink}, merge or remove
+ * @param <T> modle type
+ * @param <C> page class type
+ */
+@Deprecated(forRemoval = true)
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@SuppressWarnings("doclint:missing")
 public class RdLink<T, C extends IRequestablePage> extends Link<T> {
 
-    public Class<C> webPage = null;
-    public boolean placeholder = false;
+    private Class<C> webPage = null;
+    private boolean placeholder = false;
 
     public RdLink(final String id) {
         super(id);
@@ -39,7 +46,7 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(new RdLinkBehavior());
+        add(RdLinkBehavior.INSTANCE);
     }
 
     @Override

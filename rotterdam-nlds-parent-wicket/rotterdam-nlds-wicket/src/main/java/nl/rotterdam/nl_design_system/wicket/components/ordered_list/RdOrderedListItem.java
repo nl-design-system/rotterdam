@@ -6,6 +6,11 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
+/**
+ * @deprecated implementation incomplete
+ */
+@Deprecated
+@SuppressWarnings("doclint:missing")
 public class RdOrderedListItem extends Label {
 
     public RdOrderedListItem(String id) {

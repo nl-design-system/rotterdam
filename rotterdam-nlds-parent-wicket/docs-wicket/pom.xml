@@ -6,10 +6,12 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.2-alpha</version>
     </parent>
 
     <artifactId>docs-wicket</artifactId>
+    <name>Documentation for NL Design System Wicket implementation</name>
+    <description>Examples to use the components in Wicket. Search for &lt;component&gt;ExamplesPanel to find examples.</description>
 
     <packaging>war</packaging>
 
@@ -17,17 +19,17 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-css-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.2-alpha</version>
         </dependency>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.2-alpha</version>
         </dependency>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.2-alpha</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -62,7 +64,7 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.2-alpha</version>
             <scope>test</scope>
         </dependency>
         <dependency>
