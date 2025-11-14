@@ -3,14 +3,15 @@ package nl.rotterdam.nl_design_system.wicket.components.dialog;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.heading.RdHeading;
 import nl.rotterdam.nl_design_system.wicket.components.icon.RdIconBorder;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconAjaxButtonBorder;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.border.Border;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
 import org.jspecify.annotations.NonNull;
 
 import static java.util.Objects.requireNonNull;
@@ -44,6 +45,9 @@ public abstract class RdDialogBorder extends Border {
     private static final String FOOTER_CONTENT_ID = "footerContent";
 
     @NonNull
+    private final SerializableSupplier<Behavior> closeIconBehaviorSupplier;
+
+    @NonNull
     private final IModel<String> closeButtonLabelModel;
 
     @NonNull
@@ -60,14 +64,19 @@ public abstract class RdDialogBorder extends Border {
      * Create a new dialog border with the given Wicket ID, title model and heading level.
      * </p>
      *
-     * @param id the Wicket ID
-     * @param titleModel the model with the title to shown in the dialog header.
+     * @param id the Wicket ID.
+     * @param titleModel the model with the title to show in the dialog header.
+     * @param closeIconBehaviorSupplier the supplier of the behavior that will configure the icon tag.
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */
-    public RdDialogBorder(@NonNull String id, @NonNull IModel<?> titleModel, @NonNull RdDialogHeadingLevel headingLevel) {
+    public RdDialogBorder(@NonNull String id,
+                          @NonNull IModel<?> titleModel,
+                          @NonNull SerializableSupplier<Behavior> closeIconBehaviorSupplier,
+                          @NonNull RdDialogHeadingLevel headingLevel) {
         super(id, requireNonNull(titleModel));
 
+        this.closeIconBehaviorSupplier = requireNonNull(closeIconBehaviorSupplier);
         closeButtonLabelModel = new StringResourceModel("Close", this);
 
         setOutputMarkupId(true);
@@ -82,15 +91,21 @@ public abstract class RdDialogBorder extends Border {
      * Create a new dialog border with the given Wicket ID, title model, close button label model and heading level.
      * </p>
      *
-     * @param id the Wicket ID
-     * @param titleModel the model with the title to shown in the dialog header.
-     * @param closeButtonLabelModel label for close buton
+     * @param id the Wicket ID.
+     * @param titleModel the model with the title to show in the dialog header.
+     * @param closeIconBehaviorSupplier the supplier of the behavior that will configure the icon tag.
+     * @param closeButtonLabelModel the model with the label for the close button.
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */
-    public RdDialogBorder(@NonNull String id, @NonNull IModel<?> titleModel, @NonNull IModel<String> closeButtonLabelModel, @NonNull RdDialogHeadingLevel headingLevel) {
+    public RdDialogBorder(@NonNull String id,
+                          @NonNull IModel<?> titleModel,
+                          @NonNull SerializableSupplier<Behavior> closeIconBehaviorSupplier,
+                          @NonNull IModel<String> closeButtonLabelModel,
+                          @NonNull RdDialogHeadingLevel headingLevel) {
         super(id, requireNonNull(titleModel));
 
+        this.closeIconBehaviorSupplier = requireNonNull(closeIconBehaviorSupplier);
         this.closeButtonLabelModel = requireNonNull(closeButtonLabelModel);
 
         setOutputMarkupId(true);
@@ -220,7 +235,7 @@ public abstract class RdDialogBorder extends Border {
         var icon = new RdIconBorder("icon");
 
         var closeSymbol = new WebMarkupContainer("close");
-        closeSymbol.add(RotterdamIconBehavior.CLOSE);
+        closeSymbol.add(closeIconBehaviorSupplier.get());
 
         closeButton.add(
             icon.add(closeSymbol)

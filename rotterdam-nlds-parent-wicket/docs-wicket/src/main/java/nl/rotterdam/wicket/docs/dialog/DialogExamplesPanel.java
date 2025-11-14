@@ -1,5 +1,7 @@
 package nl.rotterdam.wicket.docs.dialog;
 
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
 import nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogHeadingLevel;
 import nl.rotterdam.wicket.docs.ComponentExample;
@@ -116,7 +118,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
 
     private abstract static class RdDialogBorder extends nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogBorder {
         public RdDialogBorder(String id, IModel<?> titleModel, RdDialogHeadingLevel headingLevel) {
-            super(id, titleModel, headingLevel);
+            super(id, titleModel, () -> new RotterdamIconBehavior(RotterdamIconType.CLOSE), headingLevel);
         }
     }
 }

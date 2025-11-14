@@ -1,6 +1,6 @@
 package nl.rotterdam.wicket.docs.icon_button;
 
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconAjaxButtonBorder;
 import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconButtonBorder;
 import nl.rotterdam.wicket.docs.ComponentExample;

@@ -1,10 +1,12 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
+import org.apache.wicket.behavior.Behavior;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
+
 import java.io.Serializable;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 
 public record RdSideNavRecord<C>(
-    RotterdamIconType icon,
+    SerializableSupplier<Behavior> iconBehaviorSupplier,
     String label,
     Class<C> target,
     long numberBadge,

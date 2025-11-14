@@ -1,9 +1,9 @@
 package nl.rotterdam.wicket.docs.mijn_loket_page;
 
-import java.util.List;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav.RdBreadcrumbNavRecord;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListPanel;
 import nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListRecord;
 import nl.rotterdam.nl_design_system.wicket.components.preserve_data.RdPreserveDataLabel;
@@ -11,8 +11,12 @@ import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavRecord;
 import nl.rotterdam.wicket.docs.RotterdamBasePage;
 import nl.rotterdam.wicket.docs.RotterdamPlaceholderPage;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.component.IRequestablePage;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
+
+import java.util.List;
 
 public class MijnLoketPage extends RotterdamBasePage {
 
@@ -28,38 +32,62 @@ public class MijnLoketPage extends RotterdamBasePage {
         this.username = "mevrouw Van Bergenhenegouwen";
 
         this.sideNavRecords = List.of(
-            new RdSideNavRecord<>(RotterdamIconType.OVERVIEW, "Overzicht", MijnLoketPage.class, 0, ""),
             new RdSideNavRecord<>(
-                RotterdamIconType.INBOX,
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.OVERVIEW),
+                "Overzicht",
+                MijnLoketPage.class,
+                0,
+                ""
+            ),
+            new RdSideNavRecord<>(
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.INBOX),
                 "Mijn berichten",
                 RotterdamPlaceholderPage.class,
                 2,
                 "2 nieuwe berichten"
             ),
             new RdSideNavRecord<>(
-                RotterdamIconType.BOX,
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.BOX),
                 "Mijn lopende zaken",
                 RotterdamPlaceholderPage.class,
                 0,
                 ""
             ),
             new RdSideNavRecord<>(
-                RotterdamIconType.SUMMARY,
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.SUMMARY),
                 "Zelf regelen",
                 RotterdamPlaceholderPage.class,
                 0,
                 ""
             ),
-            new RdSideNavRecord<>(RotterdamIconType.COINS, "Belastingen", RotterdamPlaceholderPage.class, 0, ""),
             new RdSideNavRecord<>(
-                RotterdamIconType.MONEY_2,
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.COINS),
+                "Belastingen",
+                RotterdamPlaceholderPage.class,
+                0,
+                ""
+            ),
+            new RdSideNavRecord<>(
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.MONEY_2),
                 "Werk & Inkomen",
                 RotterdamPlaceholderPage.class,
                 0,
                 ""
             ),
-            new RdSideNavRecord<>(RotterdamIconType.PARKING, "Parkeren", RotterdamPlaceholderPage.class, 0, ""),
-            new RdSideNavRecord<>(RotterdamIconType.USER, "Mijn gegevens", RotterdamPlaceholderPage.class, 0, "")
+            new RdSideNavRecord<>(
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.PARKING),
+                "Parkeren",
+                RotterdamPlaceholderPage.class,
+                0,
+                ""
+            ),
+            new RdSideNavRecord<>(
+                (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.USER),
+                "Mijn gegevens",
+                RotterdamPlaceholderPage.class,
+                0,
+                ""
+            )
         );
 
         this.breadcrumbNavLinks = List.of(
@@ -81,9 +109,10 @@ public class MijnLoketPage extends RotterdamBasePage {
         pageBody.add(new RdBreadcrumbNavPanel("breadcrumbNav", this.breadcrumbNavLinks));
 
         pageBody.add(new RdPreserveDataLabel("name", Model.of(this.username)));
-        pageBody.add(new RdLinkListPanel("linkList1", linkListLinks));
-        pageBody.add(new RdLinkListPanel("linkList2", linkListLinks));
-        pageBody.add(new RdLinkListPanel("linkList3", linkListLinks));
-        pageBody.add(new RdLinkListPanel("linkList4", linkListLinks));
+        SerializableSupplier<Behavior> defaultIconBehaviorSupplier = () -> new RotterdamIconBehavior(RotterdamIconType.CHEVRON_RIGHT);
+        pageBody.add(new RdLinkListPanel("linkList1", linkListLinks, defaultIconBehaviorSupplier));
+        pageBody.add(new RdLinkListPanel("linkList2", linkListLinks, defaultIconBehaviorSupplier));
+        pageBody.add(new RdLinkListPanel("linkList3", linkListLinks, defaultIconBehaviorSupplier));
+        pageBody.add(new RdLinkListPanel("linkList4", linkListLinks, defaultIconBehaviorSupplier));
     }
 }

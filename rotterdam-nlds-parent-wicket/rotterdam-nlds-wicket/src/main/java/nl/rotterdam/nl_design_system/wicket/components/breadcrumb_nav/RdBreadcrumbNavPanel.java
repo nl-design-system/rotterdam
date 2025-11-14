@@ -9,7 +9,6 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
 import java.util.List;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -43,9 +42,8 @@ public class RdBreadcrumbNavPanel extends Panel {
             protected void populateItem(ListItem<RdBreadcrumbNavRecord<? extends IRequestablePage>> item) {
                 item.add(INSTANCE);
                 RdBreadcrumbNavRecord<? extends IRequestablePage> record = item.getModelObject();
-                String naam = record.label();
+                var label = record.label();
 
-                // TODO: How do I type this?
                 @SuppressWarnings({ "rawtypes", "unchecked" })
                 RdBreadcrumbNavLink<?> link = new RdBreadcrumbNavLink(
                     "breadcrumbNavLink",
@@ -53,16 +51,16 @@ public class RdBreadcrumbNavPanel extends Panel {
                 );
 
                 // Optionally add an icon
-                if (record.icon() != null) {
-                    WebMarkupContainer icon = new WebMarkupContainer("breadcrumbNavLinkIcon");
-                    icon.add(new RotterdamIconBehavior(record.icon()));
-                    link.add(icon);
+                WebMarkupContainer icon = new WebMarkupContainer("breadcrumbNavLinkIcon");
+                link.add(icon);
+                if (record.iconBehaviorSupplier() != null) {
+                    icon.add(record.iconBehaviorSupplier().get());
                 } else {
-                    link.add(new Label("breadcrumbNavLinkIcon", ""));
+                    icon.setVisible(false);
                 }
 
                 // Add the link text
-                link.add(new Label("breadcrumbNavLinkLabel", naam));
+                link.add(new Label("breadcrumbNavLinkLabel", label));
 
                 item.add(link);
             }

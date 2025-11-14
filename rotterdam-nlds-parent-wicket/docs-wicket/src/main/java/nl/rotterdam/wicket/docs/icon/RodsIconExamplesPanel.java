@@ -1,7 +1,7 @@
 package nl.rotterdam.wicket.docs.icon;
 
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconType;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.unordered_list.RdUnorderedListBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.unordered_list.RdUnorderedListItemBehavior;
 import nl.rotterdam.wicket.docs.ComponentExample;
@@ -28,9 +28,7 @@ public class RodsIconExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static Component exampleRodsIcons() {
-        // List<RotterdamIconType> links = Arrays.asList(RotterdamIconType.values());
         List<RotterdamIconType> icons = Arrays.asList(RotterdamIconType.values());
-        // List<RotterdamIconType> icons = List.of(RotterdamIconType.TRASH);
 
         return new WebMarkupContainer("rodsIconset") {
             @Override
@@ -44,8 +42,6 @@ public class RodsIconExamplesPanel extends ExamplesPanel {
                         protected void populateItem(ListItem<RotterdamIconType> item) {
                             item.add(RdUnorderedListItemBehavior.INSTANCE);
                             RotterdamIconType iconType = item.getModelObject();
-                            // item.add(naam);
-                            // item.add(new RotterdamIconBehavior(iconType))
                             WebMarkupContainer icon = new WebMarkupContainer("icon");
                             icon.add(new RotterdamIconBehavior(iconType));
                             item.add(icon);
@@ -56,24 +52,6 @@ public class RodsIconExamplesPanel extends ExamplesPanel {
                         }
                     }
                 );
-                /*
-                    new ListView<RotterdamIconType>("iconItem", icons) {
-                        @Override
-                        protected void populateItem(ListItem<RotterdamIconType> item) {
-                            RotterdamIconType iconType = item.getModelObject();
-
-                            // WebMarkupContainer icon = new WebMarkupContainer("icon");
-                            // icon.add(new RotterdamIconBehavior(iconType));
-
-                            // WebMarkupContainer iconLabel = new WebMarkupContainer("iconLabel");
-                            // iconLabel.add(new Label(iconType.type));
-
-                            // item.add(iconLabel);
-                            // item.add(icon);
-                            item.add(new Label(iconType.type));
-                        }
-                    }
-                ); */
             }
         };
     }

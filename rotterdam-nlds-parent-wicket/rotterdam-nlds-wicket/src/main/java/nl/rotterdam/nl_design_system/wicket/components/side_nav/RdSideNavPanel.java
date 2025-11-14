@@ -1,13 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
-
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -15,6 +8,13 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
 
 /**
  * <a href="https://nldesignsystem.nl/side-navigation/">NL Design System Side Navigation</a> component.
@@ -63,9 +63,8 @@ public class RdSideNavPanel extends Panel {
                                             item.add(new RdSideNavItemBehavior()); // TODO: should be singleton
                                             RdSideNavRecord<? extends IRequestablePage> record =
                                                 item.getModelObject();
-                                            String naam = record.label();
+                                            var label = record.label();
 
-                                            // TODO: How do I type this?
                                             @SuppressWarnings({ "rawtypes", "unchecked" })
                                             RdSideNavLink<?> link = new RdSideNavLink(
                                                 "sideNavLink",
@@ -73,18 +72,16 @@ public class RdSideNavPanel extends Panel {
                                             );
 
                                             // Optionally add an icon
-                                            if (record.icon() != null) {
-                                                WebMarkupContainer icon = new WebMarkupContainer(
-                                                    "sideNavLinkIcon"
-                                                );
-                                                icon.add(new RotterdamIconBehavior(record.icon()));
-                                                link.add(icon);
+                                            WebMarkupContainer icon = new WebMarkupContainer("sideNavLinkIcon");
+                                            link.add(icon);
+                                            if (record.iconBehaviorSupplier() != null) {
+                                                icon.add(record.iconBehaviorSupplier().get());
                                             } else {
-                                                link.add(new Label("sideNavLinkIcon", ""));
+                                                icon.setVisible(false);
                                             }
 
                                             // Add the link text
-                                            link.add(new Label("sideNavLinkLabel", naam));
+                                            link.add(new Label("sideNavLinkLabel", label));
 
                                             // Optionally add a number badge
                                             RdNumberBadge numberBadge = new RdNumberBadge(

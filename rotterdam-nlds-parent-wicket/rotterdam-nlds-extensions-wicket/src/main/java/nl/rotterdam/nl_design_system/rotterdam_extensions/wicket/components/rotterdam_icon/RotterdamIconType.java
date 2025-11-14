@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.wicket.components.icon.rotterdam;
+package nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon;
 
 /**
  * Rotterdam icons. Check out Storybook online for their looks.
