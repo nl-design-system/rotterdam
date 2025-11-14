@@ -26,6 +26,8 @@
         <java.version>21</java.version>
         <node.version>v22.19.0</node.version>
         <pnpm.version>10.17.0</pnpm.version>
+        <central-publishing.autoPublish>true</central-publishing.autoPublish>
+        <central-publishing.waitUntil>published</central-publishing.waitUntil>
     </properties>
 
     <developers>
@@ -55,8 +57,8 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central-sonatype</publishingServerId>
-                            <autoPublish>false</autoPublish>
-                            <waitUntil>uploaded</waitUntil>
+                            <autoPublish>${central-publishing.autoPublish}</autoPublish>
+                            <waitUntil>${central-publishing.waitUntil}</waitUntil>
                             <excludeArtifacts>
                                 <artifact>docs-wicket</artifact>
                             </excludeArtifacts>
