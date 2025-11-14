@@ -1,8 +1,8 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
 
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.test_common.CssClassNamesAssertions.assertHasCss;
-import static nl.rotterdam.nl_design_system.wicket.test_common.FormFieldAssertions.verifyFormFieldContract;
+import static nl.rotterdam.nl_design_system.wicket.test_util.CssClassNamesAssertions.assertHasCss;
+import static nl.rotterdam.nl_design_system.wicket.test_util.FormFieldAssertions.verifyFormFieldContract;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;

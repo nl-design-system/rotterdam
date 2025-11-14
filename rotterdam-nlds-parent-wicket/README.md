@@ -65,6 +65,16 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
 - Geef geen componenten door aan andere Wicket componenten (via constructors).
 - Voor methodes die componenten maken: prefix met new. Net als Wicket, zie bijvoorbeeld AjaxPagingNavigation
 
+## Java Platform Module System (JPMS)
+
+Voeg alleen exports toe voor packages die bij de publieke API horen. Voeg ook een `opens` voor iedere `exports` toe, want Wicket heeft toegang tot de resources van de componenten nodig.
+
+In principe hoeft een `opens` alleen te worden toegevoegd als er ook resources zijn die door classes uit andere modules benaderd moeten worden. Maar qua onderhoud is het veel makkelijker om gewoon voor alle `exports` een `opens` toe te voegen.
+
+### Module docs-wicket
+
+Module docs-wicket mag niets exporteren, want het is niet de bedoeling dat die code door een andere module wordt gebruikt. Maar om de tests te laten slagen zijn wel `opens`-regels nodig.
+
 ## PNPM Workspace dependencies resolven
 
 NL Design System gebruikt pnpm voor nodejs projecten. Pnpm ondersteunt meerdere npm projecten binnen een repository.

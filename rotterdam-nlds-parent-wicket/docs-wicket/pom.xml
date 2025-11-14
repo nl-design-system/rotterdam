@@ -19,17 +19,14 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-css-wicket</artifactId>
-            <version>0.0.2-alpha</version>
         </dependency>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-            <version>0.0.2-alpha</version>
         </dependency>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-wicket</artifactId>
-            <version>0.0.2-alpha</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -80,7 +77,6 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>0.0.2-alpha</version>
             <scope>test</scope>
         </dependency>
         <dependency>
