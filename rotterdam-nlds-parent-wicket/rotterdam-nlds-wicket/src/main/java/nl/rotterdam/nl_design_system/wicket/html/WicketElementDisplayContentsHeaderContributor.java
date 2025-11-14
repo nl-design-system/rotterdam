@@ -9,13 +9,10 @@
 
 package nl.rotterdam.nl_design_system.wicket.html;
 
-import nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems;
 import org.apache.wicket.RuntimeConfigurationType;
-import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.IHeaderContributor;
-import org.apache.wicket.request.resource.CssResourceReference;
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 

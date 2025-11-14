@@ -4,7 +4,6 @@ import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeader
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.DEFAULT;
 
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;

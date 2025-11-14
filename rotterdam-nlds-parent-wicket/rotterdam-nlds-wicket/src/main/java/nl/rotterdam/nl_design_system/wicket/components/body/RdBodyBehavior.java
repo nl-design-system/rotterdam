@@ -5,7 +5,6 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.NOT_LISTED;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
