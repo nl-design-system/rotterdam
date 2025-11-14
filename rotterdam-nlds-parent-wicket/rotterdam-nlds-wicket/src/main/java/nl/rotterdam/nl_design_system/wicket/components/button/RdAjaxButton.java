@@ -6,6 +6,7 @@ import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.IModel;
+import org.jspecify.annotations.Nullable;
 
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
@@ -20,8 +21,8 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
 public class RdAjaxButton extends AjaxButton {
 
     private boolean busy = false;
-    private RdButtonAppearance appearance = null;
-    private RdButtonHint hint = null;
+    private @Nullable RdButtonAppearance appearance = null;
+    private @Nullable RdButtonHint hint = null;
 
     /**
      * New instance with label to be added later.

@@ -6,6 +6,7 @@ import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Base behavior class often useful when creating NL Design System Components.
@@ -74,7 +75,7 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
     /**
      * Efficient conversion of an array and a collection to a single space-separated string.
      */
-    private static String joinAll(String[] arr, Collection<String> col) {
+    private static String joinAll(@Nullable String[] arr, Collection<@Nullable String> col) {
         StringBuilder sb = new StringBuilder();
 
         for (String s : arr) {

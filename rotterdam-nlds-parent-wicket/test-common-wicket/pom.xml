@@ -27,6 +27,10 @@
             <artifactId>jsoup</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+        </dependency>
+        <dependency>
             <groupId>de.agilecoders.wicket.webjars</groupId>
             <artifactId>wicket-webjars</artifactId>
         </dependency>

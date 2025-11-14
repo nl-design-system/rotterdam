@@ -12,7 +12,6 @@ import org.apache.wicket.markup.html.border.Border;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
 import org.danekja.java.util.function.serializable.SerializableSupplier;
-import org.jspecify.annotations.NonNull;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.AMSTERDAM;
@@ -44,19 +43,14 @@ public abstract class RdDialogBorder extends Border {
 
     private static final String FOOTER_CONTENT_ID = "footerContent";
 
-    @NonNull
     private final SerializableSupplier<Behavior> closeIconBehaviorSupplier;
 
-    @NonNull
     private final IModel<String> closeButtonLabelModel;
 
-    @NonNull
     private final WebMarkupContainer content;
 
-    @NonNull
     private final Component heading;
 
-    @NonNull
     private final Component closeButton;
 
     /**
@@ -70,10 +64,10 @@ public abstract class RdDialogBorder extends Border {
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */
-    public RdDialogBorder(@NonNull String id,
-                          @NonNull IModel<?> titleModel,
-                          @NonNull SerializableSupplier<Behavior> closeIconBehaviorSupplier,
-                          @NonNull RdDialogHeadingLevel headingLevel) {
+    public RdDialogBorder(String id,
+                          IModel<?> titleModel,
+                          SerializableSupplier<Behavior> closeIconBehaviorSupplier,
+                          RdDialogHeadingLevel headingLevel) {
         super(id, requireNonNull(titleModel));
 
         this.closeIconBehaviorSupplier = requireNonNull(closeIconBehaviorSupplier);
@@ -98,11 +92,11 @@ public abstract class RdDialogBorder extends Border {
      * @param headingLevel the level of the heading in the dialog header. This affects the title heading element and the
      *                     icon button.
      */
-    public RdDialogBorder(@NonNull String id,
-                          @NonNull IModel<?> titleModel,
-                          @NonNull SerializableSupplier<Behavior> closeIconBehaviorSupplier,
-                          @NonNull IModel<String> closeButtonLabelModel,
-                          @NonNull RdDialogHeadingLevel headingLevel) {
+    public RdDialogBorder(String id,
+                          IModel<?> titleModel,
+                          SerializableSupplier<Behavior> closeIconBehaviorSupplier,
+                          IModel<String> closeButtonLabelModel,
+                          RdDialogHeadingLevel headingLevel) {
         super(id, requireNonNull(titleModel));
 
         this.closeIconBehaviorSupplier = requireNonNull(closeIconBehaviorSupplier);
@@ -136,7 +130,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @return the heading Wicket component.
      */
-    public @NonNull Component getHeadingComponent() {
+    public Component getHeadingComponent() {
         return heading;
     }
 
@@ -147,7 +141,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @return the close button Wicket component.
      */
-    public @NonNull Component getCloseButtonComponent() {
+    public Component getCloseButtonComponent() {
         return closeButton;
     }
 
@@ -159,7 +153,6 @@ public abstract class RdDialogBorder extends Border {
      * @param id the Wicket ID for the footer content component.
      * @return the footer content component.
      */
-    @NonNull
     protected abstract Component newFooterContent(String id);
 
     /**
@@ -169,7 +162,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    protected abstract void onClose(@NonNull AjaxRequestTarget target);
+    protected abstract void onClose(AjaxRequestTarget target);
 
     /**
      * <p>
@@ -179,7 +172,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    public void show(@NonNull AjaxRequestTarget target) {
+    public void show(AjaxRequestTarget target) {
         content.setVisible(true);
         target.add(content);
         target.appendJavaScript("document.getElementById('" + getMarkupId() + "').show();");
@@ -193,7 +186,7 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    public void showModal(@NonNull AjaxRequestTarget target) {
+    public void showModal(AjaxRequestTarget target) {
         content.setVisible(true);
         target.add(content);
         target.appendJavaScript("document.getElementById('" + getMarkupId() + "').showModal();");
@@ -206,13 +199,13 @@ public abstract class RdDialogBorder extends Border {
      *
      * @param target the Ajax request target.
      */
-    public void close(@NonNull AjaxRequestTarget target) {
+    public void close(AjaxRequestTarget target) {
         content.setVisible(false);
         target.add(content);
         target.appendJavaScript("document.getElementById('" + getMarkupId() + "').close();");
     }
 
-    private @NonNull WebMarkupContainer newContent() {
+    private WebMarkupContainer newContent() {
         var content = new WebMarkupContainer("content");
         content.setOutputMarkupPlaceholderTag(true);
         // Dialog content only needs to be visible if it is shown.
@@ -220,11 +213,11 @@ public abstract class RdDialogBorder extends Border {
         return content;
     }
 
-    private @NonNull Component newHeading(RdDialogHeadingLevel headingLevel) {
+    private Component newHeading(RdDialogHeadingLevel headingLevel) {
         return new RdHeading("title", getDefaultModel(), headingLevel.getLevel());
     }
 
-    private @NonNull Component newCloseButton() {
+    private Component newCloseButton() {
         var closeButton = new RdIconAjaxButtonBorder("closeButton", closeButtonLabelModel) {
             @Override
             protected void onSubmit(AjaxRequestTarget target) {

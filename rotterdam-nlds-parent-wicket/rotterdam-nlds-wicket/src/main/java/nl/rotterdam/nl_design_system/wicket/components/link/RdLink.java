@@ -1,14 +1,15 @@
 package nl.rotterdam.nl_design_system.wicket.components.link;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.component.IRequestablePage;
+import org.jspecify.annotations.Nullable;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 /**
  * @deprecated overlaps with {@link RdBookmarkableLink}, merge or remove
@@ -20,7 +21,7 @@ import org.apache.wicket.request.component.IRequestablePage;
 @SuppressWarnings("doclint:missing")
 public class RdLink<T, C extends IRequestablePage> extends Link<T> {
 
-    private Class<C> webPage = null;
+    private @Nullable Class<C> webPage = null;
     private boolean placeholder = false;
 
     public RdLink(final String id) {

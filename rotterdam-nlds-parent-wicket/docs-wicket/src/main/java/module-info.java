@@ -1,3 +1,6 @@
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 module nl.rotterdam.nlds.docs.wicket {
     opens nl.rotterdam.wicket.docs;
     opens nl.rotterdam.wicket.docs.action_group;
