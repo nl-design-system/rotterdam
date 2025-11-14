@@ -48,22 +48,22 @@ import org.apache.wicket.Component;
 public interface RdFormField {
 
     /**
-     * Additional description if label is just not enough.
+     * Additional description if label is not descriptive enough.
      *
-     * @return the detailed description component, additional to the label.
+     * @return the detailed description component, additional to the label
      */
     Component getDescriptionComponent();
 
     /**
      * Error message, for validation messages.
      *
-     * @return the error message component.
+     * @return the error message component
      */
     Component getErrorMessageComponent();
 
     /**
      * The label of the form field.
-     * @return the label component.
+     * @return the label component
      */
     Component getLabelComponent();
 

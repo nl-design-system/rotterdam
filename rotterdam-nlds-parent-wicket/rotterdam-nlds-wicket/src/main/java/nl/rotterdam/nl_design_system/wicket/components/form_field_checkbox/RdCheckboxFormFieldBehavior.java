@@ -7,7 +7,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 
 class RdCheckboxFormFieldBehavior extends TagNameClassComponentBehavior<Panel> {
 
-    public static final RdCheckboxFormFieldBehavior INSTANCE = new RdCheckboxFormFieldBehavior();
+    static final RdCheckboxFormFieldBehavior INSTANCE = new RdCheckboxFormFieldBehavior();
 
     private RdCheckboxFormFieldBehavior() {
         super("div", FORM_FIELD_CHECKBOX);

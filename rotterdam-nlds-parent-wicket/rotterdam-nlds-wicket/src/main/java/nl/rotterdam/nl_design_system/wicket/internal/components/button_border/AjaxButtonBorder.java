@@ -42,6 +42,8 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
 
     /**
      * Create instance with label.
+     * @param id the Wicket ID
+     * @param model the label
      */
     public AjaxButtonBorder(String id, IModel<String> model) {
         super(id, model);
@@ -50,6 +52,10 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
         addToBorder(body);
     }
 
+    /**
+     * Reference to the body container.
+     * @return the body
+     */
     public final BorderBodyContainer getBodyContainer() {
         return body;
     }

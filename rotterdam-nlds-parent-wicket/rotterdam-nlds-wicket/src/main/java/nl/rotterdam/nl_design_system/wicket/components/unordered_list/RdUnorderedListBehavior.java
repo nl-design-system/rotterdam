@@ -8,17 +8,29 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+/**
+ * Utrecht onordered list as behavior
+ * @see RdUnorderedList
+ *
+ * TODO: can we make this package private?
+ * TODO: extend TagNameClassComponentBehavior
+ */
 public class RdUnorderedListBehavior extends Behavior {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdUnorderedListBehavior.class,
         "@utrecht/unordered-list-css/dist/index.css"
     );
 
+    /**
+     * Singleton instance.
+     */
+    public static final Behavior INSTANCE = new RdUnorderedListBehavior();
+
     private final String expectedTagName;
     private final String className;
 
-    public RdUnorderedListBehavior() {
+    private RdUnorderedListBehavior() {
         this.expectedTagName = "ul";
         this.className = "utrecht-unordered-list";
     }

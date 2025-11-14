@@ -9,6 +9,9 @@ import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+/**
+ * Add a number of header items in a subclass, and just add them to component to render the header items.
+ */
 public abstract class HeaderItemRenderingBehavior extends Behavior {
 
     private final List<CssReferenceHeaderItem> headerItems = new ArrayList<>();

@@ -8,6 +8,10 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 
+/**
+ * <a href="https://nldesignsystem.nl/text-input/">NL Design System Text Input component</a>.
+ * @param <T> the model object type.
+ */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdTextInput<T> extends TextField<T> {
 

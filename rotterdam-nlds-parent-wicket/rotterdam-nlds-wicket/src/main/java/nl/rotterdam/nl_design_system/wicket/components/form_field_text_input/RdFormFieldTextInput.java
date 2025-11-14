@@ -212,11 +212,11 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         return labelComponent;
     }
 
-    class FormFieldTextInput extends RdTextInput<T> {
+    private class FormFieldTextInput extends RdTextInput<T> {
 
         private final IModel<String> descriptionModel;
 
-        public FormFieldTextInput(IModel<T> model, IModel<String> descriptionModel) {
+        private FormFieldTextInput(IModel<T> model, IModel<String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }
@@ -238,7 +238,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
 
     private class TextInputLabel extends WebMarkupContainer {
 
-        public TextInputLabel() {
+        private TextInputLabel() {
             super("label");
         }
 

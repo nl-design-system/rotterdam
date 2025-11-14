@@ -7,11 +7,35 @@ import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassN
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 
+/**
+ * Base behavior class often useful when creating NL Design System Components.
+ *
+ * <p>Often there are multiple wicket components that can be used which have common behavior. Examples</p>
+ * <dl>
+ *     <dt>Button</dt>
+ *     <dd>Has Ajax Button and full page refresh Button</dd>
+ *     <dt>Links</dt>
+ *     <dd>Has bookmarkable links, Ajax links and full page refresh Link instances</dd>
+ * </dl>
+ *
+ * <p>By adding the common behavior in a Behavior, this logic can be shared.</p>
+ *
+ * <p>Often behaviors can be a Singleton, further reducing object creation during Page instantiation.</p>
+ *
+ * @param <T> the expected component type.
+ */
 public abstract class TagNameClassComponentBehavior<T extends Component> extends HeaderItemRenderingBehavior {
 
     private final String requiredTagName;
     private final String[] classNames;
 
+    /**
+     * Maak een nieuwe instantie
+     * @param requiredTagName
+     *  tag name required in markup. Will throw exception if incorrect tag name is used
+     * @param classNames
+     *  CSS class names to be added by default
+     */
     protected TagNameClassComponentBehavior(String requiredTagName, CssClassNames... classNames) {
         this.requiredTagName = requiredTagName;
         this.classNames = Arrays.stream(classNames).map(CssClassNames::getClassNames).toArray(String[]::new);

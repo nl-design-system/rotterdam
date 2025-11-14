@@ -14,6 +14,7 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 
 /**
  * <a href="https://nldesignsystem.nl/data-badge/">Data Badge</a> component.
+ * TODO use TagNameClassComponentBehavior.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdDataBadgeBehavior extends Behavior {

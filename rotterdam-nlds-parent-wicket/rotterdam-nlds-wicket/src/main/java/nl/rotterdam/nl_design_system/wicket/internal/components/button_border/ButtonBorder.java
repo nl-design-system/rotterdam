@@ -38,8 +38,6 @@ import org.apache.wicket.model.IModel;
  * </p>
  */
 public abstract class ButtonBorder extends Button implements IComponentResolver, IQueueRegion {
-    private static final long serialVersionUID = 1L;
-
     private final BorderBodyContainer body;
 
     public ButtonBorder(String id) {

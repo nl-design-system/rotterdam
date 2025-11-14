@@ -57,7 +57,7 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
 
     static class RdDataSummaryListView extends ListView<SummaryItem> {
 
-        public RdDataSummaryListView(IModel<? extends List<SummaryItem>> model) {
+        RdDataSummaryListView(IModel<? extends List<SummaryItem>> model) {
             super("list", model);
         }
 
@@ -72,7 +72,7 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
             private static final Behavior KEY_BEHAVIOR_CSS = RdDataSummaryKeyCss.DEFAULT.asBehavior();
             private final ListItem<SummaryItem> item;
 
-            public DataListItemMarkupContainer(ListItem<SummaryItem> item) {
+            DataListItemMarkupContainer(ListItem<SummaryItem> item) {
                 super("item");
                 this.item = item;
             }
@@ -93,7 +93,7 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
 
                 private final IModel<SummaryItemValue> valueModel;
 
-                public DataSummaryValueLabel(IModel<SummaryItemValue> model) {
+                DataSummaryValueLabel(IModel<SummaryItemValue> model) {
                     super("value", model.map(SummaryItemValue::value));
                     valueModel = model;
                 }

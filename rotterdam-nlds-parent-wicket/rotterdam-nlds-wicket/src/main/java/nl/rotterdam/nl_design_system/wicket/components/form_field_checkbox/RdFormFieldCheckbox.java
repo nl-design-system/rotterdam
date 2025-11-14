@@ -151,6 +151,12 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         return this;
     }
 
+    /**
+     * Add behaviors to this form field and return specific type of self.
+     * @param behaviors
+     *            The behavior modifier(s) to be added
+     * @return self for chaining
+     */
     @Override
     public RdFormFieldCheckbox add(Behavior... behaviors) {
         super.add(behaviors);
@@ -187,7 +193,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     private class LabelAndCheckboxContainer extends WebMarkupContainer {
 
-        public LabelAndCheckboxContainer() {
+        private LabelAndCheckboxContainer() {
             super("label");
         }
 
@@ -211,7 +217,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
         private final IModel<String> descriptionModel;
 
-        public FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
+        private FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
             super("checkbox", model);
             this.descriptionModel = descriptionModel;
         }

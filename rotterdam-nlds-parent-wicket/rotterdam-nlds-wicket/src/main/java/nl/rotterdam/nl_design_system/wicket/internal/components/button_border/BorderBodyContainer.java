@@ -26,8 +26,6 @@ import org.jspecify.annotations.NonNull;
  * </p>
  */
 public class BorderBodyContainer extends WebMarkupContainer {
-    private static final long serialVersionUID = 1L;
-
     @NonNull
     private final Component markupProvider;
 
