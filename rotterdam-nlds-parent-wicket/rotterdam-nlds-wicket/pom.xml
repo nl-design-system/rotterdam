@@ -110,9 +110,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
-<!--                    <additionalJOptions>-->
-<!--                        <additionalJOption>-Xdoclint:missing/public</additionalJOption>-->
-<!--                    </additionalJOptions>-->
                     <show>public</show>
                     <failOnError>true</failOnError>
                 </configuration>
