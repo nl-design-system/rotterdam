@@ -10,6 +10,8 @@
     </parent>
 
     <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
+    <name>NL Design System Wicket Extensions for Rotterdam</name>
+    <description>Wicket extensions for Rotterdam such as the Gemeente Rotterdam logo.</description>
 
     <dependencies>
         <dependency>

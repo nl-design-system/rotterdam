@@ -10,6 +10,8 @@
     </parent>
 
     <artifactId>test-common-wicket</artifactId>
+    <name>Common Test utilities for Wicket</name>
+    <description>Test utilities intended to test NL Design System Component implementations.</description>
 
     <dependencies>
         <dependency>
