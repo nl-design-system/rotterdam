@@ -1,6 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
 
-import static nl.rotterdam.nl_design_system.wicket.test_common.FormFieldAssertions.verifyFormFieldContract;
+import static nl.rotterdam.nl_design_system.wicket.components.test_common.FormFieldAssertions.verifyFormFieldContract;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;

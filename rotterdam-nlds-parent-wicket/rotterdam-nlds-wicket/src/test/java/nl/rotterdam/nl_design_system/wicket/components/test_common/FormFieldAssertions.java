@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.wicket.test_common;
+package nl.rotterdam.nl_design_system.wicket.components.test_common;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

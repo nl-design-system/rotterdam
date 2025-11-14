@@ -1,7 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.text_input;
 
 import static nl.rotterdam.nl_design_system.wicket.components.text_input.RdTextInputCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.test_common.CssClassNamesAssertions.assertHasCss;
+import static nl.rotterdam.nl_design_system.wicket.components.test_common.CssClassNamesAssertions.assertHasCss;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.Component;
