@@ -3,7 +3,11 @@ package nl.rotterdam.nl_design_system.wicket.components.ordered_list;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-
+/**
+ * @deprecated implementation incomplete
+ */
+@Deprecated
+@SuppressWarnings("doclint:missing")
 public class RdOrderedListItemBehavior extends Behavior {
 
     private final String expectedTagName;

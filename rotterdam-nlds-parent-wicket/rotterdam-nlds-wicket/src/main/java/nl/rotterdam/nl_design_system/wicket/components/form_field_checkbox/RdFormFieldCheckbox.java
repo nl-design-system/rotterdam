@@ -11,7 +11,6 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormF
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory.createErrorMessageLabel;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.FORM_FIELD_LABEL_CHECKBOX;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.FORM_LABEL_STATE_DISABLED;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -33,6 +32,10 @@ import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.NonNull;
 
+/**
+ * <a href="https://nldesignsystem.nl/form-field/">Form Field</a>
+ * <a href="https://nldesignsystem.nl/checkbox/">Checkbox</a> NL Design System implementation.
+ */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdFormField {
 
@@ -48,10 +51,24 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
     @NonNull
     private final Component labelComponent;
 
+    /**
+     * Creates instance with label, without description.
+     * @param id the Wicket ID
+     * @param model writable model
+     * @param labelModel label for checkbox
+     */
     public RdFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
         this(id, model, labelModel, EMPTY_STRING_MODEL);
     }
 
+    /**
+     * Creates instance with label and description.
+     *
+     * @param id the Wicket ID
+     * @param model writable model
+     * @param labelModel for the checkbox
+     * @param descriptionModel detailed description, additional to label. If it is an empty string, will not be rendered.
+     */
     public RdFormFieldCheckbox(
         String id,
         IModel<Boolean> model,
@@ -103,17 +120,13 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         return control;
     }
 
-    protected boolean isInvalid() {
-        return inputComponent.hasErrorMessage();
-    }
-
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
 
         assertIsRegularHtmlTag(tag);
 
-        if (isInvalid()) {
+        if (inputComponent.hasErrorMessage()) {
             INVALID.appendTo(tag);
         }
     }
@@ -128,17 +141,32 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         add(labelComponent, descriptionComponent, errorMessageComponent);
     }
 
+    /**
+     * Mark checking the checkbox required.
+     * @param required true if it should be required
+     * @return self for chaining
+     */
     public RdFormFieldCheckbox setRequired(boolean required) {
         inputComponent.setRequired(required);
         return this;
     }
 
+    /**
+     * Add behaviors to this form field and return specific type of self.
+     * @param behaviors
+     *            The behavior modifier(s) to be added
+     * @return self for chaining
+     */
     @Override
     public RdFormFieldCheckbox add(Behavior... behaviors) {
         super.add(behaviors);
         return this;
     }
 
+    /**
+     * Get the actual {@link CheckBox}. Can be used to customize it.
+     * @return the checkbox instance
+     */
     public CheckBox getControl() {
         return inputComponent;
     }
@@ -165,7 +193,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     private class LabelAndCheckboxContainer extends WebMarkupContainer {
 
-        public LabelAndCheckboxContainer() {
+        private LabelAndCheckboxContainer() {
             super("label");
         }
 
@@ -182,10 +210,6 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
             tag.put("for", inputComponent.getMarkupId());
-
-            if (!inputComponent.isEnabledInHierarchy()) {
-                FORM_LABEL_STATE_DISABLED.appendTo(tag);
-            }
         }
     }
 
@@ -193,7 +217,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
         private final IModel<String> descriptionModel;
 
-        public FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
+        private FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
             super("checkbox", model);
             this.descriptionModel = descriptionModel;
         }

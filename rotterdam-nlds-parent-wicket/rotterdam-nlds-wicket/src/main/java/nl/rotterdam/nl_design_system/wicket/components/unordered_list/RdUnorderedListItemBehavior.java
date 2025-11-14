@@ -4,12 +4,21 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 
+/**
+ * Behavior for list item.
+ * TODO should probably not be public
+ */
 public class RdUnorderedListItemBehavior extends Behavior {
 
     private final String expectedTagName;
     private final String className;
 
-    public RdUnorderedListItemBehavior() {
+    /**
+     * Singleton instance.
+     */
+    public static final Behavior INSTANCE = new RdUnorderedListItemBehavior();
+
+    private RdUnorderedListItemBehavior() {
         this.expectedTagName = "li";
         this.className = "utrecht-unordered-list__item utrecht-unordered-list__item";
     }

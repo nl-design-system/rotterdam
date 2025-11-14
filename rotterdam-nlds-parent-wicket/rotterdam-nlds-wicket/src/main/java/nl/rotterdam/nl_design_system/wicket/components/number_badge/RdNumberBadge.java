@@ -10,19 +10,28 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
+/**
+ * <a href="https://nldesignsystem.nl/number-badge/">Number Badge component</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdNumberBadge extends Label {
 
-    public RdNumberBadge(String id) {
-        this(id, Model.of((String) null));
+    /**
+     * Constructor
+     * @param id the Wicket ID
+     * @param number data to show
+     */
+    public RdNumberBadge(String id, Serializable number) {
+        this(id, Model.of(number));
     }
 
-    public RdNumberBadge(String id, Serializable label) {
-        this(id, Model.of(label));
-    }
-
-    public RdNumberBadge(String id, IModel<?> model) {
-        super(id, model);
+    /**
+     * Constructor
+     * @param id the Wicket ID
+     * @param number data to show
+     */
+    public RdNumberBadge(String id, IModel<?> number) {
+        super(id, number);
         add(new RdNumberBadgeBehavior());
     }
 }

@@ -11,20 +11,34 @@ import org.apache.wicket.model.IModel;
 
 /**
  * Een label voor een formulier element.
- * Wordt nog niet overal gebruikt.
+ * Wordt niet overal gebruikt, vaak alleen het behavior
+ * @deprecated often it is used as behavior, as labels do not really need a panel and HTML semantics are dependent
+ * on context.
  */
+@Deprecated(forRemoval = true)
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdFormLabel extends Panel {
 
-    public static final String SLOT_ID = "slot";
+    private static final String SLOT_ID = "slot";
 
+    /**
+     * Constructor with textContent
+     * @param id the Wicket ID
+     * @param textContent text to be rendered
+     */
     public RdFormLabel(String id, IModel<?> textContent) {
         this(id, textContent, RdFormLabelBehavior.INSTANCE_DEFAULT);
     }
 
-    public RdFormLabel(String id, IModel<?> textContent, RdFormLabelBehavior behavior) {
+    /**
+     * Constructor with textContent
+     * @param id the Wicket ID
+     * @param textContent text to be rendered
+     * @param formLabelBehavior form field type specific behavior
+     */
+    public RdFormLabel(String id, IModel<?> textContent, RdFormLabelBehavior formLabelBehavior) {
         super(id);
-        add(behavior);
+        add(formLabelBehavior);
         add(new Label(SLOT_ID, textContent));
     }
 }

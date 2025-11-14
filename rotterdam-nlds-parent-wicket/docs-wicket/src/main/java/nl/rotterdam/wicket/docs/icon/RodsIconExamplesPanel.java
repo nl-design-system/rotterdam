@@ -35,12 +35,12 @@ public class RodsIconExamplesPanel extends ExamplesPanel {
             protected void onInitialize() {
                 super.onInitialize();
 
-                add(new RdUnorderedListBehavior());
+                add(RdUnorderedListBehavior.INSTANCE);
                 add(
                     new ListView<>("iconItem", icons) {
                         @Override
                         protected void populateItem(ListItem<RotterdamIconType> item) {
-                            item.add(new RdUnorderedListItemBehavior()); // TODO: should be singleton
+                            item.add(RdUnorderedListItemBehavior.INSTANCE);
                             RotterdamIconType iconType = item.getModelObject();
                             WebMarkupContainer icon = new WebMarkupContainer("icon");
                             icon.add(new RotterdamIconBehavior(iconType));

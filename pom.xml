@@ -4,7 +4,7 @@
 
     <groupId>nl.rotterdam</groupId>
     <artifactId>rotterdam-nlds-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.2-alpha</version>
     <packaging>pom</packaging>
     <name>Rotterdam, NL Design System Parent</name>
     <description>NL Design System Parent POM made by Gemeente Rotterdam. Used for Java libraries related to NL Design System.</description>
@@ -26,6 +26,8 @@
         <java.version>21</java.version>
         <node.version>v22.19.0</node.version>
         <pnpm.version>10.17.0</pnpm.version>
+        <central-publishing.autoPublish>true</central-publishing.autoPublish>
+        <central-publishing.waitUntil>published</central-publishing.waitUntil>
     </properties>
 
     <developers>
@@ -52,15 +54,16 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.9.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central-sonatype</publishingServerId>
-                            <autoPublish>true</autoPublish>
-                            <waitUntil>published</waitUntil>
+                            <autoPublish>${central-publishing.autoPublish}</autoPublish>
+                            <waitUntil>${central-publishing.waitUntil}</waitUntil>
+                            <excludeArtifacts>
+                                <artifact>docs-wicket</artifact>
+                            </excludeArtifacts>
                         </configuration>
                     </plugin>
-
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -74,11 +77,9 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.12.0</version>
                         <configuration>
                             <failOnError>false</failOnError>
                         </configuration>
@@ -91,7 +92,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -180,6 +180,16 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.12.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.9.0</version>
+                </plugin>
                 <plugin>
                     <groupId>com.github.eirslett</groupId>
                     <artifactId>frontend-maven-plugin</artifactId>

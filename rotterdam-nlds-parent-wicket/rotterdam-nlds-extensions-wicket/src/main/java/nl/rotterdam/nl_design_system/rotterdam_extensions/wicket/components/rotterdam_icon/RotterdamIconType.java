@@ -1,5 +1,9 @@
 package nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon;
 
+/**
+ * Rotterdam icons. Check out Storybook online for their looks.
+ */
+@SuppressWarnings("doclint:missing")
 public enum RotterdamIconType {
     ADD_IMAGE("add-image"),
     ADD_USER("add-user"),

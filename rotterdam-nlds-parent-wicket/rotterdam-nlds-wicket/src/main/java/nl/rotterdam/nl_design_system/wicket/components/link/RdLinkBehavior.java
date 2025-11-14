@@ -10,15 +10,24 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.link.AbstractLink;
 
+/**
+ * Add NL Design System link via a behavior. Used by various links type.
+ * TODO consider to make this available internally in library only
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdLinkBehavior extends TagNameClassComponentBehavior<AbstractLink> {
 
-    public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
+    private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdLinkBehavior.class,
         "@utrecht/link-css/dist/index.css"
     );
 
-    public RdLinkBehavior() {
+    /**
+     * Singleton instance.
+     */
+    public static final RdLinkBehavior INSTANCE = new RdLinkBehavior();
+
+    private RdLinkBehavior() {
         super("a", RdLinkCss.DEFAULT);
         addHeaderItem(CSS);
     }

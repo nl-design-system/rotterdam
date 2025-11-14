@@ -9,14 +9,14 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
-public class RdAlertBehavior extends TagNameClassComponentBehavior<Component> {
+class RdAlertBehavior extends TagNameClassComponentBehavior<Component> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdAlertBehavior.class,
         "@utrecht/alert-css/dist/index.css"
     );
 
-    public static Behavior alert(RdAlertType type) {
+    static Behavior alert(RdAlertType type) {
         Behavior behavior = types.get(type);
 
         if (behavior == null) {
@@ -26,10 +26,10 @@ public class RdAlertBehavior extends TagNameClassComponentBehavior<Component> {
         return behavior;
     }
 
-    public static final RdAlertBehavior ALERT_WARNING = new RdAlertBehavior(RdAlertType.WARNING);
-    public static final RdAlertBehavior ALERT_OK = new RdAlertBehavior(RdAlertType.OK);
-    public static final RdAlertBehavior ALERT_ERROR = new RdAlertBehavior(RdAlertType.ERROR);
-    public static final RdAlertBehavior ALERT_INFO = new RdAlertBehavior(RdAlertType.INFO);
+    static final RdAlertBehavior ALERT_WARNING = new RdAlertBehavior(RdAlertType.WARNING);
+    static final RdAlertBehavior ALERT_OK = new RdAlertBehavior(RdAlertType.OK);
+    static final RdAlertBehavior ALERT_ERROR = new RdAlertBehavior(RdAlertType.ERROR);
+    static final RdAlertBehavior ALERT_INFO = new RdAlertBehavior(RdAlertType.INFO);
 
     private static final Map<RdAlertType, Behavior> types = Map.of(
         RdAlertType.WARNING,

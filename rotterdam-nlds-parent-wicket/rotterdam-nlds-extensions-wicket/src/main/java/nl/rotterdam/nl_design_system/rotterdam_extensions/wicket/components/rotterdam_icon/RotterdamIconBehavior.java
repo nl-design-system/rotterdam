@@ -15,6 +15,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Es
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@SuppressWarnings("doclint:missing")
 public class RotterdamIconBehavior extends Behavior {
 
     public static final RotterdamIconBehavior ADD_IMAGE = new RotterdamIconBehavior(RotterdamIconType.ADD_IMAGE);

@@ -9,7 +9,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Es
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdLogoBehavior extends TagNameClassComponentBehavior<RdLogoBorder> {
+class RdLogoBehavior extends TagNameClassComponentBehavior<RdLogoBorder> {
 
     public static final RdLogoBehavior INSTANCE = new RdLogoBehavior();
 

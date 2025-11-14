@@ -22,7 +22,7 @@ public class RdLinkListLink<T> extends BookmarkablePageLink<T> {
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(new RdLinkListLinkBehavior());
+        add(RdLinkListLinkBehavior.INSTANCE);
     }
 
     @Override

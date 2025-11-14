@@ -17,9 +17,12 @@ import org.apache.wicket.markup.html.form.CheckBox;
  *
  * <p>Some characteristics are not taken into account, so to be fully compliant use {@link RdCheckbox}.</p>
  */
-public class RdCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
+class RdCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
 
-    public static final RdCheckboxBehavior INSTANCE = new RdCheckboxBehavior();
+    /**
+     * Singleton instance.
+     */
+    static final RdCheckboxBehavior INSTANCE = new RdCheckboxBehavior();
 
     private RdCheckboxBehavior() {
         super("input", DEFAULT);

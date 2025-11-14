@@ -1,5 +1,13 @@
 package nl.rotterdam.nl_design_system.wicket.components.link_list;
 
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+import static nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListBehavior.INSTANCE;
+
+import java.util.List;
+import java.util.function.Supplier;
+
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -9,20 +17,21 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
 
-import java.util.List;
-import java.util.function.Supplier;
-
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListBehavior.LINK_LIST_BEHAVIOR;
-
+/**
+ * <a href="https://nldesignsystem.nl/link-list/">NL Design System Link List component</a>.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdLinkListPanel extends Panel {
 
-    public final List<RdLinkListRecord<? extends IRequestablePage>> links;
+    private final List<RdLinkListRecord<? extends IRequestablePage>> links;
     private final Supplier<Behavior> defautlIconBehaviorSupplier;
 
+    /**
+     * Creates instance
+     * @param id the Wicket ID
+     * @param links links to show
+     *              TODO use Model
+     */
     public RdLinkListPanel(String id, List<RdLinkListRecord<? extends IRequestablePage>> links, Supplier<Behavior> defautlIconBehaviorSupplier) {
         super(id);
         this.links = links;
@@ -40,14 +49,14 @@ public class RdLinkListPanel extends Panel {
                 protected void onInitialize() {
                     super.onInitialize();
 
-                    add(LINK_LIST_BEHAVIOR);
+                    add(INSTANCE);
                     add(
                         new ListView<>("linkListItem", links) {
                             @Override
                             protected void populateItem(
                                 ListItem<RdLinkListRecord<? extends IRequestablePage>> item
                             ) {
-                                item.add(new RdLinkListItemBehavior()); // TODO: should be singleton
+                                item.add(RdLinkListItemBehavior.INSTANCE);
                                 RdLinkListRecord<? extends IRequestablePage> record = item.getModelObject();
                                 var label = record.label();
 

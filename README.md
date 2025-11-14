@@ -159,7 +159,7 @@ For all components a React component rendering a webcomponent is convenient for 
 
 #### Wicket components
 
-Wicket components are released to Maven Central. SNAPSHOTS are not published.
+Wicket components are released to Maven Central. SNAPSHOTS are not published. [Releases are published](JAVA_RELEASE.md).
 
 ### Proprietary packages
 

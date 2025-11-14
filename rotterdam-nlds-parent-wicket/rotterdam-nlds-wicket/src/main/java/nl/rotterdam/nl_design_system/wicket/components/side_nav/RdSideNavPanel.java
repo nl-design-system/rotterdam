@@ -1,5 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
+import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -16,11 +17,20 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Es
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
 
+/**
+ * <a href="https://nldesignsystem.nl/side-navigation/">NL Design System Side Navigation</a> component.
+ */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdSideNavPanel extends Panel {
 
-    public final List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords;
+    private final List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords;
 
+    /**
+     * Create new instance
+     * @param id the Wicket ID
+     * @param sideNavRecords records to add
+     *                       TODO refactor to model.
+     */
     public RdSideNavPanel(String id, List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords) {
         super(id);
         this.sideNavRecords = sideNavRecords;
@@ -36,7 +46,7 @@ public class RdSideNavPanel extends Panel {
                 @Override
                 protected void onInitialize() {
                     super.onInitialize();
-                    add(new RdSideNavBehavior());
+                    add(RdSideNavBehavior.INSTANCE);
 
                     add(
                         new WebMarkupContainer("sideNavList") {

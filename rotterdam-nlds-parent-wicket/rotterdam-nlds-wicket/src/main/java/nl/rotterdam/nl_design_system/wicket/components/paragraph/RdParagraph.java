@@ -10,12 +10,17 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
+/**
+ * <a href="https://nldesignsystem.nl/paragraph/">NL Design System Paragraph component</a>.
+ * TODO migrate to candidate or hall of fame
+ */
+@SuppressWarnings("doclint:missing")
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdParagraph extends Label {
 
     public RdParagraph(String id, IModel<?> model) {
         super(id, model);
-        add(new RdParagraphBehavior());
+        add(RdParagraphBehavior.INSTANCE);
     }
 
     public RdParagraph(String id, Serializable label) {

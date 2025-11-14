@@ -4,9 +4,14 @@ import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponen
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-public class RdPageBodyBehavior extends TagNameClassComponentBehavior<RdPageBodyBorder> {
+/**
+ * Body vs PageBody, unclear what should be used.
+ * @deprecated  what is difference between Body and PageBody?
+ */
+@Deprecated
+class RdPageBodyBehavior extends TagNameClassComponentBehavior<RdPageBodyBorder> {
 
-    public static final RdPageBodyBehavior INSTANCE = new RdPageBodyBehavior();
+    static final RdPageBodyBehavior INSTANCE = new RdPageBodyBehavior();
 
     private RdPageBodyBehavior() {
         super("div", RdPageBodyCss.DEFAULT);
