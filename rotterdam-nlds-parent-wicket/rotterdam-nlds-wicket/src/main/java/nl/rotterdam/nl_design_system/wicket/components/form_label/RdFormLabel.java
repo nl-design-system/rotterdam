@@ -12,6 +12,8 @@ import org.apache.wicket.model.IModel;
 /**
  * Een label voor een formulier element.
  * Wordt niet overal gebruikt, vaak alleen het behavior
+ * @deprecated often it is used as behavior, as labels do not really need a panel and HTML semantics are dependent
+ * on context.
  */
 @Deprecated(forRemoval = true)
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
