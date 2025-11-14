@@ -7,6 +7,7 @@ module nl.rotterdam.nlds.test.common.wicket {
     requires org.apache.wicket.tester;
     requires org.jsoup;
     requires org.jspecify;
+    requires org.junit.jupiter.api;
 
     exports nl.rotterdam.nl_design_system.wicket.test_common;
 }
