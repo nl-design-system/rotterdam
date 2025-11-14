@@ -1,13 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.components.link_list;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListBehavior.INSTANCE;
-
-import java.util.List;
-import java.util.function.Supplier;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -16,6 +8,14 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.request.component.IRequestablePage;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+import static nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListBehavior.INSTANCE;
 
 /**
  * <a href="https://nldesignsystem.nl/link-list/">NL Design System Link List component</a>.
@@ -24,7 +24,7 @@ import org.apache.wicket.request.component.IRequestablePage;
 public class RdLinkListPanel extends Panel {
 
     private final List<RdLinkListRecord<? extends IRequestablePage>> links;
-    private final Supplier<Behavior> defautlIconBehaviorSupplier;
+    private final SerializableSupplier<Behavior> defautlIconBehaviorSupplier;
 
     /**
      * Creates instance
@@ -32,7 +32,7 @@ public class RdLinkListPanel extends Panel {
      * @param links links to show
      *              TODO use Model
      */
-    public RdLinkListPanel(String id, List<RdLinkListRecord<? extends IRequestablePage>> links, Supplier<Behavior> defautlIconBehaviorSupplier) {
+    public RdLinkListPanel(String id, List<RdLinkListRecord<? extends IRequestablePage>> links, SerializableSupplier<Behavior> defautlIconBehaviorSupplier) {
         super(id);
         this.links = links;
         this.defautlIconBehaviorSupplier = defautlIconBehaviorSupplier;

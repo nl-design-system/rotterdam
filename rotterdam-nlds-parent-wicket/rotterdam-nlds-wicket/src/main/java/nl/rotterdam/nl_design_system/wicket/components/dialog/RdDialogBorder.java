@@ -11,9 +11,8 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.border.Border;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
 import org.jspecify.annotations.NonNull;
-
-import java.util.function.Supplier;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.AMSTERDAM;
@@ -46,7 +45,7 @@ public abstract class RdDialogBorder extends Border {
     private static final String FOOTER_CONTENT_ID = "footerContent";
 
     @NonNull
-    private final Supplier<Behavior> closeIconBehaviorSupplier;
+    private final SerializableSupplier<Behavior> closeIconBehaviorSupplier;
 
     @NonNull
     private final IModel<String> closeButtonLabelModel;
@@ -73,7 +72,7 @@ public abstract class RdDialogBorder extends Border {
      */
     public RdDialogBorder(@NonNull String id,
                           @NonNull IModel<?> titleModel,
-                          @NonNull Supplier<Behavior> closeIconBehaviorSupplier,
+                          @NonNull SerializableSupplier<Behavior> closeIconBehaviorSupplier,
                           @NonNull RdDialogHeadingLevel headingLevel) {
         super(id, requireNonNull(titleModel));
 
@@ -101,7 +100,7 @@ public abstract class RdDialogBorder extends Border {
      */
     public RdDialogBorder(@NonNull String id,
                           @NonNull IModel<?> titleModel,
-                          @NonNull Supplier<Behavior> closeIconBehaviorSupplier,
+                          @NonNull SerializableSupplier<Behavior> closeIconBehaviorSupplier,
                           @NonNull IModel<String> closeButtonLabelModel,
                           @NonNull RdDialogHeadingLevel headingLevel) {
         super(id, requireNonNull(titleModel));

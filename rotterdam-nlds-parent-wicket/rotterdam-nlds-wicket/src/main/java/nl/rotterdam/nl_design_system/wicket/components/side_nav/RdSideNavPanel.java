@@ -1,6 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
 import org.apache.wicket.markup.html.WebMarkupContainer;

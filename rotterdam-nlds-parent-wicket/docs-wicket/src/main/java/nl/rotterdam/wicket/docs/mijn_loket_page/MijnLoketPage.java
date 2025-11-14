@@ -17,7 +17,6 @@ import org.apache.wicket.request.component.IRequestablePage;
 import org.danekja.java.util.function.serializable.SerializableSupplier;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 public class MijnLoketPage extends RotterdamBasePage {
 
@@ -110,7 +109,7 @@ public class MijnLoketPage extends RotterdamBasePage {
         pageBody.add(new RdBreadcrumbNavPanel("breadcrumbNav", this.breadcrumbNavLinks));
 
         pageBody.add(new RdPreserveDataLabel("name", Model.of(this.username)));
-        Supplier<Behavior> defaultIconBehaviorSupplier = (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.CHEVRON_RIGHT);
+        SerializableSupplier<Behavior> defaultIconBehaviorSupplier = () -> new RotterdamIconBehavior(RotterdamIconType.CHEVRON_RIGHT);
         pageBody.add(new RdLinkListPanel("linkList1", linkListLinks, defaultIconBehaviorSupplier));
         pageBody.add(new RdLinkListPanel("linkList2", linkListLinks, defaultIconBehaviorSupplier));
         pageBody.add(new RdLinkListPanel("linkList3", linkListLinks, defaultIconBehaviorSupplier));
