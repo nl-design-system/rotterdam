@@ -27,8 +27,7 @@ public class MijnLoketPage extends RotterdamBasePage {
     public final String username;
 
     public MijnLoketPage() {
-        super();
-        this.pageTitle = "Mijn Loket";
+        super("Mijn Loket");
         this.username = "mevrouw Van Bergenhenegouwen";
 
         this.sideNavRecords = List.of(

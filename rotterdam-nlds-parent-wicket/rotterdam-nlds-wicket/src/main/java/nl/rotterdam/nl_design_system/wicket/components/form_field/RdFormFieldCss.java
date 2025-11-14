@@ -2,7 +2,6 @@ package nl.rotterdam.nl_design_system.wicket.components.form_field;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.Community;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
-import org.jspecify.annotations.NonNull;
 
 /**
  * It has public visibility, can be used by library users, d should only be used for Form Fields implemented by
@@ -20,7 +19,7 @@ public enum RdFormFieldCss implements CssClassNames {
     private final String classNames;
 
     @Override
-    public @NonNull String getClassNames() {
+    public String getClassNames() {
         return classNames;
     }
 

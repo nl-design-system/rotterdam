@@ -12,7 +12,6 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
-import org.jspecify.annotations.NonNull;
 
 import static nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance.PRIMARY_ACTION;
 
@@ -30,7 +29,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
     private static RdDialogBorder exampleDialog() {
         return new DialogExamplesPanel.RdDialogBorder("dialog", new StringResourceModel("Dialog"), RdDialogHeadingLevel.LEVEL_3) {
             @Override
-            protected @NonNull Component newFooterContent(String id) {
+            protected Component newFooterContent(String id) {
                 var dialogThis = this;
                 // The markup provider will be a different component in production code
                 var footerContentFragment = new Fragment(id, "dialogButton", this);
@@ -46,7 +45,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
             }
 
             @Override
-            protected void onClose(@NonNull AjaxRequestTarget target) {
+            protected void onClose(AjaxRequestTarget target) {
                 close(target);
             }
         };
@@ -56,7 +55,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
     private static RdDialogBorder exampleModalDialog() {
         return new DialogExamplesPanel.RdDialogBorder("modalDialog", new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
             @Override
-            protected @NonNull Component newFooterContent(String id) {
+            protected Component newFooterContent(String id) {
                 var dialogThis = this;
                 // The markup provider will be a different component in production code
                 var footerContentFragment = new Fragment(id, "dialogButton", this);
@@ -72,7 +71,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
             }
 
             @Override
-            protected void onClose(@NonNull AjaxRequestTarget target) {
+            protected void onClose(AjaxRequestTarget target) {
                 close(target);
             }
         };

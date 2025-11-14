@@ -3,6 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.base;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -38,7 +39,7 @@ public abstract class ClassComponentBehavior<T extends Component> extends Header
     /**
      * Efficient conversion of an array and a collection to a single space-separated string.
      */
-    private static String joinAll(String[] arr, Collection<String> col) {
+    private static String joinAll(@Nullable String[] arr, Collection<@Nullable String> col) {
         StringBuilder sb = new StringBuilder();
 
         for (String s : arr) {

@@ -18,6 +18,7 @@ import org.apache.wicket.markup.html.panel.BorderMarkupSourcingStrategy;
 import org.apache.wicket.markup.html.panel.IMarkupSourcingStrategy;
 import org.apache.wicket.markup.resolver.IComponentResolver;
 import org.apache.wicket.model.IModel;
+import org.jspecify.annotations.Nullable;
 
 /**
  * <p>
@@ -61,7 +62,7 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
     }
 
     @Override
-    public AjaxButtonBorder add(final Component... children) {
+    public AjaxButtonBorder add(final Component ... children) {
         for (Component component : children) {
             if (component == body || component.isAuto()) {
                 addToBorder(component);
@@ -73,7 +74,7 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
     }
 
     @Override
-    public AjaxButtonBorder addOrReplace(final Component... children) {
+    public AjaxButtonBorder addOrReplace(final Component ... children) {
         for (Component component : children) {
             if (component == body) {
                 // in this case we do not want to redirect to body
@@ -150,8 +151,8 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
     }
 
     @Override
-    public Component resolve(final MarkupContainer container, final MarkupStream markupStream,
-                             final ComponentTag tag) {
+    public @Nullable Component resolve(final MarkupContainer container, final MarkupStream markupStream,
+                                       final ComponentTag tag) {
         // make sure nested borders are resolved properly
         if (!body.rendering) {
             // We are only interested in border body tags. The tag ID actually is irrelevant since
@@ -170,7 +171,7 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
     }
 
     @Override
-    public IMarkupFragment getMarkup(final Component child) {
+    public IMarkupFragment getMarkup(final @Nullable Component child) {
         // Border require an associated markup resource file
         IMarkupFragment markup = getAssociatedMarkup();
         if (markup == null) {
@@ -199,8 +200,12 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
 
         // Is child == BorderBody?
         if (child == body) {
+            var childBodyMarkup = body.getMarkup();
+            if (childBodyMarkup == null) {
+                throw new MarkupException("Unable to find markup of child: " + this);
+            }
             // Get the <wicket:body> markup
-            return body.getMarkup();
+            return childBodyMarkup;
         }
 
         // Find the markup for the child component
@@ -229,7 +234,7 @@ public abstract class AjaxButtonBorder extends AjaxButton implements IComponentR
     }
 
     @Override
-    public IMarkupFragment getRegionMarkup() {
+    public @Nullable IMarkupFragment getRegionMarkup() {
         IMarkupFragment markup = super.getRegionMarkup();
 
         if (markup == null) {

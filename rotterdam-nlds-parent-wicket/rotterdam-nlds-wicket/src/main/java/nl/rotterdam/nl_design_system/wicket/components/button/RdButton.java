@@ -1,15 +1,15 @@
 package nl.rotterdam.nl_design_system.wicket.components.button;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 /**
  * <a  href="https://nldesignsystem.nl/button/">NL Design System button component</a>.
@@ -19,8 +19,8 @@ import org.jspecify.annotations.Nullable;
 public class RdButton extends Button {
 
     private boolean busy = false;
-    private RdButtonAppearance appearance = null;
-    private RdButtonHint hint = null;
+    private @Nullable RdButtonAppearance appearance = null;
+    private @Nullable RdButtonHint hint = null;
 
     /**
      * Create instance without label; label to be set separately in markup or with {@link #setModel(IModel)}.
@@ -35,7 +35,7 @@ public class RdButton extends Button {
      * @param id the Wicket ID
      * @param model the label
      */
-    public RdButton(final String id, final IModel<String> model) {
+    public RdButton(final String id, @Nullable final IModel<String> model) {
         super(id, model);
     }
 

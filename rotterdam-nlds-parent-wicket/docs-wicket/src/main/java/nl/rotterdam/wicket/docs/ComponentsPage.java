@@ -133,7 +133,6 @@ public class ComponentsPage extends RotterdamBasePage {
     }
 
     public ComponentsPage() {
-        super();
-        this.pageTitle = "Componenten voor Apache Wicket";
+        super("Componenten voor Apache Wicket");
     }
 }

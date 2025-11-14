@@ -5,8 +5,7 @@ import nl.rotterdam.wicket.docs.RotterdamBasePage;
 public class SingleSignOnLoginPage extends RotterdamBasePage {
 
     public SingleSignOnLoginPage() {
-        super();
-        this.pageTitle = "Inloggen";
+        super("Inloggen");
     }
 
     @Override

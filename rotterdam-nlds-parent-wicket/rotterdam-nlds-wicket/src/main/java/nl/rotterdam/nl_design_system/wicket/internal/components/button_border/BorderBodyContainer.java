@@ -8,7 +8,7 @@ import org.apache.wicket.markup.MarkupStream;
 import org.apache.wicket.markup.TagUtils;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.parser.XmlTag;
-import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 /**
  * <p>
@@ -26,13 +26,12 @@ import org.jspecify.annotations.NonNull;
  * </p>
  */
 public class BorderBodyContainer extends WebMarkupContainer {
-    @NonNull
     private final Component markupProvider;
 
     /**
      * The markup
      */
-    private transient IMarkupFragment markup;
+    private transient @Nullable IMarkupFragment markup;
 
     // properly resolve borders added to borders
     boolean rendering;
@@ -42,7 +41,7 @@ public class BorderBodyContainer extends WebMarkupContainer {
      *
      * @param id the Wicket ID
      */
-    public BorderBodyContainer(@NonNull final Component markupProvider, final String id) {
+    public BorderBodyContainer(final Component markupProvider, final String id) {
         super(id);
         this.markupProvider = markupProvider;
     }
@@ -91,7 +90,7 @@ public class BorderBodyContainer extends WebMarkupContainer {
      * Get the &lt;wicket:body&gt; markup from the body's parent container
      */
     @Override
-    public IMarkupFragment getMarkup() {
+    public @Nullable IMarkupFragment getMarkup() {
         if (markup == null) {
             markup = findBody(getParent().getMarkup(null));
         }
@@ -105,7 +104,7 @@ public class BorderBodyContainer extends WebMarkupContainer {
      * @param markup the markup to search in.
      * @return <code>null</code>, if not found.
      */
-    private IMarkupFragment findBody(final IMarkupFragment markup) {
+    private @Nullable IMarkupFragment findBody(final IMarkupFragment markup) {
         MarkupStream stream = new MarkupStream(markup);
 
         // Skip any raw markup
@@ -132,7 +131,7 @@ public class BorderBodyContainer extends WebMarkupContainer {
      * Get the child markup which must be in between the &lt;span wicktet:id="myBorder"&gt; tags
      */
     @Override
-    public IMarkupFragment getMarkup(final Component child) {
+    public @Nullable IMarkupFragment getMarkup(final @Nullable Component child) {
         IMarkupFragment markup = markupProvider.getMarkup();
         if (markup == null) {
             return null;
