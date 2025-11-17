@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <parent>
-        <groupId>nl.rotterdam</groupId>
+        <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent</artifactId>
         <version>0.0.4-SNAPSHOT</version>
     </parent>
