@@ -17,34 +17,17 @@ Example: `java-0.0.2`
 
 Follow these steps:
 
-### 1. Start a new branch
+### 1. Create a new release From GitHub UI
 
-Create a branch from `main`, for example:
+- Go to [GitHub releases](https://github.com/nl-design-system/rotterdam/releases)
+- Click Draft a new release
+- Tag: create tag. Prefix it with 'java-'. Suffix version from pom.xml but without `-SNAPSHOT`. If `pom.xml` has 0.0.85-SNAPSHOT tag is: `java-0.0.85`
+- Title: short summary of the release
+- Release notes: highlights of the release.
 
-`release/0.0.2`
+Click 'Publish release'.
 
-### 2. Update the `pom.xml` version
-
-Use the Maven Versions plugin:
-
-`mvn versions:set -DnewVersion=0.0.2 -DgenerateBackupPoms=false`
-
-### 3. Commit and push the version bump
-
-Commit the modified `pom.xml` files and push the branch.
-
-### 4. Create a Pull Request
-
-Create a PR into `main` and let it be reviewed and merged.
-
-### 5. Create a Git tag for the release
-
-Once the PR is merged into `main`, create the tag:
-
-`git tag java-0.0.2
-git push origin java-0.0.2`
-
-### 6. GitHub Actions publishes to Maven Central
+### 2. GitHub Actions publishes to Maven Central
 
 Pushing a tag automatically triggers the release workflow:
 
@@ -59,7 +42,7 @@ This workflow:
 - Auto-publishes them to Maven Central
 - Waits until publication is fully complete
 
-### 7. Rotterdam internal Maven caching
+### 3. Rotterdam internal Maven caching
 
 It may take some time before Maven caches within Rotterdam’s infrastructure
 make the new version available.
