@@ -37,6 +37,8 @@ public class Start {
         server.setHandler(bb);
 
         try {
+            server.start();
+
             System.out.println(
                 """
                 ╭──────────────────────────────────────────────────────────────────────────────────────────────────╮
@@ -54,7 +56,7 @@ public class Start {
                 ╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
                 """.replace("1234", Integer.toString(PORT))
             );
-            server.start();
+
             System.in.read();
             System.out.println(">>> Stopping development server...");
             server.stop();
