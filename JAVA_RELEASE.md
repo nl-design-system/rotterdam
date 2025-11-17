@@ -13,7 +13,7 @@ following the pattern:
 
 `java-<version>`
 
-Example: `java-0.0.2-alpha`
+Example: `java-0.0.2`
 
 Follow these steps:
 
@@ -21,13 +21,13 @@ Follow these steps:
 
 Create a branch from `main`, for example:
 
-`release/0.0.2-alpha`
+`release/0.0.2`
 
 ### 2. Update the `pom.xml` version
 
 Use the Maven Versions plugin:
 
-`mvn versions:set -DnewVersion=0.0.2-alpha -DgenerateBackupPoms=false`
+`mvn versions:set -DnewVersion=0.0.2 -DgenerateBackupPoms=false`
 
 ### 3. Commit and push the version bump
 
@@ -41,8 +41,8 @@ Create a PR into `main` and let it be reviewed and merged.
 
 Once the PR is merged into `main`, create the tag:
 
-`git tag java-0.0.2-alpha
-git push origin java-0.0.2-alpha`
+`git tag java-0.0.2
+git push origin java-0.0.2`
 
 ### 6. GitHub Actions publishes to Maven Central
 
