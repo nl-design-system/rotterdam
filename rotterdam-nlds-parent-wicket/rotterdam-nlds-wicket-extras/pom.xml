@@ -126,7 +126,6 @@
                 <directory>node_modules/</directory>
                 <includes>
                     <include>prismjs/components/*.min.js</include>
-                    <include>prismjs/plugins/autoloader/*.min.js</include>
                     <include>prismjs/themes/*.min.css</include>
                 </includes>
                 <targetPath>nl/rotterdam/nl_design_system/wicket_extras/components/syntax_highlighting</targetPath>
