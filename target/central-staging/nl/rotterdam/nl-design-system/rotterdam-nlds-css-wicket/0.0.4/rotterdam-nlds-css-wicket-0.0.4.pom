@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.0.4</version>
     </parent>
 
-    <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-    <name>NL Design System Wicket Extensions for Rotterdam</name>
-    <description>Wicket extensions for Rotterdam such as the Gemeente Rotterdam logo.</description>
+    <artifactId>rotterdam-nlds-css-wicket</artifactId>
+    <name>NL Design System Theme CSS for Gemeente Rotterdam</name>
+    <description>Compiled CSS Theme for Rotterdam plus Wicket Behavior to activate it.</description>
 
     <dependencies>
-        <dependency>
-            <groupId>nl.rotterdam.nl-design-system</groupId>
-            <artifactId>rotterdam-nlds-wicket</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
@@ -25,6 +21,24 @@
         <dependency>
             <groupId>org.jspecify</groupId>
             <artifactId>jspecify</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>nl.rotterdam.nl-design-system</groupId>
+            <artifactId>test-common-wicket</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
         </dependency>
     </dependencies>
 
@@ -92,22 +106,11 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>src/test/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@gemeente-rotterdam/web-components-stencil/dist/**/*</include>
-                    <include>@gemeente-rotterdam/web-components-stencil/loader/**/*</include>
+                    <include>@gemeente-rotterdam/design-tokens/dist/theme.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/nl_design_system/rotterdam_extensions/wicket/components/rotterdam_icon</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/rotterdam_css/wicket</targetPath>
             </resource>
         </resources>
     </build>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.0.4</version>
     </parent>
 
     <artifactId>rotterdam-nlds-wicket</artifactId>

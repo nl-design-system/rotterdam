@@ -6,13 +6,13 @@
     <artifactId>rotterdam-nlds-parent-wicket</artifactId>
     <name>Rotterdam, NL Design System Wicket Parent</name>
     <description>NL Design System Wicket Parent POM made by Gemeente Rotterdam.</description>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent</artifactId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.0.4</version>
     </parent>
 
     <modules>
@@ -34,27 +34,27 @@
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>docs-wicket</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
+                <version>0.0.4</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-css-wicket</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
+                <version>0.0.4</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
+                <version>0.0.4</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
+                <version>0.0.4</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>test-common-wicket</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
+                <version>0.0.4</version>
             </dependency>
 
             <dependency>
