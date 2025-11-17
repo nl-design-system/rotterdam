@@ -138,7 +138,8 @@ jobs:
 
           git status
           git add .
-          git commit -m "Bump version to next SNAPSHOT after ${VERSION_FROM_TAG} release"
+          # No precommit-hook, we don't want pnpm to be present when building a Maven release
+          git commit --no-verify -m "Bump version to next SNAPSHOT after ${VERSION_FROM_TAG} release"
           git push origin "$BRANCH_NAME"
 
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
