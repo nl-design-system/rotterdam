@@ -1,7 +1,7 @@
 import org.jspecify.annotations.NullMarked;
 
 @NullMarked
-module nl.rotterdam.nlds.css.wicket {
+module nl.rotterdam.nl_design_system.rotterdam_css.wicket {
     exports nl.rotterdam.nl_design_system.rotterdam_css.wicket;
 
     opens nl.rotterdam.nl_design_system.rotterdam_css.wicket;

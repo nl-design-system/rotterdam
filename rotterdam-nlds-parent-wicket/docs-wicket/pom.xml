@@ -157,7 +157,7 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>nl.rotterdam.wicket.nl_design.docs.Start</mainClass>
+                            <mainClass>nl.rotterdam.nl_design_system.docs.wicket.Start</mainClass>
                             <classpathScope>test</classpathScope>
                         </configuration>
                     </execution>
@@ -168,7 +168,7 @@
                         </goals>
                         <phase>process-test-classes</phase>
                         <configuration>
-                            <mainClass>nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain</mainClass>
+                            <mainClass>nl.rotterdam.nl_design_system.docs.wicket.storybook_generator.GenerateMarkdownAndStorybookExamplesMain</mainClass>
                             <classpathScope>test</classpathScope>
                         </configuration>
                     </execution>
@@ -182,7 +182,7 @@
                 <includes>
                     <include>@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css</include>
                 </includes>
-                <targetPath>nl/rotterdam/wicket/docs/css</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/docs/wicket/css</targetPath>
             </resource>
             <resource>
                 <filtering>true</filtering>
