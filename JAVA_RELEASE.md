@@ -44,7 +44,14 @@ This workflow:
 - Auto-publishes them to Maven Central
 - Waits until publication is fully complete
 
-### 3. Rotterdam internal Maven caching
+### 3. Accept the Pull Request with the new development SNAPSHOT version
+
+A PR is created with the new development snapshot version.
+
+Open the [Pull Request](https://github.com/nl-design-system/rotterdam/pulls),
+Approve and Merge the version update commit.
+
+### 4. Rotterdam internal Maven caching
 
 It may take some time before Maven caches within Rotterdam’s infrastructure
 make the new version available.
