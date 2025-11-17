@@ -1,8 +1,9 @@
 # How to Release the Java Packages
 
-This document describes how Java components of the NL Design System for Rotterdam
-are versioned, built, signed, and published to Maven Central. It also defines the
-security model, rotation policies, and responsibilities for maintainers.
+This document describes how Java components of the NL Design System for
+Rotterdam are versioned, built, signed, and published to Maven Central.
+It also defines the security model, rotation policies, and responsibilities
+for maintainers.
 
 ---
 
@@ -20,12 +21,13 @@ Follow these steps:
 ### 1. Create a new release From GitHub UI
 
 - Go to [GitHub releases](https://github.com/nl-design-system/rotterdam/releases)
-- Click Draft a new release
-- Tag: create tag. Prefix it with 'java-'. Suffix version from pom.xml but without `-SNAPSHOT`. If `pom.xml` has 0.0.85-SNAPSHOT tag is: `java-0.0.85`
+- Click `Draft a new release`
+- Tag: create tag. Prefix it with `java-`. and then append version from `pom.xml`
+  but without `-SNAPSHOT`. If `pom.xml` has 0.0.85-SNAPSHOT tag is: `java-0.0.85`
 - Title: short summary of the release
 - Release notes: highlights of the release.
 
-Click 'Publish release'.
+Click `Publish release`.
 
 ### 2. GitHub Actions publishes to Maven Central
 
