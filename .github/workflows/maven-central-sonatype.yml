@@ -106,7 +106,6 @@ jobs:
       # --- Release-only steps (tag builds): adjust versions around the deploy ---
 
       - name: Set version for release (remove -SNAPSHOT)
-        if: startsWith(github.ref, 'refs/tags/java-')
         run: |
           ./mvnw -B versions:set -DremoveSnapshot -DgenerateBackupPoms=false
           ./mvnw -B versions:commit
