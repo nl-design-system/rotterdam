@@ -103,24 +103,6 @@ jobs:
           fi
         shell: bash
 
-      - name: Fail if version is SNAPSHOT
-        run: |
-          VERSION_FROM_POM=$(./mvnw -q \
-            -DforceStdout \
-            -Dexpression=project.version \
-            -DinteractiveMode=false \
-            help:evaluate)
-
-          echo "POM version: ${VERSION_FROM_POM}"
-
-          if echo "$VERSION_FROM_POM" | grep -q 'SNAPSHOT'; then
-            echo "ERROR: SNAPSHOT versions may not be deployed to Maven Central"
-            exit 1
-          fi
-        shell: bash
-        # Note: this runs for both tag and manual runs.
-        # For manual runs, ensure POM is already on a non-SNAPSHOT release version.
-
       # --- Release-only steps (tag builds): adjust versions around the deploy ---
 
       - name: Set version for release (remove -SNAPSHOT)
