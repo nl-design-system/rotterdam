@@ -11,22 +11,37 @@ import org.apache.wicket.model.IModel;
 
 /**
  * Code block.
- * @deprecated no apps we have need this.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-@Deprecated(forRemoval = true)
 public class RdCodeBlock extends Panel {
 
-    private static final String SLOT_ID = "slot";
+    private static final String CODE_ID = "code";
+
+    private final Label codeComponent;
 
     /**
      * Create code block with given code.
      * @param id the Wicket ID
-     * @param codeContent the code to show
+     * @param codeModel the code to show
      */
-    public RdCodeBlock(String id, IModel<String> codeContent) {
+    public RdCodeBlock(String id, IModel<String> codeModel) {
         super(id);
-        add(new Label(SLOT_ID, codeContent));
+        codeComponent = newCodeLabel(CODE_ID, codeModel);
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        add(codeComponent);
         add(new RdCodeBlockBehavior());
+    }
+
+    public Label getCodeComponent() {
+        return codeComponent;
+    }
+
+    private Label newCodeLabel(String wicketId, IModel<String> codeModel) {
+        return new Label(wicketId, codeModel);
     }
 }

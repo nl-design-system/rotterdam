@@ -1,6 +1,7 @@
 package nl.rotterdam.nl_design_system.docs.wicket;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguageBehavior;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.IReferenceHeaderItem;
@@ -27,6 +28,7 @@ class ComponentsPageTest extends NldsWicketTestCase {
         tester.startPage(ComponentsPage.class);
         tester.assertRenderedPage(ComponentsPage.class);
 
+        System.out.println(RdSyntaxHighlightingLanguageBehavior.class.getResource("prismjs/components/prism-core.min.js"));
         decorator
             .getCapturedItems()
             .stream()
