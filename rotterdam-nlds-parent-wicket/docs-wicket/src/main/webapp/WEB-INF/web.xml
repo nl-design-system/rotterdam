@@ -2,15 +2,15 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
     <display-name>Rotterdam Design System for Apache Wicket</display-name>
     <filter>
-        <filter-name>nl.rotterdam.wicket.docs</filter-name>
+        <filter-name>nl.rotterdam.nl_design_system.docs.wicket</filter-name>
         <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
         <init-param>
             <param-name>applicationClassName</param-name>
-            <param-value>nl.rotterdam.wicket.docs.DocsApplication</param-value>
+            <param-value>nl.rotterdam.nl_design_system.docs.wicket.DocsApplication</param-value>
         </init-param>
     </filter>
     <filter-mapping>
-        <filter-name>nl.rotterdam.wicket.docs</filter-name>
+        <filter-name>nl.rotterdam.nl_design_system.docs.wicket</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 </web-app>

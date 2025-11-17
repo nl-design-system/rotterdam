@@ -1,7 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
-import org.jspecify.annotations.NonNull;
 
 enum RdSideNavListCss implements CssClassNames {
     DEFAULT("denhaag-sidenav__list");
@@ -13,7 +12,7 @@ enum RdSideNavListCss implements CssClassNames {
     }
 
     @Override
-    public @NonNull String getClassNames() {
+    public String getClassNames() {
         return cssClassNames;
     }
 }

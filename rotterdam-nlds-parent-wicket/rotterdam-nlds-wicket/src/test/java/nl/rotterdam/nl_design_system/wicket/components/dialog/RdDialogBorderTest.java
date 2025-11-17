@@ -10,7 +10,6 @@ import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.Model;
-import org.jspecify.annotations.NonNull;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -26,14 +25,14 @@ class RdDialogBorderTest extends NldsWicketTestCase {
             RdDialogHeadingLevel.LEVEL_1
         ) {
             @Override
-            protected @NonNull Component newFooterContent(String id) {
+            protected Component newFooterContent(String id) {
                 var footerContent = new WebMarkupContainer(id);
                 footerContent.setMarkup(Markup.of("<div wicket:id='" + id + "'>Some string</div>"));
                 return footerContent;
             }
 
             @Override
-            protected void onClose(@NonNull AjaxRequestTarget target) {
+            protected void onClose(AjaxRequestTarget target) {
                 // No action needed. Only testing the generated markup.
             }
         }
@@ -60,14 +59,14 @@ class RdDialogBorderTest extends NldsWicketTestCase {
             level
         ) {
             @Override
-            protected @NonNull Component newFooterContent(String id) {
+            protected Component newFooterContent(String id) {
                 var footerContent = new WebMarkupContainer(id);
                 footerContent.setMarkup(Markup.of("<div wicket:id='" + id + "'>Footer</div>"));
                 return footerContent;
             }
 
             @Override
-            protected void onClose(@NonNull AjaxRequestTarget target) {
+            protected void onClose(AjaxRequestTarget target) {
                 // No action needed. Only testing the generated markup.
             }
         };
@@ -107,14 +106,14 @@ class RdDialogBorderTest extends NldsWicketTestCase {
             RdDialogHeadingLevel.LEVEL_1
         ) {
             @Override
-            protected @NonNull Component newFooterContent(String id) {
+            protected Component newFooterContent(String id) {
                 var footerContent = new WebMarkupContainer(id);
                 footerContent.setMarkup(Markup.of("<div wicket:id='" + id + "'>Footer</div>"));
                 return footerContent;
             }
 
             @Override
-            protected void onClose(@NonNull AjaxRequestTarget target) {
+            protected void onClose(AjaxRequestTarget target) {
                 // No action needed. Only testing the generated markup.
             }
         };

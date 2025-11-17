@@ -6,7 +6,6 @@ import nl.rotterdam.nl_design_system.wicket.internal.components.button_border.Aj
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
-import org.jspecify.annotations.NonNull;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.AMSTERDAM;
@@ -21,7 +20,6 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  */
 @NlComponentState(wicketState = UNSTABLE, estafetteState = NOT_LISTED, htmlCssImplementedBy = AMSTERDAM)
 public abstract class RdIconAjaxButtonBorder extends AjaxButtonBorder {
-    @NonNull
     private final Component labelComponent;
 
     /**
@@ -54,7 +52,7 @@ public abstract class RdIconAjaxButtonBorder extends AjaxButtonBorder {
      *
      * @return the accessibility label Wicket component.
      */
-    public @NonNull Component getAccessibilityLabelComponent() {
+    public Component getAccessibilityLabelComponent() {
         return labelComponent;
     }
 
