@@ -57,7 +57,7 @@ public class ComponentsPage extends RotterdamBasePage {
         new JavaScriptResourceReference(ComponentsPage.class, "ComponentsPage.js")
     );
 
-    private static Link<Void> createRefreshPgaeLink() {
+    private static Link<Void> createRefreshPageLink() {
         return new Link<>("refreshStatefulPageLink") {
             @Override
             public void onClick() {
@@ -121,7 +121,7 @@ public class ComponentsPage extends RotterdamBasePage {
         pageBody.add(new UnorderedListExamplesPanel("unorderedListExamplesPanel").setVisible(false));
 
         pageBody.add(createActiveThemeChoice());
-        pageBody.add(createRefreshPgaeLink());
+        pageBody.add(createRefreshPageLink());
     }
 
     @Override

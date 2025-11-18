@@ -1,6 +1,7 @@
 package nl.rotterdam.nl_design_system.docs.wicket;
 
 import de.agilecoders.wicket.webjars.WicketWebjars;
+import nl.rotterdam.nl_design_system.docs.wicket.components_example.ComponentsExamplePage;
 import nl.rotterdam.nl_design_system.wicket.html.WicketElementDisplayContentsHeaderContributor;
 import nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page.MijnLoketPage;
 import nl.rotterdam.nl_design_system.docs.wicket.sso_login_page.SingleSignOnLoginPage;
@@ -59,6 +60,7 @@ public class DocsApplication extends WebApplication {
         mountPage("hello-world", RotterdamHelloWorldPage.class);
         mountPage("mijn-loket", MijnLoketPage.class);
         mountPage("voorbeeld", RotterdamPlaceholderPage.class);
+        mountPage("voorbeelden", ComponentsExamplePage.class);
     }
 
     @Override
