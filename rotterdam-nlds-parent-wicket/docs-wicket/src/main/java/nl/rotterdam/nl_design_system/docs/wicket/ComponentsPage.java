@@ -86,39 +86,39 @@ public class ComponentsPage extends RotterdamBasePage {
             new RdSideNavExamplesPanel("sideNavExamplesPanel"),
             new AlertExamplesPanel("alertExamplesPanel"),
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
-            new BodyExamplesPanel("bodyExamplesPanel"),
+            new BodyExamplesPanel("bodyExamplesPanel").setVisible(false),
             new ButtonExamplesPanel("buttonExamplesPanel"),
             new IconButtonExamplesPanel("iconButtonExamplesPanel"),
-            new ActionGroupExamplesPanel("actionGroupExamplesPanel"),
-            new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
-            new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
-            new CheckboxExamplesPanel("checkboxExamplesPanel"),
+            new ActionGroupExamplesPanel("actionGroupExamplesPanel").setVisible(false),
+            new CodeBlockExamplesPanel("codeBlockExamplesPanel").setVisible(false),
+            new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel").setVisible(false),
+            new CheckboxExamplesPanel("checkboxExamplesPanel").setVisible(false),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
-            new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
+            new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel").setVisible(false),
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
             new DataSummaryExamplesPanel("dataSummaryExamplesPanel"),
-            new HeadingExamplesPanel("headingExamplesPanel"),
-            new HeadingGroupExamplesPanel("headingGroupExamplesPanel")
+            new HeadingExamplesPanel("headingExamplesPanel").setVisible(false),
+            new HeadingGroupExamplesPanel("headingGroupExamplesPanel").setVisible(false)
         );
 
-        pageBody.add(new HtmlContentExamplesPanel("htmlContentExamplesPanel"));
-        pageBody.add(new IconExamplesPanel("iconExamplesPanel"));
-        pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel"));
+        pageBody.add(new HtmlContentExamplesPanel("htmlContentExamplesPanel").setVisible(false));
+        pageBody.add(new IconExamplesPanel("iconExamplesPanel").setVisible(false));
+        pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel").setVisible(false));
         pageBody.add(new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"));
-        pageBody.add(new LinkExamplesPanel("linkExamplesPanel"));
-        pageBody.add(new LinkListExamplesPanel("linkListExamplesPanel"));
-        pageBody.add(new LogoExamplesPanel("logoExamplesPanel"));
+        pageBody.add(new LinkExamplesPanel("linkExamplesPanel").setVisible(false));
+        pageBody.add(new LinkListExamplesPanel("linkListExamplesPanel").setVisible(false));
+        pageBody.add(new LogoExamplesPanel("logoExamplesPanel").setVisible(false));
         pageBody.add(new DialogExamplesPanel("dialogExamplesPanel"));
-        pageBody.add(new NumberBadgeExamplesPanel("numberBadgeExamplesPanel"));
-        pageBody.add(new OrderedListExamplesPanel("orderedListExamplesPanel"));
-        pageBody.add(new PageBodyExamplesPanel("pageBodyExamplesPanel"));
-        pageBody.add(new PageFooterExamplesPanel("pageFooterExamplesPanel"));
-        pageBody.add(new PageLayoutExamplesPanel("pageLayoutExamplesPanel"));
-        pageBody.add(new ParagraphExamplesPanel("paragraphExamplesPanel"));
+        pageBody.add(new NumberBadgeExamplesPanel("numberBadgeExamplesPanel").setVisible(false));
+        pageBody.add(new OrderedListExamplesPanel("orderedListExamplesPanel").setVisible(false));
+        pageBody.add(new PageBodyExamplesPanel("pageBodyExamplesPanel").setVisible(false));
+        pageBody.add(new PageFooterExamplesPanel("pageFooterExamplesPanel").setVisible(false));
+        pageBody.add(new PageLayoutExamplesPanel("pageLayoutExamplesPanel").setVisible(false));
+        pageBody.add(new ParagraphExamplesPanel("paragraphExamplesPanel").setVisible(false));
         pageBody.add(new PreserveDataExamplesPanel("preserveDataExamplesPanel"));
-        pageBody.add(new RootExamplesPanel("rootExamplesPanel"));
-        pageBody.add(new SeparatorExamplesPanel("separatorExamplesPanel"));
-        pageBody.add(new UnorderedListExamplesPanel("unorderedListExamplesPanel"));
+        pageBody.add(new RootExamplesPanel("rootExamplesPanel").setVisible(false));
+        pageBody.add(new SeparatorExamplesPanel("separatorExamplesPanel").setVisible(false));
+        pageBody.add(new UnorderedListExamplesPanel("unorderedListExamplesPanel").setVisible(false));
 
         pageBody.add(createActiveThemeChoice());
         pageBody.add(createRefreshPgaeLink());
