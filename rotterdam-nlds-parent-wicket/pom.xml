@@ -3,12 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>nl.rotterdam</groupId>
+        <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent</artifactId>
         <version>0.0.6-SNAPSHOT</version>
     </parent>
 
-    <groupId>nl.rotterdam.nl-design-system</groupId>
     <artifactId>rotterdam-nlds-parent-wicket</artifactId>
     <version>0.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
