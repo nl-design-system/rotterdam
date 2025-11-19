@@ -3,7 +3,7 @@ name: Publish Java artifacts to Maven Central (Sonatype)
 on:
   push:
     tags:
-      - 'java-*'   # bijv. java-0.1.0, java-0.1.0-alpha
+      - 'java-*'   # bijv. java-0.1.0
   workflow_dispatch:
     inputs:
       dry-run:
@@ -19,7 +19,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write         # needed for branch + commit
+      pull-requests: write    # needed for PR creation
 
     env:
       # Sonatype credentials (via repo secrets)
@@ -27,18 +28,23 @@ jobs:
       CENTRAL_SONATYPE_PASSWORD: ${{ secrets.CENTRAL_SONATYPE_PASSWORD }}
       # GPG passphrase voor maven-gpg-plugin
       MAVEN_GPG_PASSPHRASE: ${{ secrets.CENTRAL_SONATYPE_GPG_PASSPHRASE }}
+      # Git author for automated commits
+      GIT_AUTHOR_NAME: "NLDS [maven central sonatype]"
+      GIT_AUTHOR_EMAIL: ${{ secrets.GIT_AUTHOR_EMAIL }}
 
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0
+          # Important: for tag builds, still checkout the tagged commit
+          # (we will not push from that commit; we create a new branch later)
 
       - name: Ensure Maven Wrapper is executable
         run: chmod +x mvnw
 
       - name: Set up Java 21 for Sonatype Central
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
         with:
           distribution: temurin
           java-version: '21'
@@ -83,30 +89,77 @@ jobs:
             -DinteractiveMode=false \
             help:evaluate)
 
-          echo "Tag version:  ${VERSION_FROM_TAG}"
-          echo "POM version:  ${VERSION_FROM_POM}"
+          echo "Raw POM version: ${VERSION_FROM_POM}"
 
-          if [ "$VERSION_FROM_TAG" != "$VERSION_FROM_POM" ]; then
-            echo "ERROR: tag version and POM version differ"
+          # Strip '-SNAPSHOT' if present, so 0.1.0-SNAPSHOT matches tag 0.1.0
+          VERSION_STRIPPED="${VERSION_FROM_POM%-SNAPSHOT}"
+
+          echo "Tag version:       ${VERSION_FROM_TAG}"
+          echo "POM release ver.:  ${VERSION_STRIPPED}"
+
+          if [ "$VERSION_STRIPPED" != "$VERSION_FROM_TAG" ]; then
+            echo "ERROR: tag version and POM version (without -SNAPSHOT) differ"
             exit 1
           fi
         shell: bash
 
-      - name: Fail if version is SNAPSHOT
+      # --- Release-only steps (tag builds): adjust versions around the deploy ---
+
+      - name: Set version for release (remove -SNAPSHOT)
         run: |
-          VERSION_FROM_POM=$(./mvnw -q \
-            -DforceStdout \
-            -Dexpression=project.version \
-            -DinteractiveMode=false \
-            help:evaluate)
-
-          echo "POM version: ${VERSION_FROM_POM}"
-
-          if echo "$VERSION_FROM_POM" | grep -q 'SNAPSHOT'; then
-            echo "ERROR: SNAPSHOT versions may not be deployed to Maven Central"
-            exit 1
-          fi
+          ./mvnw -B versions:set -DremoveSnapshot -DgenerateBackupPoms=false
+          ./mvnw -B versions:commit
         shell: bash
 
       - name: Publish to Maven Central (Sonatype)
         run: ./mvnw -B -DskipTests -Pcentral-sonatype-release ${{ steps.dryrun.outputs.MAVEN_DRY_RUN }} deploy
+
+      - name: Set next version as SNAPSHOT (after release)
+        if: startsWith(github.ref, 'refs/tags/java-')
+        run: |
+          ./mvnw -B versions:set -DnextSnapshot -DgenerateBackupPoms=false
+          ./mvnw -B versions:commit
+        shell: bash
+
+      - name: Create branch for next SNAPSHOT version
+        if: startsWith(github.ref, 'refs/tags/java-')
+        id: create_branch
+        run: |
+          TAG_NAME="${GITHUB_REF_NAME}"              # java-0.1.0
+          VERSION_FROM_TAG="${TAG_NAME#java-}"       # 0.1.0
+
+          # Branch name, e.g. release/next-snapshot-0.1.0
+          BRANCH_NAME="release/next-snapshot-${VERSION_FROM_TAG}"
+
+          git config user.name  "${GIT_AUTHOR_NAME}"
+          git config user.email "${GIT_AUTHOR_EMAIL}"
+
+          git checkout -b "$BRANCH_NAME"
+
+          git status
+          git add .
+          # No precommit-hook, we don't want pnpm to be present when building a Maven release
+          git commit --no-verify -m "Bump version to next SNAPSHOT after ${VERSION_FROM_TAG} release"
+          git push origin "$BRANCH_NAME"
+
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Create PR for next SNAPSHOT version
+        if: startsWith(github.ref, 'refs/tags/java-')
+        run: |
+          TAG_NAME="${GITHUB_REF_NAME}"              # java-0.1.0
+          VERSION_FROM_TAG="${TAG_NAME#java-}"       # 0.1.0
+          BRANCH_NAME="${{ steps.create_branch.outputs.branch_name }}"
+
+          PR_TITLE="Bump version to next SNAPSHOT after ${VERSION_FROM_TAG} release"
+          PR_BODY="Automated PR to bump version to the next SNAPSHOT after releasing ${VERSION_FROM_TAG} to Maven Central."
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
