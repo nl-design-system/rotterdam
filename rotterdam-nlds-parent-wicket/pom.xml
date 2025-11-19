@@ -19,6 +19,7 @@
         <module>rotterdam-nlds-css-wicket</module>
         <module>rotterdam-nlds-extensions-wicket</module>
         <module>rotterdam-nlds-wicket</module>
+        <module>rotterdam-nlds-wicket-extras</module>
         <module>test-common-wicket</module>
     </modules>
 
@@ -48,6 +49,11 @@
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>rotterdam-nlds-wicket-extras</artifactId>
                 <version>0.0.6-SNAPSHOT</version>
             </dependency>
             <dependency>

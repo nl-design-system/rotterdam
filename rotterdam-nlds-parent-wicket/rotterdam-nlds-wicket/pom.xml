@@ -229,14 +229,6 @@
                 </includes>
             </resource>
             <resource>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/html_content</targetPath>
-                <filtering>false</filtering>
-                <directory>node_modules/</directory>
-                <includes>
-                    <include>@utrecht/html-content-css/dist/*.css</include>
-                </includes>
-            </resource>
-            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/icon</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
