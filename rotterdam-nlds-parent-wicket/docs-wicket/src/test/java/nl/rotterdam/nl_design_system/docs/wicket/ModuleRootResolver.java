@@ -9,7 +9,7 @@ public class ModuleRootResolver {
 
     public static File resolveModuleRootPath(Class<?> classInProject) {
         try {
-            URI uri = Objects.requireNonNull(classInProject.getResource(".")).toURI();
+            URI uri = Objects.requireNonNull(classInProject.getResource(classInProject.getSimpleName() + ".class")).toURI();
             File file = new File(uri);
             while (!new File(file, "pom.xml").exists()) {
                 file = file.getParentFile();
