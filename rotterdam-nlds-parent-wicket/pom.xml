@@ -55,7 +55,7 @@
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket-extras</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
+                <version>0.0.6-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
