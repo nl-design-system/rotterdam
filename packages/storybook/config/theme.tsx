@@ -1,5 +1,5 @@
-import type { ThemeVars } from '@storybook/theming';
-import { create } from '@storybook/theming/create';
+import type { ThemeVars } from 'storybook/theming';
+import { create } from 'storybook/theming/create';
 
 const rodsColorBaseWhite = '#ffffff'; // Base/White
 const rodsColorBaseGreen = '#00811F'; // Base/Green

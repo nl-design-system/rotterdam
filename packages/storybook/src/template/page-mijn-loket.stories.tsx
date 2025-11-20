@@ -21,7 +21,7 @@ import RodsIconShoppingCart from '@gemeente-rotterdam/web-components-react/dist/
 import RodsIconSummary from '@gemeente-rotterdam/web-components-react/dist/RodsIconSummary';
 import RodsIconUser from '@gemeente-rotterdam/web-components-react/dist/RodsIconUser';
 import RodsLogoImage from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImage';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import '@gemeente-rotterdam/components-css/grid/index.scss';
 import './index.scss';
 import {
