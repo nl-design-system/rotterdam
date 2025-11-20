@@ -2,23 +2,23 @@
   "utrecht": {
     "paragraph": {
       "color": {},
-      "font-family": { "value": "{nl.paragraph.font-family}" },
-      "font-size": { "value": "{nl.paragraph.font-size}" },
-      "font-weight": { "value": "{nl.paragraph.font-weight}" },
-      "line-height": { "value": "{nl.paragraph.line-height}" },
+      "font-family": { "$value": "{nl.paragraph.font-family}" },
+      "font-size": { "$value": "{nl.paragraph.font-size}" },
+      "font-weight": { "$value": "{nl.paragraph.font-weight}" },
+      "line-height": { "$value": "{nl.paragraph.line-height}" },
       "margin-block-start": {},
       "margin-block-end": {},
       "lead": {
         "color": {},
-        "font-size": { "value": "{nl.paragraph.lead.font-size}" },
-        "font-weight": { "value": "{nl.paragraph.lead.font-weight}" },
-        "line-height": { "value": "{nl.paragraph.lead.line-height}" }
+        "font-size": { "$value": "{nl.paragraph.lead.font-size}" },
+        "font-weight": { "$value": "{nl.paragraph.lead.font-weight}" },
+        "line-height": { "$value": "{nl.paragraph.lead.line-height}" }
       },
       "small": {
         "color": {},
-        "font-size": { "value": "12px" },
+        "font-size": { "$value": "12px" },
         "font-weight": {},
-        "line-height": { "value": "20px" }
+        "line-height": { "$value": "20px" }
       }
     }
   }

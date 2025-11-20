@@ -67,9 +67,20 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
 
 ## Java Platform Module System (JPMS)
 
-Voeg alleen exports toe voor packages die bij de publieke API horen. Voeg ook een `opens` voor iedere `exports` toe, want Wicket heeft toegang tot de resources van de componenten nodig.
+Voeg alleen exports toe voor packages die bij de publieke API horen. Voeg ook `opens` voor packages waar resources in
+zitten waar Wicket bij moet kunnen. Mappen waarvan de naam geen geldige packagenaam is, zijn altijd open (
+zie [Module.getResourceAsStream(...)](<https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Module.html#getResourceAsStream(java.lang.String)>)).
 
-In principe hoeft een `opens` alleen te worden toegevoegd als er ook resources zijn die door classes uit andere modules benaderd moeten worden. Maar qua onderhoud is het veel makkelijker om gewoon voor alle `exports` een `opens` toe te voegen.
+Er zijn scripts om de `opens` te genereren. Alle mappen die als package worden beschouwd en die 1 of meer resources
+bevatten worden hiermee bepaald. Door de uitvoer hiervan naar `module-info.java`-bestanden te kopiëren worden alleen de
+packages geopend waarvoor het nodig is:
+
+- `[Write-PackagesToOpen.ps1](../Write-PackagesToOpen.ps1)`
+  - Zet een bestand `opens-list.txt` naast de `module-info.java` van modules die packages moeten openen. De inhoud kan
+    gekopieerd worden en alle `opens` in `module-info.java` vervangen.
+
+Het kan zijn dat er een waarschuwing voor een `opens` verschijnt omdat er geen classes in dat package verschijnt. Voeg
+dan commentaar toe die de waarschuwing onderdrukt (`//noinspection JavaModuleDefinition` in IntelliJ IDEA).
 
 ### Module docs-wicket
 

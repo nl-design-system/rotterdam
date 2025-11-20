@@ -19,7 +19,7 @@ public class RdUnorderedListBehavior extends Behavior {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdUnorderedListBehavior.class,
-        "@utrecht/unordered-list-css/dist/index.css"
+        "@utrecht/unordered-list-css/dist/index.min.css"
     );
 
     /**

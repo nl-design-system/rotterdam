@@ -18,12 +18,12 @@
         "margin-block-end": {}
       },
       "header": {
-        "font-weight": { "value": "{rods.typography.weight-scale.normal.font-weight}" },
+        "font-weight": { "$value": "{rods.typography.weight-scale.normal.font-weight}" },
         "background-color": {},
         "color": {},
         "text-transform": {},
-        "border-block-end-color": { "value": "{rods.color.gray.tint-11}" },
-        "border-block-end-width": { "value": "2px" }
+        "border-block-end-color": { "$value": "{rods.color.gray.tint-11}" },
+        "border-block-end-width": { "$value": "2px" }
       },
       "header-cell": {
         "font-size": {},
@@ -33,17 +33,17 @@
       },
       "cell": {
         "line-height": {},
-        "padding-block-end": { "value": "16px" },
-        "padding-block-start": { "value": "16px" },
-        "padding-inline-end": { "value": "12px" },
-        "padding-inline-start": { "value": "12px" },
+        "padding-block-end": { "$value": "16px" },
+        "padding-block-start": { "$value": "16px" },
+        "padding-inline-end": { "$value": "12px" },
+        "padding-inline-start": { "$value": "12px" },
         "icon": {
           "size": {}
         }
       },
       "row": {
-        "border-block-end-color": { "value": "{rods.color.gray.tint-04}" },
-        "border-block-end-width": { "value": "1px" },
+        "border-block-end-color": { "$value": "{rods.color.gray.tint-04}" },
+        "border-block-end-width": { "$value": "1px" },
         "padding-inline-end": {},
         "padding-inline-start": {},
         "alternate-odd": {

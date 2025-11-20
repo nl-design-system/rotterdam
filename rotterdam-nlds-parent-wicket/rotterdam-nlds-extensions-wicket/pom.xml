@@ -53,8 +53,11 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@gemeente-rotterdam/web-components-stencil/dist/**/*</include>
-                    <include>@gemeente-rotterdam/web-components-stencil/loader/**/*</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/app-globals-*.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/index-*.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/loader.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/rods-icon-*.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/loader/index.js</include>
                 </includes>
             </resource>
         </resources>

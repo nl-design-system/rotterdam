@@ -2,10 +2,10 @@
   "rods": {
     "cursor": {
       "disabled": {
-        "value": "wait"
+        "$value": "wait"
       },
       "interactive": {
-        "value": "default"
+        "$value": "default"
       }
     }
   }

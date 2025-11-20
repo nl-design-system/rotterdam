@@ -1,12 +1,12 @@
 {
   "utrecht": {
     "form-select": {
-      "background-color": { "value": "{rods.color.base.white}" },
+      "background-color": { "$value": "{rods.color.base.white}" },
       "border-color": {},
-      "border-width": { "value": "1px" },
-      "color": { "value": "{rods.color.gray.tint-11}" },
+      "border-width": { "$value": "1px" },
+      "color": { "$value": "{rods.color.gray.tint-11}" },
       "font-size": {},
-      "max-inline-size": { "value": "100%" },
+      "max-inline-size": { "$value": "100%" },
       "padding-block-end": {},
       "padding-block-start": {},
       "padding-inline-end": {},

@@ -30,7 +30,7 @@ public class RdFormFieldDescriptionBehavior extends TagNameClassComponentBehavio
         addHeaderItem(
             cssReferenceHeaderItem(
                 RdFormFieldDescriptionBehavior.class,
-                "@utrecht/form-field-description-css/dist/index.css"
+                "@utrecht/form-field-description-css/dist/index.min.css"
             )
         );
     }

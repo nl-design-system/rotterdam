@@ -21,6 +21,6 @@ public class RdBodyBehavior extends TagNameClassComponentBehavior<RdBodyBorder> 
 
     private RdBodyBehavior() {
         super("body", RdBodyCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.min.css"));
     }
 }

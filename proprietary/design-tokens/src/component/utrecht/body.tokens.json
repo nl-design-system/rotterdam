@@ -1,10 +1,10 @@
 {
   "utrecht": {
     "body": {
-      "background-color": { "value": "{rods.color.base.white}" },
-      "color": { "value": "{rods.color.gray.tint-11}" },
-      "font-family": { "value": "{rods.typography.sans-serif.font-family}" },
-      "font-size": { "value": "16px" },
+      "background-color": { "$value": "{rods.color.base.white}" },
+      "color": { "$value": "{rods.color.gray.tint-11}" },
+      "font-family": { "$value": "{rods.typography.sans-serif.font-family}" },
+      "font-size": { "$value": "16px" },
       "line-height": {}
     }
   }

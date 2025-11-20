@@ -16,7 +16,7 @@ class RdNumberBadgeBehavior extends Behavior {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdNumberBadgeBehavior.class,
-        "@utrecht/number-badge-css/dist/index.css"
+        "@utrecht/number-badge-css/dist/index.min.css"
     );
 
     private final String expectedTagName;

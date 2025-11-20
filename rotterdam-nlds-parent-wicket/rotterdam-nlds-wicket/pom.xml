@@ -91,7 +91,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/alert-css/dist/*.css</include>
+                    <include>@utrecht/alert-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -99,7 +99,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/badge-list-css/dist/*.css</include>
+                    <include>@utrecht/badge-list-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -107,7 +107,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/body-css/dist/*.css</include>
+                    <include>@utrecht/body-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -115,7 +115,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/breadcrumb-nav-css/dist/*.css</include>
+                    <include>@utrecht/breadcrumb-nav-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -123,7 +123,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/button-css/dist/*.css</include>
+                    <include>@utrecht/button-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -131,7 +131,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/button-group-css/dist/*.css</include>
+                    <include>@utrecht/button-group-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -139,8 +139,8 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/checkbox-css/dist/*.css</include>
-                    <include>@utrecht/custom-checkbox-css/dist/*.css</include>
+                    <include>@utrecht/checkbox-css/dist/*.min.css</include>
+                    <include>@utrecht/custom-checkbox-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -148,7 +148,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/data-list-css/dist/*.css</include>
+                    <include>@utrecht/data-list-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -156,7 +156,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/code-block-css/dist/*.css</include>
+                    <include>@utrecht/code-block-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -164,7 +164,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/column-layout-css/dist/*.css</include>
+                    <include>@utrecht/column-layout-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -172,7 +172,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/data-badge-css/dist/*.css</include>
+                    <include>@utrecht/data-badge-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -180,7 +180,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/form-field-css/dist/*.css</include>
+                    <include>@utrecht/form-field-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -188,7 +188,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/form-field-description-css/dist/*.css</include>
+                    <include>@utrecht/form-field-description-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -196,7 +196,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/form-field-error-message-css/dist/*.css</include>
+                    <include>@utrecht/form-field-error-message-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -204,7 +204,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/form-label-css/dist/*.css</include>
+                    <include>@utrecht/form-label-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -212,12 +212,12 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/heading-1-css/dist/*.css</include>
-                    <include>@utrecht/heading-2-css/dist/*.css</include>
-                    <include>@utrecht/heading-3-css/dist/*.css</include>
-                    <include>@utrecht/heading-4-css/dist/*.css</include>
-                    <include>@utrecht/heading-5-css/dist/*.css</include>
-                    <include>@utrecht/heading-6-css/dist/*.css</include>
+                    <include>@utrecht/heading-1-css/dist/*.min.css</include>
+                    <include>@utrecht/heading-2-css/dist/*.min.css</include>
+                    <include>@utrecht/heading-3-css/dist/*.min.css</include>
+                    <include>@utrecht/heading-4-css/dist/*.min.css</include>
+                    <include>@utrecht/heading-5-css/dist/*.min.css</include>
+                    <include>@utrecht/heading-6-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -225,7 +225,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/heading-group-css/dist/*.css</include>
+                    <include>@utrecht/heading-group-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -233,7 +233,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/icon/dist/*.css</include>
+                    <include>@utrecht/icon/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -241,7 +241,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/link-css/dist/*.css</include>
+                    <include>@utrecht/link-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -249,7 +249,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/link-list-css/dist/*.css</include>
+                    <include>@utrecht/link-list-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -257,7 +257,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/logo-css/dist/*.css</include>
+                    <include>@utrecht/logo-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -265,7 +265,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/number-badge-css/dist/*.css</include>
+                    <include>@utrecht/number-badge-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -273,7 +273,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/ordered-list-css/dist/*.css</include>
+                    <include>@utrecht/ordered-list-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -281,7 +281,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/page-body-css/dist/*.css</include>
+                    <include>@utrecht/page-body-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -289,7 +289,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/page-footer-css/dist/*.css</include>
+                    <include>@utrecht/page-footer-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -297,7 +297,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/page-header-css/dist/*.css</include>
+                    <include>@utrecht/page-header-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -305,7 +305,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/page-layout-css/dist/*.css</include>
+                    <include>@utrecht/page-layout-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -321,7 +321,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/preserve-data-css/dist/*.css</include>
+                    <include>@utrecht/preserve-data-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -329,7 +329,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/root-css/dist/*.css</include>
+                    <include>@utrecht/root-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -337,7 +337,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/separator-css/dist/*.css</include>
+                    <include>@utrecht/separator-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -353,7 +353,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/unordered-list-css/dist/*.css</include>
+                    <include>@utrecht/unordered-list-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>

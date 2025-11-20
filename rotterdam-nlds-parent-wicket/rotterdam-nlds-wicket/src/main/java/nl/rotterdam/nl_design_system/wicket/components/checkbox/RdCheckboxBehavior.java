@@ -26,8 +26,8 @@ class RdCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
 
     private RdCheckboxBehavior() {
         super("input", DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.css"));
-        addHeaderItem(cssReferenceHeaderItem(RdCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdCheckboxBehavior.class, "@utrecht/checkbox-css/dist/index.min.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdCheckboxBehavior.class, "@utrecht/custom-checkbox-css/dist/index.min.css"));
     }
 
     @Override

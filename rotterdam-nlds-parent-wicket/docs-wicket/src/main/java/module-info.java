@@ -11,7 +11,6 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.checkbox;
     opens nl.rotterdam.nl_design_system.docs.wicket.code_block;
     opens nl.rotterdam.nl_design_system.docs.wicket.column_layout;
-    opens nl.rotterdam.nl_design_system.docs.wicket.css;
     opens nl.rotterdam.nl_design_system.docs.wicket.data_summary;
     opens nl.rotterdam.nl_design_system.docs.wicket.dialog;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox;

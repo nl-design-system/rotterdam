@@ -26,7 +26,7 @@ public class RdFormFieldErrorMessageBehavior extends TagNameClassComponentBehavi
         addHeaderItem(
             cssReferenceHeaderItem(
                 RdFormFieldErrorMessageBehavior.class,
-                "@utrecht/form-field-error-message-css/dist/index.css"
+                "@utrecht/form-field-error-message-css/dist/index.min.css"
             )
         );
     }

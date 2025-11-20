@@ -3,7 +3,7 @@
     "icon": {
       "color": {},
       "size": {
-        "value": "32px"
+        "$value": "32px"
       },
       "inset-block-start": {},
       "baseline": {
