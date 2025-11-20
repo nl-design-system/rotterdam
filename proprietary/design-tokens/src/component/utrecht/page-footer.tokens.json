@@ -1,8 +1,8 @@
 {
   "utrecht": {
     "page-footer": {
-      "color": { "value": "{rods.color.base.white.value}" },
-      "background-color": { "value": "{rods.color.base.green.value}" },
+      "color": { "value": "{rods.color.base.white}" },
+      "background-color": { "value": "{rods.color.base.green}" },
       "background-image": {},
       "max-inline-size": {
         "value": "{basis.page.max-inline-size}"
