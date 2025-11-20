@@ -1,11 +1,9 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
 import js from "@eslint/js";
 import json from "@eslint/json";
 import eslintConfigPrettier from "eslint-config-prettier";
 import perfectionist from "eslint-plugin-perfectionist";
 import react from "eslint-plugin-react";
+import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
