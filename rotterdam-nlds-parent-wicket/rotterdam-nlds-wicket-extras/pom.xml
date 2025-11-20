@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
@@ -14,8 +12,7 @@
     <description>Wicket components from NL Design System components, which is intended for use by all organizations
         working with NL Design System and Apache Wicket. These Wicket components are unlikely to be useful for end user
         applications. But they may be useful for internal documentation for teams. To keep the JAR with the core
-        components small, they are distributed separately.
-    </description>
+        components small, they are distributed separately.</description>
 
     <dependencies>
         <dependency>
@@ -62,6 +59,37 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket_extras/components/syntax_highlighting</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>prismjs/components/*.min.js</include>
+                    <include>prismjs/themes/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
@@ -120,36 +148,5 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <filtering>false</filtering>
-                <directory>node_modules/</directory>
-                <includes>
-                    <include>prismjs/components/*.min.js</include>
-                    <include>prismjs/themes/*.min.css</include>
-                </includes>
-                <targetPath>nl/rotterdam/nl_design_system/wicket_extras/components/syntax_highlighting</targetPath>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/test/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
     </build>
 </project>
