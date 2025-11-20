@@ -17,7 +17,7 @@ public class RdRootBehavior extends Behavior {
      */
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdRootBehavior.class,
-        "@utrecht/root-css/dist/index.css"
+        "@utrecht/root-css/dist/index.min.css"
     );
 
     public static final RdRootBehavior INSTANCE = new RdRootBehavior();

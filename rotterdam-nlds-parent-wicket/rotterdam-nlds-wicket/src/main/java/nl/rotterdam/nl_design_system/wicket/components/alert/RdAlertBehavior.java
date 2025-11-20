@@ -13,7 +13,7 @@ class RdAlertBehavior extends TagNameClassComponentBehavior<Component> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdAlertBehavior.class,
-        "@utrecht/alert-css/dist/index.css"
+        "@utrecht/alert-css/dist/index.min.css"
     );
 
     static Behavior alert(RdAlertType type) {

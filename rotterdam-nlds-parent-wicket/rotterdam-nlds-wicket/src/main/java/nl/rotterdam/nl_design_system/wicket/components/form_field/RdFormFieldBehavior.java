@@ -21,7 +21,7 @@ public class RdFormFieldBehavior extends TagNameClassComponentBehavior<Component
 
     static final CssReferenceHeaderItem CSS_HEADER_ITEM = cssReferenceHeaderItem(
         RdFormFieldBehavior.class,
-        "@utrecht/form-field-css/dist/index.css"
+        "@utrecht/form-field-css/dist/index.min.css"
     );
 
     /**

@@ -16,6 +16,6 @@ public class RdHeadingGroupBehavior extends TagNameClassComponentBehavior<RdHead
 
     private RdHeadingGroupBehavior() {
         super("hgroup", RdHeadingGroupCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdHeadingGroupBehavior.class, "@utrecht/heading-group-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdHeadingGroupBehavior.class, "@utrecht/heading-group-css/dist/index.min.css"));
     }
 }

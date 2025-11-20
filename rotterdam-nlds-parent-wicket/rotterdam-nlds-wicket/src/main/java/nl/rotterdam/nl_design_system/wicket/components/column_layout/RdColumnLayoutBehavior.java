@@ -10,6 +10,6 @@ class RdColumnLayoutBehavior extends TagNameClassComponentBehavior<RdColumnLayou
 
     private RdColumnLayoutBehavior() {
         super("div", RdColumnLayoutCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdColumnLayoutBehavior.class, "@utrecht/column-layout-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdColumnLayoutBehavior.class, "@utrecht/column-layout-css/dist/index.min.css"));
     }
 }

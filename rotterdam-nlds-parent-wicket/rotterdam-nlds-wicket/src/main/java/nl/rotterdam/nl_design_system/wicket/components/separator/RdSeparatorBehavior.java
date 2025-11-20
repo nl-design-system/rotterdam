@@ -11,7 +11,7 @@ public class RdSeparatorBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdSeparatorBehavior.class,
-        "@utrecht/separator-css/dist/index.css"
+        "@utrecht/separator-css/dist/index.min.css"
     );
 
     @Override

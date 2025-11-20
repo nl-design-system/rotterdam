@@ -17,7 +17,7 @@ public class RdOrderedListBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdOrderedListBehavior.class,
-        "@utrecht/ordered-list-css/dist/index.css"
+        "@utrecht/ordered-list-css/dist/index.min.css"
     );
 
     private final String expectedTagName;

@@ -15,7 +15,7 @@ class RdPageBodyBehavior extends TagNameClassComponentBehavior<RdPageBodyBorder>
 
     private RdPageBodyBehavior() {
         super("div", RdPageBodyCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdPageBodyBehavior.class, "@utrecht/page-body-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdPageBodyBehavior.class, "@utrecht/page-body-css/dist/index.min.css"));
     }
 
 }

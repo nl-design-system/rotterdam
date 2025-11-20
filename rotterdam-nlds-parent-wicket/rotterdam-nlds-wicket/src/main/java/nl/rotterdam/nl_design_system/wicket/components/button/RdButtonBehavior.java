@@ -10,7 +10,7 @@ class RdButtonBehavior extends TagNameClassComponentBehavior<Button> {
 
     static final CssReferenceHeaderItem CSS_HEADER_ITEM = cssReferenceHeaderItem(
         RdButtonBehavior.class,
-        "@utrecht/button-css/dist/index.css"
+        "@utrecht/button-css/dist/index.min.css"
     );
 
     static final RdButtonBehavior INSTANCE = new RdButtonBehavior();

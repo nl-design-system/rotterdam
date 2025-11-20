@@ -17,7 +17,7 @@ public class RdLinkListBehavior extends TagNameClassComponentBehavior<Component>
      */
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdLinkListBehavior.class,
-        "@utrecht/link-list-css/dist/index.css"
+        "@utrecht/link-list-css/dist/index.min.css"
     );
 
     /**

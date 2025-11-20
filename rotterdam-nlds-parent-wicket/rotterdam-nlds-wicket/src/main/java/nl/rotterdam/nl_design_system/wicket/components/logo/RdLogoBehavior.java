@@ -15,7 +15,7 @@ class RdLogoBehavior extends TagNameClassComponentBehavior<RdLogoBorder> {
 
     private RdLogoBehavior() {
         super("div", RdLogoCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdLogoBehavior.class, "@utrecht/logo-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdLogoBehavior.class, "@utrecht/logo-css/dist/index.min.css"));
     }
 
 }

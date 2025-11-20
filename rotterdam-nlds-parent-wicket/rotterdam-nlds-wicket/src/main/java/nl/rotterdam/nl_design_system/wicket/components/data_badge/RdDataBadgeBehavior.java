@@ -21,7 +21,7 @@ public class RdDataBadgeBehavior extends Behavior {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdDataBadgeBehavior.class,
-        "@utrecht/data-badge-css/dist/index.css"
+        "@utrecht/data-badge-css/dist/index.min.css"
     );
 
     private final String expectedTagName;
