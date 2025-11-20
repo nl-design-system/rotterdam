@@ -16,6 +16,6 @@ public class RdCodeBlockBehavior extends TagNameClassComponentBehavior<Component
      */
     public RdCodeBlockBehavior() {
         super("pre", RdCodeBlockCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdCodeBlockBehavior.class, "@utrecht/code-block-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdCodeBlockBehavior.class, "@utrecht/code-block-css/dist/index.min.css"));
     }
 }

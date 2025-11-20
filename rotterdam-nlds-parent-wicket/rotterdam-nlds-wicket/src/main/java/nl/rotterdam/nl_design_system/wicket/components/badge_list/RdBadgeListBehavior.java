@@ -20,7 +20,7 @@ public class RdBadgeListBehavior extends TagNameClassComponentBehavior<Component
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdBadgeListBehavior.class,
-        "@utrecht/badge-list-css/dist/index.css"
+        "@utrecht/badge-list-css/dist/index.min.css"
     );
 
     public RdBadgeListBehavior() {

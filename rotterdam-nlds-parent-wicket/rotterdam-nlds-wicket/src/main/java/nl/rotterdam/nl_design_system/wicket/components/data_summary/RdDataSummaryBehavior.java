@@ -10,6 +10,6 @@ class RdDataSummaryBehavior extends TagNameClassComponentBehavior<RdDataSummary>
 
     private RdDataSummaryBehavior() {
         super("dl", RdDataSummaryCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdDataSummaryBehavior.class, "@utrecht/data-list-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdDataSummaryBehavior.class, "@utrecht/data-list-css/dist/index.min.css"));
     }
 }

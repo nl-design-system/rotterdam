@@ -21,7 +21,7 @@ public class RdFormLabelBehavior extends TagNameClassComponentBehavior<Component
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdFormLabelBehavior.class,
-        "@utrecht/form-label-css/dist/index.css"
+        "@utrecht/form-label-css/dist/index.min.css"
     );
 
     /**

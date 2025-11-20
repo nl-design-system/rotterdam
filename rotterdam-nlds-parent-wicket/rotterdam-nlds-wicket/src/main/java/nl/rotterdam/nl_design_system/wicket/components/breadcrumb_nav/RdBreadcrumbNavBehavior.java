@@ -10,7 +10,7 @@ class RdBreadcrumbNavBehavior extends TagNameClassComponentBehavior<Component> {
 
     static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdBreadcrumbNavBehavior.class,
-        "@utrecht/breadcrumb-nav-css/dist/index.css"
+        "@utrecht/breadcrumb-nav-css/dist/index.min.css"
     );
 
     public RdBreadcrumbNavBehavior() {

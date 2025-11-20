@@ -10,7 +10,7 @@ public class RdPageLayoutBehavior extends TagNameClassComponentBehavior<RdPageLa
 
     private RdPageLayoutBehavior() {
         super("div", RdPageLayoutCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdPageLayoutBehavior.class, "@utrecht/page-layout-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdPageLayoutBehavior.class, "@utrecht/page-layout-css/dist/index.min.css"));
     }
 
 }

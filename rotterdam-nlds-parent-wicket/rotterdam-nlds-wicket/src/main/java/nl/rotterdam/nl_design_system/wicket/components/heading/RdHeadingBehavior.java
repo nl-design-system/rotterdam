@@ -18,27 +18,27 @@ public class RdHeadingBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem HEADING_1_HEADER_ITEM = cssReferenceHeaderItem(
         RdHeadingBehavior.class,
-        "@utrecht/heading-1-css/dist/index.css"
+        "@utrecht/heading-1-css/dist/index.min.css"
     );
     public static final CssReferenceHeaderItem HEADING_2_HEADER_ITEM = cssReferenceHeaderItem(
         RdHeadingBehavior.class,
-        "@utrecht/heading-2-css/dist/index.css"
+        "@utrecht/heading-2-css/dist/index.min.css"
     );
     public static final CssReferenceHeaderItem HEADING_3_HEADER_ITEM = cssReferenceHeaderItem(
         RdHeadingBehavior.class,
-        "@utrecht/heading-3-css/dist/index.css"
+        "@utrecht/heading-3-css/dist/index.min.css"
     );
     public static final CssReferenceHeaderItem HEADING_4_HEADER_ITEM = cssReferenceHeaderItem(
         RdHeadingBehavior.class,
-        "@utrecht/heading-4-css/dist/index.css"
+        "@utrecht/heading-4-css/dist/index.min.css"
     );
     public static final CssReferenceHeaderItem HEADING_5_HEADER_ITEM = cssReferenceHeaderItem(
         RdHeadingBehavior.class,
-        "@utrecht/heading-5-css/dist/index.css"
+        "@utrecht/heading-5-css/dist/index.min.css"
     );
     public static final CssReferenceHeaderItem HEADING_6_HEADER_ITEM = cssReferenceHeaderItem(
         RdHeadingBehavior.class,
-        "@utrecht/heading-6-css/dist/index.css"
+        "@utrecht/heading-6-css/dist/index.min.css"
     );
 
     public static Behavior heading(int level) {

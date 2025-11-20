@@ -12,6 +12,6 @@ class RdActionGroupBehavior extends TagNameClassComponentBehavior<Component> {
 
     private RdActionGroupBehavior() {
         super("div", RdActionGroupCss.DEFAULT);
-        addHeaderItem(cssReferenceHeaderItem(RdActionGroupBehavior.class, "@utrecht/button-group-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdActionGroupBehavior.class, "@utrecht/button-group-css/dist/index.min.css"));
     }
 }

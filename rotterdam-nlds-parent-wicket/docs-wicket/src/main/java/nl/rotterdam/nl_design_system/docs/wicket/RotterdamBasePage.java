@@ -85,6 +85,7 @@ public class RotterdamBasePage extends DocsBasePage {
         // - Root for <html>
         // - Body for <body>
 
-        response.render(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.css"));
+        // TODO: RdBodyBorder instead of loading the CSS directly.
+        response.render(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.min.css"));
     }
 }

@@ -11,7 +11,7 @@ public class RdPreserveDataBehavior extends Behavior {
 
     public static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdPreserveDataBehavior.class,
-        "@utrecht/preserve-data-css/dist/index.css"
+        "@utrecht/preserve-data-css/dist/index.min.css"
     );
 
     @Override
