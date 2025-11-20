@@ -7,9 +7,7 @@ import org.apache.wicket.Component;
 
 /**
  * Code block.
- * @deprecated  we don't have any apps needing this.
  */
-@Deprecated(forRemoval = true)
 public class RdCodeBlockBehavior extends TagNameClassComponentBehavior<Component> {
 
 

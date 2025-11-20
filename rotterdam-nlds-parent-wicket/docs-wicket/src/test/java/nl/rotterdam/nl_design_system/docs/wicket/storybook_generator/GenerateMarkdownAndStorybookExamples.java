@@ -17,7 +17,6 @@ import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabel
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon_button.IconButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.logo.LogoExamplesPanel;
@@ -171,15 +170,6 @@ public class GenerateMarkdownAndStorybookExamples {
             HeadingGroupExamplesPanel.class,
             "heading-group",
             "Heading Group"
-        ).generate();
-    }
-
-    @Test
-    void generateHtmlContentComponent() {
-        new MarkdownDocumentationExamplesGenerator(
-            HtmlContentExamplesPanel.class,
-            "html-content",
-            "HTML Content"
         ).generate();
     }
 

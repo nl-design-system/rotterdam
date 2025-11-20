@@ -19,7 +19,6 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input;
     opens nl.rotterdam.nl_design_system.docs.wicket.heading;
     opens nl.rotterdam.nl_design_system.docs.wicket.heading_group;
-    opens nl.rotterdam.nl_design_system.docs.wicket.html_content;
     opens nl.rotterdam.nl_design_system.docs.wicket.icon;
     opens nl.rotterdam.nl_design_system.docs.wicket.icon_button;
     opens nl.rotterdam.nl_design_system.docs.wicket.link;
@@ -45,6 +44,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     requires nl.rotterdam.nl_design_system.rotterdam_css.wicket;
     requires nl.rotterdam.nl_design_system.rotterdam_extensions.wicket;
     requires nl.rotterdam.nl_design_system.wicket;
+    requires nl.rotterdam.nl_design_system.wicket_extras;
     requires org.apache.wicket.core;
     requires org.danekja.jdk.serializable.functional;
     requires org.jspecify;

@@ -1,34 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nl.rotterdam.nl-design-system</groupId>
     <artifactId>rotterdam-nlds-parent</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Rotterdam, NL Design System Parent</name>
     <description>NL Design System Parent POM made by Gemeente Rotterdam. Used for Java libraries related to NL Design System.</description>
     <url>https://github.com/nl-design-system/rotterdam/</url>
 
-    <modules>
-        <module>rotterdam-nlds-parent-wicket</module>
-    </modules>
-
     <licenses>
         <license>
-            <name> EUPL-1.2 license</name>
+            <name>EUPL-1.2 license</name>
             <url>https://eupl.eu/1.2/en/</url>
         </license>
     </licenses>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>21</java.version>
-        <node.version>v22.19.0</node.version>
-        <pnpm.version>10.17.0</pnpm.version>
-        <central-publishing.autoPublish>true</central-publishing.autoPublish>
-        <central-publishing.waitUntil>published</central-publishing.waitUntil>
-    </properties>
 
     <developers>
         <developer>
@@ -40,81 +27,55 @@
         </developer>
     </developers>
 
+    <modules>
+        <module>rotterdam-nlds-parent-wicket</module>
+    </modules>
+
     <scm>
         <connection>scm:git:git://github.com/nl-design-system/rotterdam.git</connection>
         <developerConnection>scm:git:ssh://github.com:nl-design-system/rotterdam.git</developerConnection>
         <url>https://github.com/nl-design-system/rotterdam/tree/main</url>
     </scm>
 
-    <profiles>
-        <profile>
-            <id>central-sonatype-release</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.central</groupId>
-                        <artifactId>central-publishing-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <publishingServerId>central-sonatype</publishingServerId>
-                            <autoPublish>${central-publishing.autoPublish}</autoPublish>
-                            <waitUntil>${central-publishing.waitUntil}</waitUntil>
-                            <excludeArtifacts>
-                                <artifact>docs-wicket</artifact>
-                            </excludeArtifacts>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>3.3.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <configuration>
-                            <failOnError>false</failOnError>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.2.8</version>
-                        <configuration>
-                            <bestPractices>true</bestPractices>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>21</java.version>
+        <node.version>v22.19.0</node.version>
+        <pnpm.version>10.17.0</pnpm.version>
+        <central-publishing.autoPublish>true</central-publishing.autoPublish>
+        <central-publishing.waitUntil>published</central-publishing.waitUntil>
+    </properties>
 
     <build>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.ekryd.sortpom</groupId>
+                    <artifactId>sortpom-maven-plugin</artifactId>
+                    <version>4.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.12.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.9.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>1.15.1</version>
+                    <configuration>
+                        <nodeVersion>${node.version}</nodeVersion>
+                        <pnpmVersion>${pnpm.version}</pnpmVersion>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
@@ -176,31 +137,90 @@
                     </filesets>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.github.ekryd.sortpom</groupId>
+                <artifactId>sortpom-maven-plugin</artifactId>
+                <configuration>
+                    <createBackupFile>false</createBackupFile>
+                    <nrOfIndentSpace>4</nrOfIndentSpace>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sort</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.12.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.sonatype.central</groupId>
-                    <artifactId>central-publishing-maven-plugin</artifactId>
-                    <version>0.9.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.github.eirslett</groupId>
-                    <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.15.1</version>
-                    <configuration>
-                        <nodeVersion>${node.version}</nodeVersion>
-                        <pnpmVersion>${pnpm.version}</pnpmVersion>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
+
+    <profiles>
+        <profile>
+            <id>central-sonatype-release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central-sonatype</publishingServerId>
+                            <autoPublish>${central-publishing.autoPublish}</autoPublish>
+                            <waitUntil>${central-publishing.waitUntil}</waitUntil>
+                            <excludeArtifacts>
+                                <artifact>docs-wicket</artifact>
+                            </excludeArtifacts>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
+                        <configuration>
+                            <bestPractices>true</bestPractices>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <phase>verify</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

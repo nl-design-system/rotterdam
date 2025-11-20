@@ -16,7 +16,6 @@ import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabel
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.html_content.HtmlContentExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.RodsIconExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon_button.IconButtonExamplesPanel;
@@ -35,6 +34,8 @@ import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
@@ -43,8 +44,10 @@ import org.apache.wicket.markup.head.JavaScriptReferenceType;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.LambdaChoiceRenderer;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -53,6 +56,7 @@ import java.util.Arrays;
 public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
+    private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
     private static final JavaScriptReferenceHeaderItem COMPONENTS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
         new JavaScriptResourceReference(ComponentsPage.class, "ComponentsPage.js")
     );
@@ -81,6 +85,8 @@ public class ComponentsPage extends RotterdamBasePage {
     protected void onInitialize() {
         super.onInitialize();
 
+        add(RdSyntaxHighlightingThemeBehavior.of(NULL_MODEL));
+
         // Add the component stories. You can add multiple components with just one add, making it easier to read.
         pageBody.add(
             new RdSideNavExamplesPanel("sideNavExamplesPanel"),
@@ -101,7 +107,6 @@ public class ComponentsPage extends RotterdamBasePage {
             new HeadingGroupExamplesPanel("headingGroupExamplesPanel").setVisible(false)
         );
 
-        pageBody.add(new HtmlContentExamplesPanel("htmlContentExamplesPanel").setVisible(false));
         pageBody.add(new IconExamplesPanel("iconExamplesPanel").setVisible(false));
         pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel").setVisible(false));
         pageBody.add(new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"));
