@@ -1,5 +1,13 @@
 # @gemeente-rotterdam/design-tokens
 
+## 1.0.1
+
+### Patch Changes
+
+- 792b3f7: Upgraded style-dictionary to v5 and @tokens-studio/sd-transform to v2
+
+  Some syntax was fixed to support these versions but no values were added or changed.
+
 ## 1.0.0
 
 ### Minor Changes
