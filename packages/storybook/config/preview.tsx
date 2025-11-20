@@ -2,8 +2,8 @@ import '@gemeente-rotterdam/design-tokens/dist/index.css';
 import '@gemeente-rotterdam/font/src/index.scss';
 import type { Preview } from '@storybook/react-vite';
 import { defineCustomElements } from '@gemeente-rotterdam/web-components-stencil/loader/index.js';
-import { withThemeByClassName } from '@storybook/addon-themes';
 import { Controls, Description, Primary, Stories } from '@storybook/addon-docs/blocks';
+import { withThemeByClassName } from '@storybook/addon-themes';
 import { ButtonGroup, Document } from '@utrecht/component-library-react/dist/css-module';
 import { FigmaBlock } from './FigmaBlock';
 import { GitHubBlock } from './GitHubBlock';
@@ -56,7 +56,7 @@ const preview: Preview = {
     },
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;
