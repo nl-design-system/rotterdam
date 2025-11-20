@@ -1,12 +1,12 @@
 {
   "utrecht": {
     "form-label": {
-      "color": { "value": "{rods.color.gray.tint-11}" },
-      "font-size": { "value": "{rods.typography.scale.md.font-size}" },
-      "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
+      "color": { "$value": "{rods.color.gray.tint-11}" },
+      "font-size": { "$value": "{rods.typography.scale.md.font-size}" },
+      "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
       "checkbox": {
         "color": {},
-        "font-weight": { "value": "{rods.typography.weight-scale.normal.font-weight}" }
+        "font-weight": { "$value": "{rods.typography.weight-scale.normal.font-weight}" }
       },
       "checked": {
         "font-weight": {}
@@ -16,7 +16,7 @@
       },
       "radio": {
         "color": {},
-        "font-weight": { "value": "{rods.typography.weight-scale.normal.font-weight}" }
+        "font-weight": { "$value": "{rods.typography.weight-scale.normal.font-weight}" }
       }
     }
   }

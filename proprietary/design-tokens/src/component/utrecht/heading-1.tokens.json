@@ -3,10 +3,10 @@
     "heading-1": {
       "color": {},
       "font-family": {},
-      "font-size": { "value": "{nl.heading.level-1.font-size}" },
-      "font-weight": { "value": "{nl.heading.level-1.font-weight}" },
-      "line-height": { "value": "{nl.heading.level-1.line-height}" },
-      "margin-block-end": { "value": "{rods.space.scale.2}" },
+      "font-size": { "$value": "{nl.heading.level-1.font-size}" },
+      "font-weight": { "$value": "{nl.heading.level-1.font-weight}" },
+      "line-height": { "$value": "{nl.heading.level-1.line-height}" },
+      "margin-block-end": { "$value": "{rods.space.scale.2}" },
       "margin-block-start": {}
     }
   }

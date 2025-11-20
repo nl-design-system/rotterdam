@@ -3,15 +3,15 @@
     "form-field-description": {
       "color": {},
       "font-family": {},
-      "font-size": { "value": "{rods.typography.scale.sm.font-size}" },
+      "font-size": { "$value": "{rods.typography.scale.sm.font-size}" },
       "font-style": {},
       "margin-block-start": {},
       "margin-block-end": {},
       "valid": {
-        "color": { "value": "{rods.color.green.tint-02}" }
+        "color": { "$value": "{rods.color.green.tint-02}" }
       },
       "invalid": {
-        "color": { "value": "#B53322" }
+        "color": { "$value": "#B53322" }
       }
     }
   }

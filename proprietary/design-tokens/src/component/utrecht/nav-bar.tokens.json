@@ -2,15 +2,15 @@
   "utrecht": {
     "nav-bar": {
       "background-color": {},
-      "color": { "value": "{rods.color.gray.tint-11}" },
+      "color": { "$value": "{rods.color.gray.tint-11}" },
       "content": {
         "max-inline-size": {}
       },
       "link": {
-        "padding-block-end": { "value": "{rods.space.scale.1}" },
-        "padding-block-start": { "value": "{rods.space.scale.1}" },
-        "padding-inline-end": { "value": "{rods.space.scale.2}" },
-        "padding-inline-start": { "value": "{rods.space.scale.2}" }
+        "padding-block-end": { "$value": "{rods.space.scale.1}" },
+        "padding-block-start": { "$value": "{rods.space.scale.1}" },
+        "padding-inline-end": { "$value": "{rods.space.scale.2}" },
+        "padding-inline-start": { "$value": "{rods.space.scale.2}" }
       }
     }
   }
