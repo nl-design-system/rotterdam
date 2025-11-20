@@ -1,12 +1,12 @@
 {
   "utrecht": {
     "checkbox": {
-      "background-color": { "value": "{rods.color.base.white}" },
-      "border-color": { "value": "{rods.color.gray.tint-08}" },
+      "background-color": { "$value": "{rods.color.base.white}" },
+      "border-color": { "$value": "{rods.color.gray.tint-08}" },
       "border-radius": {},
       "border-width": {},
-      "color": { "value": "{rods.color.gray.tint-08}" },
-      "size": { "value": "24px" },
+      "color": { "$value": "{rods.color.gray.tint-08}" },
+      "size": { "$value": "24px" },
       "icon": {
         "size": {},
         "type": "sizing"
@@ -36,10 +36,10 @@
         "color": {}
       },
       "checked": {
-        "border-color": { "value": "{rods.color.base.green}" },
+        "border-color": { "$value": "{rods.color.base.green}" },
         "border-width": {},
-        "background-color": { "value": "{rods.color.base.green}" },
-        "color": { "value": "{rods.color.base.white}" }
+        "background-color": { "$value": "{rods.color.base.green}" },
+        "color": { "$value": "{rods.color.base.white}" }
       },
       "indeterminate": {
         "border-color": {},

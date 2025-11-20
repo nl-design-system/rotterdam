@@ -4,23 +4,23 @@
       "level-1": {
         "color": {},
         "font-family": {},
-        "font-size": { "value": "{rods.typography.scale.3xl.font-size}" },
-        "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "value": "{rods.typography.scale.3xl.line-height}" }
+        "font-size": { "$value": "{rods.typography.scale.3xl.font-size}" },
+        "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
+        "line-height": { "$value": "{rods.typography.scale.3xl.line-height}" }
       },
       "level-2": {
         "color": {},
         "font-family": {},
-        "font-size": { "value": "{rods.typography.scale.5xl.font-size}" },
-        "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "value": "{rods.typography.scale.5xl.line-height}" }
+        "font-size": { "$value": "{rods.typography.scale.5xl.font-size}" },
+        "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
+        "line-height": { "$value": "{rods.typography.scale.5xl.line-height}" }
       },
       "level-3": {
         "color": {},
         "font-family": {},
-        "font-size": { "value": "{rods.typography.scale.4xl.font-size}" },
-        "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "value": "{rods.typography.scale.4xl.line-height}" }
+        "font-size": { "$value": "{rods.typography.scale.4xl.font-size}" },
+        "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
+        "line-height": { "$value": "{rods.typography.scale.4xl.line-height}" }
       },
       "level-4": {
         "color": {},

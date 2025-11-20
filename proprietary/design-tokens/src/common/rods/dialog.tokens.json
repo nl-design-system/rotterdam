@@ -2,7 +2,7 @@
   "rods": {
     "dialog": {
       "border-color": {
-        "value": "{rods.color.base.green}"
+        "$value": "{rods.color.base.green}"
       }
     }
   }

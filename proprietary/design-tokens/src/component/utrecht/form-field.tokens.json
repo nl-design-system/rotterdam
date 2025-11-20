@@ -4,9 +4,9 @@
       "margin-block-start": {},
       "margin-block-end": {},
       "invalid": {
-        "border-inline-start-color": { "value": "{rods.color.red.tint-02}" },
-        "border-inline-start-width": { "value": "2px" },
-        "padding-inline-start": { "value": "{rods.space.scale.3}" }
+        "border-inline-start-color": { "$value": "{rods.color.red.tint-02}" },
+        "border-inline-start-width": { "$value": "2px" },
+        "padding-inline-start": { "$value": "{rods.space.scale.3}" }
       },
       "label": {
         "margin-block-end": {}

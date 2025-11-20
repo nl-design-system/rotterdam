@@ -1,31 +1,31 @@
 {
   "denhaag": {
     "sidenav": {
-      "display": { "value": "flex" },
-      "flex-direction": { "value": "column" },
+      "display": { "$value": "flex" },
+      "flex-direction": { "$value": "column" },
       "min-width": {},
-      "row-gap": { "value": "40px" },
+      "row-gap": { "$value": "40px" },
       "item": {
-        "font-family": { "value": "{utrecht.document.font-family}" },
-        "font-size": { "value": "{rods.typography.scale.md.font-size}" },
-        "font-weight": { "value": "{rods.typography.weight-scale.normal.font-weight}" },
-        "height": { "value": "52px" },
-        "line-height": { "value": "{rods.typography.scale.md.line-height}" },
+        "font-family": { "$value": "{utrecht.document.font-family}" },
+        "font-size": { "$value": "{rods.typography.scale.md.font-size}" },
+        "font-weight": { "$value": "{rods.typography.weight-scale.normal.font-weight}" },
+        "height": { "$value": "52px" },
+        "line-height": { "$value": "{rods.typography.scale.md.line-height}" },
         "margin-block-start": {},
         "margin-block-end": {},
         "margin-inline-start": {},
         "margin-inline-end": {}
       },
       "link": {
-        "padding-block-start": { "value": "10px" },
-        "padding-block-end": { "value": "10px" },
-        "color": { "value": "{rods.color.gray.tint-11}" },
+        "padding-block-start": { "$value": "10px" },
+        "padding-block-end": { "$value": "10px" },
+        "color": { "$value": "{rods.color.gray.tint-11}" },
         "hover": {
-          "color": { "value": "{rods.color.base.green}" }
+          "color": { "$value": "{rods.color.base.green}" }
         },
         "active": {
-          "color": { "value": "{rods.color.base.green}" },
-          "font-weight": { "value": "700" }
+          "color": { "$value": "{rods.color.base.green}" },
+          "font-weight": { "$value": "700" }
         },
         "child": {
           "padding-inline-start": {}
@@ -36,7 +36,7 @@
           "margin-inline-start": {}
         }
       },
-      "mobile": { "display": { "value": "flex" } }
+      "mobile": { "display": { "$value": "flex" } }
     }
   }
 }

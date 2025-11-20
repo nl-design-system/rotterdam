@@ -3,32 +3,32 @@
     "dataviz": {
       "1": {
         "background-color": {
-          "value": "{rods.color.blue.tint-01}"
+          "$value": "{rods.color.blue.tint-01}"
         }
       },
       "2": {
         "background-color": {
-          "value": "{rods.color.pink.tint-01}"
+          "$value": "{rods.color.pink.tint-01}"
         }
       },
       "3": {
         "background-color": {
-          "value": "{rods.color.brown.tint-01}"
+          "$value": "{rods.color.brown.tint-01}"
         }
       },
       "4": {
         "background-color": {
-          "value": "{rods.color.green.tint-03}"
+          "$value": "{rods.color.green.tint-03}"
         }
       },
       "5": {
         "background-color": {
-          "value": "{rods.color.purple.tint-01}"
+          "$value": "{rods.color.purple.tint-01}"
         }
       },
       "6": {
         "background-color": {
-          "value": "{rods.color.black}"
+          "$value": "{rods.color.black}"
         }
       }
     }

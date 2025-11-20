@@ -2,7 +2,7 @@
   "nl": {
     "code": {
       "background-color": {},
-      "font-family": { "value": "\"Monaco\"" },
+      "font-family": { "$value": "\"Monaco\"" },
       "font-size": {},
       "line-height": {}
     }

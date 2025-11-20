@@ -2,21 +2,21 @@
   "nl": {
     "data-badge": {
       "background-color": {
-        "value": "{rods.color.base.green}"
+        "$value": "{rods.color.base.green}"
       },
       "border-radius": {
-        "value": "0"
+        "$value": "0"
       },
       "color": {
-        "value": "{rods.color.base.white}"
+        "$value": "{rods.color.base.white}"
       },
-      "font-size": { "value": "12px" },
-      "font-weight": { "value": "{rods.typography.weight-scale.bold.font-weight}" },
+      "font-size": { "$value": "12px" },
+      "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
       "padding-block": {
-        "value": "2px"
+        "$value": "2px"
       },
       "padding-inline": {
-        "value": "8px"
+        "$value": "8px"
       }
     }
   }
