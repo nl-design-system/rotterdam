@@ -17,7 +17,7 @@ public enum WicketState {
      */
     BETA("Has been verified, has tests and is reviewed by a peer"),
     /**
-     * Stable. We try to remain backwads compatible.
+     * Stable. We try to remain backwards compatible.
      */
     STABLE("Has been used in production for a while, at least two teams use it and are satisfied.");
 
