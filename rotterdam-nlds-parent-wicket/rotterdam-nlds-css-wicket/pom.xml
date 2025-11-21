@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>nl.rotterdam.nl-design-system</groupId>
+            <artifactId>rotterdam-nlds-wicket</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
         </dependency>
