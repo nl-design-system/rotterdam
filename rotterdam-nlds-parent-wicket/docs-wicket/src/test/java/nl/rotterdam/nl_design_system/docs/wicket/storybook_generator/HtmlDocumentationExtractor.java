@@ -1,16 +1,17 @@
 package nl.rotterdam.nl_design_system.docs.wicket.storybook_generator;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.Objects.requireNonNull;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Optional;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.Objects.requireNonNull;
 
 public class HtmlDocumentationExtractor {
 
@@ -36,10 +37,22 @@ public class HtmlDocumentationExtractor {
             () -> "No element found for: " + wicketId + ". Add it inside: <section data-testid=\"" + wicketId + "\">"
         );
 
+        String codeHtml;
+        var storybookHtml = element.selectFirst("div[class='storybook-html']");
+        if (storybookHtml == null) {
+            codeHtml = requireNonNull(element.selectFirst("template"), () -> wicketId + "must have code").html();
+        } else {
+            // Storybook HTML is needed if the document structure would become invalid if that HTML would actually be
+            // present in an example page. So the storybook HTML is escaped to ensure the document remains valid.
+            codeHtml = storybookHtml.html()
+                .replace("&lt;", "<")
+                .replace("&gt;", ">")
+                .replace("&amp;", "&");
+        }
         return new WicketHtmlExampleSnippet(
             requireNonNull(element.selectFirst("h2"), () -> wicketId + "must have header").html(),
             Optional.ofNullable(element.selectFirst("h2 + div")).map(Element::html).orElse(null),
-            requireNonNull(element.selectFirst("template"), () -> wicketId + "must have code").html()
+            codeHtml
         );
     }
 
