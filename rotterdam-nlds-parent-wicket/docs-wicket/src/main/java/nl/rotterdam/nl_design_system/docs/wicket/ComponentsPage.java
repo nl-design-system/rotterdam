@@ -32,7 +32,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.paragraph.ParagraphExamplesPane
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
@@ -89,7 +89,7 @@ public class ComponentsPage extends RotterdamBasePage {
 
         // Add the component stories. You can add multiple components with just one add, making it easier to read.
         pageBody.add(
-            new RdSideNavExamplesPanel("sideNavExamplesPanel"),
+            new SideNavExamplesPanel("sideNavExamplesPanel"),
             new AlertExamplesPanel("alertExamplesPanel"),
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
             new BodyExamplesPanel("bodyExamplesPanel").setVisible(false),

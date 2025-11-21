@@ -7,7 +7,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.badge_list.BadgeListExamplesPan
 import nl.rotterdam.nl_design_system.docs.wicket.body.BodyExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.button.ButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon_button.IconButtonExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class ComponentExamplePanels {
 
     // TODO add all classes, for now just a subset.
     public static final List<Class<? extends ExamplesPanel>> classes = List.of(
-        RdSideNavExamplesPanel.class,
+        SideNavExamplesPanel.class,
         AlertExamplesPanel.class,
         BadgeListExamplesPanel.class,
         BodyExamplesPanel.class,

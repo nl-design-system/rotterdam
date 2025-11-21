@@ -22,9 +22,9 @@ import java.util.List;
 
 import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
 
-public class RdSideNavExamplesPanel extends ExamplesPanel {
+public class SideNavExamplesPanel extends ExamplesPanel {
 
-    public RdSideNavExamplesPanel(String id) {
+    public SideNavExamplesPanel(String id) {
         super(id);
     }
 
