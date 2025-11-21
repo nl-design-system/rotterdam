@@ -1,6 +1,6 @@
 /* @license CC0-1.0 */
 
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
 import { DataBadge, Link } from '@utrecht/component-library-react/dist/css-module';
 import readme from './data-badge.md?raw';
 

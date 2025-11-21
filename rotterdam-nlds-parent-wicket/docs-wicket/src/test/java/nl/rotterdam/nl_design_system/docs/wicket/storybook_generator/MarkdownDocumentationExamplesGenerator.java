@@ -164,7 +164,7 @@ public class MarkdownDocumentationExamplesGenerator {
             """
             {/* @license CC0-1.0 */}
 
-            import { Markdown, Meta } from "@storybook/blocks";
+            import { Markdown, Meta } from "@storybook/addon-docs/blocks";
             import markdown from "./%s.md?raw";
 
             <Meta title="Apache Wicket/%s" />

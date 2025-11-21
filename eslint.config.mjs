@@ -3,6 +3,7 @@ import json from "@eslint/json";
 import eslintConfigPrettier from "eslint-config-prettier";
 import perfectionist from "eslint-plugin-perfectionist";
 import react from "eslint-plugin-react";
+import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -95,8 +96,7 @@ export default tseslint.config(
     ignores: ["**/package.json"],
     language: "json/json",
     ...json.configs.recommended,
-  },
-  //{
+  }, //{
   //files: ['**/*.js', '**/*.cjs', '**/*.mjs', '**/*.jsx', '**/*.ts', '**/*.tsx'],
   //rules: {
   //...nlDesignSystemJS.rules,
@@ -171,4 +171,5 @@ export default tseslint.config(
       },
     },
   },
+  storybook.configs["flat/recommended"],
 );

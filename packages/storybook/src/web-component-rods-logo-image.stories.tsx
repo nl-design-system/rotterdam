@@ -1,6 +1,6 @@
 /* @license CC0-1.0 */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import RodsLogoImage from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImage';
 import RodsLogoImageAvatar from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImageAvatar';
 import RodsLogoImageMark from '@gemeente-rotterdam/web-components-react/dist/RodsLogoImageMark';

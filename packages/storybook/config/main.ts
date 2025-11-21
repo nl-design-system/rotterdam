@@ -1,26 +1,34 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
+
+const require = createRequire(import.meta.url);
+const getAbsolutePath = (value: string): string => {
+  return dirname(require.resolve(join(value, 'package.json')));
+};
 
 const config: StorybookConfig = {
   addons: [
-    '@storybook/addon-a11y',
-    '@storybook/addon-docs',
-    '@storybook/addon-viewport',
-    '@storybook/addon-designs',
-    '@storybook/addon-themes',
+    getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-designs'),
+    getAbsolutePath('@storybook/addon-themes'),
   ],
+
   core: {
     disableTelemetry: true,
     disableWhatsNewNotifications: true,
   },
-  docs: {
-    autodocs: true,
-  },
+
   features: {},
+
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+
   staticDirs: ['../../../proprietary/assets/src'],
+
   stories: [
     '../src/**/*stories.@(js|jsx|ts|tsx)',
     '../src/**/*.mdx',
