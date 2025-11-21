@@ -31,6 +31,7 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                         null,
                         clazz.getSimpleName(),
                         ComponentsExamplePage.class,
+                        // TODO add pageParameters
                         0,
                         "")
                 )
