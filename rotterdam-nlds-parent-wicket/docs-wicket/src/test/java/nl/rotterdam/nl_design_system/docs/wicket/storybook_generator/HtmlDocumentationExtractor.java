@@ -38,7 +38,7 @@ public class HtmlDocumentationExtractor {
         );
 
         String codeHtml;
-        var storybookHtml = element.selectFirst("div[class='storybook-html']");
+        var storybookHtml = element.selectFirst("div[data-nlds-role='storybook-html']");
         if (storybookHtml == null) {
             codeHtml = requireNonNull(element.selectFirst("template"), () -> wicketId + "must have code").html();
         } else {
