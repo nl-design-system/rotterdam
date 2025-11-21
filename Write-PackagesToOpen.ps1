@@ -1,4 +1,8 @@
-﻿# Halt the script at the first error.
+﻿# Configure the extensions of the resources that other modules must have access to here. Add additional extensions for other types of resources when needed (for example for images and fonts).
+$WildcardsForResourcesForWhichToOpenPackage = 'css', 'html', 'js', 'properties', 'properties.xml' |
+    ForEach-Object { "*.$_" }
+
+# Halt the script at the first error.
 $ErrorActionPreference = 'Stop'
 
 # Make sure the build results in `target\classes` are up-to-date.
@@ -28,10 +32,10 @@ Get-ChildItem pom.xml -Recurse -File -ErrorAction SilentlyContinue |
         Push-Location $_.ClassesPath
         try {
             $PackagesToOpenForModule = @(
-                # Get all Wicket and front-end resources. Add additional extensions for other types of resources when needed (for example for images and fonts).
+                # Get all Wicket and front-end resources.
                 #
                 # There are many with a path that is too long, and the errors for these are ignored. This may result in missing a package that has to be opened.
-                Get-ChildItem *.html, *.css, *.js -File -Recurse -ErrorAction SilentlyContinue |
+                Get-ChildItem $WildcardsForResourcesForWhichToOpenPackage -File -Recurse -ErrorAction SilentlyContinue |
                     # Relative path to `target\classes` so it will be the package name with backslashes.
                     Resolve-Path -Relative |
                     # Remove the `.\` at the front.
