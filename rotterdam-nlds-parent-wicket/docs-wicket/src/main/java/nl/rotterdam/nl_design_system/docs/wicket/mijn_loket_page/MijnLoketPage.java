@@ -35,57 +35,66 @@ public class MijnLoketPage extends RotterdamBasePage {
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.OVERVIEW),
                 "Overzicht",
                 MijnLoketPage.class,
-                0,
-                ""
-            ),
+                null,
+                null,
+
+                null
+            )
+            ,
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.INBOX),
                 "Mijn berichten",
                 RotterdamPlaceholderPage.class,
-                2,
+                null,
+                2L,
                 "2 nieuwe berichten"
             ),
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.BOX),
                 "Mijn lopende zaken",
                 RotterdamPlaceholderPage.class,
-                0,
-                ""
+                null,
+                null,
+                null
             ),
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.SUMMARY),
                 "Zelf regelen",
                 RotterdamPlaceholderPage.class,
-                0,
+                null,
+                0L,
                 ""
             ),
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.COINS),
                 "Belastingen",
                 RotterdamPlaceholderPage.class,
-                0,
-                ""
+                null,
+                null,
+                null
             ),
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.MONEY_2),
                 "Werk & Inkomen",
                 RotterdamPlaceholderPage.class,
-                0,
-                ""
+                null,
+                null,
+                null
             ),
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.PARKING),
                 "Parkeren",
                 RotterdamPlaceholderPage.class,
-                0,
-                ""
+                null, null,
+                null
             ),
             new RdSideNavRecord<>(
                 (SerializableSupplier<Behavior>) () -> new RotterdamIconBehavior(RotterdamIconType.USER),
                 "Mijn gegevens",
                 RotterdamPlaceholderPage.class,
-                0,
-                ""
+                null,
+                null,
+                null
             )
         );
 

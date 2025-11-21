@@ -16,6 +16,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import java.util.List;
 
@@ -75,8 +76,8 @@ public class RdSideNavExamplesPanel extends ExamplesPanel {
                                         @SuppressWarnings({ "rawtypes", "unchecked" })
                                         RdSideNavLink<?> link = new RdSideNavLink(
                                             "sideNavLink",
-                                            record.target()
-                                        );
+                                            record.target(),
+                                            new PageParameters());
 
                                         // Optionally add an icon
                                         if (record.icon() != null) {

@@ -72,7 +72,8 @@ public class RdSideNavPanel extends Panel {
                                 @SuppressWarnings({"rawtypes", "unchecked"})
                                 RdSideNavLink<?> link = new RdSideNavLink(
                                     "sideNavLink",
-                                    record.target()
+                                    record.page(),
+                                    record.parameters()
                                 );
 
                                 // Optionally add an icon
@@ -92,7 +93,7 @@ public class RdSideNavPanel extends Panel {
                                     "sideNavLinkNumberBadge",
                                     record.numberBadge()
                                 );
-                                numberBadge.setVisible(record.numberBadge() >= 1);
+                                numberBadge.setVisible(record.numberBadge()!= null);
                                 link.add(numberBadge);
 
                                 item.add(link);

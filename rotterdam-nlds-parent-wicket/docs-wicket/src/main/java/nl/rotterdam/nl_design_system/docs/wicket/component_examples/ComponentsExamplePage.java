@@ -5,6 +5,7 @@ import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavRecord;
 import org.apache.wicket.Component;
 import org.apache.wicket.request.component.IRequestablePage;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,15 +26,16 @@ public class ComponentsExamplePage extends RotterdamBasePage {
         List<RdSideNavRecord<? extends IRequestablePage>> records =
             ComponentExamplePanels
                 .classes
-                .stream().map( clazz ->
+                .stream().map(clazz ->
                     new RdSideNavRecord<>(
                         // TODO Ability to set icon on component or example panel
                         null,
                         clazz.getSimpleName(),
                         ComponentsExamplePage.class,
-                        // TODO add pageParameters
-                        0,
-                        "")
+                        new PageParameters(getPageParameters()).set("component", clazz.getSimpleName()),
+                        null,
+                        null
+                    )
                 )
                 .collect(Collectors.toList());
 

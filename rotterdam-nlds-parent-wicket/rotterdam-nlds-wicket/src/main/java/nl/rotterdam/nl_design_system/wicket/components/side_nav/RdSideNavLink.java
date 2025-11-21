@@ -8,15 +8,22 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.Page;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.jspecify.annotations.Nullable;
 
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
 
     public boolean placeholder = false;
 
-    public <C extends Page> RdSideNavLink(String id, Class<C> pageClass) {
-        super(id, pageClass);
-        this.setAutoEnable(true);
+    public <C extends Page> RdSideNavLink(String id, Class<C> pageClass, @Nullable PageParameters pageParameters) {
+        super(id, pageClass, pageParameters);
+        setAutoEnable(true);
+    }
+
+    @Override
+    public boolean linksTo(Page page) {
+        return super.linksTo(page) && getPageParameters().equals(page.getPageParameters());
     }
 
     @Override
@@ -36,7 +43,7 @@ public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
             tag.put("aria-disabled", "true");
         }
 
-        if (linksTo(getPage())) {
+        if (linksTo(getPage()) ) {
             tag.put("role", "link");
             tag.put("aria-disabled", "true");
             tag.put("aria-current", "page");
