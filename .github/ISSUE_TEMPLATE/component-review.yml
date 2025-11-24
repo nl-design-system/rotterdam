@@ -1,0 +1,33 @@
+name: Wicket-componentreview 
+description: Review een Wicket-component zodat het de kwaliteit krijgt die nodig is om het aan te bieden aan gebruikers
+  van het component.
+title: "[Review]: "
+body:
+  - type: textarea
+    id: what-to-review
+    attributes:
+      label: Wat na te kijken?
+      description: De codeonderdelen, documentatie, enz. van het component dat nagekeken moet worden.
+      value: |
+        * [ ] Staat het component in de goede module?
+          * Is het component generiek of specifieke voor een organisatie? Organisatiespecifieke componenten mogen niet in generieke modules.
+          * Is het een lichtgewicht, in veel apps gebruikt component of, is het een zwaar en/of weinig gebruikt component? Zware en/of weinig gebruikte componenten kunnen beter in een 'extras'-module. 
+        * [ ] Staat het in de goede package?
+        * Front-end resources:
+          * [ ] Worden de minimale bestanden gekopieerd?
+          * [ ] Is het nodig om het package te openen in module-info.java?
+        * [ ] Worden de juiste Wicket-typen (Panel, Border, Behavior, enz.) gebruikt voor de implementatie? Er kunnen meerdere typen zijn omdat er verschillende situaties zijn: nieuwe code of aanpassen van bestaande code, gebruik in een basispagina of in een panel, enz.
+        * [ ] Staat de nullability van alle typen goed? Let vooral op Wicket-modellen voor gebruikersinvoer: deze moeten vaak `null` toestaan.
+        * Legt de Javadoc uit hoe het component moet worden gebruikt?
+          * Het is niet nodig om langere codesnippets op te nemen: ga ervan uit dat de ontwikkelaar Wicket-kennis heeft.
+          * [ ] Aan welke tag worden de componenten gehangen?
+          * [ ] Welke factorymethodes zijn er nodig?
+          * [ ] Bij een border: waar komt de content terecht?
+          * [ ] Welke modellen en behaviors kun je meegeven om de weergave te sturen?
+          * [ ] Welke andere opties zijn er om de weergave aan te passen?
+          * [ ] Link naar NLDS-component (als dat bestaat).
+          * [ ] Link naar de community-implementatie op basis waarvan het component is gebouwd.
+          * [ ] Link naar externe documentatie met aan te passen voorbeeld(en) en uitgebreidere codevoorbeelden (HTML en Java).
+        * [ ] Zijn er voldoende tests van goede kwaliteit?
+    validations:
+      required: true
