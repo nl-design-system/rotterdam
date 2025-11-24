@@ -143,7 +143,6 @@ public class ComponentsPage extends RotterdamBasePage {
     }
 
     private Component createActiveThemeChoice() {
-        var themeModel = Model.of(DesignSystemTheme.RODS);
         return new DropDownChoice<>(
             "activeTheme",
             themeModel,
