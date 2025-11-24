@@ -96,7 +96,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new ButtonExamplesPanel("buttonExamplesPanel"),
             new IconButtonExamplesPanel("iconButtonExamplesPanel"),
             new ActionGroupExamplesPanel("actionGroupExamplesPanel").setVisible(false),
-            new CodeBlockExamplesPanel("codeBlockExamplesPanel").setVisible(false),
+            new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel").setVisible(false),
             new CheckboxExamplesPanel("checkboxExamplesPanel").setVisible(false),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),

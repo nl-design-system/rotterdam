@@ -1,27 +1,140 @@
 package nl.rotterdam.nl_design_system.docs.wicket.component_examples;
 
+import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.ProjectRootResolver;
 import nl.rotterdam.nl_design_system.docs.wicket.RotterdamBasePage;
+import nl.rotterdam.nl_design_system.wicket.components.code_block.RdCodeBlock;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavRecord;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguage;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguageBehavior;
+import org.apache.commons.lang3.Validate;
 import org.apache.wicket.Component;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
+import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.util.file.Files;
+import org.apache.wicket.util.string.Strings;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ComponentsExamplePage extends RotterdamBasePage {
-    public ComponentsExamplePage() {
+
+    public static final String ID_EXAMPLE_RENDERED = "example-rendered";
+    public static final String PAGE_PARAM_COMPONENT = "component";
+    public static final String ID_COMPONENT_SELECTION = "component-selection";
+    private final String activeComponentExampleName;
+    private final ExamplesPanel activeExample;
+    private final File fullSourceDirectory;
+
+
+    public ComponentsExamplePage(PageParameters parameters) {
         super("Componenten voorbeelden");
+        activeComponentExampleName = getExampleName(parameters);
+
+        activeExample = newExampleComponentRenderingComponent();
+
+        var docsWicketModuleRoot = ProjectRootResolver.resolveProjectRootDir(ComponentsExamplePage.class);
+        Class<?> implementationClass = activeExample.getImplementationClass();
+        var moduleName = implementationClass.getPackageName().contains("rotterdam_extensions")
+            ?  "rotterdam-nlds-extensions-wicket"
+            : "rotterdam-nlds-wicket";
+
+        var packageDirectory = implementationClass.getPackageName().replace(".", "/");
+
+        fullSourceDirectory = new File(docsWicketModuleRoot + "/../" + moduleName + "/src/main/java/" + packageDirectory);
+
+        Validate.isTrue(fullSourceDirectory.exists(), "Source directory %s does not exist", fullSourceDirectory.getAbsolutePath());
     }
 
+    private static String getExampleName(PageParameters parameters) {
+        String component = parameters.get("component").toOptionalString();
+        if (!Strings.isEmpty(component)) {
+            return component;
+        }
+        return ComponentExamplePanels.classes.getFirst().getSimpleName();
+    }
 
     @Override
     protected void onInitialize() {
         super.onInitialize();
-        pageBody.add(createComponentSelectionSidebar());
+        pageBody.add(
+            newComponentSelectionSidebar(),
+            activeExample,
+            newComponentMarkupCode(),
+            newComponentJavaCode()
+        );
     }
 
-    private Component createComponentSelectionSidebar() {
+    private Component newComponentMarkupCode() {
+        RdCodeBlock codeBlock = new RdCodeBlock("markup-code", Model.of(resolveComponentHtmlCode()));
+        codeBlock.getCodeComponent().add(RdSyntaxHighlightingLanguageBehavior.of(Model.of(RdSyntaxHighlightingLanguage.MARKUP)));
+        codeBlock.setMarkupId("markup-code");
+        return codeBlock;
+    }
+
+    private Component newComponentJavaCode() {
+        RdCodeBlock codeBlock = new RdCodeBlock("java-code", Model.of(resolveComponentJavaCode()));
+        codeBlock.getCodeComponent().add(RdSyntaxHighlightingLanguageBehavior.of(Model.of(RdSyntaxHighlightingLanguage.JAVA)));
+        codeBlock.setMarkupId("java-code");
+        return codeBlock;
+    }
+
+    private String resolveComponentHtmlCode() {
+
+        var fullPath = new File(fullSourceDirectory, activeExample.getImplementationClass().getSimpleName() + ".html");
+
+        Validate.isTrue(fullPath.exists(), "Source directory %s does not exist", fullSourceDirectory.getAbsolutePath());
+
+        try {
+            return new String(Files.readBytes(fullPath));
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    private String resolveComponentJavaCode() {
+
+        var fullPath = new File(fullSourceDirectory, activeExample.getImplementationClass().getSimpleName() + ".java");
+
+        Validate.isTrue(fullPath.exists(), "Source directory %s does not exist", fullSourceDirectory.getAbsolutePath());
+
+        try {
+            return new String(Files.readBytes(fullPath));
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+
+    private ExamplesPanel newExampleComponentRenderingComponent() {
+        Optional<Class<? extends ExamplesPanel>> first = ComponentExamplePanels
+            .classes
+            .stream()
+            .filter(p -> p.getSimpleName().equals(activeComponentExampleName))
+            .findFirst();
+
+        return first.map(
+            clazz -> {
+                try {
+                    return clazz.getConstructor(String.class)
+                        .newInstance(ID_EXAMPLE_RENDERED);
+                } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                         NoSuchMethodException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        ).orElseThrow();
+    }
+
+    private Component newComponentSelectionSidebar() {
         List<RdSideNavRecord> records =
             ComponentExamplePanels
                 .classes
@@ -31,15 +144,65 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                         null,
                         clazz.getSimpleName(),
                         ComponentsExamplePage.class,
-                        new PageParameters(getPageParameters()).set("component", clazz.getSimpleName()),
+                        new PageParameters(getPageParameters()).set(PAGE_PARAM_COMPONENT, clazz.getSimpleName()),
                         null,
                         null
                     )
                 )
                 .collect(Collectors.toList());
 
-        return new RdSideNavPanel("component-selection", records);
+        return new RdSideNavPanel(ID_COMPONENT_SELECTION, records);
     }
 
+    @Override
+    public void renderHead(IHeaderResponse response) {
+        super.renderHead(response);
 
+        response.render(OnDomReadyHeaderItem.forScript(
+            //language=JavaScript
+            """
+            const stylesheet = new CSSStyleSheet();
+            
+            stylesheet.replace(`
+            .rods-story-canvas {
+              background-color: white;
+              border-color: rgb(0 0 0 / 10%);
+              border-radius: 4px;
+              border-style: solid;
+              border-width: 1px;
+              box-shadow: rgb(0 0 0 / 10%) 0 1px 3px 0;
+              margin-block-end: 40px;
+              margin-block-start: 25px;
+              padding-block-end: 30px;
+              padding-block-start: 30px;
+              padding-inline-end: 20px;
+              padding-inline-start: 20px;
+              position: relative;
+            }`);
+            
+            class RodsStoryElement extends HTMLElement {
+              static name = 'rods-story-canvas';
+            
+              static define = (registry = customElements) => registry.define(RodsStoryElement.name, RodsStoryElement);
+            
+              constructor() {
+                super();
+              }
+            
+              connectedCallback() {
+                const shadow = this.attachShadow({ mode: 'closed' });
+                shadow.adoptedStyleSheets = [stylesheet];
+                const template = this.querySelector('template');
+                const div = this.ownerDocument.createElement('div');
+                div.appendChild(this.ownerDocument.createElement('slot'));
+                div.classList.add('rods-story-canvas');
+                shadow.appendChild(div);
+                if (template) {
+                  this.appendChild(template.content.cloneNode(true));
+                }
+              }
+            }
+            RodsStoryElement.define();
+            """));
+    }
 }

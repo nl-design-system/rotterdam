@@ -14,17 +14,24 @@
     </nav>
   </aside>
   <main>
-    <section class="component-preview">
+    <section class="component-preview" wicket:id="example-rendered">
       Component preview (gerenderd voorbeeld) hier.
     </section>
 
     <section class="code-and-documentation-links">
       <ul>
-        <li><a href="#">HTML code</a></li>
-        <li><a href="#">Java code</a></li>
-        <li><a href="#">Documentatie</a></li>
+        <li><a href="#markup-code" >Markup code</a></li>
+        <li><a href="#java-code">Java code</a></li>
+        <li><a href="#documentation">Documentatie</a></li>
       </ul>
     </section>
+
+    <pre wicket:id="markup-code">
+      html code here
+    </pre>
+    <pre wicket:id="java-code">
+      html code here
+    </pre>
   </main>
 </wicket:extend>
 </body>
