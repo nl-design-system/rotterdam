@@ -9,6 +9,7 @@ import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceType;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.danekja.java.util.function.serializable.SerializableSupplier;
 
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
@@ -158,7 +159,7 @@ public class RotterdamIconBehavior extends Behavior {
     public static final RotterdamIconBehavior VIDEO = new RotterdamIconBehavior(RotterdamIconType.VIDEO);
     public static final RotterdamIconBehavior WHATSAPP = new RotterdamIconBehavior(RotterdamIconType.WHATSAPP);
 
-    final String icon;
+    private final String icon;
 
     public RotterdamIconBehavior(RotterdamIconType icon) {
         super();
@@ -182,5 +183,9 @@ public class RotterdamIconBehavior extends Behavior {
 
         ESM.setType(JavaScriptReferenceType.MODULE);
         response.render(ESM);
+    }
+
+    public static SerializableSupplier<Behavior> supplyOf(RotterdamIconBehavior iconType) {
+        return () -> iconType;
     }
 }

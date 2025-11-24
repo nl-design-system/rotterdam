@@ -11,4 +11,5 @@ module nl.rotterdam.nl_design_system.rotterdam_extensions.wicket {
     requires nl.rotterdam.nl_design_system.wicket;
     requires org.apache.wicket.core;
     requires org.jspecify;
+    requires org.danekja.jdk.serializable.functional;
 }

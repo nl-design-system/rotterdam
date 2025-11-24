@@ -7,19 +7,17 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 
-
 /**
  * @see RdSideNavPanel
- * TODO: consider making it package private
  */
-public class RdSideNavBehavior extends TagNameClassComponentBehavior<Component> {
+class RdSideNavBehavior extends TagNameClassComponentBehavior<Component> {
 
     static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdSideNavBehavior.class,
         "@gemeente-denhaag/sidenav/dist/index.css"
     );
 
-    public static final Behavior INSTANCE = new RdSideNavBehavior();
+    static final Behavior INSTANCE = new RdSideNavBehavior();
 
     private RdSideNavBehavior() {
         super("nav", RdSideNavCss.DEFAULT);

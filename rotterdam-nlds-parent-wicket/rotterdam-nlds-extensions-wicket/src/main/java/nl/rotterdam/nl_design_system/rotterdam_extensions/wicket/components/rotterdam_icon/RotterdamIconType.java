@@ -1,5 +1,7 @@
 package nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon;
 
+import org.danekja.java.util.function.serializable.SerializableSupplier;
+
 /**
  * Rotterdam icons. Check out Storybook online for their looks.
  */
@@ -116,4 +118,6 @@ public enum RotterdamIconType {
     RotterdamIconType(String type) {
         this.type = type;
     }
+
+
 }

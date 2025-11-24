@@ -4,38 +4,46 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import nl.rotterdam.nl_design_system.wicket.components.number_badge.RdNumberBadge;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.request.component.IRequestablePage;
+import org.apache.wicket.markup.html.panel.GenericPanel;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.util.ListModel;
 
+import java.util.Collection;
 import java.util.List;
 
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
-import static nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavListBehavior.SIDE_NAV_LIST_BEHAVIOR;
 
 /**
  * <a href="https://nldesignsystem.nl/side-navigation/">NL Design System Side Navigation</a> component.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdSideNavPanel extends Panel {
-
-    private final List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords;
+public class RdSideNavPanel extends GenericPanel<List<RdSideNavRecord>> {
 
     /**
      * Create new instance
      *
-     * @param id             the Wicket ID
-     * @param sideNavRecords records to add
-     *                                             TODO refactor to model.
+     * @param id          the Wicket ID
+     * @param modelObject records to add
      */
-    public RdSideNavPanel(String id, List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords) {
-        super(id);
-        this.sideNavRecords = sideNavRecords;
+    public RdSideNavPanel(String id, Collection<RdSideNavRecord> modelObject) {
+        super(id, new ListModel<>(List.copyOf(modelObject)));
+    }
+
+    /**
+     * Create new instance
+     *
+     * @param id    the Wicket ID
+     * @param model records to add
+     */
+    public RdSideNavPanel(String id, IModel<List<RdSideNavRecord>> model) {
+        super(id, model);
     }
 
     @Override
@@ -47,61 +55,44 @@ public class RdSideNavPanel extends Panel {
     @Override
     protected void onInitialize() {
         super.onInitialize();
-        List<RdSideNavRecord<? extends IRequestablePage>> sideNavRecords = this.sideNavRecords;
+        List<RdSideNavRecord> sideNavRecords = getModelObject();
 
         add(RdSideNavBehavior.INSTANCE);
 
-        add(
-            new WebMarkupContainer("sideNavList") {
-                @Override
-                protected void onInitialize() {
-                    super.onInitialize();
+        add(new WebMarkupContainer("sideNavList") {
 
-                    add(SIDE_NAV_LIST_BEHAVIOR); // TODO should be singleton
-                    add(
-                        new ListView<>("sideNavItem", sideNavRecords) {
-                            @Override
-                            protected void populateItem(
-                                ListItem<RdSideNavRecord<? extends IRequestablePage>> item
-                            ) {
-                                item.add(new RdSideNavItemBehavior()); // TODO: should be singleton
-                                RdSideNavRecord<? extends IRequestablePage> record =
-                                    item.getModelObject();
-                                var label = record.label();
+            @Override
+            protected void onInitialize() {
+                super.onInitialize();
 
-                                @SuppressWarnings({"rawtypes", "unchecked"})
-                                RdSideNavLink<?> link = new RdSideNavLink(
-                                    "sideNavLink",
-                                    record.page(),
-                                    record.parameters()
-                                );
+                add(RdSideNavListBehavior.INSTANCE);
+                add(new ListView<>("sideNavItem", sideNavRecords) {
+                    @Override
+                    protected void populateItem(ListItem<RdSideNavRecord> item) {
+                        item.add(RdSideNavItemBehavior.INSTANCE);
 
-                                // Optionally add an icon
-                                WebMarkupContainer icon = new WebMarkupContainer("sideNavLinkIcon");
-                                link.add(icon);
-                                if (record.iconBehaviorSupplier() != null) {
-                                    icon.add(record.iconBehaviorSupplier().get());
-                                } else {
-                                    icon.setVisible(false);
-                                }
+                        RdSideNavRecord record = item.getModelObject();
 
-                                // Add the link text
-                                link.add(new Label("sideNavLinkLabel", label));
+                        var label = record.label();
 
-                                // Optionally add a number badge
-                                RdNumberBadge numberBadge = new RdNumberBadge(
-                                    "sideNavLinkNumberBadge",
-                                    record.numberBadge()
-                                );
-                                numberBadge.setVisible(record.numberBadge()!= null);
-                                link.add(numberBadge);
+                        RdSideNavLink<? extends WebPage> link = new RdSideNavLink<>("sideNavLink", record.page(), record.parameters());
 
-                                item.add(link);
-                            }
+                        // Optionally add an icon
+                        WebMarkupContainer icon = new WebMarkupContainer("sideNavLinkIcon");
+                        link.add(icon);
+                        if (record.iconBehaviorSupplier() != null) {
+                            icon.add(record.iconBehaviorSupplier().get());
+                        } else {
+                            icon.setVisible(false);
                         }
-                    );
-                }
+
+                        // Add the link text
+                        link.add(new Label("sideNavLinkLabel", label), new RdNumberBadge("sideNavLinkNumberBadge", record.numberBadge()).setVisible(record.numberBadge() != null));
+
+                        item.add(link);
+                    }
+                });
             }
-        );
+        });
     }
 }

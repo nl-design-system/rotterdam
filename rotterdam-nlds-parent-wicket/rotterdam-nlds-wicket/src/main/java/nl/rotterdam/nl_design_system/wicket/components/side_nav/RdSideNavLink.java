@@ -13,7 +13,7 @@ import org.jspecify.annotations.Nullable;
 
 // TODO: why is RdBookmarkableLink not used and has this class been introduced?
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
+class RdSideNavLink<T> extends BookmarkablePageLink<T> {
 
     public boolean placeholder = false;
 
@@ -44,7 +44,7 @@ public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
             tag.put("aria-disabled", "true");
         }
 
-        if (linksTo(getPage()) ) {
+        if (linksTo(getPage())) {
             tag.put("role", "link");
             tag.put("aria-disabled", "true");
             tag.put("aria-current", "page");
