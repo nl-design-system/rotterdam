@@ -3,6 +3,7 @@ package nl.rotterdam.nl_design_system.docs.wicket.root;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket.components.code_block.RdCodeBlock;
+import nl.rotterdam.nl_design_system.wicket.components.root.RdRootBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.root.RdRootTransparentContainer;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguage;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguageBehavior;
@@ -29,8 +30,9 @@ public class RootExamplesPanel extends ExamplesPanel {
 
         var rootCode = new RdCodeBlock(
             "rootCode",
-            // TODO: it would be nice to get the class name from the code instead of copying it here.
-            Model.of("<html class=\"utrecht-root\">...</html>"))
+            Model.of("<html class=\"" +
+                RdRootBehavior.INSTANCE.getClassNames() +
+                "\">...</html>"))
             .add(RdSyntaxHighlightingLanguageBehavior.of(Model.of(RdSyntaxHighlightingLanguage.MARKUP)));
         add(rootCode);
     }

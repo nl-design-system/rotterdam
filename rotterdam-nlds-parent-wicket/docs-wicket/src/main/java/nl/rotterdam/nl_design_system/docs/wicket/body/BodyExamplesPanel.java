@@ -2,6 +2,7 @@ package nl.rotterdam.nl_design_system.docs.wicket.body;
 
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
+import nl.rotterdam.nl_design_system.wicket.components.body.RdBodyBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.body.RdBodyTransparentContainer;
 import nl.rotterdam.nl_design_system.wicket.components.code_block.RdCodeBlock;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguage;
@@ -29,8 +30,9 @@ public class BodyExamplesPanel extends ExamplesPanel {
 
         var bodyCode = new RdCodeBlock(
             "bodyCode",
-            // TODO: it would be nice to get the class name from the code instead of copying it here.
-            Model.of("<body class=\"utrecht-body\">Lorem ipsum dolor sit amet</body>"))
+            Model.of("<body class=\"" +
+                RdBodyBehavior.INSTANCE.getClassNames() +
+                "\">Lorem ipsum dolor sit amet</body>"))
             .add(RdSyntaxHighlightingLanguageBehavior.of(Model.of(RdSyntaxHighlightingLanguage.MARKUP)));
         add(bodyCode);
     }

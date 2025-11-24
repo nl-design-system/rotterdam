@@ -37,7 +37,6 @@ import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExa
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
 import org.apache.wicket.Component;
-import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -71,9 +70,6 @@ public class ComponentsPage extends RotterdamBasePage {
         RODS_STORY_CANVAS_JS_HEADER_ITEM.setType(JavaScriptReferenceType.MODULE);
     }
 
-    private static final MetaDataKey<String> CURRENT_THEME_CLASS_NAME_KEY = new MetaDataKey<>() {
-    };
-
     private static Link<Void> createRefreshPageLink() {
         return new Link<>("refreshStatefulPageLink") {
             @Override
@@ -84,35 +80,8 @@ public class ComponentsPage extends RotterdamBasePage {
             }
         };
     }
-
-    private static Component createActiveThemeChoice() {
-        var themeModel = Model.of(DesignSystemTheme.RODS);
-        return new DropDownChoice<>(
-            "activeTheme",
-            themeModel,
-            Arrays.stream(DesignSystemTheme.values()).toList(),
-            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
-        ).add(new OnChangeAjaxBehavior() {
-            @Override
-            protected void onUpdate(AjaxRequestTarget target) {
-                var session = getComponent().getSession();
-
-                var currentThemeclassName = session.getMetaData(CURRENT_THEME_CLASS_NAME_KEY);
-                if (currentThemeclassName == null) {
-                    currentThemeclassName = DesignSystemTheme.RODS.getThemeClassName();
-                }
-
-                var newThemeClassName = themeModel.getObject().getThemeClassName();
-                session.setMetaData(CURRENT_THEME_CLASS_NAME_KEY, newThemeClassName);
-
-                target.appendJavaScript("$('html').removeClass('" +
-                    currentThemeclassName +
-                    "').addClass('" +
-                    newThemeClassName +
-                    "');");
-            }
-        });
-    }
+    
+    private DesignSystemTheme currentTheme = DesignSystemTheme.RODS;
 
     @Override
     protected void onInitialize() {
@@ -171,5 +140,30 @@ public class ComponentsPage extends RotterdamBasePage {
 
     public ComponentsPage() {
         super("Componenten voor Apache Wicket");
+    }
+
+    private Component createActiveThemeChoice() {
+        var themeModel = Model.of(DesignSystemTheme.RODS);
+        return new DropDownChoice<>(
+            "activeTheme",
+            themeModel,
+            Arrays.stream(DesignSystemTheme.values()).toList(),
+            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
+        ).add(new OnChangeAjaxBehavior() {
+            @Override
+            protected void onUpdate(AjaxRequestTarget target) {
+                var currentThemeclassName = currentTheme.getThemeClassName();
+
+                var newTheme = themeModel.getObject();
+                var newThemeClassName = newTheme.getThemeClassName();
+                currentTheme = newTheme;
+
+                target.appendJavaScript("$('html').removeClass('" +
+                    currentThemeclassName +
+                    "').addClass('" +
+                    newThemeClassName +
+                    "');");
+            }
+        });
     }
 }

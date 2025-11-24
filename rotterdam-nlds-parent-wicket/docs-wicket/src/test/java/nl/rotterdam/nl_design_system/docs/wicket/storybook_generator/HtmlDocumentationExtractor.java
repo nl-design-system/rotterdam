@@ -3,6 +3,7 @@ package nl.rotterdam.nl_design_system.docs.wicket.storybook_generator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.parser.Parser;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -44,10 +45,8 @@ public class HtmlDocumentationExtractor {
         } else {
             // Storybook HTML is needed if the document structure would become invalid if that HTML would actually be
             // present in an example page. So the storybook HTML is escaped to ensure the document remains valid.
-            codeHtml = storybookHtml.html()
-                .replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&amp;", "&");
+            
+            codeHtml = Parser.unescapeEntities(storybookHtml.html(), false);
         }
         return new WicketHtmlExampleSnippet(
             requireNonNull(element.selectFirst("h2"), () -> wicketId + "must have header").html(),

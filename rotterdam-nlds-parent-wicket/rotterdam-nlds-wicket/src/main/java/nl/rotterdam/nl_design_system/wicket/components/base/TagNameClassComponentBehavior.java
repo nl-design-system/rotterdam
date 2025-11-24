@@ -46,6 +46,10 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
         this.classNames = Arrays.stream(classNames).map(CssClassNames::getClassNames).collect(Collectors.joining(" "));
     }
 
+    public String getClassNames() {
+        return classNames;
+    }
+
     public final void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 
