@@ -11,6 +11,7 @@ import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.jspecify.annotations.Nullable;
 
+// TODO: why is RdBookmarkableLink not used and has this class been introduced?
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
 
@@ -47,6 +48,7 @@ public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
             tag.put("role", "link");
             tag.put("aria-disabled", "true");
             tag.put("aria-current", "page");
+            RdSideNavLinkCss.ACTIVE.appendTo(tag);
         }
     }
 

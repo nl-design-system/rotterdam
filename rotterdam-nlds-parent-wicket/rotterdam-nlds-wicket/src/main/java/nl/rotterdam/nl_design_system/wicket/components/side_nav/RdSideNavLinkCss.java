@@ -3,7 +3,8 @@ package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdSideNavLinkCss implements CssClassNames {
-    DEFAULT("denhaag-sidenav__link");
+    DEFAULT("denhaag-sidenav__link"),
+    ACTIVE("utrecht-link--active");
 
     private final String cssClassNames;
 
