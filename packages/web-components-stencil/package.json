@@ -39,7 +39,7 @@
   "devDependencies": {
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/icon": "workspace:*",
-    "@jest/globals": "29.7.0",
+    "@jest/globals": "30.2.0",
     "@stencil/react-output-target": "0.8.1",
     "@stencil/sass": "3.2.2",
     "@types/jest": "30.0.0",
