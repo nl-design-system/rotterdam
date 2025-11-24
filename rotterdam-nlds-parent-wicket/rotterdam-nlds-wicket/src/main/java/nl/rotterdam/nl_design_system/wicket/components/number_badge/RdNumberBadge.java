@@ -9,6 +9,7 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.jspecify.annotations.Nullable;
 
 /**
  * <a href="https://nldesignsystem.nl/number-badge/">Number Badge component</a>.
@@ -21,7 +22,7 @@ public class RdNumberBadge extends Label {
      * @param id the Wicket ID
      * @param number data to show
      */
-    public RdNumberBadge(String id, Serializable number) {
+    public RdNumberBadge(String id, @Nullable Serializable number) {
         this(id, Model.of(number));
     }
 
