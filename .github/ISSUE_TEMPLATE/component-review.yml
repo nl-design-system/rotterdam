@@ -10,7 +10,7 @@ body:
       description: De codeonderdelen, documentatie, enz. van het component dat nagekeken moet worden.
       value: |
         * [ ] Staat het component in de goede module?
-          * Is het component generiek of specifieke voor een organisatie? Organisatiespecifieke componenten mogen niet in generieke modules.
+          * Is het component generiek of specifiek voor een organisatie? Organisatiespecifieke componenten mogen niet in generieke modules.
           * Is het een lichtgewicht, in veel apps gebruikt component of, is het een zwaar en/of weinig gebruikt component? Zware en/of weinig gebruikte componenten kunnen beter in een 'extras'-module. 
         * [ ] Staat het in de goede package?
         * Front-end resources:
