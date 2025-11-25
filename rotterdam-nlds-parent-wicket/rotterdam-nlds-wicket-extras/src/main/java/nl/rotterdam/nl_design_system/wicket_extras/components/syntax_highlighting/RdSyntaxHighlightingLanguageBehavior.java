@@ -41,6 +41,7 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
                 RdSyntaxHighlightingLanguageBehavior.class,
                 "prismjs/components/prism-core.min.js"),
             "javascript-prism-core");
+    private static final Map<String, JavaScriptReferenceHeaderItem> JAVASCRIPT_REFERENCE_HEADER_ITEM_BY_LANGUAGE_CODE = new HashMap<>();
     private static final Map<String, List<JavaScriptReferenceHeaderItem>> TRANSITIVE_JAVASCRIPT_REFERENCE_HEADER_ITEMS_BY_LANGUAGE_CODE;
     
     static {
@@ -59,7 +60,7 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
                     TRANSITIVE_JAVASCRIPT_REFERENCE_HEADER_ITEMS_BY_LANGUAGE_CODE.put(languageCode, transitiveJavascriptHeaderItems);
                     var alreadyAddedLanguageCodes = new HashSet<String>();
                     gatherExtendedLanguages(language, languages, transitiveJavascriptHeaderItems, alreadyAddedLanguageCodes);
-                    transitiveJavascriptHeaderItems.add(createHeaderItemForLanguage(languageCode));
+                    transitiveJavascriptHeaderItems.add(createHeaderItemForLanguageIfNeeded(languageCode));
                 }
             }
         } catch (IOException e) {
@@ -74,7 +75,7 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
                 gatherExtendedLanguages(languages.getJSONObject(languageCode), languages, transitiveHeaderItems, alreadyAddedLanguageCodes);
                 if (!alreadyAddedLanguageCodes.contains(languageCode)) {
                     alreadyAddedLanguageCodes.add(languageCode);
-                    transitiveHeaderItems.add(createHeaderItemForLanguage(languageCode));
+                    transitiveHeaderItems.add(createHeaderItemForLanguageIfNeeded(languageCode));
                 }
             } else if (require instanceof JSONArray requiresAsArray) {
                 requiresAsArray.forEach(languageCodeAsObject -> {
@@ -82,7 +83,7 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
                     gatherExtendedLanguages(languages.getJSONObject(languageCode), languages, transitiveHeaderItems, alreadyAddedLanguageCodes);
                     if (!alreadyAddedLanguageCodes.contains(languageCode)) {
                         alreadyAddedLanguageCodes.add(languageCode);
-                        transitiveHeaderItems.add(createHeaderItemForLanguage(languageCode));
+                        transitiveHeaderItems.add(createHeaderItemForLanguageIfNeeded(languageCode));
                     }
                 });
             } else {
@@ -91,12 +92,13 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
         }
     }
 
-    private static JavaScriptReferenceHeaderItem createHeaderItemForLanguage(String languageCode) {
-        return JavaScriptReferenceHeaderItem.forReference(
-            new JavaScriptResourceReference(
-                RdSyntaxHighlightingLanguageBehavior.class,
-                "prismjs/components/prism-" + languageCode + ".min.js"),
-            "javascript-prism-language-" + languageCode);
+    private static JavaScriptReferenceHeaderItem createHeaderItemForLanguageIfNeeded(String languageCode) {
+        return JAVASCRIPT_REFERENCE_HEADER_ITEM_BY_LANGUAGE_CODE.computeIfAbsent(languageCode, code ->
+            JavaScriptReferenceHeaderItem.forReference(
+                new JavaScriptResourceReference(
+                    RdSyntaxHighlightingLanguageBehavior.class,
+                    "prismjs/components/prism-" + code + ".min.js"),
+                "javascript-prism-language-" + code));
     }
 
     private final IModel<String> languageCodeModel;
