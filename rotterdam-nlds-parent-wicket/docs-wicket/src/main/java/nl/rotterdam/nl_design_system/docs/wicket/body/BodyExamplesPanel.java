@@ -19,6 +19,7 @@ public class BodyExamplesPanel extends ExamplesPanel {
         return RdBodyTransparentContainer.class;
     }
 
+    @SuppressWarnings("unused") // having body twice on an HTML document makes it invalid
     @ComponentExample
     private static RdBodyTransparentContainer exampleBody() {
         return new RdBodyTransparentContainer("body");
