@@ -20,8 +20,7 @@ export const config: Config = {
       type: 'www',
     },
     reactOutputTarget({
-      esModules: true,
-      outDir: '../web-components-react/src/',
+      outDir: '../web-components-react/src/stencil-generated/',
     }),
   ],
   plugins: [sass()],
