@@ -1,12 +1,13 @@
 package nl.rotterdam.nl_design_system.wicket.components.base;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
-import org.jspecify.annotations.Nullable;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Base behavior class often useful when creating NL Design System Components.
@@ -28,7 +29,7 @@ import org.jspecify.annotations.Nullable;
 public abstract class TagNameClassComponentBehavior<T extends Component> extends HeaderItemRenderingBehavior {
 
     private final String requiredTagName;
-    private final String[] classNames;
+    private final String classNames;
 
     /**
      * Maak een nieuwe instantie
@@ -38,8 +39,15 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
      *  CSS class names to be added by default
      */
     protected TagNameClassComponentBehavior(String requiredTagName, CssClassNames... classNames) {
+        if (classNames.length < 1) {
+            throw new IllegalArgumentException("`classNames` must have at least 1 element.");
+        }
         this.requiredTagName = requiredTagName;
-        this.classNames = Arrays.stream(classNames).map(CssClassNames::getClassNames).toArray(String[]::new);
+        this.classNames = Arrays.stream(classNames).map(CssClassNames::getClassNames).collect(Collectors.joining(" "));
+    }
+
+    public String getClassNames() {
+        return classNames;
     }
 
     public final void onComponentTag(Component component, ComponentTag tag) {
@@ -63,36 +71,26 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
         @SuppressWarnings("unchecked")
         List<CssClassNames> dynamicClassNames = customizeComponentAndReturnClasses((T) component, tag);
 
-        if (classNames.length > 0 || !dynamicClassNames.isEmpty()) {
-            tag.append(
-                "class",
-                joinAll(classNames, dynamicClassNames.stream().map(CssClassNames::getClassNames).toList()),
-                " "
-            );
+        String allClassNames;
+        if (dynamicClassNames.isEmpty()) {
+            allClassNames = classNames;
+        } else {
+            allClassNames = joinAll(classNames, dynamicClassNames.stream().map(CssClassNames::getClassNames).toList()); 
         }
+        tag.append("class", allClassNames, " ");
     }
 
-    /**
-     * Efficient conversion of an array and a collection to a single space-separated string.
-     */
-    private static String joinAll(@Nullable String[] arr, Collection<@Nullable String> col) {
-        StringBuilder sb = new StringBuilder();
+    private static String joinAll(String classNames, Collection<String> dynamicClassNames) {
+        var allClassNamesBuilder = new StringBuilder(100);
 
-        for (String s : arr) {
-            if (s != null && !s.isEmpty()) {
-                if (!sb.isEmpty()) sb.append(' ');
-                sb.append(s);
-            }
+        allClassNamesBuilder.append(classNames);
+
+        for (var dynamicClassName : dynamicClassNames) {
+            allClassNamesBuilder.append(' ');
+            allClassNamesBuilder.append(dynamicClassName);
         }
 
-        for (String s : col) {
-            if (s != null && !s.isEmpty()) {
-                if (!sb.isEmpty()) sb.append(' ');
-                sb.append(s);
-            }
-        }
-
-        return sb.toString();
+        return allClassNamesBuilder.toString();
     }
 
     /**

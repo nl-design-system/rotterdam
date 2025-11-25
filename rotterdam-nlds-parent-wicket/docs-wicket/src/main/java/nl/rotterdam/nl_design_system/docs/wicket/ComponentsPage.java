@@ -37,6 +37,8 @@ import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExa
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
 import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
@@ -53,13 +55,20 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
+import static nl.rotterdam.nl_design_system.docs.wicket.css.NldsVoorbeeldGemeenteThemeCssReference.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
+
 public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
     private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
-    private static final JavaScriptReferenceHeaderItem COMPONENTS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
-        new JavaScriptResourceReference(ComponentsPage.class, "ComponentsPage.js")
-    );
+    private static final JavaScriptReferenceHeaderItem RODS_STORY_CANVAS_JS_HEADER_ITEM;
+    
+    static {
+        RODS_STORY_CANVAS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
+            new JavaScriptResourceReference(ComponentsPage.class, "rods-story-canvas.js")
+        );
+        RODS_STORY_CANVAS_JS_HEADER_ITEM.setType(JavaScriptReferenceType.MODULE);
+    }
 
     private static Link<Void> createRefreshPageLink() {
         return new Link<>("refreshStatefulPageLink") {
@@ -71,15 +80,8 @@ public class ComponentsPage extends RotterdamBasePage {
             }
         };
     }
-
-    private static Component createActiveThemeChoice() {
-        return new DropDownChoice<>(
-            "activeTheme",
-            Model.of(DesignSystemTheme.RODS),
-            Arrays.stream(DesignSystemTheme.values()).toList(),
-            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
-        ).setOutputMarkupId(true);
-    }
+    
+    private DesignSystemTheme currentTheme = DesignSystemTheme.RODS;
 
     @Override
     protected void onInitialize() {
@@ -104,40 +106,63 @@ public class ComponentsPage extends RotterdamBasePage {
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
             new DataSummaryExamplesPanel("dataSummaryExamplesPanel"),
             new HeadingExamplesPanel("headingExamplesPanel"),
-            new HeadingGroupExamplesPanel("headingGroupExamplesPanel")
+            new HeadingGroupExamplesPanel("headingGroupExamplesPanel"),
+            new IconExamplesPanel("iconExamplesPanel"),
+            new RodsIconExamplesPanel("rodsIconExamplesPanel"),
+            new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"),
+            new LinkExamplesPanel("linkExamplesPanel"),
+            new LinkListExamplesPanel("linkListExamplesPanel"),
+            new LogoExamplesPanel("logoExamplesPanel"),
+            new DialogExamplesPanel("dialogExamplesPanel"),
+            new NumberBadgeExamplesPanel("numberBadgeExamplesPanel"),
+            new OrderedListExamplesPanel("orderedListExamplesPanel"),
+            new PageBodyExamplesPanel("pageBodyExamplesPanel"),
+            new PageFooterExamplesPanel("pageFooterExamplesPanel"),
+            new PageLayoutExamplesPanel("pageLayoutExamplesPanel"),
+            new ParagraphExamplesPanel("paragraphExamplesPanel"),
+            new PreserveDataExamplesPanel("preserveDataExamplesPanel"),
+            new RootExamplesPanel("rootExamplesPanel"),
+            new SeparatorExamplesPanel("separatorExamplesPanel"),
+            new UnorderedListExamplesPanel("unorderedListExamplesPanel"),
+    
+            createActiveThemeChoice(),
+            createRefreshPageLink()
         );
-
-        pageBody.add(new IconExamplesPanel("iconExamplesPanel"));
-        pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel"));
-        pageBody.add(new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"));
-        pageBody.add(new LinkExamplesPanel("linkExamplesPanel"));
-        pageBody.add(new LinkListExamplesPanel("linkListExamplesPanel"));
-        pageBody.add(new LogoExamplesPanel("logoExamplesPanel"));
-        pageBody.add(new DialogExamplesPanel("dialogExamplesPanel"));
-        pageBody.add(new NumberBadgeExamplesPanel("numberBadgeExamplesPanel"));
-        pageBody.add(new OrderedListExamplesPanel("orderedListExamplesPanel"));
-        pageBody.add(new PageBodyExamplesPanel("pageBodyExamplesPanel"));
-        pageBody.add(new PageFooterExamplesPanel("pageFooterExamplesPanel"));
-        pageBody.add(new PageLayoutExamplesPanel("pageLayoutExamplesPanel"));
-        pageBody.add(new ParagraphExamplesPanel("paragraphExamplesPanel"));
-        pageBody.add(new PreserveDataExamplesPanel("preserveDataExamplesPanel"));
-        pageBody.add(new RootExamplesPanel("rootExamplesPanel"));
-        pageBody.add(new SeparatorExamplesPanel("separatorExamplesPanel"));
-        pageBody.add(new UnorderedListExamplesPanel("unorderedListExamplesPanel"));
-
-        pageBody.add(createActiveThemeChoice());
-        pageBody.add(createRefreshPageLink());
     }
 
     @Override
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
 
-        COMPONENTS_JS_HEADER_ITEM.setType(JavaScriptReferenceType.MODULE);
-        response.render(COMPONENTS_JS_HEADER_ITEM);
+        response.render(RODS_STORY_CANVAS_JS_HEADER_ITEM);
+        response.render(THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM);
     }
 
     public ComponentsPage() {
         super("Componenten voor Apache Wicket");
+    }
+
+    private Component createActiveThemeChoice() {
+        return new DropDownChoice<>(
+            "activeTheme",
+            themeModel,
+            Arrays.stream(DesignSystemTheme.values()).toList(),
+            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
+        ).add(new OnChangeAjaxBehavior() {
+            @Override
+            protected void onUpdate(AjaxRequestTarget target) {
+                var currentThemeclassName = currentTheme.getThemeClassName();
+
+                var newTheme = themeModel.getObject();
+                var newThemeClassName = newTheme.getThemeClassName();
+                currentTheme = newTheme;
+
+                target.appendJavaScript("$('html').removeClass('" +
+                    currentThemeclassName +
+                    "').addClass('" +
+                    newThemeClassName +
+                    "');");
+            }
+        });
     }
 }

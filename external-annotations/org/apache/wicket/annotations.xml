@@ -1,0 +1,5 @@
+<root>
+    <item name='org.apache.wicket.Session M getMetaData(org.apache.wicket.MetaDataKey&lt;M&gt;)'>
+        <annotation name='org.jspecify.annotations.Nullable'/>
+    </item>
+</root>

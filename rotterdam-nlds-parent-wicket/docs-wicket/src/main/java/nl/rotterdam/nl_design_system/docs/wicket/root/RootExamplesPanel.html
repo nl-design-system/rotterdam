@@ -11,8 +11,11 @@
         <section data-testid="root">
           <h2>Root</h2>
           <rods-story-canvas
-            ><template> <div wicket:id="root"></div> </template>
+            ><template>
+            <pre wicket:id="rootCode"></pre>
+          </template>
           </rods-story-canvas>
+          <div hidden="" data-nlds-role="storybook-html">&lt;html wicket:id="root"&gt;...&lt;/html&gt;</div>
         </section>
       </section>
     </wicket:panel>
