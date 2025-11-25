@@ -14,4 +14,5 @@ module nl.rotterdam.nl_design_system.wicket_extras {
     requires org.apache.wicket.util;
     requires org.danekja.jdk.serializable.functional;
     requires org.jspecify;
+    requires com.github.openjson;
 }

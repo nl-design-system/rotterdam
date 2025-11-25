@@ -32,6 +32,10 @@
             <artifactId>jspecify</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.github.openjson</groupId>
+            <artifactId>openjson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
@@ -65,6 +69,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
+                    <include>prismjs/components.json</include>
                     <include>prismjs/components/*.min.js</include>
                     <include>prismjs/themes/*.min.css</include>
                 </includes>

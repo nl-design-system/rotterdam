@@ -8,14 +8,18 @@ import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavRecord;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguage;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingLanguageBehavior;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
+import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
 import org.apache.commons.lang3.Validate;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.file.Files;
 import org.apache.wicket.util.string.Strings;
+import org.jspecify.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +34,7 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     public static final String ID_EXAMPLE_RENDERED = "example-rendered";
     public static final String PAGE_PARAM_COMPONENT = "component";
     public static final String ID_COMPONENT_SELECTION = "component-selection";
+    private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
     private final String activeComponentExampleName;
     private final ExamplesPanel activeExample;
     private final File fullSourceDirectory;
@@ -65,6 +70,9 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     @Override
     protected void onInitialize() {
         super.onInitialize();
+
+        add(RdSyntaxHighlightingThemeBehavior.of(NULL_MODEL));
+
         pageBody.add(
             newComponentSelectionSidebar(),
             activeExample,

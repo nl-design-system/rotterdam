@@ -63,6 +63,11 @@
             </dependency>
 
             <dependency>
+                <groupId>com.github.openjson</groupId>
+                <artifactId>openjson</artifactId>
+                <version>1.0.13</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket-core</artifactId>
                 <version>${wicket.version}</version>
