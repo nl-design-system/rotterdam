@@ -1,5 +1,6 @@
-name: Wicket-componentreview 
-description: Review een Wicket-component zodat het de kwaliteit krijgt die nodig is om het aan te bieden aan gebruikers
+name: Wicket-componentreview
+description:
+  Review een Wicket-component zodat het de kwaliteit krijgt die nodig is om het aan te bieden aan gebruikers
   van het component.
 title: "[Review]: "
 body:
