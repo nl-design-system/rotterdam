@@ -3,24 +3,24 @@ name: Publish Java artifacts to Maven Central (Sonatype)
 on:
   push:
     tags:
-      - 'java-*'   # bijv. java-0.1.0
+      - "java-*" # bijv. java-0.1.0
   workflow_dispatch:
     inputs:
       dry-run:
-        description: 'Dry run (upload to Maven Central but no publish)?'
+        description: "Dry run (upload to Maven Central but no publish)?"
         required: true
-        default: 'true'
+        default: "true"
         type: choice
         options:
-          - 'true'
-          - 'false'
+          - "true"
+          - "false"
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write         # needed for branch + commit
-      pull-requests: write    # needed for PR creation
+      contents: write # needed for branch + commit
+      pull-requests: write # needed for PR creation
 
     env:
       # Sonatype credentials (via repo secrets)
@@ -47,7 +47,7 @@ jobs:
         uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: "21"
           cache: maven
 
           server-id: central-sonatype
