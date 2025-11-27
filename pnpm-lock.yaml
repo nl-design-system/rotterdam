@@ -524,6 +524,9 @@ importers:
       '@gemeente-rotterdam/web-components-stencil':
         specifier: workspace:*
         version: link:../../packages/web-components-stencil
+      '@nl-design-system-candidate/heading-css':
+        specifier: 1.1.1
+        version: 1.1.1
       '@utrecht/alert-css':
         specifier: 2.4.0
         version: 2.4.0
@@ -572,24 +575,6 @@ importers:
       '@utrecht/form-label-css':
         specifier: 1.6.1
         version: 1.6.1
-      '@utrecht/heading-1-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-2-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-3-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-4-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-5-css':
-        specifier: 1.5.1
-        version: 1.5.1
-      '@utrecht/heading-6-css':
-        specifier: 1.5.1
-        version: 1.5.1
       '@utrecht/heading-group-css':
         specifier: 1.5.1
         version: 1.5.1
@@ -1932,6 +1917,9 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
+  '@nl-design-system-candidate/heading-css@1.1.1':
+    resolution: {integrity: sha512-DcIIHvbFnjuJ/iC+zNnjI0oaTLF7NiLJDEuxWMHXfZNNDTGnBvcKJxWRuDDMswkWyX9C3lSnwMxfQqjMh0jglQ==}
+
   '@nl-design-system-unstable/voorbeeld-design-tokens@6.2.0':
     resolution: {integrity: sha512-qAWMqpD7UNgL2H5or48rycoVax55dgK4nHTqT8gnpxqJa6qZBJ+k++EpTh3mSR66xL6rb8Wx5SOZR8xJ8V29fg==}
 
@@ -3031,24 +3019,6 @@ packages:
       '@babel/runtime': '*'
       react: '18'
       react-dom: '18'
-
-  '@utrecht/heading-1-css@1.5.1':
-    resolution: {integrity: sha512-ihsXPIhPKW9CXlgnPJQxeuF05wQhxPIDEqStGarn89EnBDon9KCMzoiUEA19UiX06XBs8rv3pAduw2qfFX9wnQ==}
-
-  '@utrecht/heading-2-css@1.5.1':
-    resolution: {integrity: sha512-Wf83HNvo61dFvSXC+4z6ey3NafsZ85SVmAf3YTQmUY9qY9aElHTTnv1ag9hgPKSFEAh2mE5Rl+Yb/UT8x5TXYg==}
-
-  '@utrecht/heading-3-css@1.5.1':
-    resolution: {integrity: sha512-oxVgWdaTLTRp2y1Sxhcu2xwDqaF0SEhjzlsuTylG6TI4r/fbTpenCcAjuDceUEkCmlIUKERpKgdJVuajmbJpRg==}
-
-  '@utrecht/heading-4-css@1.5.1':
-    resolution: {integrity: sha512-KJNOoZ8cFCz/glrsc9n5FM5vsiHtMQsOe1ekxGzHMmE38aTrdZ5L81bvKeWbzztvbpxXm5DzT+tS5DqvVYJ93g==}
-
-  '@utrecht/heading-5-css@1.5.1':
-    resolution: {integrity: sha512-eN+BKXyoa2UxTKORxOAoeyMZQ1c4thi5+qlaxuPkQg5SDHuq0IZsTXaDWPRaoa05J+85ez0SnoEC0LAJ1f/Bcw==}
-
-  '@utrecht/heading-6-css@1.5.1':
-    resolution: {integrity: sha512-4r3Kd+Hej5ugLdiVCKlcN6xdXxzL8X/saW0pfK+3qPqGmhU3TV3r2axJqxLA9Q5NTDabZZuZeDZiqfwKcVsWIA==}
 
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
@@ -9486,6 +9456,8 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
+  '@nl-design-system-candidate/heading-css@1.1.1': {}
+
   '@nl-design-system-unstable/voorbeeld-design-tokens@6.2.0': {}
 
   '@nl-design-system/eslint-config@2.1.1(eslint@9.37.0)(typescript@5.9.3)':
@@ -10586,18 +10558,6 @@ snapshots:
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-
-  '@utrecht/heading-1-css@1.5.1': {}
-
-  '@utrecht/heading-2-css@1.5.1': {}
-
-  '@utrecht/heading-3-css@1.5.1': {}
-
-  '@utrecht/heading-4-css@1.5.1': {}
-
-  '@utrecht/heading-5-css@1.5.1': {}
-
-  '@utrecht/heading-6-css@1.5.1': {}
 
   '@utrecht/heading-group-css@1.5.1': {}
 

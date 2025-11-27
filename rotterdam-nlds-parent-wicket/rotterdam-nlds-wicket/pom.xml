@@ -212,12 +212,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/heading-1-css/dist/*.min.css</include>
-                    <include>@utrecht/heading-2-css/dist/*.min.css</include>
-                    <include>@utrecht/heading-3-css/dist/*.min.css</include>
-                    <include>@utrecht/heading-4-css/dist/*.min.css</include>
-                    <include>@utrecht/heading-5-css/dist/*.min.css</include>
-                    <include>@utrecht/heading-6-css/dist/*.min.css</include>
+                    <include>@nl-design-system-candidate/heading-css/dist/heading.css</include>
                 </includes>
             </resource>
             <resource>

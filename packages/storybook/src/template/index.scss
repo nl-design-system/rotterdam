@@ -14,13 +14,6 @@
   inline-size: fit-content;
 }
 
-.example-page {
-  --utrecht-heading-1-font-size: var(--rods-typography-scale-3xl-font-size);
-  --utrecht-heading-1-line-height: var(--rods-typography-scale-3xl-line-height);
-  --utrecht-heading-2-font-size: var(--rods-typography-scale-2xl-font-size);
-  --utrecht-heading-2-line-height: var(--rods-typography-scale-2xl-line-height);
-  --utrecht-heading-2-font-weight: 300;
-}
 .example-section {
   * + .utrecht-paragraph {
     margin-block-start: var(--rods-space-scale-2);
