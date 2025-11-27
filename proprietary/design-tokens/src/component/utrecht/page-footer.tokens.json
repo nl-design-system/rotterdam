@@ -5,7 +5,7 @@
       "background-color": { "$value": "{rods.color.base.green}" },
       "background-image": {},
       "max-inline-size": {
-        "$value": "{basis.page.max-inline-size}"
+        "$value": "{rods.page.max-inline-size}"
       },
       "padding-inline-end": { "$value": "72px" },
       "padding-inline-start": { "$value": "72px" },

@@ -12,7 +12,7 @@ const build = async () => {
   });
 
   register(StyleDictionary, {
-    excludeParentKeys: false,
+    excludeParentKeys: true,
   });
 
   let sd = new StyleDictionary({
@@ -20,7 +20,7 @@ const build = async () => {
       className: `${prefix}-theme`,
     }),
     preprocessors: ["tokens-studio", "dtcg-delegate"],
-    source: ["./src/**/tokens.json", "./src/**/*.tokens.json"],
+    source: ["./figma/*.json"],
   });
 
   await sd.cleanAllPlatforms();
