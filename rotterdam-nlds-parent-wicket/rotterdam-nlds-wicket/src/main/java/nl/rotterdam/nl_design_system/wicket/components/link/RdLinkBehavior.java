@@ -19,16 +19,15 @@ public class RdLinkBehavior extends TagNameClassComponentBehavior<AbstractLink> 
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdLinkBehavior.class,
-        "@utrecht/link-css/dist/index.min.css"
+        "@nl-design-system-candidate/link-css/dist/link.css"
     );
 
-    /**
-     * Singleton instance.
-     */
-    public static final RdLinkBehavior INSTANCE = new RdLinkBehavior();
+    public static final RdLinkBehavior DEFAULT_INSTANCE = new RdLinkBehavior(RdLinkCss.DEFAULT);
 
-    private RdLinkBehavior() {
-        super("a", RdLinkCss.DEFAULT);
+    public static final RdLinkBehavior INLINE_BOX_INSTANCE = new RdLinkBehavior(RdLinkCss.INLINE_BOX);
+
+    private RdLinkBehavior(RdLinkCss css) {
+        super("a", css);
         addHeaderItem(CSS);
     }
 }

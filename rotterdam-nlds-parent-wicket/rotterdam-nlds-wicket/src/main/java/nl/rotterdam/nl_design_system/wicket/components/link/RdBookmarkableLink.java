@@ -17,16 +17,22 @@ import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 public class RdBookmarkableLink<T> extends BookmarkablePageLink<T> {
 
     private boolean placeholder = false;
+    private final RdLinkBehavior behavior;
 
     public <C extends Page> RdBookmarkableLink(String id, Class<C> pageClass) {
-        super(id, pageClass);
-        this.setAutoEnable(true);
+        this(id, pageClass, RdLinkBehavior.DEFAULT_INSTANCE);
     }
+
+    public <C extends Page> RdBookmarkableLink(String id, Class<C> pageClass, RdLinkBehavior behavior) {
+        super(id, pageClass);
+        this.behavior = behavior;
+        this.setAutoEnable(true);
+    }    
 
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(RdLinkBehavior.INSTANCE);
+        add(behavior);
     }
 
     @Override
@@ -34,7 +40,7 @@ public class RdBookmarkableLink<T> extends BookmarkablePageLink<T> {
         super.onComponentTag(tag);
 
         if (this.placeholder) {
-            tag.append("class", "utrecht-link--placeholder", " ");
+            tag.append("class", "nl-link--placeholder", " ");
             tag.put("role", "link");
             tag.put("aria-disabled", "true");
         }

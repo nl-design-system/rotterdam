@@ -67,7 +67,7 @@ public class LinkExamplesPanel extends ExamplesPanel {
             @Override
             public void onInitialize() {
                 super.onInitialize();
-                add(RdLinkBehavior.INSTANCE);
+                add(RdLinkBehavior.DEFAULT_INSTANCE);
             }
 
             @Override
@@ -83,7 +83,7 @@ public class LinkExamplesPanel extends ExamplesPanel {
             @Override
             public void onInitialize() {
                 super.onInitialize();
-                add(RdLinkBehavior.INSTANCE);
+                add(RdLinkBehavior.DEFAULT_INSTANCE);
             }
         };
     }

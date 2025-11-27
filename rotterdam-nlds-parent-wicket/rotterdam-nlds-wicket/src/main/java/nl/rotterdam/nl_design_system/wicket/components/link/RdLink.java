@@ -23,18 +23,34 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
 
     private @Nullable Class<C> webPage = null;
     private boolean placeholder = false;
+    private final RdLinkBehavior behavior;
 
     public RdLink(final String id) {
-        super(id);
+        this(id, RdLinkBehavior.DEFAULT_INSTANCE);
     }
 
     public RdLink(final String id, IModel<T> model) {
-        super(id, model);
+        this(id, model, RdLinkBehavior.DEFAULT_INSTANCE);
     }
 
     public RdLink(final String id, IModel<T> model, Class<C> webPage) {
+        this(id, model, webPage, RdLinkBehavior.DEFAULT_INSTANCE);
+    }
+
+    public RdLink(final String id, RdLinkBehavior behavior) {
+        super(id);
+        this.behavior = behavior;
+    }
+
+    public RdLink(final String id, IModel<T> model, RdLinkBehavior behavior) {
+        super(id, model);
+        this.behavior = behavior;
+    }
+
+    public RdLink(final String id, IModel<T> model, Class<C> webPage, RdLinkBehavior behavior) {
         super(id, model);
         this.webPage = webPage;
+        this.behavior = behavior;
     }
 
     @Override
@@ -47,7 +63,7 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(RdLinkBehavior.INSTANCE);
+        add(behavior);
     }
 
     @Override
@@ -55,7 +71,7 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
         super.onComponentTag(tag);
 
         if (this.placeholder) {
-            tag.append("class", "utrecht-link--placeholder", " ");
+            tag.append("class", "nl-link--placeholder", " ");
             tag.put("role", "link");
             tag.put("aria-disabled", "true");
         }

@@ -15,6 +15,7 @@ import org.apache.wicket.markup.html.link.ExternalLink;
 public class RdExternalLink extends ExternalLink {
 
     private boolean placeholder = false;
+    private final RdLinkBehavior behavior;
 
     /**
      * External link
@@ -23,13 +24,18 @@ public class RdExternalLink extends ExternalLink {
      * @param label label
      */
     public RdExternalLink(final String id, final String href, final String label) {
+        this(id, href, label, RdLinkBehavior.DEFAULT_INSTANCE);
+    }
+
+    public RdExternalLink(final String id, final String href, final String label, RdLinkBehavior behavior) {
         super(id, href, label);
+        this.behavior = behavior;
     }
 
     @Override
     public void onInitialize() {
         super.onInitialize();
-        add(RdLinkBehavior.INSTANCE);
+        add(behavior);
     }
 
     @Override
@@ -37,7 +43,7 @@ public class RdExternalLink extends ExternalLink {
         super.onComponentTag(tag);
 
         if (this.placeholder) {
-            tag.append("class", "utrecht-link--placeholder", " ");
+            tag.append("class", "nl-link--placeholder", " ");
             tag.put("role", "link");
             tag.put("aria-disabled", "true");
         }
