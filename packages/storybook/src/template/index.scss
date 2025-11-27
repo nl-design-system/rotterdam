@@ -21,11 +21,6 @@
   --utrecht-heading-2-line-height: var(--rods-typography-scale-2xl-line-height);
   --utrecht-heading-2-font-weight: 300;
 }
-.example-section {
-  * + .utrecht-paragraph {
-    margin-block-start: var(--rods-space-scale-2);
-  }
-}
 
 .denhaag-action {
   box-sizing: border-box;

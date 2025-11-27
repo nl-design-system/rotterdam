@@ -265,7 +265,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/number-badge-css/dist/*.min.css</include>
+                    <include>@nl-design-system-candidate/number-badge-css/dist/number-badge.css</include>
                 </includes>
             </resource>
             <resource>
@@ -313,7 +313,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/paragraph-css/dist/*.css</include>
+                    <include>@nl-design-system-candidate/paragraph-css/dist/*.css</include>
                 </includes>
             </resource>
             <resource>
