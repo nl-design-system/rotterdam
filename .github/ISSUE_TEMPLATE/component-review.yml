@@ -9,6 +9,7 @@ body:
     attributes:
       label: Wat na te kijken?
       description: De codeonderdelen, documentatie, enz. van het component dat nagekeken moet worden.
+      # language=markdown
       value: |
         * [ ] Staat het component in de goede module?
           * Is het component generiek of specifiek voor een organisatie? Organisatiespecifieke componenten mogen niet in generieke modules.
@@ -26,6 +27,7 @@ body:
           * [ ] Bij een border: waar komt de content terecht?
           * [ ] Welke modellen en behaviors kun je meegeven om de weergave te sturen?
           * [ ] Welke andere opties zijn er om de weergave aan te passen?
+          * [ ] Links naar gerelateerde Java-types.
           * [ ] Link naar NLDS-component (als dat bestaat).
           * [ ] Link naar de community-implementatie op basis waarvan het component is gebouwd.
           * [ ] Link naar externe documentatie met aan te passen voorbeeld(en) en uitgebreidere codevoorbeelden (HTML en Java).
