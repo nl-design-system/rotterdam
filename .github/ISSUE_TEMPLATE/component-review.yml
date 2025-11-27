@@ -21,6 +21,7 @@ body:
           * [ ] Is het nodig om het package te openen in module-info.java?
         * [ ] Worden de juiste Wicket-typen (Panel, Border, Behavior, enz.) gebruikt voor de implementatie? Er kunnen meerdere typen zijn omdat er verschillende situaties zijn: nieuwe code of aanpassen van bestaande code, gebruik in een basispagina of in een panel, enz.
         * [ ] Staat de nullability van alle typen goed? Let vooral op Wicket-modellen voor gebruikersinvoer: deze moeten vaak `null` toestaan.
+        * [ ] Is er een voorbeeldpagina die de HTML- en Java-code, en die als het mogelijk is het component toont, met daarbij instellingen op de parameters aan te passen.
         * Legt de Javadoc uit hoe het component moet worden gebruikt?
           * Het is niet nodig om langere codesnippets op te nemen: ga ervan uit dat de ontwikkelaar Wicket-kennis heeft.
           * [ ] Aan welke tag worden de componenten gehangen?
