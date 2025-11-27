@@ -11,7 +11,7 @@ class RdParagraphBehavior extends TagNameClassComponentBehavior<Component> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdParagraphBehavior.class,
-        "@utrecht/paragraph-css/dist/index.css"
+        "@nl-design-system-candidate/paragraph-css/dist/paragraph.css"
     );
 
     static final RdParagraphBehavior INSTANCE = new RdParagraphBehavior();
