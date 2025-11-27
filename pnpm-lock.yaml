@@ -527,6 +527,9 @@ importers:
       '@nl-design-system-candidate/data-badge-css':
         specifier: 1.0.3
         version: 1.0.3
+      '@nl-design-system-candidate/paragraph-css':
+        specifier: 2.1.1
+        version: 2.1.1
       '@utrecht/alert-css':
         specifier: 2.4.0
         version: 2.4.0
@@ -626,9 +629,6 @@ importers:
       '@utrecht/page-layout-css':
         specifier: 1.1.1
         version: 1.1.1
-      '@utrecht/paragraph-css':
-        specifier: 1.1.0
-        version: 1.1.0
       '@utrecht/preserve-data-css':
         specifier: 1.3.1
         version: 1.3.1
@@ -1934,6 +1934,8 @@ packages:
 
   '@nl-design-system-candidate/data-badge-css@1.0.3':
     resolution: {integrity: sha512-q0VB0jIp3yj71sqKtnrA/0dNKkCOBuXLwvfr8MSrIQTLAWvFg4fkI89r0barEyvyrMDhfBXsL/8gsqBeGthACQ==}
+  '@nl-design-system-candidate/paragraph-css@2.1.1':
+    resolution: {integrity: sha512-Ig5TAMA6nol5pWC8KjzQ9gMemHKAZAGNqso65CdMeGdBT3Q6YGYWg42XopWhIQ/iWh/cKiwZHht1X41SKctRHQ==}
 
   '@nl-design-system-unstable/voorbeeld-design-tokens@6.2.0':
     resolution: {integrity: sha512-qAWMqpD7UNgL2H5or48rycoVax55dgK4nHTqT8gnpxqJa6qZBJ+k++EpTh3mSR66xL6rb8Wx5SOZR8xJ8V29fg==}
@@ -3099,9 +3101,6 @@ packages:
 
   '@utrecht/page-layout-css@1.1.1':
     resolution: {integrity: sha512-pFiRgDmB0F4s23JIJf0akynHVfBt7l4rv9t9gvpTeOxSdx3KTNZsxSNT5PyQwIf5mlEHWidp6yxn3fvQXlMKmw==}
-
-  '@utrecht/paragraph-css@1.1.0':
-    resolution: {integrity: sha512-HxkYL/W0tkHngucdBFHOK8t7OmUmlnz4uIXP4GBXdA299Hp+RGb/1vaH5A2RaIN0P7/4v6EkuV4lquOcHx0K0Q==}
 
   '@utrecht/preserve-data-css@1.3.1':
     resolution: {integrity: sha512-O4TdW3df2AJGHunXB5AzEGDi8u8RsdmSbhyVMO5XeVIjiCVztajiyXnRqfuFX7+OA0EZ5E3NUSjPuXnSEJnkQA==}
@@ -9487,6 +9486,7 @@ snapshots:
     optional: true
 
   '@nl-design-system-candidate/data-badge-css@1.0.3': {}
+  '@nl-design-system-candidate/paragraph-css@2.1.1': {}
 
   '@nl-design-system-unstable/voorbeeld-design-tokens@6.2.0': {}
 
@@ -10636,8 +10636,6 @@ snapshots:
   '@utrecht/page-header-css@1.5.1': {}
 
   '@utrecht/page-layout-css@1.1.1': {}
-
-  '@utrecht/paragraph-css@1.1.0': {}
 
   '@utrecht/preserve-data-css@1.3.1': {}
 
