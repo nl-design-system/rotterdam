@@ -1,37 +1,37 @@
 @import "./mixin";
 
 .utrecht-badge-counter--rods-light-blue,
-.utrecht-data-badge--rods-light-blue,
+.nl-data-badge--rods-light-blue,
 .utrecht-status-badge--rods-light-blue {
   @include utrecht-badge--rods-light-blue;
 }
 
 .utrecht-badge-counter--rods-blue,
-.utrecht-data-badge--rods-blue,
+.nl-data-badge--rods-blue,
 .utrecht-status-badge--rods-blue {
   @include utrecht-badge--rods-blue;
 }
 
 .utrecht-badge-counter--rods-dark-blue,
-.utrecht-data-badge--rods-dark-blue,
+.nl-data-badge--rods-dark-blue,
 .utrecht-status-badge--rods-dark-blue {
   @include utrecht-badge--rods-dark-blue;
 }
 
 .utrecht-badge-counter--rods-green-blue,
-.utrecht-data-badge--rods-green-blue,
+.nl-data-badge--rods-green-blue,
 .utrecht-status-badge--rods-green-blue {
   @include utrecht-badge--rods-green-blue;
 }
 
 .utrecht-badge-counter--rods-red,
-.utrecht-data-badge--rods-red,
+.nl-data-badge--rods-red,
 .utrecht-status-badge--rods-red {
   @include utrecht-badge--rods-red;
 }
 
 .utrecht-badge-counter--rods-dark-yellow,
-.utrecht-data-badge--rods-dark-yellow,
+.nl-data-badge--rods-dark-yellow,
 .utrecht-status-badge--rods-dark-yellow {
   @include utrecht-badge--rods-dark-yellow;
 }

@@ -1,10 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.components.data_badge;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
@@ -12,16 +7,21 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.KERNTEAM;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
 /**
  * <a href="https://nldesignsystem.nl/data-badge/">Data Badge</a> component.
  * TODO use TagNameClassComponentBehavior.
  */
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = CANDIDATE, htmlCssImplementedBy = KERNTEAM)
 public class RdDataBadgeBehavior extends Behavior {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdDataBadgeBehavior.class,
-        "@utrecht/data-badge-css/dist/index.min.css"
+        "@nl-design-system-candidate/data-badge-css/dist/data-badge.css"
     );
 
     private final String expectedTagName;
@@ -31,8 +31,8 @@ public class RdDataBadgeBehavior extends Behavior {
      * Create instance.
      */
     public RdDataBadgeBehavior() {
-        this.expectedTagName = "data";
-        this.className = "utrecht-data-badge";
+        this.expectedTagName = "span";
+        this.className = "nl-data-badge";
     }
 
     @Override
