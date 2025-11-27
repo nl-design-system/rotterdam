@@ -1,8 +1,8 @@
 {
   "utrecht": {
     "unordered-list": {
-      "font-size": { "$value": "{utrecht.paragraph.font-size}" },
-      "line-height": { "$value": "{utrecht.paragraph.line-height}" },
+      "font-size": { "$value": "{nl.paragraph.font-size}" },
+      "line-height": { "$value": "{nl.paragraph.line-height}" },
       "margin-block-start": {},
       "margin-block-end": {},
       "padding-inline-start": {},
