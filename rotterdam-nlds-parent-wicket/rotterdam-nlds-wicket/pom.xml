@@ -156,7 +156,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/code-block-css/dist/*.min.css</include>
+                    <include>@nl-design-system-candidate/code-block-css/dist/code-block.css</include>
                 </includes>
             </resource>
             <resource>
@@ -172,7 +172,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/data-badge-css/dist/*.min.css</include>
+                    <include>@nl-design-system-candidate/data-badge-css/dist/data-badge.css</include>
                 </includes>
             </resource>
             <resource>
