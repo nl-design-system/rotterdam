@@ -1,6 +1,6 @@
 /* @license CC0-1.0 */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from '@gemeente-denhaag/sidenav';
 import RodsIconBox from '@gemeente-rotterdam/web-components-react/dist/RodsIconBox';
 import RodsIconCoins from '@gemeente-rotterdam/web-components-react/dist/RodsIconCoins';

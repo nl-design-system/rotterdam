@@ -37,6 +37,8 @@ import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExa
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
 import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
@@ -53,13 +55,20 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
+import static nl.rotterdam.nl_design_system.docs.wicket.css.NldsVoorbeeldGemeenteThemeCssReference.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
+
 public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
     private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
-    private static final JavaScriptReferenceHeaderItem COMPONENTS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
-        new JavaScriptResourceReference(ComponentsPage.class, "ComponentsPage.js")
-    );
+    private static final JavaScriptReferenceHeaderItem RODS_STORY_CANVAS_JS_HEADER_ITEM;
+    
+    static {
+        RODS_STORY_CANVAS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
+            new JavaScriptResourceReference(ComponentsPage.class, "rods-story-canvas.js")
+        );
+        RODS_STORY_CANVAS_JS_HEADER_ITEM.setType(JavaScriptReferenceType.MODULE);
+    }
 
     private static Link<Void> createRefreshPageLink() {
         return new Link<>("refreshStatefulPageLink") {
@@ -71,15 +80,8 @@ public class ComponentsPage extends RotterdamBasePage {
             }
         };
     }
-
-    private static Component createActiveThemeChoice() {
-        return new DropDownChoice<>(
-            "activeTheme",
-            Model.of(DesignSystemTheme.RODS),
-            Arrays.stream(DesignSystemTheme.values()).toList(),
-            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
-        ).setOutputMarkupId(true);
-    }
+    
+    private DesignSystemTheme currentTheme = DesignSystemTheme.RODS;
 
     @Override
     protected void onInitialize() {
@@ -104,40 +106,63 @@ public class ComponentsPage extends RotterdamBasePage {
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
             new DataSummaryExamplesPanel("dataSummaryExamplesPanel"),
             new HeadingExamplesPanel("headingExamplesPanel").setVisible(false),
-            new HeadingGroupExamplesPanel("headingGroupExamplesPanel").setVisible(false)
+            new HeadingGroupExamplesPanel("headingGroupExamplesPanel").setVisible(false),
+            new IconExamplesPanel("iconExamplesPanel").setVisible(false),
+            new RodsIconExamplesPanel("rodsIconExamplesPanel").setVisible(false),
+            new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"),
+            new LinkExamplesPanel("linkExamplesPanel").setVisible(false),
+            new LinkListExamplesPanel("linkListExamplesPanel").setVisible(false),
+            new LogoExamplesPanel("logoExamplesPanel").setVisible(false),
+            new DialogExamplesPanel("dialogExamplesPanel"),
+            new NumberBadgeExamplesPanel("numberBadgeExamplesPanel").setVisible(false),
+            new OrderedListExamplesPanel("orderedListExamplesPanel").setVisible(false),
+            new PageBodyExamplesPanel("pageBodyExamplesPanel").setVisible(false),
+            new PageFooterExamplesPanel("pageFooterExamplesPanel").setVisible(false),
+            new PageLayoutExamplesPanel("pageLayoutExamplesPanel").setVisible(false),
+            new ParagraphExamplesPanel("paragraphExamplesPanel").setVisible(false),
+            new PreserveDataExamplesPanel("preserveDataExamplesPanel"),
+            new RootExamplesPanel("rootExamplesPanel").setVisible(false),
+            new SeparatorExamplesPanel("separatorExamplesPanel").setVisible(false),
+            new UnorderedListExamplesPanel("unorderedListExamplesPanel").setVisible(false),
+    
+            createActiveThemeChoice(),
+            createRefreshPageLink()
         );
-
-        pageBody.add(new IconExamplesPanel("iconExamplesPanel").setVisible(false));
-        pageBody.add(new RodsIconExamplesPanel("rodsIconExamplesPanel").setVisible(false));
-        pageBody.add(new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"));
-        pageBody.add(new LinkExamplesPanel("linkExamplesPanel").setVisible(false));
-        pageBody.add(new LinkListExamplesPanel("linkListExamplesPanel").setVisible(false));
-        pageBody.add(new LogoExamplesPanel("logoExamplesPanel").setVisible(false));
-        pageBody.add(new DialogExamplesPanel("dialogExamplesPanel"));
-        pageBody.add(new NumberBadgeExamplesPanel("numberBadgeExamplesPanel").setVisible(false));
-        pageBody.add(new OrderedListExamplesPanel("orderedListExamplesPanel").setVisible(false));
-        pageBody.add(new PageBodyExamplesPanel("pageBodyExamplesPanel").setVisible(false));
-        pageBody.add(new PageFooterExamplesPanel("pageFooterExamplesPanel").setVisible(false));
-        pageBody.add(new PageLayoutExamplesPanel("pageLayoutExamplesPanel").setVisible(false));
-        pageBody.add(new ParagraphExamplesPanel("paragraphExamplesPanel").setVisible(false));
-        pageBody.add(new PreserveDataExamplesPanel("preserveDataExamplesPanel"));
-        pageBody.add(new RootExamplesPanel("rootExamplesPanel").setVisible(false));
-        pageBody.add(new SeparatorExamplesPanel("separatorExamplesPanel").setVisible(false));
-        pageBody.add(new UnorderedListExamplesPanel("unorderedListExamplesPanel").setVisible(false));
-
-        pageBody.add(createActiveThemeChoice());
-        pageBody.add(createRefreshPageLink());
     }
 
     @Override
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
 
-        COMPONENTS_JS_HEADER_ITEM.setType(JavaScriptReferenceType.MODULE);
-        response.render(COMPONENTS_JS_HEADER_ITEM);
+        response.render(RODS_STORY_CANVAS_JS_HEADER_ITEM);
+        response.render(THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM);
     }
 
     public ComponentsPage() {
         super("Componenten voor Apache Wicket");
+    }
+
+    private Component createActiveThemeChoice() {
+        return new DropDownChoice<>(
+            "activeTheme",
+            themeModel,
+            Arrays.stream(DesignSystemTheme.values()).toList(),
+            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
+        ).add(new OnChangeAjaxBehavior() {
+            @Override
+            protected void onUpdate(AjaxRequestTarget target) {
+                var currentThemeclassName = currentTheme.getThemeClassName();
+
+                var newTheme = themeModel.getObject();
+                var newThemeClassName = newTheme.getThemeClassName();
+                currentTheme = newTheme;
+
+                target.appendJavaScript("$('html').removeClass('" +
+                    currentThemeclassName +
+                    "').addClass('" +
+                    newThemeClassName +
+                    "');");
+            }
+        });
     }
 }

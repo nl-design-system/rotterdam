@@ -5,6 +5,10 @@ package nl.rotterdam.nl_design_system.wicket.components.component_state;
  */
 public enum WicketState {
     /**
+     * Probably not useful, so decide if it needs to be removed.
+     */
+    PROPOSED_TO_REMOVE("Added before, but likely not useful. See the documentation of the annotated element for the reason why."),
+    /**
      * Needs refactoring.
      */
     NEEDS_REFACTORING("Needs refactoring, do not use as API changes are expected"),
@@ -17,7 +21,7 @@ public enum WicketState {
      */
     BETA("Has been verified, has tests and is reviewed by a peer"),
     /**
-     * Stable. We try to remain backwards compatible.
+     * Stable. We try to remain backward compatible.
      */
     STABLE("Has been used in production for a while, at least two teams use it and are satisfied.");
 
