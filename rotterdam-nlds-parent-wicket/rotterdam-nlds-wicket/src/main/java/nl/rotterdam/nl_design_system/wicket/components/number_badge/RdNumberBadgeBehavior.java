@@ -16,15 +16,15 @@ class RdNumberBadgeBehavior extends Behavior {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
         RdNumberBadgeBehavior.class,
-        "@utrecht/number-badge-css/dist/index.min.css"
+        "@nl-design-system-candidate/number-badge-css/dist/number-badge.css"
     );
 
     private final String expectedTagName;
     private final String className;
 
     public RdNumberBadgeBehavior() {
-        this.expectedTagName = "data";
-        this.className = "utrecht-number-badge";
+        this.expectedTagName = "span";
+        this.className = "nl-number-badge";
     }
 
     @Override
