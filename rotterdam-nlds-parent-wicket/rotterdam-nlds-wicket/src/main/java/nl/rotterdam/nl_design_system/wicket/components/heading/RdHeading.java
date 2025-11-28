@@ -9,14 +9,14 @@ import org.apache.wicket.model.Model;
 import java.io.Serializable;
 import java.util.Set;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.KERNTEAM;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 /**
  * <a href="https://nldesignsystem.nl/heading/">NL Design System Heading component</a>.
  */
-@NlComponentState(wicketState = UNSTABLE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@NlComponentState(wicketState = UNSTABLE, estafetteState = CANDIDATE, htmlCssImplementedBy = KERNTEAM)
 public class RdHeading extends Label {
     private static final Set<String> ALLOWED_TAG_NAMES = Set.of("h1", "h2", "h3", "h4", "h5", "h6");
 
