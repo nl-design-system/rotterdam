@@ -80,7 +80,7 @@ class RdDialogBorderTest extends NldsWicketTestCase {
             <dialog id="dialog2" class="ams-dialog">
                 <div id="content1">
                     <header class="ams-dialog__header">
-                        <h%s class="utrecht-heading-%s">Title</h%s>
+                        <h%s class="nl-heading nl-heading--level-%s">Title</h%s>
                         <button name="dialog:content:closeButton" id="closeButton3" class="ams-icon-button"><span class="ams-visually-hidden">Close</span><span class="utrecht-icon"> <span class="icon-class"></span> </span></button>
                     </header>
                     <div class="ams-dialog__body">Content</div>
@@ -126,7 +126,7 @@ class RdDialogBorderTest extends NldsWicketTestCase {
             <dialog id="dialog2" class="ams-dialog">
                 <div id="content1">
                     <header class="ams-dialog__header">
-                        <h1 class="utrecht-heading-1">Title</h1>
+                        <h1 class="nl-heading nl-heading--level-1">Title</h1>
                         <button name="dialog:content:closeButton" id="closeButton3" class="ams-icon-button"><span class="ams-visually-hidden">Close button label</span><span class="utrecht-icon"> <span class="icon-class"></span> </span></button>
                     </header>
                     <div class="ams-dialog__body">Content</div>

@@ -54,14 +54,14 @@ Here's a complete example:
 
 ```html
 <!doctype html>
-<html class="rods-theme">
+<html class="rods-theme" lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css/dist/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/@gemeente-rotterdam/design-tokens/dist/index.css" />
   </head>
   <body class="utrecht-document">
-    <h1 class="utrecht-heading-1">Hello world</h1>
+    <h1 class="nl-heading nl-heading--level-1">Hello world</h1>
   </body>
 </html>
 ```
