@@ -1,13 +1,13 @@
 package nl.rotterdam.nl_design_system.docs.wicket.link;
 
-import nl.rotterdam.nl_design_system.wicket.components.link.RdBookmarkableLink;
-import nl.rotterdam.nl_design_system.wicket.components.link.RdExternalLink;
-import nl.rotterdam.nl_design_system.wicket.components.link.RdLink;
-import nl.rotterdam.nl_design_system.wicket.components.link.RdLinkBehavior;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentsPage;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page.MijnLoketPage;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdBookmarkableLink;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdExternalLink;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdLink;
+import nl.rotterdam.nl_design_system.wicket.components.link.RdLinkBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
@@ -43,7 +43,12 @@ public class LinkExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static Component exampleLink() {
-        return new RdLink<>("link", Model.of("Homepage"), ComponentsPage.class);
+        return new RdLink<>("link", Model.of("Homepage")) {
+            @Override
+            public void onClick() {
+                setResponsePage(ComponentsPage.class);
+            }
+        };
     }
 
     @ComponentExample
@@ -67,7 +72,7 @@ public class LinkExamplesPanel extends ExamplesPanel {
             @Override
             public void onInitialize() {
                 super.onInitialize();
-                add(RdLinkBehavior.DEFAULT_INSTANCE);
+                add(RdLinkBehavior.INSTANCE);
             }
 
             @Override
@@ -83,7 +88,7 @@ public class LinkExamplesPanel extends ExamplesPanel {
             @Override
             public void onInitialize() {
                 super.onInitialize();
-                add(RdLinkBehavior.DEFAULT_INSTANCE);
+                add(RdLinkBehavior.INSTANCE);
             }
         };
     }
@@ -91,13 +96,14 @@ public class LinkExamplesPanel extends ExamplesPanel {
     @ComponentExample
     private static Component exampleLinkPlaceholder() {
         // `setDisabled()` is default functionality on `Link`
-        RdLink<String, ComponentsPage> link = new RdLink<>(
-            "linkPlaceholder",
-            Model.of("Homepage"),
-            ComponentsPage.class
-        );
+        RdLink<String> link = new RdLink<>("linkPlaceholder", Model.of("Homepage")) {
+            @Override
+            public void onClick() {
+                setResponsePage(ComponentsPage.class);
+            }
+        };
 
-        link.setPlaceholder(true);
+        link.setIsPlaceholder(true);
         return link;
     }
 
@@ -110,7 +116,7 @@ public class LinkExamplesPanel extends ExamplesPanel {
             "example.com"
         );
 
-        link.setPlaceholder(true);
+        link.setIsPlaceholder(true);
         return link;
     }
 

@@ -1,20 +1,20 @@
 package nl.rotterdam.nl_design_system.wicket.components.link;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.html.link.AbstractLink;
 
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.KERNTEAM;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
 /**
  * Add NL Design System link via a behavior. Used by various links type.
  * TODO consider to make this available internally in library only
  */
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = CANDIDATE, htmlCssImplementedBy = KERNTEAM)
 public class RdLinkBehavior extends TagNameClassComponentBehavior<AbstractLink> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
@@ -22,12 +22,10 @@ public class RdLinkBehavior extends TagNameClassComponentBehavior<AbstractLink> 
         "@nl-design-system-candidate/link-css/dist/link.css"
     );
 
-    public static final RdLinkBehavior DEFAULT_INSTANCE = new RdLinkBehavior(RdLinkCss.DEFAULT);
+    public static final RdLinkBehavior INSTANCE = new RdLinkBehavior();
 
-    public static final RdLinkBehavior INLINE_BOX_INSTANCE = new RdLinkBehavior(RdLinkCss.INLINE_BOX);
-
-    private RdLinkBehavior(RdLinkCss css) {
-        super("a", css);
+    private RdLinkBehavior() {
+        super("a", RdLinkCss.DEFAULT);
         addHeaderItem(CSS);
     }
 }

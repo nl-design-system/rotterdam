@@ -3,8 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.link;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdLinkCss implements CssClassNames {
-    DEFAULT("nl-link"),
-    INLINE_BOX("nl-link nl-link--inline-box");
+    DEFAULT("nl-link");
 
     private final String cssClassNames;
 
