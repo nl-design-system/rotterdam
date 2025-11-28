@@ -1,8 +1,0 @@
-{
-  "example": {
-    "button": {
-      "background-color": { "$value": "{rods.color.base.green}" },
-      "color": { "$value": "{rods.color.base.white}" }
-    }
-  }
-}
