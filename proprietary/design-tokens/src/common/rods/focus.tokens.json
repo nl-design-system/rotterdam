@@ -1,9 +1,0 @@
-{
-  "rods": {
-    "focus": {
-      "outline-offset": {
-        "$value": "{rods.space.scale.1}"
-      }
-    }
-  }
-}
