@@ -63,7 +63,7 @@ export const Default: Story = {
     <div {...args} className="example-page" style={{ containerType: 'inline-size' }}>
       <PageHeader>
         <div className="example-page-header__top-bar">
-          <Link href="#" className="utrecht-link--backlink utrecht-link--with-icon">
+          <Link href="#" className="nl-link--backlink nl-link--with-icon">
             <RodsIconArrowLeft />
             Rotterdam.nl
           </Link>

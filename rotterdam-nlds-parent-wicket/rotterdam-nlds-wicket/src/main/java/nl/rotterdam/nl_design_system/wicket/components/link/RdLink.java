@@ -4,25 +4,21 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.request.component.IRequestablePage;
 import org.jspecify.annotations.Nullable;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.KERNTEAM;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
 
 /**
- * @deprecated overlaps with {@link RdBookmarkableLink}, merge or remove
  * @param <T> modle type
- * @param <C> page class type
  */
-@Deprecated(forRemoval = true)
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = CANDIDATE, htmlCssImplementedBy = KERNTEAM)
 @SuppressWarnings("doclint:missing")
-public class RdLink<T, C extends IRequestablePage> extends Link<T> {
-
-    private @Nullable Class<C> webPage = null;
-    private boolean placeholder = false;
+public abstract class RdLink<T> extends Link<T> {
+    private boolean isPlaceholder = false;
+    @Nullable
+    private RdLinkContentType contentType;
 
     public RdLink(final String id) {
         super(id);
@@ -30,18 +26,6 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
 
     public RdLink(final String id, IModel<T> model) {
         super(id, model);
-    }
-
-    public RdLink(final String id, IModel<T> model, Class<C> webPage) {
-        super(id, model);
-        this.webPage = webPage;
-    }
-
-    @Override
-    public void onClick() {
-        if (this.webPage != null) {
-            setResponsePage(this.webPage);
-        }
     }
 
     @Override
@@ -54,10 +38,8 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
     public void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
 
-        if (this.placeholder) {
-            tag.append("class", "utrecht-link--placeholder", " ");
-            tag.put("role", "link");
-            tag.put("aria-disabled", "true");
+        if (!tag.isClose()) {
+            RdLinkCommonTagAttributes.addAttributes(tag, isPlaceholder, contentType);
         }
     }
 
@@ -65,10 +47,14 @@ public class RdLink<T, C extends IRequestablePage> extends Link<T> {
     public boolean isEnabled() {
         // Use the `isEnabled()` from `Link` to add an extra condition to disable
         // the link: when it is a placeholder.
-        return super.isEnabled() && !this.placeholder;
+        return super.isEnabled() && !isPlaceholder;
     }
 
-    public void setPlaceholder(boolean enabled) {
-        this.placeholder = enabled;
+    public void setIsPlaceholder(boolean isPlaceholder) {
+        this.isPlaceholder = isPlaceholder;
+    }
+
+    public void setContentType(@Nullable RdLinkContentType contentType) {
+        this.contentType = contentType;
     }
 }

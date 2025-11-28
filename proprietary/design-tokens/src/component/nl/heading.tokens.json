@@ -6,42 +6,54 @@
         "font-family": {},
         "font-size": { "$value": "{rods.typography.scale.3xl.font-size}" },
         "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "$value": "{rods.typography.scale.3xl.line-height}" }
+        "line-height": { "$value": "{rods.typography.scale.3xl.line-height}" },
+        "margin-block-end": {},
+        "margin-block-start": {}
       },
       "level-2": {
         "color": {},
         "font-family": {},
         "font-size": { "$value": "{rods.typography.scale.5xl.font-size}" },
         "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "$value": "{rods.typography.scale.5xl.line-height}" }
+        "line-height": { "$value": "{rods.typography.scale.5xl.line-height}" },
+        "margin-block-end": {},
+        "margin-block-start": {}
       },
       "level-3": {
         "color": {},
         "font-family": {},
         "font-size": { "$value": "{rods.typography.scale.4xl.font-size}" },
         "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
-        "line-height": { "$value": "{rods.typography.scale.4xl.line-height}" }
+        "line-height": { "$value": "{rods.typography.scale.4xl.line-height}" },
+        "margin-block-end": {},
+        "margin-block-start": {}
       },
       "level-4": {
         "color": {},
         "font-family": {},
         "font-size": {},
         "font-weight": {},
-        "line-height": {}
+        "line-height": {},
+        "margin-block-end": {},
+        "margin-block-start": {}
       },
       "level-5": {
         "color": {},
         "font-family": {},
         "font-size": {},
         "font-weight": {},
-        "line-height": {}
+        "line-height": {},
+        "margin-block-end": {},
+        "margin-block-start": {}
       },
       "level-6": {
         "color": {},
         "font-family": {},
         "font-size": {},
         "font-weight": {},
-        "line-height": {}
+        "line-height": {},
+        "margin-block-end": {},
+        "margin-block-start": {}
       }
     }
   }

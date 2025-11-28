@@ -15,7 +15,7 @@ public class RdOrderedListItemBehavior extends Behavior {
 
     public RdOrderedListItemBehavior() {
         this.expectedTagName = "li";
-        this.className = "utrecht-ordered-list__item utrecht-ordered-list__item";
+        this.className = "utrecht-ordered-list__item";
     }
 
     @Override

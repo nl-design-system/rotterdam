@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>rotterdam-nlds-wicket-extras</artifactId>
-    <name>NL Design System Wicket Components that are unlikely to be used in end user applications made by Rotterdam</name>
+    <name>NL Design System Wicket Components made by Rotterdam that are unlikely to be used in end user applications</name>
     <description>Wicket components from NL Design System components, which is intended for use by all organizations
         working with NL Design System and Apache Wicket. These Wicket components are unlikely to be useful for end user
         applications. But they may be useful for internal documentation for teams. To keep the JAR with the core

@@ -2,17 +2,18 @@ package nl.rotterdam.nl_design_system.docs.wicket.link_list;
 
 import de.agilecoders.wicket.extensions.markup.html.bootstrap.icon.FontAwesome7CssReference;
 import de.agilecoders.wicket.extensions.markup.html.bootstrap.icon.FontAwesome7IconType;
-import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
-import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
-import nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListPanel;
-import nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListRecord;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.RotterdamPlaceholderPage;
 import nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page.MijnLoketPage;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
+import nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListPanel;
+import nl.rotterdam.nl_design_system.wicket.components.link_list.RdLinkListRecord;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.request.component.IRequestablePage;
@@ -22,7 +23,7 @@ import java.util.List;
 
 public class LinkListExamplesPanel extends ExamplesPanel {
 
-    private static final CssReferenceHeaderItem FONT_AWESOME_7_CSS_HEADER_ITEM = CssReferenceHeaderItem.forReference(FontAwesome7CssReference.instance());
+    private static final CssReferenceHeaderItem FONT_AWESOME_7_CSS_HEADER_ITEM = CssHeaderItem.forReference(FontAwesome7CssReference.instance());
 
     public LinkListExamplesPanel(String id) {
         super(id);

@@ -88,7 +88,6 @@ public class RdAjaxButton extends AjaxButton {
         super.onComponentTag(tag);
 
         new TokenSetBuilder()
-            .append("utrecht-button")
             .append(appearance != null, () -> "utrecht-button--" + appearance.appearance)
             .append(hint != null, () -> "utrecht-button--" + hint.hint)
             .append(!isEnabledInHierarchy(), "utrecht-button--disabled")

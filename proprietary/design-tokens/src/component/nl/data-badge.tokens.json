@@ -4,14 +4,20 @@
       "background-color": {
         "$value": "{rods.color.base.green}"
       },
+      "border-color": {},
       "border-radius": {
         "$value": "0"
       },
+      "border-width": {},
       "color": {
         "$value": "{rods.color.base.white}"
       },
+      "font-family": {},
       "font-size": { "$value": "12px" },
       "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
+      "line-height": {},
+      "min-block-size": {},
+      "min-inline-size": {},
       "padding-block": {
         "$value": "2px"
       },

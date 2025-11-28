@@ -1,9 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Page;
 import org.apache.wicket.markup.ComponentTag;
@@ -11,9 +7,21 @@ import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.jspecify.annotations.Nullable;
 
-// TODO: why is RdBookmarkableLink not used and has this class been introduced?
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-class RdSideNavLink<T> extends BookmarkablePageLink<T> {
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.PROPOSED_TO_REMOVE;
+
+/**
+ * <p>
+ * Why proposed to remove? This is a component for an element of a block. Elements must get their markup either from
+ * their block or from another block that is a child of their block.
+ * </p>
+ * @param <T>
+ * @deprecated Use a link component instead and add a behavior to set the element CSS class.
+ */
+@NlComponentState(wicketState = PROPOSED_TO_REMOVE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@Deprecated(forRemoval = true)
+public class RdSideNavLink<T> extends BookmarkablePageLink<T> {
 
     public boolean placeholder = false;
 
