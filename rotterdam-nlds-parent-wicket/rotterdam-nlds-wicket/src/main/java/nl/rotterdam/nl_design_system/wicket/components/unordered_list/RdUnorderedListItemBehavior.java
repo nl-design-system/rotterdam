@@ -20,7 +20,7 @@ public class RdUnorderedListItemBehavior extends Behavior {
 
     private RdUnorderedListItemBehavior() {
         this.expectedTagName = "li";
-        this.className = "utrecht-unordered-list__item utrecht-unordered-list__item";
+        this.className = "utrecht-unordered-list__item";
     }
 
     @Override
