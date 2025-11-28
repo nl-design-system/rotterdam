@@ -79,6 +79,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.html;
 
     requires org.apache.wicket.core;
+    requires org.apache.wicket.request;
     requires org.apache.wicket.util;
     requires org.danekja.jdk.serializable.functional;
     requires org.jspecify;

@@ -4,6 +4,7 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
@@ -22,7 +23,7 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
 
     private static final String CLASS_NAME_PREFIX = "language-";
     private static final JavaScriptReferenceHeaderItem PRISM_CORE_REFERENCE_HEADER_ITEM =
-        JavaScriptReferenceHeaderItem.forReference(
+        JavaScriptHeaderItem.forReference(
             new JavaScriptResourceReference(
                 RdSyntaxHighlightingLanguageBehavior.class,
                 "prismjs/components/prism-core.min.js"),
@@ -46,7 +47,7 @@ public class RdSyntaxHighlightingLanguageBehavior extends Behavior {
     private RdSyntaxHighlightingLanguageBehavior(IModel<String> languageCodeModel) {
         classNameModel = languageCodeModel.map(RdSyntaxHighlightingLanguageBehavior::getClassName);
         languageJavascriptReferenceHeaderItemModel = languageCodeModel.map(languageCode ->
-            JavaScriptReferenceHeaderItem.forReference(
+            JavaScriptHeaderItem.forReference(
                 new JavaScriptResourceReference(
                     RdSyntaxHighlightingLanguageBehavior.class,
                     "prismjs/components/prism-" + languageCode + ".min.js"),

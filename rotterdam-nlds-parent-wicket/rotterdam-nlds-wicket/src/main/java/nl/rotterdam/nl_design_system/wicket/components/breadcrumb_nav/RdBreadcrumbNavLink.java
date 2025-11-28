@@ -1,20 +1,24 @@
 package nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Page;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.PROPOSED_TO_REMOVE;
+
 /**
  * Link in bread crumb trial.
+ * <p>
+ * Why proposed to remove? This is a component for an element of a block. Elements must get their markup either from
+ * their block or from another block that is a child of their block.
+ * </p>
  * @param <T> the page class
- * @deprecated probably we don't need specific page classes for bread crumbs
+ * @deprecated Use a link component instead and add a behavior to set the element CSS class.
  */
-@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+@NlComponentState(wicketState = PROPOSED_TO_REMOVE, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 @Deprecated(forRemoval = true)
 @SuppressWarnings("doclint:missing")
 public class RdBreadcrumbNavLink<T> extends BookmarkablePageLink<T> {

@@ -18,10 +18,16 @@ body:
         * [ ] Klopt de status in `@NlComponentState`?
           * Is het component al verder in het NLDS-proces? Dan moet er overgestapt worden van een community- naar een kandidaatcomponent, of van een kandidaatcomponent naar een hall-of-fame-component.
         * Front-end resources:
-          * [ ] Worden de minimale bestanden gekopieerd?
+          * [ ] Worden in de POM de minimale front-endbestanden gekopieerd?
           * [ ] Is het nodig om het package te openen in module-info.java?
         * [ ] Worden de juiste Wicket-typen (Panel, Border, Behavior, enz.) gebruikt voor de implementatie? Er kunnen meerdere typen zijn omdat er verschillende situaties zijn: nieuwe code of aanpassen van bestaande code, gebruik in een basispagina of in een panel, enz.
-        * [ ] Staat de nullability van alle typen goed? Let vooral op Wicket-modellen voor gebruikersinvoer: deze moeten vaak `null` toestaan.
+          * [ ] Zijn alle Wicket-constructors overgenomen?
+        * [ ] Worden de juiste Wicket-objecten gebruikt voor subcomponenten i.p.v. dat subcomponenten opnieuw worden geïmplementeerd?
+          * [ ] Als het component BEM-elementen bevat, krijgen deze elementen hun markup dan van hun eigenaar of van een andere component dat een kind is van hun eigenaar?
+        * [ ] Staat de nullability van alle typen goed? Let vooral op Wicket-modellen voor gebruikersinvoer: deze moeten vaak `null` toestaan.        
+        * `onComponentTag(...)`:
+          * [ ] Controle op de juiste tagnaam moet voor de aanroep `super.onComponentTag(tag);`.
+          * [ ] Worden attributen alleen open- en open-close-tags gezet (`!tag.isClose()`)? De gezette attributen worden niet weggeschreven door Wicket, maar het is zonde van de onnodige verwerking.
         * [ ] Is er een voorbeeldpagina die de HTML- en Java-code, en die als het mogelijk is het component toont, met daarbij instellingen op de parameters aan te passen.
         * Legt de Javadoc uit hoe het component moet worden gebruikt?
           * Het is niet nodig om langere codesnippets op te nemen: ga ervan uit dat de ontwikkelaar Wicket-kennis heeft.

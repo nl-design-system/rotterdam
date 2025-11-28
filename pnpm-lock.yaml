@@ -533,6 +533,9 @@ importers:
       '@nl-design-system-candidate/code-block-css':
         specifier: 1.1.3
         version: 1.1.3
+      '@nl-design-system-candidate/link-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@nl-design-system-candidate/number-badge-css':
         specifier: 1.1.3
         version: 1.1.3
@@ -587,9 +590,6 @@ importers:
       '@utrecht/icon':
         specifier: 1.3.0
         version: 1.3.0
-      '@utrecht/link-css':
-        specifier: 1.6.1
-        version: 1.6.1
       '@utrecht/link-list-css':
         specifier: 2.3.1
         version: 2.3.1
@@ -2104,6 +2104,8 @@ packages:
   '@nl-design-system-candidate/code-block-css@1.1.3':
     resolution: {integrity: sha512-uVRaqv8nXoQ/6IElHoHF9iCjqdGYTjXbBhYnzzbKZQtYp1hbogKOHzotKgaL7jFUaARVswKEzxTXoerSbvjFFw==}
 
+  '@nl-design-system-candidate/link-css@2.0.1':
+    resolution: {integrity: sha512-ZCVeyjLVksGEoJmIvXiPPtKNkDzGIB68v73J/hHku2pN2s5WX7ZJwNl4Rvpx6zPBQpD6xNW4JZMMAwc2TXa1Aw==}
   '@nl-design-system-candidate/number-badge-css@1.1.3':
     resolution: {integrity: sha512-G5fgcJ4GOvFkGGHD8p8xRbWwgsvqsWq3foCXcZITb6KMcIJP2LTD5XHSNjsovURDkr9wyaY37O1nVzCt5I0wTw==}
 
@@ -3263,9 +3265,6 @@ packages:
 
   '@utrecht/icon@1.3.0':
     resolution: {integrity: sha512-UkjRq7sR9Lsj6T9Ap6zi3YEWLbJNxau4RBSblDGM8E4irHW5AjiUERfVp4v6ZwSvgEqyeNIwwep69FJhw2je4A==}
-
-  '@utrecht/link-css@1.6.1':
-    resolution: {integrity: sha512-99cJTMztRvcgDDCM/EGvjtzBQ6k7Fh8/sv6bHS8lQxoCHgm88m0fUfns1RJkrLEFhYVsbdPxqYTn7npZhsAUtA==}
 
   '@utrecht/link-list-css@2.3.1':
     resolution: {integrity: sha512-KUzAe2dUd1sdoSLXFyqv1DjsjyXi9gJyHONGCEcQAkxpHYA4O569XQQnH4v9KVhGgJNRKmtXgcDJswMW09t5Xg==}
@@ -9837,6 +9836,7 @@ snapshots:
   '@nl-design-system-candidate/data-badge-css@1.0.3': {}
   '@nl-design-system-candidate/code-block-css@1.1.3': {}
 
+  '@nl-design-system-candidate/link-css@2.0.1': {}
   '@nl-design-system-candidate/number-badge-css@1.1.3': {}
 
   '@nl-design-system-candidate/paragraph-css@2.1.1': {}
@@ -11015,8 +11015,6 @@ snapshots:
   '@utrecht/heading-group-css@1.5.1': {}
 
   '@utrecht/icon@1.3.0': {}
-
-  '@utrecht/link-css@1.6.1': {}
 
   '@utrecht/link-list-css@2.3.1': {}
 
