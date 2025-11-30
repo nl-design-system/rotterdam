@@ -1,16 +1,215 @@
 <!doctype html>
-<html lang="nl" class="rods-theme utrecht-root">
+<html lang="nl" class="rods-theme utrecht-root" dir="ltr">
   <head>
+    <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="./theme.css" />
     <link rel="stylesheet" href="./public/font/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css@8.2.1/dist/index.css" />
   </head>
   <body class="utrecht-body">
-    <h1>Date picker</h1>
-    <p>...</p>
-    <script type="module" src="src/date-picker-element.ts"></script>
-    <rods-date-picker>rods-date-picker</rods-date-picker>
+    <div class="utrecht-page-layout">
+      <div class="utrecht-page-body">
+        <div class="utrecht-page-body__content">
+          <hgroup class="utrecht-heading-group">
+            <h1 class="utrecht-heading-1">Afspraak ‘Paspoort aanvragen’</h1>
+            <p class="utrecht-paragraph">U kunt alleen beschikbare data selecteren</p>
+          </hgroup>
+          <script type="module" src="src/date-picker-element.ts"></script>
+          <rods-date-picker visible-date="2025-09-09T09:50"></rods-date-picker>
+          <!-- <rods-date-picker value="2025-09-09T09:50"></rods-date-picker> -->
+          <!-- <rods-date-picker value="2025-09-09T09:50" visible-date="2026-01-01"></rods-date-picker> -->
+          <rods-date-picker>
+            <div slot="time-placeholder" style="text-align: center">
+              <svg width="153" height="141" viewBox="0 0 153 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="69.8547" cy="133.064" rx="42.3837" ry="7.06395" fill="#E4EEF1" />
+                <path
+                  d="M63.6737 105C58.9644 110.6 58.9644 126.001 63.6737 130.901H52.6853"
+                  stroke="#404B4F"
+                  stroke-width="3.13953"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M75.4469 105C80.1562 110.6 80.1562 126.001 75.4469 130.901H86.4353"
+                  stroke="#404B4F"
+                  stroke-width="3.13953"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M116.404 48.7397L119.992 49.0347C130.122 49.8675 139.008 42.3312 139.841 32.2019C139.89 31.6061 140.413 31.1628 141.009 31.2118L150.948 32.0293"
+                  stroke="#404B4F"
+                  stroke-width="3.13953"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M19.1995 66.6917C20.3724 67.8607 20.0951 69.8417 18.6464 70.6438L18.4977 70.7199L12.9561 73.3399C12.1724 73.7103 11.2362 73.3753 10.8657 72.5916C10.4952 71.8078 10.8302 70.8716 11.614 70.5011L16.2771 68.2975L14.9464 67.1318C4.82428 58.2617 9.42715 41.6238 22.6691 39.2175C23.5221 39.0625 24.3391 39.6282 24.4941 40.4811C24.6491 41.3341 24.0834 42.1511 23.2304 42.3061C12.5737 44.2426 8.86944 57.6328 17.0156 64.7711L19.0774 66.5772L19.1995 66.6917Z"
+                  fill="#404B4F"
+                />
+                <g clip-path="url(#clip0_675_2652)">
+                  <mask
+                    id="mask0_675_2652"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="17"
+                    y="6"
+                    width="113"
+                    height="108"
+                  >
+                    <rect
+                      x="25.4362"
+                      y="5.9502"
+                      width="104.39"
+                      height="99.6802"
+                      rx="4.7093"
+                      transform="rotate(4.70022 25.4362 5.9502)"
+                      fill="#D9D9D9"
+                    />
+                  </mask>
+                  <g mask="url(#mask0_675_2652)">
+                    <rect
+                      x="-21.2603"
+                      y="-59.7278"
+                      width="233.882"
+                      height="118.556"
+                      transform="rotate(4.70022 -21.2603 -59.7278)"
+                      fill="#E4EEF1"
+                    />
+                    <rect
+                      x="-42.8731"
+                      y="35.3792"
+                      width="231.528"
+                      height="116.201"
+                      transform="rotate(4.70022 -42.8731 35.3792)"
+                      fill="white"
+                      stroke="#A1A1A1"
+                      stroke-width="2.35465"
+                    />
+                    <path
+                      d="M62.3806 63.1501L60.7771 82.6535L65.2185 83.0186L64.9274 86.5589L51.0562 85.4184L51.3473 81.8782L56.2714 82.283L57.4886 67.4785L52.6213 69.9296L52.96 65.8101L58.5186 62.8326L62.3806 63.1501ZM74.9971 81.8786L73.0868 83.4388L82.8385 84.2405L82.5289 88.006L66.791 86.7121L67.0821 83.1719L71.9398 79.2619C76.0365 75.9374 78.8819 73.644 79.0989 71.0049C79.2577 69.0739 78.2666 67.7288 75.9816 67.5409C74.2115 67.3954 72.2121 68.4622 70.5191 70.1375L68.0353 67.244C69.8967 65.0965 72.885 63.4306 76.4252 63.7216C81.4459 64.1344 83.9486 67.1915 83.6337 71.0214C83.3003 75.0765 79.5065 78.264 74.9971 81.8786Z"
+                      fill="#404B4F"
+                    />
+                    <g filter="url(#filter0_f_675_2652)">
+                      <path
+                        d="M26.478 63.0437L25.2445 78.0463L28.6609 78.3272L28.437 81.0504L17.7668 80.1731L17.9907 77.4499L21.7785 77.7613L22.7148 66.3732L18.9707 68.2587L19.2313 65.0898L23.5072 62.7994L26.478 63.0437ZM38.953 64.0694L37.7195 79.072L41.136 79.3528L40.9121 82.0761L30.2419 81.1988L30.4658 78.4756L34.2536 78.787L35.1899 67.3989L31.4458 69.2844L31.7064 66.1155L35.9822 63.8251L38.953 64.0694Z"
+                        fill="url(#paint0_linear_675_2652)"
+                      />
+                      <path
+                        d="M63.2609 63.2226L61.6573 82.726L66.0987 83.0912L65.8076 86.6314L51.9364 85.4909L52.2275 81.9507L57.1516 82.3555L58.3688 67.551L53.5015 70.0021L53.8402 65.8826L59.3988 62.9051L63.2609 63.2226ZM75.8774 81.9511L73.967 83.5113L83.7187 84.313L83.4091 88.0785L67.6713 86.7846L67.9623 83.2444L72.82 79.3344C76.9167 76.0099 79.7622 73.7165 79.9791 71.0775C80.1379 69.1464 79.1469 67.8013 76.8618 67.6134C75.0917 67.4679 73.0923 68.5347 71.3993 70.21L68.9155 67.3165C70.7769 65.169 73.7652 63.5031 77.3054 63.7941C82.3261 64.2069 84.8289 67.264 84.514 71.0939C84.1806 75.149 80.3868 78.3365 75.8774 81.9511Z"
+                        fill="#404B4F"
+                      />
+                      <path
+                        d="M103.365 69.3652L102.131 84.3678L105.548 84.6487L105.324 87.3719L94.6536 86.4946L94.8775 83.7714L98.6652 84.0828L99.6016 72.6947L95.8575 74.5802L96.118 71.4114L100.394 69.121L103.365 69.3652ZM116.462 78.8913C118.33 79.8175 119.312 81.5183 119.157 83.3998C118.878 86.7915 115.905 88.6906 112.291 88.3934C110.112 88.2143 107.764 87.3732 106.161 85.6463L108.189 83.4202C109.149 84.4712 110.901 85.2883 112.387 85.4104C114.144 85.5549 115.585 84.7013 115.728 82.9684C115.862 81.3344 114.595 80.3828 112.564 80.2159L110.98 80.0856L111.21 77.2881L112.745 77.4143C114.552 77.5629 115.843 76.7219 115.965 75.2365C116.085 73.7758 114.916 72.8323 113.406 72.7081C111.846 72.5799 110.552 73.1713 109.373 74.1711L107.763 71.6211C109.577 70.175 111.69 69.626 113.844 69.8031C117.162 70.0759 119.613 72.0968 119.376 74.9686C119.228 76.7759 118.208 78.2623 116.462 78.8913Z"
+                        fill="url(#paint1_linear_675_2652)"
+                      />
+                    </g>
+                    <circle
+                      cx="64.5607"
+                      cy="20.4425"
+                      r="2.59525"
+                      transform="rotate(4.70022 64.5607 20.4425)"
+                      fill="#404B4F"
+                    />
+                    <circle
+                      cx="81.7701"
+                      cy="21.8575"
+                      r="2.59525"
+                      transform="rotate(4.70022 81.7701 21.8575)"
+                      fill="#404B4F"
+                    />
+                    <path
+                      d="M86.8618 29.91C78.6213 34.3514 71.19 33.7404 59.7534 31.4544"
+                      stroke="#404B4F"
+                      stroke-width="3.13953"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </g>
+                <rect
+                  x="26.6988"
+                  y="7.24396"
+                  width="94.9709"
+                  height="97.3256"
+                  rx="11.3808"
+                  transform="rotate(4.70022 26.6988 7.24396)"
+                  stroke="#A1A1A1"
+                  stroke-width="2.35465"
+                />
+                <line
+                  x1="51.2588"
+                  y1="2.96296"
+                  x2="50.4871"
+                  y2="12.3499"
+                  stroke="#A1A1A1"
+                  stroke-width="5.49419"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="100.065"
+                  y1="6.97565"
+                  x2="99.2927"
+                  y2="16.3626"
+                  stroke="#A1A1A1"
+                  stroke-width="5.49419"
+                  stroke-linecap="round"
+                />
+                <defs>
+                  <filter
+                    id="filter0_f_675_2652"
+                    x="14.1746"
+                    y="51.3061"
+                    width="109.601"
+                    height="49.0973"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="0.672758" result="effect1_foregroundBlur_675_2652" />
+                  </filter>
+                  <linearGradient
+                    id="paint0_linear_675_2652"
+                    x1="17.077"
+                    y1="71.5877"
+                    x2="33.9445"
+                    y2="72.6778"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#C3C3C3" />
+                    <stop offset="1" stop-color="#666666" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint1_linear_675_2652"
+                    x1="111.48"
+                    y1="79.0442"
+                    x2="93.9627"
+                    y2="77.9241"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#C3C3C3" />
+                    <stop offset="1" stop-color="#666666" />
+                  </linearGradient>
+                  <clipPath id="clip0_675_2652">
+                    <rect
+                      x="25.6219"
+                      y="5.97412"
+                      width="97.3256"
+                      height="99.6802"
+                      rx="12.5581"
+                      transform="rotate(4.70022 25.6219 5.97412)"
+                      fill="white"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p>Selecteer eerst een datum.</p>
+            </div>
+          </rods-date-picker>
+          <input type="datetime-local" id="date" aria-labelledby="date-label" aria-describedby="date-desc" />
+        </div>
+      </div>
+    </div>
     <style>
       :not(:defined) {
         outline: 2px solid red;
@@ -35,7 +234,23 @@
 
         --rods-time-slots-column-gap: 8px;
         --rods-time-slots-row-gap: 8px;
+
+        /* TODO: Description is far too small in the design tokens, 12px! */
+        --utrecht-form-field-description-font-size: inherit;
       }
     </style>
+    <script>
+      const datePickers = Array.from(document.querySelectorAll("rods-date-picker, input[type='datetime-local']"));
+
+      datePickers.forEach((datePicker) =>
+        datePicker.addEventListener(
+          "change",
+          (evt) => {
+            console.log("Change event!", evt.target.value);
+          },
+          false,
+        ),
+      );
+    </script>
   </body>
 </html>

@@ -22,6 +22,11 @@
     "test": "vitest --coverage"
   },
   "dependencies": {
+    "@utrecht/button-css": "3.0.1",
+    "@utrecht/form-field-description-css": "1.5.1",
+    "@utrecht/form-label-css": "1.6.1",
+    "@utrecht/icon-css": "3.0.1",
+    "clsx": "2.1.1",
     "lit": "3.3.1"
   },
   "devDependencies": {

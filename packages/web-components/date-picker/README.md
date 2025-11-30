@@ -31,3 +31,4 @@ Create a form associated custom element
   - Render the selected date or time in bold with the HTML `b` element.
   - Render the calendar grid with an HTML `table` element.
 - We have optimized the rendering in forced colors mode.
+- Hardcode minimum target size for options at 24x24px
