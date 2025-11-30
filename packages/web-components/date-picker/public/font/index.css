@@ -1,0 +1,60 @@
+/*
+You can install your own font files, or install font packages from npm.
+FontSource <https://fontsource.org> contains many fonts that can installed via npm
+so you don't have to use a CDN or hosted files from Google Fonts.
+
+Here's "Open Sans", for example.
+https://fontsource.org/fonts/open-sans
+*/
+
+/* @import "~@fontsource/open-sans/400.css"; */
+
+/* @import "~@fontsource/open-sans/700.css"; */
+
+@font-face {
+  font-display: swap;
+  font-family: "Bolder";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("./Bolder-Bold.woff2") format("woff2"),
+    url("./Bolder-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Bolder";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("./Bolder-Light.woff2") format("woff2"),
+    url("./Bolder-Light.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Bolder";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url("./Bolder-RegularItalic.woff2") format("woff2"),
+    url("./Bolder-RegularItalic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Bolder";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("./Bolder-Regular.woff2") format("woff2"),
+    url("./Bolder-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Bolder Heading";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./Bolder-Heading.woff2") format("woff2");
+}

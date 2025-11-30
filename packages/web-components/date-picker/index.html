@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="nl" class="rods-theme utrecht-root">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="./theme.css" />
+    <link rel="stylesheet" href="./public/font/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css@8.2.1/dist/index.css" />
+  </head>
+  <body class="utrecht-body">
+    <h1>Date picker</h1>
+    <p>...</p>
+    <script type="module" src="src/date-picker-element.ts"></script>
+    <rods-date-picker>rods-date-picker</rods-date-picker>
+    <style>
+      :not(:defined) {
+        outline: 2px solid red;
+      }
+      .rods-theme {
+        --rods-time-badge-color: var(--rods-color-gray-tint-08);
+        --rods-time-badge-background-color: var(--rods-color-base-white);
+        --rods-time-badge-border-color: var(--rods-color-gray-tint-08);
+        --rods-time-badge-border-radius: 0;
+        --rods-time-badge-border-width: 1px;
+        --rods-time-badge-font-family: inherit;
+        --rods-time-badge-font-size: var(--rods-typography-scale-xl-font-size);
+        --rods-time-badge-font-weight: var(--rods-typography-weight-scale-bold-font-weight);
+        --rods-time-badge-line-height: var(--rods-typography-scale-xl-line-height);
+        /* --rods-time-badge-min-block-size:  */
+        /* --rods-time-badge-min-inline-size: */
+        --rods-time-badge-padding-block: 4px;
+        --rods-time-badge-padding-inline: 12px;
+
+        --rods-time-badge-selected-color: var(--rods-color-base-white);
+        --rods-time-badge-selected-background-color: var(--rods-color-base-green);
+
+        --rods-time-slots-column-gap: 8px;
+        --rods-time-slots-row-gap: 8px;
+      }
+    </style>
+  </body>
+</html>
