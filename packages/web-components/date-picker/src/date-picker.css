@@ -1,4 +1,426 @@
-:host {
-  /* If there are Content-Security-Policy issues with CSS, this will trigger it */
-  border: 0 solid green;
+/**
+ * Layout for the desktop date picker, where there are two columns: one for the day, another for the time.
+ * There is a footer row below that, with the currently selected value.
+ */
+.rods-date-panels {
+  display: grid;
+  grid-template-areas:
+    "date time"
+    "footer footer";
+  grid-template-columns: max-content 1fr;
+  inline-size: 1180px;
+}
+
+.rods-date-panels__panel {
+  border-color: var(--rods-date-picker-border-color);
+  border-style: solid;
+  border-width: var(--rods-date-picker-border-width);
+}
+
+/**
+ * The panel with the date picker grid goes left
+ */
+.rods-date-panels__panel--date {
+  grid-area: date;
+}
+
+/**
+ * The panel with the time slot picker goes right
+ */
+.rods-date-panels__panel--time {
+  /* disable the border for this panel, so there is only one 1px border between the panels */
+  border-inline-start-width: 0;
+  grid-area: time;
+}
+
+.rods-date-panels__panel-header {
+  background-color: var(--rods-date-picker-header-background-color);
+  padding-block: var(--rods-date-picker-header-padding-block);
+  padding-inline: var(--rods-date-picker-header-padding-inline);
+}
+
+.rods-date-panels__panel-header > p {
+  margin-block: 0;
+}
+
+.rods-date-panels__panel-body {
+  padding-block: var(--rods-date-picker-body-padding-block);
+  padding-inline: var(--rods-date-picker-body-padding-inline);
+}
+
+.rods-date-panels__footer {
+  border-block-end-width: var(--rods-date-picker-border-width);
+
+  /* disable the `border-block-start` for this panel, so there is only one 1px border between the footer and the date/time panels */
+  border-block-start-width: 0;
+  border-color: var(--rods-date-picker-footer-background-color);
+  border-inline-end-width: var(--rods-date-picker-border-width);
+  border-inline-start-width: var(--rods-date-picker-border-width);
+  border-style: solid;
+  box-sizing: border-box;
+  grid-area: footer;
+  inline-size: 100%;
+  padding-block: var(--rods-date-picker-footer-padding-block);
+  padding-inline: var(--rods-date-picker-footer-padding-inline);
+}
+
+.rods-time-badge-list {
+  --rods-time-badge-min-inline-size: 100px;
+
+  column-gap: var(--rods-time-badge-list-column-gap, 1ch);
+  display: flex;
+  flex-wrap: wrap;
+  margin-block-end: 0; /* reset <ul> */
+  margin-block-start: 0; /* reset <ul> */
+  margin-inline-end: 0; /* reset <ul> */
+  margin-inline-start: 0; /* reset <ul> */
+
+  /* 5 columns of time slots */
+  min-inline-size: calc(5 * var(--rods-time-badge-min-inline-size) + 4 * var(--rods-badge-list-column-gap, 1ch));
+  padding-inline-start: 0; /* reset <ul> */
+  row-gap: var(--rods-time-badge-list-row-gap, 1em);
+}
+
+.rods-time-badge__slot {
+  border-color: var(--rods-time-badge-color, silver);
+  border-style: solid;
+  border-width: 1px;
+  min-inline-size: 4em;
+}
+
+/**
+ * Use a consistent focus ring, even in the Shadow DOM.
+ */
+.rods-date-picker :focus-visible {
+  --_utrecht-focus-ring-box-shadow: 0 0 0 var(--utrecht-focus-outline-width, 0)
+    var(--utrecht-focus-inverse-outline-color, transparent);
+
+  box-shadow: var(--_utrecht-focus-ring-box-shadow);
+  outline-color: var(--utrecht-focus-outline-color, revert);
+  outline-offset: var(--utrecht-focus-outline-offset, revert);
+  outline-style: var(--utrecht-focus-outline-style, revert);
+  outline-width: var(--utrecht-focus-outline-width, revert);
+  z-index: 1;
+}
+
+.utrecht-calendar__table-days-item-day.utrecht-button:disabled {
+  font-weight: 400;
+}
+
+.utrecht-calendar__table-days-item-day {
+  --utrecht-button-background-color: var(--rods-date-picker-grid-cell-background-color);
+  --utrecht-button-border-color: var(--rods-date-picker-grid-cell-border-color);
+  --utrecht-button-border-width: var(--rods-date-picker-grid-cell-border-width);
+  --utrecht-button-color: var(--rods-date-picker-grid-cell-color);
+  --utrecht-button-font-size: var(--rods-date-picker-grid-cell-font-size);
+  --utrecht-button-font-weight: var(--rods-date-picker-grid-cell-font-weight);
+  --utrecht-button-min-block-size: var(--rods-date-picker-grid-cell-min-block-size);
+  --utrecht-button-min-inline-size: var(--rods-date-picker-grid-cell-min-inline-size);
+
+  /* hover state: no hover effect, to avoid supporting those additional tokens */
+  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
+  --utrecht-button-hover-border-color: var(--utrecht-button-border-color);
+  --utrecht-button-hover-color: var(--utrecht-button-color);
+
+  /* disabled state */
+  --utrecht-button-disabled-background-color: var(--rods-date-picker-grid-cell-disabled-background-color);
+  --utrecht-button-disabled-border-color: var(--rods-date-picker-grid-cell-disabled-border-color);
+  --utrecht-button-disabled-color: var(--rods-date-picker-grid-cell-disabled-color);
+  --utrecht-button-disabled-font-weight: var(--rods-date-picker-grid-cell-disabled-font-weight);
+
+  /* selected state */
+  --utrecht-button-pressed-background-color: var(--rods-date-picker-grid-cell-selected-background-color);
+  --utrecht-button-pressed-border-color: var(--rods-date-picker-grid-cell-selected-border-color);
+  --utrecht-button-pressed-color: var(--rods-date-picker-grid-cell-selected-color);
+}
+
+.utrecht-calendar__table {
+  border-collapse: collapse;
+  border-color: var(--rods-date-picker-grid-border-color);
+  border-spacing: 0;
+  border-style: solid;
+  border-width: var(--rods-date-picker-grid-border-width);
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+.utrecht-button--rods-icon-only {
+  --utrecht-button-background-color: white;
+  --utrecht-button-border-color: #7c8b90;
+  --utrecht-button-border-width: 1px;
+  --utrecht-button-color: #404b4f;
+  --utrecht-button-icon-size: 24px;
+  --utrecht-button-padding-block-end: 0;
+  --utrecht-button-padding-block-start: 0;
+  --utrecht-button-padding-inline-end: 0;
+  --utrecht-button-padding-inline-start: 0;
+
+  /* hover state */
+  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
+  --utrecht-button-hover-border-color: var(--utrecht-button-border-color);
+  --utrecht-button-hover-color: var(--utrecht-button-color);
+
+  /* disabled state */
+  --utrecht-button-disabled-background-color: #cad6da;
+  --utrecht-button-disabled-border-color: transparent;
+  --utrecht-button-disabled-color: var(--utrecht-button-color);
+}
+
+/**
+ * Do not display the label.
+ *
+ * For the `rods-icon-only` variant the label is associated using `aria-labelledby`, so the label does not have to use a `sr-only` implementation.
+ */
+.utrecht-button--rods-icon-only .utrecht-button__label {
+  display: none;
+}
+
+/**
+ * Display a bar with a previous and next button, with a caption in between.
+ */
+.rods-date-picker__grid-navigation {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 16px;
+}
+
+/**
+ * Previous button is first
+ */
+.rods-date-picker__grid-navigation [rel="prev"] {
+  order: 1;
+}
+
+/**
+ * Next button is last
+ */
+.rods-date-picker__grid-navigation [rel="next"] {
+  order: 3;
+}
+
+/**
+ * Caption for current month is second
+ */
+.rods-date-picker__grid-caption {
+  font-size: var(--rods-date-picker-grid-caption-font-size);
+  font-weight: var(--rods-date-picker-grid-caption-font-weight);
+  line-height: var(--rods-date-picker-grid-caption-line-height);
+  order: 2;
+}
+
+.rods-time-placeholder {
+  align-items: center;
+  block-size: 100%;
+  display: flex;
+  inline-size: 100%;
+  justify-content: center;
+}
+
+.rods-date-picker__grid-cell--placeholder {
+  visibility: none;
+}
+
+strong {
+  color: var(--rods-color-base-green);
+}
+
+p.utrecht-form-label {
+  margin-block-end: 8px;
+}
+
+.rods-date-picker__grid-column-header {
+  color: var(--rods-date-picker-grid-column-header-color);
+  font-size: var(--rods-date-picker-grid-column-header-font-size);
+  font-weight: var(--rods-date-picker-grid-column-header-font-weight);
+  padding-block: var(--rods-date-picker-grid-column-header-padding-block);
+}
+
+.utrecht-button--pressed {
+  --utrecht-button-hover-background-color: var(--utrecht-button-pressed-background-color);
+  --utrecht-button-hover-color: var(--utrecht-button-pressed-color);
+  --utrecht-button-hover-border-color: var(--utrecht-button-pressed-border-color);
+  --utrecht-button-focus-background-color: var(--utrecht-button-pressed-background-color);
+  --utrecht-button-focus-color: var(--utrecht-button-pressed-color);
+  --utrecht-button-focus-border-color: var(--utrecht-button-pressed-border-color);
+}
+
+td:has(.utrecht-calendar__table-days-item-day--readonly) {
+  border-width: 0;
+}
+.utrecht-calendar__table-days-item-day--readonly {
+  display: none !important;
+}
+
+.utrecht-button--secondary-action {
+  --utrecht-button-secondary-action-background-color: var(--rods-color-base-magenta);
+  --utrecht-button-secondary-action-hover-background-color: var(--rods-color-base-magenta);
+}
+
+.rods-date-picker__grid-button-description {
+  color: var(--rods-color-base-green);
+  font-size: 12px;
+  font-weight: 700;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  position: absolute;
+  text-align: center;
+}
+
+.utrecht-textbox:where(button) {
+  --utrecht-icon-size: 24px;
+
+  display: inline-flex;
+  text-align: start;
+}
+
+.utrecht-textbox {
+  --utrecht-icon-color: var(--rods-date-picker-input-icon-color, currentColor);
+}
+
+.utrecht-textbox .utrecht-icon {
+  margin-inline-end: 8px;
+}
+
+/**
+ * The listbox in the mobile drawer should make use of all available space.
+ */
+.utrecht-drawer {
+  --utrecht-listbox-inline-size: 100%;
+  --utrecht-listbox-max-inline-size: 100%;
+}
+
+.utrecht-drawer > form {
+  display: contents;
+}
+
+.utrecht-drawer__rods-heading {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.utrecht-drawer__rods-heading strong {
+  color: inherit; /* TEMP: undo green <strong> */
+}
+
+.utrecht-drawer__rods-header {
+  padding-block: 8px;
+  padding-inline: 12px;
+}
+.utrecht-drawer__rods-body {
+  padding-block: 8px;
+  padding-inline: 12px;
+}
+
+.utrecht-drawer__rods-footer {
+  border-block-start-color: var(--rods-date-picker-border-color);
+  border-block-start-style: solid;
+  border-block-start-width: var(--rods-date-picker-border-width);
+  padding-block: 8px;
+  padding-inline: 12px;
+}
+
+.rods-date-picker {
+  container-type: inline-size;
+}
+
+.utrecht-form-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+/**
+ * Container for the mobile design of the date picker.
+ */
+.rods-date-picker__mobile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.rods-date-picker__mobile-summary {
+  border-color: #cad6da;
+  border-style: solid;
+  border-width: 1px;
+  padding-block: 24px;
+  padding-inline: 24px;
+}
+
+@container (width >= 1180px) {
+  /**
+   * Hide the mobile design of the date picker when there is room for the desktop design.
+   */
+  .rods-date-picker__mobile {
+    display: none;
+  }
+}
+
+@container (width < 1180px) {
+  /**
+   * Hide the desktop design of the date picker, when there is not enough room for it.
+   */
+  .rods-date-picker__desktop {
+    display: none;
+  }
+}
+
+.utrecht-listbox__list {
+  min-block-size: 44px;
+}
+
+.utrecht-listbox--rods-time-badge-list {
+  --utrecht-listbox-font-size: var(--rods-time-badge-font-size);
+  --utrecht-listbox-font-weight: var(--rods-time-badge-font-weight);
+  --utrecht-listbox-inline-size: 100%;
+  --utrecht-listbox-border-width: 0;
+}
+
+.utrecht-drawer .utrecht-listbox__option {
+  justify-content: center;
+}
+
+.rods-scroll-shadows {
+  --rods-scroll-shadow-color-1: white;
+
+  /* --rods-scroll-shadow-color-2: rgba(0, 0, 0, 0.2); */
+  --rods-scroll-shadow-color-3: rgb(255 255 255 / 0%);
+  --rods-scroll-shadow-color-4: rgb(0 0 0 / 0%);
+  --rods-scroll-shadow-size-1: 40px;
+  --rods-scroll-shadow-color-2: rgb(0 0 0 / 20%);
+  --rods-scroll-shadow-height: 24px;
+
+  background:
+    /* Shadow Cover TOP */
+    linear-gradient(var(--rods-scroll-shadow-color-1) 30%, var(--rods-scroll-shadow-color-3)) center top,
+    /* Shadow Cover BOTTOM */ linear-gradient(var(--rods-scroll-shadow-color-3), var(--rods-scroll-shadow-color-1) 70%)
+      center bottom,
+    /* Shadow TOP */
+    radial-gradient(farthest-side at 50% 0, var(--rods-scroll-shadow-color-2), var(--rods-scroll-shadow-color-4)) center
+      top,
+    /* Shadow BOTTOM */
+    radial-gradient(farthest-side at 50% 100%, var(--rods-scroll-shadow-color-2), var(--rods-scroll-shadow-color-4))
+      center bottom;
+  background-attachment: local, local, scroll, scroll;
+  background-repeat: no-repeat;
+  background-size:
+    100% var(--rods-scroll-shadow-size-1),
+    100% var(--rods-scroll-shadow-size-1),
+    100% var(--rods-scroll-shadow-height),
+    100% var(--rods-scroll-shadow-height);
+}
+
+.utrecht-listbox__option--selected {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.rods-time-badge-listbox .rods-time-badge-list,
+.rods-time-badge-listbox .utrecht-listbox__list {
+  /* Explicitly meet 44x44px pointer target size, even when the element has no content. */
+
+  /* https://nldesignsystem.nl/wcag/2.5.5/ */
+  min-block-size: 44px;
 }

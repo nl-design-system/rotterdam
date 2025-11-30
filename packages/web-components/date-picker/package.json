@@ -9,7 +9,9 @@
   ],
   "private": false,
   "files": [
-    "dist/"
+    "README.md",
+    "dist/index.js",
+    "tokens.json"
   ],
   "publishConfig": {
     "access": "public"
@@ -20,21 +22,40 @@
     "directory": "packages/web-components/date-picker"
   },
   "scripts": {
+    "build": "rimraf dist && vite build --outDir ../dist/ src/ && cp dist/assets/*.js dist/index.js",
     "clean": "rimraf dist/",
-    "build": "rimraf dist && vite build && cp dist/assets/*.js dist/index.js",
     "dev": "vite",
     "lint": "tsc --noEmit",
-    "todo:test": "vitest --coverage"
+    "start": "cp test-dist.html dist/index.html && http-server dist/",
+    "test-locally": "pnpm run test:unit && pnpm run test:e2e && pnpm run test:e2e-mobile",
+    "test:unit": "vitest --coverage",
+    "test:e2e": "vitest --coverage --config vitest.e2e.config.ts",
+    "test:e2e-mobile": "vitest --coverage --config vitest.e2e-mobile.config.ts"
   },
   "dependencies": {
+    "@utrecht/button-css": "3.0.1",
+    "@utrecht/drawer-css": "2.0.1",
+    "@utrecht/form-field-css": "1.5.1",
+    "@utrecht/form-field-description-css": "1.5.1",
+    "@utrecht/form-label-css": "1.6.1",
+    "@utrecht/icon-css": "3.0.1",
+    "@utrecht/textbox-css": "1.1.0",
+    "clsx": "2.1.1",
+    "date-fns": "4.1.0",
     "lit": "3.3.1"
   },
   "devDependencies": {
+    "@gemeente-rotterdam/design-tokens": "workspace:*",
     "@nl-design-system/tsconfig": "1.0.5",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@utrecht/listbox-css": "2.0.1",
     "@vitest/browser-playwright": "4.0.12",
     "@vitest/coverage-v8": "4.0.12",
+    "@vitest/ui": "4.0.12",
+    "http-server": "14.1.1",
     "playwright": "1.56.1",
-    "rimraf": "6.1.2",
+    "rimraf": "6.0.1",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
     "vite": "7.1.12",

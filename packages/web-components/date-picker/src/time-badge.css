@@ -1,0 +1,78 @@
+/**
+ * Like a Data Badge, but with specific styling for a time slot
+ */
+.rods-time-badge {
+  /* code taken from nl-data-badge */
+
+  /* npm: @nl-design-system-candidate/data-badge-css@1.0.3 */
+  background-color: var(--rods-time-badge-background-color);
+  border-color: var(--rods-time-badge-border-color, currentColor);
+  border-radius: var(--rods-time-badge-border-radius, 0);
+  border-style: solid;
+  border-width: var(--rods-time-badge-border-width, 1px);
+  box-sizing: border-box;
+  color: var(--rods-time-badge-color);
+  cursor: default; /* behave like a button */
+  display: inline-block;
+  font-family: var(--rods-time-badge-font-family);
+  font-size: var(--rods-time-badge-font-size);
+  font-weight: var(--rods-time-badge-font-weight);
+  line-height: var(--rods-time-badge-line-height);
+
+  /* max-block-size: max-content; */
+
+  /* max-inline-size: max-content; */
+  min-block-size: var(--rods-time-badge-min-block-size, 24px);
+  min-inline-size: var(--rods-time-badge-min-inline-size, 24px);
+  padding-block: var(--rods-time-badge-padding-block);
+  padding-inline: var(--rods-time-badge-padding-inline);
+  text-align: center;
+  text-decoration: none; /* no inheritance */
+  -webkit-user-select: none; /* behave like a button */
+  user-select: none; /* behave like a button */
+}
+
+/**
+ * Selected state of a time badge.
+ *
+ * This is a significant extension to the Data Badge, because that component isn't interactive at all.
+ */
+.rods-time-badge--selected {
+  background-color: var(--rods-time-badge-selected-background-color, var(--rods-time-badge-background-color));
+  border-color: var(--rods-time-badge-selected-border-color, var(--rods-time-badge-border-color, currentColor));
+  color: var(--rods-time-badge-selected-color, var(--rods-time-badge-color));
+}
+
+/**
+ * The selected data badge is rendered with a `<b>` element, so even when CSS cannot be loaded, there is a visisble difference.
+ *
+ * But when CSS is loaded, we want the text to have the font-weight as configured via the design token.
+ */
+.rods-time-badge--selected b {
+  font-weight: inherit;
+}
+
+/**
+ * Support forced-colors mode in the same way the Data Badge component does.
+ */
+@media (forced-colors: active) {
+  .rods-time-badge {
+    --rods-time-badge-background-color: field;
+    --rods-time-badge-color: fieldtext;
+    --rods-time-badge-hover-background-color: Highlight;
+    --rods-time-badge-hover-color: HighlightText;
+    --rods-time-badge-active-background-color: Highlight;
+    --rods-time-badge-active-color: HighlightText;
+    --rods-time-badge-disabled-background-color: field;
+    --rods-time-badge-disabled-color: GrayText;
+    --rods-time-badge-selected-background-color: Highlight;
+    --rods-time-badge-selected-color: HighlightText;
+    --rods-time-badge-selected-hover-background-color: Highlight;
+    --rods-time-badge-selected-hover-color: HighlightText;
+    --rods-time-badge-selected-disabled-background-color: GrayText;
+    --rods-time-badge-selected-disabled-color: field;
+
+    /* Fix rendering glitch in Google Chrome, where the text became black on a black background */
+    forced-color-adjust: none;
+  }
+}
