@@ -24,6 +24,7 @@
     "@gemeente-denhaag/sidenav": "2.0.0",
     "@gemeente-rotterdam/assets": "workspace:*",
     "@gemeente-rotterdam/components-css": "workspace:*",
+    "@gemeente-rotterdam/date-picker-element": "workspace:*",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
     "@gemeente-rotterdam/docs-wicket": "workspace:*",
     "@gemeente-rotterdam/font": "workspace:*",

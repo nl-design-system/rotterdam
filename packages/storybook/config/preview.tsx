@@ -7,6 +7,7 @@ import { withThemeByClassName } from '@storybook/addon-themes';
 import { ButtonGroup, Document } from '@utrecht/component-library-react/dist/css-module';
 import { FigmaBlock } from './FigmaBlock';
 import { GitHubBlock } from './GitHubBlock';
+import '@gemeente-rotterdam/date-picker-element/dist/index.js';
 
 defineCustomElements();
 

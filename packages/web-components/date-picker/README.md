@@ -22,7 +22,18 @@ The `rods-date-picker` element works like an `input` element:
 
 ```html
 <form>
-  <rods-date-picker name="timeslot" value="2025-01-01T09:42"></rods-date-picker>
-  <input type="submit" />
+  <rods-date-picker name="timeslot" value="2025-01-01T09:42">
+    <button type="submit" slot="submit-button">Verzenden</button>
+  </rods-date-picker>
 </form>
+```
+
+You must specify the available options with the `options` attribute or `options` property:
+
+```html
+<rods-date-picker
+  name="timeslot"
+  value="2025-01-01T09:42"
+  options='[{ "value": "2025-01-01T09:42" }]'
+></rods-date-picker>
 ```
