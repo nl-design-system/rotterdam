@@ -101,7 +101,9 @@ export class DatePickerElement extends LitElement {
     const afspraakLocale = 'Uw afspraak:';
     const confirmLocale = 'Bevestig uw afspraak';
     const dates = this.dates;
-    return html` <div>
+    const currentIndex = this.times.findIndex((el) => el.selected);
+    const activeDescendant = `option-${currentIndex}`;
+    const output = html` <div>
     <div class="rods-date-panels">
     <div  class="rods-date-panels__panel">
       <p id="date-label">${selectLocale}</p>
@@ -115,13 +117,17 @@ export class DatePickerElement extends LitElement {
       </ul>
       </div>
       <div class="rods-date-panels__panel">
-      <p>${selectTimeLocale}</p>
-      <p>${timeDescLocale}</p>
-      <ul class="rods-time-slots">
-      ${this.times.map(({ label, selected }) => {
+      <p id="time-label">${selectTimeLocale}</p>
+      <p id="time-desc">${timeDescLocale}</p>
+      <div class="rods-time-slots" tabindex="0" @keydown=${this.handleKeyDown} role="listbox" aria-labelledby="time-label" aria-describedby="time-desc" aria-activedescendant=${activeDescendant}>
+      <ul class="rods-time-slots__list" role="list">
+      ${this.times.map(({ label, selected }, index) => {
         return html`<li
+          data-index="${index}"
+          id="option-${index}"
           class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
           role="option"
+          @click=${this.handleClick}
           ${selected ? ' aria-selected="true"' : ''}
         >
           ${selected
@@ -131,10 +137,63 @@ export class DatePickerElement extends LitElement {
         </li>`;
       })}
       </ul>
+      </div>
       <input type="time"/>
       </div>
       <p>${afspraakLocale}</p>
       <button>${confirmLocale}</p>
     </div></div>`;
+
+    console.log(output);
+    return output;
+  }
+  handleKeyDown(evt) {
+    if (evt.key === 'ArrowUp' || evt.key === 'ArrowLeft') {
+      // Do not scroll
+      evt.preventDefault();
+      this.selectPrev();
+    } else if (evt.key === 'ArrowRight' || evt.key === 'ArrowDown') {
+      // Do not scroll
+      evt.preventDefault();
+      this.selectNext();
+    } else if (evt.key === 'Home') {
+      // Do not scroll
+      evt.preventDefault();
+      this.selectFirst();
+    } else if (evt.key === 'End') {
+      // Do not scroll
+      evt.preventDefault();
+      this.selectLast();
+    }
+  }
+  selectNext() {
+    // Select the next item, or the first item when none was selected.
+    const currentIndex = this.times.findIndex((el) => el.selected);
+    const next = Math.max(Math.min(currentIndex === -1 ? 0 : currentIndex + 1, this.times.length - 1), 0);
+    this.selectIndex(next);
+  }
+  selectPrev() {
+    // Select the next item, or the first item when none was selected.
+    const currentIndex = this.times.findIndex((el) => el.selected);
+    const prev = Math.max(Math.min(currentIndex === -1 ? 0 : currentIndex - 1, this.times.length - 1), 0);
+    this.selectIndex(prev);
+  }
+  selectFirst() {
+    this.selectIndex(0);
+  }
+  selectIndex(index) {
+    console.log('select', index);
+    const next = Math.max(Math.min(index, this.times.length - 1), 0);
+    this.times = this.times.map((option, index) => ({
+      ...option,
+      selected: index === next,
+    }));
+    this.requestUpdate();
+  }
+  selectLast() {
+    this.selectIndex(this.times.length - 1);
+  }
+  handleClick(evt) {
+    console.log('click');
   }
 }
