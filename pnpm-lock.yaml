@@ -564,8 +564,8 @@ importers:
         specifier: 1.6.1
         version: 1.6.1
       '@utrecht/column-layout-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/custom-checkbox-css':
         specifier: 1.3.2
         version: 1.3.2
@@ -3172,8 +3172,8 @@ packages:
       react: '18'
       react-dom: '18'
 
-  '@utrecht/column-layout-css@1.5.1':
-    resolution: {integrity: sha512-t1qT2fxdqkVF0/fra32jt0XDe2D1sVbDB9HOFSYcedQ13w20IYaaeogHiM57nZ5QbjHhbFFM5SaSWBw35O3ICg==}
+  '@utrecht/column-layout-css@2.0.1':
+    resolution: {integrity: sha512-HqK7QuMyftLSRvV7j+zG8szXbXi73rkWR776DsWQDg/SwebLaasjGuCTOgg7J7YTR0EK2+fj7s61R+utx7CDhg==}
 
   '@utrecht/combobox-react@0.0.5':
     resolution: {integrity: sha512-g3k3Vhj1uF8TtuKiqCalG8RKOFM38jow+T82FUVXoHoXDMtW2tWEFH6JpQY/BCk1KsBz18+dvRckrfwNCz+uEw==}
@@ -10922,7 +10922,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@utrecht/column-layout-css@1.5.1': {}
+  '@utrecht/column-layout-css@2.0.1': {}
 
   '@utrecht/combobox-react@0.0.5(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
