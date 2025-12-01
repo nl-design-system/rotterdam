@@ -1,26 +1,11 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
 
-import static java.util.Objects.requireNonNull;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldErrorMessageFactory.createErrorMessageLabel;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.UTRECHT_FORM_FIELD_LABEL_CHECKBOX;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelCss.FORM_LABEL_STATE_DISABLED;
-import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
-import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
-
 import nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckbox;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormField;
-import nl.rotterdam.nl_design_system.wicket.components.form_field.utrecht.UtrechtFormFieldBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_field_description.utrecht.UtrechtFormFieldDescriptionBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_label.utrecht.UtrechtFormLabelBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelBehavior;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
@@ -31,27 +16,55 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
+import static java.util.Objects.requireNonNull;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory.createErrorMessageLabel;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.FORM_FIELD_LABEL_CHECKBOX;
+import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
+
+/**
+ * <a href="https://nldesignsystem.nl/form-field/">Form Field</a>
+ * <a href="https://nldesignsystem.nl/checkbox/">Checkbox</a> NL Design System implementation.
+ */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdFormField {
 
-    @NonNull
     private final RdCheckbox inputComponent;
 
-    @NonNull
     private final Component descriptionComponent;
 
-    @NonNull
     private final Component errorMessageComponent;
 
-    @NonNull
     private final Component labelComponent;
 
+    /**
+     * Creates instance with label, without description.
+     * @param id the Wicket ID
+     * @param model writable model
+     * @param labelModel label for checkbox
+     */
     public RdFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
         this(id, model, labelModel, EMPTY_STRING_MODEL);
     }
 
+    /**
+     * Creates instance with label and description.
+     *
+     * @param id the Wicket ID
+     * @param model writable model
+     * @param labelModel for the checkbox
+     * @param descriptionModel detailed description, additional to label. If it is an empty string, will not be rendered.
+     */
     public RdFormFieldCheckbox(
         String id,
         IModel<Boolean> model,
@@ -84,7 +97,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer())
             .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior())
-            .add(UTRECHT_FORM_FIELD_LABEL_CHECKBOX.asBehavior());
+            .add(FORM_FIELD_LABEL_CHECKBOX.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
@@ -93,7 +106,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     private static Component newDescriptionComponent(IModel<String> descriptionModel) {
         return new Label("description", descriptionModel)
-            .add(UtrechtFormFieldDescriptionBehavior.INSTANCE)
+            .add(RdFormFieldDescriptionBehavior.INSTANCE)
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
     }
 
@@ -103,17 +116,13 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         return control;
     }
 
-    protected boolean isInvalid() {
-        return inputComponent.hasErrorMessage();
-    }
-
     @Override
     protected void onComponentTag(ComponentTag tag) {
         super.onComponentTag(tag);
 
         assertIsRegularHtmlTag(tag);
 
-        if (isInvalid()) {
+        if (inputComponent.hasErrorMessage()) {
             INVALID.appendTo(tag);
         }
     }
@@ -123,38 +132,53 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         super.onInitialize();
         setOutputMarkupId(true);
 
-        add(UtrechtFormFieldBehavior.INSTANCE, RdCheckboxFormFieldBehavior.INSTANCE);
+        add(RdFormFieldBehavior.INSTANCE, RdCheckboxFormFieldBehavior.INSTANCE);
 
         add(labelComponent, descriptionComponent, errorMessageComponent);
     }
 
+    /**
+     * Mark checking the checkbox required.
+     * @param required true if it should be required
+     * @return self for chaining
+     */
     public RdFormFieldCheckbox setRequired(boolean required) {
         inputComponent.setRequired(required);
         return this;
     }
 
+    /**
+     * Add behaviors to this form field and return specific type of self.
+     * @param behaviors
+     *            The behavior modifier(s) to be added
+     * @return self for chaining
+     */
     @Override
     public RdFormFieldCheckbox add(Behavior... behaviors) {
         super.add(behaviors);
         return this;
     }
 
+    /**
+     * Get the actual {@link CheckBox}. Can be used to customize it.
+     * @return the checkbox instance
+     */
     public CheckBox getControl() {
         return inputComponent;
     }
 
     @Override
-    public @NonNull Component getDescriptionComponent() {
+    public Component getDescriptionComponent() {
         return descriptionComponent;
     }
 
     @Override
-    public @NonNull Component getLabelComponent() {
+    public Component getLabelComponent() {
         return labelComponent;
     }
 
     @Override
-    public @NonNull Component getErrorMessageComponent() {
+    public Component getErrorMessageComponent() {
         return errorMessageComponent;
     }
 
@@ -165,7 +189,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
 
     private class LabelAndCheckboxContainer extends WebMarkupContainer {
 
-        public LabelAndCheckboxContainer() {
+        private LabelAndCheckboxContainer() {
             super("label");
         }
 
@@ -173,7 +197,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         protected void onInitialize() {
             super.onInitialize();
 
-            add(UtrechtFormLabelBehavior.INSTANCE_CHECKBOX);
+            add(RdFormLabelBehavior.INSTANCE_CHECKBOX);
 
             add(inputComponent);
         }
@@ -182,18 +206,14 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         protected void onComponentTag(ComponentTag tag) {
             super.onComponentTag(tag);
             tag.put("for", inputComponent.getMarkupId());
-
-            if (!inputComponent.isEnabledInHierarchy()) {
-                FORM_LABEL_STATE_DISABLED.appendTo(tag);
-            }
         }
     }
 
     class FormFieldCheckbox extends RdCheckbox {
 
-        private final IModel<String> descriptionModel;
+        private final IModel<@Nullable String> descriptionModel;
 
-        public FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
+        private FormFieldCheckbox(IModel<Boolean> model, IModel<String> descriptionModel) {
             super("checkbox", model);
             this.descriptionModel = descriptionModel;
         }

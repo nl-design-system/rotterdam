@@ -2,16 +2,16 @@
   "utrecht": {
     "logo": {
       "min-inline-size": {
-        "value": "220px"
+        "$value": "220px"
       },
       "min-block-size": {
-        "value": "48px"
+        "$value": "48px"
       },
       "max-inline-size": {
-        "value": "{utrecht.logo.min-inline-size}"
+        "$value": "{utrecht.logo.min-inline-size}"
       },
       "max-block-size": {
-        "value": "{utrecht.logo.min-block-size}"
+        "$value": "{utrecht.logo.min-block-size}"
       }
     }
   }

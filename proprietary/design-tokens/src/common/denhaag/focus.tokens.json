@@ -1,7 +1,7 @@
 {
   "denhaag": {
     "focus": {
-      "border": { "value": "1px solid {rods.color.base.black}" }
+      "border": { "$value": "1px solid {rods.color.base.black}" }
     }
   }
 }

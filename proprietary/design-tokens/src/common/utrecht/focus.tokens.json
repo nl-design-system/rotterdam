@@ -4,10 +4,10 @@
       "background-color": {},
       "border-color": {},
       "color": {},
-      "outline-color": { "value": "{rods.color.base.black}" },
-      "outline-offset": { "value": "1px" },
-      "outline-style": { "value": "solid" },
-      "outline-width": { "value": "1px" }
+      "outline-color": { "$value": "{rods.color.base.black}" },
+      "outline-offset": { "$value": "1px" },
+      "outline-style": { "$value": "solid" },
+      "outline-width": { "$value": "1px" }
     }
   }
 }

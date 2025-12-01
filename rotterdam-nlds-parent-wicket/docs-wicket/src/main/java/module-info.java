@@ -1,0 +1,52 @@
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
+module nl.rotterdam.nl_design_system.docs.wicket {
+    opens nl.rotterdam.nl_design_system.docs.wicket;
+    opens nl.rotterdam.nl_design_system.docs.wicket.action_group;
+    opens nl.rotterdam.nl_design_system.docs.wicket.alert;
+    opens nl.rotterdam.nl_design_system.docs.wicket.badge_list;
+    opens nl.rotterdam.nl_design_system.docs.wicket.body;
+    opens nl.rotterdam.nl_design_system.docs.wicket.button;
+    opens nl.rotterdam.nl_design_system.docs.wicket.checkbox;
+    opens nl.rotterdam.nl_design_system.docs.wicket.code_block;
+    opens nl.rotterdam.nl_design_system.docs.wicket.column_layout;
+    opens nl.rotterdam.nl_design_system.docs.wicket.data_summary;
+    opens nl.rotterdam.nl_design_system.docs.wicket.dialog;
+    opens nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox;
+    opens nl.rotterdam.nl_design_system.docs.wicket.form_field_label;
+    opens nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input;
+    opens nl.rotterdam.nl_design_system.docs.wicket.heading;
+    opens nl.rotterdam.nl_design_system.docs.wicket.heading_group;
+    opens nl.rotterdam.nl_design_system.docs.wicket.icon;
+    opens nl.rotterdam.nl_design_system.docs.wicket.icon_button;
+    opens nl.rotterdam.nl_design_system.docs.wicket.link;
+    opens nl.rotterdam.nl_design_system.docs.wicket.link_list;
+    opens nl.rotterdam.nl_design_system.docs.wicket.logo;
+    opens nl.rotterdam.nl_design_system.docs.wicket.logo_image;
+    opens nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page;
+    opens nl.rotterdam.nl_design_system.docs.wicket.number_badge;
+    opens nl.rotterdam.nl_design_system.docs.wicket.ordered_list;
+    opens nl.rotterdam.nl_design_system.docs.wicket.page_body;
+    opens nl.rotterdam.nl_design_system.docs.wicket.page_footer;
+    opens nl.rotterdam.nl_design_system.docs.wicket.page_layout;
+    opens nl.rotterdam.nl_design_system.docs.wicket.paragraph;
+    opens nl.rotterdam.nl_design_system.docs.wicket.preserve_data;
+    opens nl.rotterdam.nl_design_system.docs.wicket.root;
+    opens nl.rotterdam.nl_design_system.docs.wicket.separator;
+    opens nl.rotterdam.nl_design_system.docs.wicket.side_nav;
+    opens nl.rotterdam.nl_design_system.docs.wicket.sso_login_page;
+    opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
+    opens nl.rotterdam.nl_design_system.docs.wicket.unordered_list;
+
+    requires de.agilecoders.wicket.webjars;
+    requires nl.rotterdam.nl_design_system.rotterdam_css.wicket;
+    requires nl.rotterdam.nl_design_system.rotterdam_extensions.wicket;
+    requires nl.rotterdam.nl_design_system.wicket;
+    requires nl.rotterdam.nl_design_system.wicket_extras;
+    requires org.apache.wicket.core;
+    requires org.danekja.jdk.serializable.functional;
+    requires org.jspecify;
+    requires org.slf4j;
+    requires wicket.bootstrap.extensions;
+}

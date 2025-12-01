@@ -1,6 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
 
-import static nl.rotterdam.nl_design_system.wicket.test_common.FormFieldAssertions.verifyUtrechtFormFieldContract;
+import static nl.rotterdam.nl_design_system.wicket.test_util.FormFieldAssertions.verifyFormFieldContract;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
@@ -44,7 +44,7 @@ class RdFormFieldCheckboxTest extends NldsWicketTestCase {
 
         String actualHtmlFragment = renderComponentInDivTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualHtmlFragment);
+        verifyFormFieldContract(component, actualHtmlFragment);
 
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
@@ -104,7 +104,7 @@ class RdFormFieldCheckboxTest extends NldsWicketTestCase {
 
         String actualHtmlFragment = renderComponentInDivTestPanel(component);
 
-        verifyUtrechtFormFieldContract(component, actualHtmlFragment);
+        verifyFormFieldContract(component, actualHtmlFragment);
 
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }

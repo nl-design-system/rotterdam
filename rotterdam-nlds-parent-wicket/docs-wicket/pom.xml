@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>docs-wicket</artifactId>
 
     <packaging>war</packaging>
+    <name>Documentation for NL Design System Wicket implementation</name>
+    <description>Examples to use the components in Wicket. Search for &lt;component&gt;ExamplesPanel to find examples.</description>
 
     <dependencies>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-css-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>nl.rotterdam.nl-design-system</groupId>
+            <artifactId>rotterdam-nlds-wicket-extras</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -36,6 +37,10 @@
         <dependency>
             <groupId>org.eclipse.jetty.ee10</groupId>
             <artifactId>jetty-ee10-webapp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -60,9 +65,24 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.agilecoders.wicket</groupId>
+            <artifactId>wicket-bootstrap-extensions</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.agilecoders.wicket.webjars</groupId>
+            <artifactId>wicket-webjars</artifactId>
+        </dependency>
+        <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -73,6 +93,42 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/docs/wicket/css</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <filtering>false</filtering>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
@@ -119,6 +175,13 @@
                                 <include>**/*</include>
                             </includes>
                         </fileset>
+                        <!-- Clean stories directory -->
+                        <fileset>
+                            <directory>${project.basedir}/stories</directory>
+                            <includes>
+                                <include>**/*.md*</include>
+                            </includes>
+                        </fileset>
                     </filesets>
                 </configuration>
             </plugin>
@@ -132,7 +195,7 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>nl.rotterdam.wicket.nl_design.docs.Start</mainClass>
+                            <mainClass>nl.rotterdam.nl_design_system.docs.wicket.Start</mainClass>
                             <classpathScope>test</classpathScope>
                         </configuration>
                     </execution>
@@ -143,48 +206,12 @@
                         </goals>
                         <phase>process-test-classes</phase>
                         <configuration>
-                            <mainClass>nl.rotterdam.wicket.nl_design.docs.storybook_generator.GenerateMarkdownAndStorybookExamplesMain</mainClass>
+                            <mainClass>nl.rotterdam.nl_design_system.docs.wicket.storybook_generator.GenerateMarkdownAndStorybookExamplesMain</mainClass>
                             <classpathScope>test</classpathScope>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <filtering>false</filtering>
-                <directory>node_modules/</directory>
-                <includes>
-                    <include>@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css</include>
-                </includes>
-                <targetPath>nl/rotterdam/wicket/docs/css</targetPath>
-            </resource>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <filtering>false</filtering>
-                <directory>src/test/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
     </build>
 </project>

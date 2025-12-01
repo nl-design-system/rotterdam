@@ -1,8 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.test_common;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.Objects;
 import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.protocol.http.WebApplication;
@@ -10,6 +7,10 @@ import org.apache.wicket.util.tester.WicketTestCase;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+
+import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class NldsWicketTestCase extends WicketTestCase {
 
@@ -34,11 +35,24 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
         return renderedElement.toString();
     }
 
+    protected static String formatTidyBody(String htmlWithOneContainerElement) {
+        Document document = Jsoup.parseBodyFragment(htmlWithOneContainerElement);
+        document.outputSettings().prettyPrint(true).indentAmount(4);
+        Element renderedElement = document.body();
+        Objects.requireNonNull(renderedElement, "There must be an element");
+        return renderedElement.toString();
+    }
+
     /**
      * Asserts that two HTML fragments are the same, ignoring differences in formatting and whitespace.
      */
     protected static void assertHtmlFragmentSame(String expectedHtmlFragment, String actualHtmlFragment) {
         // TODO: ignore attribute order, css class order
         assertEquals(formatTidy(expectedHtmlFragment), formatTidy(actualHtmlFragment));
+    }
+
+    protected static void assertHtmlFragmentBodySame(String expectedHtmlFragment, String actualHtmlFragment) {
+        // TODO: ignore attribute order, css class order
+        assertEquals(formatTidyBody(expectedHtmlFragment), formatTidyBody(actualHtmlFragment));
     }
 }

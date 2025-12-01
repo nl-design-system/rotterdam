@@ -33,6 +33,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-perfectionist": "3.9.1",
     "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-storybook": "10.0.8",
     "globals": "16.4.0",
     "husky": "9.1.7",
     "lint-staged": "16.2.4",
@@ -45,7 +46,7 @@
     "prettier-plugin-java": "2.7.6",
     "stylelint": "16.25.0",
     "stylelint-config-standard-scss": "14.0.0",
-    "stylelint-order": "6.0.4",
+    "stylelint-order": "7.0.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.1"
   },

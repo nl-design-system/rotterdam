@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <head>
+    <title>whatever</title>
+  </head>
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Button component</h1>
+        <div>
+          <p>Biedt de mogelijkheid om een actie uit te voeren.</p>
+        </div>
+
+        <section data-testid="button">
+          <h2>Button</h2>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="button">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="formOfAjaxButton">
+          <h2>Ajax button. Gebruik wanneer je de submit via Ajax wilt laten verlopen.</h2>
+          <rods-story-canvas
+            ><template>
+              <form wicket:id="formOfAjaxButton">
+                <button wicket:id="ajaxButton">Click me</button>
+              </form>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="buttonDisabled">
+          <h2>Disabled Button</h2>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="buttonDisabled">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="buttonBusy">
+          <h2>Busy Button</h2>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="buttonBusy">Click me</button>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="buttonIconStart">
+          <h2>Button met Icon Start</h2>
+          <rods-story-canvas
+            ><template>
+              <button wicket:id="buttonIconStart">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 23V13H15V23H13Z" />
+                  <path d="M17 23V13H19V23H17Z" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M20 4H12V8H5V10H8V28H24V10H27V8H20V4ZM10 26V10H22V26H10ZM18 6H14V8H18V6Z"
+                  />
+                </svg>
+
+                Click me
+              </button>
+            </template></rods-story-canvas
+          >
+        </section>
+      </section>
+
+      <section data-testid="buttonPrimaryAction">
+        <h2>Primary Action Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="buttonPrimaryAction">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="buttonSecondaryAction">
+        <h2>Secondary Action Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="buttonSecondaryAction">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="buttonSubtle">
+        <h2>Subtle Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="buttonSubtle">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="buttonPrimaryActionDanger">
+        <h2>Primary Action + Danger Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="buttonPrimaryActionDanger">Click me</button>
+          </template></rods-story-canvas
+        >
+      </section>
+
+      <section data-testid="buttonSubmit">
+        <h2>Submit Button</h2>
+        <div>
+          <p>Voorbeeld.</p>
+        </div>
+        <rods-story-canvas
+          ><template>
+            <button wicket:id="buttonSubmit">Submit</button>
+          </template></rods-story-canvas
+        >
+      </section>
+    </wicket:panel>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <head>
+    <title>whatever</title>
+  </head>
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Icon Button component</h1>
+        <div>
+          <p>Biedt de mogelijkheid om een actie uit te voeren.</p>
+        </div>
+
+        <section data-testid="formOfAjaxButton">
+          <h2>Button</h2>
+          <div>
+            <p>Voorbeeld met Ajax.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+            <form wicket:id="formOfAjaxButton">
+              <button wicket:id="button"><span wicket:id="icon"></span></button>
+            </form>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="formOfButton">
+          <h2>Button</h2>
+          <rods-story-canvas
+            ><template>
+            <form wicket:id="formOfButton">
+              <button wicket:id="button"><span wicket:id="icon"></span></button>
+            </form>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+      </section>
+    </wicket:panel>
+  </body>
+</html>

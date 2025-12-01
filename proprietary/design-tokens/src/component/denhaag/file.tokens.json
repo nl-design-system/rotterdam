@@ -3,13 +3,13 @@
     "file": {
       "focus": {
         "outline-color": {
-          "value": "{rods.color.base.black}"
+          "$value": "{rods.color.base.black}"
         },
         "outline-width": {
-          "value": "1px"
+          "$value": "1px"
         },
         "outline-style": {
-          "value": "solid"
+          "$value": "solid"
         }
       }
     }

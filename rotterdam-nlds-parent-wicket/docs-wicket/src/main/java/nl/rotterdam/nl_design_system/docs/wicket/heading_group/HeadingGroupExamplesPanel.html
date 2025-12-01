@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Heading group component</h1>
+        <div>
+          <p>Toont een combinatie van een titel en ondersteunende tekst.</p>
+        </div>
+
+        <section data-testid="headingGroup">
+          <h2>Heading Group</h2>
+          <rods-story-canvas
+            ><template>
+              <hgroup wicket:id="headingGroup">
+                <h2>Heading in a heading group</h2>
+                <p>Sub-heading</p>
+              </hgroup>
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

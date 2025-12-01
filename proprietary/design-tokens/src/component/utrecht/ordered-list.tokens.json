@@ -1,15 +1,15 @@
 {
   "utrecht": {
     "ordered-list": {
-      "font-size": { "value": "{utrecht.paragraph.font-size}" },
-      "line-height": { "value": "{utrecht.paragraph.line-height}" },
+      "font-size": { "$value": "{nl.paragraph.font-size}" },
+      "line-height": { "$value": "{nl.paragraph.line-height}" },
       "margin-block-start": {},
       "margin-block-end": {},
       "padding-inline-start": {},
       "item": {
         "margin-block-start": {},
-        "margin-block-end": { "value": "{rods.space.scale.2}" },
-        "padding-inline-start": { "value": "{rods.space.scale.3}" }
+        "margin-block-end": { "$value": "{rods.space.scale.2}" },
+        "padding-inline-start": { "$value": "{rods.space.scale.3}" }
       }
     }
   }

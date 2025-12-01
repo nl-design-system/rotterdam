@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Link component</h1>
+        <div>
+          <p>Toont een tekstlabel dat informeert over de in te vullen informatie.</p>
+        </div>
+
+        <section data-testid="standardLink">
+          <h2>Link met <code>Link</code></h2>
+          <div>
+            <div>
+              <p>Voorbeeld van een "vanilla" <code>Link</code> van Apache Wicket, ter referentie.</p>
+            </div>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="standardLink">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="linkExternal">
+          <h2>Link met <code>ExternalLink</code></h2>
+          <div>
+            <p>Voorbeeld van een "vanilla" <code>ExternalLink</code> van Apache Wicket, ter referentie.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="standardLinkExternal">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="link">
+          <h2>Link met <code>Link</code></h2>
+          <div>
+            <p>Voorbeeld van de <code>RdLink</code> class.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="link">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="linkExternal">
+          <h2>Link met <code>ExternalLink</code></h2>
+          <div>
+            <p>Voorbeeld van de <code>RdExternalLink</code> class.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="linkExternal">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="bookmarkableLink">
+          <h2>Link met <code>BookmarkableLink</code></h2>
+          <div>
+            <p>Voorbeeld van de <code>RdBookmarkableLink</code> class.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="bookmarkableLink">Mijn Loket</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="bookmarkableLinkCurrent">
+          <h2>Link met <code>BookmarkableLink</code> naar de huidige pagina</h2>
+          <div>
+            <p>
+              Voorbeeld van de <code>RdBookmarkableLink</code> class die naar de huidige pagina verwijst.
+              Automatisch wordt <code>aria-current</code> toegevoegd.
+            </p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="bookmarkableLinkCurrent">Componenten · rotterdam.nl</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="linkBehavior">
+          <h2>Link met <code>Link</code></h2>
+          <div>
+            <p>Voorbeeld van de <code>Link</code> met een <code>RdLinkBehavior</code>.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="linkBehavior">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="linkExternalBehavior">
+          <h2>Link met <code>ExternalLink</code></h2>
+          <div>
+            <p>Voorbeeld van de <code>ExternalLink</code> met een <code>RdLinkBehavior</code>.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <a wicket:id="linkExternalBehavior">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="linkPlaceholder">
+          <h2>Placeholder Link met <code>RdLink</code></h2>
+          <rods-story-canvas
+            ><template> <a wicket:id="linkPlaceholder">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="linkExternalPlaceholder">
+          <h2>Placeholder Link met <code>RdLinkExternal</code></h2>
+          <rods-story-canvas
+            ><template> <a wicket:id="linkExternalPlaceholder">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="bookmarkableLinkPlaceholder">
+          <h2>Placeholder Link met <code>RdBookmarkableLink</code></h2>
+          <rods-story-canvas
+            ><template> <a wicket:id="bookmarkableLinkPlaceholder">Link tekst</a> </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

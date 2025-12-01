@@ -35,6 +35,7 @@ public class TokenSetBuilder {
      * <p>
      * Create an instance with the given capacity.
      * </p>
+     * @param capacity initial capacity
      */
     public TokenSetBuilder(int capacity) {
         super();

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Body component</h1>
+        <div>
+          <p>Component op het niveau van het <code>body</code> HTML-element.</p>
+        </div>
+
+        <section data-testid="body">
+          <h2>Body</h2>
+          <rods-story-canvas
+            ><template>
+              <pre wicket:id="bodyCode"></pre>
+            </template></rods-story-canvas
+          >
+          <div hidden="" data-nlds-role="storybook-html">&lt;body wicket:id="body"&gt;...&lt;/body&gt;</div>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

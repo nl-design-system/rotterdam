@@ -1,7 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.data_summary;
 
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
-import org.jspecify.annotations.NonNull;
 
 enum RdDataSummaryItemCss implements CssClassNames {
     DEFAULT("utrecht-data-list__item");
@@ -13,7 +12,7 @@ enum RdDataSummaryItemCss implements CssClassNames {
     }
 
     @Override
-    public @NonNull String getClassNames() {
+    public String getClassNames() {
         return cssClassNames;
     }
 }

@@ -65,6 +65,27 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
 - Geef geen componenten door aan andere Wicket componenten (via constructors).
 - Voor methodes die componenten maken: prefix met new. Net als Wicket, zie bijvoorbeeld AjaxPagingNavigation
 
+## Java Platform Module System (JPMS)
+
+Voeg alleen exports toe voor packages die bij de publieke API horen. Voeg ook `opens` voor packages waar resources in
+zitten waar Wicket bij moet kunnen. Mappen waarvan de naam geen geldige packagenaam is, zijn altijd open (
+zie [Module.getResourceAsStream(...)](<https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Module.html#getResourceAsStream(java.lang.String)>)).
+
+Er zijn scripts om de `opens` te genereren. Alle mappen die als package worden beschouwd en die 1 of meer resources
+bevatten worden hiermee bepaald. Door de uitvoer hiervan naar `module-info.java`-bestanden te kopiëren worden alleen de
+packages geopend waarvoor het nodig is:
+
+- `[Write-PackagesToOpen.ps1](../Write-PackagesToOpen.ps1)`
+  - Zet een bestand `opens-list.txt` naast de `module-info.java` van modules die packages moeten openen. De inhoud kan
+    gekopieerd worden en alle `opens` in `module-info.java` vervangen.
+
+Het kan zijn dat er een waarschuwing voor een `opens` verschijnt omdat er geen classes in dat package verschijnt. Voeg
+dan commentaar toe die de waarschuwing onderdrukt (`//noinspection JavaModuleDefinition` in IntelliJ IDEA).
+
+### Module docs-wicket
+
+Module docs-wicket mag niets exporteren, want het is niet de bedoeling dat die code door een andere module wordt gebruikt. Maar om de tests te laten slagen zijn wel `opens`-regels nodig.
+
 ## PNPM Workspace dependencies resolven
 
 NL Design System gebruikt pnpm voor nodejs projecten. Pnpm ondersteunt meerdere npm projecten binnen een repository.

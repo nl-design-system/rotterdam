@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel xmlns:wicket="http://wicket.apache.org">
+      <section class="stories">
+        <h1>Heading component</h1>
+        <div>
+          <p>Koptekst die in de koppenstructuur ingesteld kan worden op het juiste niveau.</p>
+          <p><a href="https://nldesignsystem.nl/heading/">NL Design System Heading documentatie</a></p>
+
+          <p>Mogelijkheden om Kopteksten te maken in Wicket:</p>
+          <ol>
+            <li>RdHeading: een Label component om een waarde of Model te tonen</li>
+            <li>RdHeadingBehavior: pas de headingstyle toe op een ander Wicket component</li>
+          </ol>
+        </div>
+
+        <p>Je kunt het component gebruiken met de correcte <em>hx</em> HTML-tags:</p>
+
+        <section data-testid="label1">
+          <h2>Kop 1</h2>
+          <div>
+            <p>Gebruik h1 maximaal één keer per pagina.</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <h1 wicket:id="label1">Gebruik maximaal één h1 per pagina</h1>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="label2">
+          <h2>Kop 2</h2>
+          <rods-story-canvas
+            ><template>
+              <h2 wicket:id="label2">Heading 2</h2>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="label3">
+          <h2>Kop 3</h2>
+          <rods-story-canvas
+            ><template>
+              <h3 wicket:id="label3">Heading 3</h3>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="label4">
+          <h2>Kop 4</h2>
+          <rods-story-canvas
+            ><template>
+              <h4 wicket:id="label4">Heading 4</h4>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="label5">
+          <h2>Kop 5</h2>
+          <rods-story-canvas
+            ><template>
+              <h5 wicket:id="label5">Heading 5</h5>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="label6">
+          <h2>Kop 6</h2>
+          <rods-story-canvas
+            ><template>
+              <h6 wicket:id="label6">Heading 6</h6>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="bestaandeCssClass">
+          <h2>Behoud bestaande CSS class</h2>
+          <div>
+            <p>Bestaande CSS-class wordt behouden:</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <h4 class="extra-class" wicket:id="bestaandeCssClass">De bestaande class blijft behouden</h4>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="headingModelConstructor">
+          <h2>Model constructor</h2>
+          <div>
+            <p>Tekst kan gezet worden met model constructor:</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <h4 wicket:id="headingModelConstructor">Tekst wordt gezet via model constructor</h4>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="headingDefaultModel">
+          <h2>Model via defaultModel</h2>
+          <div>
+            <p>Tekst kan gezet worden via defaultModel:</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <h4 wicket:id="headingDefaultModel">Tekst wordt gezet via defaultModel</h4>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="headingMetUntranslatableContent">
+          <h2>MarkupContainer met niet-vertaalbare content</h2>
+          <div>
+            <p>Koptekst die een persoonsnaam bevat, die dus niet vertaald moet worden door vertaalsoftware:</p>
+          </div>
+          <rods-story-canvas
+            ><template>
+              <h1 wicket:id="headingMetUntranslatableContent">
+                Welkom mevrouw
+                <bdi wicket:id="name">Van Bergenhenegouwen</bdi>
+              </h1>
+            </template></rods-story-canvas
+          >
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

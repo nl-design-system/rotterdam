@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
+    <name>NL Design System Wicket Extensions for Rotterdam</name>
+    <description>Wicket extensions for Rotterdam such as the Gemeente Rotterdam logo.</description>
 
     <dependencies>
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>rotterdam-nlds-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
         </dependency>
     </dependencies>
 
@@ -45,6 +48,68 @@
                     <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/rotterdam_extensions/wicket/components/rotterdam_icon</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/app-globals-*.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/index-*.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/loader.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/dist/esm/rods-icon-*.js</include>
+                    <include>@gemeente-rotterdam/web-components-stencil/loader/index.js</include>
+                </includes>
+            </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <executions>
+                    <!-- Install Node and npm -->
+                    <execution>
+                        <!-- optional: you don't really need execution ids, but it looks nice in
+                        your build log. -->
+                        <id>install-node-and-corepack</id>
+                        <goals>
+                            <goal>install-node-and-corepack</goal>
+                        </goals>
+                        <!-- optional: default phase is "generate-resources" -->
+                        <phase>generate-resources</phase>
+                    </execution>
+                    <execution>
+                        <id>install</id>
+                        <goals>
+                            <goal>corepack</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>pnpm install</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <!-- Clean node directory -->
+                        <fileset>
+                            <directory>${project.basedir}/node</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <!-- Clean node_modules directory -->
+                        <fileset>
+                            <directory>${project.basedir}/node_modules</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

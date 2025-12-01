@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Alert component</h1>
+        <div>
+          <p>Belangrijk bericht dat informeert over de huidige activiteit van de gebruiker.</p>
+        </div>
+
+        <section data-testid="alertError">
+          <h2>Alert Error</h2>
+
+          <rods-story-canvas
+            ><template>
+              <div class="extra-class" wicket:id="alertError">Lorem ipsum dolor sit amet</div>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="alertWarning">
+          <h2>Alert Warning</h2>
+
+          <rods-story-canvas
+            ><template>
+              <div wicket:id="alertWarning">Lorem ipsum dolor sit amet</div>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="alertOk">
+          <h2>Alert OK</h2>
+
+          <rods-story-canvas
+            ><template>
+              <div wicket:id="alertOk">Lorem ipsum dolor sit amet</div>
+            </template></rods-story-canvas
+          >
+        </section>
+
+        <section data-testid="alertInfo">
+          <h2>Alert Info</h2>
+
+          <rods-story-canvas
+            ><template>
+              <div wicket:id="alertInfo">Lorem ipsum dolor sit amet</div>
+            </template></rods-story-canvas
+          >
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

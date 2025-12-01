@@ -1,0 +1,25 @@
+{
+  "version": "0.0.0",
+  "author": "Community for NL Design System",
+  "description": "Apache Wicket Rotterdam NLDS extensions library, based on the NL Design System architecture",
+  "license": "EUPL-1.2",
+  "name": "@gemeente-rotterdam/rotterdam-nlds-extensions-wicket",
+  "keywords": [
+    "nl-design-system"
+  ],
+  "private": true,
+  "publishConfig": {
+    "access": "restricted",
+    "provenance": false,
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "rotterdam-nlds-parent-wicket/rotterdam-nlds-extensions-wicket"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@gemeente-rotterdam/web-components-stencil": "workspace:*"
+  }
+}

@@ -3,423 +3,443 @@
     "color": {
       "base": {
         "white": {
-          "value": "#ffffff",
+          "$value": "#ffffff",
           "comment": "Base/White"
         },
         "black": {
-          "value": "#000000",
+          "$value": "#000000",
           "comment": "Base/Black"
         },
         "green": {
-          "value": "{rods.color.green.tint-01}",
+          "$value": "{rods.color.green.tint-01}",
           "comment": "Base/Green"
         },
         "magenta": {
-          "value": "{rods.color.magenta.tint-01}",
+          "$value": "{rods.color.magenta.tint-01}",
           "comment": "Base/Magenta"
         },
         "gray": {
-          "value": "{rods.color.gray.tint-01}",
+          "$value": "{rods.color.gray.tint-01}",
           "comment": "Base/Gray"
+        }
+      },
+      "background": {
+        "$value": "{rods.color.base.white}"
+      },
+      "interactive": {
+        "contrast": {
+          "$value": "{rods.color.base.black}"
+        },
+        "default": {
+          "$value": "{rods.color.base.black}"
+        },
+        "disabled": {
+          "$value": "{rods.color.base.gray}"
+        },
+        "hover": {
+          "$value": "{rods.color.base.green}"
+        },
+        "inverse": {
+          "$value": "yellow"
         }
       },
       "notification": {
         "neutral": {
-          "background-color": { "value": "#E8F4FB" },
-          "icon-color": { "value": "#00689E" },
-          "color": { "value": "{rods.color.gray.tint-11}" },
-          "outline-color": { "value": "#B4DBF1" }
+          "background-color": { "$value": "#E8F4FB" },
+          "icon-color": { "$value": "#00689E" },
+          "color": { "$value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "$value": "#B4DBF1" }
         },
         "alert": {
-          "background-color": { "value": "#FDF0EE" },
-          "icon-color": { "value": "#D70D0D" },
-          "color": { "value": "{rods.color.gray.tint-11}" },
-          "outline-color": { "value": "#F7CCC5" }
+          "background-color": { "$value": "#FDF0EE" },
+          "icon-color": { "$value": "#D70D0D" },
+          "color": { "$value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "$value": "#F7CCC5" }
         },
         "warning": {
-          "background-color": { "value": "#FEF8E6" },
-          "icon-color": { "value": "#A65600" },
-          "color": { "value": "{rods.color.gray.tint-11}" },
-          "outline-color": { "value": "#F9E7AC" }
+          "background-color": { "$value": "#FEF8E6" },
+          "icon-color": { "$value": "#A65600" },
+          "color": { "$value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "$value": "#F9E7AC" }
         },
         "accomplishment": {
-          "background-color": { "value": "#E6F3E9" },
-          "icon-color": { "value": "#00811F" },
-          "color": { "value": "{rods.color.gray.tint-11}" },
-          "outline-color": { "value": "#ACD6B7" }
+          "background-color": { "$value": "#E6F3E9" },
+          "icon-color": { "$value": "#00811F" },
+          "color": { "$value": "{rods.color.gray.tint-11}" },
+          "outline-color": { "$value": "#ACD6B7" }
         }
       },
       "skin": {
         "tone-01": {
-          "tint-01": { "value": "#FFE9C0", "$comment": "Tone 01 / Tint 01" },
-          "tint-02": { "value": "#FFE0A7", "$comment": "Tone 01 / Tint 02" },
-          "tint-03": { "value": "#F3D39A", "$comment": "Tone 01 / Tint 03" }
+          "tint-01": { "$value": "#FFE9C0", "$comment": "Tone 01 / Tint 01" },
+          "tint-02": { "$value": "#FFE0A7", "$comment": "Tone 01 / Tint 02" },
+          "tint-03": { "$value": "#F3D39A", "$comment": "Tone 01 / Tint 03" }
         },
         "tone-02": {
-          "tint-01": { "value": "#F3D39A", "$comment": "Tone 02 / Tint 01" },
-          "tint-02": { "value": "#EDC77E", "$comment": "Tone 02 / Tint 02" },
-          "tint-03": { "value": "#DDB66A", "$comment": "Tone 02 / Tint 03" }
+          "tint-01": { "$value": "#F3D39A", "$comment": "Tone 02 / Tint 01" },
+          "tint-02": { "$value": "#EDC77E", "$comment": "Tone 02 / Tint 02" },
+          "tint-03": { "$value": "#DDB66A", "$comment": "Tone 02 / Tint 03" }
         },
         "tone-03": {
-          "tint-01": { "value": "#DBA866", "$comment": "Tone 03 / Tint 01" },
-          "tint-02": { "value": "#D39259", "$comment": "Tone 03 / Tint 02" },
-          "tint-03": { "value": "#B98152", "$comment": "Tone 03 / Tint 03" }
+          "tint-01": { "$value": "#DBA866", "$comment": "Tone 03 / Tint 01" },
+          "tint-02": { "$value": "#D39259", "$comment": "Tone 03 / Tint 02" },
+          "tint-03": { "$value": "#B98152", "$comment": "Tone 03 / Tint 03" }
         },
         "tone-04": {
-          "tint-01": { "value": "#B27A43", "$comment": "Tone 04 / Tint 01" },
-          "tint-02": { "value": "#A36C38", "$comment": "Tone 04 / Tint 02" },
-          "tint-03": { "value": "#8F642B", "$comment": "Tone 04 / Tint 03" }
+          "tint-01": { "$value": "#B27A43", "$comment": "Tone 04 / Tint 01" },
+          "tint-02": { "$value": "#A36C38", "$comment": "Tone 04 / Tint 02" },
+          "tint-03": { "$value": "#8F642B", "$comment": "Tone 04 / Tint 03" }
         },
         "tone-05": {
-          "tint-01": { "value": "#FCDFD6", "$comment": "Tone 05 / Tint 01" },
-          "tint-02": { "value": "#ECC9B7", "$comment": "Tone 05 / Tint 02" },
-          "tint-03": { "value": "#EABAA5", "$comment": "Tone 05 / Tint 03" }
+          "tint-01": { "$value": "#FCDFD6", "$comment": "Tone 05 / Tint 01" },
+          "tint-02": { "$value": "#ECC9B7", "$comment": "Tone 05 / Tint 02" },
+          "tint-03": { "$value": "#EABAA5", "$comment": "Tone 05 / Tint 03" }
         },
         "tone-06": {
-          "tint-01": { "value": "#EABAA5", "$comment": "Tone 06 / Tint 01" },
-          "tint-02": { "value": "#E1A493", "$comment": "Tone 06 / Tint 02" },
-          "tint-03": { "value": "#D58E7A", "$comment": "Tone 06 / Tint 03" }
+          "tint-01": { "$value": "#EABAA5", "$comment": "Tone 06 / Tint 01" },
+          "tint-02": { "$value": "#E1A493", "$comment": "Tone 06 / Tint 02" },
+          "tint-03": { "$value": "#D58E7A", "$comment": "Tone 06 / Tint 03" }
         },
         "tone-07": {
-          "tint-01": { "value": "#D58E7A", "$comment": "Tone 07 / Tint 01" },
-          "tint-02": { "value": "#C98171", "$comment": "Tone 07 / Tint 02" },
-          "tint-03": { "value": "#A96B5F", "$comment": "Tone 07 / Tint 03" }
+          "tint-01": { "$value": "#D58E7A", "$comment": "Tone 07 / Tint 01" },
+          "tint-02": { "$value": "#C98171", "$comment": "Tone 07 / Tint 02" },
+          "tint-03": { "$value": "#A96B5F", "$comment": "Tone 07 / Tint 03" }
         },
         "tone-08": {
-          "tint-01": { "value": "#A96B5F", "$comment": "Tone 08 / Tint 01" },
-          "tint-02": { "value": "#9F5D4B", "$comment": "Tone 08 / Tint 02" },
-          "tint-03": { "value": "#904D3D", "$comment": "Tone 08 / Tint 03" }
+          "tint-01": { "$value": "#A96B5F", "$comment": "Tone 08 / Tint 01" },
+          "tint-02": { "$value": "#9F5D4B", "$comment": "Tone 08 / Tint 02" },
+          "tint-03": { "$value": "#904D3D", "$comment": "Tone 08 / Tint 03" }
         },
         "tone-09": {
-          "tint-01": { "value": "#FEEBD8", "$comment": "Tone 09 / Tint 01" },
-          "tint-02": { "value": "#F8E1CE", "$comment": "Tone 09 / Tint 02" },
-          "tint-03": { "value": "#ECCAAD", "$comment": "Tone 09 / Tint 03" }
+          "tint-01": { "$value": "#FEEBD8", "$comment": "Tone 09 / Tint 01" },
+          "tint-02": { "$value": "#F8E1CE", "$comment": "Tone 09 / Tint 02" },
+          "tint-03": { "$value": "#ECCAAD", "$comment": "Tone 09 / Tint 03" }
         },
         "tone-10": {
-          "tint-01": { "value": "#DAB28D", "$comment": "Tone 10 / Tint 01" },
-          "tint-02": { "value": "#D29C78", "$comment": "Tone 10 / Tint 02" },
-          "tint-03": { "value": "#BC8D6E", "$comment": "Tone 10 / Tint 03" }
+          "tint-01": { "$value": "#DAB28D", "$comment": "Tone 10 / Tint 01" },
+          "tint-02": { "$value": "#D29C78", "$comment": "Tone 10 / Tint 02" },
+          "tint-03": { "$value": "#BC8D6E", "$comment": "Tone 10 / Tint 03" }
         },
         "tone-11": {
-          "tint-01": { "value": "#926E55", "$comment": "Tone 11 / Tint 01" },
-          "tint-02": { "value": "#7B5E48", "$comment": "Tone 11 / Tint 02" },
-          "tint-03": { "value": "#664D3A", "$comment": "Tone 11 / Tint 03" }
+          "tint-01": { "$value": "#926E55", "$comment": "Tone 11 / Tint 01" },
+          "tint-02": { "$value": "#7B5E48", "$comment": "Tone 11 / Tint 02" },
+          "tint-03": { "$value": "#664D3A", "$comment": "Tone 11 / Tint 03" }
         },
         "tone-12": {
-          "tint-01": { "value": "#402F22", "$comment": "Tone 12 / Tint 01" },
-          "tint-02": { "value": "#2C1F12", "$comment": "Tone 12 / Tint 02" },
-          "tint-03": { "value": "#000000", "$comment": "Tone 12 / Tint 03" }
+          "tint-01": { "$value": "#402F22", "$comment": "Tone 12 / Tint 01" },
+          "tint-02": { "$value": "#2C1F12", "$comment": "Tone 12 / Tint 02" },
+          "tint-03": { "$value": "#000000", "$comment": "Tone 12 / Tint 03" }
         }
       },
       "gray": {
         "tint-01": {
-          "value": "#EFF4F6",
+          "$value": "#EFF4F6",
           "comment": "Gray/Tint 01"
         },
         "tint-02": {
-          "value": "#E4EEF1",
+          "$value": "#E4EEF1",
           "comment": "Gray/Tint 02"
         },
         "tint-03": {
-          "value": "#DBE7EA",
+          "$value": "#DBE7EA",
           "comment": "Gray/Tint 03"
         },
         "tint-04": {
-          "value": "#CAD6DA",
+          "$value": "#CAD6DA",
           "comment": "Gray/Tint 04"
         },
         "tint-05": {
-          "value": "#B6C4C8",
+          "$value": "#B6C4C8",
           "comment": "Gray/Tint 05"
         },
         "tint-06": {
-          "value": "#9DAFB6",
+          "$value": "#9DAFB6",
           "comment": "Gray/Tint 06"
         },
         "tint-07": {
-          "value": "#8D9DA4",
+          "$value": "#8D9DA4",
           "comment": "Gray/Tint 07"
         },
         "tint-08": {
-          "value": "#7C8B90",
+          "$value": "#7C8B90",
           "comment": "Gray/Tint 08"
         },
         "tint-09": {
-          "value": "#65757B",
+          "$value": "#65757B",
           "comment": "Gray/Tint 09"
         },
         "tint-10": {
-          "value": "#536165",
+          "$value": "#536165",
           "comment": "Gray/Tint 10"
         },
         "tint-11": {
-          "value": "#404B4F",
+          "$value": "#404B4F",
           "comment": "Gray/Tint 11"
         }
       },
       "light-blue": {
         "tint-01": {
-          "value": "#A8E8F5",
+          "$value": "#A8E8F5",
           "comment": "Secondary/Blue/Tint 01"
         },
         "tint-02": {
-          "value": "#92CFE1",
+          "$value": "#92CFE1",
           "comment": "Secondary/Blue/Tint 02"
         },
         "tint-03": {
-          "value": "#76C1D3",
+          "$value": "#76C1D3",
           "comment": "Secondary/Blue/Tint 03"
         }
       },
       "blue": {
         "tint-01": {
-          "value": "#1791D4",
+          "$value": "#1791D4",
           "comment": "Secondary/Blue/Tint 01"
         },
         "tint-02": {
-          "value": "#0084C4",
+          "$value": "#0084C4",
           "comment": "Secondary/Blue/Tint 02"
         },
         "tint-03": {
-          "value": "#0079B8",
+          "$value": "#0079B8",
           "comment": "Secondary/Blue/Tint 03"
         }
       },
       "dark-blue": {
         "tint-01": {
-          "value": "#00548F",
+          "$value": "#00548F",
           "comment": "Secondary/Blue/Tint 01"
         },
         "tint-02": {
-          "value": "#084279",
+          "$value": "#084279",
           "comment": "Secondary/Blue/Tint 02"
         },
         "tint-03": {
-          "value": "#083968",
+          "$value": "#083968",
           "comment": "Secondary/Blue/Tint 03"
         }
       },
       "green-blue": {
         "tint-01": {
-          "value": "#09957B",
+          "$value": "#09957B",
           "comment": "Secondary/Green blue/Tint 01"
         },
         "tint-02": {
-          "value": "#00846D",
+          "$value": "#00846D",
           "comment": "Secondary/Green blue/Tint 02"
         },
         "tint-03": {
-          "value": "#00755F",
+          "$value": "#00755F",
           "comment": "Secondary/Green blue/Tint 03"
         }
       },
       "dark-green": {
         "tint-01": {
-          "value": "#004C31",
+          "$value": "#004C31",
           "comment": "Secondary/Dark green/Tint 01"
         },
         "tint-02": {
-          "value": "#07341B",
+          "$value": "#07341B",
           "comment": "Secondary/Dark green/Tint 02"
         },
         "tint-03": {
-          "value": "#001905",
+          "$value": "#001905",
           "comment": "Secondary/Dark green/Tint 03"
         }
       },
       "green": {
         "tint-01": {
-          "value": "#00811F",
+          "$value": "#00811F",
           "comment": "Secondary/Green/Tint 01"
         },
         "tint-02": {
-          "value": "#006E32",
+          "$value": "#006E32",
           "comment": "Secondary/Green/Tint 02"
         },
         "tint-03": {
-          "value": "#00602E",
+          "$value": "#00602E",
           "comment": "Secondary/Green/Tint 03"
         }
       },
       "green-light": {
         "tint-01": {
-          "value": "#57B051",
+          "$value": "#57B051",
           "comment": "Secondary/Green light/Tint 01"
         },
         "tint-02": {
-          "value": "#11A03E",
+          "$value": "#11A03E",
           "comment": "Secondary/Green light/Tint 02"
         },
         "tint-03": {
-          "value": "#11A03E",
+          "$value": "#11A03E",
           "comment": "Secondary/Green light/Tint 03"
         }
       },
       "soft-green": {
         "tint-01": {
-          "value": "#E1EFE2",
+          "$value": "#E1EFE2",
           "comment": "Secondary/Soft green/Tint 01"
         },
         "tint-02": {
-          "value": "#D1E6CE",
+          "$value": "#D1E6CE",
           "comment": "Secondary/Soft green/Tint 02"
         },
         "tint-03": {
-          "value": "#99CCA0",
+          "$value": "#99CCA0",
           "comment": "Secondary/Soft green/Tint 03"
         }
       },
       "lime-green": {
         "tint-01": {
-          "value": "#7DC90F",
+          "$value": "#7DC90F",
           "comment": "Secondary/Lime green/Tint 01"
         },
         "tint-02": {
-          "value": "#73B129",
+          "$value": "#73B129",
           "comment": "Secondary/Lime green/Tint 02"
         },
         "tint-03": {
-          "value": "#62A72B",
+          "$value": "#62A72B",
           "comment": "Secondary/Lime green/Tint 03"
         }
       },
       "yellow": {
         "tint-01": {
-          "value": "#FDEC3D",
+          "$value": "#FDEC3D",
           "comment": "Secondary/Yellow/Tint 01"
         },
         "tint-02": {
-          "value": "#EDDE26",
+          "$value": "#EDDE26",
           "comment": "Secondary/Yellow/Tint 02"
         },
         "tint-03": {
-          "value": "#E1D600",
+          "$value": "#E1D600",
           "comment": "Secondary/Yellow/Tint 03"
         }
       },
       "dark-yellow": {
         "tint-01": {
-          "value": "#EDB500",
+          "$value": "#EDB500",
           "comment": "Secondary/Dark yellow/Tint 01"
         },
         "tint-02": {
-          "value": "#E0A200",
+          "$value": "#E0A200",
           "comment": "Secondary/Dark yellow/Tint 02"
         },
         "tint-03": {
-          "value": "#D99600",
+          "$value": "#D99600",
           "comment": "Secondary/Dark yellow/Tint 03"
         }
       },
       "bright-orange": {
         "tint-01": {
-          "value": "#EF7D00",
+          "$value": "#EF7D00",
           "comment": "Secondary/Bright orange/Tint 01"
         },
         "tint-02": {
-          "value": "#E56E02",
+          "$value": "#E56E02",
           "comment": "Secondary/Bright orange/Tint 02"
         },
         "tint-03": {
-          "value": "#DB5F06",
+          "$value": "#DB5F06",
           "comment": "Secondary/Bright orange/Tint 03"
         }
       },
       "orange": {
         "tint-01": {
-          "value": "#E3614D",
+          "$value": "#E3614D",
           "comment": "Secondary/Orange/Tint 01"
         },
         "tint-02": {
-          "value": "#D85644",
+          "$value": "#D85644",
           "comment": "Secondary/Orange/Tint 02"
         },
         "tint-03": {
-          "value": "#CE4C3B",
+          "$value": "#CE4C3B",
           "comment": "Secondary/Orange/Tint 03"
         }
       },
       "pink": {
         "tint-01": {
-          "value": "#E6007E",
+          "$value": "#E6007E",
           "comment": "Secondary/Pink/Tint 01"
         },
         "tint-02": {
-          "value": "#CE0075",
+          "$value": "#CE0075",
           "comment": "Secondary/Pink/Tint 02"
         },
         "tint-03": {
-          "value": "#B21271",
+          "$value": "#B21271",
           "comment": "Secondary/Pink/Tint 03"
         }
       },
       "magenta": {
         "tint-01": {
-          "value": "#C93675",
+          "$value": "#C93675",
           "comment": "Secondary/Magenta/Tint 01"
         },
         "tint-02": {
-          "value": "#A12B5E",
+          "$value": "#A12B5E",
           "comment": "Secondary/Magenta/Tint 02"
         },
         "tint-03": {
-          "value": "#792046",
+          "$value": "#792046",
           "comment": "Secondary/Magenta/Tint 03"
         }
       },
       "purple": {
         "tint-01": {
-          "value": "#701747",
+          "$value": "#701747",
           "comment": "Secondary/Purple/Tint 01"
         },
         "tint-02": {
-          "value": "#510E33",
+          "$value": "#510E33",
           "comment": "Secondary/Purple/Tint 02"
         },
         "tint-03": {
-          "value": "#420C2F",
+          "$value": "#420C2F",
           "comment": "Secondary/Purple/Tint 03"
         }
       },
       "dark-brown": {
         "tint-01": {
-          "value": "#6B4236",
+          "$value": "#6B4236",
           "comment": "Secondary/Dark brown/Tint 01"
         },
         "tint-02": {
-          "value": "#5E362C",
+          "$value": "#5E362C",
           "comment": "Secondary/Dark brown/Tint 02"
         },
         "tint-03": {
-          "value": "#552D25",
+          "$value": "#552D25",
           "comment": "Secondary/Dark brown/Tint 03"
         }
       },
       "brown": {
         "tint-01": {
-          "value": "#AB8061",
+          "$value": "#AB8061",
           "comment": "Secondary/Brown/Tint 01"
         },
         "tint-02": {
-          "value": "#997056",
+          "$value": "#997056",
           "comment": "Secondary/Brown/Tint 02"
         },
         "tint-03": {
-          "value": "#8B644C",
+          "$value": "#8B644C",
           "comment": "Secondary/Brown/Tint 03"
         }
       },
       "red": {
         "tint-01": {
-          "value": "#FE1818",
+          "$value": "#FE1818",
           "comment": "Secondary/Red/Tint 01"
         },
         "tint-02": {
-          "value": "#D70D0D",
+          "$value": "#D70D0D",
           "comment": "Secondary/Red/Tint 02"
         },
         "tint-03": {
-          "value": "#9A0F0F",
+          "$value": "#9A0F0F",
           "comment": "Secondary/Red/Tint 03"
         }
       }

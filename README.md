@@ -54,14 +54,14 @@ Here's a complete example:
 
 ```html
 <!doctype html>
-<html class="rods-theme">
+<html class="rods-theme" lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css/dist/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/@gemeente-rotterdam/design-tokens/dist/index.css" />
   </head>
   <body class="utrecht-document">
-    <h1 class="utrecht-heading-1">Hello world</h1>
+    <h1 class="nl-heading nl-heading--level-1">Hello world</h1>
   </body>
 </html>
 ```
@@ -156,6 +156,10 @@ Icons can also be found in this package as they are made available as a webcompo
 #### Web-components-react
 
 For all components a React component rendering a webcomponent is convenient for Rotterdam Design System. Use when a React-webcomponent does not already exist in the NL Design System ecosystem a wrapper can be built around an existing CSS component from the community or `web-components-stencil`.
+
+#### Wicket components
+
+Wicket components are released to Maven Central. SNAPSHOTS are not published. [Releases are published](JAVA_RELEASE.md).
 
 ### Proprietary packages
 

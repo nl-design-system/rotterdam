@@ -1,0 +1,44 @@
+package nl.rotterdam.nl_design_system.wicket.components.form_label;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+
+import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.model.IModel;
+
+/**
+ * Een label voor een formulier element.
+ * Wordt niet overal gebruikt, vaak alleen het behavior
+ * @deprecated often it is used as behavior, as labels do not really need a panel and HTML semantics are dependent
+ * on context.
+ */
+@Deprecated(forRemoval = true)
+@NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+public class RdFormLabel extends Panel {
+
+    private static final String SLOT_ID = "slot";
+
+    /**
+     * Constructor with textContent
+     * @param id the Wicket ID
+     * @param textContent text to be rendered
+     */
+    public RdFormLabel(String id, IModel<?> textContent) {
+        this(id, textContent, RdFormLabelBehavior.INSTANCE_DEFAULT);
+    }
+
+    /**
+     * Constructor with textContent
+     * @param id the Wicket ID
+     * @param textContent text to be rendered
+     * @param formLabelBehavior form field type specific behavior
+     */
+    public RdFormLabel(String id, IModel<?> textContent, RdFormLabelBehavior formLabelBehavior) {
+        super(id);
+        add(formLabelBehavior);
+        add(new Label(SLOT_ID, textContent));
+    }
+}

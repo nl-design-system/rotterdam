@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>rotterdam-nlds-css-wicket</artifactId>
-    <description>Design Tokens JAR with Design Tokens for Rotterdam</description>
+    <name>NL Design System Theme CSS for Gemeente Rotterdam</name>
+    <description>Compiled CSS Theme for Rotterdam plus Wicket Behavior to activate it.</description>
 
     <dependencies>
         <dependency>
+            <groupId>nl.rotterdam.nl-design-system</groupId>
+            <artifactId>rotterdam-nlds-wicket</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.servlet</groupId>
@@ -25,7 +32,6 @@
         <dependency>
             <groupId>nl.rotterdam.nl-design-system</groupId>
             <artifactId>test-common-wicket</artifactId>
-            <version>1.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -39,6 +45,26 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/rotterdam_css/wicket</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@gemeente-rotterdam/design-tokens/dist/theme.css</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
@@ -89,25 +115,5 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <filtering>false</filtering>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <filtering>false</filtering>
-                <directory>node_modules/</directory>
-                <includes>
-                    <include>@gemeente-rotterdam/design-tokens/dist/theme.css</include>
-                </includes>
-                <targetPath>nl/rotterdam/nl_design_system/css/wicket</targetPath>
-            </resource>
-        </resources>
     </build>
 </project>

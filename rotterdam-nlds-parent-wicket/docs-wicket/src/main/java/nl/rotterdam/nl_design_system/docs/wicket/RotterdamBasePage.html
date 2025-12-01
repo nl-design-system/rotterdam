@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html" lang="nl" dir="ltr">
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <wicket:extend>
+      <div wicket:id="pageLayout">
+        <header wicket:id="pageHeader">
+          <div wicket:id="logo">
+            <a wicket:id="logoLink">
+              <wicket:container wicket:id="rotterdamLogoImage"> </wicket:container>
+            </a>
+          </div>
+        </header>
+        <div wicket:id="pageBody">
+          <div style="margin-inline: auto; max-width: 40em">
+            <wicket:child />
+          </div>
+        </div>
+        <footer wicket:id="pageFooter">Page footer</footer>
+      </div>
+      <script type="module"></script>
+    </wicket:extend>
+  </body>
+</html>

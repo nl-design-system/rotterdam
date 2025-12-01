@@ -2,26 +2,26 @@
   "utrecht": {
     "badge": {
       "background-color": {
-        "value": "{nl.data-badge.background-color}"
+        "$value": "{nl.data-badge.background-color}"
       },
       "border-radius": {
-        "value": "{nl.data-badge.border-radius}"
+        "$value": "{nl.data-badge.border-radius}"
       },
       "color": {
-        "value": "{nl.data-badge.color}"
+        "$value": "{nl.data-badge.color}"
       },
       "font-size": {
-        "value": "{nl.data-badge.font-size}"
+        "$value": "{nl.data-badge.font-size}"
       },
       "font-weight": {
-        "value": "{nl.data-badge.font-weight}"
+        "$value": "{nl.data-badge.font-weight}"
       },
       "line-height": {},
       "padding-block": {
-        "value": "{nl.data-badge.padding-block}"
+        "$value": "{nl.data-badge.padding-block}"
       },
       "padding-inline": {
-        "value": "{nl.data-badge.padding-inline}"
+        "$value": "{nl.data-badge.padding-inline}"
       },
       "text-transform": {}
     }

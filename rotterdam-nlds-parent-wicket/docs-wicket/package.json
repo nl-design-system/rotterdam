@@ -15,7 +15,8 @@
     "directory": "rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket"
   },
   "devDependencies": {
-    "@nl-design-system-unstable/voorbeeld-design-tokens": "3.3.4",
+    "@nl-design-system-unstable/voorbeeld-design-tokens": "6.2.0",
+    "@storybook/addon-docs": "9.1.16",
     "rimraf": "6.0.1"
   },
   "scripts": {

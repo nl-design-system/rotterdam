@@ -1,31 +1,67 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.rotterdam.nl-design-system</groupId>
+    <parent>
+        <groupId>nl.rotterdam.nl-design-system</groupId>
+        <artifactId>rotterdam-nlds-parent</artifactId>
+        <version>0.0.6-SNAPSHOT</version>
+    </parent>
+
     <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>Rotterdam, NL Design System Wicket Parent</name>
+    <description>NL Design System Wicket Parent POM made by Gemeente Rotterdam.</description>
 
     <modules>
         <module>docs-wicket</module>
         <module>rotterdam-nlds-css-wicket</module>
         <module>rotterdam-nlds-extensions-wicket</module>
         <module>rotterdam-nlds-wicket</module>
+        <module>rotterdam-nlds-wicket-extras</module>
         <module>test-common-wicket</module>
     </modules>
 
     <properties>
-        <java.version>21</java.version>
         <jetty.version>12.1.0</jetty.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <wicket.version>10.6.0</wicket.version>
-        <node.version>v22.19.0</node.version>
     </properties>
 
     <dependencyManagement>
         <!-- this is needed to make sure we have the same version of all wicket submodules -->
         <dependencies>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>docs-wicket</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>rotterdam-nlds-css-wicket</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>rotterdam-nlds-wicket</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>rotterdam-nlds-wicket-extras</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.rotterdam.nl-design-system</groupId>
+                <artifactId>test-common-wicket</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket-core</artifactId>
@@ -54,9 +90,29 @@
                 <version>${jetty.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>font-awesome</artifactId>
+                <version>7.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>jquery</artifactId>
+                <version>3.7.1</version>
+            </dependency>
+            <dependency>
+                <groupId>de.agilecoders.wicket</groupId>
+                <artifactId>wicket-bootstrap-extensions</artifactId>
+                <version>7.0.13</version>
+            </dependency>
+            <dependency>
+                <groupId>de.agilecoders.wicket.webjars</groupId>
+                <artifactId>wicket-webjars</artifactId>
+                <version>4.0.13</version>
+            </dependency>
+            <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.5.18</version>
+                <version>1.5.20</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.servlet</groupId>
@@ -67,8 +123,8 @@
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
                 <version>5.13.4</version>
-                <scope>import</scope>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.github.javaparser</groupId>
@@ -98,20 +154,13 @@
         </dependencies>
     </dependencyManagement>
 
-
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
-        </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.1</version>
+                    <version>3.14.1</version>
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
@@ -143,10 +192,16 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.2</version>
+                    <version>3.5.4</version>
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

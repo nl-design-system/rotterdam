@@ -2,7 +2,7 @@
   "rods": {
     "button": {
       "line-height": {
-        "value": "24px"
+        "$value": "24px"
       }
     }
   }
