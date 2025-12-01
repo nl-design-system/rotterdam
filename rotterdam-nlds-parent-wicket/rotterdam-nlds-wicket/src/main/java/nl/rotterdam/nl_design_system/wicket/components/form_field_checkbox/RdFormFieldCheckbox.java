@@ -5,7 +5,7 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormField;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFieldLabelBehavior;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
@@ -29,6 +29,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormF
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory.createErrorMessageLabel;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.FORM_FIELD_LABEL_CHECKBOX;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFieldLabelCheckableInputType.CHECKBOX;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -197,15 +198,11 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         protected void onInitialize() {
             super.onInitialize();
 
-            add(RdFormLabelBehavior.INSTANCE_CHECKBOX);
+            var labelBehavior = new RdFormFieldLabelBehavior(CHECKBOX);
+            labelBehavior.setComponentLabelIsFor(inputComponent);
+            add(labelBehavior);
 
             add(inputComponent);
-        }
-
-        @Override
-        protected void onComponentTag(ComponentTag tag) {
-            super.onComponentTag(tag);
-            tag.put("for", inputComponent.getMarkupId());
         }
     }
 

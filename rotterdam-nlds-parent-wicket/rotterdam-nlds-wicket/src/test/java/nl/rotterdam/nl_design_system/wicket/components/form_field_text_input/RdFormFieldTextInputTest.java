@@ -24,8 +24,8 @@ class RdFormFieldTextInputTest extends NldsWicketTestCase {
             <div id="form-field-name" class="utrecht-form-field utrecht-form-field--text">
               <div class="utrecht-form-field__label">
                 <label
-                  for="input-text"
                   class="utrecht-form-label"
+                  for="input-text"
                 >Naam</label>
               </div>
               <div id="description-label" class="utrecht-form-field-description utrecht-form-field__description">Voornaam en achternaam.</div>

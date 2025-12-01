@@ -5,32 +5,48 @@
       <section class="stories">
         <h1>Form Field Label component</h1>
         <div>
-          <p>Toont een tekstlabel dat informeert over de in te vullen informatie.</p>
+          <p>Toont een (tekst)label dat informeert over de in te vullen informatie.</p>
         </div>
 
-        <section data-testid="formFieldLabel">
-          <h2>Form Field Label</h2>
+        <section data-testid="formFieldStaticLabel">
+          <h2>Form Field Label - statische inhoud</h2>
           <div>
             <ul>
-              <li>Plaats het label voor het invoerveld, behalve voor checkbox options en radio options.</li>
-              <li>Plaats de checkbox of radio button in de form label.</li>
-              <li>Koppel de label met de form control met "for" en "id".</li>
+              <li>Plaats het label voor het invoerveld, behalve voor selectievakjes en keuzerondjes.</li>
+              <li>Plaats het selectievakje of keuzerondje in het label.</li>
+              <li>Koppel het label met het invoerveld met "for" en "id".</li>
             </ul>
           </div>
-          <rods-story-canvas
-            ><template> <label wicket:id="formFieldLabel"></label> </template>
+          <rods-story-canvas>
+            <template>
+              <label wicket:id="formFieldStaticLabel"><wicket:message key="StaticLabel"></wicket:message></label>
+            </template>
+          </rods-story-canvas>
+        </section>
+        <section data-testid="formFieldDynamicLabel">
+          <h2>Form Field Label - dynamische inhoud</h2>
+          <rods-story-canvas>
+            <template>
+              <label wicket:id="formFieldDynamicLabel"><wicket:container wicket:id="label"></wicket:container></label>
+            </template>
           </rods-story-canvas>
         </section>
         <section data-testid="formFieldLabelCheckbox">
           <h2>Form Field Label for Checkbox</h2>
-          <rods-story-canvas
-            ><template> <label wicket:id="formFieldLabelCheckbox"></label> </template>
+          <rods-story-canvas>
+            <template>
+              <label wicket:id="formFieldLabelCheckbox"><input type="checkbox" wicket:id="checkbox"> <wicket:message key="Option1"></wicket:message></label>
+            </template>
           </rods-story-canvas>
         </section>
-        <section data-testid="formFieldLabelRadio">
-          <h2>Form Field Label for Radio</h2>
-          <rods-story-canvas
-            ><template> <label wicket:id="formFieldLabelRadio"></label> </template>
+        <section data-testid="formFieldLabelRadioButton">
+          <h2>Form Field Label for Radio Button</h2>
+          <rods-story-canvas>
+            <template>
+              <span wicket:id="formFieldLabelRadioButton">
+                <label wicket:id="label"><input type="radio" wicket:id="radio"> <wicket:message key="Option1"></wicket:message></label>
+              </span>
+            </template>
           </rods-story-canvas>
         </section>
       </section>

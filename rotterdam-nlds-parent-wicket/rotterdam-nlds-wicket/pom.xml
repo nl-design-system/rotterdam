@@ -14,6 +14,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.googlecode.wicketforge</groupId>
+            <artifactId>wicketforge-annotations</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
         </dependency>
@@ -200,7 +204,7 @@
                 </includes>
             </resource>
             <resource>
-                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_label</targetPath>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_field_label</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
