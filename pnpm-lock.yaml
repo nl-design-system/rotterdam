@@ -609,8 +609,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       '@utrecht/page-header-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/page-layout-css':
         specifier: 1.1.1
         version: 1.1.1
@@ -3301,8 +3301,8 @@ packages:
   '@utrecht/page-footer-css@2.1.1':
     resolution: {integrity: sha512-ib4BqRk5avAdtxAPgMJaljnp15wfCJRv7dQABVQvs8jcB6Y/BGVgNq1srpjWjFmkcdtIELtwPpnB2Y7jcUUqOQ==}
 
-  '@utrecht/page-header-css@1.5.1':
-    resolution: {integrity: sha512-5hQw6VCXf0tq0LdKhI2BnmMzyTIMvxVS48yguK2trgfzigHAhPCSpmgEeWGiZF6GM9eCNbPThmfEPTgXvyVgkA==}
+  '@utrecht/page-header-css@2.0.1':
+    resolution: {integrity: sha512-HxONNJxBNwqEY/qDkx3U0wAVvirc/1l04i9L4dPscjf+Le6UWkJb4pfxXVO8b8yIT+wyj2YY0k8aeBUEIJPKjA==}
 
   '@utrecht/page-layout-css@1.1.1':
     resolution: {integrity: sha512-pFiRgDmB0F4s23JIJf0akynHVfBt7l4rv9t9gvpTeOxSdx3KTNZsxSNT5PyQwIf5mlEHWidp6yxn3fvQXlMKmw==}
@@ -11048,7 +11048,7 @@ snapshots:
 
   '@utrecht/page-footer-css@2.1.1': {}
 
-  '@utrecht/page-header-css@1.5.1': {}
+  '@utrecht/page-header-css@2.0.1': {}
 
   '@utrecht/page-layout-css@1.1.1': {}
 
