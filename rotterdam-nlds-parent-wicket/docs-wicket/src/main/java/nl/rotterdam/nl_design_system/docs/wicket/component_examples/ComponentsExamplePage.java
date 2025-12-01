@@ -37,26 +37,23 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
     private final String activeComponentExampleName;
     private final ExamplesPanel activeExample;
-    private final File fullSourceDirectory;
+    private final File exampleSourceDirectory;
 
 
-    public ComponentsExamplePage(PageParameters parameters) {
+    public ComponentsExamplePage(PageParameters parameters) throws IOException {
         super("Componenten voorbeelden");
         activeComponentExampleName = getExampleName(parameters);
 
         activeExample = newExampleComponentRenderingComponent();
 
         var docsWicketModuleRoot = ProjectRootResolver.resolveProjectRootDir(ComponentsExamplePage.class);
-        Class<?> implementationClass = activeExample.getImplementationClass();
-        var moduleName = implementationClass.getPackageName().contains("rotterdam_extensions")
-            ?  "rotterdam-nlds-extensions-wicket"
-            : "rotterdam-nlds-wicket";
+        Class<? extends ExamplesPanel> exampleClassName = activeExample.getClass();
 
-        var packageDirectory = implementationClass.getPackageName().replace(".", "/");
+        var examplePackageDirectory = exampleClassName.getPackageName().replace(".", "/");
 
-        fullSourceDirectory = new File(docsWicketModuleRoot + "/../" + moduleName + "/src/main/java/" + packageDirectory);
+        exampleSourceDirectory = new File(docsWicketModuleRoot + "/src/main/java/" + examplePackageDirectory).getCanonicalFile();
 
-        Validate.isTrue(fullSourceDirectory.exists(), "Source directory %s does not exist", fullSourceDirectory.getAbsolutePath());
+        Validate.isTrue(exampleSourceDirectory.isDirectory(), "Source directory %s does not exist", exampleSourceDirectory.getCanonicalPath());
     }
 
     private static String getExampleName(PageParameters parameters) {
@@ -97,9 +94,9 @@ public class ComponentsExamplePage extends RotterdamBasePage {
 
     private String resolveComponentHtmlCode() {
 
-        var fullPath = new File(fullSourceDirectory, activeExample.getImplementationClass().getSimpleName() + ".html");
+        var fullPath = new File(exampleSourceDirectory, activeExample.getClass().getSimpleName() + ".html");
 
-        Validate.isTrue(fullPath.exists(), "Source directory %s does not exist", fullSourceDirectory.getAbsolutePath());
+        Validate.isTrue(fullPath.exists(), "Example HTML not found in path: %s", fullPath.getAbsolutePath());
 
         try {
             return new String(Files.readBytes(fullPath));
@@ -110,9 +107,9 @@ public class ComponentsExamplePage extends RotterdamBasePage {
 
     private String resolveComponentJavaCode() {
 
-        var fullPath = new File(fullSourceDirectory, activeExample.getImplementationClass().getSimpleName() + ".java");
+        var fullPath = new File(exampleSourceDirectory, activeExample.getClass().getSimpleName() + ".java");
 
-        Validate.isTrue(fullPath.exists(), "Source directory %s does not exist", fullSourceDirectory.getAbsolutePath());
+        Validate.isTrue(fullPath.exists(), "Source directory %s does not exist", fullPath);
 
         try {
             return new String(Files.readBytes(fullPath));
