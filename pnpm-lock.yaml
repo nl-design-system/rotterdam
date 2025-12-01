@@ -543,8 +543,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       '@utrecht/alert-css':
-        specifier: 2.4.0
-        version: 2.4.0
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/badge-list-css':
         specifier: 3.0.1
         version: 3.0.1
@@ -609,11 +609,14 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       '@utrecht/page-header-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/page-layout-css':
         specifier: 1.1.1
         version: 1.1.1
+      '@utrecht/paragraph-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/preserve-data-css':
         specifier: 1.3.1
         version: 1.3.1
@@ -621,8 +624,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/separator-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/table-css':
         specifier: 1.6.1
         version: 1.6.1
@@ -3126,8 +3129,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@utrecht/alert-css@2.4.0':
-    resolution: {integrity: sha512-2vrm2Y8yNIPu1VNmEGP7BJkxEFaSPobQ+hcPkQs2TJiPybzX+ut7ZCcm3KaxmE6LSVjIOLSbLXe2YW/fP2g/Rw==}
+  '@utrecht/alert-css@3.0.1':
+    resolution: {integrity: sha512-0phAO794XRQcljQz2RcxdnXMvP5JmlRx8SeEq6T0R5oiKTUEWryxzfgfqu1wJ/VGxgKv+JVVGsSYS04HlKirig==}
 
   '@utrecht/badge-list-css@3.0.1':
     resolution: {integrity: sha512-ujhscNHXxliZ/DZHa6xitpDArF+S32b6baP8erRbAo7SiP90aFw+3zQ7Uj0d5IAMXMCOOiTrRp8q9GWTAMRy+Q==}
@@ -3300,11 +3303,14 @@ packages:
   '@utrecht/page-footer-css@2.1.1':
     resolution: {integrity: sha512-ib4BqRk5avAdtxAPgMJaljnp15wfCJRv7dQABVQvs8jcB6Y/BGVgNq1srpjWjFmkcdtIELtwPpnB2Y7jcUUqOQ==}
 
-  '@utrecht/page-header-css@1.5.1':
-    resolution: {integrity: sha512-5hQw6VCXf0tq0LdKhI2BnmMzyTIMvxVS48yguK2trgfzigHAhPCSpmgEeWGiZF6GM9eCNbPThmfEPTgXvyVgkA==}
+  '@utrecht/page-header-css@2.0.1':
+    resolution: {integrity: sha512-HxONNJxBNwqEY/qDkx3U0wAVvirc/1l04i9L4dPscjf+Le6UWkJb4pfxXVO8b8yIT+wyj2YY0k8aeBUEIJPKjA==}
 
   '@utrecht/page-layout-css@1.1.1':
     resolution: {integrity: sha512-pFiRgDmB0F4s23JIJf0akynHVfBt7l4rv9t9gvpTeOxSdx3KTNZsxSNT5PyQwIf5mlEHWidp6yxn3fvQXlMKmw==}
+
+  '@utrecht/paragraph-css@3.0.1':
+    resolution: {integrity: sha512-Go+9gTJTdUuqzFiPvz7dxQohor7ExQ0Pj52wJewx3G2Acl9xbrv0mNyrLe38+v1C+wrJpy1Vg0lkvCF16HQNgw==}
 
   '@utrecht/preserve-data-css@1.3.1':
     resolution: {integrity: sha512-O4TdW3df2AJGHunXB5AzEGDi8u8RsdmSbhyVMO5XeVIjiCVztajiyXnRqfuFX7+OA0EZ5E3NUSjPuXnSEJnkQA==}
@@ -3319,8 +3325,8 @@ packages:
   '@utrecht/root-css@2.0.1':
     resolution: {integrity: sha512-mhEyFaHhWHmwxu3HFR1+HpQDdQfGCfETBRKDP9QsGFwxX1t8FDUmL570+0LH3VqBA7db6gz8/krh8MUzCRp8yw==}
 
-  '@utrecht/separator-css@1.5.1':
-    resolution: {integrity: sha512-uzamK3Ry8fv9qDZ10p8kHK65TkuLI8oZkwysLwk21apdP8Lihee0M2Fy3vPMAVg/hGVVYvB740x8mm3ezDL+4g==}
+  '@utrecht/separator-css@2.0.1':
+    resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
 
   '@utrecht/table-css@1.6.1':
     resolution: {integrity: sha512-IEEB3JX19/FxAOyZHA/88h1GROSYsr3YxDIXsP+ea3sVUSyEcoUP0jgiKjcRV198Ad3p3+T07p79HhIuS+AhLw==}
@@ -10880,7 +10886,7 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
-  '@utrecht/alert-css@2.4.0': {}
+  '@utrecht/alert-css@3.0.1': {}
 
   '@utrecht/badge-list-css@3.0.1': {}
 
@@ -11047,9 +11053,11 @@ snapshots:
 
   '@utrecht/page-footer-css@2.1.1': {}
 
-  '@utrecht/page-header-css@1.5.1': {}
+  '@utrecht/page-header-css@2.0.1': {}
 
   '@utrecht/page-layout-css@1.1.1': {}
+
+  '@utrecht/paragraph-css@3.0.1': {}
 
   '@utrecht/preserve-data-css@1.3.1': {}
 
@@ -11062,7 +11070,7 @@ snapshots:
 
   '@utrecht/root-css@2.0.1': {}
 
-  '@utrecht/separator-css@1.5.1': {}
+  '@utrecht/separator-css@2.0.1': {}
 
   '@utrecht/table-css@1.6.1': {}
 
