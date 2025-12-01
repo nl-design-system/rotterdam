@@ -558,8 +558,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/button-group-css':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/checkbox-css':
         specifier: 1.6.1
         version: 1.6.1
@@ -3141,9 +3141,8 @@ packages:
   '@utrecht/button-css@3.0.1':
     resolution: {integrity: sha512-yHJazkFSA99H4IKCaKLvq9pptZ9oZBeAzx1l01JQwt3x12aoZ21M5pRRaTP6V7otjfjcvz/A4sRRrROZJJ3wZw==}
 
-  '@utrecht/button-group-css@1.5.0':
-    resolution: {integrity: sha512-8HGQ+CPDoxFM7n+ArsCixFEpw0Uykf4YxLc18L3tE5yw2+pBdrLVieh+wBghg2QtfsQJs5tpLZbw76wyaVENmg==}
-    deprecated: Deprecated. Replaced by @utrecht/action-group-css.
+  '@utrecht/button-group-css@2.0.1':
+    resolution: {integrity: sha512-Zby6G9b1KX6aKECBobzVeVuNcvsknpwUwCVZXN7gzxLzNpJXwPC92XYia0mDIhxUcq8rKCQF+ABzZtxeZKqx9A==}
 
   '@utrecht/button-react@2.0.4':
     resolution: {integrity: sha512-dU5V6eMrdymvV8IJWh6PbrPFKz/pWHAUtRvPAKRGMoOGcFlyJAp2ZPYDHYSc7NdKH2KGehvX29c8gZLd1plm4g==}
@@ -10891,7 +10890,7 @@ snapshots:
 
   '@utrecht/button-css@3.0.1': {}
 
-  '@utrecht/button-group-css@1.5.0': {}
+  '@utrecht/button-group-css@2.0.1': {}
 
   '@utrecht/button-react@2.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
