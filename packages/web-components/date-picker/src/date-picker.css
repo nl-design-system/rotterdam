@@ -1,6 +1,8 @@
 .rods-date-panels {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  inline-size: 1180px;
 }
 .rods-date-panels__panel {
   max-inline-size: 40%;
@@ -33,6 +35,9 @@
   row-gap: var(--rods-time-slots-row-gap, 1em);
   flex-wrap: wrap;
   --rods-time-badge-min-inline-size: 100px;
+
+  /* 5 columns of time slots */
+  min-inline-size: calc(5 * var(--rods-time-badge-min-inline-size) + 4 * var(--rods-time-slots-column-gap, 1ch));
 }
 .rods-time-badge__slot {
   min-inline-size: 4em;

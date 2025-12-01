@@ -84,7 +84,8 @@ export class DatePickerElement extends LitElement {
   dates: DateOption[] = [
     {
       date: new Date('2025-09-09'),
-      label: '9',
+      label: '9x',
+      selected: true,
       today: true,
     },
   ];
@@ -92,53 +93,56 @@ export class DatePickerElement extends LitElement {
   times: TimeOption[] = [
     { date: new Date('2025-09-09T09:50'), label: '9:50', selected: true },
     { date: new Date('2025-09-09T10:20'), label: '10:20' },
-    { date: new Date('2025-09-09T10:40'), label: '10:40' },
-    { date: new Date('2025-09-09T10:50'), label: '10:50' },
-    { date: new Date('2025-09-09T11:00'), label: '11:00' },
-    { date: new Date('2025-09-09T11:10'), label: '11:10' },
-    { date: new Date('2025-09-09T11:20'), label: '11:20' },
-    { date: new Date('2025-09-09T11:30'), label: '11:30' },
-    { date: new Date('2025-09-09T11:40'), label: '11:40' },
-    { date: new Date('2025-09-09T13:10'), label: '13:10' },
-    { date: new Date('2025-09-09T13:20'), label: '13:20' },
-    { date: new Date('2025-09-09T13:30'), label: '13:30' },
-    { date: new Date('2025-09-09T13:40'), label: '13:40' },
-    { date: new Date('2025-09-09T13:50'), label: '13:50' },
-    { date: new Date('2025-09-09T14:00'), label: '14:00' },
-    { date: new Date('2025-09-09T14:10'), label: '14:10' },
-    { date: new Date('2025-09-09T14:20'), label: '14:20' },
-    { date: new Date('2025-09-09T14:30'), label: '14:30' },
-    { date: new Date('2025-09-09T14:40'), label: '14:40' },
-    { date: new Date('2025-09-09T14:50'), label: '14:50' },
-    { date: new Date('2025-09-09T15:00'), label: '15:00' },
-    { date: new Date('2025-09-09T15:10'), label: '15:10' },
-    { date: new Date('2025-09-09T15:20'), label: '15:20' },
-    { date: new Date('2025-09-09T15:30'), label: '15:30' },
-    { date: new Date('2025-09-09T15:40'), label: '15:40' },
-    { date: new Date('2025-09-09T15:50'), label: '15:50' },
-    { date: new Date('2025-09-09T16:00'), label: '16:00' },
-    { date: new Date('2025-09-09T16:10'), label: '16:10' },
-    { date: new Date('2025-09-09T16:20'), label: '16:20' },
-    { date: new Date('2025-09-09T16:30'), label: '16:30' },
-    { date: new Date('2025-09-09T16:40'), label: '16:40' },
-    { date: new Date('2025-09-10T09:50'), label: '9:10' },
-    { date: new Date('2025-09-11T09:50'), label: '9:11' },
-    { date: new Date('2025-09-12T09:50'), label: '9:12' },
-    { date: new Date('2025-09-13T09:50'), label: '9:13' },
-    { date: new Date('2025-09-14T09:50'), label: '9:14' },
-    { date: new Date('2025-09-15T09:50'), label: '9:15' },
-    { date: new Date('2025-09-16T09:50'), label: '9:16' },
-    { date: new Date('2025-09-17T09:50'), label: '9:17' },
-    { date: new Date('2025-09-18T09:50'), label: '9:18' },
-    { date: new Date('2025-09-22T09:50'), label: '9:22' },
-    { date: new Date('2025-09-23T09:50'), label: '9:23' },
-    { date: new Date('2025-09-24T09:50'), label: '9:24' },
-    { date: new Date('2025-09-25T09:50'), label: '9:25' },
-    { date: new Date('2025-09-26T09:50'), label: '9:26' },
-    { date: new Date('2025-09-27T09:50'), label: '9:27' },
-    { date: new Date('2025-09-28T09:50'), label: '9:28' },
-    { date: new Date('2025-09-29T09:50'), label: '9:29' },
-    { date: new Date('2025-09-30T09:50'), label: '9:30' },
+    // { date: new Date('2025-09-09T10:40'), label: '10:40' },
+    // { date: new Date('2025-09-09T10:50'), label: '10:50' },
+    // { date: new Date('2025-09-09T11:00'), label: '11:00' },
+    // { date: new Date('2025-09-09T11:10'), label: '11:10' },
+    // { date: new Date('2025-09-09T11:20'), label: '11:20' },
+    // { date: new Date('2025-09-09T11:30'), label: '11:30' },
+    // { date: new Date('2025-09-09T11:40'), label: '11:40' },
+    // { date: new Date('2025-09-09T13:10'), label: '13:10' },
+    // { date: new Date('2025-09-09T13:20'), label: '13:20' },
+    // { date: new Date('2025-09-09T13:30'), label: '13:30' },
+    // { date: new Date('2025-09-09T13:40'), label: '13:40' },
+    // { date: new Date('2025-09-09T13:50'), label: '13:50' },
+    // { date: new Date('2025-09-09T14:00'), label: '14:00' },
+    // { date: new Date('2025-09-09T14:10'), label: '14:10' },
+    // { date: new Date('2025-09-09T14:20'), label: '14:20' },
+    // { date: new Date('2025-09-09T14:30'), label: '14:30' },
+    // { date: new Date('2025-09-09T14:40'), label: '14:40' },
+    // { date: new Date('2025-09-09T14:50'), label: '14:50' },
+    // { date: new Date('2025-09-09T15:00'), label: '15:00' },
+    // { date: new Date('2025-09-09T15:10'), label: '15:10' },
+    // { date: new Date('2025-09-09T15:20'), label: '15:20' },
+    // { date: new Date('2025-09-09T15:30'), label: '15:30' },
+    // { date: new Date('2025-09-09T15:40'), label: '15:40' },
+    // { date: new Date('2025-09-09T15:50'), label: '15:50' },
+    // { date: new Date('2025-09-09T16:00'), label: '16:00' },
+    // { date: new Date('2025-09-09T16:10'), label: '16:10' },
+    // { date: new Date('2025-09-09T16:20'), label: '16:20' },
+    // { date: new Date('2025-09-09T16:30'), label: '16:30' },
+    // { date: new Date('2025-09-09T16:40'), label: '16:40' },
+    // { date: new Date('2025-09-10T09:50'), label: '9:10' },
+    // { date: new Date('2025-09-11T09:50'), label: '9:11' },
+    // { date: new Date('2025-09-12T09:50'), label: '9:12' },
+    // { date: new Date('2025-09-13T09:50'), label: '9:13' },
+    // { date: new Date('2025-09-14T09:50'), label: '9:14' },
+    // { date: new Date('2025-09-15T09:50'), label: '9:15' },
+    // { date: new Date('2025-09-16T09:50'), label: '9:16' },
+    // { date: new Date('2025-09-17T09:50'), label: '9:17' },
+    // { date: new Date('2025-09-18T09:50'), label: '9:18' },
+    // { date: new Date('2025-09-22T09:50'), label: '9:22' },
+    // { date: new Date('2025-09-23T09:50'), label: '9:23' },
+    // { date: new Date('2025-09-24T09:50'), label: '9:24' },
+    // { date: new Date('2025-09-25T09:50'), label: '9:25' },
+    // { date: new Date('2025-09-26T09:50'), label: '9:26' },
+    // { date: new Date('2025-09-27T09:50'), label: '9:27' },
+    // { date: new Date('2025-09-28T09:50'), label: '9:28' },
+    // { date: new Date('2025-09-29T09:50'), label: '9:29' },
+    // { date: new Date('2025-09-30T09:50'), label: '9:30' },
+    { date: new Date('2025-12-30T09:50'), label: '9:30' },
+    { date: new Date('2025-12-30T09:50'), label: '9:30' },
+    { date: new Date('2025-12-30T09:50'), label: '9:30' },
   ];
 
   static valueAsString(value: unknown) {
@@ -201,6 +205,7 @@ export class DatePickerElement extends LitElement {
     // const dates = this.dates;
     const currentIndex = this.times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
+
     const dayOfWeekLocale = (n: Day) => {
       const labels = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
       return labels[n];
@@ -228,6 +233,16 @@ export class DatePickerElement extends LitElement {
 
     const times = this.times.filter((a) => isSameDate(a.date, this._visibleDate));
 
+    const numberSort = (a: number, b: number) => (a === b ? 0 : a > b ? 1 : -1);
+    const sortDate = (a: Date, b: Date) => numberSort(a.getTime(), b.getTime());
+
+    const sortedTimes = [...this.times].sort((a: DateOption, b: DateOption): number => sortDate(a.date, b.date));
+    const firstTime = sortedTimes[0];
+    const lastTime = sortedTimes.at(-1);
+    console.log(firstTime, lastTime, sortedTimes);
+    // TODO: Handle when there are no time slots
+    // const minDate = new Date(firstTime);
+    // const maxDate = new Date(lastTime);
     const dates: DateOption[] = getDaysInMonth(this._visibleDate).map((date) => {
       const timeSlots = this.times.filter((a) => isSameDate(date, a.date));
       return {
@@ -284,6 +299,9 @@ export class DatePickerElement extends LitElement {
             class=${clsx(
               'utrecht-button',
               { 'placeholder-cell': hidden },
+              {
+                'utrecht-button--pressed': selected,
+              },
               'utrecht-calendar__table-days-item-day',
               { 'utrecht-calendar__table-days-item-day--readonly': readOnly },
               { 'utrecht-calendar__table-days-item-day--current': today },
@@ -291,6 +309,7 @@ export class DatePickerElement extends LitElement {
               { 'utrecht-calendar__table-days-item-day--selected': selected },
             )}
             ?disabled=${disabled}
+            aria-pressed=${selected ? 'true' : nothing}
             value=${date.toISOString()}
             @click=${() => this.selectDate(date)}
           >
@@ -316,83 +335,163 @@ export class DatePickerElement extends LitElement {
       getDatesBetween(firstGridDay, firstDate),
     );
 
+    const getStartOfMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
+    const getEndOfMonth = (date: Date) =>
+      // Return the first moment in the next month, minus one millisecond
+      new Date(date.getFullYear(), date.getMonth() + 1, date.getDate(), 0, 0, 0, -1);
+
+    const isBeforeMonth = (month: Date, date: Date): boolean => date.getTime() < getStartOfMonth(month).getTime();
+    const isAfterMonth = (month: Date, date: Date): boolean => date.getTime() > getEndOfMonth(month).getTime();
+
+    const min = this.getAttribute('min');
+    const max = this.getAttribute('max');
+    const minDate = min ? new Date(min) : null;
+    const maxDate = max ? new Date(max) : null;
+
+    const getMinDate = (dateA: Date, dateB: Date) => {
+      const a = dateA.getTime();
+      const b = dateB.getTime();
+      return a < b ? dateA : dateB;
+    };
+
+    const getMaxDate = (dateA: Date, dateB: Date) => {
+      const a = dateA.getTime();
+      const b = dateB.getTime();
+      return a > b ? dateA : dateB;
+    };
+
+    const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
+    const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
+    const hasPrevMonth = minBrowsableDate ? isBeforeMonth(this._visibleDate, minBrowsableDate) : true;
+    const hasNextMonth = maxBrowsableDate ? isAfterMonth(this._visibleDate, maxBrowsableDate) : true;
+
     const output = html` <div>
-    <div class="rods-date-panels">
+      <div class="rods-date-panels">
+        <div class="rods-date-panels__panel">
+          <div class="rods-date-panels__panel-header">
+            <p id="date-label" class="utrecht-form-label">${selectLocale}</p>
+            <p id="date-desc" class="utrecht-form-field-description">${descriptionLocale}</p>
+          </div>
+          <div class="rods-date-panels__panel-body">
+            <div class="rods-button-navigation">
+              <div class="rods-button-navigation__current">
+                ${monthLocale(this._visibleDate.getMonth())} ${this._visibleDate.getFullYear()}
+              </div>
+              <button
+                aria-labelledby="prev-month-label"
+                rel="prev"
+                type="button"
+                disabled=${hasPrevMonth ? nothing : 'true'}
+                tabindex=${hasPrevMonth ? nothing : '0'}
+                class=${clsx('utrecht-button', { 'utrecht-button--disabled': !hasPrevMonth })}
+                @click=${() => {
+                  if (hasPrevMonth) this.showPreviousMonth();
+                }}
+              >
+                <span class="utrecht-icon"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 32 32"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.8285 16L22.4351 5.3941L21.0208 3.97998L9.00003 16L21.0208 28.02L22.4351 26.6059L11.8285 16Z"
+                    /></svg></span
+                ><span id="prev-month-label" class="utrecht-button__label">${previousLocale}</span>
+              </button>
+              <button
+                aria-labelledby="next-month-label"
+                rel="next"
+                type="button"
+                disabled=${hasNextMonth ? nothing : 'true'}
+                class=${clsx('utrecht-button', { 'utrecht-button--disabled': !hasNextMonth })}
+                @click=${() => {
+                  if (hasNextMonth) this.showNextMonth();
+                }}
+              >
+                <span class="utrecht-icon"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 32 32"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M20.6066 16L10 5.3934L11.4142 3.97919L23.435 16L11.4142 28.0208L10 26.6066L20.6066 16Z"
+                    /></svg
+                ></span>
+                <span id="next-month-label" class="utrecht-button__label">${nextLocale}</span>
+              </button>
+            </div>
+          </div>
+
+          <table role="grid" aria-labelledby="date-label" tabindex="0" @keydown=${this.handleKeyDownDate}>
+            <thead class="utrecht-calendar__table-weeks-container">
+              <tr class="utrecht-calendar__table-weeks-container-content">
+                <th>${dayOfWeekLocale(1)}</th>
+                <th>${dayOfWeekLocale(2)}</th>
+                <th>${dayOfWeekLocale(3)}</th>
+                <th>${dayOfWeekLocale(4)}</th>
+                <th>${dayOfWeekLocale(5)}</th>
+                <th>${dayOfWeekLocale(6)}</th>
+                <th>${dayOfWeekLocale(0)}</th>
+              </tr>
+            </thead>
+            <tbody class="utrecht-calendar__table-days-container">
+              ${dateHTML}
+            </tbody>
+          </table>
+        </div>
+      </div>
       <div class="rods-date-panels__panel">
         <div class="rods-date-panels__panel-header">
-          <p id="date-label" class="utrecht-form-label">${selectLocale}</p>
-          <p id="date-desc" class="utrecht-form-field-description">${descriptionLocale}</p>
+          <p id="time-label" class="utrecht-form-label">${selectTimeLocale}</p>
+          <p id="time-desc" class="utrecht-form-field-description">${timeDescLocale}</p>
         </div>
         <div class="rods-date-panels__panel-body">
-          <div class="rods-button-navigation">
-          <div class="rods-button-navigation__current">${monthLocale(this._visibleDate.getMonth())} ${this._visibleDate.getFullYear()}</div>
-          <button aria-labelledby="prev-month-label" rel="prev" type="button" class="utrecht-button" @click=${this.showPreviousMonth}><span class="utrecht-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M11.8285 16L22.4351 5.3941L21.0208 3.97998L9.00003 16L21.0208 28.02L22.4351 26.6059L11.8285 16Z"/>
-</svg></span><span id="prev-month-label" class="utrecht-button__label">${previousLocale}</span></button>
-          <button aria-labelledby="next-month-label" rel="next" type="button" class="utrecht-button" @click=${this.showNextMonth}><span class="utrecht-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6066 16L10 5.3934L11.4142 3.97919L23.435 16L11.4142 28.0208L10 26.6066L20.6066 16Z"/>
-</svg></span>
-<span id="next-month-label" class="utrecht-button__label">${nextLocale}</span></button>
-  </div>
-  </div>
-      <table
-          role="grid"
-        aria-labelledby="date-label"
-        tabindex="0"
-        @keydown=${this.handleKeyDownDate}
-        >
-        <thead class="utrecht-calendar__table-weeks-container">
-    <tr class="utrecht-calendar__table-weeks-container-content">
-      <th>${dayOfWeekLocale(1)}</th>
-      <th>${dayOfWeekLocale(2)}</th>
-      <th>${dayOfWeekLocale(3)}</th>
-      <th>${dayOfWeekLocale(4)}</th>
-      <th>${dayOfWeekLocale(5)}</th>
-      <th>${dayOfWeekLocale(6)}</th>
-      <th>${dayOfWeekLocale(0)}</th>
-
-    </tr>
-      </thead>
-       <tbody class="utrecht-calendar__table-days-container">
-        ${dateHTML}
-      </tbody>
-    </table>
+          <div
+            class="rods-time-slots"
+            tabindex="0"
+            @keydown=${this.handleKeyDown}
+            role="listbox"
+            aria-labelledby="time-label"
+            aria-describedby="time-desc"
+            aria-activedescendant=${activeDescendant}
+          >
+            <ul class="rods-time-slots__list" role="list">
+              ${times.map(({ label, selected }, index, list) => {
+                return html`<li
+                  id="option-${index}"
+                  class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
+                  role="option"
+                  @click=${this.handleClickTime}
+                  aria-selected=${selected ? 'true' : nothing}
+                  aria-posinset=${index + 1}
+                  aria-setsize=${list.length}
+                >
+                  ${selected
+                    ? /* render the selected item with a <b> element, so it will still have a distinct appearance without CSS */
+                      html`<b>${label}</b>`
+                    : label}
+                </li>`;
+              })}
+            </ul>
+            <div class="rods-time-placeholder"><slot name="time-placeholder"></slot></div>
+          </div>
+        </div>
+        <div class="rods-date-panels__footer">
+          <p>${afspraakLocale}</p>
+          <p><button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button></p>
+        </div>
       </div>
-      </div>
-      <div class="rods-date-panels__panel">
-        <div class="rods-date-panels__panel-header">
-        <p id="time-label" class="utrecht-form-label">${selectTimeLocale}</p>
-        <p id="time-desc" class="utrecht-form-field-description">${timeDescLocale}</p>
-      </div>
-      <div class="rods-date-panels__panel-body">
-      <div class="rods-time-slots" tabindex="0" @keydown=${this.handleKeyDown} role="listbox" aria-labelledby="time-label" aria-describedby="time-desc" aria-activedescendant=${activeDescendant}>
-      <ul class="rods-time-slots__list" role="list">
-      ${times.map(({ label, selected }, index, list) => {
-        return html`<li
-          id="option-${index}"
-          class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
-          role="option"
-          @click=${this.handleClickTime}
-          aria-selected=${selected ? 'true' : nothing}
-          aria-posinset=${index + 1}
-          aria-setsize=${list.length}
-        >
-          ${selected
-            ? /* render the selected item with a <b> element, so it will still have a distinct appearance without CSS */
-              html`<b>${label}</b>`
-            : label}
-        </li>`;
-      })}
-      </ul>
-      </div>
-      <div class="rods-time-placeholder"><slot name="time-placeholder"></slot></div>
-    </div>
-      </div>
-      <div class="rods-date-panels__footer">
-      <p>${afspraakLocale}</p>
-      <p><button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button></p>
-    </div>
-    </div></div>`;
+    </div>`;
 
     return output;
   }
@@ -401,6 +500,7 @@ export class DatePickerElement extends LitElement {
     const prev = new Date(this._visibleDate);
     prev.setMonth(prev.getMonth() - 1);
     this._visibleDate = prev;
+    this.dispatchEvent(new CustomEvent('visibleDateChange')); // TODO: think of better name
     this.requestUpdate();
   }
 
@@ -408,6 +508,7 @@ export class DatePickerElement extends LitElement {
     const next = new Date(this._visibleDate);
     next.setMonth(next.getMonth() + 1);
     this._visibleDate = next;
+    this.dispatchEvent(new CustomEvent('visibleDateChange'));
     this.requestUpdate();
   }
 
