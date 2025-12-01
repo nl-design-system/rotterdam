@@ -524,15 +524,15 @@ importers:
       '@gemeente-rotterdam/web-components-stencil':
         specifier: workspace:*
         version: link:../../packages/web-components-stencil
-      '@nl-design-system-candidate/heading-css':
-        specifier: 1.1.1
-        version: 1.1.1
-      '@nl-design-system-candidate/data-badge-css':
-        specifier: 1.0.3
-        version: 1.0.3
       '@nl-design-system-candidate/code-block-css':
         specifier: 1.1.3
         version: 1.1.3
+      '@nl-design-system-candidate/data-badge-css':
+        specifier: 1.0.3
+        version: 1.0.3
+      '@nl-design-system-candidate/heading-css':
+        specifier: 1.1.1
+        version: 1.1.1
       '@nl-design-system-candidate/link-css':
         specifier: 2.0.1
         version: 2.0.1
@@ -558,8 +558,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/button-group-css':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/checkbox-css':
         specifier: 1.6.1
         version: 1.6.1
@@ -2097,15 +2097,18 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@nl-design-system-candidate/heading-css@1.1.1':
-    resolution: {integrity: sha512-DcIIHvbFnjuJ/iC+zNnjI0oaTLF7NiLJDEuxWMHXfZNNDTGnBvcKJxWRuDDMswkWyX9C3lSnwMxfQqjMh0jglQ==}
-  '@nl-design-system-candidate/data-badge-css@1.0.3':
-    resolution: {integrity: sha512-q0VB0jIp3yj71sqKtnrA/0dNKkCOBuXLwvfr8MSrIQTLAWvFg4fkI89r0barEyvyrMDhfBXsL/8gsqBeGthACQ==}
   '@nl-design-system-candidate/code-block-css@1.1.3':
     resolution: {integrity: sha512-uVRaqv8nXoQ/6IElHoHF9iCjqdGYTjXbBhYnzzbKZQtYp1hbogKOHzotKgaL7jFUaARVswKEzxTXoerSbvjFFw==}
 
+  '@nl-design-system-candidate/data-badge-css@1.0.3':
+    resolution: {integrity: sha512-q0VB0jIp3yj71sqKtnrA/0dNKkCOBuXLwvfr8MSrIQTLAWvFg4fkI89r0barEyvyrMDhfBXsL/8gsqBeGthACQ==}
+
+  '@nl-design-system-candidate/heading-css@1.1.1':
+    resolution: {integrity: sha512-DcIIHvbFnjuJ/iC+zNnjI0oaTLF7NiLJDEuxWMHXfZNNDTGnBvcKJxWRuDDMswkWyX9C3lSnwMxfQqjMh0jglQ==}
+
   '@nl-design-system-candidate/link-css@2.0.1':
     resolution: {integrity: sha512-ZCVeyjLVksGEoJmIvXiPPtKNkDzGIB68v73J/hHku2pN2s5WX7ZJwNl4Rvpx6zPBQpD6xNW4JZMMAwc2TXa1Aw==}
+
   '@nl-design-system-candidate/number-badge-css@1.1.3':
     resolution: {integrity: sha512-G5fgcJ4GOvFkGGHD8p8xRbWwgsvqsWq3foCXcZITb6KMcIJP2LTD5XHSNjsovURDkr9wyaY37O1nVzCt5I0wTw==}
 
@@ -3138,9 +3141,8 @@ packages:
   '@utrecht/button-css@3.0.1':
     resolution: {integrity: sha512-yHJazkFSA99H4IKCaKLvq9pptZ9oZBeAzx1l01JQwt3x12aoZ21M5pRRaTP6V7otjfjcvz/A4sRRrROZJJ3wZw==}
 
-  '@utrecht/button-group-css@1.5.0':
-    resolution: {integrity: sha512-8HGQ+CPDoxFM7n+ArsCixFEpw0Uykf4YxLc18L3tE5yw2+pBdrLVieh+wBghg2QtfsQJs5tpLZbw76wyaVENmg==}
-    deprecated: Deprecated. Replaced by @utrecht/action-group-css.
+  '@utrecht/button-group-css@2.0.1':
+    resolution: {integrity: sha512-Zby6G9b1KX6aKECBobzVeVuNcvsknpwUwCVZXN7gzxLzNpJXwPC92XYia0mDIhxUcq8rKCQF+ABzZtxeZKqx9A==}
 
   '@utrecht/button-react@2.0.4':
     resolution: {integrity: sha512-dU5V6eMrdymvV8IJWh6PbrPFKz/pWHAUtRvPAKRGMoOGcFlyJAp2ZPYDHYSc7NdKH2KGehvX29c8gZLd1plm4g==}
@@ -9832,11 +9834,14 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@nl-design-system-candidate/heading-css@1.1.1': {}
-  '@nl-design-system-candidate/data-badge-css@1.0.3': {}
   '@nl-design-system-candidate/code-block-css@1.1.3': {}
 
+  '@nl-design-system-candidate/data-badge-css@1.0.3': {}
+
+  '@nl-design-system-candidate/heading-css@1.1.1': {}
+
   '@nl-design-system-candidate/link-css@2.0.1': {}
+
   '@nl-design-system-candidate/number-badge-css@1.1.3': {}
 
   '@nl-design-system-candidate/paragraph-css@2.1.1': {}
@@ -10885,7 +10890,7 @@ snapshots:
 
   '@utrecht/button-css@3.0.1': {}
 
-  '@utrecht/button-group-css@1.5.0': {}
+  '@utrecht/button-group-css@2.0.1': {}
 
   '@utrecht/button-react@2.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
