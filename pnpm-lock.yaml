@@ -621,8 +621,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/separator-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/table-css':
         specifier: 1.6.1
         version: 1.6.1
@@ -3319,8 +3319,8 @@ packages:
   '@utrecht/root-css@2.0.1':
     resolution: {integrity: sha512-mhEyFaHhWHmwxu3HFR1+HpQDdQfGCfETBRKDP9QsGFwxX1t8FDUmL570+0LH3VqBA7db6gz8/krh8MUzCRp8yw==}
 
-  '@utrecht/separator-css@1.5.1':
-    resolution: {integrity: sha512-uzamK3Ry8fv9qDZ10p8kHK65TkuLI8oZkwysLwk21apdP8Lihee0M2Fy3vPMAVg/hGVVYvB740x8mm3ezDL+4g==}
+  '@utrecht/separator-css@2.0.1':
+    resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
 
   '@utrecht/table-css@1.6.1':
     resolution: {integrity: sha512-IEEB3JX19/FxAOyZHA/88h1GROSYsr3YxDIXsP+ea3sVUSyEcoUP0jgiKjcRV198Ad3p3+T07p79HhIuS+AhLw==}
@@ -11062,7 +11062,7 @@ snapshots:
 
   '@utrecht/root-css@2.0.1': {}
 
-  '@utrecht/separator-css@1.5.1': {}
+  '@utrecht/separator-css@2.0.1': {}
 
   '@utrecht/table-css@1.6.1': {}
 
