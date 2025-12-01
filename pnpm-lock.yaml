@@ -420,8 +420,8 @@ importers:
         specifier: 7.4.0
         version: 7.4.0
       '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 2.2.0
+        version: 2.2.0
       '@utrecht/logo-css':
         specifier: 1.4.1
         version: 1.4.1
@@ -588,8 +588,8 @@ importers:
         specifier: 1.5.1
         version: 1.5.1
       '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 2.2.0
+        version: 2.2.0
       '@utrecht/link-list-css':
         specifier: 2.3.1
         version: 2.3.1
@@ -3268,8 +3268,8 @@ packages:
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
 
-  '@utrecht/icon@1.3.0':
-    resolution: {integrity: sha512-UkjRq7sR9Lsj6T9Ap6zi3YEWLbJNxau4RBSblDGM8E4irHW5AjiUERfVp4v6ZwSvgEqyeNIwwep69FJhw2je4A==}
+  '@utrecht/icon@2.2.0':
+    resolution: {integrity: sha512-LAuQYCIyaUqR8fiM629+/tn46ZXNZvKcpTua7Q3PqEKmRzDNZqVkobH3GZLc0d02BxXqsgp6zZuWsm8pJ5U9xw==}
 
   '@utrecht/link-list-css@2.3.1':
     resolution: {integrity: sha512-KUzAe2dUd1sdoSLXFyqv1DjsjyXi9gJyHONGCEcQAkxpHYA4O569XQQnH4v9KVhGgJNRKmtXgcDJswMW09t5Xg==}
@@ -11025,7 +11025,7 @@ snapshots:
 
   '@utrecht/heading-group-css@1.5.1': {}
 
-  '@utrecht/icon@1.3.0': {}
+  '@utrecht/icon@2.2.0': {}
 
   '@utrecht/link-list-css@2.3.1': {}
 
