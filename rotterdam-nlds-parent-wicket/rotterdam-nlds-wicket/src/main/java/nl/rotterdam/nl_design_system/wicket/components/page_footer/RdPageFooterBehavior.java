@@ -9,7 +9,7 @@ class RdPageFooterBehavior extends TagNameClassComponentBehavior<RdPageFooterBor
     static final RdPageFooterBehavior INSTANCE = new RdPageFooterBehavior();
 
     private RdPageFooterBehavior() {
-        super("footer", RdPageFooterCss.DEFAULT);
+        super("footer", RdPageFooterCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdPageFooterBehavior.class, "@utrecht/page-footer-css/dist/index.min.css"));
     }
 

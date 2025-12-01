@@ -15,7 +15,7 @@ public class RdIconBehavior extends TagNameClassComponentBehavior<RdIconBorder> 
     public static final RdIconBehavior INSTANCE = new RdIconBehavior();
 
     private RdIconBehavior() {
-        super("span", RdIconCss.DEFAULT);
+        super("span", RdIconCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdIconBehavior.class, "@utrecht/icon/dist/index.min.css"));
     }
 

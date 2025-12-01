@@ -6,7 +6,7 @@ import org.apache.wicket.Component;
 class RdBreadcrumbNavLinkBehavior extends TagNameClassComponentBehavior<Component> {
 
     RdBreadcrumbNavLinkBehavior() {
-        super("a", RdBreadcrumbNavLinkCss.DEFAULT);
+        super("a", RdBreadcrumbNavLinkCss.LINK_ELEMENT);
         addHeaderItem(RdBreadcrumbNavBehavior.CSS);
     }
 }
