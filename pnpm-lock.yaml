@@ -549,8 +549,8 @@ importers:
         specifier: 2.2.1
         version: 2.2.1
       '@utrecht/body-css':
-        specifier: 1.2.1
-        version: 1.2.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/breadcrumb-nav-css':
         specifier: 1.5.1
         version: 1.5.1
@@ -3132,8 +3132,8 @@ packages:
   '@utrecht/badge-list-css@2.2.1':
     resolution: {integrity: sha512-C1HCRQ12CTuuFvmbcUEYsI8SuXe1X7y/oC9OyHznfyIJYkINm9NZ/30WIu99fgd/GkwjFyQoy24J990zteM3PQ==}
 
-  '@utrecht/body-css@1.2.1':
-    resolution: {integrity: sha512-YKB/y3Z+OjiDp39HTInrEme8ZOV+fffeHLybWTqCQjiP4JdPyiwUo82p7TYoyGe/isSGOSJQqVByhniadZI8mg==}
+  '@utrecht/body-css@2.0.1':
+    resolution: {integrity: sha512-WQjaF2Ii0eERCnTGYI32Jpjts5ydJpCAQUTtLjVs/jGF2+wHBz7XRDN6SFd8S0xIgp6llMQjHB9rdVp8JxieWA==}
 
   '@utrecht/breadcrumb-nav-css@1.5.1':
     resolution: {integrity: sha512-C6da4Wo4cUSa0oag5riOYs1u4iFKuOJIvjdk93dUN/iW+h3YoWi0PNOiWnY0HbzecH5UxbwSCbqAitH5pmfogg==}
@@ -10884,7 +10884,7 @@ snapshots:
 
   '@utrecht/badge-list-css@2.2.1': {}
 
-  '@utrecht/body-css@1.2.1': {}
+  '@utrecht/body-css@2.0.1': {}
 
   '@utrecht/breadcrumb-nav-css@1.5.1': {}
 
