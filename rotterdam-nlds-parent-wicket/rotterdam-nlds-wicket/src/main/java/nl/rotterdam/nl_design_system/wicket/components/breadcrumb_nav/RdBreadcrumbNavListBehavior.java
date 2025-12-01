@@ -15,7 +15,7 @@ public class RdBreadcrumbNavListBehavior extends TagNameClassComponentBehavior<C
         new RdBreadcrumbNavListBehavior();
 
     private RdBreadcrumbNavListBehavior() {
-        super("ul", RdBreadcrumbNavListCss.DEFAULT);
+        super("ol", RdBreadcrumbNavListCss.DEFAULT);
         addHeaderItem(RdBreadcrumbNavBehavior.CSS);
     }
 }
