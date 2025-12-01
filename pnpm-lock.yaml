@@ -543,8 +543,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       '@utrecht/alert-css':
-        specifier: 2.4.0
-        version: 2.4.0
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/badge-list-css':
         specifier: 2.2.1
         version: 2.2.1
@@ -3126,8 +3126,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@utrecht/alert-css@2.4.0':
-    resolution: {integrity: sha512-2vrm2Y8yNIPu1VNmEGP7BJkxEFaSPobQ+hcPkQs2TJiPybzX+ut7ZCcm3KaxmE6LSVjIOLSbLXe2YW/fP2g/Rw==}
+  '@utrecht/alert-css@3.0.1':
+    resolution: {integrity: sha512-0phAO794XRQcljQz2RcxdnXMvP5JmlRx8SeEq6T0R5oiKTUEWryxzfgfqu1wJ/VGxgKv+JVVGsSYS04HlKirig==}
 
   '@utrecht/badge-list-css@2.2.1':
     resolution: {integrity: sha512-C1HCRQ12CTuuFvmbcUEYsI8SuXe1X7y/oC9OyHznfyIJYkINm9NZ/30WIu99fgd/GkwjFyQoy24J990zteM3PQ==}
@@ -10880,7 +10880,7 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
-  '@utrecht/alert-css@2.4.0': {}
+  '@utrecht/alert-css@3.0.1': {}
 
   '@utrecht/badge-list-css@2.2.1': {}
 
