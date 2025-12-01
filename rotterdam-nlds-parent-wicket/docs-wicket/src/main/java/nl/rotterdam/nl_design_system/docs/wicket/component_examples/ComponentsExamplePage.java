@@ -40,7 +40,6 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     private final ExamplesPanel activeExample;
     private final File exampleSourceDirectory;
 
-
     public ComponentsExamplePage(PageParameters parameters) throws IOException {
         super("Componenten voorbeelden");
         activeComponentExampleName = getExampleName(parameters);

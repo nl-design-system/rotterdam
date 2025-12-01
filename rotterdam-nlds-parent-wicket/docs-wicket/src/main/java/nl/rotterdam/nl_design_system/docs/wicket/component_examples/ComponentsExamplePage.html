@@ -6,33 +6,36 @@
 <body>
 
 <wicket:extend>
-  <aside>
-    <nav wicket:id="component-selection">
+  <div class="container-fluid">
 
-    * button
-    * Form Field text input
-    </nav>
-  </aside>
-  <main>
-    <section class="component-preview" wicket:id="example-rendered">
-      Component preview (gerenderd voorbeeld) hier.
-    </section>
+    <div class="row pb-2">
+      <aside class="col-lg-3">
+        <nav wicket:id="component-selection">
+          * button
+          * Form Field text input
+        </nav>
+      </aside>
+      <main class="col-lg-9">
+        <section class="component-preview" wicket:id="example-rendered">
+          Component preview (gerenderd voorbeeld) hier.
+        </section>
+      </main>
+    </div>
 
-    <section class="code-and-documentation-links">
-      <ul>
-        <li><a href="#markup-code" >Markup code</a></li>
-        <li><a href="#java-code">Java code</a></li>
-        <li><a href="#documentation">Documentatie</a></li>
-      </ul>
-    </section>
-
-    <pre wicket:id="markup-code">
+    <div class="row pb-2">
+      <h2>Markup</h2>
+      <pre class="col-lg-12" wicket:id="markup-code">
       html code here
     </pre>
-    <pre wicket:id="java-code">
+    </div>
+
+    <div class="row pb-2">
+      <h2 class="col-lg-12">Java code</h2>
+      <pre class="col-lg-12" wicket:id="java-code">
       html code here
     </pre>
-  </main>
+    </div>
+  </div>
 </wicket:extend>
 </body>
 </html>
