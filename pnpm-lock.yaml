@@ -422,6 +422,9 @@ importers:
       '@utrecht/icon':
         specifier: 2.2.0
         version: 2.2.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/logo-css':
         specifier: 1.4.1
         version: 1.4.1
@@ -587,9 +590,9 @@ importers:
       '@utrecht/heading-group-css':
         specifier: 1.5.1
         version: 1.5.1
-      '@utrecht/icon':
-        specifier: 2.2.0
-        version: 2.2.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/link-list-css':
         specifier: 2.3.1
         version: 2.3.1
@@ -3267,6 +3270,9 @@ packages:
 
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
+
+  '@utrecht/icon-css@3.0.1':
+    resolution: {integrity: sha512-dZdJ3jH4/ThxOTni743cIYc/zBe7o18j6uHOJxYjydfL/kSivcLrmVwiIJq6T18bbKAKjLceYJ+SiL93Pnt+tw==}
 
   '@utrecht/icon@2.2.0':
     resolution: {integrity: sha512-LAuQYCIyaUqR8fiM629+/tn46ZXNZvKcpTua7Q3PqEKmRzDNZqVkobH3GZLc0d02BxXqsgp6zZuWsm8pJ5U9xw==}
@@ -11024,6 +11030,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@utrecht/heading-group-css@1.5.1': {}
+
+  '@utrecht/icon-css@3.0.1': {}
 
   '@utrecht/icon@2.2.0': {}
 

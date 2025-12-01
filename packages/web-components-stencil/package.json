@@ -45,6 +45,7 @@
     "@types/jest": "30.0.0",
     "@utrecht/components": "7.4.0",
     "@utrecht/icon": "2.2.0",
+    "@utrecht/icon-css": "3.0.1",
     "@utrecht/logo-css": "1.4.1",
     "chokidar-cli": "3.0.0",
     "jest": "30.2.0",
