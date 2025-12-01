@@ -579,8 +579,8 @@ importers:
         specifier: 1.5.1
         version: 1.5.1
       '@utrecht/form-field-error-message-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/form-label-css':
         specifier: 1.6.1
         version: 1.6.1
@@ -3236,8 +3236,8 @@ packages:
       react: '18'
       react-dom: '18'
 
-  '@utrecht/form-field-error-message-css@1.5.1':
-    resolution: {integrity: sha512-YuAaTsvxC4fWzIflFmnE1wvrDxXnDvtPbomifzy7fMUjXAHSE+I8XRfnMoibGZjRzz6NyBtitrwerai2nUTBww==}
+  '@utrecht/form-field-error-message-css@2.0.1':
+    resolution: {integrity: sha512-4Oe5aIgMNkKXHcCZ86z+/ClSbaDxZ4atxdqgFPU1mi1L7P07QK2yatUGvjOlV1h4dwXMyl2zcNkxCn62wPhJvw==}
 
   '@utrecht/form-field-error-message-react@1.0.4':
     resolution: {integrity: sha512-7azbLctPHHeEgBuWeqBDyMD9Y3XSSQTPyrUUvx97Mn1DU49tf7tHJzcLnHySTYkVR7Nu6m/Bv+ImRhrTLpt2Rw==}
@@ -10993,7 +10993,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@utrecht/form-field-error-message-css@1.5.1': {}
+  '@utrecht/form-field-error-message-css@2.0.1': {}
 
   '@utrecht/form-field-error-message-react@1.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
