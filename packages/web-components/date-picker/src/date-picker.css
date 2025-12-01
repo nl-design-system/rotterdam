@@ -1,15 +1,23 @@
 .rods-date-panels {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
   inline-size: 1180px;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas:
+    "date time"
+    "footer footer";
+}
+.rods-date-panels__panel:nth-child(1) {
+  grid-area: date;
 }
 .rods-date-panels__panel {
-  max-inline-size: 40%;
-  border: 1px solid red;
+  border: 1px solid #cad6da;
+}
+.rods-date-panels__panel:nth-child(2) {
+  grid-area: time;
+  border-inline-start-width: 0;
 }
 .rods-date-panels__panel-header {
-  background-color: #cad6da;
+  background-color: #eff4f6;
   padding-inline: 24px;
   padding-block: 24px;
 }
@@ -21,7 +29,18 @@
   padding-block: 16px;
 }
 .rods-date-panels__footer {
+  grid-area: footer;
   inline-size: 100%;
+  border-color: #cad6da;
+  border-style: solid;
+  padding-inline: 24px;
+  padding-block: 8px;
+  box-sizing: border-box;
+
+  border-block-start-width: 0;
+  border-inline-end-width: 1px;
+  border-inline-start-width: 1px;
+  border-block-end-width: 1px;
 }
 .rods-time-slots__list {
   margin-block-end: 0; /* reset <ul> */
@@ -116,9 +135,32 @@
   z-index: 1;
 }
 
+.utrecht-calendar__table-days-item-day.utrecht-button:disabled {
+  font-weight: normal;
+}
+
 .utrecht-calendar__table-days-item-day {
   --utrecht-button-min-inline-size: 64px;
   --utrecht-button-min-block-size: 64px;
+  --utrecht-button-font-weight: 700;
+  --utrecht-button-font-size: 20px;
+
+  --utrecht-button-border-color: #7c8b90;
+  --utrecht-button-background-color: white;
+  --utrecht-button-border-width: 0;
+  --utrecht-button-color: #404b4f;
+  --utrecht-button-hover-border-color: var(--utrecht-button-border-color);
+  --utrecht-button-hover-color: var(--utrecht-button-color);
+  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
+
+  --utrecht-button-pressed-border-color: var(--rods-color-base-green);
+  --utrecht-button-pressed-color: var(--rods-color-base-white);
+  --utrecht-button-pressed-background-color: var(--rods-color-base-green);
+
+  --utrecht-button-disabled-border-color: transparent;
+  --utrecht-button-disabled-color: #65757b;
+  --utrecht-button-disabled-background-color: #cad6da;
+  --utrecht-button-disabled-font-weight: normal;
 }
 
 table {
@@ -128,6 +170,7 @@ table {
 
 td {
   padding: 0;
+  border: 1px solid #cad6da;
 }
 
 [rel="next"],
@@ -137,6 +180,17 @@ td {
   --utrecht-button-padding-inline-start: 0;
   --utrecht-button-padding-block-start: 0;
   --utrecht-button-icon-size: 24px;
+  --utrecht-button-border-color: #7c8b90;
+  --utrecht-button-background-color: white;
+  --utrecht-button-border-width: 1px;
+  --utrecht-button-color: #404b4f;
+  --utrecht-button-hover-border-color: var(--utrecht-button-border-color);
+  --utrecht-button-hover-color: var(--utrecht-button-color);
+  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
+
+  --utrecht-button-disabled-border-color: transparent;
+  --utrecht-button-disabled-color: var(--utrecht-button-color);
+  --utrecht-button-disabled-background-color: #cad6da;
 }
 
 [rel="next"] .utrecht-button__label,
@@ -149,6 +203,7 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-block-end: 16px;
 }
 .rods-button-navigation [rel="prev"] {
   order: 1;
@@ -173,4 +228,50 @@ td {
 
 .placeholder-cell {
   visibility: none;
+}
+
+strong {
+  color: var(--rods-color-base-green);
+}
+
+p.utrecht-form-label {
+  margin-block-end: 8px;
+}
+
+th {
+  color: #65757b;
+  font-weight: normal;
+  padding-block: 4px;
+  font-size: 24px;
+}
+.utrecht-button--pressed {
+  --utrecht-button-hover-background-color: var(--utrecht-button-pressed-background-color);
+  --utrecht-button-hover-color: var(--utrecht-button-pressed-color);
+  --utrecht-button-hover-border-color: var(--utrecht-button-pressed-border-color);
+  --utrecht-button-focus-background-color: var(--utrecht-button-pressed-background-color);
+  --utrecht-button-focus-color: var(--utrecht-button-pressed-color);
+  --utrecht-button-focus-border-color: var(--utrecht-button-pressed-border-color);
+}
+
+td:has(.utrecht-calendar__table-days-item-day--readonly) {
+  border-width: 0;
+}
+.utrecht-calendar__table-days-item-day--readonly {
+  display: none !important;
+}
+
+.utrecht-button--secondary-action {
+  --utrecht-button-secondary-action-background-color: var(--rods-color-base-magenta);
+  --utrecht-button-secondary-action-hover-background-color: var(--rods-color-base-magenta);
+}
+
+.today-marker {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  inset-block-end: 0;
+  color: var(--rods-color-base-green);
+  text-align: center;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
 }

@@ -16,11 +16,9 @@
             <p class="utrecht-paragraph">U kunt alleen beschikbare data selecteren</p>
           </hgroup>
           <script type="module" src="src/date-picker-element.ts"></script>
-          <rods-date-picker id="jcc" visible-date="2025-09-09T09:50"></rods-date-picker>
-          <rods-date-picker></rods-date-picker>
-          <!-- <rods-date-picker value="2025-09-09T09:50"></rods-date-picker> -->
-          <!-- <rods-date-picker value="2025-09-09T09:50" visible-date="2026-01-01"></rods-date-picker> -->
-          <rods-date-picker>
+          <rods-date-picker id="jcc">
+            <!-- <rods-date-picker value="2025-09-09T09:50"></rods-date-picker> -->
+            <!-- <rods-date-picker value="2025-09-09T09:50" visible-date="2026-01-01"></rods-date-picker> -->
             <div slot="time-placeholder" style="text-align: center">
               <svg width="153" height="141" viewBox="0 0 153 141" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse cx="69.8547" cy="133.064" rx="42.3837" ry="7.06395" fill="#E4EEF1" />
@@ -207,7 +205,6 @@
               <p>Selecteer eerst een datum.</p>
             </div>
           </rods-date-picker>
-          <input type="datetime-local" id="date" aria-labelledby="date-label" aria-describedby="date-desc" />
         </div>
       </div>
     </div>
@@ -4665,6 +4662,7 @@
             };
       };
 
+      document.getElementById("jcc").dynamic = true;
       document.getElementById("jcc")?.addEventListener("visibleDateChange", (evt) => {
         const date = evt.target.visibleDate;
         const month = date.substr(0, 7);
@@ -4675,7 +4673,6 @@
             const label = date.getHours().toString() + ":" + date.getMinutes().toString().padStart(2, "0");
             return { date, label };
           });
-          console.log(evt.target.times);
         }
       });
     </script>

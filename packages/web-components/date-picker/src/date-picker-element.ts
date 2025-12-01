@@ -140,9 +140,9 @@ export class DatePickerElement extends LitElement {
     // { date: new Date('2025-09-28T09:50'), label: '9:28' },
     // { date: new Date('2025-09-29T09:50'), label: '9:29' },
     // { date: new Date('2025-09-30T09:50'), label: '9:30' },
-    { date: new Date('2025-12-30T09:50'), label: '9:30' },
-    { date: new Date('2025-12-30T09:50'), label: '9:30' },
-    { date: new Date('2025-12-30T09:50'), label: '9:30' },
+    { date: new Date('2025-12-30T09:50'), label: '9:50' },
+    { date: new Date('2025-12-30T09:50'), label: '9:50' },
+    { date: new Date('2025-12-30T09:50'), label: '9:50' },
   ];
 
   static valueAsString(value: unknown) {
@@ -167,6 +167,20 @@ export class DatePickerElement extends LitElement {
   currentSelected: Promise<HTMLElement>;
 
   _visibleDate = new Date();
+  _visibleTimes: TimeOption[] = [];
+  /**
+   * Set to `true` to flag that the values in `times` are not complete,
+   * and they can be updates based on the `visibleDateChange` event.
+   */
+  _dynamic = false;
+  @property()
+  get dynamic() {
+    return this._dynamic;
+  }
+
+  set dynamic(value: boolean) {
+    this._dynamic = value;
+  }
 
   @property({ attribute: 'visible-date' })
   get visibleDate() {
@@ -205,6 +219,7 @@ export class DatePickerElement extends LitElement {
     // const dates = this.dates;
     const currentIndex = this.times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
+    const today = new Date();
 
     const dayOfWeekLocale = (n: Day) => {
       const labels = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
@@ -237,9 +252,9 @@ export class DatePickerElement extends LitElement {
     const sortDate = (a: Date, b: Date) => numberSort(a.getTime(), b.getTime());
 
     const sortedTimes = [...this.times].sort((a: DateOption, b: DateOption): number => sortDate(a.date, b.date));
-    const firstTime = sortedTimes[0];
-    const lastTime = sortedTimes.at(-1);
-    console.log(firstTime, lastTime, sortedTimes);
+    const firstTime = this._dynamic ? null : sortedTimes[0];
+    const lastTime = this._dynamic ? null : sortedTimes.at(-1);
+
     // TODO: Handle when there are no time slots
     // const minDate = new Date(firstTime);
     // const maxDate = new Date(lastTime);
@@ -249,8 +264,11 @@ export class DatePickerElement extends LitElement {
         date,
         disabled: timeSlots.length === 0,
         label: date.getDate().toString(),
+        selected: isSameDate(date, this._visibleDate),
+        today: isSameDate(today, date),
       };
     });
+    console.log(dates);
 
     // Determine which day is the first in the grid, when the grid starts on Monday
     const firstDate = dates[0].date;
@@ -302,6 +320,9 @@ export class DatePickerElement extends LitElement {
               {
                 'utrecht-button--pressed': selected,
               },
+              {
+                'utrecht-button--disabled': readOnly,
+              },
               'utrecht-calendar__table-days-item-day',
               { 'utrecht-calendar__table-days-item-day--readonly': readOnly },
               { 'utrecht-calendar__table-days-item-day--current': today },
@@ -313,7 +334,7 @@ export class DatePickerElement extends LitElement {
             value=${date.toISOString()}
             @click=${() => this.selectDate(date)}
           >
-            ${label}
+            ${label}${today ? html`<span class="today-marker">${todayLocale}</span>` : nothing}
           </button>
         </td>`;
       },
@@ -326,13 +347,11 @@ export class DatePickerElement extends LitElement {
           ${htmlCells.slice(index * 7, index * 7 + 7)}
         </tr>`,
     );
-    console.log(
-      'dayofweek',
-      firstDate.getDay(),
-      firstGridDay.getDay(),
-      firstDate.toISOString(),
-      firstGridDay.toISOString(),
-      getDatesBetween(firstGridDay, firstDate),
+
+    const lang = 'nl';
+    const formattedSelectedDate = new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(this._visibleDate);
+    const formattedSelectedDateTime = new Intl.DateTimeFormat(lang, { dateStyle: 'full', timeStyle: 'short' }).format(
+      this.date,
     );
 
     const getStartOfMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
@@ -359,13 +378,15 @@ export class DatePickerElement extends LitElement {
       const b = dateB.getTime();
       return a > b ? dateA : dateB;
     };
+    this._visibleTimes = sortedTimes;
 
     const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
     const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
     const hasPrevMonth = minBrowsableDate ? isBeforeMonth(this._visibleDate, minBrowsableDate) : true;
     const hasNextMonth = maxBrowsableDate ? isAfterMonth(this._visibleDate, maxBrowsableDate) : true;
-
-    const output = html` <div>
+    const showTimePlaceholder =
+      times.length === 0; /* TODO: Replace with logic to only show when no date has been selected */
+    const output = html`<div>
       <div class="rods-date-panels">
         <div class="rods-date-panels__panel">
           <div class="rods-date-panels__panel-header">
@@ -413,6 +434,7 @@ export class DatePickerElement extends LitElement {
                   if (hasNextMonth) this.showNextMonth();
                 }}
               >
+                <span id="next-month-label" class="utrecht-button__label">${nextLocale}</span>
                 <span class="utrecht-icon"
                   ><svg
                     width="1em"
@@ -427,67 +449,70 @@ export class DatePickerElement extends LitElement {
                       d="M20.6066 16L10 5.3934L11.4142 3.97919L23.435 16L11.4142 28.0208L10 26.6066L20.6066 16Z"
                     /></svg
                 ></span>
-                <span id="next-month-label" class="utrecht-button__label">${nextLocale}</span>
               </button>
             </div>
-          </div>
 
-          <table role="grid" aria-labelledby="date-label" tabindex="0" @keydown=${this.handleKeyDownDate}>
-            <thead class="utrecht-calendar__table-weeks-container">
-              <tr class="utrecht-calendar__table-weeks-container-content">
-                <th>${dayOfWeekLocale(1)}</th>
-                <th>${dayOfWeekLocale(2)}</th>
-                <th>${dayOfWeekLocale(3)}</th>
-                <th>${dayOfWeekLocale(4)}</th>
-                <th>${dayOfWeekLocale(5)}</th>
-                <th>${dayOfWeekLocale(6)}</th>
-                <th>${dayOfWeekLocale(0)}</th>
-              </tr>
-            </thead>
-            <tbody class="utrecht-calendar__table-days-container">
-              ${dateHTML}
-            </tbody>
-          </table>
+            <table role="grid" aria-labelledby="date-label" tabindex="0" @keydown=${this.handleKeyDownDate}>
+              <thead class="utrecht-calendar__table-weeks-container">
+                <tr class="utrecht-calendar__table-weeks-container-content">
+                  <th>${dayOfWeekLocale(1)}</th>
+                  <th>${dayOfWeekLocale(2)}</th>
+                  <th>${dayOfWeekLocale(3)}</th>
+                  <th>${dayOfWeekLocale(4)}</th>
+                  <th>${dayOfWeekLocale(5)}</th>
+                  <th>${dayOfWeekLocale(6)}</th>
+                  <th>${dayOfWeekLocale(0)}</th>
+                </tr>
+              </thead>
+              <tbody class="utrecht-calendar__table-days-container">
+                ${dateHTML}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div class="rods-date-panels__panel">
-        <div class="rods-date-panels__panel-header">
-          <p id="time-label" class="utrecht-form-label">${selectTimeLocale}</p>
-          <p id="time-desc" class="utrecht-form-field-description">${timeDescLocale}</p>
-        </div>
-        <div class="rods-date-panels__panel-body">
-          <div
-            class="rods-time-slots"
-            tabindex="0"
-            @keydown=${this.handleKeyDown}
-            role="listbox"
-            aria-labelledby="time-label"
-            aria-describedby="time-desc"
-            aria-activedescendant=${activeDescendant}
-          >
-            <ul class="rods-time-slots__list" role="list">
-              ${times.map(({ label, selected }, index, list) => {
-                return html`<li
-                  id="option-${index}"
-                  class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
-                  role="option"
-                  @click=${this.handleClickTime}
-                  aria-selected=${selected ? 'true' : nothing}
-                  aria-posinset=${index + 1}
-                  aria-setsize=${list.length}
-                >
-                  ${selected
-                    ? /* render the selected item with a <b> element, so it will still have a distinct appearance without CSS */
-                      html`<b>${label}</b>`
-                    : label}
-                </li>`;
-              })}
-            </ul>
-            <div class="rods-time-placeholder"><slot name="time-placeholder"></slot></div>
+        <div class="rods-date-panels__panel">
+          <div class="rods-date-panels__panel-header">
+            <p id="time-label" class="utrecht-form-label">${selectTimeLocale}</p>
+            <p id="time-desc" class="utrecht-form-field-description">
+              ${timeDescLocale} <strong>${formattedSelectedDate}</strong>
+            </p>
+          </div>
+          <div class="rods-date-panels__panel-body">
+            <div
+              class="rods-time-slots"
+              tabindex="0"
+              @keydown=${this.handleKeyDown}
+              role="listbox"
+              aria-labelledby="time-label"
+              aria-describedby="time-desc"
+              aria-activedescendant=${activeDescendant}
+            >
+              <ul class="rods-time-slots__list" role="list">
+                ${times.map(({ label, selected }, index, list) => {
+                  return html`<li
+                    id="option-${index}"
+                    class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
+                    role="option"
+                    @click=${this.handleClickTime}
+                    aria-selected=${selected ? 'true' : nothing}
+                    aria-posinset=${index + 1}
+                    aria-setsize=${list.length}
+                  >
+                    ${selected
+                      ? /* render the selected item with a <b> element, so it will still have a distinct appearance without CSS */
+                        html`<b>${label}</b>`
+                      : label}
+                  </li>`;
+                })}
+              </ul>
+              ${showTimePlaceholder
+                ? html`<div class="rods-time-placeholder"><slot name="time-placeholder"></slot></div>`
+                : nothing}
+            </div>
           </div>
         </div>
         <div class="rods-date-panels__footer">
-          <p>${afspraakLocale}</p>
+          <p>${afspraakLocale} <strong>${formattedSelectedDateTime}</strong></p>
           <p><button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button></p>
         </div>
       </div>
@@ -605,7 +630,7 @@ export class DatePickerElement extends LitElement {
    * Changes to the date go through this method.
    * @param index
    */
-  selectIndex(index) {
+  selectIndex(index: number) {
     console.log('select', index);
     const next = Math.max(Math.min(index, this.times.length - 1), 0);
     this.times = this.times.map((option, index) => ({
@@ -614,10 +639,11 @@ export class DatePickerElement extends LitElement {
     }));
     const date = this.times[next];
     if (date) {
-      console.log(date.date);
+      console.log('selected', date.date.toISOString());
       this.date = new Date(date.date.getTime());
       this.updateValue(this.date.toISOString());
     }
+    console.log(this.times);
     this.requestUpdate();
     this.scrollOptionIntoView();
   }
@@ -639,8 +665,8 @@ export class DatePickerElement extends LitElement {
   selectLast() {
     this.selectIndex(this.times.length - 1);
   }
-  handleClickTime(evt) {
-    const index = Number.parseInt(evt.target.getAttribute('aria-posinset'), 10);
+  handleClickTime(evt: MouseEvent) {
+    const index = Number.parseInt(evt.target?.getAttribute('aria-posinset'), 10);
     if (Number.isFinite(index)) {
       this.selectIndex(index - 1);
     }
