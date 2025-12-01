@@ -1,8 +1,8 @@
 package nl.rotterdam.nl_design_system.rotterdam_css.wicket;
 
-import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.request.resource.CssResourceReference;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 class NldsRotterdamDesignSystemThemeCssReference {
 
@@ -11,10 +11,7 @@ class NldsRotterdamDesignSystemThemeCssReference {
     static final CssReferenceHeaderItem THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM = makeHeaderItemForCss();
 
     private static CssReferenceHeaderItem makeHeaderItemForCss() {
-        return CssHeaderItem.forReference(makeReference());
+        return cssReferenceHeaderItem(NldsRotterdamDesignSystemThemeCssReference.class, THEMES_CSS_RESOURCE_PATH);
     }
 
-    private static CssResourceReference makeReference() {
-        return new CssResourceReference(NldsRotterdamDesignSystemThemeCssReference.class, THEMES_CSS_RESOURCE_PATH);
-    }
 }

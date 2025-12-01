@@ -3,6 +3,7 @@ package nl.rotterdam.nl_design_system.docs.wicket.component_examples;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.ProjectRootResolver;
 import nl.rotterdam.nl_design_system.docs.wicket.RotterdamBasePage;
+import nl.rotterdam.nl_design_system.docs.wicket.css.BootstrapGridCssReference;
 import nl.rotterdam.nl_design_system.wicket.components.code_block.RdCodeBlock;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavRecord;
@@ -162,12 +163,14 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     @Override
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
+        response.render(BootstrapGridCssReference.BOOTSTRAP_GRID_CSS);
 
         response.render(OnDomReadyHeaderItem.forScript(
             //language=JavaScript
             """
             const stylesheet = new CSSStyleSheet();
             
+            // noinspection JSIgnoredPromiseFromCall
             stylesheet.replace(`
             .rods-story-canvas {
               background-color: white;
