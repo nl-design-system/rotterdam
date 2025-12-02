@@ -22,7 +22,7 @@
     "build:scss": "rollup -c rollup.config.mjs",
     "build:style-dictionary": "node ./style-dictionary.mjs",
     "watch": "npm-run-all watch:**",
-    "watch:style-dictionary": "chokidar --follow-symlinks --initial --command 'npm run build' 'src/**/*.tokens.json'"
+    "watch:style-dictionary": "chokidar --follow-symlinks --initial --command 'npm run build' 'figma/**/*.tokens.json'"
   },
   "devDependencies": {
     "@tokens-studio/sd-transforms": "2.0.2",

@@ -6,7 +6,7 @@ export const createConfig = ({
   buildPath = "dist/",
   className = "",
   selector,
-  source = ["src/**/tokens.json", "src/**/*.tokens.json"],
+  source = ["figma/*.tokens.json"],
   useTokensStudioTransformGroup = true,
 }) => {
   const prefix = selector ? selector.replace(/^\.(.+)-theme/, "$1") : "";
