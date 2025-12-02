@@ -85,19 +85,11 @@ public class RdFormFieldLabelBehavior extends TagNameClassComponentBehavior<Comp
     }
 
     @Override
-    public void onComponentTag(Component component, ComponentTag tag) {
-        super.onComponentTag(component, tag);
-        
+    protected List<CssClassNames> customizeComponentAndReturnClasses(Component component, ComponentTag tag) {
         if (componentLabelIsFor != null && !tag.isClose()) {
             tag.put("for", componentLabelIsFor.getMarkupId());
-        }   
-    }
-
-    @Override
-    protected List<CssClassNames> customizeComponentAndReturnClasses(Component component, ComponentTag tag) {
-        if (!component.isEnabledInHierarchy()) {
-            return DISABLED_CSS;
         }
-        return List.of();
+
+        return component.isEnabledInHierarchy() ? List.of() : DISABLED_CSS;
     }
 }
