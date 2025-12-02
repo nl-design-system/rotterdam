@@ -14,6 +14,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.form_fieldset.FormFieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
@@ -30,6 +31,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_footer.PageFooterExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.paragraph.ParagraphExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_group.RadioGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
@@ -104,6 +106,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
+            new FormFieldsetExamplesPanel("formFieldsetExamplesPanel"),
             new DataSummaryExamplesPanel("dataSummaryExamplesPanel"),
             new HeadingExamplesPanel("headingExamplesPanel"),
             new HeadingGroupExamplesPanel("headingGroupExamplesPanel"),
@@ -121,6 +124,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new PageLayoutExamplesPanel("pageLayoutExamplesPanel"),
             new ParagraphExamplesPanel("paragraphExamplesPanel"),
             new PreserveDataExamplesPanel("preserveDataExamplesPanel"),
+            new RadioGroupExamplesPanel("radioGroupExamplesPanel"),
             new RootExamplesPanel("rootExamplesPanel"),
             new SeparatorExamplesPanel("separatorExamplesPanel"),
             new UnorderedListExamplesPanel("unorderedListExamplesPanel"),

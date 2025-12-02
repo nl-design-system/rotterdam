@@ -5458,7 +5458,6 @@
           "line-height": { "$value": "{rods.typography.scale.xl.line-height}" },
           "margin-block-end": {},
           "margin-block-start": {},
-          "text-transform": {},
           "disabled": {
             "color": {}
           }

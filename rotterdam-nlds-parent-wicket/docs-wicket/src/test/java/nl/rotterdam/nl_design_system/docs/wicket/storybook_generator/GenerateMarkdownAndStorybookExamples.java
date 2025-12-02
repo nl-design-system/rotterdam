@@ -15,6 +15,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.form_fieldset.FormFieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
@@ -27,6 +28,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_body.PageBodyExamplesPanel
 import nl.rotterdam.nl_design_system.docs.wicket.page_footer.PageFooterExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_group.RadioGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
@@ -152,6 +154,11 @@ public class GenerateMarkdownAndStorybookExamples {
     }
 
     @Test
+    void generateFormFieldsetComponent() {
+        new MarkdownDocumentationExamplesGenerator(FormFieldsetExamplesPanel.class, "form-fieldset", "Form Fieldset").generate();
+    }
+
+    @Test
     void generateHeadingComponent() {
         tester.startComponentInPage(HeadingExamplesPanel.class);
         String renderedHtml = tester.getLastResponseAsString();
@@ -241,6 +248,11 @@ public class GenerateMarkdownAndStorybookExamples {
             "preserve-data",
             "Preserve Data"
         ).generate();
+    }
+
+    @Test
+    void generateRadioGroup() {
+        new MarkdownDocumentationExamplesGenerator(RadioGroupExamplesPanel.class, "radio-group", "Radio Group").generate();
     }
 
     @Test

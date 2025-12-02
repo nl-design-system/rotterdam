@@ -69,7 +69,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         String id,
         IModel<Boolean> model,
         IModel<String> labelModel,
-        IModel<String> descriptionModel
+        IModel<@Nullable String> descriptionModel
     ) {
         super(id);
         requireNonNull(labelModel);
@@ -104,7 +104,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         return createErrorMessageLabel("error").add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
     }
 
-    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
+    private static Component newDescriptionComponent(IModel<@Nullable String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(RdFormFieldDescriptionBehavior.INSTANCE)
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());

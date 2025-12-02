@@ -200,6 +200,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_fieldset</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/form-fieldset-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/form_label</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>

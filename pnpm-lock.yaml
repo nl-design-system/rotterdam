@@ -581,6 +581,9 @@ importers:
       '@utrecht/form-field-error-message-css':
         specifier: 2.0.1
         version: 2.0.1
+      '@utrecht/form-fieldset-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/form-label-css':
         specifier: 1.6.1
         version: 1.6.1
@@ -3242,6 +3245,9 @@ packages:
       '@babel/runtime': '*'
       react: '18'
       react-dom: '18'
+
+  '@utrecht/form-fieldset-css@2.0.1':
+    resolution: {integrity: sha512-EijyKtu0FK/hGEssXKtV3Q0/Z9eZjChfsAYvtOhUNs5A5bJ0+o7j4jIIO/D9Tj14Phh05hVCXm0YaPq4BJ42KQ==}
 
   '@utrecht/form-label-css@1.6.1':
     resolution: {integrity: sha512-h9d0FpM/VRbeVnr9zd/9Mbr+paKHa2OaJn0eP2ncCBHlLveb3Mww3rl+u6t0vw0lB8mrUAtjDWCLAjKNc8d0Gg==}
@@ -10989,6 +10995,8 @@ snapshots:
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  '@utrecht/form-fieldset-css@2.0.1': {}
 
   '@utrecht/form-label-css@1.6.1': {}
 

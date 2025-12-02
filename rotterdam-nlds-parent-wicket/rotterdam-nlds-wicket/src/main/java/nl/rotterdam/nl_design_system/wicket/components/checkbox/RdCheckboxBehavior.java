@@ -1,16 +1,17 @@
 package nl.rotterdam.nl_design_system.wicket.components.checkbox;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckboxCss.DEFAULT;
-import static nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckboxCss.DISABLED;
-import static nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckboxCss.INVALID;
-
-import java.util.ArrayList;
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.CheckBox;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckboxCss.DEFAULT;
+import static nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckboxCss.DISABLED;
+import static nl.rotterdam.nl_design_system.wicket.components.checkbox.RdCheckboxCss.INVALID;
 
 /**
  * Applies NL Design System checkbox styles to a Wicket CheckBox component.
@@ -36,7 +37,6 @@ class RdCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
 
         if (!component.isEnabledInHierarchy()) {
             classNames.add(DISABLED);
-            tag.put("disabled", "");
         }
 
         if (component.isRequired()) {

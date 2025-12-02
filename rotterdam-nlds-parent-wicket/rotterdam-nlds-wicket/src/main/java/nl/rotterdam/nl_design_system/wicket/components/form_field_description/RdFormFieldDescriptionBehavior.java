@@ -1,9 +1,10 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_description;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import org.apache.wicket.Component;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 /**
  * Apply Form field description behavior to an HTML element.
@@ -18,11 +19,7 @@ public class RdFormFieldDescriptionBehavior extends TagNameClassComponentBehavio
     @Override
     public void bind(Component component) {
         component.setOutputMarkupId(true);
-    }
-
-    @Override
-    public void onConfigure(Component component) {
-        component.setVisible(component.getDefaultModelObject() != null);
+        component.add(HideWhenModelIsNullBehavior.INSTANCE);
     }
 
     private RdFormFieldDescriptionBehavior() {
