@@ -15,7 +15,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.form_fieldset.FormFieldsetExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
@@ -154,8 +154,8 @@ public class GenerateMarkdownAndStorybookExamples {
     }
 
     @Test
-    void generateFormFieldsetComponent() {
-        new MarkdownDocumentationExamplesGenerator(FormFieldsetExamplesPanel.class, "form-fieldset", "Form Fieldset").generate();
+    void generateFieldsetComponent() {
+        new MarkdownDocumentationExamplesGenerator(FieldsetExamplesPanel.class, "fieldset", "Fieldset").generate();
     }
 
     @Test

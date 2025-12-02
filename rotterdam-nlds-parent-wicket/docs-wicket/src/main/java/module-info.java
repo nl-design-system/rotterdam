@@ -13,10 +13,10 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.column_layout;
     opens nl.rotterdam.nl_design_system.docs.wicket.data_summary;
     opens nl.rotterdam.nl_design_system.docs.wicket.dialog;
+    opens nl.rotterdam.nl_design_system.docs.wicket.fieldset;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_label;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input;
-    opens nl.rotterdam.nl_design_system.docs.wicket.form_fieldset;
     opens nl.rotterdam.nl_design_system.docs.wicket.heading;
     opens nl.rotterdam.nl_design_system.docs.wicket.heading_group;
     opens nl.rotterdam.nl_design_system.docs.wicket.icon;

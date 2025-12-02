@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.wicket.components.form_fieldset;
+package nl.rotterdam.nl_design_system.wicket.components.fieldset;
 
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
@@ -10,27 +10,27 @@ import java.util.List;
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
-class RdFormFieldsetBehavior extends TagNameClassComponentBehavior<RdFormFieldset> {
+class RdFieldsetBehavior extends TagNameClassComponentBehavior<RdFieldset> {
     private static final CssReferenceHeaderItem CSS_HEADER_ITEM = cssReferenceHeaderItem(
-        RdFormFieldsetBehavior.class,
+        RdFieldsetBehavior.class,
         "@utrecht/form-fieldset-css/dist/index.min.css"
     );
     
-    static final RdFormFieldsetBehavior INSTANCE = new RdFormFieldsetBehavior();
+    static final RdFieldsetBehavior INSTANCE = new RdFieldsetBehavior();
 
-    private RdFormFieldsetBehavior() {
-        super("div", RdFormFieldsetCss.BASE);
+    private RdFieldsetBehavior() {
+        super("div", RdFieldsetCss.BASE);
         addHeaderItem(CSS_HEADER_ITEM);
     }
 
     @Override
-    protected List<CssClassNames> customizeComponentAndReturnClasses(RdFormFieldset component, ComponentTag tag) {
+    protected List<CssClassNames> customizeComponentAndReturnClasses(RdFieldset component, ComponentTag tag) {
         var classNamesList = new ArrayList<CssClassNames>(2);
         if (component.isInvalid()) {
-            classNamesList.add(RdFormFieldsetCss.INVALID);
+            classNamesList.add(RdFieldsetCss.INVALID);
         }
         if (component.isSection()) {
-            classNamesList.add(RdFormFieldsetCss.SECTION);
+            classNamesList.add(RdFieldsetCss.SECTION);
         }
         return classNamesList;
     }

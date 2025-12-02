@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.wicket.components.form_fieldset;
+package nl.rotterdam.nl_design_system.wicket.components.fieldset;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.Component;
@@ -37,12 +37,12 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  *     </tbody>
  * </table>
  * <p>
- * Based on the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/story/css_css-form-fieldset--section">
+ * Based on the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-fieldset--docs">
  * CSS implementation of Utrecht</a>.
  * </p>
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdFormFieldset extends Border {
+public class RdFieldset extends Border {
     private final WebMarkupContainer fieldsetComponent;
     private final Component legendComponent;
     private boolean isInvalid;
@@ -55,7 +55,7 @@ public class RdFormFieldset extends Border {
      * 
      * @param id the Wicket ID.
      */
-    public RdFormFieldset(String id) {
+    public RdFieldset(String id) {
         this(id, null);
     }
 
@@ -67,10 +67,10 @@ public class RdFormFieldset extends Border {
      * @param id the Wicket ID.
      * @param model the model for the legend.
      */
-    public RdFormFieldset(String id, @Nullable IModel<?> model) {
+    public RdFieldset(String id, @Nullable IModel<?> model) {
         super(id, model);
         
-        add(RdFormFieldsetBehavior.INSTANCE);
+        add(RdFieldsetBehavior.INSTANCE);
         fieldsetComponent = newFieldset("fieldset");
         legendComponent = newLegend("legend", getDefaultModel());
     }
@@ -160,12 +160,12 @@ public class RdFormFieldset extends Border {
     }
 
     protected void customizeFieldset(Component fieldset) {
-        fieldset.add(RdFormFieldsetFieldsetBehavior.INSTANCE);
+        fieldset.add(RdFieldsetFieldsetBehavior.INSTANCE);
     }
 
     private Component newLegend(String id, @Nullable IModel<?> model) {
         var legend = new Label(id, model);
-        legend.add(RdFormFieldsetLegendBehavior.INSTANCE);
+        legend.add(RdFieldsetLegendBehavior.INSTANCE);
         return legend;
     }
 }

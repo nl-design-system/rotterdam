@@ -2,7 +2,7 @@ package nl.rotterdam.nl_design_system.wicket.components.radio_group;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_fieldset.RdFormFieldset;
+import nl.rotterdam.nl_design_system.wicket.components.fieldset.RdFieldset;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -23,7 +23,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultMode
  * must be the radio buttons of the group.
  * </p>
  * <p>
- * The Radio Group has the same options as the {@link RdFormFieldset}, but the validity of the fieldset is linked to the
+ * The Radio Group has the same options as the {@link RdFieldset}, but the validity of the fieldset is linked to the
  * validity of the contained <code>RadioGroup</code>.
  * </p>
  * <p>
@@ -34,7 +34,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultMode
  * @param <T> the model object type for the <code>RadioGroup</code>.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdRadioGroup<T> extends RdFormFieldset {
+public class RdRadioGroup<T> extends RdFieldset {
     private final IModel<T> model;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;

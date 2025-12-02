@@ -23,7 +23,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_description;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_error_message;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
-    exports nl.rotterdam.nl_design_system.wicket.components.form_fieldset;
+    exports nl.rotterdam.nl_design_system.wicket.components.fieldset;
     exports nl.rotterdam.nl_design_system.wicket.components.form_label;
     exports nl.rotterdam.nl_design_system.wicket.components.heading;
     exports nl.rotterdam.nl_design_system.wicket.components.heading_group;
@@ -63,7 +63,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.dialog;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
-    opens nl.rotterdam.nl_design_system.wicket.components.form_fieldset;
+    opens nl.rotterdam.nl_design_system.wicket.components.fieldset;
     opens nl.rotterdam.nl_design_system.wicket.components.form_label;
     opens nl.rotterdam.nl_design_system.wicket.components.heading_group;
     opens nl.rotterdam.nl_design_system.wicket.components.icon;

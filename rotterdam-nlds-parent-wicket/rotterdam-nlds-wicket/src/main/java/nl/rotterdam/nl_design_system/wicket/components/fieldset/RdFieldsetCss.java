@@ -1,8 +1,8 @@
-package nl.rotterdam.nl_design_system.wicket.components.form_fieldset;
+package nl.rotterdam.nl_design_system.wicket.components.fieldset;
 
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
-enum RdFormFieldsetCss implements CssClassNames {
+enum RdFieldsetCss implements CssClassNames {
     BASE("utrecht-form-fieldset"),
     FIELDSET_ELEMENT("utrecht-form-fieldset__fieldset"),
     HTML_FIELDSET("utrecht-form-fieldset--html-fieldset"),
@@ -13,7 +13,7 @@ enum RdFormFieldsetCss implements CssClassNames {
 
     private final String cssClassNames;
 
-    RdFormFieldsetCss(String cssClassNames) {
+    RdFieldsetCss(String cssClassNames) {
         this.cssClassNames = cssClassNames;
     }
 
