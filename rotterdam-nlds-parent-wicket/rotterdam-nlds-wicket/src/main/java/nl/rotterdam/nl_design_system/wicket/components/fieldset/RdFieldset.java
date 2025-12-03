@@ -85,10 +85,6 @@ public class RdFieldset extends Border {
     public Component getFieldsetComponent() {
         return fieldsetComponent;
     }
-    
-    protected WebMarkupContainer getFieldsetComponentInternal() {
-        return fieldsetComponent;
-    }
 
     /**
      * <p>
@@ -152,7 +148,7 @@ public class RdFieldset extends Border {
         addToBorder(fieldsetComponent);
         fieldsetComponent.add(legendComponent);
     }
-    
+
     protected WebMarkupContainer newFieldset(String id) {
         var fieldset = new WebMarkupContainer(id);
         customizeFieldset(fieldset);

@@ -4,7 +4,6 @@ import nl.rotterdam.nl_design_system.wicket.components.component_state.NlCompone
 import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.fieldset.RdFieldset;
 import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.RadioGroup;
 import org.apache.wicket.model.IModel;
@@ -76,6 +75,17 @@ public class RdRadioGroup<T> extends RdFieldset {
 
     /**
      * <p>
+     * Get the actual radio group.
+     * </p>
+     * 
+     * @return the actual radio group.
+     */
+    public RadioGroup<T> getRadioGroup() {
+        //noinspection unchecked
+        return (RadioGroup<T>) getFieldsetComponent();
+    }
+    /**
+     * <p>
      * Get the component attached to <code>&lt;div&gt;</code> containing the description.
      * </p>
      * 
@@ -100,7 +110,7 @@ public class RdRadioGroup<T> extends RdFieldset {
     protected void onInitialize() {
         super.onInitialize();
 
-        getFieldsetComponentInternal().add(descriptionComponent, errorMessageComponent);
+        getRadioGroup().add(descriptionComponent, errorMessageComponent);
         customizeFieldset(getFieldsetComponent());
         getFieldsetComponent().add(new RdRadioGroupFieldsetBehavior(descriptionComponent, errorMessageComponent));
         
@@ -115,7 +125,7 @@ public class RdRadioGroup<T> extends RdFieldset {
     }
 
     @Override
-    protected WebMarkupContainer newFieldset(String id) {
+    protected RadioGroup<T> newFieldset(String id) {
         var radioGroup = new RadioGroup<>(id, model);
         radioGroup.setRenderBodyOnly(false);
         return radioGroup;
