@@ -10,6 +10,7 @@ public class FieldsetExamplesPanel extends ExamplesPanel {
         super(id);
     }
 
+    @Override
     public Class<?> getImplementationClass() {
         return RdFieldset.class;
     }
