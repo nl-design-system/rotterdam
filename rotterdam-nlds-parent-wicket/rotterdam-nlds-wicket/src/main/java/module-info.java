@@ -41,6 +41,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.page_layout;
     exports nl.rotterdam.nl_design_system.wicket.components.paragraph;
     exports nl.rotterdam.nl_design_system.wicket.components.preserve_data;
+    exports nl.rotterdam.nl_design_system.wicket.components.radio_button;
     exports nl.rotterdam.nl_design_system.wicket.components.root;
     exports nl.rotterdam.nl_design_system.wicket.components.separator;
     exports nl.rotterdam.nl_design_system.wicket.components.side_nav;
