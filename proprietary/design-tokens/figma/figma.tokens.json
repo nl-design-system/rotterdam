@@ -5468,17 +5468,46 @@
   },
   "components/form-select/utrecht": {
     "utrecht": {
-      "form-select": {
+      "select": {
         "background-color": { "$value": "{rods.color.base.white}" },
+        "background-image": {},
+        "border-block-end-width": {},
+        "border-bottom-width": {},
         "border-color": {},
+        "border-radius": {},
         "border-width": { "$value": "1px" },
         "color": { "$value": "{rods.color.gray.tint-11}" },
+        "font-family": {},
         "font-size": {},
+        "font-weight": {},
+        "line-height": {},
+        "min-block-size": {},
         "max-inline-size": { "$value": "100%" },
         "padding-block-end": {},
         "padding-block-start": {},
         "padding-inline-end": {},
-        "padding-inline-start": {}
+        "padding-inline-start": {},
+        "disabled": {
+          "background-color": {},
+          "border-color": {},
+          "color": {}
+        },
+        "hover": {
+          "background-color": {},
+          "border-color": {},
+          "color": {}
+        },
+        "focus": {
+          "background-color": {},
+          "border-color": {},
+          "color": {}
+        },
+        "invalid": {
+          "background-color": {},
+          "border-block-end-width": {},
+          "border-color": {},
+          "border-width": {}
+        }
       }
     }
   },

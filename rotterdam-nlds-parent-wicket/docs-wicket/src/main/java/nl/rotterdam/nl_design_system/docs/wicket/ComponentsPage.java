@@ -31,6 +31,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.paragraph.ParagraphExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
@@ -122,6 +123,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new ParagraphExamplesPanel("paragraphExamplesPanel"),
             new PreserveDataExamplesPanel("preserveDataExamplesPanel"),
             new RootExamplesPanel("rootExamplesPanel"),
+            new SelectExamplesPanel("selectExamplesPanel"),
             new SeparatorExamplesPanel("separatorExamplesPanel"),
             new UnorderedListExamplesPanel("unorderedListExamplesPanel"),
     

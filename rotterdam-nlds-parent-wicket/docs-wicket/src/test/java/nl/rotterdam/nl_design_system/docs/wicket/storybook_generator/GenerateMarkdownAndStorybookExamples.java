@@ -28,6 +28,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_footer.PageFooterExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
@@ -246,6 +247,11 @@ public class GenerateMarkdownAndStorybookExamples {
     @Test
     void generateRoot() {
         new MarkdownDocumentationExamplesGenerator(RootExamplesPanel.class, "root", "Root").generate();
+    }
+
+    @Test
+    void generateSelect() {
+        new MarkdownDocumentationExamplesGenerator(SelectExamplesPanel.class, "select", "Select").generate();
     }
 
     @Test

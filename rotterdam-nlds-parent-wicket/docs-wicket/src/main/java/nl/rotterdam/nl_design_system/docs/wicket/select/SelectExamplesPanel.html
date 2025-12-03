@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Select component</h1>
+        <div>
+          <p>Maakt het via een uitklapmenu mogelijk om 1 optie uit een lijst te kiezen.</p>
+        </div>
+
+        <section data-testid="base">
+          <h2>Select</h2>
+          <rods-story-canvas>
+            <template>
+              <select wicket:id="base"></select>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="required">
+          <h2>Required Select</h2>
+          <rods-story-canvas>
+            <template>
+              <select wicket:id="required"></select>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="selected">
+          <h2>Selected Select</h2>
+          <rods-story-canvas>
+            <template>
+              <select wicket:id="selected"></select>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="invalid">
+          <h2>Invalid Select</h2>
+          <rods-story-canvas>
+            <template>
+              <select wicket:id="invalid"></select>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="disabled">
+          <h2>Disabled Select</h2>
+          <rods-story-canvas>
+            <template>
+              <select wicket:id="disabled"></select>
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>
