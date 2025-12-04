@@ -87,6 +87,4 @@ module nl.rotterdam.nl_design_system.wicket {
     requires org.apache.wicket.util;
     requires org.danekja.jdk.serializable.functional;
     requires org.jspecify;
-    requires jdk.compiler;
-    requires jdk.jfr;
 }
