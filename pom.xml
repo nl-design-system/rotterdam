@@ -130,6 +130,11 @@
                         <!-- Clean node_modules directory -->
                         <fileset>
                             <directory>${project.basedir}/node_modules</directory>
+                            <excludes>
+                                <!-- Leave the packages downloaded by pnpm so they do not have to be downloaded again. -->
+                                <!-- The `.pnpm` directory is like the local Maven repository. -->
+                                <exclude>.pnpm/**/*</exclude>
+                            </excludes>
                             <includes>
                                 <include>**/*</include>
                             </includes>
