@@ -45,6 +45,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.radio_button;
     exports nl.rotterdam.nl_design_system.wicket.components.radio_group;
     exports nl.rotterdam.nl_design_system.wicket.components.root;
+    exports nl.rotterdam.nl_design_system.wicket.components.select;
     exports nl.rotterdam.nl_design_system.wicket.components.separator;
     exports nl.rotterdam.nl_design_system.wicket.components.side_nav;
     exports nl.rotterdam.nl_design_system.wicket.components.text_input;

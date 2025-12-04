@@ -626,6 +626,9 @@ importers:
       '@utrecht/root-css':
         specifier: 2.0.1
         version: 2.0.1
+      '@utrecht/select-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/separator-css':
         specifier: 2.0.1
         version: 2.0.1
@@ -3324,6 +3327,9 @@ packages:
 
   '@utrecht/root-css@2.0.1':
     resolution: {integrity: sha512-mhEyFaHhWHmwxu3HFR1+HpQDdQfGCfETBRKDP9QsGFwxX1t8FDUmL570+0LH3VqBA7db6gz8/krh8MUzCRp8yw==}
+
+  '@utrecht/select-css@2.0.1':
+    resolution: {integrity: sha512-Cile0O+ks3lve3l8hRvmkreHemHmV/LAwjnbvT7pY4rbpvDe7FwiC4fxC9Jsm+CTruCnmK253W6XV3jQSyjMxg==}
 
   '@utrecht/separator-css@2.0.1':
     resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
@@ -11065,6 +11071,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@utrecht/root-css@2.0.1': {}
+
+  '@utrecht/select-css@2.0.1': {}
 
   '@utrecht/separator-css@2.0.1': {}
 

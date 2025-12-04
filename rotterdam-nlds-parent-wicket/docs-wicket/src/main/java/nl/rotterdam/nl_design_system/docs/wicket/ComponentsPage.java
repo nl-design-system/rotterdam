@@ -34,6 +34,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamp
 import nl.rotterdam.nl_design_system.docs.wicket.radio_button.RadioButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.radio_group.RadioGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
@@ -128,6 +129,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new RadioButtonExamplesPanel("radioButtonExamplesPanel"),
             new RadioGroupExamplesPanel("radioGroupExamplesPanel"),
             new RootExamplesPanel("rootExamplesPanel"),
+            new SelectExamplesPanel("selectExamplesPanel"),
             new SeparatorExamplesPanel("separatorExamplesPanel"),
             new UnorderedListExamplesPanel("unorderedListExamplesPanel"),
     
