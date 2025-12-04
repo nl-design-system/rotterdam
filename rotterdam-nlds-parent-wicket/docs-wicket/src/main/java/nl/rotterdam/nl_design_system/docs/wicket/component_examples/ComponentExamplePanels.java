@@ -39,7 +39,8 @@ import java.util.List;
 
 public class ComponentExamplePanels {
 
-    // TODO add all classes, for now just a subset.
+    private ComponentExamplePanels() {}
+
     public static final List<Class<? extends ExamplesPanel>> classes = List.of(
         SideNavExamplesPanel.class,
         AlertExamplesPanel.class,
