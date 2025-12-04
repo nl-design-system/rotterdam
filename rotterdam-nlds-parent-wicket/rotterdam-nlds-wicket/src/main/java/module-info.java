@@ -24,6 +24,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_error_message;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_label;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
+    exports nl.rotterdam.nl_design_system.wicket.components.fieldset;
     exports nl.rotterdam.nl_design_system.wicket.components.heading;
     exports nl.rotterdam.nl_design_system.wicket.components.heading_group;
     exports nl.rotterdam.nl_design_system.wicket.components.icon;
@@ -42,6 +43,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.paragraph;
     exports nl.rotterdam.nl_design_system.wicket.components.preserve_data;
     exports nl.rotterdam.nl_design_system.wicket.components.radio_button;
+    exports nl.rotterdam.nl_design_system.wicket.components.radio_group;
     exports nl.rotterdam.nl_design_system.wicket.components.root;
     exports nl.rotterdam.nl_design_system.wicket.components.separator;
     exports nl.rotterdam.nl_design_system.wicket.components.side_nav;
@@ -63,6 +65,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_label;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
+    opens nl.rotterdam.nl_design_system.wicket.components.fieldset;
     opens nl.rotterdam.nl_design_system.wicket.components.heading_group;
     opens nl.rotterdam.nl_design_system.wicket.components.icon;
     opens nl.rotterdam.nl_design_system.wicket.components.icon_button;
@@ -73,6 +76,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.page_footer;
     opens nl.rotterdam.nl_design_system.wicket.components.page_header;
     opens nl.rotterdam.nl_design_system.wicket.components.page_layout;
+    opens nl.rotterdam.nl_design_system.wicket.components.radio_group;
     opens nl.rotterdam.nl_design_system.wicket.components.root;
     opens nl.rotterdam.nl_design_system.wicket.components.separator;
     opens nl.rotterdam.nl_design_system.wicket.components.side_nav;

@@ -77,7 +77,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         String id,
         IModel<T> model,
         IModel<String> labelText,
-        IModel<String> description
+        IModel<@Nullable String> description
     ) {
         super(id, model);
         requireNonNull(labelText);
@@ -120,7 +120,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         );
     }
 
-    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
+    private static Component newDescriptionComponent(IModel<@Nullable String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(RdFormFieldDescriptionBehavior.INSTANCE)
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
@@ -211,7 +211,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
 
         private final IModel<@Nullable String> descriptionModel;
 
-        private FormFieldTextInput(IModel<T> model, IModel<String> descriptionModel) {
+        private FormFieldTextInput(IModel<T> model, IModel<@Nullable String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }
