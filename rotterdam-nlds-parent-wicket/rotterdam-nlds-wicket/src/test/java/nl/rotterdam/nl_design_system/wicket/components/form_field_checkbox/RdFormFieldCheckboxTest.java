@@ -20,8 +20,8 @@ class RdFormFieldCheckboxTest extends NldsWicketTestCase {
             <div id="utrecht-checkbox-field" class="utrecht-form-field utrecht-form-field--checkbox">
               <p class="utrecht-form-field__label utrecht-form-field__label--checkbox">
                 <label
-                  class="utrecht-form-label utrecht-form-label--checkbox"
                   for="checkbox-sample"
+                  class="utrecht-form-label utrecht-form-label--checkbox"
                 >
                   <input
                     type="checkbox"
@@ -62,8 +62,8 @@ class RdFormFieldCheckboxTest extends NldsWicketTestCase {
             <div id="utrecht-checkbox-field" class="utrecht-form-field--invalid utrecht-form-field utrecht-form-field--checkbox">
                 <p class="utrecht-form-field__label utrecht-form-field__label--checkbox">
                   <label
-                    class="utrecht-form-label utrecht-form-label--checkbox"
                     for="checkbox-sample"
+                    class="utrecht-form-label utrecht-form-label--checkbox"
                   >
                     <input
                       type="checkbox"
