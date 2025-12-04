@@ -30,23 +30,3 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Maven build
         run: ./mvnw install -N && ./mvnw install
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: "Component library JAR file for Java ${{ matrix.java }}"
-          path: rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/target/*.jar
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: "Extension component library JAR file for Java ${{ matrix.java }}"
-          path: rotterdam-nlds-parent-wicket/rotterdam-nlds-extensions-wicket/target/*.jar
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: "Icon library JAR file for Java ${{ matrix.java }}"
-          path: rotterdam-nlds-parent-wicket/rotterdam-nlds-icons-wicket/target/*.jar
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: "CSS library JAR file for Java ${{ matrix.java }}"
-          path: rotterdam-nlds-parent-wicket/rotterdam-nlds-css-wicket/target/*.jar
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: "Documentation WAR file for Java ${{ matrix.java }}"
-          path: rotterdam-nlds-parent-wicket/docs-wicket/target/*.war
