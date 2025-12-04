@@ -8,7 +8,7 @@ class RdLinkListLinkBehavior extends TagNameClassComponentBehavior<AbstractLink>
     static final RdLinkListLinkBehavior INSTANCE = new RdLinkListLinkBehavior();
 
     private RdLinkListLinkBehavior() {
-        super("a", RdLinkListLinkCss.DEFAULT);
+        super("a", RdLinkListLinkCss.LINK_ELEMENT);
         addHeaderItem(RdLinkListBehavior.CSS);
     }
 }

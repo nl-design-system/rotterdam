@@ -1,11 +1,11 @@
 package nl.rotterdam.nl_design_system.wicket.components.paragraph;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 class RdParagraphBehavior extends TagNameClassComponentBehavior<Component> {
 
@@ -17,7 +17,7 @@ class RdParagraphBehavior extends TagNameClassComponentBehavior<Component> {
     static final RdParagraphBehavior INSTANCE = new RdParagraphBehavior();
 
     private RdParagraphBehavior() {
-        super("p", RdParagraphCss.DEFAULT);
+        super("p", RdParagraphCss.BASE);
         addHeaderItem(CSS);
     }
 

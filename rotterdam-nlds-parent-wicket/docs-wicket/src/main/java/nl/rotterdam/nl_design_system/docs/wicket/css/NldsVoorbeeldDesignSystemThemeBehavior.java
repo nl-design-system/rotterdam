@@ -25,7 +25,7 @@ public class NldsVoorbeeldDesignSystemThemeBehavior extends TagNameClassComponen
     public static final Behavior INSTANCE = new NldsVoorbeeldDesignSystemThemeBehavior();
 
     private NldsVoorbeeldDesignSystemThemeBehavior() {
-        super("html", NldsVoorbeeldDesignSystemThemeCss.DEFAULT);
+        super("html", NldsVoorbeeldDesignSystemThemeCss.BASE);
         addHeaderItem(THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM);
     }
 }

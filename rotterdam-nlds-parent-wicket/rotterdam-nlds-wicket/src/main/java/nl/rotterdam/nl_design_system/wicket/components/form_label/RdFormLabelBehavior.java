@@ -1,15 +1,16 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_label;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.DEFAULT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.FORM_LABEL_STATE_DISABLED;
-
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.BASE;
+import static nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelCss.FORM_LABEL_STATE_DISABLED;
 
 /**
  * <a href="https://nldesignsystem.nl/form-field-label/">Form Field Label</a> with behavior.
@@ -41,12 +42,12 @@ public class RdFormLabelBehavior extends TagNameClassComponentBehavior<Component
     public static final RdFormLabelBehavior INSTANCE_DEFAULT = new RdFormLabelBehavior();
 
     private RdFormLabelBehavior() {
-        super("label", DEFAULT);
+        super("label", BASE);
         addHeaderItem(CSS);
     }
 
     private RdFormLabelBehavior(RdFormLabelType type) {
-        super("label", DEFAULT, type.fullClassName);
+        super("label", BASE, type.fullClassName);
         addHeaderItem(CSS);
     }
 

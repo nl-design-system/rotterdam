@@ -3,7 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.form_field_description;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdFormFieldDescriptionCss implements CssClassNames {
-    DEFAULT("utrecht-form-field-description");
+    BASE("utrecht-form-field-description");
 
     private final String classNames;
 

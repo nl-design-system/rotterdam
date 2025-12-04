@@ -9,7 +9,7 @@ class RdBreadcrumbNavItemBehavior extends TagNameClassComponentBehavior<Componen
         new RdBreadcrumbNavItemBehavior();
 
     private RdBreadcrumbNavItemBehavior() {
-        super("li", RdBreadcrumbNavItemCss.DEFAULT);
+        super("li", RdBreadcrumbNavItemCss.ITEM_ELEMENT);
         addHeaderItem(RdBreadcrumbNavBehavior.CSS);
     }
 }

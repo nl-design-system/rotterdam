@@ -1,9 +1,9 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_description;
 
-import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
-
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.Component;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 /**
  * Apply Form field description behavior to an HTML element.
@@ -26,7 +26,7 @@ public class RdFormFieldDescriptionBehavior extends TagNameClassComponentBehavio
     }
 
     private RdFormFieldDescriptionBehavior() {
-        super("div", RdFormFieldDescriptionCss.DEFAULT);
+        super("div", RdFormFieldDescriptionCss.BASE);
         addHeaderItem(
             cssReferenceHeaderItem(
                 RdFormFieldDescriptionBehavior.class,
