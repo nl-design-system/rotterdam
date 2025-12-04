@@ -27,8 +27,9 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static org.apache.commons.lang3.Strings.CI;
 
 public class ComponentsExamplePage extends RotterdamBasePage {
 
@@ -145,9 +146,8 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                 .classes
                 .stream().map(clazz ->
                     new RdSideNavRecord(
-                        // TODO Ability to set icon on component or example panel
                         null,
-                        clazz.getSimpleName(),
+                        makeLabel(clazz),
                         ComponentsExamplePage.class,
                         new PageParameters(getPageParameters()).set(PAGE_PARAM_COMPONENT, clazz.getSimpleName()),
                         null,
@@ -157,6 +157,18 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                 .collect(Collectors.toList());
 
         return new RdSideNavPanel(ID_COMPONENT_SELECTION, records);
+    }
+
+    static String makeLabel(Class<? extends ExamplesPanel> clazz) {
+        String labelInProgress = clazz.getSimpleName();
+
+        // remove suffix
+        labelInProgress = CI.removeEnd(labelInProgress, "ExamplesPanel");
+
+        //ActionGroup > Action Group
+        labelInProgress = labelInProgress.replaceAll("([a-z])([A-Z])", "$1 $2");
+
+        return labelInProgress;
     }
 
     @Override
