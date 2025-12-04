@@ -42,7 +42,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_field_label.R
  * implementation of Utrecht</a>.
  * </p>
  */
-@NlComponentState(wicketState = WicketState.NEEDS_REFACTORING, estafetteState = EstafetteState.COMMUNITY, htmlCssImplementedBy = Community.UTRECHT)
+@NlComponentState(wicketState = WicketState.UNSTABLE, estafetteState = EstafetteState.COMMUNITY, htmlCssImplementedBy = Community.UTRECHT)
 public class RdFormFieldLabelBehavior extends TagNameClassComponentBehavior<Component> {
 
     private static final CssReferenceHeaderItem CSS = cssReferenceHeaderItem(
