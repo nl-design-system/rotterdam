@@ -19,9 +19,8 @@ class ComponentsExamplePageTest extends NldsWicketTestCase {
     @Test
     void rendersWithoutComponentParameter() {
         tester.startPage(ComponentsExamplePage.class);
-        tester.assertRenderedPage(ComponentsExamplePage.class);
+        assertComponentExamplePageRendered();
     }
-
 
     @Test
     void makeLabelOfExampleClassGeneratesNameAsExpected() {
@@ -34,6 +33,10 @@ class ComponentsExamplePageTest extends NldsWicketTestCase {
     @FieldSource("nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentExamplePanels#classes")
     void allExamplesRender(Class<?> exampleClass) {
         tester.startPage(ComponentsExamplePage.class, new PageParameters().set(PAGE_PARAM_COMPONENT, exampleClass.getSimpleName()));
+        assertComponentExamplePageRendered();
     }
 
+    private void assertComponentExamplePageRendered() {
+        tester.assertRenderedPage(ComponentsExamplePage.class);
+    }
 }

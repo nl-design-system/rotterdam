@@ -71,23 +71,23 @@ public class RdSideNavPanel extends GenericPanel<List<RdSideNavRecord>> {
                     protected void populateItem(ListItem<RdSideNavRecord> item) {
                         item.add(RdSideNavItemBehavior.INSTANCE);
 
-                        RdSideNavRecord record = item.getModelObject();
+                        RdSideNavRecord sideNavRecord = item.getModelObject();
 
-                        var label = record.label();
+                        var label = sideNavRecord.label();
 
-                        RdSideNavLink<? extends WebPage> link = new RdSideNavLink<>("sideNavLink", record.page(), record.parameters());
+                        RdSideNavLink<? extends WebPage> link = new RdSideNavLink<>("sideNavLink", sideNavRecord.page(), sideNavRecord.parameters());
 
                         // Optionally add an icon
                         WebMarkupContainer icon = new WebMarkupContainer("sideNavLinkIcon");
                         link.add(icon);
-                        if (record.iconBehaviorSupplier() != null) {
-                            icon.add(record.iconBehaviorSupplier().get());
+                        if (sideNavRecord.iconBehaviorSupplier() != null) {
+                            icon.add(sideNavRecord.iconBehaviorSupplier().get());
                         } else {
                             icon.setVisible(false);
                         }
 
                         // Add the link text
-                        link.add(new Label("sideNavLinkLabel", label), new RdNumberBadge("sideNavLinkNumberBadge", record.numberBadge()).setVisible(record.numberBadge() != null));
+                        link.add(new Label("sideNavLinkLabel", label), new RdNumberBadge("sideNavLinkNumberBadge", sideNavRecord.numberBadge()).setVisible(sideNavRecord.numberBadge() != null));
 
                         item.add(link);
                     }

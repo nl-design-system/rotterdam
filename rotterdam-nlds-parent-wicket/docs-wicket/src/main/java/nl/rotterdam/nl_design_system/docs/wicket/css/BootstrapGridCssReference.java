@@ -6,6 +6,8 @@ import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeader
 
 public class BootstrapGridCssReference {
 
+    private BootstrapGridCssReference() {}
+
     /**
      * Reference to Bootstrap Grid CSS.
      *
