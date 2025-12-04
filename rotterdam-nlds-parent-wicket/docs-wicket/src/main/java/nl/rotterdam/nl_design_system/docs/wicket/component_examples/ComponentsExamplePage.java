@@ -158,6 +158,11 @@ public class ComponentsExamplePage extends RotterdamBasePage {
         return new RdSideNavPanel(ID_COMPONENT_SELECTION, records);
     }
 
+    /***
+     * Makes the label; package private for testing purpose.
+     *
+     * @return  the label.
+     */
     static String makeLabel(Class<? extends ExamplesPanel> clazz) {
         String label = clazz.getSimpleName();
 
