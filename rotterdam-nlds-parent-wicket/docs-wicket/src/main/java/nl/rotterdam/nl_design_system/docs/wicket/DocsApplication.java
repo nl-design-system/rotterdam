@@ -65,6 +65,6 @@ public class DocsApplication extends WebApplication {
 
     @Override
     public Class<? extends WebPage> getHomePage() {
-        return ComponentsPage.class;
+        return ComponentsExamplePage.class;
     }
 }
