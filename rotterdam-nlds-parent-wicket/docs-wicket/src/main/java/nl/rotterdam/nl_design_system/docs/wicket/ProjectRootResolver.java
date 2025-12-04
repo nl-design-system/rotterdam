@@ -4,6 +4,8 @@ import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import static java.util.Objects.requireNonNull;
+
 public class ProjectRootResolver {
 
     private ProjectRootResolver() {
@@ -11,14 +13,14 @@ public class ProjectRootResolver {
 
     public static File resolveProjectRootDir(Class<?> classInProject) {
         try {
-            URI uri = classInProject.getResource("/logback.xml").toURI();
-                File file = new File(uri);
+            URI uri = requireNonNull(classInProject.getResource("/logback.xml")).toURI();
+            File file = new File(uri);
             while (!new File(file, "pom.xml").exists()) {
                 file = file.getParentFile();
             }
             return file;
         } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
+            throw new IllegalStateException(e);
         }
     }
 }
