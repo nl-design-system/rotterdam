@@ -19,6 +19,11 @@ import java.util.List;
 
 import static nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior.supplyOf;
 
+/**
+ * Voorbeeld pagina in NL Design System formatting
+ *
+ * TODO niet af, geen grid systeem gebruikt. Besluit wat we er mee willen
+ */
 public class MijnLoketPage extends RotterdamBasePage {
 
     public final List<RdSideNavRecord> sideNavRecords;
@@ -38,10 +43,8 @@ public class MijnLoketPage extends RotterdamBasePage {
                 MijnLoketPage.class,
                 null,
                 null,
-
                 null
-            )
-            ,
+            ),
             new RdSideNavRecord(
                 supplyOf(RotterdamIconBehavior.INBOX),
                 "Mijn berichten",
