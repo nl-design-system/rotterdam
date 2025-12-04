@@ -12,6 +12,7 @@ import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlightin
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
 import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang3.exception.UncheckedIllegalAccessException;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
@@ -135,7 +136,7 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                 .newInstance(ID_EXAMPLE_RENDERED);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
                  NoSuchMethodException e) {
-            throw new RuntimeException(e);
+            throw new UncheckedIllegalAccessException(e);
         }
     }
 
