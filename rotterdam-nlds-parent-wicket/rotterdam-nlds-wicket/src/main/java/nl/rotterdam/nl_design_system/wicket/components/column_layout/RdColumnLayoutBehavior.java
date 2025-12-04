@@ -9,7 +9,7 @@ class RdColumnLayoutBehavior extends TagNameClassComponentBehavior<RdColumnLayou
     static final RdColumnLayoutBehavior INSTANCE  = new RdColumnLayoutBehavior();
 
     private RdColumnLayoutBehavior() {
-        super("div", RdColumnLayoutCss.DEFAULT);
+        super("div", RdColumnLayoutCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdColumnLayoutBehavior.class, "@utrecht/column-layout-css/dist/index.min.css"));
     }
 }

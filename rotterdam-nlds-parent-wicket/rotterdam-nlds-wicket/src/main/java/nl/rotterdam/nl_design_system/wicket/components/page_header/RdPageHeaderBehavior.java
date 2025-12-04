@@ -9,7 +9,7 @@ public class RdPageHeaderBehavior extends TagNameClassComponentBehavior<RdPageHe
     public static final RdPageHeaderBehavior INSTANCE = new RdPageHeaderBehavior();
 
     private RdPageHeaderBehavior() {
-        super("header", RdPageHeaderCss.DEFAULT);
+        super("header", RdPageHeaderCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdPageHeaderBehavior.class, "@utrecht/page-header-css/dist/index.min.css"));
     }
 

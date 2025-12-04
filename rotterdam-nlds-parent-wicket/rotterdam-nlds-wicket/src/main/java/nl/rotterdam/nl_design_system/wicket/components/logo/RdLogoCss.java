@@ -3,7 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.logo;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdLogoCss implements CssClassNames {
-    DEFAULT("utrecht-logo");
+    BASE("utrecht-logo");
 
     private final String classNames;
 

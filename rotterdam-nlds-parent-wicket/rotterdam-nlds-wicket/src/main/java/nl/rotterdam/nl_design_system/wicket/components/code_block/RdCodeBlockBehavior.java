@@ -15,7 +15,7 @@ public class RdCodeBlockBehavior extends TagNameClassComponentBehavior<Component
      * create default instance.
      */
     public RdCodeBlockBehavior() {
-        super("pre", RdCodeBlockCss.DEFAULT);
+        super("pre", RdCodeBlockCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdCodeBlockBehavior.class, "@nl-design-system-candidate/code-block-css/dist/code-block.css"));
     }
 }

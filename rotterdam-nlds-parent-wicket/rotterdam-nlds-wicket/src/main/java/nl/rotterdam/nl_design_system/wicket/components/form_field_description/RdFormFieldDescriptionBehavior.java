@@ -23,7 +23,7 @@ public class RdFormFieldDescriptionBehavior extends TagNameClassComponentBehavio
     }
 
     private RdFormFieldDescriptionBehavior() {
-        super("div", RdFormFieldDescriptionCss.DEFAULT);
+        super("div", RdFormFieldDescriptionCss.BASE);
         addHeaderItem(
             cssReferenceHeaderItem(
                 RdFormFieldDescriptionBehavior.class,

@@ -25,7 +25,7 @@ public class NldsRotterdamDesignSystemThemeBehavior extends TagNameClassComponen
     public static final Behavior INSTANCE = new NldsRotterdamDesignSystemThemeBehavior();
 
     private NldsRotterdamDesignSystemThemeBehavior() {
-        super("html", NldsRotterdamDesignSystemThemeCss.DEFAULT);
+        super("html", NldsRotterdamDesignSystemThemeCss.BASE);
         addHeaderItem(THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM);
     }
 }
