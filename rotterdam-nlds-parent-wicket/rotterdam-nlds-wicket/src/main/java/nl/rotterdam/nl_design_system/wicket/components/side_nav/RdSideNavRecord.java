@@ -21,10 +21,8 @@ public record RdSideNavRecord(
     String numberBadgeLabel
 ) implements Serializable {
     public RdSideNavRecord {
-        if (!Strings.isEmpty(numberBadgeLabel)) {
-            if (numberBadge == null) {
-                throw new IllegalArgumentException("numberBadge is required if numberBadgeLabel is set");
-            }
+        if (!Strings.isEmpty(numberBadgeLabel) && numberBadge == null) {
+            throw new IllegalArgumentException("numberBadge is required if numberBadgeLabel is set");
         }
     }
 }

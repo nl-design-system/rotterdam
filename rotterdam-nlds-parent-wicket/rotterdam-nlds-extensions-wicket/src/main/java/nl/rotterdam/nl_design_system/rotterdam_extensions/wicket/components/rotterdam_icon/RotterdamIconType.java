@@ -117,5 +117,4 @@ public enum RotterdamIconType {
         this.type = type;
     }
 
-
 }
