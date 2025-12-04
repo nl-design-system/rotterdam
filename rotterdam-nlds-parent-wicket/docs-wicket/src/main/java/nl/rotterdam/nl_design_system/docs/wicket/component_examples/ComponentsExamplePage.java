@@ -153,7 +153,7 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                         null
                     )
                 )
-                .collect(Collectors.toList());
+                .toList();
 
         return new RdSideNavPanel(ID_COMPONENT_SELECTION, records);
     }
