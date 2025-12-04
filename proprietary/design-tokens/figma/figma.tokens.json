@@ -8046,7 +8046,7 @@
           "$type": "color",
           "$value": "{utrecht.radio-button.border-color}"
         },
-        "margin-block-end": {
+        "margin-inline-end": {
           "$type": "dimension",
           "$value": "0px",
           "$description": "[code-only]"
