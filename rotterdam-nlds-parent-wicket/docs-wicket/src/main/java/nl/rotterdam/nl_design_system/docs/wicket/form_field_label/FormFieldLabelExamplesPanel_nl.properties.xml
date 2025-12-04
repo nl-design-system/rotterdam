@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="Option">Optie</entry>
+    <entry key="Option1">Optie 1</entry>
+    <entry key="StaticLabel">Statisch label</entry>
+</properties>
