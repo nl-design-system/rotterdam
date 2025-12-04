@@ -39,7 +39,7 @@ public class RdPatchingRootBehavior extends HeaderItemRenderingBehavior {
         addHeaderItem(CSS);
         addHeaderItem(new AfterJqueryJavaScriptContentHeaderItem(
             "document.addEventListener('DOMContentLoaded', (event) => { $('html').addClass('"
-                + RdRootCss.DEFAULT.getClassNames()
+                + RdRootCss.BASE.getClassNames()
                 + "'); })",
             "patchingRoot"));
     }

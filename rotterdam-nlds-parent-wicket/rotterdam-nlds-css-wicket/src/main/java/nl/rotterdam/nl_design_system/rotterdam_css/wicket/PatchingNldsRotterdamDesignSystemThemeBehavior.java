@@ -25,7 +25,7 @@ public class PatchingNldsRotterdamDesignSystemThemeBehavior extends HeaderItemRe
         addHeaderItem(THEME_ROTTERDAM_RODS_CSS_HEADER_ITEM);
         addHeaderItem(new AfterJqueryJavaScriptContentHeaderItem(
             "document.addEventListener('DOMContentLoaded', (event) => { $('html').addClass('"
-                + NldsRotterdamDesignSystemThemeCss.DEFAULT.getClassNames()
+                + NldsRotterdamDesignSystemThemeCss.BASE.getClassNames()
                 + "'); })",
             "patchingRodsTheme"));
     }
