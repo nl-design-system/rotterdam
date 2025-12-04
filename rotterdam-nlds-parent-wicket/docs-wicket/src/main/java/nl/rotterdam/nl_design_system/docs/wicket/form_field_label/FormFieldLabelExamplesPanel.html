@@ -31,11 +31,27 @@
             </template>
           </rods-story-canvas>
         </section>
+        <section data-testid="disabledFormFieldLabel">
+          <h2>Form Field Label - uitgeschakeld</h2>
+          <rods-story-canvas>
+            <template>
+              <label wicket:id="disabledFormFieldLabel"><wicket:message key="StaticLabel"></wicket:message></label>
+            </template>
+          </rods-story-canvas>
+        </section>
         <section data-testid="formFieldLabelCheckbox">
           <h2>Form Field Label for Checkbox</h2>
           <rods-story-canvas>
             <template>
-              <label wicket:id="formFieldLabelCheckbox"><input type="checkbox" wicket:id="checkbox"> <wicket:message key="Option1"></wicket:message></label>
+              <label wicket:id="formFieldLabelCheckbox"><input type="checkbox" wicket:id="checkbox"> <wicket:message key="Option"></wicket:message></label>
+            </template>
+          </rods-story-canvas>
+        </section>
+        <section data-testid="formFieldLabelCheckboxChecked">
+          <h2>Form Field Label for Checkbox, checked</h2>
+          <rods-story-canvas>
+            <template>
+              <label wicket:id="formFieldLabelCheckboxChecked"><input type="checkbox" wicket:id="checkbox"> <wicket:message key="Option"></wicket:message></label>
             </template>
           </rods-story-canvas>
         </section>
@@ -44,6 +60,16 @@
           <rods-story-canvas>
             <template>
               <span wicket:id="formFieldLabelRadioButton">
+                <label wicket:id="label"><input type="radio" wicket:id="radio"> <wicket:message key="Option1"></wicket:message></label>
+              </span>
+            </template>
+          </rods-story-canvas>
+        </section>
+        <section data-testid="formFieldLabelRadioButtonChecked">
+          <h2>Form Field Label for Radio Button, checked</h2>
+          <rods-story-canvas>
+            <template>
+              <span wicket:id="formFieldLabelRadioButtonChecked">
                 <label wicket:id="label"><input type="radio" wicket:id="radio"> <wicket:message key="Option1"></wicket:message></label>
               </span>
             </template>

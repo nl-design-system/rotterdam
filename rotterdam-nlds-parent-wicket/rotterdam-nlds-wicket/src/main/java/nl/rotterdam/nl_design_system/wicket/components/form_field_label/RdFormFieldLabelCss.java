@@ -5,8 +5,9 @@ import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassN
 enum RdFormFieldLabelCss implements CssClassNames {
     BASE("utrecht-form-label"),
     CHECKBOX("utrecht-form-label--checkbox"),
-    RADIO("utrecht-form-label--radio"),
-    DISABLED("utrecht-form-label--disabled");
+    CHECKED("utrecht-form-label--checked"),
+    DISABLED("utrecht-form-label--disabled"),
+    RADIO("utrecht-form-label--radio");
 
     private final String classNames;
 

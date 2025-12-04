@@ -198,7 +198,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
         protected void onInitialize() {
             super.onInitialize();
 
-            var labelBehavior = new RdFormFieldLabelBehavior(CHECKBOX);
+            var labelBehavior = new RdFormFieldLabelBehavior(CHECKBOX, inputComponent.getModel());
             labelBehavior.setComponentLabelIsFor(inputComponent);
             add(labelBehavior);
 
