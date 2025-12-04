@@ -64,6 +64,10 @@ Een beknopte stappenlijst voor het maken van een nieuw component.
 
 - Geef geen componenten door aan andere Wicket componenten (via constructors).
 - Voor methodes die componenten maken: prefix met new. Net als Wicket, zie bijvoorbeeld AjaxPagingNavigation
+- Waarden voor CSS-enums gebruiken de volgende naamgeving:
+  - `BASE` voor de hoofdklasse van het block. Als er modifiers zijn die altijd aanwezig moeten zijn, dan mogen die na de hoofdklasse worden opgenomen. Voorbeeld: `utrecht-button`.
+  - `<element>_ELEMENT` voor klassen die de elementen van het blok markeren. Voorbeeld: `utrecht-data-list__item-value`. Als er modifiers zijn die altijd aanwezig moeten zijn, dan mogen die na de elementklasse worden opgenomen.
+  - `<modifier>` voor modifierklassen. Voorbeeld: `utrecht-form-label--disabled`.
 
 ## Java Platform Module System (JPMS)
 

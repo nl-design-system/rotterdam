@@ -8,7 +8,7 @@ public class RdSideNavListBehavior extends TagNameClassComponentBehavior<Compone
     public static final RdSideNavListBehavior SIDE_NAV_LIST_BEHAVIOR = new RdSideNavListBehavior();
 
     private RdSideNavListBehavior() {
-        super("ul", RdSideNavListCss.DEFAULT);
+        super("ul", RdSideNavListCss.LIST_ELEMENT);
         addHeaderItem(RdSideNavBehavior.CSS);
     }
 }

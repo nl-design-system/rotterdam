@@ -9,7 +9,7 @@ class RdLinkListItemBehavior extends TagNameClassComponentBehavior<Component> {
     static final Behavior INSTANCE = new RdLinkListItemBehavior();
 
     private RdLinkListItemBehavior() {
-        super("li", RdLinkListItemCss.DEFAULT);
+        super("li", RdLinkListItemCss.ITEM_ELEMENT);
         addHeaderItem(RdLinkListBehavior.CSS);
     }
 }

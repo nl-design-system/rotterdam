@@ -10,7 +10,7 @@ import org.apache.wicket.Component;
 public class RdSideNavItemBehavior extends TagNameClassComponentBehavior<Component> {
 
     public RdSideNavItemBehavior() {
-        super("li", RdSideNavItemCss.DEFAULT);
+        super("li", RdSideNavItemCss.ITEM_ELEMENT);
         addHeaderItem(RdSideNavBehavior.CSS);
     }
 }

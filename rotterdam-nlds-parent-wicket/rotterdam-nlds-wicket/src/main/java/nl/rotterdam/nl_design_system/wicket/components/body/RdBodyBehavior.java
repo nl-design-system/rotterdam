@@ -20,7 +20,7 @@ public class RdBodyBehavior extends TagNameClassComponentBehavior<RdBodyBorder> 
     public static final RdBodyBehavior INSTANCE = new RdBodyBehavior();
 
     private RdBodyBehavior() {
-        super("body", RdBodyCss.DEFAULT);
+        super("body", RdBodyCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdBodyBehavior.class, "@utrecht/body-css/dist/index.min.css"));
     }
 }
