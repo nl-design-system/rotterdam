@@ -120,23 +120,23 @@ public class ComponentsExamplePage extends RotterdamBasePage {
 
 
     private ExamplesPanel newExampleComponentRenderingComponent() {
-        Optional<Class<? extends ExamplesPanel>> first = ComponentExamplePanels
+        return ComponentExamplePanels
             .classes
             .stream()
             .filter(p -> p.getSimpleName().equals(activeComponentExampleName))
-            .findFirst();
+            .findFirst()
+            .map(ComponentsExamplePage::instantiateExamplesPanel).orElseThrow();
+    }
 
-        return first.map(
-            clazz -> {
-                try {
-                    return clazz.getConstructor(String.class)
-                        .newInstance(ID_EXAMPLE_RENDERED);
-                } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
-                         NoSuchMethodException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        ).orElseThrow();
+    private static ExamplesPanel instantiateExamplesPanel(Class<? extends ExamplesPanel> clazz) {
+        try {
+            return clazz.getConstructor(String.class)
+                .newInstance(ID_EXAMPLE_RENDERED);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     private Component newComponentSelectionSidebar() {

@@ -8,34 +8,39 @@
 <wicket:extend>
   <div class="container-fluid">
 
-    <div class="row pb-2">
+    <div class="row mb-3">
       <aside class="col-lg-3">
+        <h2>Components</h2>
         <nav wicket:id="component-selection">
           * button
           * Form Field text input
         </nav>
       </aside>
       <main class="col-lg-9">
+        <div class="row mb-3">
         <section class="component-preview" wicket:id="example-rendered">
           Component preview (gerenderd voorbeeld) hier.
         </section>
+        </div>
+
+        <div class="row mb-3">
+          <h2>Markup</h2>
+          <pre class="col-lg-12" wicket:id="markup-code">
+            html code here
+          </pre>
+        </div>
+
+        <div class="row mb-3">
+          <h2 class="col-lg-12">Java code</h2>
+          <pre class="col-lg-12" wicket:id="java-code">
+          html code here
+        </pre>
+        </div>
       </main>
     </div>
 
-    <div class="row pb-2">
-      <h2>Markup</h2>
-      <pre class="col-lg-12" wicket:id="markup-code">
-      html code here
-    </pre>
-    </div>
-
-    <div class="row pb-2">
-      <h2 class="col-lg-12">Java code</h2>
-      <pre class="col-lg-12" wicket:id="java-code">
-      html code here
-    </pre>
-    </div>
   </div>
+
 </wicket:extend>
 </body>
 </html>
