@@ -32,6 +32,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.page_layout;
     opens nl.rotterdam.nl_design_system.docs.wicket.paragraph;
     opens nl.rotterdam.nl_design_system.docs.wicket.preserve_data;
+    opens nl.rotterdam.nl_design_system.docs.wicket.radio_button;
     opens nl.rotterdam.nl_design_system.docs.wicket.root;
     opens nl.rotterdam.nl_design_system.docs.wicket.separator;
     opens nl.rotterdam.nl_design_system.docs.wicket.side_nav;

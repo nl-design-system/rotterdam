@@ -12,7 +12,7 @@ class RdSideNavItemBehavior extends TagNameClassComponentBehavior<Component> {
     static final RdSideNavItemBehavior INSTANCE = new RdSideNavItemBehavior();
 
     private RdSideNavItemBehavior() {
-        super("li", RdSideNavItemCss.DEFAULT);
+            super("li", RdSideNavItemCss.ITEM_ELEMENT);
         addHeaderItem(RdSideNavBehavior.CSS);
     }
 }

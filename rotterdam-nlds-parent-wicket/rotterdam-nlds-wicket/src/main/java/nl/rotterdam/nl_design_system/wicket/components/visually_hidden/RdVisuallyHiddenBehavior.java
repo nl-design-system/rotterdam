@@ -31,7 +31,7 @@ public class RdVisuallyHiddenBehavior extends ClassComponentBehavior<Component> 
     public static final RdVisuallyHiddenBehavior INSTANCE = new RdVisuallyHiddenBehavior();
 
     private RdVisuallyHiddenBehavior() {
-        super(RdVisuallyHiddenCss.DEFAULT);
+        super(RdVisuallyHiddenCss.BASE);
         addHeaderItem(CSS_HEADER_ITEM);
     }
 }

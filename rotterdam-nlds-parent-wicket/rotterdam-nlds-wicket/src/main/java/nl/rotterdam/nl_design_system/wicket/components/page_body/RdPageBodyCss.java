@@ -3,7 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.page_body;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdPageBodyCss implements CssClassNames {
-    DEFAULT("utrecht-page-body");
+    BASE("utrecht-page-body");
 
     private final String classNames;
 

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Radio Button component</h1>
+        <div>
+          <p>Een keuzerondje.</p>
+        </div>
+
+        <section data-testid="unchecked">
+          <h2>Unchecked Radio Button</h2>
+          <rods-story-canvas>
+            <template>
+              <span wicket:id="unchecked">
+                <input type="radio" wicket:id="radio">
+              </span>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="checked">
+          <h2>Checked Radio Button</h2>
+          <rods-story-canvas>
+            <template>
+              <span wicket:id="checked">
+                <input type="radio" wicket:id="radio">
+              </span>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="invalid">
+          <h2>Invalid Radio Button</h2>
+          <rods-story-canvas>
+            <template>
+              <span wicket:id="invalid">
+                <input type="radio" wicket:id="radio">
+              </span>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="disabled">
+          <h2>Disabled Radio Button</h2>
+          <rods-story-canvas>
+            <template>
+              <span wicket:id="disabled">
+                <input type="radio" wicket:id="radio">
+              </span>
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

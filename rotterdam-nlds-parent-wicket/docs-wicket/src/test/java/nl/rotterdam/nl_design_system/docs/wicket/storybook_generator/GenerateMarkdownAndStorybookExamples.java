@@ -27,6 +27,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_body.PageBodyExamplesPanel
 import nl.rotterdam.nl_design_system.docs.wicket.page_footer.PageFooterExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_button.RadioButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
@@ -241,6 +242,11 @@ public class GenerateMarkdownAndStorybookExamples {
             "preserve-data",
             "Preserve Data"
         ).generate();
+    }
+
+    @Test
+    void generateRadioButton() {
+        new MarkdownDocumentationExamplesGenerator(RadioButtonExamplesPanel.class, "radio-button", "Radio Button").generate();
     }
 
     @Test

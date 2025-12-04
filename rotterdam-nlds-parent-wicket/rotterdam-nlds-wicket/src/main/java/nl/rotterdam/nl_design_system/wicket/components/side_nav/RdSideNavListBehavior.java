@@ -8,7 +8,7 @@ class RdSideNavListBehavior extends TagNameClassComponentBehavior<Component> {
     static final RdSideNavListBehavior INSTANCE = new RdSideNavListBehavior();
 
     private RdSideNavListBehavior() {
-        super("ul", RdSideNavListCss.DEFAULT);
+        super("ul", RdSideNavListCss.LIST_ELEMENT);
         addHeaderItem(RdSideNavBehavior.CSS);
     }
 }

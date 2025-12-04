@@ -6,7 +6,7 @@ import org.apache.wicket.Component;
 public class RdSideNavLinkBehavior extends TagNameClassComponentBehavior<Component> {
 
     public RdSideNavLinkBehavior() {
-        super("a", RdSideNavLinkCss.DEFAULT);
+        super("a", RdSideNavLinkCss.LINK_ELEMENT);
         addHeaderItem(RdSideNavBehavior.CSS);
     }
 }

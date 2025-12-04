@@ -420,8 +420,11 @@ importers:
         specifier: 7.4.0
         version: 7.4.0
       '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 2.2.0
+        version: 2.2.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/logo-css':
         specifier: 1.4.1
         version: 1.4.1
@@ -549,8 +552,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/badge-list-css':
-        specifier: 2.2.1
-        version: 2.2.1
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/body-css':
         specifier: 2.0.1
         version: 2.0.1
@@ -590,16 +593,13 @@ importers:
       '@utrecht/heading-group-css':
         specifier: 1.5.1
         version: 1.5.1
-      '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/link-list-css':
         specifier: 2.3.1
         version: 2.3.1
       '@utrecht/logo-css':
-        specifier: 1.4.1
-        version: 1.4.1
-      '@utrecht/nav-bar-css':
         specifier: 1.4.1
         version: 1.4.1
       '@utrecht/ordered-list-css':
@@ -617,24 +617,18 @@ importers:
       '@utrecht/page-layout-css':
         specifier: 1.1.1
         version: 1.1.1
-      '@utrecht/paragraph-css':
-        specifier: 3.0.1
-        version: 3.0.1
       '@utrecht/preserve-data-css':
         specifier: 1.3.1
         version: 1.3.1
+      '@utrecht/radio-button-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/root-css':
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/separator-css':
         specifier: 2.0.1
         version: 2.0.1
-      '@utrecht/table-css':
-        specifier: 1.6.1
-        version: 1.6.1
-      '@utrecht/textarea-css':
-        specifier: 3.0.1
-        version: 3.0.1
       '@utrecht/textbox-css':
         specifier: 3.0.1
         version: 3.0.1
@@ -3135,8 +3129,8 @@ packages:
   '@utrecht/alert-css@3.0.1':
     resolution: {integrity: sha512-0phAO794XRQcljQz2RcxdnXMvP5JmlRx8SeEq6T0R5oiKTUEWryxzfgfqu1wJ/VGxgKv+JVVGsSYS04HlKirig==}
 
-  '@utrecht/badge-list-css@2.2.1':
-    resolution: {integrity: sha512-C1HCRQ12CTuuFvmbcUEYsI8SuXe1X7y/oC9OyHznfyIJYkINm9NZ/30WIu99fgd/GkwjFyQoy24J990zteM3PQ==}
+  '@utrecht/badge-list-css@3.0.1':
+    resolution: {integrity: sha512-ujhscNHXxliZ/DZHa6xitpDArF+S32b6baP8erRbAo7SiP90aFw+3zQ7Uj0d5IAMXMCOOiTrRp8q9GWTAMRy+Q==}
 
   '@utrecht/body-css@2.0.1':
     resolution: {integrity: sha512-WQjaF2Ii0eERCnTGYI32Jpjts5ydJpCAQUTtLjVs/jGF2+wHBz7XRDN6SFd8S0xIgp6llMQjHB9rdVp8JxieWA==}
@@ -3271,8 +3265,11 @@ packages:
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
 
-  '@utrecht/icon@1.3.0':
-    resolution: {integrity: sha512-UkjRq7sR9Lsj6T9Ap6zi3YEWLbJNxau4RBSblDGM8E4irHW5AjiUERfVp4v6ZwSvgEqyeNIwwep69FJhw2je4A==}
+  '@utrecht/icon-css@3.0.1':
+    resolution: {integrity: sha512-dZdJ3jH4/ThxOTni743cIYc/zBe7o18j6uHOJxYjydfL/kSivcLrmVwiIJq6T18bbKAKjLceYJ+SiL93Pnt+tw==}
+
+  '@utrecht/icon@2.2.0':
+    resolution: {integrity: sha512-LAuQYCIyaUqR8fiM629+/tn46ZXNZvKcpTua7Q3PqEKmRzDNZqVkobH3GZLc0d02BxXqsgp6zZuWsm8pJ5U9xw==}
 
   '@utrecht/link-list-css@2.3.1':
     resolution: {integrity: sha512-KUzAe2dUd1sdoSLXFyqv1DjsjyXi9gJyHONGCEcQAkxpHYA4O569XQQnH4v9KVhGgJNRKmtXgcDJswMW09t5Xg==}
@@ -3294,9 +3291,6 @@ packages:
   '@utrecht/logo-css@1.4.1':
     resolution: {integrity: sha512-6ImqbLcRPhqVUP3toKG9rryoWWQTDKx/LmUgFQIe4OwPaJC/y7YM2pArdMtxiimJ/2hHODG2xfsHmkd+3qxBSQ==}
 
-  '@utrecht/nav-bar-css@1.4.1':
-    resolution: {integrity: sha512-wKpUeblwDlEzb0dEiH5YoLsysTsrqgcxbb+KmyZ+lcWlK9PNvKIIBhlA9TZUZV+eLsWWH7xr7mSRU1hUMyYryw==}
-
   '@utrecht/ordered-list-css@3.0.1':
     resolution: {integrity: sha512-FTLzofVJlkl4ypJz2QoWTwepXN+yX3Y3exL+69SpiwjAXSkRYkJ1agd0W6BZVH+JQ60u8+uApOKQpgx2Bh3ImQ==}
 
@@ -3312,11 +3306,11 @@ packages:
   '@utrecht/page-layout-css@1.1.1':
     resolution: {integrity: sha512-pFiRgDmB0F4s23JIJf0akynHVfBt7l4rv9t9gvpTeOxSdx3KTNZsxSNT5PyQwIf5mlEHWidp6yxn3fvQXlMKmw==}
 
-  '@utrecht/paragraph-css@3.0.1':
-    resolution: {integrity: sha512-Go+9gTJTdUuqzFiPvz7dxQohor7ExQ0Pj52wJewx3G2Acl9xbrv0mNyrLe38+v1C+wrJpy1Vg0lkvCF16HQNgw==}
-
   '@utrecht/preserve-data-css@1.3.1':
     resolution: {integrity: sha512-O4TdW3df2AJGHunXB5AzEGDi8u8RsdmSbhyVMO5XeVIjiCVztajiyXnRqfuFX7+OA0EZ5E3NUSjPuXnSEJnkQA==}
+
+  '@utrecht/radio-button-css@2.0.1':
+    resolution: {integrity: sha512-NY+z6f/3ChyrCl5gW1D5SJtsxEqsVbr26VZ7UEwFmPo55eFjn0qON3llklD0hl+2lRA5SMIZwoOARFMXrILSAA==}
 
   '@utrecht/radio-button-react@1.0.4':
     resolution: {integrity: sha512-pUcep0QygWwWAmdc44A3xI46ohZxIS7THjCQrJaO7EshTXfUOG8gqRkOaKmfTFLUjIENBCIIxVWWFI+hGAxRFA==}
@@ -3330,12 +3324,6 @@ packages:
 
   '@utrecht/separator-css@2.0.1':
     resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
-
-  '@utrecht/table-css@1.6.1':
-    resolution: {integrity: sha512-IEEB3JX19/FxAOyZHA/88h1GROSYsr3YxDIXsP+ea3sVUSyEcoUP0jgiKjcRV198Ad3p3+T07p79HhIuS+AhLw==}
-
-  '@utrecht/textarea-css@3.0.1':
-    resolution: {integrity: sha512-byy2EpNx6g9ORxTZyeGxWclsvzJxbkmi1uqLSCS7286nw3t7PkwiWSKBPBJ568153nKgBD7FgiZrjR0Oe7TDnA==}
 
   '@utrecht/textbox-css@3.0.1':
     resolution: {integrity: sha512-SP3CFpTd/6CffvSBcpBQ+uKzYusgDB/ri0vmEA/uYfWnRyen1ETQkeCoDJeSUR/D8g24NMdFu7xmOniiwGpRQg==}
@@ -10896,7 +10884,7 @@ snapshots:
 
   '@utrecht/alert-css@3.0.1': {}
 
-  '@utrecht/badge-list-css@2.2.1': {}
+  '@utrecht/badge-list-css@3.0.1': {}
 
   '@utrecht/body-css@2.0.1': {}
 
@@ -11033,7 +11021,9 @@ snapshots:
 
   '@utrecht/heading-group-css@1.5.1': {}
 
-  '@utrecht/icon@1.3.0': {}
+  '@utrecht/icon-css@3.0.1': {}
+
+  '@utrecht/icon@2.2.0': {}
 
   '@utrecht/link-list-css@2.3.1': {}
 
@@ -11053,8 +11043,6 @@ snapshots:
 
   '@utrecht/logo-css@1.4.1': {}
 
-  '@utrecht/nav-bar-css@1.4.1': {}
-
   '@utrecht/ordered-list-css@3.0.1': {}
 
   '@utrecht/page-body-css@0.1.1': {}
@@ -11065,9 +11053,9 @@ snapshots:
 
   '@utrecht/page-layout-css@1.1.1': {}
 
-  '@utrecht/paragraph-css@3.0.1': {}
-
   '@utrecht/preserve-data-css@1.3.1': {}
+
+  '@utrecht/radio-button-css@2.0.1': {}
 
   '@utrecht/radio-button-react@1.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -11079,10 +11067,6 @@ snapshots:
   '@utrecht/root-css@2.0.1': {}
 
   '@utrecht/separator-css@2.0.1': {}
-
-  '@utrecht/table-css@1.6.1': {}
-
-  '@utrecht/textarea-css@3.0.1': {}
 
   '@utrecht/textbox-css@3.0.1': {}
 

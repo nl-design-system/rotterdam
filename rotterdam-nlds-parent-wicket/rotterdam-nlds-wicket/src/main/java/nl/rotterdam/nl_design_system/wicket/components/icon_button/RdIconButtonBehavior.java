@@ -16,7 +16,7 @@ class RdIconButtonBehavior extends TagNameClassComponentBehavior<Button> {
     static final RdIconButtonBehavior INSTANCE = new RdIconButtonBehavior();
 
     private RdIconButtonBehavior() {
-        super("button", RdIconButtonCss.DEFAULT);
+        super("button", RdIconButtonCss.BASE);
         addHeaderItem(CSS_HEADER_ITEM);
     }
 }

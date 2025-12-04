@@ -15,7 +15,7 @@ class RdDialogBehavior extends TagNameClassComponentBehavior<RdDialogBorder> {
     static final RdDialogBehavior INSTANCE = new RdDialogBehavior();
 
     private RdDialogBehavior() {
-        super("dialog", RdDialogCss.DEFAULT);
+        super("dialog", RdDialogCss.BASE);
         addHeaderItem(CSS_HEADER_ITEM);
     }
 }

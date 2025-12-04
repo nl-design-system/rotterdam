@@ -15,7 +15,7 @@ public enum WicketState {
     /**
      * Not stable.
      */
-    UNSTABLE("Has been looked at, but needs tests, revision. Use with caution"),
+    UNSTABLE("Has been looked at, but needs (better) tests, revision. Use with caution"),
     /**
      * Expect only minor changes.
      */

@@ -1,15 +1,15 @@
 package nl.rotterdam.nl_design_system.wicket.components.preserve_data;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
-import static nl.rotterdam.nl_design_system.wicket.components.preserve_data.RdPreserveDataCss.DEFAULT;
-
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.NEEDS_REFACTORING;
+import static nl.rotterdam.nl_design_system.wicket.components.preserve_data.RdPreserveDataCss.BASE;
 
 /**
  *  Mark the given model to be preserved and show it 'as is'.
@@ -35,6 +35,6 @@ public class RdPreserveDataLabel extends Label {
     protected void onInitialize() {
         super.onInitialize();
         add(AttributeModifier.replace("translate", "no"));
-        add(DEFAULT.asBehavior());
+        add(BASE.asBehavior());
     }
 }
