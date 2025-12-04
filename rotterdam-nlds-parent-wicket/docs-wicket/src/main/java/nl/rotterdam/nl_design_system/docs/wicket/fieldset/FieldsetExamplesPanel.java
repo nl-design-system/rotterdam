@@ -16,7 +16,7 @@ public class FieldsetExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdFieldset examplFieldset() {
+    private static RdFieldset exampleFieldset() {
         return new RdFieldset("fieldset", new StringResourceModel("TheCaption"));
     }
 
@@ -45,6 +45,6 @@ public class FieldsetExamplesPanel extends ExamplesPanel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(examplFieldset(), exampleFieldsetDisabled(), exampleFieldsetInvalid(), exampleFieldsetSection());
+        add(exampleFieldset(), exampleFieldsetDisabled(), exampleFieldsetInvalid(), exampleFieldsetSection());
     }
 }

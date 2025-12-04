@@ -19,7 +19,7 @@ class RdRadioGroupFieldsetBehavior extends Behavior {
     @Override
     public void onComponentTag(Component component, ComponentTag tag) {
         if (!"fieldset".equalsIgnoreCase(tag.getName())) {
-            throw new IllegalStateException("Radio groud fieldset must be attached to `<fieldset>`.");
+            throw new IllegalStateException("Radio group fieldset must be attached to `<fieldset>`.");
         }
         
         super.onComponentTag(component, tag);
