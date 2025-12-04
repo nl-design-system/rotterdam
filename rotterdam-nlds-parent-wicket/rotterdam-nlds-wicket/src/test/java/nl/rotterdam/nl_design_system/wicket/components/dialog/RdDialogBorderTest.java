@@ -1,11 +1,11 @@
 package nl.rotterdam.nl_design_system.wicket.components.dialog;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
+import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestHandler;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -21,7 +21,7 @@ class RdDialogBorderTest extends NldsWicketTestCase {
         var dialog = new RdDialogBorder(
             "dialog",
             Model.of("Some string"),
-            () -> AttributeAppender.append("class", "icon-class"),
+            () -> AttributeModifier.append("class", "icon-class"),
             RdDialogHeadingLevel.LEVEL_1
         ) {
             @Override
@@ -55,7 +55,7 @@ class RdDialogBorderTest extends NldsWicketTestCase {
         var dialog = new RdDialogBorder(
             "dialog",
             Model.of("Title"),
-            () -> AttributeAppender.append("class", "icon-class"),
+            () -> AttributeModifier.append("class", "icon-class"),
             level
         ) {
             @Override
@@ -101,7 +101,7 @@ class RdDialogBorderTest extends NldsWicketTestCase {
         var dialog = new RdDialogBorder(
             "dialog",
             Model.of("Title"),
-            () -> AttributeAppender.append("class", "icon-class"),
+            () -> AttributeModifier.append("class", "icon-class"),
             Model.of("Close button label"),
             RdDialogHeadingLevel.LEVEL_1
         ) {

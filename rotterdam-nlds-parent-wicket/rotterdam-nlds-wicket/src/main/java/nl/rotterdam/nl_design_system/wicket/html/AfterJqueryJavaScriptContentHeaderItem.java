@@ -3,7 +3,6 @@ package nl.rotterdam.nl_design_system.wicket.html;
 import org.apache.wicket.Application;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.JavaScriptContentHeaderItem;
-import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.jspecify.annotations.Nullable;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class AfterJqueryJavaScriptContentHeaderItem extends JavaScriptContentHea
     public List<HeaderItem> getDependencies() {
         // Not thread-safe, but creating the items a small number of times is not a problem.
         if (dependencies == null) {
-            dependencies = List.of(JavaScriptReferenceHeaderItem.forReference(Application.get().getJavaScriptLibrarySettings().getJQueryReference()));
+            dependencies = List.of(forReference(Application.get().getJavaScriptLibrarySettings().getJQueryReference()));
         }
         return dependencies;
     }
