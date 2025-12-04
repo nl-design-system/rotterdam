@@ -28,6 +28,7 @@ body:
         * `onComponentTag(...)`:
           * [ ] Controle op de juiste tagnaam moet voor de aanroep `super.onComponentTag(tag);`.
           * [ ] Worden attributen alleen open- en open-close-tags gezet (`!tag.isClose()`)? De gezette attributen worden niet weggeschreven door Wicket, maar het is zonde van de onnodige verwerking.
+        * [ ] Worden de juiste namen voor waarden van CSS-enums gebruikt? 
         * [ ] Is er een voorbeeldpagina die de HTML- en Java-code, en die als het mogelijk is het component toont, met daarbij instellingen op de parameters aan te passen.
         * Legt de Javadoc uit hoe het component moet worden gebruikt?
           * Het is niet nodig om langere codesnippets op te nemen: ga ervan uit dat de ontwikkelaar Wicket-kennis heeft.

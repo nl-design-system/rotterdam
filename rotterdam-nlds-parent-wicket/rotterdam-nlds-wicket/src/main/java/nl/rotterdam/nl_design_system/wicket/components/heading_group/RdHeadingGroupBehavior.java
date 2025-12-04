@@ -15,7 +15,7 @@ public class RdHeadingGroupBehavior extends TagNameClassComponentBehavior<RdHead
     public static final RdHeadingGroupBehavior INSTANCE = new RdHeadingGroupBehavior();
 
     private RdHeadingGroupBehavior() {
-        super("hgroup", RdHeadingGroupCss.DEFAULT);
+        super("hgroup", RdHeadingGroupCss.BASE);
         addHeaderItem(cssReferenceHeaderItem(RdHeadingGroupBehavior.class, "@utrecht/heading-group-css/dist/index.min.css"));
     }
 }

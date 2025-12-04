@@ -22,7 +22,7 @@ public class RdRootBehavior extends TagNameClassComponentBehavior<TransparentWeb
     public static final RdRootBehavior INSTANCE = new RdRootBehavior();
 
     private RdRootBehavior() {
-        super("html", RdRootCss.DEFAULT);
+        super("html", RdRootCss.BASE);
         addHeaderItem(CSS);
     }
 }

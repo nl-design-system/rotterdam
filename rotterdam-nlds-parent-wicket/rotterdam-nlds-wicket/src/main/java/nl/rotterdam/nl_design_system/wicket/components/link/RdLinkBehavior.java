@@ -25,7 +25,7 @@ public class RdLinkBehavior extends TagNameClassComponentBehavior<AbstractLink> 
     public static final RdLinkBehavior INSTANCE = new RdLinkBehavior();
 
     private RdLinkBehavior() {
-        super("a", RdLinkCss.DEFAULT);
+        super("a", RdLinkCss.BASE);
         addHeaderItem(CSS);
     }
 }

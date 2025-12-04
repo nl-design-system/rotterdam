@@ -3,7 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdFormFieldTexInputCss implements CssClassNames {
-    DEFAULT("utrecht-form-field--text");
+    TEXT("utrecht-form-field--text");
 
     private final String classNames;
 

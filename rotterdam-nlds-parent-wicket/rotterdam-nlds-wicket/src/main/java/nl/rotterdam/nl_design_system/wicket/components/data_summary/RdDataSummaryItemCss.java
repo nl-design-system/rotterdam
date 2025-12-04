@@ -3,7 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.data_summary;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdDataSummaryItemCss implements CssClassNames {
-    DEFAULT("utrecht-data-list__item");
+    ITEM_ELEMENT("utrecht-data-list__item");
 
     private final String cssClassNames;
 
