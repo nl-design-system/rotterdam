@@ -1,11 +1,5 @@
 package nl.rotterdam.nl_design_system.wicket.components.data_summary;
 
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
-import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
-
-import java.util.List;
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.behavior.Behavior;
@@ -16,6 +10,13 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
+import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 /**
  * Simple <a href="https://nldesignsystem.nl/data-summary/">Data Summary</a> implementation based on
@@ -68,8 +69,8 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
 
         private static class DataListItemMarkupContainer extends WebMarkupContainer {
 
-            private static final Behavior ITEM_BEHAVIOR_CSS = RdDataSummaryItemCss.DEFAULT.asBehavior();
-            private static final Behavior KEY_BEHAVIOR_CSS = RdDataSummaryKeyCss.DEFAULT.asBehavior();
+            private static final Behavior ITEM_BEHAVIOR_CSS = RdDataSummaryItemCss.ITEM_ELEMENT.asBehavior();
+            private static final Behavior KEY_BEHAVIOR_CSS = RdDataSummaryKeyCss.ITEM_KEY_ELEMENT.asBehavior();
             private final ListItem<SummaryItem> item;
 
             DataListItemMarkupContainer(ListItem<SummaryItem> item) {
@@ -89,7 +90,7 @@ public class RdDataSummary extends GenericPanel<List<SummaryItem>> {
 
             private static class DataSummaryValueLabel extends Label {
 
-                private static final Behavior VALUE_BEHAVIOR_CSS = RdDataSummaryValueCss.DEFAULT.asBehavior();
+                private static final Behavior VALUE_BEHAVIOR_CSS = RdDataSummaryValueCss.ITEM_VALUE_ELEMENT.asBehavior();
 
                 private final IModel<SummaryItemValue> valueModel;
 

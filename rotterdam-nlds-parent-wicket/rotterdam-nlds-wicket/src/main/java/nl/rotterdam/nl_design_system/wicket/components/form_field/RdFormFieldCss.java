@@ -9,7 +9,7 @@ import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassN
  */
 @SuppressWarnings("doclint:missing")
 public enum RdFormFieldCss implements CssClassNames {
-    DEFAULT("utrecht-form-field"),
+    BASE("utrecht-form-field"),
     INVALID("utrecht-form-field--invalid"),
     FORM_FIELD_NESTED_BLOCK_INPUT("utrecht-form-field__input"),
     FORM_FIELD_NESTED_BLOCK_DESCRIPTION("utrecht-form-field__description"),
