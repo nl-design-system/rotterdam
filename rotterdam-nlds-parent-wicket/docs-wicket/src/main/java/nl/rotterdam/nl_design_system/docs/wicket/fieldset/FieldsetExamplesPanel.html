@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:panel xmlns:wicket="http://www.w3.org/1999/html">
+  <section class="stories">
+    <h1>Fieldset component</h1>
+    <div>
+      <p>Set van velden met een bijschrift.</p>
+    </div>
+
+    <section data-testid="fieldset">
+      <h2>Fieldset</h2>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="fieldset">
+            <p><wicket:message key="TheFieldsAppearHere"></wicket:message></p>
+          </div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="fieldsetDisabled">
+      <h2>Disabled Fieldset</h2>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="fieldsetDisabled">
+            <p><wicket:message key="TheFieldsAppearHere"></wicket:message></p>
+          </div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="fieldsetInvalid">
+      <h2>Invalid Fieldset</h2>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="fieldsetInvalid">
+            <p><wicket:message key="TheFieldsAppearHere"></wicket:message></p>
+          </div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="fieldsetSection">
+      <h2>Section Fieldset</h2>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="fieldsetSection">
+            <p><wicket:message key="TheFieldsAppearHere"></wicket:message></p>
+          </div>
+        </template>
+      </rods-story-canvas>
+    </section>
+  </section>
+</wicket:panel>

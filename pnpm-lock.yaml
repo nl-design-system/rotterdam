@@ -420,8 +420,11 @@ importers:
         specifier: 7.4.0
         version: 7.4.0
       '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 2.2.0
+        version: 2.2.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/logo-css':
         specifier: 1.4.1
         version: 1.4.1
@@ -581,15 +584,18 @@ importers:
       '@utrecht/form-field-error-message-css':
         specifier: 2.0.1
         version: 2.0.1
+      '@utrecht/form-fieldset-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/form-label-css':
         specifier: 1.6.1
         version: 1.6.1
       '@utrecht/heading-group-css':
         specifier: 1.5.1
         version: 1.5.1
-      '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/link-list-css':
         specifier: 2.3.1
         version: 2.3.1
@@ -614,7 +620,13 @@ importers:
       '@utrecht/preserve-data-css':
         specifier: 1.3.1
         version: 1.3.1
+      '@utrecht/radio-button-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/root-css':
+        specifier: 2.0.1
+        version: 2.0.1
+      '@utrecht/select-css':
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/separator-css':
@@ -3243,6 +3255,9 @@ packages:
       react: '18'
       react-dom: '18'
 
+  '@utrecht/form-fieldset-css@2.0.1':
+    resolution: {integrity: sha512-EijyKtu0FK/hGEssXKtV3Q0/Z9eZjChfsAYvtOhUNs5A5bJ0+o7j4jIIO/D9Tj14Phh05hVCXm0YaPq4BJ42KQ==}
+
   '@utrecht/form-label-css@1.6.1':
     resolution: {integrity: sha512-h9d0FpM/VRbeVnr9zd/9Mbr+paKHa2OaJn0eP2ncCBHlLveb3Mww3rl+u6t0vw0lB8mrUAtjDWCLAjKNc8d0Gg==}
 
@@ -3256,8 +3271,11 @@ packages:
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
 
-  '@utrecht/icon@1.3.0':
-    resolution: {integrity: sha512-UkjRq7sR9Lsj6T9Ap6zi3YEWLbJNxau4RBSblDGM8E4irHW5AjiUERfVp4v6ZwSvgEqyeNIwwep69FJhw2je4A==}
+  '@utrecht/icon-css@3.0.1':
+    resolution: {integrity: sha512-dZdJ3jH4/ThxOTni743cIYc/zBe7o18j6uHOJxYjydfL/kSivcLrmVwiIJq6T18bbKAKjLceYJ+SiL93Pnt+tw==}
+
+  '@utrecht/icon@2.2.0':
+    resolution: {integrity: sha512-LAuQYCIyaUqR8fiM629+/tn46ZXNZvKcpTua7Q3PqEKmRzDNZqVkobH3GZLc0d02BxXqsgp6zZuWsm8pJ5U9xw==}
 
   '@utrecht/link-list-css@2.3.1':
     resolution: {integrity: sha512-KUzAe2dUd1sdoSLXFyqv1DjsjyXi9gJyHONGCEcQAkxpHYA4O569XQQnH4v9KVhGgJNRKmtXgcDJswMW09t5Xg==}
@@ -3297,6 +3315,9 @@ packages:
   '@utrecht/preserve-data-css@1.3.1':
     resolution: {integrity: sha512-O4TdW3df2AJGHunXB5AzEGDi8u8RsdmSbhyVMO5XeVIjiCVztajiyXnRqfuFX7+OA0EZ5E3NUSjPuXnSEJnkQA==}
 
+  '@utrecht/radio-button-css@2.0.1':
+    resolution: {integrity: sha512-NY+z6f/3ChyrCl5gW1D5SJtsxEqsVbr26VZ7UEwFmPo55eFjn0qON3llklD0hl+2lRA5SMIZwoOARFMXrILSAA==}
+
   '@utrecht/radio-button-react@1.0.4':
     resolution: {integrity: sha512-pUcep0QygWwWAmdc44A3xI46ohZxIS7THjCQrJaO7EshTXfUOG8gqRkOaKmfTFLUjIENBCIIxVWWFI+hGAxRFA==}
     peerDependencies:
@@ -3306,6 +3327,9 @@ packages:
 
   '@utrecht/root-css@2.0.1':
     resolution: {integrity: sha512-mhEyFaHhWHmwxu3HFR1+HpQDdQfGCfETBRKDP9QsGFwxX1t8FDUmL570+0LH3VqBA7db6gz8/krh8MUzCRp8yw==}
+
+  '@utrecht/select-css@2.0.1':
+    resolution: {integrity: sha512-Cile0O+ks3lve3l8hRvmkreHemHmV/LAwjnbvT7pY4rbpvDe7FwiC4fxC9Jsm+CTruCnmK253W6XV3jQSyjMxg==}
 
   '@utrecht/separator-css@2.0.1':
     resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
@@ -10990,6 +11014,8 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@utrecht/form-fieldset-css@2.0.1': {}
+
   '@utrecht/form-label-css@1.6.1': {}
 
   '@utrecht/form-label-react@1.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
@@ -11001,7 +11027,9 @@ snapshots:
 
   '@utrecht/heading-group-css@1.5.1': {}
 
-  '@utrecht/icon@1.3.0': {}
+  '@utrecht/icon-css@3.0.1': {}
+
+  '@utrecht/icon@2.2.0': {}
 
   '@utrecht/link-list-css@2.3.1': {}
 
@@ -11033,6 +11061,8 @@ snapshots:
 
   '@utrecht/preserve-data-css@1.3.1': {}
 
+  '@utrecht/radio-button-css@2.0.1': {}
+
   '@utrecht/radio-button-react@1.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.4
@@ -11041,6 +11071,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@utrecht/root-css@2.0.1': {}
+
+  '@utrecht/select-css@2.0.1': {}
 
   '@utrecht/separator-css@2.0.1': {}
 

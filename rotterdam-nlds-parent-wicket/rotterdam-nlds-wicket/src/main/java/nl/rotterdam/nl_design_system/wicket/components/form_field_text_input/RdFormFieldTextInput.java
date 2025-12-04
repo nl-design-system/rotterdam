@@ -5,7 +5,7 @@ import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormField;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.form_label.RdFormLabelBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFieldLabelBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.text_input.RdTextInput;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
@@ -78,6 +78,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
         IModel<T> model,
         IModel<@Nullable String> labelModel,
         IModel<@Nullable String> descriptionModel
+
     ) {
         super(id, model);
         requireNonNull(labelModel);
@@ -241,13 +242,9 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
         protected void onInitialize() {
             super.onInitialize();
 
-            add(RdFormLabelBehavior.INSTANCE_DEFAULT);
-        }
-
-        @Override
-        protected void onComponentTag(ComponentTag tag) {
-            super.onComponentTag(tag);
-            tag.put("for", textInput.getMarkupId());
+            var labelBehavior = new RdFormFieldLabelBehavior();
+            labelBehavior.setComponentLabelIsFor(textInput);
+            add(labelBehavior);
         }
     }
 }

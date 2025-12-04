@@ -11,6 +11,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamp
 import nl.rotterdam.nl_design_system.docs.wicket.css.DesignSystemTheme;
 import nl.rotterdam.nl_design_system.docs.wicket.data_summary.DataSummaryExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
@@ -30,7 +31,10 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_footer.PageFooterExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.paragraph.ParagraphExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_button.RadioButtonExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_group.RadioGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
@@ -101,6 +105,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
             new CheckboxExamplesPanel("checkboxExamplesPanel"),
+            new FieldsetExamplesPanel("fieldsetExamplesPanel"),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
@@ -121,7 +126,10 @@ public class ComponentsPage extends RotterdamBasePage {
             new PageLayoutExamplesPanel("pageLayoutExamplesPanel"),
             new ParagraphExamplesPanel("paragraphExamplesPanel"),
             new PreserveDataExamplesPanel("preserveDataExamplesPanel"),
+            new RadioButtonExamplesPanel("radioButtonExamplesPanel"),
+            new RadioGroupExamplesPanel("radioGroupExamplesPanel"),
             new RootExamplesPanel("rootExamplesPanel"),
+            new SelectExamplesPanel("selectExamplesPanel"),
             new SeparatorExamplesPanel("separatorExamplesPanel"),
             new UnorderedListExamplesPanel("unorderedListExamplesPanel"),
     
