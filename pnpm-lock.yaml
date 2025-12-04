@@ -420,8 +420,11 @@ importers:
         specifier: 7.4.0
         version: 7.4.0
       '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 2.2.0
+        version: 2.2.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/logo-css':
         specifier: 1.4.1
         version: 1.4.1
@@ -546,8 +549,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/badge-list-css':
-        specifier: 2.2.1
-        version: 2.2.1
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/body-css':
         specifier: 2.0.1
         version: 2.0.1
@@ -587,9 +590,9 @@ importers:
       '@utrecht/heading-group-css':
         specifier: 1.5.1
         version: 1.5.1
-      '@utrecht/icon':
-        specifier: 1.3.0
-        version: 1.3.0
+      '@utrecht/icon-css':
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/link-list-css':
         specifier: 2.3.1
         version: 2.3.1
@@ -3120,8 +3123,8 @@ packages:
   '@utrecht/alert-css@3.0.1':
     resolution: {integrity: sha512-0phAO794XRQcljQz2RcxdnXMvP5JmlRx8SeEq6T0R5oiKTUEWryxzfgfqu1wJ/VGxgKv+JVVGsSYS04HlKirig==}
 
-  '@utrecht/badge-list-css@2.2.1':
-    resolution: {integrity: sha512-C1HCRQ12CTuuFvmbcUEYsI8SuXe1X7y/oC9OyHznfyIJYkINm9NZ/30WIu99fgd/GkwjFyQoy24J990zteM3PQ==}
+  '@utrecht/badge-list-css@3.0.1':
+    resolution: {integrity: sha512-ujhscNHXxliZ/DZHa6xitpDArF+S32b6baP8erRbAo7SiP90aFw+3zQ7Uj0d5IAMXMCOOiTrRp8q9GWTAMRy+Q==}
 
   '@utrecht/body-css@2.0.1':
     resolution: {integrity: sha512-WQjaF2Ii0eERCnTGYI32Jpjts5ydJpCAQUTtLjVs/jGF2+wHBz7XRDN6SFd8S0xIgp6llMQjHB9rdVp8JxieWA==}
@@ -3256,8 +3259,11 @@ packages:
   '@utrecht/heading-group-css@1.5.1':
     resolution: {integrity: sha512-INFePIMQevIK1GGlyfPe1bccrtEDg8hSfkIYt6Ts+l4ptb5yILFhPrYT+odW2Pq+F9h9HPJ0c545kZnik4VhWA==}
 
-  '@utrecht/icon@1.3.0':
-    resolution: {integrity: sha512-UkjRq7sR9Lsj6T9Ap6zi3YEWLbJNxau4RBSblDGM8E4irHW5AjiUERfVp4v6ZwSvgEqyeNIwwep69FJhw2je4A==}
+  '@utrecht/icon-css@3.0.1':
+    resolution: {integrity: sha512-dZdJ3jH4/ThxOTni743cIYc/zBe7o18j6uHOJxYjydfL/kSivcLrmVwiIJq6T18bbKAKjLceYJ+SiL93Pnt+tw==}
+
+  '@utrecht/icon@2.2.0':
+    resolution: {integrity: sha512-LAuQYCIyaUqR8fiM629+/tn46ZXNZvKcpTua7Q3PqEKmRzDNZqVkobH3GZLc0d02BxXqsgp6zZuWsm8pJ5U9xw==}
 
   '@utrecht/link-list-css@2.3.1':
     resolution: {integrity: sha512-KUzAe2dUd1sdoSLXFyqv1DjsjyXi9gJyHONGCEcQAkxpHYA4O569XQQnH4v9KVhGgJNRKmtXgcDJswMW09t5Xg==}
@@ -10864,7 +10870,7 @@ snapshots:
 
   '@utrecht/alert-css@3.0.1': {}
 
-  '@utrecht/badge-list-css@2.2.1': {}
+  '@utrecht/badge-list-css@3.0.1': {}
 
   '@utrecht/body-css@2.0.1': {}
 
@@ -11001,7 +11007,9 @@ snapshots:
 
   '@utrecht/heading-group-css@1.5.1': {}
 
-  '@utrecht/icon@1.3.0': {}
+  '@utrecht/icon-css@3.0.1': {}
+
+  '@utrecht/icon@2.2.0': {}
 
   '@utrecht/link-list-css@2.3.1': {}
 
