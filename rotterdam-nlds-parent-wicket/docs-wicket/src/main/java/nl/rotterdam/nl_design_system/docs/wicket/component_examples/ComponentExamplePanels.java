@@ -11,6 +11,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.code_block.CodeBlockExamplesPan
 import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.data_summary.DataSummaryExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
@@ -30,7 +31,10 @@ import nl.rotterdam.nl_design_system.docs.wicket.page_footer.PageFooterExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.page_layout.PageLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.paragraph.ParagraphExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.preserve_data.PreserveDataExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_button.RadioButtonExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.radio_group.RadioGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
@@ -52,6 +56,7 @@ public class ComponentExamplePanels {
         CodeBlockExamplesPanel.class,
         ColumnLayoutExamplesPanel.class,
         CheckboxExamplesPanel.class,
+        FieldsetExamplesPanel.class,
         FormFieldCheckboxExamplesPanel.class,
         FormFieldLabelExamplesPanel.class,
         FormFieldTextInputExamplesPanel.class,
@@ -72,7 +77,10 @@ public class ComponentExamplePanels {
         PageLayoutExamplesPanel.class,
         ParagraphExamplesPanel.class,
         PreserveDataExamplesPanel.class,
+        RadioButtonExamplesPanel.class,
+        RadioGroupExamplesPanel.class,
         RootExamplesPanel.class,
+        SelectExamplesPanel.class,
         SeparatorExamplesPanel.class,
         UnorderedListExamplesPanel.class
     );
