@@ -22,6 +22,11 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "date=$(/bin/date -u "+%Y%m")" >> $GITHUB_OUTPUT
+        shell: bash
       - name: Cache dependencies
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
@@ -29,7 +34,6 @@ jobs:
             ~/.m2/repository
             ~/.m2/wrapper
             node_modules/.pnpm
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          key: ${{ steps.get-date.outputs.date }}
       - name: Maven build
-        run: ./mvnw install -N && ./mvnw install
+        run: ./mvnw install --threads 1C

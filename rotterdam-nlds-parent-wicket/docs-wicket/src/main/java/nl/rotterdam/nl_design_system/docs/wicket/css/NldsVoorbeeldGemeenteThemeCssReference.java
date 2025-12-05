@@ -1,13 +1,10 @@
 package nl.rotterdam.nl_design_system.docs.wicket.css;
 
-import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.request.resource.CssResourceReference;
+
+import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
 
 public class NldsVoorbeeldGemeenteThemeCssReference {
-
-    private static final String THEME_CSS_RESOURCE_PATH =
-        "@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css";
 
     /**
      * Use this theme if your organization doesn't have its own theme yet (based on Design System tokens).
@@ -17,10 +14,7 @@ public class NldsVoorbeeldGemeenteThemeCssReference {
     public static final CssReferenceHeaderItem THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM = makeHeaderItemForCss();
 
     private static CssReferenceHeaderItem makeHeaderItemForCss() {
-        return CssHeaderItem.forReference(makeReference());
-    }
-
-    private static CssResourceReference makeReference() {
-        return new CssResourceReference(NldsVoorbeeldGemeenteThemeCssReference.class, THEME_CSS_RESOURCE_PATH);
+        return cssReferenceHeaderItem(NldsVoorbeeldGemeenteThemeCssReference.class,
+            "@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css");
     }
 }

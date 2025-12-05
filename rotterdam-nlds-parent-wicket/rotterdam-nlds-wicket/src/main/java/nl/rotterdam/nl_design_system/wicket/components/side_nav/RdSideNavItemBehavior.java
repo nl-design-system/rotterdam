@@ -7,10 +7,12 @@ import org.apache.wicket.Component;
 /**
  * Behavior for list item.
  */
-public class RdSideNavItemBehavior extends TagNameClassComponentBehavior<Component> {
+class RdSideNavItemBehavior extends TagNameClassComponentBehavior<Component> {
 
-    public RdSideNavItemBehavior() {
-        super("li", RdSideNavItemCss.ITEM_ELEMENT);
+    static final RdSideNavItemBehavior INSTANCE = new RdSideNavItemBehavior();
+
+    private RdSideNavItemBehavior() {
+            super("li", RdSideNavItemCss.ITEM_ELEMENT);
         addHeaderItem(RdSideNavBehavior.CSS);
     }
 }

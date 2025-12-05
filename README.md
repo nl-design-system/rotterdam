@@ -70,13 +70,25 @@ Here's a complete example:
 
 ### Getting started
 
-#### 1. Ensure `pnpm`` is installed
+#### 1. Ensure `pnpm` and `node` are installed
+
+For the versions to use see `<node.version>` and `<pnpm.version>` in [`pom.xml`](pom.xml).
+
+To check if `node` is installed use
+
+```zsh
+node -v
+```
 
 To check if `pnpm` is installed use
 
 ```zsh
 pnpm -v
 ```
+
+Also configure your IDE to use the same versions (for the project):
+
+- IntelliJ IDEA: Settings » Languages & Frameworks » Node.js
 
 This repository uses `pnpm` to install packages and to manage the workflows in this monorepo. Installation of this tool is a prerequisite for developing in the packages. Follow the most recent guide on [https://pnpm.io/installation](https://pnpm.io/installation).
 

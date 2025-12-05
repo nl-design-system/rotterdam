@@ -40,7 +40,6 @@ public class UnorderedListExamplesPanel extends ExamplesPanel {
                         protected void populateItem(ListItem<String> item) {
                             item.add(RdUnorderedListItemBehavior.INSTANCE);
                             String naam = item.getModelObject();
-                            // item.add(naam);
                             item.add(new Label("label", naam));
                         }
                     }

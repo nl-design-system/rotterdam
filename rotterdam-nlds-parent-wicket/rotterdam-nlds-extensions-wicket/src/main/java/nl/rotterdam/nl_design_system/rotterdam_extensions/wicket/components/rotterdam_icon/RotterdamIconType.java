@@ -116,4 +116,5 @@ public enum RotterdamIconType {
     RotterdamIconType(String type) {
         this.type = type;
     }
+
 }

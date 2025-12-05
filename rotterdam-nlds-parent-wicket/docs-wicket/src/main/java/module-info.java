@@ -42,6 +42,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.sso_login_page;
     opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
     opens nl.rotterdam.nl_design_system.docs.wicket.unordered_list;
+    opens nl.rotterdam.nl_design_system.docs.wicket.component_examples;
 
     requires de.agilecoders.wicket.webjars;
     requires nl.rotterdam.nl_design_system.rotterdam_css.wicket;
@@ -53,4 +54,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     requires org.jspecify;
     requires org.slf4j;
     requires wicket.bootstrap.extensions;
+    requires org.apache.wicket.request;
+    requires org.apache.wicket.util;
+    requires org.apache.commons.lang3;
 }

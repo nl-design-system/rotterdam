@@ -1,15 +1,28 @@
 package nl.rotterdam.nl_design_system.wicket.components.side_nav;
 
 import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.util.string.Strings;
 import org.danekja.java.util.function.serializable.SerializableSupplier;
 import org.jspecify.annotations.Nullable;
 
 import java.io.Serializable;
 
-public record RdSideNavRecord<C>(
-    @Nullable SerializableSupplier<Behavior> iconBehaviorSupplier,
+public record RdSideNavRecord(
+    @Nullable SerializableSupplier<? extends Behavior> iconBehaviorSupplier,
     String label,
-    Class<C> target,
-    long numberBadge,
+    Class<? extends WebPage> page,
+    @Nullable
+    PageParameters parameters,
+    @Nullable
+    Long numberBadge,
+    @Nullable // currently not used; is defined in https://nldesignsystem.nl/number-badge/, not in utrecht impl, but is defined (but unused) in Java
     String numberBadgeLabel
-) implements Serializable {}
+) implements Serializable {
+    public RdSideNavRecord {
+        if (!Strings.isEmpty(numberBadgeLabel) && numberBadge == null) {
+            throw new IllegalArgumentException("numberBadge is required if numberBadgeLabel is set");
+        }
+    }
+}

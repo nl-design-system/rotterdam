@@ -36,7 +36,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.radio_group.RadioGroupExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.side_nav.RdSideNavExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingTheme;
 import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlighting.RdSyntaxHighlightingThemeBehavior;
@@ -61,6 +61,10 @@ import java.util.Arrays;
 
 import static nl.rotterdam.nl_design_system.docs.wicket.css.NldsVoorbeeldGemeenteThemeCssReference.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
 
+/**
+ * @deprecated use {@link nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentsExamplePage}.
+*/
+@Deprecated
 public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
@@ -95,36 +99,36 @@ public class ComponentsPage extends RotterdamBasePage {
 
         // Add the component stories. You can add multiple components with just one add, making it easier to read.
         pageBody.add(
-            new RdSideNavExamplesPanel("sideNavExamplesPanel"),
+            new SideNavExamplesPanel("sideNavExamplesPanel"),
             new AlertExamplesPanel("alertExamplesPanel"),
             new BadgeListExamplesPanel("badgeListExamplesPanel"),
-            new BodyExamplesPanel("bodyExamplesPanel"),
+            new BodyExamplesPanel("bodyExamplesPanel").setVisible(false),
             new ButtonExamplesPanel("buttonExamplesPanel"),
             new IconButtonExamplesPanel("iconButtonExamplesPanel"),
-            new ActionGroupExamplesPanel("actionGroupExamplesPanel"),
+            new ActionGroupExamplesPanel("actionGroupExamplesPanel").setVisible(false),
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
             new CheckboxExamplesPanel("checkboxExamplesPanel"),
             new FieldsetExamplesPanel("fieldsetExamplesPanel"),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
-            new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
+            new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel").setVisible(false),
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
             new DataSummaryExamplesPanel("dataSummaryExamplesPanel"),
-            new HeadingExamplesPanel("headingExamplesPanel"),
-            new HeadingGroupExamplesPanel("headingGroupExamplesPanel"),
-            new IconExamplesPanel("iconExamplesPanel"),
-            new RodsIconExamplesPanel("rodsIconExamplesPanel"),
+            new HeadingExamplesPanel("headingExamplesPanel").setVisible(false),
+            new HeadingGroupExamplesPanel("headingGroupExamplesPanel").setVisible(false),
+            new IconExamplesPanel("iconExamplesPanel").setVisible(false),
+            new RodsIconExamplesPanel("rodsIconExamplesPanel").setVisible(false),
             new RotterdamLogoImageExamplesPanel("rotterdamLogoImageExamplesPanel"),
-            new LinkExamplesPanel("linkExamplesPanel"),
-            new LinkListExamplesPanel("linkListExamplesPanel"),
-            new LogoExamplesPanel("logoExamplesPanel"),
+            new LinkExamplesPanel("linkExamplesPanel").setVisible(false),
+            new LinkListExamplesPanel("linkListExamplesPanel").setVisible(false),
+            new LogoExamplesPanel("logoExamplesPanel").setVisible(false),
             new DialogExamplesPanel("dialogExamplesPanel"),
-            new NumberBadgeExamplesPanel("numberBadgeExamplesPanel"),
-            new OrderedListExamplesPanel("orderedListExamplesPanel"),
-            new PageBodyExamplesPanel("pageBodyExamplesPanel"),
-            new PageFooterExamplesPanel("pageFooterExamplesPanel"),
-            new PageLayoutExamplesPanel("pageLayoutExamplesPanel"),
-            new ParagraphExamplesPanel("paragraphExamplesPanel"),
+            new NumberBadgeExamplesPanel("numberBadgeExamplesPanel").setVisible(false),
+            new OrderedListExamplesPanel("orderedListExamplesPanel").setVisible(false),
+            new PageBodyExamplesPanel("pageBodyExamplesPanel").setVisible(false),
+            new PageFooterExamplesPanel("pageFooterExamplesPanel").setVisible(false),
+            new PageLayoutExamplesPanel("pageLayoutExamplesPanel").setVisible(false),
+            new ParagraphExamplesPanel("paragraphExamplesPanel").setVisible(false),
             new PreserveDataExamplesPanel("preserveDataExamplesPanel"),
             new RadioButtonExamplesPanel("radioButtonExamplesPanel"),
             new RadioGroupExamplesPanel("radioGroupExamplesPanel"),
@@ -132,7 +136,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new SelectExamplesPanel("selectExamplesPanel"),
             new SeparatorExamplesPanel("separatorExamplesPanel"),
             new UnorderedListExamplesPanel("unorderedListExamplesPanel"),
-    
+
             createActiveThemeChoice(),
             createRefreshPageLink()
         );
