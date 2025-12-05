@@ -37,6 +37,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
 
 import java.util.List;
@@ -46,30 +47,27 @@ public class ComponentExamplePanels {
     private ComponentExamplePanels() {}
 
     public static final List<Class<? extends ExamplesPanel>> classes = List.of(
-        SideNavExamplesPanel.class,
+        ActionGroupExamplesPanel.class,
         AlertExamplesPanel.class,
         BadgeListExamplesPanel.class,
         BodyExamplesPanel.class,
         ButtonExamplesPanel.class,
-        IconButtonExamplesPanel.class,
-        ActionGroupExamplesPanel.class,
+        CheckboxExamplesPanel.class,
         CodeBlockExamplesPanel.class,
         ColumnLayoutExamplesPanel.class,
-        CheckboxExamplesPanel.class,
+        DataSummaryExamplesPanel.class,
+        DialogExamplesPanel.class,
         FieldsetExamplesPanel.class,
         FormFieldCheckboxExamplesPanel.class,
         FormFieldLabelExamplesPanel.class,
         FormFieldTextInputExamplesPanel.class,
-        DataSummaryExamplesPanel.class,
         HeadingExamplesPanel.class,
         HeadingGroupExamplesPanel.class,
+        IconButtonExamplesPanel.class,
         IconExamplesPanel.class,
-        RodsIconExamplesPanel.class,
-        RotterdamLogoImageExamplesPanel.class,
         LinkExamplesPanel.class,
         LinkListExamplesPanel.class,
         LogoExamplesPanel.class,
-        DialogExamplesPanel.class,
         NumberBadgeExamplesPanel.class,
         OrderedListExamplesPanel.class,
         PageBodyExamplesPanel.class,
@@ -79,9 +77,13 @@ public class ComponentExamplePanels {
         PreserveDataExamplesPanel.class,
         RadioButtonExamplesPanel.class,
         RadioGroupExamplesPanel.class,
+        RodsIconExamplesPanel.class,
         RootExamplesPanel.class,
+        RotterdamLogoImageExamplesPanel.class,
         SelectExamplesPanel.class,
         SeparatorExamplesPanel.class,
+        SideNavExamplesPanel.class,
+        TextInputExamplesPanel.class,
         UnorderedListExamplesPanel.class
     );
 
