@@ -4,6 +4,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.ProjectRootResolver;
 import nl.rotterdam.nl_design_system.docs.wicket.RotterdamBasePage;
 import nl.rotterdam.nl_design_system.docs.wicket.css.BootstrapGridCssReference;
+import nl.rotterdam.nl_design_system.docs.wicket.css.DesignSystemTheme;
 import nl.rotterdam.nl_design_system.wicket.components.code_block.RdCodeBlock;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavPanel;
 import nl.rotterdam.nl_design_system.wicket.components.side_nav.RdSideNavRecord;
@@ -14,8 +15,12 @@ import nl.rotterdam.nl_design_system.wicket_extras.components.syntax_highlightin
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.exception.UncheckedIllegalAccessException;
 import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
+import org.apache.wicket.markup.html.form.DropDownChoice;
+import org.apache.wicket.markup.html.form.LambdaChoiceRenderer;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -27,8 +32,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.Strings.CI;
 
@@ -41,6 +46,9 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     private final String activeComponentExampleName;
     private final ExamplesPanel activeExample;
     private final File exampleSourceDirectory;
+
+
+    private DesignSystemTheme currentTheme = DesignSystemTheme.RODS;
 
     public ComponentsExamplePage(PageParameters parameters) throws IOException {
         super("Componenten voorbeelden");
@@ -76,7 +84,8 @@ public class ComponentsExamplePage extends RotterdamBasePage {
             newComponentSelectionSidebar(),
             activeExample,
             newComponentMarkupCode(),
-            newComponentJavaCode()
+            newComponentJavaCode(),
+            newActiveThemeChoice()
         );
     }
 
@@ -228,5 +237,29 @@ public class ComponentsExamplePage extends RotterdamBasePage {
                 }
                 RodsStoryElement.define();
                 """));
+    }
+
+    private Component newActiveThemeChoice() {
+        return new DropDownChoice<>(
+            "activeTheme",
+            themeModel,
+            Arrays.stream(DesignSystemTheme.values()).toList(),
+            new LambdaChoiceRenderer<>(DesignSystemTheme::getDisplayName, DesignSystemTheme::getThemeClassName)
+        ).add(new OnChangeAjaxBehavior() {
+            @Override
+            protected void onUpdate(AjaxRequestTarget target) {
+                var currentThemeclassName = currentTheme.getThemeClassName();
+
+                var newTheme = themeModel.getObject();
+                var newThemeClassName = newTheme.getThemeClassName();
+                currentTheme = newTheme;
+
+                target.appendJavaScript("$('html').removeClass('" +
+                    currentThemeclassName +
+                    "').addClass('" +
+                    newThemeClassName +
+                    "');");
+            }
+        });
     }
 }
