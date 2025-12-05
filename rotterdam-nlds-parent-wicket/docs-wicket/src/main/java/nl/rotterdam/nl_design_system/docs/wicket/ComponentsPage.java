@@ -61,6 +61,10 @@ import java.util.Arrays;
 
 import static nl.rotterdam.nl_design_system.docs.wicket.css.NldsVoorbeeldGemeenteThemeCssReference.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
 
+/**
+ * @deprecated use {@link nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentsExamplePage}.
+*/
+@Deprecated
 public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
