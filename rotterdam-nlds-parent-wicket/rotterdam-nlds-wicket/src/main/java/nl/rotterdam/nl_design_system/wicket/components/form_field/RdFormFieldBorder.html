@@ -1,0 +1,14 @@
+<wicket:border xmlns:wicket="http://wicket.apache.org">
+  <div wicket:id="label-container">
+    <wicket:remove>
+      This markup is overridden in the constructor of `InputLabel`, to prevent having to search for the input component
+      in multiple containers.
+    </wicket:remove>
+    <label wicket:id="label"></label>
+  </div>
+  <div wicket:id="description"></div>
+  <div wicket:id="error"></div>
+  <div wicket:id="input-container">
+    <wicket:body></wicket:body>
+  </div>
+</wicket:border>

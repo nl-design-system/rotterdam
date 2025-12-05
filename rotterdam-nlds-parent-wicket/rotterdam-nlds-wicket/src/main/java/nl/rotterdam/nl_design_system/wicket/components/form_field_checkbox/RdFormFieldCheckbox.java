@@ -22,10 +22,10 @@ import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.DESCRIPTION_ELEMENT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.ERROR_MESSAGE_ELEMENT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INPUT_ELEMENT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.LABEL_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory.createErrorMessageLabel;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.FORM_FIELD_LABEL_CHECKBOX;
@@ -97,23 +97,23 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
             .add(new LabelAndCheckboxContainer())
-            .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior())
+            .add(LABEL_ELEMENT.asBehavior())
             .add(FORM_FIELD_LABEL_CHECKBOX.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
-        return createErrorMessageLabel("error").add(FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior());
+        return createErrorMessageLabel("error").add(ERROR_MESSAGE_ELEMENT.asBehavior());
     }
 
     private static Component newDescriptionComponent(IModel<@Nullable String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(RdFormFieldDescriptionBehavior.INSTANCE)
-            .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
+            .add(DESCRIPTION_ELEMENT.asBehavior());
     }
 
     private RdCheckbox newInputComponent(IModel<Boolean> model, IModel<String> descriptionModel) {
         final RdCheckbox control = new FormFieldCheckbox(model, descriptionModel);
-        control.add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
+        control.add(INPUT_ELEMENT.asBehavior());
         return control;
     }
 

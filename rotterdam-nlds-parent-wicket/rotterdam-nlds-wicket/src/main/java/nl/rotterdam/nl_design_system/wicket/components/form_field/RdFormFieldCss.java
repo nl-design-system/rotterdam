@@ -10,11 +10,11 @@ import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassN
 @SuppressWarnings("doclint:missing")
 public enum RdFormFieldCss implements CssClassNames {
     BASE("utrecht-form-field"),
+    DESCRIPTION_ELEMENT("utrecht-form-field__description"),
+    ERROR_MESSAGE_ELEMENT("utrecht-form-field__error-message"),
+    INPUT_ELEMENT("utrecht-form-field__input"),
     INVALID("utrecht-form-field--invalid"),
-    FORM_FIELD_NESTED_BLOCK_INPUT("utrecht-form-field__input"),
-    FORM_FIELD_NESTED_BLOCK_DESCRIPTION("utrecht-form-field__description"),
-    FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE("utrecht-form-field__error-message"),
-    FORM_FIELD_NESTED_BLOCK_LABEL("utrecht-form-field__label");
+    LABEL_ELEMENT("utrecht-form-field__label");
 
     private final String classNames;
 
