@@ -185,6 +185,9 @@ public class RotterdamIconBehavior extends Behavior {
         response.render(ESM);
     }
 
+    /**
+     * Returns supplier for this icon which is Serializable.
+     */
     public static SerializableSupplier<Behavior> supplyOf(RotterdamIconBehavior iconBehavior) {
         return () -> iconBehavior;
     }
