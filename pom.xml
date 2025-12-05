@@ -4,7 +4,7 @@
 
     <groupId>nl.rotterdam.nl-design-system</groupId>
     <artifactId>rotterdam-nlds-parent</artifactId>
-    <version>0.0.6-SNAPSHOT</version>
+    <version>0.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Rotterdam, NL Design System Parent</name>
     <description>NL Design System Parent POM made by Gemeente Rotterdam. Used for Java libraries related to NL Design System.</description>
