@@ -15,10 +15,10 @@
     "directory": "rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket"
   },
   "devDependencies": {
-    "@nl-design-system-unstable/voorbeeld-design-tokens": "6.2.0",
+    "@nl-design-system-unstable/voorbeeld-design-tokens": "6.2.1",
     "@storybook/addon-docs": "9.1.16",
     "bootstrap": "5.3.8",
-    "rimraf": "6.0.1"
+    "rimraf": "6.1.2"
   },
   "scripts": {
     "clean": "rimraf stories/* target"

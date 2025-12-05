@@ -50,6 +50,7 @@ public abstract class TagNameClassComponentBehavior<T extends Component> extends
         return classNames;
     }
 
+    @Override
     public final void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 

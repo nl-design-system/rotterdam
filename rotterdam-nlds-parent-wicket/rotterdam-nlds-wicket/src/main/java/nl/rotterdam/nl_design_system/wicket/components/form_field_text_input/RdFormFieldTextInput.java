@@ -42,7 +42,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.output_tag.Compone
  * @param <T> the model object type
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormField {
+public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPanel<T> implements RdFormField {
 
     private String inputType = "text";
 
@@ -60,35 +60,36 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
      * Create instance with label, without description.
      * @param id the Wicket ID
      * @param model writable model
-     * @param labelText label to be shown
+     * @param labelModel label to be shown
      */
-    public RdFormFieldTextInput(String id, IModel<T> model, IModel<String> labelText) {
-        this(id, model, labelText, EMPTY_STRING_MODEL);
+    public RdFormFieldTextInput(String id, IModel<T> model, IModel<@Nullable String> labelModel) {
+        this(id, model, labelModel, EMPTY_STRING_MODEL);
     }
 
     /**
      * Create instance with label, without description.
      * @param id the Wicket ID
      * @param model writable model
-     * @param labelText label to be shown
-     * @param description description text to be rendered, when label is not enough to explain purpose
+     * @param labelModel label to be shown
+     * @param descriptionModel description text to be rendered, when label is not enough to explain purpose
      */
     public RdFormFieldTextInput(
         String id,
         IModel<T> model,
-        IModel<String> labelText,
-        IModel<String> description
+        IModel<@Nullable String> labelModel,
+        IModel<@Nullable String> descriptionModel
+
     ) {
         super(id, model);
-        requireNonNull(labelText);
-        requireNonNull(description);
+        requireNonNull(labelModel);
+        requireNonNull(descriptionModel);
 
-        textInput = new FormFieldTextInput(model, description);
-        textInput.setLabel(labelText);
+        textInput = new FormFieldTextInput(model, descriptionModel);
+        textInput.setLabel(labelModel);
 
         // Create the text input
         labelComponent = newLabelComponent();
-        descriptionComponent = newDescriptionComponent(description);
+        descriptionComponent = newDescriptionComponent(descriptionModel);
         inputComponent = newInputComponent(textInput);
         errorMessageComponent = newErrorMessageComponent();
     }
@@ -120,7 +121,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
         );
     }
 
-    private static Component newDescriptionComponent(IModel<String> descriptionModel) {
+    private static Component newDescriptionComponent(IModel<@Nullable String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(RdFormFieldDescriptionBehavior.INSTANCE)
             .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
@@ -211,7 +212,7 @@ public class RdFormFieldTextInput<T> extends GenericPanel<T> implements RdFormFi
 
         private final IModel<@Nullable String> descriptionModel;
 
-        private FormFieldTextInput(IModel<T> model, IModel<String> descriptionModel) {
+        private FormFieldTextInput(IModel<T> model, IModel<@Nullable String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }

@@ -17,6 +17,7 @@ public abstract class ClassComponentBehavior<T extends Component> extends Header
         this.classNames = Arrays.stream(classNames).map(CssClassNames::getClassNames).toArray(String[]::new);
     }
 
+    @Override
     public final void onComponentTag(Component component, ComponentTag tag) {
         super.onComponentTag(component, tag);
 

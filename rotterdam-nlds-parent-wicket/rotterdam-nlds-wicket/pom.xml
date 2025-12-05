@@ -212,6 +212,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/fieldset</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/form-fieldset-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/heading</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
@@ -337,6 +345,14 @@
                 <directory>node_modules/</directory>
                 <includes>
                     <include>@utrecht/root-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/select</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/select-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>

@@ -37,7 +37,6 @@ class RdCheckboxBehavior extends TagNameClassComponentBehavior<CheckBox> {
 
         if (!component.isEnabledInHierarchy()) {
             classNames.add(DISABLED);
-            tag.put("disabled", "");
         }
 
         if (component.isRequired()) {
