@@ -36,7 +36,6 @@ public class OrderedListExamplesPanel extends ExamplesPanel {
                         protected void populateItem(ListItem<String> item) {
                             item.add(new RdOrderedListItemBehavior()); // TODO: should be singleton
                             String naam = item.getModelObject();
-                            // item.add(naam);
                             item.add(new Label("label", naam));
                         }
                     }
