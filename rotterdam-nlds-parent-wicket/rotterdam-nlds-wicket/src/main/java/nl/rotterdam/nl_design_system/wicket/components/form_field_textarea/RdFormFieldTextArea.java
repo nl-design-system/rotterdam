@@ -64,7 +64,7 @@ public class RdFormFieldTextArea<T extends @Nullable Object> extends GenericPane
     }
 
     /**
-     * Create instance with label, without description.
+     * Create instance with label and description.
      * @param id the Wicket ID
      * @param model writable model
      * @param labelModel label to be shown

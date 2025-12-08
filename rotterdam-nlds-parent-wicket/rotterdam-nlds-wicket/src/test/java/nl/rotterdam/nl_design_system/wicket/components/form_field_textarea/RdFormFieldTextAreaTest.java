@@ -15,7 +15,7 @@ class RdFormFieldTextAreaTest extends NldsWicketTestCase {
     void rendersOpmerkingWithLabelAndDescriptionAsDefinedInReferenceGuide() {
         // From https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field--docs#relevante-wcag-regels
         // with minimal changes with Wicket:
-        // - attribute ordening
+        // - attribute ordering
         // - added id attributes; Wicket ajax needs them
         // - set input name the way Wicket needs them.
         // - aria-describedby added, it was missing, but I think it is needed.
