@@ -6,6 +6,9 @@ import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.validation.IValidatable;
+import org.apache.wicket.validation.IValidator;
+import org.apache.wicket.validation.ValidationError;
 
 public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
     public FormFieldTextAreaExamplesPanel(String id) {
@@ -64,6 +67,28 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
         );
     }
 
+    @ComponentExample
+    private static RdFormFieldTextArea<String> exampleFormFieldTextAreaWithMaxLength() {
+        return new RdFormFieldTextArea<>(
+            "formFieldTextAreaWithMaxLength",
+            Model.of(""),
+            Model.of("Opmerking met maximale lengte"),
+            Model.of("Maximaal 256 tekens toegestaan.")
+        ).withTextArea((textArea, formField) ->
+            textArea.add(new IValidator<String>() {
+                @Override
+                public void validate(IValidatable<String> validatable) {
+                    String value = validatable.getValue();
+                    if (value != null && value.length() > 256) {
+                        ValidationError error = new ValidationError();
+                        error.setMessage("De ingevoerde tekst is langer dan toegestaan");
+                        validatable.error(error);
+                    }
+                }
+            })
+        ).setRequired(true);
+    }
+
     @Override
     protected void onInitialize() {
         super.onInitialize();
@@ -72,7 +97,8 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
             exampleFormFieldTextArea(),
             exampleFormFieldTextAreaRequired(),
             exampleFormFieldTextAreaDisabled(),
-            exampleFormFieldTextAreaWithRowsConfigured()
+            exampleFormFieldTextAreaWithRowsConfigured(),
+            exampleFormFieldTextAreaWithMaxLength()
         );
     }
 }

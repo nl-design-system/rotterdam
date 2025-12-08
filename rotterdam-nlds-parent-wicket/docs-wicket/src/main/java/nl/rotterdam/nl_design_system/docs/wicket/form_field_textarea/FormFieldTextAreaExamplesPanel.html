@@ -48,6 +48,18 @@
           ><template> <div wicket:id="formFieldTextAreaWithRowsConfigured"></div> </template>
         </rods-story-canvas>
       </section>
+
+      <section data-testid="formFieldTextAreaWithMaxLength">
+        <h2>Form Field TextArea with maximum length validation</h2>
+        <div>
+          <p>
+            Een tekstgebied met een maximale lengte van 256 tekens. Bij validatie wordt de foutmelding "De ingevoerde tekst is langer dan toegestaan" getoond.
+          </p>
+        </div>
+        <rods-story-canvas
+          ><template> <div wicket:id="formFieldTextAreaWithMaxLength"></div> </template>
+        </rods-story-canvas>
+      </section>
     </wicket:panel>
   </body>
 </html>
