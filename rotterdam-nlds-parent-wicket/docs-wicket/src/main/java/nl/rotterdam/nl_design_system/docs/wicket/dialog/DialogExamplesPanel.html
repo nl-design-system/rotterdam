@@ -17,7 +17,7 @@
             ><template>
             <form wicket:id="dialogForm">
               <button wicket:id="show">Tonen</button>
-              <wicket:container wicket:id="dialogParent">
+              <wicket:container wicket:id="dialog">
                 <wicket:container wicket:id="dialogInstance">
                   <dialog wicket:id="dialog">
                     <p>De inhoud van het dialoogvenster.</p>
@@ -39,7 +39,7 @@
           ><template>
             <form wicket:id="modalDialogForm">
               <button wicket:id="showModal">Tonen</button>
-              <wicket:container wicket:id="modalDialogParent">
+              <wicket:container wicket:id="modalDialog">
                 <wicket:container wicket:id="modalDialogInstance">
                   <dialog wicket:id="modalDialog">
                     <p>De inhoud van het dialoogvenster.</p>
@@ -62,7 +62,7 @@
           <form wicket:id="confirmDeleteDialogForm">
             <button wicket:id="showModal">Tonen</button>
 
-            <wicket:container wicket:id="confirmDeleteDialogParent">
+            <wicket:container wicket:id="confirmDeleteDialog">
               <wicket:container wicket:id="confirmDeleteDialogInstance">
 
                 <dialog wicket:id="confirmDeleteDialog">

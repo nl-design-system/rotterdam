@@ -31,7 +31,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static WebMarkupContainer exampleDialog() {
-        var parent = new WebMarkupContainer("dialogParent");
+        var parent = new WebMarkupContainer("dialog");
         
         TemplateInstance.add(parent, "dialog", (id, fragmentContainer) ->
             new DialogExamplesPanel.RdDialogBorder(id, new StringResourceModel("Dialog"), RdDialogHeadingLevel.LEVEL_3) {
@@ -60,7 +60,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static WebMarkupContainer exampleModalDialog() {
-        var parent = new WebMarkupContainer("modalDialogParent");
+        var parent = new WebMarkupContainer("modalDialog");
         
         TemplateInstance.add(parent, "modalDialog", (id, fragmentContainer) ->
             new DialogExamplesPanel.RdDialogBorder(id, new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
@@ -90,7 +90,7 @@ public class DialogExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static WebMarkupContainer exampleConfirmDeleteDialog() {
-        var parent = new WebMarkupContainer("confirmDeleteDialogParent");
+        var parent = new WebMarkupContainer("confirmDeleteDialog");
         
         TemplateInstance.add(parent, "confirmDeleteDialog", (id, fragmentContainer) ->
             new RdDialogBorder(id, Model.of("Afspraak verwijderen"), RdDialogHeadingLevel.LEVEL_1) {
