@@ -44,21 +44,18 @@ import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
-import org.apache.wicket.markup.head.JavaScriptReferenceType;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.LambdaChoiceRenderer;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
+import static nl.rotterdam.nl_design_system.docs.wicket.RodsStoryCanvas.RODS_STORY_CANVAS_JS_HEADER_ITEM;
 import static nl.rotterdam.nl_design_system.docs.wicket.css.NldsVoorbeeldGemeenteThemeCssReference.THEME_VOORBEELD_GEMEENTE_CSS_HEADER_ITEM;
 
 /**
@@ -69,14 +66,6 @@ public class ComponentsPage extends RotterdamBasePage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComponentsPage.class);
     private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
-    private static final JavaScriptReferenceHeaderItem RODS_STORY_CANVAS_JS_HEADER_ITEM;
-    
-    static {
-        RODS_STORY_CANVAS_JS_HEADER_ITEM = JavaScriptHeaderItem.forReference(
-            new JavaScriptResourceReference(ComponentsPage.class, "rods-story-canvas.js")
-        );
-        RODS_STORY_CANVAS_JS_HEADER_ITEM.setType(JavaScriptReferenceType.MODULE);
-    }
 
     private static Link<Void> createRefreshPageLink() {
         return new Link<>("refreshStatefulPageLink") {
