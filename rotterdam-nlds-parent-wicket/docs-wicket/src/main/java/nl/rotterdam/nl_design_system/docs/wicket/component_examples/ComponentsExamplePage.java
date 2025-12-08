@@ -18,7 +18,6 @@ import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.LambdaChoiceRenderer;
 import org.apache.wicket.model.IModel;
@@ -35,6 +34,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
+import static nl.rotterdam.nl_design_system.docs.wicket.RodsStoryCanvas.RODS_STORY_CANVAS_JS_HEADER_ITEM;
 import static org.apache.commons.lang3.Strings.CI;
 
 public class ComponentsExamplePage extends RotterdamBasePage {
@@ -43,6 +43,7 @@ public class ComponentsExamplePage extends RotterdamBasePage {
     public static final String PAGE_PARAM_COMPONENT = "component";
     public static final String ID_COMPONENT_SELECTION = "component-selection";
     private static final IModel<@Nullable RdSyntaxHighlightingTheme> NULL_MODEL = Model.of((RdSyntaxHighlightingTheme) null);
+
     private final String activeComponentExampleName;
     private final ExamplesPanel activeExample;
     private final File exampleSourceDirectory;
@@ -190,53 +191,7 @@ public class ComponentsExamplePage extends RotterdamBasePage {
         super.renderHead(response);
         response.render(BootstrapGridCssReference.BOOTSTRAP_GRID_CSS);
 
-        response.render(OnDomReadyHeaderItem.forScript(
-            //language=JavaScript
-            """
-                const stylesheet = new CSSStyleSheet();
-                
-                // noinspection JSIgnoredPromiseFromCall
-                stylesheet.replace(`
-                .rods-story-canvas {
-                  background-color: white;
-                  border-color: rgb(0 0 0 / 10%);
-                  border-radius: 4px;
-                  border-style: solid;
-                  border-width: 1px;
-                  box-shadow: rgb(0 0 0 / 10%) 0 1px 3px 0;
-                  margin-block-end: 40px;
-                  margin-block-start: 25px;
-                  padding-block-end: 30px;
-                  padding-block-start: 30px;
-                  padding-inline-end: 20px;
-                  padding-inline-start: 20px;
-                  position: relative;
-                }`);
-                
-                class RodsStoryElement extends HTMLElement {
-                  static name = 'rods-story-canvas';
-                
-                  static define = (registry = customElements) => registry.define(RodsStoryElement.name, RodsStoryElement);
-                
-                  constructor() {
-                    super();
-                  }
-                
-                  connectedCallback() {
-                    const shadow = this.attachShadow({ mode: 'closed' });
-                    shadow.adoptedStyleSheets = [stylesheet];
-                    const template = this.querySelector('template');
-                    const div = this.ownerDocument.createElement('div');
-                    div.appendChild(this.ownerDocument.createElement('slot'));
-                    div.classList.add('rods-story-canvas');
-                    shadow.appendChild(div);
-                    if (template) {
-                      this.appendChild(template.content.cloneNode(true));
-                    }
-                  }
-                }
-                RodsStoryElement.define();
-                """));
+        response.render(RODS_STORY_CANVAS_JS_HEADER_ITEM);
     }
 
     private Component newActiveThemeChoice() {
