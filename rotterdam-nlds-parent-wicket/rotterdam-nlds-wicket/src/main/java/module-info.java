@@ -49,6 +49,8 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.separator;
     exports nl.rotterdam.nl_design_system.wicket.components.side_nav;
     exports nl.rotterdam.nl_design_system.wicket.components.text_input;
+    exports nl.rotterdam.nl_design_system.wicket.components.textarea;
+    exports nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
     exports nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     exports nl.rotterdam.nl_design_system.wicket.components.visually_hidden;
     exports nl.rotterdam.nl_design_system.wicket.components;
@@ -81,6 +83,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.root;
     opens nl.rotterdam.nl_design_system.wicket.components.separator;
     opens nl.rotterdam.nl_design_system.wicket.components.side_nav;
+    opens nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
     opens nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     opens nl.rotterdam.nl_design_system.wicket.html;
 

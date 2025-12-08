@@ -372,6 +372,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/textarea</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/textarea-css/dist/*.css</include>
+                </includes>
+            </resource>
+            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/unordered_list</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
