@@ -147,7 +147,7 @@ public abstract class RdDialogBorder extends Border {
 
     /**
      * <p>
-     * Create the footer content component. The element is a <code>div</code>.
+     * Create the footer content component. The component is attached to <code>&lt;wicket:container&gt;</code>.
      * </p>
      *
      * @param id the Wicket ID for the footer content component.
