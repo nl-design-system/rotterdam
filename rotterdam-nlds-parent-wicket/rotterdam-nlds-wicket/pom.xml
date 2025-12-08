@@ -368,7 +368,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/textbox-css/dist/*.css</include>
+                    <include>@utrecht/textbox-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>
@@ -376,7 +376,7 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/textarea-css/dist/*.css</include>
+                    <include>@utrecht/textarea-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>

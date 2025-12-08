@@ -11,7 +11,7 @@ class RdTextInputBehaviorTest extends NldsWicketTestCase {
     @Test
     void assertResourceReferenceExists() {
         assertHeaderItemExists(
-            cssReferenceHeaderItem(RdTextInputBehavior.class, "@utrecht/textbox-css/dist/index.css")
+            cssReferenceHeaderItem(RdTextInputBehavior.class, "@utrecht/textbox-css/dist/index.min.css")
         );
     }
 }

@@ -16,7 +16,7 @@ class RdTextAreaBehavior extends TagNameClassComponentBehavior<TextArea<?>> {
 
     private RdTextAreaBehavior() {
         super("textarea", RdTextAreaCss.BASE);
-        addHeaderItem(cssReferenceHeaderItem(RdTextAreaBehavior.class, "@utrecht/textarea-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdTextAreaBehavior.class, "@utrecht/textarea-css/dist/index.min.css"));
     }
 
     @Override

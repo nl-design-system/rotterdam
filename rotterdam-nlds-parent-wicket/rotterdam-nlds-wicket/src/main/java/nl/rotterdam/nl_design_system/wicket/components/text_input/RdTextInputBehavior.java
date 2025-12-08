@@ -16,7 +16,7 @@ class RdTextInputBehavior extends TagNameClassComponentBehavior<TextField<?>> {
 
     private RdTextInputBehavior() {
         super("input", RdTextInputCss.BASE);
-        addHeaderItem(cssReferenceHeaderItem(RdTextInputBehavior.class, "@utrecht/textbox-css/dist/index.css"));
+        addHeaderItem(cssReferenceHeaderItem(RdTextInputBehavior.class, "@utrecht/textbox-css/dist/index.min.css"));
     }
 
     @Override
