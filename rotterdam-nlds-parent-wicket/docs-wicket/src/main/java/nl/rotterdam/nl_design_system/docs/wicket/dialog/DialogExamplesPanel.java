@@ -2,15 +2,18 @@ package nl.rotterdam.nl_design_system.docs.wicket.dialog;
 
 import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
+import nl.rotterdam.nl_design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
 import nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogHeadingLevel;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
+import nl.rotterdam.nl_design_system.wicket.html.TemplateInstance;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
 
 import static nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance.PRIMARY_ACTION;
@@ -77,12 +80,49 @@ public class DialogExamplesPanel extends ExamplesPanel {
         };
     }
 
+    @ComponentExample
+    private static RdDialogBorder exampleConfirmDeleteDialog() {
+
+        return new RdDialogBorder("confirmDeleteDialog", Model.of("Afspraak verwijderen"), RdDialogHeadingLevel.LEVEL_1) {
+            @Override
+            protected Component newFooterContent(String id) {
+                return new RdActionGroup(id) {
+                    @Override
+                    protected void onInitialize() {
+                        super.onInitialize();
+                        add(
+                            new RdAjaxButton("confirm") {
+                                @Override
+                                protected void onSubmit(AjaxRequestTarget target) {
+                                    System.out.println("confirm delete clicked");
+                                }
+                            },
+                            new RdAjaxButton("cancel") {
+                                @Override
+                                protected void onSubmit(AjaxRequestTarget target) {
+                                    System.out.println("cancel clicked");
+                                    close(target);
+                                }
+                            }
+                        );
+                    }
+                };
+            }
+
+            @Override
+            protected void onClose(AjaxRequestTarget target) {
+                close(target);
+            }
+        };
+    }
+
     @Override
     protected void onInitialize() {
         super.onInitialize();
 
         addDialogSection();
         addModalDialogSection();
+        addConfirmDeleteDialogSection();
     }
 
     private void addDialogSection() {
@@ -113,6 +153,21 @@ public class DialogExamplesPanel extends ExamplesPanel {
             }
         });
         modalDialogForm.add(modalDialog);
+    }
+
+    private void addConfirmDeleteDialogSection() {
+        var modalDialogForm = new Form<Void>("confirmDeleteDialogForm");
+        add(modalDialogForm);
+
+        var confirmDeleteDialog = exampleConfirmDeleteDialog();
+
+        modalDialogForm.add(new RdAjaxButton("showModal") {
+            @Override
+            protected void onSubmit(AjaxRequestTarget target) {
+                confirmDeleteDialog.showModal(target);
+            }
+        });
+        modalDialogForm.add(confirmDeleteDialog);
     }
 
     private abstract static class RdDialogBorder extends nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogBorder {

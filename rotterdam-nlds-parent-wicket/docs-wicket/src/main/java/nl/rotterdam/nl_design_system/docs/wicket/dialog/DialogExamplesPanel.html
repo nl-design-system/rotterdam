@@ -28,16 +28,39 @@
         <section data-testid="modalDialog">
           <h2>Modal Dialog</h2>
           <rods-story-canvas
-            ><template>
+          ><template>
             <form wicket:id="modalDialogForm">
               <button wicket:id="showModal">Tonen</button>
               <dialog wicket:id="modalDialog">
                 <p>De inhoud van het dialoogvenster.</p>
               </dialog>
             </form>
-            </template>
+          </template>
           </rods-story-canvas>
-        </section>
+      </section>
+
+      <section data-testid="confirmDeleteDialog">
+        <h2>Modal Dialog</h2>
+        <rods-story-canvas
+        ><template>
+          <form wicket:id="confirmDeleteDialogForm">
+            <button wicket:id="showModal">Tonen</button>
+
+            <wicket:container wicket:id="confirmDeleteInstance">
+
+              <dialog wicket:id="confirmDeleteDialog">
+                <p>Weet je zeker dat je deze afspraak wil verwijderen?</p>
+              </dialog>
+
+              <wicket:fragment wicket:id="footer">
+                  <button wicket:id="confirm">Ja. Verwijder de afspraak</button>
+                  <button wicket:id="cancel">Nee. Keer terug</button>
+              </wicket:fragment>
+            </wicket:container>
+          </form>
+        </template>
+        </rods-story-canvas>
+      </section>
       </section>
     </wicket:panel>
   </body>
