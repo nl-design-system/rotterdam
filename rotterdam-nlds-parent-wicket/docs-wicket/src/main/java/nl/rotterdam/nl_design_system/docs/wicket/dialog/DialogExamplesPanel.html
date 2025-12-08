@@ -17,9 +17,17 @@
             ><template>
             <form wicket:id="dialogForm">
               <button wicket:id="show">Tonen</button>
-              <dialog wicket:id="dialog">
-                <p>De inhoud van het dialoogvenster.</p>
-              </dialog>
+              <wicket:container wicket:id="dialogParent">
+                <wicket:container wicket:id="dialogInstance">
+                  <dialog wicket:id="dialog">
+                    <p>De inhoud van het dialoogvenster.</p>
+                  </dialog>
+
+                  <wicket:fragment wicket:id="footer">
+                    <button wicket:id="button"></button>
+                  </wicket:fragment>
+                </wicket:container>
+              </wicket:container>
             </form>
             </template>
           </rods-story-canvas>
@@ -31,9 +39,17 @@
           ><template>
             <form wicket:id="modalDialogForm">
               <button wicket:id="showModal">Tonen</button>
-              <dialog wicket:id="modalDialog">
-                <p>De inhoud van het dialoogvenster.</p>
-              </dialog>
+              <wicket:container wicket:id="modalDialogParent">
+                <wicket:container wicket:id="modalDialogInstance">
+                  <dialog wicket:id="modalDialog">
+                    <p>De inhoud van het dialoogvenster.</p>
+                  </dialog>
+
+                  <wicket:fragment wicket:id="footer">
+                    <button wicket:id="button"></button>
+                  </wicket:fragment>
+                </wicket:container>
+              </wicket:container>
             </form>
           </template>
           </rods-story-canvas>
@@ -46,16 +62,20 @@
           <form wicket:id="confirmDeleteDialogForm">
             <button wicket:id="showModal">Tonen</button>
 
-            <wicket:container wicket:id="confirmDeleteInstance">
+            <wicket:container wicket:id="confirmDeleteDialogParent">
+              <wicket:container wicket:id="confirmDeleteDialogInstance">
 
-              <dialog wicket:id="confirmDeleteDialog">
-                <p>Weet je zeker dat je deze afspraak wil verwijderen?</p>
-              </dialog>
+                <dialog wicket:id="confirmDeleteDialog">
+                  <p>Weet je zeker dat je deze afspraak wil verwijderen?</p>
+                </dialog>
 
-              <wicket:fragment wicket:id="footer">
-                  <button wicket:id="confirm">Ja. Verwijder de afspraak</button>
-                  <button wicket:id="cancel">Nee. Keer terug</button>
-              </wicket:fragment>
+                <wicket:fragment wicket:id="footer">
+                  <div wicket:id="buttonGroup">
+                    <button wicket:id="confirm">Ja. Verwijder de afspraak</button>
+                    <button wicket:id="cancel">Nee. Keer terug</button>
+                  </div>
+                </wicket:fragment>
+              </wicket:container>
             </wicket:container>
           </form>
         </template>

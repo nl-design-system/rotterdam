@@ -1,15 +1,16 @@
 package nl.rotterdam.nl_design_system.docs.wicket.dialog;
 
+import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
+import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
 import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
 import nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogHeadingLevel;
-import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
-import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket.html.TemplateInstance;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.model.IModel;
@@ -29,91 +30,104 @@ public class DialogExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdDialogBorder exampleDialog() {
-        return new DialogExamplesPanel.RdDialogBorder("dialog", new StringResourceModel("Dialog"), RdDialogHeadingLevel.LEVEL_3) {
-            @Override
-            protected Component newFooterContent(String id) {
-                var dialogThis = this;
-                // The markup provider will be a different component in production code
-                var footerContentFragment = new Fragment(id, "dialogButton", this);
-                RdAjaxButton button = new RdAjaxButton("button", new StringResourceModel("Button")) {
-                    @Override
-                    protected void onSubmit(AjaxRequestTarget target) {
-                        dialogThis.close(target);
-                    }
-                };
-                button.setAppearance(PRIMARY_ACTION);
-                footerContentFragment.add(button);
-                return footerContentFragment;
-            }
+    private static WebMarkupContainer exampleDialog() {
+        var parent = new WebMarkupContainer("dialogParent");
+        
+        TemplateInstance.add(parent, "dialog", (id, fragmentContainer) ->
+            new DialogExamplesPanel.RdDialogBorder(id, new StringResourceModel("Dialog"), RdDialogHeadingLevel.LEVEL_3) {
+                @Override
+                protected Component newFooterContent(String id) {
+                    var footerContentFragment = new Fragment(id, "footer", fragmentContainer);
+                    RdAjaxButton button = new RdAjaxButton("button", new StringResourceModel("Button")) {
+                        @Override
+                        protected void onSubmit(AjaxRequestTarget target) {
+                            close(target);
+                        }
+                    };
+                    button.setAppearance(PRIMARY_ACTION);
+                    footerContentFragment.add(button);
+                    return footerContentFragment;
+                }
 
-            @Override
-            protected void onClose(AjaxRequestTarget target) {
-                close(target);
-            }
-        };
+                @Override
+                protected void onClose(AjaxRequestTarget target) {
+                    close(target);
+                }
+            });
+        
+        return parent;
     }
 
     @ComponentExample
-    private static RdDialogBorder exampleModalDialog() {
-        return new DialogExamplesPanel.RdDialogBorder("modalDialog", new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
-            @Override
-            protected Component newFooterContent(String id) {
-                var dialogThis = this;
-                // The markup provider will be a different component in production code
-                var footerContentFragment = new Fragment(id, "dialogButton", this);
-                RdAjaxButton button = new RdAjaxButton("button", new StringResourceModel("Button")) {
-                    @Override
-                    protected void onSubmit(AjaxRequestTarget target) {
-                        dialogThis.close(target);
-                    }
-                };
-                button.setAppearance(PRIMARY_ACTION);
-                footerContentFragment.add(button);
-                return footerContentFragment;
-            }
+    private static WebMarkupContainer exampleModalDialog() {
+        var parent = new WebMarkupContainer("modalDialogParent");
+        
+        TemplateInstance.add(parent, "modalDialog", (id, fragmentContainer) ->
+            new DialogExamplesPanel.RdDialogBorder(id, new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
+                @Override
+                protected Component newFooterContent(String id) {
+                    // The markup provider will be a different component in production code
+                    var footerContentFragment = new Fragment(id, "footer", fragmentContainer);
+                    RdAjaxButton button = new RdAjaxButton("button", new StringResourceModel("Button")) {
+                        @Override
+                        protected void onSubmit(AjaxRequestTarget target) {
+                            close(target);
+                        }
+                    };
+                    button.setAppearance(PRIMARY_ACTION);
+                    footerContentFragment.add(button);
+                    return footerContentFragment;
+                }
 
-            @Override
-            protected void onClose(AjaxRequestTarget target) {
-                close(target);
-            }
-        };
+                @Override
+                protected void onClose(AjaxRequestTarget target) {
+                    close(target);
+                }
+            });
+        
+        return parent;
     }
 
     @ComponentExample
-    private static RdDialogBorder exampleConfirmDeleteDialog() {
-
-        return new RdDialogBorder("confirmDeleteDialog", Model.of("Afspraak verwijderen"), RdDialogHeadingLevel.LEVEL_1) {
-            @Override
-            protected Component newFooterContent(String id) {
-                return new RdActionGroup(id) {
-                    @Override
-                    protected void onInitialize() {
-                        super.onInitialize();
-                        add(
-                            new RdAjaxButton("confirm") {
-                                @Override
-                                protected void onSubmit(AjaxRequestTarget target) {
-                                    System.out.println("confirm delete clicked");
+    private static WebMarkupContainer exampleConfirmDeleteDialog() {
+        var parent = new WebMarkupContainer("confirmDeleteDialogParent");
+        
+        TemplateInstance.add(parent, "confirmDeleteDialog", (id, fragmentContainer) ->
+            new RdDialogBorder(id, Model.of("Afspraak verwijderen"), RdDialogHeadingLevel.LEVEL_1) {
+                @Override
+                protected Component newFooterContent(String id) {
+                    var fragment = new Fragment(id, "footer", fragmentContainer);
+                    var radioGroup = new RdActionGroup("buttonGroup") {
+                        @Override
+                        protected void onInitialize() {
+                            super.onInitialize();
+                            add(
+                                new RdAjaxButton("confirm") {
+                                    @Override
+                                    protected void onSubmit(AjaxRequestTarget target) {
+                                        close(target);
+                                    }
+                                },
+                                new RdAjaxButton("cancel") {
+                                    @Override
+                                    protected void onSubmit(AjaxRequestTarget target) {
+                                        close(target);
+                                    }
                                 }
-                            },
-                            new RdAjaxButton("cancel") {
-                                @Override
-                                protected void onSubmit(AjaxRequestTarget target) {
-                                    System.out.println("cancel clicked");
-                                    close(target);
-                                }
-                            }
-                        );
-                    }
-                };
-            }
+                            );
+                        }
+                    };
+                    fragment.add(radioGroup);
+                    return fragment;
+                }
 
-            @Override
-            protected void onClose(AjaxRequestTarget target) {
-                close(target);
-            }
-        };
+                @Override
+                protected void onClose(AjaxRequestTarget target) {
+                    close(target);
+                }
+            });
+        
+        return parent;
     }
 
     @Override
@@ -129,7 +143,9 @@ public class DialogExamplesPanel extends ExamplesPanel {
         var dialogForm = new Form<Void>("dialogForm");
         add(dialogForm);
 
-        var dialog = exampleDialog();
+        var dialogParent = exampleDialog();
+        dialogForm.add(dialogParent);
+        var dialog = (RdDialogBorder) dialogParent.get("dialog");
 
         dialogForm.add(new RdAjaxButton("show") {
             @Override
@@ -137,14 +153,15 @@ public class DialogExamplesPanel extends ExamplesPanel {
                 dialog.show(target);
             }
         });
-        dialogForm.add(dialog);
     }
 
     private void addModalDialogSection() {
         var modalDialogForm = new Form<Void>("modalDialogForm");
         add(modalDialogForm);
 
-        var modalDialog = exampleModalDialog();
+        var modalDialogParent = exampleModalDialog();
+        modalDialogForm.add(modalDialogParent);
+        var modalDialog = (RdDialogBorder) modalDialogParent.get("modalDialog");
 
         modalDialogForm.add(new RdAjaxButton("showModal") {
             @Override
@@ -152,14 +169,15 @@ public class DialogExamplesPanel extends ExamplesPanel {
                 modalDialog.showModal(target);
             }
         });
-        modalDialogForm.add(modalDialog);
     }
 
     private void addConfirmDeleteDialogSection() {
         var modalDialogForm = new Form<Void>("confirmDeleteDialogForm");
         add(modalDialogForm);
 
-        var confirmDeleteDialog = exampleConfirmDeleteDialog();
+        var dialogParent = exampleConfirmDeleteDialog();
+        modalDialogForm.add(dialogParent);
+        var confirmDeleteDialog = (RdDialogBorder) dialogParent.get("confirmDeleteDialog");
 
         modalDialogForm.add(new RdAjaxButton("showModal") {
             @Override
@@ -167,7 +185,6 @@ public class DialogExamplesPanel extends ExamplesPanel {
                 confirmDeleteDialog.showModal(target);
             }
         });
-        modalDialogForm.add(confirmDeleteDialog);
     }
 
     private abstract static class RdDialogBorder extends nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogBorder {
