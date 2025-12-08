@@ -105,7 +105,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
      */
     public RdFormFieldTextInput<T> withTextInput(WithTextInputCallback<T> callback) {
         // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
-        //  as serializable attributes but leads to slightly better Wicket livecycle.
+        //  as serializable attributes but leads to slightly better Wicket lifecycle.
         callback.doWithTextInput(textInput, this);
 
         return this;

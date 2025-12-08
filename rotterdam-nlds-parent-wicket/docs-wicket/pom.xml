@@ -100,7 +100,6 @@
                 <directory>node_modules/</directory>
                 <includes>
                     <include>@nl-design-system-unstable/voorbeeld-design-tokens/dist/theme.css</include>
-                    <include>bootstrap/dist/css/bootstrap-grid.min.css</include>
                 </includes>
             </resource>
             <resource>
