@@ -17,7 +17,7 @@ public class BootstrapGridCssReference {
     public static final CssReferenceHeaderItem BOOTSTRAP_GRID_CSS = makeHeaderItemForCss();
 
     private static CssReferenceHeaderItem makeHeaderItemForCss() {
-        return cssReferenceHeaderItem(NldsVoorbeeldGemeenteThemeCssReference.class,
+        return cssReferenceHeaderItem(BootstrapGridCssReference.class,
             "bootstrap/dist/css/bootstrap-grid.min.css");
     }
 }
