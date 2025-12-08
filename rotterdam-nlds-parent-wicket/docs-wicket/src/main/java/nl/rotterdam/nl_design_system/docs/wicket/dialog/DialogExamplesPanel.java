@@ -6,6 +6,7 @@ import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rott
 import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconType;
 import nl.rotterdam.nl_design_system.wicket.components.action_group.RdActionGroup;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
+import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance;
 import nl.rotterdam.nl_design_system.wicket.components.dialog.RdDialogHeadingLevel;
 import nl.rotterdam.nl_design_system.wicket.html.TemplateInstance;
 import org.apache.wicket.Component;
@@ -32,7 +33,8 @@ public class DialogExamplesPanel extends ExamplesPanel {
     @ComponentExample
     private static WebMarkupContainer exampleDialog() {
         var parent = new WebMarkupContainer("dialog");
-        
+
+        //noinspection DuplicatedCode modal dialog and non-modal dialog code are the same.
         TemplateInstance.add(parent, "dialog", (id, fragmentContainer) ->
             new DialogExamplesPanel.RdDialogBorder(id, new StringResourceModel("Dialog"), RdDialogHeadingLevel.LEVEL_3) {
                 @Override
@@ -61,7 +63,8 @@ public class DialogExamplesPanel extends ExamplesPanel {
     @ComponentExample
     private static WebMarkupContainer exampleModalDialog() {
         var parent = new WebMarkupContainer("modalDialog");
-        
+
+        //noinspection DuplicatedCode modal dialog and non-modal dialog code are the same.
         TemplateInstance.add(parent, "modalDialog", (id, fragmentContainer) ->
             new DialogExamplesPanel.RdDialogBorder(id, new StringResourceModel("Modal dialog"), RdDialogHeadingLevel.LEVEL_3) {
                 @Override
@@ -109,6 +112,13 @@ public class DialogExamplesPanel extends ExamplesPanel {
                                     }
                                 },
                                 new RdAjaxButton("cancel") {
+
+                                    @Override
+                                    protected void onInitialize() {
+                                        super.onInitialize();
+                                        setAppearance(RdButtonAppearance.SECONDARY_ACTION);
+                                    }
+
                                     @Override
                                     protected void onSubmit(AjaxRequestTarget target) {
                                         close(target);

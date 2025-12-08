@@ -56,13 +56,15 @@
       </section>
 
       <section data-testid="confirmDeleteDialog">
-        <h2>Modal Dialog</h2>
+        <h2>Bevestig verwijderen</h2>
         <rods-story-canvas
         ><template>
           <form wicket:id="confirmDeleteDialogForm">
             <button wicket:id="showModal">Tonen</button>
 
+            <wicket:remove>Outer container only present because of example.</wicket:remove>
             <wicket:container wicket:id="confirmDeleteDialog">
+
               <wicket:container wicket:id="confirmDeleteDialogInstance">
 
                 <dialog wicket:id="confirmDeleteDialog">
