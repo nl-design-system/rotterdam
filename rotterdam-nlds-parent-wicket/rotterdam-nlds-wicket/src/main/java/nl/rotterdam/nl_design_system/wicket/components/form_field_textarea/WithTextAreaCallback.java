@@ -1,6 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
 
-import nl.rotterdam.nl_design_system.wicket.components.textarea.RdTextArea;
+import nl.rotterdam.nl_design_system.wicket.components.text_area.RdTextArea;
 import org.jspecify.annotations.Nullable;
 
 /**

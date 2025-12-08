@@ -6,7 +6,7 @@ import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBeh
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFieldLabelBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.textarea.RdTextArea;
+import nl.rotterdam.nl_design_system.wicket.components.text_area.RdTextArea;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;

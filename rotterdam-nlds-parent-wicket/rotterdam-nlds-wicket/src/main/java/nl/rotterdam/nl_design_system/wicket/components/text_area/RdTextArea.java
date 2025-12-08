@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.wicket.components.textarea;
+package nl.rotterdam.nl_design_system.wicket.components.text_area;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.form.TextArea;
