@@ -104,6 +104,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/docs/wicket/css/bootstrap</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/bootstrap/dist/css</directory>
+                <includes>
+                    <include>bootstrap-grid.min.css</include>
+                </includes>
+            </resource>
+            <resource>
                 <filtering>true</filtering>
                 <directory>src/main/resources</directory>
             </resource>

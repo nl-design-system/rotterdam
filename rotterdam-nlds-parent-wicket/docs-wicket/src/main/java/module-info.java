@@ -44,6 +44,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
     opens nl.rotterdam.nl_design_system.docs.wicket.unordered_list;
     opens nl.rotterdam.nl_design_system.docs.wicket.component_examples;
+    opens nl.rotterdam.nl_design_system.docs.wicket.css.bootstrap;
 
     requires de.agilecoders.wicket.webjars;
     requires nl.rotterdam.nl_design_system.rotterdam_css.wicket;
