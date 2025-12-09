@@ -65,6 +65,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.column_layout;
     opens nl.rotterdam.nl_design_system.wicket.components.data_summary;
     opens nl.rotterdam.nl_design_system.wicket.components.dialog;
+    opens nl.rotterdam.nl_design_system.wicket.components.form_field;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_label;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
