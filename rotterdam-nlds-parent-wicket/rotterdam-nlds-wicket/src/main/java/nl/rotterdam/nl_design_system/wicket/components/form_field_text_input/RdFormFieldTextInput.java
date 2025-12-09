@@ -95,18 +95,20 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
     }
 
     /**
-     * Initialize the text input in the callback. TextInput and FormField are in scope.
+     * <p>
+     * Modify the Text Input using the given consumer. This Form Field will also be passed to the consumer.
+     * </p>
+     * <p>
+     * By using this method you can modify the Text Input in a fluent API style, without needing intermediary
+     * assignments.
+     * </p>
      *
-     * <p>By using this callback you can initialize the Component in a fluent api style, without intermediary
-     * assignments.</p>
-     * @param callback with custom logic for the current instance
+     * @param consumer modifies the Text Input in this Form Field.
      *
-     * @return self for chaining
+     * @return self for chaining.
      */
-    public RdFormFieldTextInput<T> withTextInput(WithTextInputCallback<T> callback) {
-        // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
-        //  as serializable attributes but leads to slightly better Wicket livecycle.
-        callback.doWithTextInput(textInput, this);
+    public RdFormFieldTextInput<T> withTextInput(WithTextInputConsumer<T> consumer) {
+        consumer.doWithTextInput(textInput, this);
 
         return this;
     }

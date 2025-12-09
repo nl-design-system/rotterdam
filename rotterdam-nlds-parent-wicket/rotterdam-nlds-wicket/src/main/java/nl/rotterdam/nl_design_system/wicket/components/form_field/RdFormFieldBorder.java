@@ -91,21 +91,19 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
 
     /**
      * <p>
-     * Initialize the input in the callback. Input and FormField are in scope.
+     * Modify the input element using the given consumer. This Form Field will also be passed to the consumer.
      * </p>
      * <p>
-     * By using this callback you can initialize the Component in a fluent api style, without intermediary
+     * By using this method you can modify the form component in a fluent API style, without needing intermediary
      * assignments.
      * </p>
      * 
-     * @param callback with custom logic for the current instance
+     * @param consumer modifies the input in this Form Field.
      *
-     * @return self for chaining
+     * @return self for chaining.
      */
-    public RdFormFieldBorder<T> withInput(WithInputCallback<T> callback) {
-        // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
-        //  as serializable attributes but leads to slightly better Wicket livecycle.
-        callback.doWithInput(input, this);
+    public RdFormFieldBorder<T> withInput(WithInputConsumer<T> consumer) {
+        consumer.doWithInput(input, this);
 
         return this;
     }
