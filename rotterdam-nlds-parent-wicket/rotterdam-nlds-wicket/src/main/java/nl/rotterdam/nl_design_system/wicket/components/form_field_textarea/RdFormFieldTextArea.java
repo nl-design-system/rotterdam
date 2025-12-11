@@ -22,11 +22,7 @@ import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_DESCRIPTION;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_INPUT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.FORM_FIELD_NESTED_BLOCK_LABEL;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.*;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -109,25 +105,25 @@ public class RdFormFieldTextArea<T extends @Nullable Object> extends GenericPane
     }
 
     private static Component newInputComponent(TextArea<?> textArea) {
-        return new WebMarkupContainer("input-container").add(textArea).add(FORM_FIELD_NESTED_BLOCK_INPUT.asBehavior());
+        return new WebMarkupContainer("input-container").add(textArea).add(INPUT_ELEMENT.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
         return RdFormFieldErrorMessageFactory.createErrorMessageLabel("error", textArea).add(
-            FORM_FIELD_NESTED_BLOCK_ERROR_MESSAGE.asBehavior()
+            ERROR_MESSAGE_ELEMENT.asBehavior()
         );
     }
 
     private static Component newDescriptionComponent(IModel<@Nullable String> descriptionModel) {
         return new Label("description", descriptionModel)
             .add(RdFormFieldDescriptionBehavior.INSTANCE)
-            .add(FORM_FIELD_NESTED_BLOCK_DESCRIPTION.asBehavior());
+            .add(DESCRIPTION_ELEMENT.asBehavior());
     }
 
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
             .add(new TextAreaLabel())
-            .add(FORM_FIELD_NESTED_BLOCK_LABEL.asBehavior());
+            .add(LABEL_ELEMENT.asBehavior());
     }
 
     @Override
