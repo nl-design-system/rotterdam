@@ -368,7 +368,15 @@
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
                 <includes>
-                    <include>@utrecht/textbox-css/dist/*.css</include>
+                    <include>@utrecht/textbox-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/text_area</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/textarea-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>

@@ -1,20 +1,17 @@
 package nl.rotterdam.nl_design_system.docs.wicket;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
+import nl.rotterdam.nl_design_system.wicket.test_common.WicketAssertions;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.IReferenceHeaderItem;
 import org.apache.wicket.markup.head.filter.FilteringHeaderResponse;
 import org.apache.wicket.markup.head.filter.JavaScriptFilteredIntoFooterHeaderResponse;
 import org.apache.wicket.markup.html.IHeaderResponseDecorator;
-import org.apache.wicket.request.resource.PackageResource;
-import org.apache.wicket.request.resource.ResourceReference;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ComponentsPageTest extends NldsWicketTestCase {
 
@@ -32,13 +29,7 @@ class ComponentsPageTest extends NldsWicketTestCase {
             .stream()
             .filter(item -> (item instanceof IReferenceHeaderItem))
             .map(item -> (IReferenceHeaderItem) item)
-            .forEach(ComponentsPageTest::assertHeaderItemExists);
-    }
-
-    static void assertHeaderItemExists(IReferenceHeaderItem headerItem) {
-        ResourceReference.Key key = headerItem.getReference().getKey();
-
-        assertTrue(PackageResource.exists(key), () -> "ResourceReference " + key + " should exist");
+            .forEach(WicketAssertions::assertHeaderItemExists);
     }
 }
 
