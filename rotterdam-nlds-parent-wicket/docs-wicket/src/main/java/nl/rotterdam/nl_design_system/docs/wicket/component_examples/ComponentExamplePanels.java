@@ -38,6 +38,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.root.RootExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.table.TableExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
 
@@ -85,6 +86,7 @@ public class ComponentExamplePanels {
         SelectExamplesPanel.class,
         SeparatorExamplesPanel.class,
         SideNavExamplesPanel.class,
+        TableExamplesPanel.class,
         TextInputExamplesPanel.class,
         UnorderedListExamplesPanel.class
     );

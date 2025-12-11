@@ -26,6 +26,11 @@
             <artifactId>wicket-request</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.jspecify</groupId>
             <artifactId>jspecify</artifactId>
         </dependency>
@@ -361,6 +366,14 @@
                 <directory>node_modules/</directory>
                 <includes>
                     <include>@utrecht/separator-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/table</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/table-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>

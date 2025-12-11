@@ -59,6 +59,7 @@
     "@utrecht/root-css": "2.0.1",
     "@utrecht/select-css": "2.0.1",
     "@utrecht/separator-css": "2.0.1",
+    "@utrecht/table-css": "2.0.1",
     "@utrecht/textarea-css": "3.0.1",
     "@utrecht/textbox-css": "3.0.1",
     "@utrecht/unordered-list-css": "1.5.1"
