@@ -70,27 +70,14 @@ public class TableExamplesPanel extends ExamplesPanel {
         return new RdDataTable<>("tableWithFiveRowsPerPage", columns, new ListDataProvider<>(data), 5);
     }
 
-    public static class Person implements Serializable {
-        private final String name;
-        private final String email;
-        private final String phone;
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+        add(exampleBasicTable(),
+            exampleTableWithManyRows(),
+            exampleTableWithFiveRowsPerPage());
+    }
 
-        public Person(String name, String email, String phone) {
-            this.name = name;
-            this.email = email;
-            this.phone = phone;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
+    public record Person(String name, String email, String phone) implements Serializable {
     }
 }

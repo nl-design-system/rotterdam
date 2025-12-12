@@ -30,11 +30,10 @@ class RdDataTableTest extends NldsWicketTestCase {
         );
 
         var dataProvider = new ListDataProvider<>(data);
-        var table = new RdDataTable<>("table", columns, dataProvider, 10);
+        var table = new RdDataTable<>("component", columns, dataProvider, 10);
 
-        tester.startComponentInPage(table);
+        String document = renderComponentInTableTestPanel(table);
 
-        var document = tester.getLastResponseAsString();
         var tableTester = TagTester.createTagByAttribute(document, "class", "utrecht-table");
 
         assertNotNull(tableTester, "Table should have utrecht-table class");
@@ -49,12 +48,11 @@ class RdDataTableTest extends NldsWicketTestCase {
         );
 
         var dataProvider = new ListDataProvider<>(Arrays.asList(new Person("Test", "test@example.com")));
-        var table = new RdDataTable<>("table", columns, dataProvider, 10);
+        var table = new RdDataTable<>("component", columns, dataProvider, 10);
 
-        tester.startComponentInPage(table);
+        var response = renderComponentInTableTestPanel(table);
 
         // Verify the CSS header item is rendered
-        var response = tester.getLastResponseAsString();
         assertTrue(response.contains("utrecht-table"), "Should have Utrecht table CSS classes");
     }
 
