@@ -3,7 +3,7 @@ package nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
 import org.apache.wicket.markup.html.panel.Panel;
 
-import static nl.rotterdam.nl_design_system.wicket.components.form_field_text_input.RdFormFieldTexInputCss.TEXT;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field_text_input.RdFormFieldTextInputCss.TEXT;
 
 /**
  * Behavior for the Form field text input.
