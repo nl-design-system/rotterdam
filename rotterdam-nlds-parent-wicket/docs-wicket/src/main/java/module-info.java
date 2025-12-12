@@ -58,6 +58,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     requires org.slf4j;
     requires wicket.bootstrap.extensions;
     requires org.apache.wicket.request;
+    requires org.apache.wicket.extensions;
     requires org.apache.wicket.util;
     requires org.apache.commons.lang3;
 }
