@@ -3,7 +3,8 @@ package nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
 enum RdFormFieldTextAreaCss implements CssClassNames {
-    BASE("utrecht-form-field--textarea");
+    // TODO discuss with Johan, move to RdFormFieldCss? same class as RdFormFieldTtextcss
+    BASE("utrecht-form-field--text");
 
     private final String classNames;
 

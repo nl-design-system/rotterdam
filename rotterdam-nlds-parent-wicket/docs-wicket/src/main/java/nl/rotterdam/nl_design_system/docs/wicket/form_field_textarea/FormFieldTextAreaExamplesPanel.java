@@ -6,9 +6,8 @@ import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.validation.IValidatable;
-import org.apache.wicket.validation.IValidator;
-import org.apache.wicket.validation.ValidationError;
+import org.apache.wicket.validation.validator.StringValidator;
+import org.jspecify.annotations.Nullable;
 
 public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
     public FormFieldTextAreaExamplesPanel(String id) {
@@ -31,10 +30,10 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdFormFieldTextArea<String> exampleFormFieldTextAreaRequired() {
+    private static RdFormFieldTextArea<@Nullable String> exampleFormFieldTextAreaRequired() {
         return new RdFormFieldTextArea<>(
             "formFieldTextAreaRequired",
-            DefaultModels.EMPTY_STRING_MODEL,
+            DefaultModels.NULL_STRING_MODEL,
             Model.of("Beschrijving")
         )
             .setRequired(true);
@@ -69,24 +68,20 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static RdFormFieldTextArea<String> exampleFormFieldTextAreaWithMaxLength() {
-        return new RdFormFieldTextArea<>(
+        RdFormFieldTextArea<String> component = new RdFormFieldTextArea<>(
             "formFieldTextAreaWithMaxLength",
-            Model.of(""),
+            Model.of("Een tekst die toch wat langer is dan achtentwintig tekens"),
             Model.of("Opmerking met maximale lengte"),
-            Model.of("Maximaal 256 tekens toegestaan.")
-        ).withTextArea((textArea, formField) ->
-            textArea.add(new IValidator<String>() {
-                @Override
-                public void validate(IValidatable<String> validatable) {
-                    String value = validatable.getValue();
-                    if (value != null && value.length() > 256) {
-                        ValidationError error = new ValidationError();
-                        error.setMessage("De ingevoerde tekst is langer dan toegestaan");
-                        validatable.error(error);
-                    }
-                }
-            })
+            Model.of("Maximaal 28 tekens toegestaan.")
+        ).withTextArea((textArea, formField) -> {
+                textArea.add(StringValidator.maximumLength(28));
+                textArea.error("De tekst is te lang. Er zijn maximaal 28 tekens toegestaan.");
+            }
         ).setRequired(true);
+
+        component.getTextArea().error("De ingevoerde tekst is langer dan toegestaan");
+
+        return component;
     }
 
     @Override

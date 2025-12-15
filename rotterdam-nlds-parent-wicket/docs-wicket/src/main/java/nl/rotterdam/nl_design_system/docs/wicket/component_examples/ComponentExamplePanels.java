@@ -40,6 +40,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPane
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.table.TableExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.textarea.TextAreaExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
 
 import java.util.List;
@@ -87,6 +88,7 @@ public class ComponentExamplePanels {
         SeparatorExamplesPanel.class,
         SideNavExamplesPanel.class,
         TableExamplesPanel.class,
+        TextAreaExamplesPanel.class,
         TextInputExamplesPanel.class,
         UnorderedListExamplesPanel.class
     );

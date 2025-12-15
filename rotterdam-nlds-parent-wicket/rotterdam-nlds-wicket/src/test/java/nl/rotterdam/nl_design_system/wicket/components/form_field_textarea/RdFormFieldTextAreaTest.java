@@ -21,7 +21,7 @@ class RdFormFieldTextAreaTest extends NldsWicketTestCase {
         // - aria-describedby added, it was missing, but I think it is needed.
         // language=HTML
         var expectedHtmlFragment = """
-            <div id="form-field-opmerking" class="utrecht-form-field utrecht-form-field--textarea">
+            <div id="form-field-opmerking" class="utrecht-form-field utrecht-form-field--text">
               <div class="utrecht-form-field__label">
                 <label
                   for="textarea-opmerking"
@@ -29,13 +29,12 @@ class RdFormFieldTextAreaTest extends NldsWicketTestCase {
                 >Opmerking</label>
               </div>
               <div id="description-label" class="utrecht-form-field-description utrecht-form-field__description">Voer hier eventuele opmerkingen in.</div>
-              <div class="utrecht-form-field__input">
+              <div class="utrecht-form-field__input ">
                 <textarea
                   name="static:component:input-container:control"
                   id="textarea-opmerking"
                   aria-describedby="description-label"
-                  class="utrecht-textarea"
-                ></textarea>
+                  class="utrecht-textarea utrecht-textarea--html-textarea"></textarea>
               </div>
             </div>""";
 
