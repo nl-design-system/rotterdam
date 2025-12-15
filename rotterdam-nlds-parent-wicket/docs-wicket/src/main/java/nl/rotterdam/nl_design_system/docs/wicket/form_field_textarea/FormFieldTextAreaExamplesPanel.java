@@ -70,11 +70,13 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
     private static RdFormFieldTextArea<String> exampleFormFieldTextAreaWithMaxLength() {
         return new RdFormFieldTextArea<>(
             "formFieldTextAreaWithMaxLength",
-            Model.of(""),
+            Model.of("Een tekst die toch wat langer is dan achtentwintig tekens"),
             Model.of("Opmerking met maximale lengte"),
-            Model.of("Maximaal 256 tekens toegestaan.")
-        ).withTextArea((textArea, formField) ->
-            textArea.add(StringValidator.maximumLength(256))
+            Model.of("Maximaal 28 tekens toegestaan.")
+        ).withTextArea((textArea, formField) -> {
+                textArea.add(StringValidator.maximumLength(28));
+                textArea.error("De tekst is te lang. Er zijn maximaal 28 tekens toegestaan.");
+            }
         ).setRequired(true);
     }
 
