@@ -1,6 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.table;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
+import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.DefaultDataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
@@ -56,7 +57,10 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
      * @param dataProvider data provider
      * @param rowsPerPage number of rows per page
      */
-    public RdDataTable(String id, List<? extends IColumn<T, S>> columns, ISortableDataProvider<T, S> dataProvider, int rowsPerPage) {
+    public RdDataTable(String id,
+                       List<? extends IColumn<T, S>> columns,
+                       ISortableDataProvider<T, S> dataProvider,
+                       int rowsPerPage) {
         super(id, columns, dataProvider, rowsPerPage);
     }
 
@@ -64,7 +68,16 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
     @Override
     protected void onInitialize() {
         super.onInitialize();
+
+        initializeNldsStyle();
+
         add(RdTableBehavior.INSTANCE);
+    }
+
+    private void initializeNldsStyle() {
+        get("caption").add(RdTableCss.CAPTION_ELEMENT.asBehavior());
+        get("topToolbars").add(RdTableCss.THEAD_ELEMENT.asBehavior());
+        get("topToolbars").get("headers").add(AttributeModifier.replace("class", "utrecht-table__row"));
     }
 
     @Override
@@ -74,4 +87,6 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
         item.add(new org.apache.wicket.AttributeModifier("class", "utrecht-table__row"));
         return item;
     }
+
+
 }
