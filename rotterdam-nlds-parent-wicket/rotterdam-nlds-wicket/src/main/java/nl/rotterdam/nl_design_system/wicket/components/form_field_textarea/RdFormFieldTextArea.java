@@ -23,7 +23,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Co
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.*;
-import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.NULL_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 /**
@@ -56,7 +56,7 @@ public class RdFormFieldTextArea<T extends @Nullable Object> extends GenericPane
      * @param labelModel label to be shown
      */
     public RdFormFieldTextArea(String id, IModel<T> model, IModel<@Nullable String> labelModel) {
-        this(id, model, labelModel, EMPTY_STRING_MODEL);
+        this(id, model, labelModel, NULL_STRING_MODEL);
     }
 
     /**

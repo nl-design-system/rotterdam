@@ -28,7 +28,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormF
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INPUT_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.LABEL_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
-import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.NULL_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 /**
@@ -63,7 +63,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
      * @param labelModel label to be shown
      */
     public RdFormFieldTextInput(String id, IModel<T> model, IModel<@Nullable String> labelModel) {
-        this(id, model, labelModel, EMPTY_STRING_MODEL);
+        this(id, model, labelModel, NULL_STRING_MODEL);
     }
 
     /**

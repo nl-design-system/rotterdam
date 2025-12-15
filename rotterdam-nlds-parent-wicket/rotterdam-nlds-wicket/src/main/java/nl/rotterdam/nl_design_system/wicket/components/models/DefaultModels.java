@@ -6,5 +6,5 @@ import org.jspecify.annotations.Nullable;
 public enum DefaultModels {
     ;
 
-    public static final IModel<@Nullable String> EMPTY_STRING_MODEL = () -> null;
+    public static final IModel<@Nullable String> NULL_STRING_MODEL = () -> null;
 }

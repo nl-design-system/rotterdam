@@ -6,6 +6,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.model.Model;
+import org.jspecify.annotations.Nullable;
 
 public class FormFieldTextInputExamplesPanel extends ExamplesPanel {
     public FormFieldTextInputExamplesPanel(String id) {
@@ -28,10 +29,10 @@ public class FormFieldTextInputExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdFormFieldTextInput<String> exampleFormFieldTextInputRequired() {
+    private static RdFormFieldTextInput<@Nullable String> exampleFormFieldTextInputRequired() {
         return new RdFormFieldTextInput<>(
             "formFieldTextInputRequired",
-            DefaultModels.EMPTY_STRING_MODEL,
+            DefaultModels.NULL_STRING_MODEL,
             Model.of("Email")
         )
             .setInputType("email")
