@@ -97,8 +97,6 @@ public class RdFormFieldTextArea<T extends @Nullable Object> extends GenericPane
      * @return self for chaining
      */
     public RdFormFieldTextArea<T> withTextArea(WithTextAreaCallback<T> callback) {
-        // TODO: consider postponing actual callback calling to onInitialize(). with that, we would have to store callbacks
-        //  as serializable attributes but leads to slightly better Wicket lifecycle.
         callback.doWithTextArea(textArea, this);
 
         return this;
