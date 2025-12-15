@@ -2,10 +2,7 @@ package nl.rotterdam.nl_design_system.wicket.components.table;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.AttributeModifier;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.DefaultDataTable;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.ISortableDataProvider;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
@@ -47,7 +44,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  * @see <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-table--docs">Utrecht Table Documentation</a>
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object> extends DefaultDataTable<T, S> {
+public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object> extends DataTable<T, S> {
 
     /**
      * Constructor.
@@ -62,6 +59,8 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
                        ISortableDataProvider<T, S> dataProvider,
                        int rowsPerPage) {
         super(id, columns, dataProvider, rowsPerPage);
+
+        addTopToolbar(new RdHeadersToolbar<>(this, dataProvider));
     }
 
 
@@ -70,6 +69,7 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
         super.onInitialize();
 
         initializeNldsStyle();
+
 
         add(RdTableBehavior.INSTANCE);
     }
