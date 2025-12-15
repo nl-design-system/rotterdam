@@ -1,6 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.fieldset;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
+import nl.rotterdam.nl_design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -161,7 +162,7 @@ public class RdFieldset extends Border {
 
     private Component newLegend(String id, @Nullable IModel<?> model) {
         var legend = new Label(id, model);
-        legend.add(RdFieldsetLegendBehavior.INSTANCE);
+        legend.add(RdFieldsetLegendBehavior.INSTANCE, HideWhenModelIsNullBehavior.INSTANCE);
         return legend;
     }
 }

@@ -29,6 +29,25 @@ class RdFieldsetTest extends NldsWicketTestCase {
     }
 
     @Test
+    void legendIsNoRenderedIfLabelNull() {
+        var fieldset = new RdFieldset("fieldset", Model.of((String) null))
+            .setMarkup(Markup.of("<div wicket:id='fieldset'></div>"))
+            .setMarkupId("fieldset");
+
+        // language=HTML
+        String expectedHtmlFragment = """
+            <div id='fieldset' class='utrecht-form-fieldset'>
+                <fieldset class='utrecht-form-fieldset__fieldset utrecht-form-fieldset--html-fieldset'>
+                </fieldset>
+            </div>
+            """;
+
+        String actualHtmlFragment = ComponentRenderer.renderComponent(fieldset).toString();
+
+        assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
+    }
+
+    @Test
     void sectionRendersCorrectly() {
         var fieldset = new RdFieldset("fieldset", Model.of("the label"));
         fieldset

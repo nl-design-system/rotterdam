@@ -61,6 +61,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.badge_list;
     opens nl.rotterdam.nl_design_system.wicket.components.body;
     opens nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
+    opens nl.rotterdam.nl_design_system.wicket.components.checkbox_group;
     opens nl.rotterdam.nl_design_system.wicket.components.code_block;
     opens nl.rotterdam.nl_design_system.wicket.components.column_layout;
     opens nl.rotterdam.nl_design_system.wicket.components.data_summary;
