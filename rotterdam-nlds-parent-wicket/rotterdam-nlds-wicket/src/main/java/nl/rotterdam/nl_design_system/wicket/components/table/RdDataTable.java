@@ -82,8 +82,11 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
     @Override
     protected Item<T> newRowItem(String id, int index, IModel<T> model) {
         Item<T> item = super.newRowItem(id, index, model);
-        // Add utrecht-table__row class to each row
-        item.add(new org.apache.wicket.AttributeModifier("class", "utrecht-table__row"));
+
+        item.add(AttributeModifier.append("class", "utrecht-table__row"));
+
+        var extraClass = (index % 2 == 0) ? RdTableCss.TR_ELEMENT_EVEN : RdTableCss.TR_ELEMENT_ODD;
+        item.add(extraClass.asBehavior());
         return item;
     }
 
