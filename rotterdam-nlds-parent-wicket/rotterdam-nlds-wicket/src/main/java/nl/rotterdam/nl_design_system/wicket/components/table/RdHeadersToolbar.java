@@ -29,7 +29,7 @@ class RdHeadersToolbar<T, S> extends HeadersToolbar<S> {
 
                 add(
                     AttributeModifier.replace("scope", "col"),
-                    AttributeModifier.replace("aria-sort", new AriaSortSortStateLdm(locator, property)),
+                    AttributeModifier.replace("aria-sort", new AriaSortSortNameLdm(locator, property)),
                     AttributeModifier.replace("class", TH_HEADER_CEL_ELEMENT.getClassNames())
                 );
             }
@@ -41,12 +41,12 @@ class RdHeadersToolbar<T, S> extends HeadersToolbar<S> {
         };
     }
 
-    private class AriaSortSortStateLdm extends LoadableDetachableModel<String> {
+    private class AriaSortSortNameLdm extends LoadableDetachableModel<String> {
 
         private final ISortStateLocator<S> locator;
         private final S property;
 
-        public AriaSortSortStateLdm(ISortStateLocator<S> locator, S property) {
+        public AriaSortSortNameLdm(ISortStateLocator<S> locator, S property) {
             this.locator = locator;
             this.property = property;
         }

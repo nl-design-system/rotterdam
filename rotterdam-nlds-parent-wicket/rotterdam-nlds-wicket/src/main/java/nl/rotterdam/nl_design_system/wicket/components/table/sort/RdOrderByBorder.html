@@ -17,6 +17,9 @@
 -->
 <wicket:border xmlns:wicket="http://wicket.apache.org">
   <form wicket:id="sortForm">
-  <button type="submit" class="utrecht-button utrecht-table__header-cell-button" wicket:id="orderByButton"><wicket:body/></button>
+  <button type="submit" class="utrecht-button utrecht-table__header-cell-button" wicket:id="orderByButton">
+    <span wicket:id="icon" class="utrecht-icon" role="presentation" aria-hidden="true">up/down/none</span>
+    <wicket:body/>
+  </button>
   </form>
 </wicket:border>

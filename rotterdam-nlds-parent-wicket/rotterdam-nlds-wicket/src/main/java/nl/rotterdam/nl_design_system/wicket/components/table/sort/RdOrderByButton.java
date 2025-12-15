@@ -4,7 +4,9 @@ import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortState;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLocator;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.OrderByLink;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
+import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.util.lang.Args;
 
 /**
@@ -45,6 +47,41 @@ public class RdOrderByButton<S> extends Button
 		this.property = property;
 		this.stateLocator = stateLocator;
 	}
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        // TODO: haal SVG van classpath (moeten wel inline blijven ivm dark mode support)
+        var sortIconModel = new LoadableDetachableModel<String>() {
+
+            @Override
+            protected String load() {
+                SortOrder sortOrder = stateLocator.getSortState().getPropertySortOrder(property);
+
+                return switch (sortOrder) {
+                    case NONE ->
+// language=svg
+"""
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrows-sort"><path d="M3 9l4 -4l4 4m-4 -4v14"></path><path d="M21 15l-4 4l-4 -4m4 4v-14"></path></svg>                        
+""";
+                    case ASCENDING ->
+//language=svg
+"""
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-sort-ascending"><path d="M4 6l7 0"></path><path d="M4 12l7 0"></path><path d="M4 18l9 0"></path><path d="M15 9l3 -3l3 3"></path><path d="M18 6l0 12"></path></svg>
+""";
+                    case DESCENDING ->
+// language=svg
+"""
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-sort-descending"><path d="M4 6l9 0"></path><path d="M4 12l7 0"></path><path d="M4 18l7 0"></path><path d="M15 15l3 3l3 -3"></path><path d="M18 6l0 12"></path></svg>                        
+""";
+                };
+            }
+        };
+
+        add(new Label("icon", sortIconModel)
+            .setEscapeModelStrings(false));
+    }
 
     @Override
     public void onSubmit() {
