@@ -17,6 +17,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_label;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input;
+    opens nl.rotterdam.nl_design_system.docs.wicket.form_field_textarea;
     opens nl.rotterdam.nl_design_system.docs.wicket.heading;
     opens nl.rotterdam.nl_design_system.docs.wicket.heading_group;
     opens nl.rotterdam.nl_design_system.docs.wicket.icon;
@@ -40,9 +41,11 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.separator;
     opens nl.rotterdam.nl_design_system.docs.wicket.side_nav;
     opens nl.rotterdam.nl_design_system.docs.wicket.sso_login_page;
+    opens nl.rotterdam.nl_design_system.docs.wicket.textarea;
     opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
     opens nl.rotterdam.nl_design_system.docs.wicket.unordered_list;
     opens nl.rotterdam.nl_design_system.docs.wicket.component_examples;
+    opens nl.rotterdam.nl_design_system.docs.wicket.css.bootstrap;
 
     requires de.agilecoders.wicket.webjars;
     requires nl.rotterdam.nl_design_system.rotterdam_css.wicket;

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <head>
+    <title>whatever</title>
+  </head>
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Form Field TextArea component</h1>
+        <div>
+          <p>Biedt de mogelijkheid om meerdere regels tekst in te vullen.</p>
+        </div>
+
+        <section data-testid="formFieldTextArea">
+          <h2>Form Field Text Area</h2>
+          <rods-story-canvas
+            ><template> <div wicket:id="formFieldTextArea"></div> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="formFieldTextAreaRequired">
+          <h2>Form Field TextArea Required</h2>
+          <rods-story-canvas
+            ><template> <div wicket:id="formFieldTextAreaRequired"></div> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="formFieldTextAreaDisabled">
+          <h2>Form Field TextArea Disabled</h2>
+          <div>
+            <p>Een form field in disabled mode. Wordt zo gerenderd door Wicket setEnabled(false) te gebruiken.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <div wicket:id="formFieldTextAreaDisabled"></div> </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+
+      <section data-testid="formFieldTextAreaWithRowsConfigured">
+        <h2>Form Field TextArea met rows and cols ingesteld.</h2>
+        <div>
+          <p>
+            Met withTextArea() kan je de rows en cols configureren zonder een
+            <a href="https://java-design-patterns.com/patterns/fluent-interface/"> fluent code style</a> te laten varen.
+          </p>
+        </div>
+        <rods-story-canvas
+          ><template> <div wicket:id="formFieldTextAreaWithRowsConfigured"></div> </template>
+        </rods-story-canvas>
+      </section>
+
+      <section data-testid="formFieldTextAreaWithMaxLength">
+        <h2>Form Field TextArea met validatie</h2>
+        <div>
+          <p>
+            Een tekstgebied met een maximale lengte.
+            Bij validatie wordt er een foutmelding getoond.
+          </p>
+        </div>
+        <rods-story-canvas
+          ><template> <div wicket:id="formFieldTextAreaWithMaxLength"></div> </template>
+        </rods-story-canvas>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

@@ -15,6 +15,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.form_field_textarea.FormFieldTextAreaExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
@@ -38,6 +39,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.select.SelectExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.separator.SeparatorExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.side_nav.SideNavExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.text_input.TextInputExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.textarea.TextAreaExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.unordered_list.UnorderedListExamplesPanel;
 
 import java.util.List;
@@ -60,6 +62,7 @@ public class ComponentExamplePanels {
         FieldsetExamplesPanel.class,
         FormFieldCheckboxExamplesPanel.class,
         FormFieldLabelExamplesPanel.class,
+        FormFieldTextAreaExamplesPanel.class,
         FormFieldTextInputExamplesPanel.class,
         HeadingExamplesPanel.class,
         HeadingGroupExamplesPanel.class,
@@ -83,6 +86,7 @@ public class ComponentExamplePanels {
         SelectExamplesPanel.class,
         SeparatorExamplesPanel.class,
         SideNavExamplesPanel.class,
+        TextAreaExamplesPanel.class,
         TextInputExamplesPanel.class,
         UnorderedListExamplesPanel.class
     );

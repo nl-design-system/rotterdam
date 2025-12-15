@@ -30,7 +30,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormF
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory.createErrorMessageLabel;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox.RdFormFieldCheckboxCss.FORM_FIELD_LABEL_CHECKBOX;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFieldLabelCheckableInputType.CHECKBOX;
-import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.EMPTY_STRING_MODEL;
+import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.NULL_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 /**
@@ -55,7 +55,7 @@ public class RdFormFieldCheckbox extends GenericPanel<Boolean> implements RdForm
      * @param labelModel label for checkbox
      */
     public RdFormFieldCheckbox(String id, IModel<Boolean> model, IModel<String> labelModel) {
-        this(id, model, labelModel, EMPTY_STRING_MODEL);
+        this(id, model, labelModel, NULL_STRING_MODEL);
     }
 
     /**

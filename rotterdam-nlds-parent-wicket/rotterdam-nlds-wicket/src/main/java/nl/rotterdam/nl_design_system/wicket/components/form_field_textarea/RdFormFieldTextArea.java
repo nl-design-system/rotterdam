@@ -1,4 +1,4 @@
-package nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
+package nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormField;
@@ -6,45 +6,38 @@ import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldBeh
 import nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldErrorMessageFactory;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFieldLabelBehavior;
-import nl.rotterdam.nl_design_system.wicket.components.text_input.RdTextInput;
+import nl.rotterdam.nl_design_system.wicket.components.text_area.RdTextArea;
 import nl.rotterdam.nl_design_system.wicket.html.TokenSetBuilder;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.util.string.Strings;
 import org.jspecify.annotations.Nullable;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.DESCRIPTION_ELEMENT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.ERROR_MESSAGE_ELEMENT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INPUT_ELEMENT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.LABEL_ELEMENT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.*;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.NULL_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
 /**
  * <a href="https://nldesignsystem.nl/form-field/">Form Field</a>
- * <a href="https://nldesignsystem.nl/text-input/">Text Input</a> NL Design System implementation.
+ * <a href="https://nldesignsystem.nl/text-area/">Text Area</a> NL Design System implementation.
  *
- * <p>Uses the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-textbox--docs">
- *     Utrecht Textbox</a>  community implementation.
+ * <p>Uses the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-textarea--docs">
+ *     Utrecht Textarea</a>  community implementation.
  * </p>
  *
  * @param <T> the model object type
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPanel<T> implements RdFormField {
-
-    private String inputType = "text";
+public class RdFormFieldTextArea<T extends @Nullable Object> extends GenericPanel<T> implements RdFormField {
 
     private final Component labelComponent;
 
@@ -54,7 +47,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
 
     private final Component inputComponent;
 
-    private final FormFieldTextInput textInput;
+    private final FormFieldTextArea textArea;
 
     /**
      * Create instance with label, without description.
@@ -62,18 +55,18 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
      * @param model writable model
      * @param labelModel label to be shown
      */
-    public RdFormFieldTextInput(String id, IModel<T> model, IModel<@Nullable String> labelModel) {
+    public RdFormFieldTextArea(String id, IModel<T> model, IModel<@Nullable String> labelModel) {
         this(id, model, labelModel, NULL_STRING_MODEL);
     }
 
     /**
-     * Create instance with label, without description.
+     * Create instance with label and description.
      * @param id the Wicket ID
      * @param model writable model
      * @param labelModel label to be shown
      * @param descriptionModel description text to be rendered, when label is not enough to explain purpose
      */
-    public RdFormFieldTextInput(
+    public RdFormFieldTextArea(
         String id,
         IModel<T> model,
         IModel<@Nullable String> labelModel,
@@ -84,41 +77,37 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
         requireNonNull(labelModel);
         requireNonNull(descriptionModel);
 
-        textInput = new FormFieldTextInput(model, descriptionModel);
-        textInput.setLabel(labelModel);
+        textArea = new FormFieldTextArea(model, descriptionModel);
+        textArea.setLabel(labelModel);
 
-        // Create the text input
+        // Create the text area
         labelComponent = newLabelComponent();
         descriptionComponent = newDescriptionComponent(descriptionModel);
-        inputComponent = newInputComponent(textInput);
+        inputComponent = newInputComponent(textArea);
         errorMessageComponent = newErrorMessageComponent();
     }
 
     /**
-     * <p>
-     * Modify the Text Input using the given consumer. This Form Field will also be passed to the consumer.
-     * </p>
-     * <p>
-     * By using this method you can modify the Text Input in a fluent API style, without needing intermediary
-     * assignments.
-     * </p>
+     * Initialize the text area in the callback. TextArea and FormField are in scope.
      *
-     * @param consumer modifies the Text Input in this Form Field.
+     * <p>By using this callback you can initialize the Component in a fluent api style, without intermediary
+     * assignments.</p>
+     * @param callback with custom logic for the current instance
      *
-     * @return self for chaining.
+     * @return self for chaining
      */
-    public RdFormFieldTextInput<T> withTextInput(WithTextInputConsumer<T> consumer) {
-        consumer.doWithTextInput(textInput, this);
+    public RdFormFieldTextArea<T> withTextArea(WithTextAreaCallback<T> callback) {
+        callback.doWithTextArea(textArea, this);
 
         return this;
     }
 
-    private static Component newInputComponent(TextField<?> textInput) {
-        return new WebMarkupContainer("input-container").add(textInput).add(INPUT_ELEMENT.asBehavior());
+    private static Component newInputComponent(TextArea<?> textArea) {
+        return new WebMarkupContainer("input-container").add(textArea).add(INPUT_ELEMENT.asBehavior());
     }
 
     private Component newErrorMessageComponent() {
-        return RdFormFieldErrorMessageFactory.createErrorMessageLabel("error", textInput).add(
+        return RdFormFieldErrorMessageFactory.createErrorMessageLabel("error", textArea).add(
             ERROR_MESSAGE_ELEMENT.asBehavior()
         );
     }
@@ -131,7 +120,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
 
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
-            .add(new TextInputLabel())
+            .add(new TextAreaLabel())
             .add(LABEL_ELEMENT.asBehavior());
     }
 
@@ -140,13 +129,13 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
         super.onInitialize();
         setOutputMarkupId(true);
 
-        add(RdFormFieldBehavior.INSTANCE, RdFormFieldTextInputBehavior.INSTANCE);
+        add(RdFormFieldBehavior.INSTANCE, RdFormFieldTextAreaBehavior.INSTANCE);
 
         add(inputComponent, labelComponent, descriptionComponent, errorMessageComponent);
     }
 
     private boolean isInvalid() {
-        return textInput.hasErrorMessage();
+        return textArea.hasErrorMessage();
     }
 
     @Override
@@ -161,27 +150,21 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
     }
 
     /**
-     * Marks {@link TextField<T>} as required
+     * Marks {@link TextArea<T>} as required
      * @param required if it should be required.
      * @return self for chaining.
      */
-    public RdFormFieldTextInput<T> setRequired(boolean required) {
-        textInput.setRequired(required);
+    public RdFormFieldTextArea<T> setRequired(boolean required) {
+        textArea.setRequired(required);
         return this;
     }
 
     /**
-     * Get reference to underlying {@link TextField}
+     * Get reference to underlying {@link TextArea}
      * @return the instance
      */
-    public final TextField<T> getTextField() {
-        return textInput;
-    }
-
-    public RdFormFieldTextInput<T> setInputType(String type) {
-        inputType = type;
-
-        return this;
+    public final TextArea<T> getTextArea() {
+        return textArea;
     }
 
     @Override
@@ -190,7 +173,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
     }
 
     @Override
-    public RdFormFieldTextInput<T> add(Behavior... behaviors) {
+    public RdFormFieldTextArea<T> add(Behavior... behaviors) {
         super.add(behaviors);
         return this;
     }
@@ -210,11 +193,11 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
         return labelComponent;
     }
 
-    private class FormFieldTextInput extends RdTextInput<T> {
+    private class FormFieldTextArea extends RdTextArea<T> {
 
         private final IModel<@Nullable String> descriptionModel;
 
-        private FormFieldTextInput(IModel<T> model, IModel<@Nullable String> descriptionModel) {
+        private FormFieldTextArea(IModel<T> model, IModel<@Nullable String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }
@@ -227,16 +210,12 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
                 .append(descriptionModel.getObject() != null, descriptionComponent::getMarkupId)
                 .append(isInvalid(), errorMessageComponent::getMarkupId)
                 .use(ariaDescribedBy -> tag.put("aria-describedby", ariaDescribedBy));
-
-            if (!Strings.isEmpty(inputType)) {
-                tag.put("type", inputType);
-            }
         }
     }
 
-    private class TextInputLabel extends WebMarkupContainer {
+    private class TextAreaLabel extends WebMarkupContainer {
 
-        private TextInputLabel() {
+        private TextAreaLabel() {
             super("label");
         }
 
@@ -245,7 +224,7 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
             super.onInitialize();
 
             var labelBehavior = new RdFormFieldLabelBehavior();
-            labelBehavior.setComponentLabelIsFor(textInput);
+            labelBehavior.setComponentLabelIsFor(textArea);
             add(labelBehavior);
         }
     }
