@@ -77,7 +77,6 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
     private void initializeNldsStyle() {
         get("caption").add(RdTableCss.CAPTION_ELEMENT.asBehavior());
         get("topToolbars").add(RdTableCss.THEAD_ELEMENT.asBehavior());
-        get("topToolbars").get("headers").add(AttributeModifier.replace("class", "utrecht-table__row"));
     }
 
     @Override

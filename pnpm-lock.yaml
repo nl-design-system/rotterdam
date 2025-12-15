@@ -635,6 +635,9 @@ importers:
       '@utrecht/separator-css':
         specifier: 2.0.1
         version: 2.0.1
+      '@utrecht/table-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/textarea-css':
         specifier: 3.0.1
         version: 3.0.1
@@ -3369,6 +3372,9 @@ packages:
 
   '@utrecht/separator-css@2.0.1':
     resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
+
+  '@utrecht/table-css@2.0.1':
+    resolution: {integrity: sha512-gJR0UjbHxnl2Wk+K2CcIYtJkBHEkDIc7MJ18//flLa6nPetfAr90nwc8OBgav++vbyUmueHgnS+lyL+AgrChkA==}
 
   '@utrecht/textarea-css@3.0.1':
     resolution: {integrity: sha512-byy2EpNx6g9ORxTZyeGxWclsvzJxbkmi1uqLSCS7286nw3t7PkwiWSKBPBJ568153nKgBD7FgiZrjR0Oe7TDnA==}
@@ -11132,6 +11138,8 @@ snapshots:
   '@utrecht/select-css@2.0.1': {}
 
   '@utrecht/separator-css@2.0.1': {}
+
+  '@utrecht/table-css@2.0.1': {}
 
   '@utrecht/textarea-css@3.0.1': {}
 

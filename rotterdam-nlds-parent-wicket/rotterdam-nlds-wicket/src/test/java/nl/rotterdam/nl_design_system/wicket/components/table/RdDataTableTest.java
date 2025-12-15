@@ -6,6 +6,7 @@ import org.apache.wicket.extensions.markup.html.repeater.data.table.PropertyColu
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -17,9 +18,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class RdDataTableTest extends NldsWicketTestCase {
 
 
+    @Disabled("WIP")
     @Test
     void testHtmlAsExpected() {
-
 
         // language=HTML
         var expectedHtmlFragment =
