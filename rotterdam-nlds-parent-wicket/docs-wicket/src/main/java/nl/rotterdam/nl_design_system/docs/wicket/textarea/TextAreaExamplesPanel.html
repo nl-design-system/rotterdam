@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <head>
+    <title>Text area example</title>
+  </head>
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Text area component</h1>
+        <div>
+          <p>Biedt de mogelijkheid om meerdere regels tekst in te vullen.</p>
+          <p>Zie ook: <a href="#">Form Field Text Area</a></p>
+        </div>
+
+        <section data-testid="textArea">
+          <h2>Text Area</h2>
+          <div>
+            <p>Voorbeeld standaard textArea.</p>
+          </div>
+          <rods-story-canvas>
+            <template>
+              <textarea wicket:id="textArea"></textarea>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="textAreaRequired">
+          <h2>Text Area Required</h2>
+          <rods-story-canvas>
+            <template>
+              <textarea wicket:id="textAreaRequired"></textarea>
+            </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="textAreaDisabled">
+          <h2>Text Area Disabled</h2>
+          <rods-story-canvas>
+            <template>
+              <textarea wicket:id="textAreaDisabled"></textarea>
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>

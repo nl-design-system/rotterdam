@@ -68,7 +68,7 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static RdFormFieldTextArea<String> exampleFormFieldTextAreaWithMaxLength() {
-        return new RdFormFieldTextArea<>(
+        RdFormFieldTextArea<String> component = new RdFormFieldTextArea<>(
             "formFieldTextAreaWithMaxLength",
             Model.of("Een tekst die toch wat langer is dan achtentwintig tekens"),
             Model.of("Opmerking met maximale lengte"),
@@ -78,6 +78,10 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
                 textArea.error("De tekst is te lang. Er zijn maximaal 28 tekens toegestaan.");
             }
         ).setRequired(true);
+        
+        component.getTextArea().error("De ingevoerde tekst is langer dan toegestaan");
+        
+        return component;
     }
 
     @Override
