@@ -2,6 +2,7 @@ package nl.rotterdam.nl_design_system.wicket.components.table;
 
 import nl.rotterdam.nl_design_system.wicket.components.table.sort.RdOrderByBorder;
 import org.apache.wicket.AttributeModifier;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLocator;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
@@ -97,9 +98,11 @@ class RdHeadersToolbar<SORT_TYPE> extends AbstractToolbar {
                 );
             }
 
+
             @Override
-            protected void onSortChanged() {
+            protected void onSortChanged(AjaxRequestTarget target) {
                 getTable().setCurrentPage(0);
+                target.add(getTable());
             }
         };
     }

@@ -25,8 +25,10 @@ public final class PersonSortableDataProvider extends SortableDataProvider<Perso
     @Serial
     private static final long serialVersionUID = 1L;
 
+    // TODO use enum.
     public static final String SORT_NAME  = "name";
     public static final String SORT_EMAIL = "email";
+    public static final String SORT_STREET = "street";
 
     private final List<Person> persons; // immutable input expected
 
@@ -73,11 +75,19 @@ public final class PersonSortableDataProvider extends SortableDataProvider<Perso
 
         if (SORT_EMAIL.equals(property)) {
             return Comparator.comparing(Person::email, nullSafeString)
-                    .thenComparing(Person::name, nullSafeString);
+                .thenComparing(Person::name, nullSafeString);
         }
 
-        // default: name
-        return Comparator.comparing(Person::name, nullSafeString)
-                .thenComparing(Person::email, nullSafeString);
+        if (SORT_NAME.equals(property)) {
+            return Comparator.comparing(Person::name, nullSafeString)
+                .thenComparing(Person::name, nullSafeString);
+        }
+
+        if (SORT_STREET.equals(property)) {
+            return Comparator.comparing(Person::street, nullSafeString)
+                .thenComparing(Person::street, nullSafeString);
+        }
+
+        throw new IllegalArgumentException("Sort not supported: " + property);
     }
 }

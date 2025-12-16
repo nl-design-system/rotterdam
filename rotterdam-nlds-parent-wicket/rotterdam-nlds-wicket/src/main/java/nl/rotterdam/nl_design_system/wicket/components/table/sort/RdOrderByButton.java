@@ -1,11 +1,12 @@
 package nl.rotterdam.nl_design_system.wicket.components.table.sort;
 
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortState;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLocator;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.OrderByLink;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.util.lang.Args;
 
@@ -16,7 +17,7 @@ import org.apache.wicket.util.lang.Args;
  *
  * @see OrderByLink
  */
-public class RdOrderByButton<S> extends Button
+public class RdOrderByButton<S> extends AjaxButton
 {
 	/** sortable property */
 	private final S property;
@@ -84,16 +85,16 @@ public class RdOrderByButton<S> extends Button
     }
 
     @Override
-    public void onSubmit() {
+    public void onSubmit(AjaxRequestTarget target) {
         super.onSubmit();
 		sort();
-		onSortChanged();
+		onSortChanged(target);
 	}
 
 	/**
 	 * This method is a hook for subclasses to perform an action after sort has changed
 	 */
-	protected void onSortChanged()
+	protected void onSortChanged(AjaxRequestTarget target)
 	{
 		// noop
 	}

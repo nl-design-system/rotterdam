@@ -68,8 +68,9 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
     protected void onInitialize() {
         super.onInitialize();
 
-        initializeNldsStyle();
+        setOutputMarkupId(true);
 
+        initializeNldsStyle();
 
         add(RdTableBehavior.INSTANCE);
     }

@@ -16,6 +16,7 @@
  */
 package nl.rotterdam.nl_design_system.wicket.components.table.sort;
 
+import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.core.util.string.CssUtils;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortState;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLocator;
@@ -107,9 +108,9 @@ public class RdOrderByBorder<S> extends Border
 		return new RdOrderByButton<S>(id, property, stateLocator)
 		{
 			@Override
-			protected void onSortChanged()
+			protected void onSortChanged(AjaxRequestTarget target)
 			{
-				RdOrderByBorder.this.onSortChanged();
+				RdOrderByBorder.this.onSortChanged(target);
 			}
 		};
 	}
@@ -117,7 +118,7 @@ public class RdOrderByBorder<S> extends Border
 	/**
 	 * This method is a hook for subclasses to perform an action after sort has changed
 	 */
-	protected void onSortChanged()
+	protected void onSortChanged(AjaxRequestTarget target)
 	{
 		// noop
 	}
