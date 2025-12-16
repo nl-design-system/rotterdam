@@ -87,6 +87,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.side_nav;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
     opens nl.rotterdam.nl_design_system.wicket.components.table;
+    opens nl.rotterdam.nl_design_system.wicket.components.table.sort;
     opens nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     opens nl.rotterdam.nl_design_system.wicket.html;
 
