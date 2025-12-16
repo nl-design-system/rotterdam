@@ -33,8 +33,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultMode
  * @param <T> the model object type of the <code>RadioGroup</code>.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdRadioGroup<T extends @Nullable Object> extends RdFieldset {
-    private final IModel<T> model;
+public class RdRadioGroup<T extends @Nullable Object> extends RdFieldset<T> {
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
 
@@ -65,8 +64,7 @@ public class RdRadioGroup<T extends @Nullable Object> extends RdFieldset {
      *                         not be displayed.
      */
     public RdRadioGroup(String id, IModel<T> model, IModel<?> labelModel, IModel<?> descriptionModel) {
-        super(id, labelModel);
-        this.model = model;
+        super(id, model, labelModel);
         add(RdRadioGroupBehavior.INSTANCE);
 
         descriptionComponent = newDescription("description", descriptionModel);
@@ -126,7 +124,7 @@ public class RdRadioGroup<T extends @Nullable Object> extends RdFieldset {
     }
 
     @Override
-    protected RadioGroup<T> newFieldset(String id) {
+    protected RadioGroup<T> newFieldset(String id, IModel<T> model) {
         var radioGroup = new RadioGroup<>(id, model);
         radioGroup.setRenderBodyOnly(false);
         return radioGroup;

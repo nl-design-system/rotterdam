@@ -10,7 +10,7 @@ class RdFieldsetTest extends NldsWicketTestCase {
 
     @Test
     void baseRendersCorrectly() {
-        var fieldset = new RdFieldset("fieldset", Model.of("the label"))
+        var fieldset = new RdFieldset<>("fieldset", Model.of((String)null), Model.of("the label"))
             .setMarkup(Markup.of("<div wicket:id='fieldset'></div>"))
             .setMarkupId("fieldset");
 
@@ -30,7 +30,7 @@ class RdFieldsetTest extends NldsWicketTestCase {
 
     @Test
     void legendIsNoRenderedIfLabelNull() {
-        var fieldset = new RdFieldset("fieldset", Model.of((String) null))
+        var fieldset = new RdFieldset<>("fieldset", Model.of((String)null), Model.of((String) null))
             .setMarkup(Markup.of("<div wicket:id='fieldset'></div>"))
             .setMarkupId("fieldset");
 
@@ -49,7 +49,7 @@ class RdFieldsetTest extends NldsWicketTestCase {
 
     @Test
     void sectionRendersCorrectly() {
-        var fieldset = new RdFieldset("fieldset", Model.of("the label"));
+        var fieldset = new RdFieldset<>("fieldset", Model.of((String)null), Model.of("the label"));
         fieldset
             .setMarkup(Markup.of("<div wicket:id='fieldset'></div>"))
             .setMarkupId("fieldset");
@@ -71,7 +71,7 @@ class RdFieldsetTest extends NldsWicketTestCase {
 
     @Test
     void invalidRendersCorrectly() {
-        var fieldset = new RdFieldset("fieldset", Model.of("the label"));
+        var fieldset = new RdFieldset<>("fieldset", Model.of((String)null), Model.of("the label"));
         fieldset
             .setMarkup(Markup.of("<div wicket:id='fieldset'></div>"))
             .setMarkupId("fieldset");
@@ -93,7 +93,7 @@ class RdFieldsetTest extends NldsWicketTestCase {
 
     @Test
     void invalidSectionRendersCorrectly() {
-        var fieldset = new RdFieldset("fieldset", Model.of("the label"));
+        var fieldset = new RdFieldset<>("fieldset", Model.of((String)null), Model.of("the label"));
         fieldset
             .setMarkup(Markup.of("<div wicket:id='fieldset'></div>"))
             .setMarkupId("fieldset");

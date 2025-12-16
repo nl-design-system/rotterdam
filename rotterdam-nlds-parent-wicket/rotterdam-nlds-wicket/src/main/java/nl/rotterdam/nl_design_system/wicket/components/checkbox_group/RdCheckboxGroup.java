@@ -38,9 +38,8 @@ import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultMode
  * @param <T> the model object type of the <code>CheckGroup</code>.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdCheckboxGroup<T extends @Nullable Object> extends RdFieldset {
+public class RdCheckboxGroup<T extends @Nullable Object> extends RdFieldset<Collection<T>> {
 
-    private final IModel<? extends Collection<T>> model;
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
 
@@ -68,7 +67,7 @@ public class RdCheckboxGroup<T extends @Nullable Object> extends RdFieldset {
      * @param model the model for the <code>CheckGroup</code>.
      * @param labelModel the label model.
      */
-    public RdCheckboxGroup(String id, IModel<? extends Collection<T>> model, IModel<?> labelModel) {
+    public RdCheckboxGroup(String id, IModel<Collection<T>> model, IModel<?> labelModel) {
         this(id, model, labelModel, NULL_STRING_MODEL);
     }
 
@@ -100,9 +99,8 @@ public class RdCheckboxGroup<T extends @Nullable Object> extends RdFieldset {
      * @param descriptionModel the description model. If this model returns <code>null</code>, then the description will
      *                         not be displayed.
      */
-    public RdCheckboxGroup(String id, IModel<? extends Collection<T>> model, IModel<?> labelModel, IModel<?> descriptionModel) {
-        super(id, labelModel);
-        this.model = model;
+    public RdCheckboxGroup(String id, IModel<Collection<T>> model, IModel<?> labelModel, IModel<?> descriptionModel) {
+        super(id, model, labelModel);
         add(RdCheckboxGroupBehavior.INSTANCE);
 
         descriptionComponent = newDescription("description", descriptionModel);
@@ -162,7 +160,7 @@ public class RdCheckboxGroup<T extends @Nullable Object> extends RdFieldset {
     }
 
     @Override
-    protected CheckGroup<T> newFieldset(String id) {
+    protected CheckGroup<T> newFieldset(String id, IModel<Collection<T>> model) {
         var checkGroup = new CheckGroup<>(id, model);
         checkGroup.setRenderBodyOnly(false);
         return checkGroup;

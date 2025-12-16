@@ -41,9 +41,11 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  * Based on the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-fieldset--docs">
  * CSS implementation of Utrecht</a>.
  * </p>
+ * 
+ * @param <T> the model object type.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdFieldset extends Border {
+public class RdFieldset<T extends @Nullable Object> extends Border {
     private final WebMarkupContainer fieldsetComponent;
     private final Component legendComponent;
     private boolean isInvalid;
@@ -55,24 +57,26 @@ public class RdFieldset extends Border {
      * </p>
      * 
      * @param id the Wicket ID.
+     * @param model the model. This will be passed to {@link #newFieldset(String, IModel)}.
      */
-    public RdFieldset(String id) {
-        this(id, null);
+    public RdFieldset(String id, IModel<T> model) {
+        this(id, model, null);
     }
 
     /**
      * <p>
-     * Create an instance with the given Wicket ID and model for the legend.
+     * Create an instance with the given Wicket ID, model, and model for the legend.
      * </p>
      * 
      * @param id the Wicket ID.
-     * @param model the model for the legend.
+     * @param model the model.
+     * @param labelModel the model for the legend. This will be passed to {@link #newFieldset(String, IModel)}.
      */
-    public RdFieldset(String id, @Nullable IModel<?> model) {
-        super(id, model);
+    public RdFieldset(String id, IModel<T> model, @Nullable IModel<?> labelModel) {
+        super(id, labelModel);
         
         add(RdFieldsetBehavior.INSTANCE);
-        fieldsetComponent = newFieldset("fieldset");
+        fieldsetComponent = newFieldset("fieldset", model);
         legendComponent = newLegend("legend", getDefaultModel());
     }
 
@@ -150,7 +154,7 @@ public class RdFieldset extends Border {
         fieldsetComponent.add(legendComponent);
     }
 
-    protected WebMarkupContainer newFieldset(String id) {
+    protected WebMarkupContainer newFieldset(String id, IModel<T> model) {
         var fieldset = new WebMarkupContainer(id);
         customizeFieldset(fieldset);
         return fieldset;
