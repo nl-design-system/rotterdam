@@ -4,23 +4,86 @@ import nl.rotterdam.nl_design_system.wicket.components.table.sort.RdOrderByBorde
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLocator;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.HeadersToolbar;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.repeater.Item;
+import org.apache.wicket.markup.repeater.RefreshingView;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
+import org.apache.wicket.model.Model;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
 
 import static nl.rotterdam.nl_design_system.wicket.components.table.RdTableCss.TH_HEADER_CEL_ELEMENT;
 
-class RdHeadersToolbar<T, S> extends HeadersToolbar<S> {
+/**
+ * Header toolbar styled for NLDS styles.
+ *
+ * <p>Much of the code is copy-pasted from {@link HeadersToolbar}, as it is not adaptable enough to support
+ * NLDS styling.</p>
+ *
+ * @param <SORT_TYPE> sort type
+ */
+class RdHeadersToolbar<SORT_TYPE> extends AbstractToolbar {
 
-    public <T> RdHeadersToolbar(DataTable<T, S> table, ISortStateLocator<S> stateLocator) {
-        super(table, stateLocator);
+    public <MODEL_TYPE> RdHeadersToolbar(DataTable<MODEL_TYPE, SORT_TYPE> table, ISortStateLocator<SORT_TYPE> stateLocator) {
+        super(table);
+
+        RefreshingView<IColumn<MODEL_TYPE, SORT_TYPE>> headers = new RefreshingView<>("headers") {
+            @Override
+            protected Iterator<IModel<IColumn<MODEL_TYPE, SORT_TYPE>>> getItemModels() {
+                List<IModel<IColumn<MODEL_TYPE, SORT_TYPE>>> columnsModels = new LinkedList<>();
+
+                for (IColumn<MODEL_TYPE, SORT_TYPE> column : table.getColumns()) {
+                    columnsModels.add(Model.of(column));
+                }
+
+                return columnsModels.iterator();
+            }
+
+            @Override
+            protected void populateItem(Item<IColumn<MODEL_TYPE, SORT_TYPE>> item) {
+                final IColumn<MODEL_TYPE, SORT_TYPE> column = item.getModelObject();
+
+                WebMarkupContainer header;
+
+                if (column.isSortable()) {
+                    header = newSortableHeader("header", column.getSortProperty(), stateLocator);
+                } else {
+                    header = newNonSortableHeader("header");
+                }
+
+                if (column.getHeaderColspan() > 1) {
+                    header.add(AttributeModifier.replace("colspan", column.getHeaderColspan()));
+                    header.add(AttributeModifier.replace("scope", "colgroup"));
+                } else {
+                    header.add(AttributeModifier.replace("scope", "col"));
+                }
+
+                if (column.getHeaderRowspan() > 1) {
+                    header.add(AttributeModifier.replace("rowspan", column.getHeaderRowspan()));
+                }
+
+                item.add(header);
+                item.setRenderBodyOnly(true);
+                header.add(column.getHeader("label"));
+            }
+        };
+        add(headers);
     }
 
-    @Override
-    protected WebMarkupContainer newSortableHeader(String headerId, S property, ISortStateLocator<S> locator) {
+    private static WebMarkupContainer newNonSortableHeader(String id) {
+        WebMarkupContainer header = new WebMarkupContainer(id);
+        header
+            .add(AttributeModifier.replace("class", TH_HEADER_CEL_ELEMENT.getClassNames()));
+
+        return header;
+    }
+
+    protected WebMarkupContainer newSortableHeader(String headerId, SORT_TYPE property, ISortStateLocator<SORT_TYPE> locator) {
 
         return new RdOrderByBorder<>(headerId, property, locator) {
             @Override
@@ -43,10 +106,10 @@ class RdHeadersToolbar<T, S> extends HeadersToolbar<S> {
 
     private class AriaSortSortNameLdm extends LoadableDetachableModel<String> {
 
-        private final ISortStateLocator<S> locator;
-        private final S property;
+        private final ISortStateLocator<SORT_TYPE> locator;
+        private final SORT_TYPE property;
 
-        public AriaSortSortNameLdm(ISortStateLocator<S> locator, S property) {
+        public AriaSortSortNameLdm(ISortStateLocator<SORT_TYPE> locator, SORT_TYPE property) {
             this.locator = locator;
             this.property = property;
         }
