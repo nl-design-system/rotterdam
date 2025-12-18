@@ -3,5 +3,5 @@
 <properties>
     <entry key="TheCaption">The caption</entry>
     <entry key="TheDescription">The description</entry>
-    <entry key="AddTheRadioButtonsHere">Add the radio buttons here</entry>
+    <entry key="AddTheCheckboxesHere"><![CDATA[Add the checkboxes (a Wicket <code>Check</code> with the NLDS Checkbox behavior) here]]></entry>
 </properties>

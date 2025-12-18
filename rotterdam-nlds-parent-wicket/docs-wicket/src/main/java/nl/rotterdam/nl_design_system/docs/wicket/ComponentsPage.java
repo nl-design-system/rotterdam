@@ -6,6 +6,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.badge_list.BadgeListExamplesPan
 import nl.rotterdam.nl_design_system.docs.wicket.body.BodyExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.button.ButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.checkbox.CheckboxExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.checkbox_group.CheckboxGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.css.DesignSystemTheme;
@@ -98,6 +99,7 @@ public class ComponentsPage extends RotterdamBasePage {
             new CodeBlockExamplesPanel("codeBlockExamplesPanel"),
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
             new CheckboxExamplesPanel("checkboxExamplesPanel"),
+            new CheckboxGroupExamplesPanel("checkboxGroupExamplesPanel"),
             new FieldsetExamplesPanel("fieldsetExamplesPanel"),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel").setVisible(false),
