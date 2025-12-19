@@ -275,3 +275,41 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
   inset-inline-start: 0;
   inset-inline-end: 0;
 }
+
+.utrecht-textbox:where(button) {
+  --utrecht-icon-size: 24px;
+  text-align: start;
+  display: inline-flex;
+}
+
+.utrecht-textbox .utrecht-icon {
+  margin-inline-end: 8px;
+}
+
+.utrecht-drawer > form {
+  display: contents;
+}
+
+.utrecht-drawer__rods-heading {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.utrecht-drawer__rods-heading strong {
+  color: inherit; /* TEMP: undo green <strong> */
+}
+
+.utrecht-drawer__rods-header {
+  padding-inline: 12px;
+  padding-block: 8px;
+}
+.utrecht-drawer__rods-body {
+  padding-inline: 12px;
+  padding-block: 8px;
+}
+
+.utrecht-drawer__rods-footer {
+  padding-inline: 12px;
+  padding-block: 8px;
+  border-block-start: 1px solid silver;
+}

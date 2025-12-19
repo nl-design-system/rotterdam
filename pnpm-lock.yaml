@@ -473,6 +473,12 @@ importers:
       '@utrecht/button-css':
         specifier: 3.0.1
         version: 3.0.1
+      '@utrecht/drawer-css':
+        specifier: 2.0.1
+        version: 2.0.1
+      '@utrecht/form-field-css':
+        specifier: 1.5.1
+        version: 1.5.1
       '@utrecht/form-field-description-css':
         specifier: 1.5.1
         version: 1.5.1
@@ -482,6 +488,9 @@ importers:
       '@utrecht/icon-css':
         specifier: 3.0.1
         version: 3.0.1
+      '@utrecht/textbox-css':
+        specifier: 1.1.0
+        version: 1.1.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -492,6 +501,9 @@ importers:
       '@nl-design-system/tsconfig':
         specifier: 1.0.5
         version: 1.0.5(typescript@5.9.3)
+      '@utrecht/listbox-css':
+        specifier: 2.0.1
+        version: 2.0.1
       '@vitest/browser-playwright':
         specifier: 4.0.12
         version: 4.0.12(playwright@1.56.1)(vite@7.1.12(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))(vitest@4.0.12)
@@ -3045,6 +3057,9 @@ packages:
   '@utrecht/data-list-css@1.4.1':
     resolution: {integrity: sha512-MK+is1wSfaiT1mW8GKUottDQUbDymV0wJotlPDnaV97uV45xF2lpXyBWzmDLynESCQtQDHgGTVBPZvHzMVlF9g==}
 
+  '@utrecht/drawer-css@2.0.1':
+    resolution: {integrity: sha512-4YysV31TmYGK8mLIF0ZLnUsc7j+02TylXJVZrMDQzisasEUbh8FXhHNbGTyZxlmGaFfjMtblCldp/UnsLkFH2Q==}
+
   '@utrecht/fieldset-react@1.0.4':
     resolution: {integrity: sha512-mgLV7fPTTWXb+8HatYqOOtHpnce4fACKNfo26OkHKw38nI9BV+VsDkALcHhgPDjfdhvnEXvJRRNx1YxBm+kDBw==}
     peerDependencies:
@@ -3138,6 +3153,9 @@ packages:
       '@babel/runtime': '*'
       react: '18'
       react-dom: '18'
+
+  '@utrecht/listbox-css@2.0.1':
+    resolution: {integrity: sha512-oBn1E2EGeQWkFHFryJx+NPLyiwlUP2qJ8CslQsmYMbiBjo7c9W9lx+e9OZn7ZJ/f5kviimZ9mkbwpJ6EjHPvcw==}
 
   '@utrecht/listbox-react@1.0.7':
     resolution: {integrity: sha512-NGZlw2x+QqpuJDznV4oNWGXuuCNMgKRTdBAF5XjwrzJt8JLHM8gfbiDmIR5AXTmk4+emMfsmBmaPKFJMfxooWw==}
@@ -11026,6 +11044,8 @@ snapshots:
 
   '@utrecht/data-list-css@1.4.1': {}
 
+  '@utrecht/drawer-css@2.0.1': {}
+
   '@utrecht/fieldset-react@1.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.28.4
@@ -11109,6 +11129,8 @@ snapshots:
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  '@utrecht/listbox-css@2.0.1': {}
 
   '@utrecht/listbox-react@1.0.7(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:

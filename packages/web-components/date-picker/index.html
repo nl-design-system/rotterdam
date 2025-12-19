@@ -213,6 +213,7 @@
         outline: 2px solid red;
       }
       .rods-theme {
+        --utrecht-backdrop-background-color: rgba(0 0 0 / 50%);
         --rods-time-badge-color: var(--rods-color-gray-tint-08);
         --rods-time-badge-background-color: var(--rods-color-base-white);
         --rods-time-badge-border-color: var(--rods-color-gray-tint-08);
@@ -4662,7 +4663,7 @@
             };
       };
 
-      document.getElementById("jcc").dynamic = true;
+      // document.getElementById("jcc").dynamic = true;
       document.getElementById("jcc")?.addEventListener("visibleDateChange", (evt) => {
         const date = evt.target.visibleDate;
         const month = date.substr(0, 7);

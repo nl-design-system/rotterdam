@@ -1,7 +1,10 @@
 import buttonCSS from '@utrecht/button-css/dist/index.css?raw';
+import drawerCSS from '@utrecht/drawer-css/dist/index.css?raw';
+import formFieldCSS from '@utrecht/form-field-css/dist/index.css?raw';
 import formFieldDescriptionCSS from '@utrecht/form-field-description-css/dist/index.css?raw';
 import formLabelCSS from '@utrecht/form-label-css/dist/index.css?raw';
 import iconCSS from '@utrecht/icon-css/dist/index.css?raw';
+import textboxCSS from '@utrecht/textbox-css/dist/index.css?raw';
 import clsx from 'clsx';
 import { html, LitElement, nothing, unsafeCSS } from 'lit';
 import { customElement, property, queryAsync } from 'lit/decorators.js';
@@ -77,9 +80,12 @@ export class DatePickerElement extends LitElement {
   static override readonly styles = [
     unsafeCSS(datePickerCSS),
     unsafeCSS(buttonCSS),
+    unsafeCSS(drawerCSS),
+    unsafeCSS(formFieldCSS),
     unsafeCSS(formLabelCSS),
     unsafeCSS(formFieldDescriptionCSS),
     unsafeCSS(iconCSS),
+    unsafeCSS(textboxCSS),
   ];
   dates: DateOption[] = [
     {
@@ -215,7 +221,16 @@ export class DatePickerElement extends LitElement {
     const afspraakLocale = 'Uw afspraak:';
     const confirmLocale = 'Bevestig uw afspraak';
     const previousLocale = 'Vorige maand';
+    const chooseDatumLabelLocale = 'Kies een datum:';
+    const chooseTimeLabelLocale = 'Kies een tijdslot:';
+    const chooseLabelFirstDescLocale = 'Kies eerst een datum.';
+    const selectMonthLocale = 'Selecteer een maand';
+    const dayInLocale = 'Selecteer een dag in';
+    const confirmMonthLocale = 'Bevestig maand';
+    const confirmDayLocale = 'Bevestig dag';
+    const confirmTimeLocale = 'Bevestig tijdslot';
     const nextLocale = 'Volgende maand';
+    const hourSuffixLocal = 'uur';
     // const dates = this.dates;
     const currentIndex = this.times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
@@ -350,6 +365,7 @@ export class DatePickerElement extends LitElement {
 
     const lang = 'nl';
     const formattedSelectedDate = new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(this._visibleDate);
+    const formattedSelectedTime = new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._visibleDate);
     const formattedSelectedDateTime = new Intl.DateTimeFormat(lang, { dateStyle: 'full', timeStyle: 'short' }).format(
       this.date,
     );
@@ -387,6 +403,114 @@ export class DatePickerElement extends LitElement {
     const showTimePlaceholder =
       times.length === 0; /* TODO: Replace with logic to only show when no date has been selected */
     const output = html`<div>
+      <div>Mobile date picker</div>
+      <div class="utrecht-form-field">
+        <div class="utrecht-form-field__label">
+          <label for="date" class="utrecht-form-label">${chooseDatumLabelLocale}</label>
+        </div>
+        <div class="utrecht-form-field__input">
+          <button id="date" class="utrecht-textbox" type="button" @click=${() => this.showDateModal()}>
+            <span class="utrecht-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 14C10.4477 14 10 14.4477 10 15C10 15.5523 10.4477 16 11 16V18C11 18.5523 11.4477 19 12 19C12.5523 19 13 18.5523 13 18V15C13 14.4477 12.5523 14 12 14H11Z"
+                  fill="#00811F"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16 2C16.5523 2 17 2.44772 17 3V4H18C18.7956 4 19.5587 4.31607 20.1213 4.87868C20.6839 5.44129 21 6.20435 21 7V19C21 19.7957 20.6839 20.5587 20.1213 21.1213C19.5587 21.6839 18.7957 22 18 22H6C5.20435 22 4.44129 21.6839 3.87868 21.1213C3.31607 20.5587 3 19.7957 3 19V7C3 6.20435 3.31607 5.44129 3.87868 4.87868C4.44129 4.31607 5.20435 4 6 4H7V3C7 2.44772 7.44772 2 8 2C8.55228 2 9 2.44772 9 3V4H15V3C15 2.44772 15.4477 2 16 2ZM19 7V10H5V7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H7V7C7 7.55228 7.44772 8 8 8C8.55228 8 9 7.55228 9 7V6H15V7C15 7.55228 15.4477 8 16 8C16.5523 8 17 7.55228 17 7V6H18C18.2652 6 18.5196 6.10536 18.7071 6.29289C18.8946 6.48043 19 6.73478 19 7ZM19 12H5V19C5 19.2652 5.10536 19.5196 5.29289 19.7071C5.48043 19.8946 5.73478 20 6 20H18C18.2652 20 18.5196 19.8946 18.7071 19.7071C18.8946 19.5196 19 19.2652 19 19V12Z"
+                  fill="#00811F"
+                />
+              </svg>
+            </span>
+            <span class="utrecht-textbox__value">${formattedSelectedDate}</span>
+          </button>
+        </div>
+      </div>
+      <dialog class="utrecht-drawer utrecht-drawer--block-end" id="date-drawer">
+        <form method="dialog">
+          <div class="utrecht-drawer__rods-step" id="date-drawer-step-1">
+            <div class="utrecht-drawer__rods-header">
+              <h2 class="utrecht-drawer__rods-heading"><strong>1/2</strong> ${selectMonthLocale}</h2>
+            </div>
+            <div class="utrecht-drawer__rods-body">
+              <div class="utrecht-listbox"></div>
+            </div>
+            <div class="utrecht-drawer__rods-footer">
+              <div class="utrecht-action-group">
+                <button
+                  type="button"
+                  class="utrecht-button utrecht-button--primary-action"
+                  @click=${() => this.nextModalStep()}
+                >
+                  ${confirmMonthLocale}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="utrecht-drawer__rods-step" id="date-drawer-step-2" hidden>
+            <h2 class="utrecht-drawer__rods-heading">
+              <strong>2/2</strong> ${dayInLocale} ${monthLocale(this._visibleDate.getMonth())}
+            </h2>
+            <div class="utrecht-drawer__rods-footer">
+              <div class="utrecht-action-group">
+                <button
+                  type="button"
+                  class="utrecht-button utrecht-button--primary-action"
+                  formmethod="dialog"
+                  @click=${() => this.closeDateModal()}
+                >
+                  ${confirmDayLocale}
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </dialog>
+      <dialog class="utrecht-drawer utrecht-drawer--block-end" id="time-drawer">
+        <h2>${selectTimeLocale}</h2>
+        <p class="utrecht-action-group">
+          <button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmTimeLocale}</button>
+        </p>
+      </dialog>
+      <div class="utrecht-form-field">
+        <div class="utrecht-form-field__label">
+          <label for="date" class="utrecht-form-label">${chooseDatumLabelLocale}</label>
+        </div>
+        <div class="utrecht-form-field__description">
+          <div class="utrecht-form-field-description">${chooseLabelFirstDescLocale}</div>
+        </div>
+        <div class="utrecht-form-field__input">
+          <button id="time" class="utrecht-textbox" type="button" @click=${() => this.showTimeModal()}>
+            <span class="utrecht-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 14C10.4477 14 10 14.4477 10 15C10 15.5523 10.4477 16 11 16V18C11 18.5523 11.4477 19 12 19C12.5523 19 13 18.5523 13 18V15C13 14.4477 12.5523 14 12 14H11Z"
+                  fill="#00811F"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16 2C16.5523 2 17 2.44772 17 3V4H18C18.7956 4 19.5587 4.31607 20.1213 4.87868C20.6839 5.44129 21 6.20435 21 7V19C21 19.7957 20.6839 20.5587 20.1213 21.1213C19.5587 21.6839 18.7957 22 18 22H6C5.20435 22 4.44129 21.6839 3.87868 21.1213C3.31607 20.5587 3 19.7957 3 19V7C3 6.20435 3.31607 5.44129 3.87868 4.87868C4.44129 4.31607 5.20435 4 6 4H7V3C7 2.44772 7.44772 2 8 2C8.55228 2 9 2.44772 9 3V4H15V3C15 2.44772 15.4477 2 16 2ZM19 7V10H5V7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H7V7C7 7.55228 7.44772 8 8 8C8.55228 8 9 7.55228 9 7V6H15V7C15 7.55228 15.4477 8 16 8C16.5523 8 17 7.55228 17 7V6H18C18.2652 6 18.5196 6.10536 18.7071 6.29289C18.8946 6.48043 19 6.73478 19 7ZM19 12H5V19C5 19.2652 5.10536 19.5196 5.29289 19.7071C5.48043 19.8946 5.73478 20 6 20H18C18.2652 20 18.5196 19.8946 18.7071 19.7071C18.8946 19.5196 19 19.2652 19 19V12Z"
+                  fill="#00811F"
+                />
+              </svg>
+            </span>
+            <span class="utrecht-textbox__value">${formattedSelectedTime} ${hourSuffixLocal}</span>
+          </button>
+        </div>
+      </div>
+      <div class="rods-date-picker__mobile-summary">
+        <p>
+          ${afspraakLocale}<br />
+          <span>op <strong>${formattedSelectedDate}</strong></span>
+          <br /><span>om <strong>${formattedSelectedTime} ${hourSuffixLocal}</strong></span>
+        </p>
+        <p><button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button></p>
+      </div>
+
+      <hr />
       <div class="rods-date-panels">
         <div class="rods-date-panels__panel">
           <div class="rods-date-panels__panel-header">
@@ -488,12 +612,13 @@ export class DatePickerElement extends LitElement {
               aria-activedescendant=${activeDescendant}
             >
               <ul class="rods-time-slots__list" role="list">
-                ${times.map(({ label, selected }, index, list) => {
+                ${times.map(({ date, label, selected }, index, list) => {
                   return html`<li
                     id="option-${index}"
                     class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
                     role="option"
-                    @click=${this.handleClickTime}
+                    @click2=${this.handleClickTime}
+                    @click=${() => this.selectTime(date)}
                     aria-selected=${selected ? 'true' : nothing}
                     aria-posinset=${index + 1}
                     aria-setsize=${list.length}
@@ -647,6 +772,18 @@ export class DatePickerElement extends LitElement {
     this.requestUpdate();
     this.scrollOptionIntoView();
   }
+  /**
+   * Changes to the date go through this method.
+   * @param index
+   */
+  selectTime(date: Date) {
+    this.times = this.times.map((option) => ({
+      ...option,
+      selected: option.date === date,
+    }));
+    this.requestUpdate();
+    this.scrollOptionIntoView();
+  }
   updateValue(isoString: string) {
     this.date = new Date(isoString);
     this.dispatchEvent(new CustomEvent('change'));
@@ -670,5 +807,29 @@ export class DatePickerElement extends LitElement {
     if (Number.isFinite(index)) {
       this.selectIndex(index - 1);
     }
+  }
+  showTimeModal() {
+    this.shadowRoot?.querySelector<HTMLDialogElement>('#time-drawer')?.showModal();
+  }
+  showDateModal() {
+    this.shadowRoot?.querySelector<HTMLDialogElement>('#date-drawer')?.showModal();
+  }
+  nextModalStep() {
+    const isTruthy = (arg: HTMLDialogElement | null | undefined) => !!arg;
+    const otherSteps = [this.shadowRoot?.querySelector<HTMLDialogElement>('#date-drawer-step-1')].filter(isTruthy);
+    const visibleSteps = [this.shadowRoot?.querySelector<HTMLDialogElement>('#date-drawer-step-2')].filter(isTruthy);
+
+    otherSteps.forEach((el) => {
+      el.hidden = true;
+    });
+    visibleSteps.forEach((el) => {
+      el.hidden = false;
+    });
+  }
+  closeDateModal() {
+    this.shadowRoot?.querySelector<HTMLDialogElement>('#date-drawer')?.close();
+  }
+  closeTimeModal() {
+    this.shadowRoot?.querySelector<HTMLDialogElement>('#time-drawer')?.close();
   }
 }
