@@ -18,7 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-import static nl.rotterdam.nl_design_system.wicket.components.table.RdTableCss.TH_HEADER_CEL_ELEMENT;
+import static nl.rotterdam.nl_design_system.wicket.components.table.RdTableCss.TABLE_HEAD_HEADER_CEL_ELEMENT;
 
 /**
  * Header toolbar styled for NLDS styles.
@@ -30,7 +30,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.table.RdTableCss.T
  */
 class RdHeadersToolbar<SORT_TYPE> extends AbstractToolbar {
 
-    public <MODEL_TYPE> RdHeadersToolbar(DataTable<MODEL_TYPE, SORT_TYPE> table, ISortStateLocator<SORT_TYPE> stateLocator) {
+    protected <MODEL_TYPE> RdHeadersToolbar(DataTable<MODEL_TYPE, SORT_TYPE> table, ISortStateLocator<SORT_TYPE> stateLocator) {
         super(table);
 
         RefreshingView<IColumn<MODEL_TYPE, SORT_TYPE>> headers = new RefreshingView<>("headers") {
@@ -79,7 +79,7 @@ class RdHeadersToolbar<SORT_TYPE> extends AbstractToolbar {
     private static WebMarkupContainer newNonSortableHeader(String id) {
         WebMarkupContainer header = new WebMarkupContainer(id);
         header
-            .add(AttributeModifier.replace("class", TH_HEADER_CEL_ELEMENT.getClassNames()));
+            .add(AttributeModifier.replace("class", TABLE_HEAD_HEADER_CEL_ELEMENT.getClassNames()));
 
         return header;
     }
@@ -94,7 +94,7 @@ class RdHeadersToolbar<SORT_TYPE> extends AbstractToolbar {
                 add(
                     AttributeModifier.replace("scope", "col"),
                     AttributeModifier.replace("aria-sort", new AriaSortSortNameLdm(locator, property)),
-                    AttributeModifier.replace("class", TH_HEADER_CEL_ELEMENT.getClassNames())
+                    AttributeModifier.replace("class", TABLE_HEAD_HEADER_CEL_ELEMENT.getClassNames())
                 );
             }
 

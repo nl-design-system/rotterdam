@@ -1,8 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.table;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import org.apache.wicket.AttributeModifier;
-import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxNavigationToolbar;
+import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
@@ -47,6 +46,9 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object> extends DataTable<T, S> {
 
+    private static final Behavior CAPTION_CSS_BEHAVIOR = RdTableCss.CAPTION_ELEMENT.asBehavior();
+    private static final Behavior THEAD_ELEMENT_BEHAVIOR = RdTableCss.THEAD_ELEMENT.asBehavior();
+    private static final Behavior TABLE_ROW_ELEMENT_BEHAVIOR = RdTableCss.TABLE_ROW_ELEMENT_CSS.asBehavior();
     /**
      * Constructor.
      *
@@ -61,11 +63,10 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
                        int rowsPerPage) {
         super(id, columns, dataProvider, rowsPerPage);
 
-        addTopToolbar(new AjaxNavigationToolbar(this));
+        addTopToolbar(new RdAjaxNavigationToolbar(this));
 
         addTopToolbar(new RdHeadersToolbar<>(this, dataProvider));
     }
-
 
     @Override
     protected void onInitialize() {
@@ -73,23 +74,23 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
 
         setOutputMarkupId(true);
 
-        initializeNldsStyle();
+        initializeNlDesignSystemStyle();
 
         add(RdTableBehavior.INSTANCE);
     }
 
-    private void initializeNldsStyle() {
-        get("caption").add(RdTableCss.CAPTION_ELEMENT.asBehavior());
-        get("topToolbars").add(RdTableCss.THEAD_ELEMENT.asBehavior());
+    private void initializeNlDesignSystemStyle() {
+        get("caption").add(CAPTION_CSS_BEHAVIOR);
+        get("topToolbars").add(THEAD_ELEMENT_BEHAVIOR);
     }
 
     @Override
     protected Item<T> newRowItem(String id, int index, IModel<T> model) {
         Item<T> item = super.newRowItem(id, index, model);
 
-        item.add(AttributeModifier.append("class", "utrecht-table__row"));
+        item.add(TABLE_ROW_ELEMENT_BEHAVIOR);
 
-        var extraClass = (index % 2 == 0) ? RdTableCss.TR_ELEMENT_EVEN : RdTableCss.TR_ELEMENT_ODD;
+        var extraClass = (index % 2 == 0) ? RdTableCss.TABLE_ROW_ELEMENT_EVEN : RdTableCss.TABLE_ROW_ELEMENT_ODD;
         item.add(extraClass.asBehavior());
         return item;
     }
