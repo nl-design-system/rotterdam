@@ -2,6 +2,7 @@ package nl.rotterdam.nl_design_system.wicket.components.table;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.AttributeModifier;
+import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxNavigationToolbar;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
@@ -59,6 +60,8 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
                        ISortableDataProvider<T, S> dataProvider,
                        int rowsPerPage) {
         super(id, columns, dataProvider, rowsPerPage);
+
+        addTopToolbar(new AjaxNavigationToolbar(this));
 
         addTopToolbar(new RdHeadersToolbar<>(this, dataProvider));
     }

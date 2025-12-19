@@ -9,6 +9,8 @@
         </filter>
     </appender>
 
+    <logger name="org.apache.wicket" level="DEBUG"/>
+
     <root level="info">
         <appender-ref ref="appender-console"/>
     </root>
