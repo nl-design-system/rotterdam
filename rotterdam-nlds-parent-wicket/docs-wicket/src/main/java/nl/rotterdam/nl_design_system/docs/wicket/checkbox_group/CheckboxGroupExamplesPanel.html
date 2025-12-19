@@ -11,7 +11,12 @@
       <rods-story-canvas>
         <template>
           <div wicket:id="checkboxGroup">
-            <p><wicket:message key="AddTheCheckboxesHere"></wicket:message></p>
+            <div class="d-flex flex-column gap-2">
+            <div><label wicket:for="checkPhone"><input type="checkbox" wicket:id="checkPhone"/> Telefoon</label></div>
+            <div><label wicket:for="checkEmail"><input type="checkbox" wicket:id="checkEmail"/> E-mail</label></div>
+            <div><label wicket:for="checkWhatsapp"><input type="checkbox" wicket:id="checkWhatsapp"/> WhatsApp</label></div>
+            <div><label wicket:for="checkTelegram"><input type="checkbox" wicket:id="checkTelegram"/> Telegram</label></div>
+            </div>
           </div>
         </template>
       </rods-story-canvas>
