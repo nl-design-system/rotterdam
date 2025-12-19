@@ -313,3 +313,87 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
   padding-block: 8px;
   border-block-start: 1px solid silver;
 }
+
+.rods-date-picker {
+  container-type: inline-size;
+}
+
+.utrecht-form-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.rods-date-picker__small {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.rods-date-picker__mobile-summary {
+  padding: 24px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cad6da;
+}
+
+@container (width >= 1180px) {
+  .rods-date-picker__small {
+    display: none;
+  }
+}
+
+@container (width < 1180px) {
+  .rods-date-picker__large {
+    display: none;
+  }
+}
+
+.utrecht-listbox {
+  --utrecht-listbox-font-size: 24px;
+  --utrecht-listbox-font-weight: bold;
+  --utrecht-listbox-inline-size: 100%;
+  --utrecht-listbox-border-width: 0;
+}
+.utrecht-listbox__option {
+  justify-content: center;
+}
+
+.rods-scroll-shadows {
+  --rods-scroll-shadow-color-1: white;
+  /* --rods-scroll-shadow-color-2: rgba(0, 0, 0, 0.2); */
+  --rods-scroll-shadow-color-3: rgba(255, 255, 255, 0);
+  --rods-scroll-shadow-color-4: rgba(0, 0, 0, 0);
+
+  --rods-scroll-shadow-size-1: 40px;
+  --rods-scroll-shadow-height: 14px;
+
+  --rods-scroll-shadow-color-2: rgba(0, 0, 0, 0.2);
+  --rods-scroll-shadow-height: 24px;
+
+  background:
+    /* Shadow Cover TOP */
+    linear-gradient(var(--rods-scroll-shadow-color-1) 30%, var(--rods-scroll-shadow-color-3)) center top,
+    /* Shadow Cover BOTTOM */ linear-gradient(var(--rods-scroll-shadow-color-3), var(--rods-scroll-shadow-color-1) 70%)
+      center bottom,
+    /* Shadow TOP */
+      radial-gradient(farthest-side at 50% 0, var(--rods-scroll-shadow-color-2), var(--rods-scroll-shadow-color-4))
+      center top,
+    /* Shadow BOTTOM */
+      radial-gradient(farthest-side at 50% 100%, var(--rods-scroll-shadow-color-2), var(--rods-scroll-shadow-color-4))
+      center bottom;
+
+  background-repeat: no-repeat;
+  background-size:
+    100% var(--rods-scroll-shadow-size-1),
+    100% var(--rods-scroll-shadow-size-1),
+    100% var(--rods-scroll-shadow-height),
+    100% var(--rods-scroll-shadow-height);
+
+  background-attachment: local, local, scroll, scroll;
+}
+
+.utrecht-listbox__option--selected {
+  border-style: solid;
+  border-color: currentColor;
+  border-width: 2px;
+}

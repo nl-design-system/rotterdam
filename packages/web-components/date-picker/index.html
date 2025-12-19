@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./theme.css" />
     <link rel="stylesheet" href="./public/font/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css@8.2.1/dist/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="utrecht-body">
     <div class="utrecht-page-layout">
@@ -214,6 +215,8 @@
       }
       .rods-theme {
         --utrecht-backdrop-background-color: rgba(0 0 0 / 50%);
+        --utrecht-page-body-content-padding-inline-start: 24px;
+        --utrecht-page-body-content-padding-inline-end: 24px;
         --rods-time-badge-color: var(--rods-color-gray-tint-08);
         --rods-time-badge-background-color: var(--rods-color-base-white);
         --rods-time-badge-border-color: var(--rods-color-gray-tint-08);
@@ -236,6 +239,46 @@
 
         /* TODO: Description is far too small in the design tokens, 12px! */
         --utrecht-form-field-description-font-size: inherit;
+
+        /* Uncomment each custom property you need */
+        /* --utrecht-listbox-background-color: <color>; */
+        /* --utrecht-listbox-border-color: <color>; */
+        /* --utrecht-listbox-border-radius: <length>; */
+        /* --utrecht-listbox-border-width: <length>; */
+        /* --utrecht-listbox-color: <color>; */
+        /* --utrecht-listbox-font-weight: <number>; */
+        /* --utrecht-listbox-inline-size: <length>; */
+        /* --utrecht-listbox-max-block-size: <length>; */
+        /* --utrecht-listbox-padding-block-end: <length>; */
+        /* --utrecht-listbox-padding-block-start: <length>; */
+        /* --utrecht-listbox-padding-inline-end: <length>; */
+        /* --utrecht-listbox-padding-inline-start: <length>; */
+        /* --utrecht-listbox-group-margin-block-end: <length>; */
+        /* --utrecht-listbox-group-label-color: <color>; */
+        /* --utrecht-listbox-group-label-font-size: <length>; */
+        /* --utrecht-listbox-group-label-font-weight: <number>; */
+        /* --utrecht-listbox-group-label-line-height: <length>; */
+        /* --utrecht-listbox-group-label-margin-inline-start: <length>; */
+        /* --utrecht-listbox-option-background-color: <color>; */
+        /* --utrecht-listbox-option-color: <color>; */
+        --utrecht-listbox-option-min-block-size: 48px;
+        --utrecht-listbox-option-padding-block-end: 4px;
+        --utrecht-listbox-option-padding-block-start: 4px;
+        --utrecht-listbox-option-padding-inline-end: 8px;
+        --utrecht-listbox-option-padding-inline-start: 8px;
+        /* --utrecht-listbox-option-active-background-color: <color>; */
+        /* --utrecht-listbox-option-active-color: <color>; */
+        /* --utrecht-listbox-option-disabled-background-color: <color>; */
+        /* --utrecht-listbox-option-disabled-color: <color>; */
+        /* --utrecht-listbox-option-hover-background-color: <color>; */
+        /* --utrecht-listbox-option-hover-color: <color>; */
+        /* --utrecht-listbox-option-selected-background-color: silver; */
+        --utrecht-listbox-option-selected-color: var(--rods-color-base-green);
+        /* --utrecht-listbox-option-selected-disabled-background-color: <color>; */
+        /* --utrecht-listbox-option-selected-disabled-color: <color>; */
+        /* --utrecht-listbox-option-selected-hover-background-color: <color>; */
+        /* --utrecht-listbox-option-selected-hover-color: <color>; */
+        /* --utrecht-listbox-option-icon-size: <length>; */
       }
     </style>
     <script>
