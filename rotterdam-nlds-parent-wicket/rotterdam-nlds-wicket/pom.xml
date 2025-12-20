@@ -318,6 +318,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_number_navigation</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/pagination-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_layout</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
