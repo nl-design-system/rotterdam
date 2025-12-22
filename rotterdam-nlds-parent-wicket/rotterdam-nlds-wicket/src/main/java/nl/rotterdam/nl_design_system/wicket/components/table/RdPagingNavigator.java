@@ -40,7 +40,7 @@ class RdPagingNavigator extends AjaxPagingNavigator {
                         .add(PageNumberNavigationCss.LINK_ELEMENT_PAGES.asBehavior()),
 
                     new TransparentWebMarkupContainer("after")
-                    .add(PageNumberNavigationCss.AFTER.asBehavior())
+                        .add(PageNumberNavigationCss.AFTER.asBehavior())
                 );
             }
         });

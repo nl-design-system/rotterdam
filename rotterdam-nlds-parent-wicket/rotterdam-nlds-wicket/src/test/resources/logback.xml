@@ -9,7 +9,10 @@
         </filter>
     </appender>
 
-    <logger name="org.apache.wicket" level="DEBUG"/>
+
+    <logger name="org.apache.wicket" level="WARN">
+        <!-- set to DEBUG to understand which classes are scanned to retrieve resource keys for i18n -->
+    </logger>
 
     <root level="info">
         <appender-ref ref="appender-console"/>

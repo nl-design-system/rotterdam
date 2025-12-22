@@ -21,25 +21,23 @@
 
 <nav wicket:id="page-number-navigation">
   <span wicket:id="before">
-    <wicket:remove>last and first are hidden, not present in nl design system</wicket:remove>
+    <wicket:remove>first is hidden; not present in nl design system</wicket:remove>
     <a wicket:id="first" class="first">&lt;&lt;</a>
     <a wicket:id="prev"><wicket:message key="previous">Previous</wicket:message></a>
   </span>
 
   <span wicket:id="pages">
-  <wicket:container wicket:id="navigation">
-  <a wicket:id="pageLink">
-  <wicket:container wicket:id="pageNumber">5</wicket:container>
-  </a>
-  </wicket:container>
+    <wicket:container wicket:id="navigation">
+      <a wicket:id="pageLink">
+      <wicket:container wicket:id="pageNumber">5</wicket:container>
+      </a>
+    </wicket:container>
   </span>
 
   <span wicket:id="after">
-  <a wicket:id="next">
-  <wicket:message key="next">Next</wicket:message>
-  </a>
-  <wicket:remove>last and first are hidden, not present in nl design system</wicket:remove>
-  <a wicket:id="last" class="last">&gt;&gt;</a>
+    <a wicket:id="next"><wicket:message key="next">Next</wicket:message></a>
+    <wicket:remove>last is hidden; not present in nl design system</wicket:remove>
+    <a wicket:id="last" class="last">&gt;&gt;</a>
   </span>
 </nav>
 </wicket:panel>
