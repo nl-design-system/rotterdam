@@ -18,7 +18,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class RdDataTableTest extends NldsWicketTestCase {
 
 
+
     @Disabled("WIP")
+
     @Test
     void testHtmlAsExpected() {
 
@@ -137,14 +139,14 @@ class RdDataTableTest extends NldsWicketTestCase {
                       </td>
                     </tr>
                   </tbody>
-                </table>       
+                </table>
                 """;
 
 
 
         List<IColumn<Person, String>> columns = Arrays.asList(
-            new PropertyColumn<>(Model.of("Name"), "name"),
-            new PropertyColumn<>(Model.of("Email"), "email"),
+            new PropertyColumn<>(Model.of("Name"), "name", "name"),
+            new PropertyColumn<>(Model.of("Email"), "email", "email"),
             new PropertyColumn<>(Model.of("Leeftijd"), "age")
         );
 
@@ -194,11 +196,11 @@ class RdDataTableTest extends NldsWicketTestCase {
 
     @Test
     void hasTableBehavior() {
-        List<IColumn<Person, String>> columns = Arrays.asList(
+        List<IColumn<Person, String>> columns = List.of(
             new PropertyColumn<>(Model.of("Name"), "name")
         );
 
-        var dataProvider = new PersonSortableDataProvider(Arrays.asList(new Person("John Doe", "john@example.com", 35)));
+        var dataProvider = new PersonSortableDataProvider(List.of(new Person("John Doe", "john@example.com", 35)));
         var table = new RdDataTable<>("component", columns, dataProvider, 10);
 
         var response = renderComponentInTableTestPanel(table);

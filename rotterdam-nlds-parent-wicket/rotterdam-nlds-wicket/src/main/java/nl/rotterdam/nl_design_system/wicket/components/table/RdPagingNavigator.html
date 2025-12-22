@@ -19,42 +19,29 @@
 <body>
 <wicket:panel>
 
+<nav wicket:id="page-number-navigation">
+  <span wicket:id="before">
+    <wicket:remove>last and first are hidden, not present in nl design system</wicket:remove>
+    <a wicket:id="first" class="first">&lt;&lt;</a>
+    <a wicket:id="prev"><wicket:message key="previous">Previous</wicket:message></a>
+  </span>
 
-<!--  <nav class="utrecht-pagination utrecht-pagination&#45;&#45;distanced">-->
-<!--  <span class="utrecht-pagination__before">-->
-<!--    <span-->
-<!--      class="utrecht-pagination__relative-link utrecht-pagination__relative-link&#45;&#45;disabled utrecht-pagination__relative-link&#45;&#45;prev"-->
-<!--      rel="prev">Vorige</span>-->
-<!--  </span>-->
-<!--    <span role="group" class="utrecht-pagination__pages">-->
-<!--      <a class="utrecht-pagination__page-link" href="./1">1</a>-->
-<!--      <a class="utrecht-pagination__page-link" href="./2" rel="prev">2</a>-->
-<!--      <a class="utrecht-pagination__page-link utrecht-pagination__page-link&#45;&#45;current" href="./3"-->
-<!--         aria-current="true">3</a>-->
-<!--      <a class="utrecht-pagination__page-link" href="./4" rel="next">4</a>-->
-<!--      <a class="utrecht-pagination__page-link" href="./5">5</a></span>-->
-<!--    <span class="utrecht-pagination__before">-->
-<!--      <a href="./2" class="utrecht-pagination__relative-link utrecht-pagination__relative-link&#45;&#45;next" rel="next">Volgende</a>-->
-<!--    </span>-->
-<!--  </nav>-->
+  <span wicket:id="pages">
+  <wicket:container wicket:id="navigation">
+  <a wicket:id="pageLink">
+  <wicket:container wicket:id="pageNumber">5</wicket:container>
+  </a>
+  </wicket:container>
+  </span>
 
-  <nav wicket:id="nldsNavigation">
-  <span class="utrecht-pagination__before">
-    <a wicket:id="first" class="first utrecht-pagination__page-link">&lt;&lt;</a>
-    <a wicket:id="prev" rel="prev"
-       class="utrecht-pagination__relative-link utrecht-pagination__relative-link--prev">&lt;</a>
-    </span>
-
-    <wicket:container wicket:id="navigation">
-      <a wicket:id="pageLink">
-        <wicket:container wicket:id="pageNumber">5</wicket:container>
-      </a>
-    </wicket:container>
-
-    <a wicket:id="next" rel="next"
-       class="utrecht-pagination__relative-link utrecht-pagination__relative-link--next">&gt;</a>
-    <a wicket:id="last" class="last utrecht-pagination__page-link">&gt;&gt;</a>
-  </nav>
+  <span wicket:id="after">
+  <a wicket:id="next">
+  <wicket:message key="next">Next</wicket:message>
+  </a>
+  <wicket:remove>last and first are hidden, not present in nl design system</wicket:remove>
+  <a wicket:id="last" class="last">&gt;&gt;</a>
+  </span>
+</nav>
 </wicket:panel>
 </body>
 </html>

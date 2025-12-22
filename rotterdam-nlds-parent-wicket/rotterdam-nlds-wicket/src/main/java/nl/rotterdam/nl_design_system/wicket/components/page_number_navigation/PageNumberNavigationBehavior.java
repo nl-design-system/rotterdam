@@ -19,7 +19,7 @@ public class PageNumberNavigationBehavior extends TagNameClassComponentBehavior<
     public static final PageNumberNavigationBehavior INSTANCE = new PageNumberNavigationBehavior();
 
     private PageNumberNavigationBehavior() {
-        super("nav", PageNumberNavigationCssClassnames.BASE);
+        super("nav", PageNumberNavigationCss.BASE);
 
         addHeaderItem(CSS_HEADER_ITEM);
     }
