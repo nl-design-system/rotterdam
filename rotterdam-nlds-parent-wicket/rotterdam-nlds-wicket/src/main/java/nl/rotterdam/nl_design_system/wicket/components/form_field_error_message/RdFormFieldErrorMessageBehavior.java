@@ -1,14 +1,26 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_error_message;
 
 import nl.rotterdam.nl_design_system.wicket.components.base.TagNameClassComponentBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import nl.rotterdam.nl_design_system.wicket.components.component_visibility.HideWhenModelIsNullBehavior;
 import org.apache.wicket.Component;
 
 import static nl.rotterdam.nl_design_system.wicket.components.CssReferenceHeaderItems.cssReferenceHeaderItem;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
 
 /**
- * Apply error message behavior to an HTML markup element.
+ * <p>
+ * Turn an element into a <a href="https://nldesignsystem.nl/form-field-error-message/">Form Field Error Message</a>.
+ * </p>
+ * <p>
+ * Based on the
+ * <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-form-field-error-message--docs">CSS
+ * implementation of Utrecht</a>.
+ * </p>
  */
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
 public class RdFormFieldErrorMessageBehavior extends TagNameClassComponentBehavior<Component> {
 
     /**
@@ -22,7 +34,7 @@ public class RdFormFieldErrorMessageBehavior extends TagNameClassComponentBehavi
     }
 
     private RdFormFieldErrorMessageBehavior() {
-        super("div", RdFormFieldErrorCss.BASE);
+        super("div", RdFormFieldErrorMessageCss.BASE);
         addHeaderItem(
             cssReferenceHeaderItem(
                 RdFormFieldErrorMessageBehavior.class,
