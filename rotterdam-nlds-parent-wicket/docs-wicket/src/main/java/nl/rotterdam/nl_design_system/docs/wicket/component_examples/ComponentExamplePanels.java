@@ -8,6 +8,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.body.BodyExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.button.ButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.checkbox.CheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.checkbox_group.CheckboxGroupExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.code.CodeExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.data_summary.DataSummaryExamplesPanel;
@@ -57,6 +58,7 @@ public class ComponentExamplePanels {
         ButtonExamplesPanel.class,
         CheckboxExamplesPanel.class,
         CheckboxGroupExamplesPanel.class,
+        CodeExamplesPanel.class,
         CodeBlockExamplesPanel.class,
         ColumnLayoutExamplesPanel.class,
         DataSummaryExamplesPanel.class,
