@@ -3,11 +3,17 @@ package nl.rotterdam.nl_design_system.docs.wicket.table;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket.components.table.RdDataTable;
+import org.apache.wicket.extensions.markup.html.repeater.data.grid.ICellPopulator;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.AbstractColumn;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.PropertyColumn;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.repeater.Item;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,18 +29,14 @@ public class TableExamplesPanel extends ExamplesPanel {
 
     @ComponentExample
     private static RdDataTable<Person, String> exampleBasicTable() {
-
-
-        List<IColumn<Person, String>> columns = Arrays.asList(
+        List<IColumn<Person, String>> columns = List.of(
             new PropertyColumn<>(Model.of("Naam"), PersonSortableDataProvider.SORT_NAME, "name"),
             new PropertyColumn<>(Model.of("E-mail"), PersonSortableDataProvider.SORT_EMAIL, "email"),
-            new PropertyColumn<>(Model.of("Telefoon"), "phone"),
-            new PropertyColumn<>(Model.of("Straat"), PersonSortableDataProvider.SORT_STREET, "street"),
-            new PropertyColumn<>(Model.of("Huisnummer"), "houseNumber")
-            );
+            new PropertyColumn<>(Model.of("Straat"), PersonSortableDataProvider.SORT_STREET, "street")
+        );
 
         List<Person> data = Arrays.asList(
-            new Person("Jan Jansen", "jan.jansen@example.com",  "06-12345678", "Oranjestraat", 40),
+            new Person("Jan Jansen", "jan.jansen@example.com", "06-12345678", "Oranjestraat", 40),
             new Person("Marie de Vries", "marie.devries@example.com", "06-87654321", "Westersingel", 18),
             new Person("Pieter Bakker", "pieter.bakker@example.com", "06-11223344", "Rotterdamseweg", 45)
         );
@@ -43,7 +45,40 @@ public class TableExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdDataTable<Person, String> exampleTableWithManyRows() {
+    private static WebMarkupContainer exampleWithActions() {
+        var container = new WebMarkupContainer("containerWithActions");
+        container.setOutputMarkupId(true);
+
+        List<IColumn<Person, String>> columns = Arrays.asList(
+            new PropertyColumn<>(Model.of("Naam"), PersonSortableDataProvider.SORT_NAME, "name"),
+            new PropertyColumn<>(Model.of("E-mail"), PersonSortableDataProvider.SORT_EMAIL, "email"),
+            new AbstractColumn<>(Model.of("Acties")) {
+                @Override
+                public void populateItem(Item<ICellPopulator<Person>> cellItem, String componentId, IModel<Person> rowModel) {
+                    cellItem.add(new PersonRowActionsPanel(componentId, rowModel, container));
+                }
+            }
+
+        );
+
+        List<Person> data = Arrays.asList(
+            new Person("Jan Jansen", "jan.jansen@example.com", "06-12345678", "Oranjestraat", 40),
+            new Person("Marie de Vries", "marie.devries@example.com", "06-87654321", "Westersingel", 18),
+            new Person("Pieter Bakker", "pieter.bakker@example.com", "06-11223344", "Rotterdamseweg", 45)
+        );
+
+        container.add(
+
+            new Form<Void>("actionsForm").add(
+                new RdDataTable<>("withActions", columns, new PersonSortableDataProvider(data), 5)
+            )
+        );
+
+        return container;
+    }
+
+    @ComponentExample
+    private static RdDataTable<Person, String> exampleWithManyRows() {
         List<IColumn<Person, String>> columns = Arrays.asList(
             new PropertyColumn<>(Model.of("Naam"), PersonSortableDataProvider.SORT_NAME, "name"),
             new PropertyColumn<>(Model.of("E-mail"), PersonSortableDataProvider.SORT_EMAIL, "email"),
@@ -84,14 +119,16 @@ public class TableExamplesPanel extends ExamplesPanel {
             new Person("Michał Nowak", "test+michal.nowak@example.com", "+48 601 234 567", "Aleje Jerozolimskie", 150)
         );
 
-        return new RdDataTable<>("tableWithManyRows", columns, new PersonSortableDataProvider(persons), 10);
+        return new RdDataTable<>("withManyRows", columns, new PersonSortableDataProvider(persons), 10);
     }
 
     @Override
     protected void onInitialize() {
         super.onInitialize();
         add(exampleBasicTable(),
-            exampleTableWithManyRows());
+            exampleWithManyRows(),
+            exampleWithActions()
+        );
     }
 
 

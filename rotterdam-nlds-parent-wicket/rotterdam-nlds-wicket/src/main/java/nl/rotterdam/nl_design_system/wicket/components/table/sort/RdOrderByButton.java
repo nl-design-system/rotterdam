@@ -1,5 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.table.sort;
 
+import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortState;
@@ -17,7 +18,7 @@ import org.apache.wicket.util.lang.Args;
  *
  * @see OrderByLink
  */
-public class RdOrderByButton<S> extends AjaxButton
+public class RdOrderByButton<S> extends RdAjaxButton
 {
 	/** sortable property */
 	private final S property;
