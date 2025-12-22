@@ -533,6 +533,9 @@ importers:
       '@nl-design-system-candidate/code-block-css':
         specifier: 1.1.4
         version: 1.1.4
+      '@nl-design-system-candidate/code-css':
+        specifier: 2.0.4
+        version: 2.0.4
       '@nl-design-system-candidate/data-badge-css':
         specifier: 1.0.4
         version: 1.0.4
@@ -2104,6 +2107,9 @@ packages:
 
   '@nl-design-system-candidate/code-block-css@1.1.4':
     resolution: {integrity: sha512-NWgPLB5pVQURW0WA3+bNdvwZVCHyVqPB5fK5THUa2oBTtp4c5etG3e7C6xOSYCKYHOYE16GJ1jBRROA+LsPTUQ==}
+
+  '@nl-design-system-candidate/code-css@2.0.4':
+    resolution: {integrity: sha512-yb/6ro9esrXZNFIVmFpTS1zhZ18QYxbk3fdaiZnyvjevZgD/VJNRd1mOCDn2VzCROeyLhxkFxgN3f0x3CKKSPg==}
 
   '@nl-design-system-candidate/data-badge-css@1.0.4':
     resolution: {integrity: sha512-kUkj7ustiBt2kj44LOpj2+MekJFShd39yWvFghaRPdpxpqySC3Z5d0oEMGLCZnj6lQw2dZ2LYZTLEIP+zMG2OA==}
@@ -9868,6 +9874,8 @@ snapshots:
     optional: true
 
   '@nl-design-system-candidate/code-block-css@1.1.4': {}
+
+  '@nl-design-system-candidate/code-css@2.0.4': {}
 
   '@nl-design-system-candidate/data-badge-css@1.0.4': {}
 
