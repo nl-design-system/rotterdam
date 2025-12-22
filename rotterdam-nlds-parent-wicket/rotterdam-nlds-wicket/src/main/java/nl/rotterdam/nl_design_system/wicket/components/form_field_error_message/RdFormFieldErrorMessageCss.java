@@ -2,7 +2,7 @@ package nl.rotterdam.nl_design_system.wicket.components.form_field_error_message
 
 import nl.rotterdam.nl_design_system.wicket.components.css_class_names.CssClassNames;
 
-enum RdFormFieldErrorCss implements CssClassNames {
+enum RdFormFieldErrorMessageCss implements CssClassNames {
     BASE("utrecht-form-field-error-message");
 
     private final String classNames;
@@ -12,7 +12,7 @@ enum RdFormFieldErrorCss implements CssClassNames {
         return classNames;
     }
 
-    RdFormFieldErrorCss(String classNames) {
+    RdFormFieldErrorMessageCss(String classNames) {
         this.classNames = classNames;
     }
 }
