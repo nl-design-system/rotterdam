@@ -10,6 +10,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
     exports nl.rotterdam.nl_design_system.wicket.components.button;
     exports nl.rotterdam.nl_design_system.wicket.components.checkbox;
+    exports nl.rotterdam.nl_design_system.wicket.components.checkbox_group;
     exports nl.rotterdam.nl_design_system.wicket.components.code_block;
     exports nl.rotterdam.nl_design_system.wicket.components.column_layout;
     exports nl.rotterdam.nl_design_system.wicket.components.component_state;
@@ -18,13 +19,14 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.data_badge;
     exports nl.rotterdam.nl_design_system.wicket.components.data_summary;
     exports nl.rotterdam.nl_design_system.wicket.components.dialog;
+    exports nl.rotterdam.nl_design_system.wicket.components.fieldset;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_description;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_error_message;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_label;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
-    exports nl.rotterdam.nl_design_system.wicket.components.fieldset;
+    exports nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
     exports nl.rotterdam.nl_design_system.wicket.components.heading;
     exports nl.rotterdam.nl_design_system.wicket.components.heading_group;
     exports nl.rotterdam.nl_design_system.wicket.components.icon;
@@ -48,9 +50,8 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.select;
     exports nl.rotterdam.nl_design_system.wicket.components.separator;
     exports nl.rotterdam.nl_design_system.wicket.components.side_nav;
-    exports nl.rotterdam.nl_design_system.wicket.components.text_input;
     exports nl.rotterdam.nl_design_system.wicket.components.text_area;
-    exports nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
+    exports nl.rotterdam.nl_design_system.wicket.components.text_input;
     exports nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     exports nl.rotterdam.nl_design_system.wicket.components.visually_hidden;
     exports nl.rotterdam.nl_design_system.wicket.components;
@@ -61,15 +62,17 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.badge_list;
     opens nl.rotterdam.nl_design_system.wicket.components.body;
     opens nl.rotterdam.nl_design_system.wicket.components.breadcrumb_nav;
+    opens nl.rotterdam.nl_design_system.wicket.components.checkbox_group;
     opens nl.rotterdam.nl_design_system.wicket.components.code_block;
     opens nl.rotterdam.nl_design_system.wicket.components.column_layout;
     opens nl.rotterdam.nl_design_system.wicket.components.data_summary;
     opens nl.rotterdam.nl_design_system.wicket.components.dialog;
+    opens nl.rotterdam.nl_design_system.wicket.components.fieldset;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_checkbox;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_label;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field_text_input;
-    opens nl.rotterdam.nl_design_system.wicket.components.fieldset;
+    opens nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
     opens nl.rotterdam.nl_design_system.wicket.components.heading_group;
     opens nl.rotterdam.nl_design_system.wicket.components.icon;
     opens nl.rotterdam.nl_design_system.wicket.components.icon_button;
@@ -84,7 +87,6 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.root;
     opens nl.rotterdam.nl_design_system.wicket.components.separator;
     opens nl.rotterdam.nl_design_system.wicket.components.side_nav;
-    opens nl.rotterdam.nl_design_system.wicket.components.form_field_textarea;
     opens nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     opens nl.rotterdam.nl_design_system.wicket.html;
 

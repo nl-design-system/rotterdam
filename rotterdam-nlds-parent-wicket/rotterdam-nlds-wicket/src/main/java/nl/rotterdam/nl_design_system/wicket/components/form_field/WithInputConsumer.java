@@ -1,6 +1,6 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field;
 
-import org.apache.wicket.markup.html.form.FormComponent;
+import org.apache.wicket.markup.html.form.LabeledWebMarkupContainer;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -11,7 +11,7 @@ import org.jspecify.annotations.Nullable;
  * @param <T> the model object type.
  */
 @FunctionalInterface
-public interface WithInputConsumer<T extends @Nullable Object> {
+public interface WithInputConsumer<T extends @Nullable Object, C extends LabeledWebMarkupContainer> {
 
     /**
      * <p>
@@ -21,5 +21,5 @@ public interface WithInputConsumer<T extends @Nullable Object> {
      * @param input the input in the Form Field.
      * @param formField the Form Field.
      */
-    void doWithInput(FormComponent<T> input, RdFormFieldBorder<T> formField);
+    void doWithInput(C input, RdFormFieldBorder<T, C> formField);
 }

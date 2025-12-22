@@ -108,6 +108,7 @@
                 <directory>node_modules/bootstrap/dist/css</directory>
                 <includes>
                     <include>bootstrap-grid.min.css</include>
+                    <include>bootstrap-utilities.min.css</include>
                 </includes>
             </resource>
             <resource>

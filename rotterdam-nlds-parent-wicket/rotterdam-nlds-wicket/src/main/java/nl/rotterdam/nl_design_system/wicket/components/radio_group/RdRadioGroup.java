@@ -1,8 +1,8 @@
 package nl.rotterdam.nl_design_system.wicket.components.radio_group;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
 import nl.rotterdam.nl_design_system.wicket.components.fieldset.RdFieldset;
+import nl.rotterdam.nl_design_system.wicket.components.form_field_description.RdFormFieldDescriptionBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.RadioGroup;
@@ -30,11 +30,10 @@ import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultMode
  * React implementation of Utrecht</a>.
  * </p>
  * 
- * @param <T> the model object type for the <code>RadioGroup</code>.
+ * @param <T> the model object type of the <code>RadioGroup</code>.
  */
 @NlComponentState(wicketState = NEEDS_REFACTORING, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public class RdRadioGroup<T> extends RdFieldset {
-    private final IModel<T> model;
+public class RdRadioGroup<T extends @Nullable Object> extends RdFieldset<T> {
     private final Component descriptionComponent;
     private final Component errorMessageComponent;
 
@@ -65,8 +64,7 @@ public class RdRadioGroup<T> extends RdFieldset {
      *                         not be displayed.
      */
     public RdRadioGroup(String id, IModel<T> model, IModel<?> labelModel, IModel<?> descriptionModel) {
-        super(id, labelModel);
-        this.model = model;
+        super(id, model, labelModel);
         add(RdRadioGroupBehavior.INSTANCE);
 
         descriptionComponent = newDescription("description", descriptionModel);
@@ -84,6 +82,7 @@ public class RdRadioGroup<T> extends RdFieldset {
         //noinspection unchecked
         return (RadioGroup<T>) getFieldsetComponent();
     }
+
     /**
      * <p>
      * Get the component attached to <code>&lt;div&gt;</code> containing the description.
@@ -125,7 +124,7 @@ public class RdRadioGroup<T> extends RdFieldset {
     }
 
     @Override
-    protected RadioGroup<T> newFieldset(String id) {
+    protected RadioGroup<T> newFieldset(String id, IModel<T> model) {
         var radioGroup = new RadioGroup<>(id, model);
         radioGroup.setRenderBodyOnly(false);
         return radioGroup;

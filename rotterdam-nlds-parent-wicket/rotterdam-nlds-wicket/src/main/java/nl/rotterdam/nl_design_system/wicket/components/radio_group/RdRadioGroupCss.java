@@ -8,14 +8,14 @@ enum RdRadioGroupCss implements CssClassNames {
     ERROR_MESSAGE_ELEMENT("utrecht-radio-group__error-message"),
     LABEL_ELEMENT("utrecht-radio-group__label");
 
-    private final String cssClassNames;
+    private final String classNames;
 
-    RdRadioGroupCss(String cssClassNames) {
-        this.cssClassNames = cssClassNames;
+    RdRadioGroupCss(String classNames) {
+        this.classNames = classNames;
     }
 
     @Override
     public String getClassNames() {
-        return cssClassNames;
+        return classNames;
     }
 }

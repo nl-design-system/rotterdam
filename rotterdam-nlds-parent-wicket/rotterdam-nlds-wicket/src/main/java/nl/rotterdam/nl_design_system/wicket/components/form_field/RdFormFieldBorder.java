@@ -6,11 +6,9 @@ import nl.rotterdam.nl_design_system.wicket.components.form_field_label.RdFormFi
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.Markup;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.border.Border;
-import org.apache.wicket.markup.html.form.FormComponent;
 import org.apache.wicket.markup.html.form.LabeledWebMarkupContainer;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
@@ -22,8 +20,8 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.DESCRIPTION_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.ERROR_MESSAGE_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INPUT_ELEMENT;
-import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.LABEL_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INVALID;
+import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.LABEL_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels.NULL_STRING_MODEL;
 import static nl.rotterdam.nl_design_system.wicket.components.output_tag.ComponentTagAssertions.assertIsRegularHtmlTag;
 
@@ -41,7 +39,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.output_tag.Compone
  * @param <T> the model object type
  */
 @NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
-public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Border implements RdFormField {
+public abstract class RdFormFieldBorder<T extends @Nullable Object, C extends LabeledWebMarkupContainer> extends Border implements RdFormField {
 
     private final Component labelComponent;
 
@@ -51,7 +49,7 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
 
     private final Component inputComponent;
 
-    private final FormComponent<T> input;
+    private final C input;
     /**
      * Create instance with label, without description.
      * @param id the Wicket ID
@@ -102,7 +100,7 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
      *
      * @return self for chaining.
      */
-    public RdFormFieldBorder<T> withInput(WithInputConsumer<T> consumer) {
+    public RdFormFieldBorder<T, C> withInput(WithInputConsumer<T, C> consumer) {
         consumer.doWithInput(input, this);
 
         return this;
@@ -117,7 +115,7 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
      * @param model the model for the form component.
      * @return the form component.
      */
-    protected abstract FormComponent<T> newInput(IModel<T> model);
+    protected abstract C newInput(IModel<T> model);
 
     private static Component newInputComponent() {
         return new WebMarkupContainer("input-container").add(INPUT_ELEMENT.asBehavior());
@@ -137,7 +135,7 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
 
     private Component newLabelComponent() {
         return new WebMarkupContainer("label-container")
-            .add(new InputLabel(input, getBodyContainer().getId()))
+            .add(new InputLabel(input))
             .add(LABEL_ELEMENT.asBehavior());
     }
 
@@ -169,20 +167,10 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
     }
 
     /**
-     * Marks the input as required
-     * @param required if it should be required.
-     * @return self for chaining.
-     */
-    public RdFormFieldBorder<T> setRequired(boolean required) {
-        input.setRequired(required);
-        return this;
-    }
-
-    /**
      * Get reference to underlying input.
      * @return the instance
      */
-    public final FormComponent<T> getInput() {
+    public final C getInput() {
         return input;
     }
 
@@ -192,7 +180,7 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
     }
 
     @Override
-    public RdFormFieldBorder<T> add(Behavior... behaviors) {
+    public RdFormFieldBorder<T, C> add(Behavior... behaviors) {
         super.add(behaviors);
         return this;
     }
@@ -216,14 +204,9 @@ public abstract class RdFormFieldBorder<T extends @Nullable Object> extends Bord
 
         private final LabeledWebMarkupContainer input;
 
-        private InputLabel(LabeledWebMarkupContainer input, String bodyContainerId) {
+        private InputLabel(LabeledWebMarkupContainer input) {
             super("label");
             this.input = input;
-
-            // Use markup with a direct path to the input to prevent having to search multiple containers for `input`.
-            setMarkup(Markup.of("<label wicket:id='label'><wicket:label for='..:..:input-container:"
-                + bodyContainerId
-                + ":input'></wicket:label></label>"));
         }
 
         @Override
