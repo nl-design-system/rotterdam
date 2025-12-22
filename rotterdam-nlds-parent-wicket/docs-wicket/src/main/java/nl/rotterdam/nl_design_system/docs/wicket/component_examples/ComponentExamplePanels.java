@@ -18,6 +18,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCh
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_textarea.FormFieldTextAreaExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.form_summary.FormSummaryExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
@@ -68,6 +69,7 @@ public class ComponentExamplePanels {
         FormFieldLabelExamplesPanel.class,
         FormFieldTextAreaExamplesPanel.class,
         FormFieldTextInputExamplesPanel.class,
+        FormSummaryExamplesPanel.class,
         HeadingExamplesPanel.class,
         HeadingGroupExamplesPanel.class,
         IconButtonExamplesPanel.class,
