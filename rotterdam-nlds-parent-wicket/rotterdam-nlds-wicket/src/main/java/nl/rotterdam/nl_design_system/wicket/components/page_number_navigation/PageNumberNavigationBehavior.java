@@ -15,13 +15,12 @@ public class PageNumberNavigationBehavior extends TagNameClassComponentBehavior<
         PageNumberNavigationBehavior.class,
         "@utrecht/pagination-css/dist/index.min.css"
     );
+
+    public static final PageNumberNavigationBehavior INSTANCE = new PageNumberNavigationBehavior();
+
     private PageNumberNavigationBehavior() {
         super("nav", PageNumberNavigationCssClassnames.BASE);
 
         addHeaderItem(CSS_HEADER_ITEM);
     }
-
-
-
-
 }
