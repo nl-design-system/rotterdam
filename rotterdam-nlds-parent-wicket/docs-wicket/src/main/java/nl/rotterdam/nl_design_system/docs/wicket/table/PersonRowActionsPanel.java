@@ -1,11 +1,11 @@
 package nl.rotterdam.nl_design_system.docs.wicket.table;
 
-import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
-import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonHint;
+import nl.rotterdam.nl_design_system.rotterdam_extensions.wicket.components.rotterdam_icon.RotterdamIconBehavior;
+import nl.rotterdam.nl_design_system.wicket.components.icon_button.RdIconAjaxButtonBorder;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
@@ -26,35 +26,58 @@ public class PersonRowActionsPanel extends GenericPanel<Person> {
         add(AttributeModifier.replace("role", "group"));
         add(AttributeModifier.replace("aria-label", getModel().map(m -> "Acties voor " + m.name())));
         add(
-            new RdAjaxButton("moveUp", Model.of("⬆")) {
+            new RdIconAjaxButtonBorder("moveUp", Model.of("Naar boven verplaatsen")) {
+
+                @Override
+                protected void onInitialize() {
+                    super.onInitialize();
+                    add(new WebMarkupContainer("icon")
+                        .add(RotterdamIconBehavior.ARROW_UP));
+
+                }
 
                 @Override
                 protected void onSubmit(AjaxRequestTarget target) {
                     System.out.println("Clicked moveUp");
                     target.add(refreshComponents);
                 }
-            }.add(AttributeModifier.replace("aria-label", Model.of("Naar boven verplaatsen"))),
+            },
 
-            new RdAjaxButton("moveDown", Model.of("⬇")) {
+            new RdIconAjaxButtonBorder("moveDown", Model.of("Naar beneden verplaatsen")) {
                 @Override
                 protected void onSubmit(AjaxRequestTarget target) {
                     System.out.println("Clicked moveDown");
                     target.add(refreshComponents);
                 }
-            }.add(AttributeModifier.replace("aria-label", Model.of("Naar beneden verplaatsen"))),
 
-            new RdAjaxButton("edit", Model.of("✏️")) {
+                @Override
+                protected void onInitialize() {
+                    super.onInitialize();
+                    add(new WebMarkupContainer("icon")
+                        .add(RotterdamIconBehavior.ARROW_DOWN));
+                }
+            },
+
+            new RdIconAjaxButtonBorder("edit", Model.of("Wijzigen")) {
+
+                @Override
+                protected void onInitialize() {
+                    super.onInitialize();
+                    add(new WebMarkupContainer("icon")
+                        .add(RotterdamIconBehavior.EDIT));
+                }
+
                 @Override
                 protected void onSubmit(AjaxRequestTarget target) {
                     System.out.println("Clicked moveDown");
                     target.add(refreshComponents);
                 }
-            }.add(AttributeModifier.replace("aria-label", Model.of("Wijzigen"))),
+            },
 
-            new RdAjaxButton("delete", Model.of("\uD83D\uDDD1")) {
+            new RdIconAjaxButtonBorder("delete", Model.of("Verwijderen")) {
                 @Override
                 protected void onSubmit(AjaxRequestTarget target) {
-                    System.out.println("Clicked moveDown");
+                    System.out.println("Clicked delete");
                     target.add(refreshComponents);
                 }
 
@@ -71,7 +94,10 @@ public class PersonRowActionsPanel extends GenericPanel<Person> {
                 @Override
                 protected void onInitialize() {
                     super.onInitialize();
-                    setHint(RdButtonHint.DANGER);
+                    add(new WebMarkupContainer("icon")
+                        .add(RotterdamIconBehavior.TRASH));
+
+//                    setHint(RdButtonHint.DANGER);
                 }
             }.add(AttributeModifier.replace("aria-label", Model.of("Verwijderen")))
         );

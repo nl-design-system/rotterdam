@@ -5,7 +5,6 @@ import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket.components.table.RdDataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.grid.ICellPopulator;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.AbstractColumn;
-import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.PropertyColumn;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -70,7 +69,12 @@ public class TableExamplesPanel extends ExamplesPanel {
         container.add(
 
             new Form<Void>("actionsForm").add(
-                new RdDataTable<>("withActions", columns, new PersonSortableDataProvider(data), 5)
+                new RdDataTable<>("withActions", columns, new PersonSortableDataProvider(data), 5) {
+                    @Override
+                    protected IModel<String> getCaptionModel() {
+                        return Model.of("Personen met acties");
+                    }
+                }
             )
         );
 
