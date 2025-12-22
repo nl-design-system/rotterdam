@@ -1,0 +1,4 @@
+:host {
+  /* If there are Content-Security-Policy issues with CSS, this will trigger it */
+  border: 0 solid green;
+}
