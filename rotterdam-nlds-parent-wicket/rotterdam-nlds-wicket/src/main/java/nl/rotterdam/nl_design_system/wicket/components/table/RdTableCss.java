@@ -8,7 +8,7 @@ enum RdTableCss implements CssClassNames {
     THEAD_ELEMENT("utrecht-table__header"),
     TABLE_ROW_ELEMENT_CSS("utrecht-table__row"),
     TABLE_ROW_ELEMENT_ODD("utrecht-table__row--alternate-odd"),
-    TABLE_HEAD_HEADER_CEL_ELEMENT("utrecht-table__header-cell"),
+    TABLE_HEADER_CELL_ELEMENT("utrecht-table__header-cell"),
     TABLE_ROW_ELEMENT_EVEN("utrecht-table__row--alternate-even"),
     ;
 
