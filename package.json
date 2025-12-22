@@ -20,6 +20,7 @@
     "./rotterdam-nlds-parent-wicket/",
     "./rotterdam-nlds-parent-wicket/*",
     "./packages/*",
+    "./packages/web-components/*",
     "./components/*",
     "./proprietary/*"
   ],

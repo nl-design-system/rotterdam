@@ -5,6 +5,7 @@ packages:
   - "rotterdam-nlds-parent-wicket/**"
   - "components/**"
   - "packages/*"
+  - "packages/web-components/*"
   - "proprietary/*"
 
 # Configure pnpm so peer dependencies must be explicitly added instead of being automatically installed.
