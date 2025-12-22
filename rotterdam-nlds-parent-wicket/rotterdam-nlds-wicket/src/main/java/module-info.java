@@ -85,6 +85,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.page_footer;
     opens nl.rotterdam.nl_design_system.wicket.components.page_header;
     opens nl.rotterdam.nl_design_system.wicket.components.page_layout;
+    opens nl.rotterdam.nl_design_system.wicket.components.paragraph;
     opens nl.rotterdam.nl_design_system.wicket.components.radio_group;
     opens nl.rotterdam.nl_design_system.wicket.components.root;
     opens nl.rotterdam.nl_design_system.wicket.components.separator;
