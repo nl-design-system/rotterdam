@@ -95,5 +95,12 @@ public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object>
         return item;
     }
 
+    @Override
+    protected Item<IColumn<T, S>> newCellItem(String id, int index, IModel<IColumn<T, S>> model) {
+        Item<IColumn<T, S>> cellItem = super.newCellItem(id, index, model);
 
+        cellItem.add(RdTableCss.TABLE_BODY_CELL_ELEMENT.asBehavior());
+
+        return cellItem;
+    }
 }

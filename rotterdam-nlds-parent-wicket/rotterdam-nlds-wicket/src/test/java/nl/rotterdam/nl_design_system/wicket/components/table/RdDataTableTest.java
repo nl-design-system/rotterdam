@@ -53,28 +53,28 @@ class RdDataTableTest extends NldsWicketTestCase {
                   </tr>
                   </thead>
                   <tbody>
-                  <tr class="utrecht-table__row utrecht-table__row--alternate-even">
-                    <td>
-                      <div>Jane Smith</div>
-                    </td>
-                    <td>
-                      <div>jane@example.com</div>
-                    </td>
-                    <td>
-                      <div>45</div>
-                    </td>
-                  </tr>
-                  <tr class="utrecht-table__row utrecht-table__row--alternate-odd">
-                    <td>
-                      <div>John Doe</div>
-                    </td>
-                    <td>
-                      <div>john@example.com</div>
-                    </td>
-                    <td>
-                      <div>35</div>
-                    </td>
-                  </tr>
+                   <tr class="utrecht-table__row utrecht-table__row--alternate-even">
+                               <td class="utrecht-table__cell">
+                                   <div>Jane Smith</div>
+                               </td>
+                               <td class="utrecht-table__cell">
+                                   <div>jane@example.com</div>
+                               </td>
+                               <td class="utrecht-table__cell">
+                                   <div>45</div>
+                               </td>
+                           </tr>
+                           <tr class="utrecht-table__row utrecht-table__row--alternate-odd">
+                               <td class="utrecht-table__cell">
+                                   <div>John Doe</div>
+                               </td>
+                               <td class="utrecht-table__cell">
+                                   <div>john@example.com</div>
+                               </td>
+                               <td class="utrecht-table__cell">
+                                   <div>35</div>
+                               </td>
+                           </tr>
                   </tbody>
                 </table>
                 """;
