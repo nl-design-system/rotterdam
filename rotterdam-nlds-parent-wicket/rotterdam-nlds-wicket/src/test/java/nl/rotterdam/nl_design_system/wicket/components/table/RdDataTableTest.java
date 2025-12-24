@@ -31,7 +31,7 @@ class RdDataTableTest extends NldsWicketTestCase {
                         <div class="hidden-fields" hidden id="sortForm1_hf_0">
                           <input name="0-0.-static-component-topToolbars-toolbars-2-headers-1-header-sortForm" type="hidden" value="">
                         </div>
-                        <button class="utrecht-button utrecht-button--html-button utrecht-table__header-cell-button" id="orderByButton2" name="orderByButton">
+                        <button class="utrecht-button utrecht-button--html-button utrecht-button--subtle utrecht-table__header-cell-button" id="orderByButton2" name="orderByButton">
                         <span aria-hidden="true" class="utrecht-icon" role="presentation"><svg class="tabler-icon tabler-icon-sort-ascending" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                               <path d="M4 6l7 0"></path><path d="M4 12l7 0"></path><path d="M4 18l9 0"></path><path d="M15 9l3 -3l3 3"></path><path d="M18 6l0 12"></path>
                                             </svg>\s
@@ -43,7 +43,7 @@ class RdDataTableTest extends NldsWicketTestCase {
                         <div class="hidden-fields" hidden id="sortForm3_hf_0">
                           <input name="0-0.-static-component-topToolbars-toolbars-2-headers-2-header-sortForm" type="hidden" value="">
                         </div>
-                        <button class="utrecht-button utrecht-button--html-button utrecht-table__header-cell-button" id="orderByButton4" name="orderByButton"><span aria-hidden="true" class="utrecht-icon" role="presentation"><svg class="tabler-icon tabler-icon-arrows-sort" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <button class="utrecht-button utrecht-button--html-button utrecht-button--subtle utrecht-table__header-cell-button" id="orderByButton4" name="orderByButton"><span aria-hidden="true" class="utrecht-icon" role="presentation"><svg class="tabler-icon tabler-icon-arrows-sort" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                               <path d="M3 9l4 -4l4 4m-4 -4v14"></path><path d="M21 15l-4 4l-4 -4m4 4v-14"></path>
                                             </svg>\s
                                         </span> <span>Email</span></button>
