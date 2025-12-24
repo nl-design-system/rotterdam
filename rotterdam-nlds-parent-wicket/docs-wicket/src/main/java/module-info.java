@@ -47,7 +47,6 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.table;
     opens nl.rotterdam.nl_design_system.docs.wicket.textarea;
     opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
-    opens nl.rotterdam.nl_design_system.docs.wicket.textarea;
     opens nl.rotterdam.nl_design_system.docs.wicket.unordered_list;
     opens nl.rotterdam.nl_design_system.docs.wicket;
 
