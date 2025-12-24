@@ -7,6 +7,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.badge_list.BadgeListExamplesPan
 import nl.rotterdam.nl_design_system.docs.wicket.body.BodyExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.button.ButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.checkbox.CheckboxExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.checkbox_group.CheckboxGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.data_summary.DataSummaryExamplesPanel;
@@ -16,6 +17,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCh
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_textarea.FormFieldTextAreaExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.form_summary.FormSummaryExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading.HeadingExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.heading_group.HeadingGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.icon.IconExamplesPanel;
@@ -56,6 +58,7 @@ public class ComponentExamplePanels {
         BodyExamplesPanel.class,
         ButtonExamplesPanel.class,
         CheckboxExamplesPanel.class,
+        CheckboxGroupExamplesPanel.class,
         CodeBlockExamplesPanel.class,
         ColumnLayoutExamplesPanel.class,
         DataSummaryExamplesPanel.class,
@@ -65,6 +68,7 @@ public class ComponentExamplePanels {
         FormFieldLabelExamplesPanel.class,
         FormFieldTextAreaExamplesPanel.class,
         FormFieldTextInputExamplesPanel.class,
+        FormSummaryExamplesPanel.class,
         HeadingExamplesPanel.class,
         HeadingGroupExamplesPanel.class,
         IconButtonExamplesPanel.class,

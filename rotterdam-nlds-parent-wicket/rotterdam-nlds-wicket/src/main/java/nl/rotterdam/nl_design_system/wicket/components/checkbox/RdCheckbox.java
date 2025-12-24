@@ -9,7 +9,13 @@ import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.model.IModel;
 
 /**
- * <a href="https://nldesignsystem.nl/checkbox/">NL Design System Checkbox component</a>.
+ * <p>
+ * A <a href="https://nldesignsystem.nl/checkbox/">Checkbox</a>.
+ * </p>
+ * <p>
+ * This is a subclass of {@link CheckBox}. If you want to convert a {@link org.apache.wicket.markup.html.form.Check} or
+ * {@link org.apache.wicket.markup.html.form.CheckGroupSelector} to an NLDS Checkbox, see {@link RdCheckboxBehavior}.
+ * </p>
  *
  * <p>Based on <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-checkbox--docs">
  *     implementation of Utrecht

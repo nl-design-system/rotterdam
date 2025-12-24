@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl" class="rods-theme utrecht-root" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="./theme.css" />
+    <link rel="stylesheet" href="./public/font/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@utrecht/component-library-css@8.2.1/dist/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="utrecht-body">
+    <div class="utrecht-page-layout">
+      <div class="utrecht-page-body">
+        <div class="utrecht-page-body__content">
+          <hgroup class="utrecht-heading-group">
+            <h1 class="utrecht-heading-1">Afspraak ‘Paspoort aanvragen’</h1>
+            <p class="utrecht-paragraph">U kunt alleen beschikbare data selecteren</p>
+          </hgroup>
+          <script type="module" src="dist/index.js"></script>
+          <form>
+            <h2>Custom Element</h2>
+            <div><rods-date-picker name="custom-element" value="2025-09-09T09:50"></rods-date-picker></div>
+            <h2>Native Element</h2>
+            <div><input name="native-element" type="datetime-local" value="2025-09-09T09:50" /></div>
+            <div><input name="submit" type="submit" /></div>
+          </form>
+          <h2>Result</h2>
+          <pre><code id="submit-log"></code></pre>
+          <h2>Events</h2>
+          <pre><code id="event-log"></code></pre>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      document.forms[0].onsubmit = (evt) => {
+        const formData = Object.fromEntries(Array.from(evt.target.elements).map((input) => [input.name, input.value]));
+        evt.preventDefault();
+        document.querySelector("#submit-log").textContent = JSON.stringify(formData);
+      };
+
+      Array.from(document.forms[0].elements).forEach((el) => {
+        const logEvent = (evt) => {
+          document.querySelector("#event-log").textContent += JSON.stringify(
+            {
+              type: evt.type,
+              name: evt.target.name,
+              value: evt.target.value,
+            },
+            null,
+            2,
+          );
+        };
+
+        el.addEventListener("change", logEvent, true);
+        el.addEventListener("input", logEvent, true);
+        el.addEventListener("focus", logEvent, true);
+        el.addEventListener("blur", logEvent, true);
+      });
+    </script>
+  </body>
+</html>
