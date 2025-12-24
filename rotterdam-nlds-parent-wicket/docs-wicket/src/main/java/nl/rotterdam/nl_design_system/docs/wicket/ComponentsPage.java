@@ -11,9 +11,11 @@ import nl.rotterdam.nl_design_system.docs.wicket.code_block.CodeBlockExamplesPan
 import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.css.DesignSystemTheme;
 import nl.rotterdam.nl_design_system.docs.wicket.data_summary.DataSummaryExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.date_picker.DatePickerExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.form_field_date_picker.FormFieldDatePickerExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_summary.FormSummaryExamplesPanel;
@@ -101,8 +103,10 @@ public class ComponentsPage extends RotterdamBasePage {
             new ColumnLayoutExamplesPanel("columnLayoutExamplesPanel"),
             new CheckboxExamplesPanel("checkboxExamplesPanel"),
             new CheckboxGroupExamplesPanel("checkboxGroupExamplesPanel"),
+            new DatePickerExamplesPanel("datePickerExamplesPanel"),
             new FieldsetExamplesPanel("fieldsetExamplesPanel"),
             new FormFieldCheckboxExamplesPanel("formFieldCheckboxExamplesPanel"),
+            new FormFieldDatePickerExamplesPanel("formFieldDatePickerExamplesPanel"),
             new FormFieldLabelExamplesPanel("formFieldLabelExamplesPanel"),
             new FormFieldTextInputExamplesPanel("formFieldTextInputExamplesPanel"),
             new FormSummaryExamplesPanel("formSummaryExamplesPanel"),
