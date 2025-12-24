@@ -1,0 +1,11 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+  <div wicket:id="label-container">
+    <wicket:remove>We know the direct path, so no need to make Wicket search for `control` in multiple containers.</wicket:remove>
+    <label wicket:id="label"><wicket:label for="..:..:input-container:control">Date</wicket:label></label>
+  </div>
+  <div wicket:id="description">Description</div>
+  <div wicket:id="error"></div>
+  <div wicket:id="input-container">
+    <rods-date-picker wicket:id="control"></rods-date-picker>
+  </div>
+</wicket:panel>
