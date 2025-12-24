@@ -1,6 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.table.sort;
 
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
+import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortState;
@@ -53,6 +54,8 @@ public class RdOrderByButton<S> extends RdAjaxButton
     @Override
     protected void onInitialize() {
         super.onInitialize();
+
+        setAppearance(RdButtonAppearance.SUBTLE);
 
         // TODO: haal SVG van classpath (moeten wel inline blijven ivm dark mode support)
         var sortIconModel = new LoadableDetachableModel<String>() {
