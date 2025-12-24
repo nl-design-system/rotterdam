@@ -78,9 +78,9 @@ public class FormFieldTextAreaExamplesPanel extends ExamplesPanel {
                 textArea.error("De tekst is te lang. Er zijn maximaal 28 tekens toegestaan.");
             }
         ).setRequired(true);
-        
+
         component.getTextArea().error("De ingevoerde tekst is langer dan toegestaan");
-        
+
         return component;
     }
 

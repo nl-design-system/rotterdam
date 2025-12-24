@@ -51,8 +51,9 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.select;
     exports nl.rotterdam.nl_design_system.wicket.components.separator;
     exports nl.rotterdam.nl_design_system.wicket.components.side_nav;
-    exports nl.rotterdam.nl_design_system.wicket.components.text_area;
+    exports nl.rotterdam.nl_design_system.wicket.components.table;
     exports nl.rotterdam.nl_design_system.wicket.components.text_input;
+    exports nl.rotterdam.nl_design_system.wicket.components.text_area;
     exports nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     exports nl.rotterdam.nl_design_system.wicket.components.visually_hidden;
     exports nl.rotterdam.nl_design_system.wicket.components;
@@ -89,11 +90,14 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.root;
     opens nl.rotterdam.nl_design_system.wicket.components.separator;
     opens nl.rotterdam.nl_design_system.wicket.components.side_nav;
+    opens nl.rotterdam.nl_design_system.wicket.components.table;
+    opens nl.rotterdam.nl_design_system.wicket.components.table.sort;
     opens nl.rotterdam.nl_design_system.wicket.components.unordered_list;
     opens nl.rotterdam.nl_design_system.wicket.html;
 
     requires jdk.dynalink;
     requires org.apache.wicket.core;
+    requires org.apache.wicket.extensions;
     requires org.apache.wicket.request;
     requires org.apache.wicket.util;
     requires org.danekja.jdk.serializable.functional;

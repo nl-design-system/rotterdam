@@ -1,0 +1,106 @@
+package nl.rotterdam.nl_design_system.wicket.components.table;
+
+import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
+import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
+import org.apache.wicket.markup.repeater.Item;
+import org.apache.wicket.model.IModel;
+import org.jspecify.annotations.Nullable;
+
+import java.util.List;
+
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.UTRECHT;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.COMMUNITY;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
+
+/**
+ * <a href="https://nldesignsystem.nl/table/">Table</a> NL Design System implementation.
+ *
+ * <p>Uses the <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-table--docs">
+ *     Utrecht Table</a> community implementation.
+ * </p>
+ *
+ * <p>This component extends Wicket's {@link DataTable} and applies Utrecht CSS styling.
+ * It can display text columns, action links (edit, details), and supports row reordering.</p>
+ *
+ * <p>Attach this component to a {@code <div>} tag in your HTML markup.</p>
+ *
+ * <p>Example usage:</p>
+ * <pre>{@code
+ * List<IColumn<Person, String>> columns = List.of(
+ *     new PropertyColumn<>(Model.of("Name"), "name"),
+ *     new PropertyColumn<>(Model.of("Email"), "email")
+ * );
+ * IDataProvider<Person> dataProvider = new ListDataProvider<>(persons);
+ * RdDataTable<Person, String> table = new RdDataTable<>("table", columns, dataProvider, 10);
+ * add(table);
+ * }</pre>
+ *
+ * @param <T> The model object type
+ * @param <S> The type of the sort property
+ *
+ * @see DataTable
+ * @see <a href="https://nldesignsystem.nl/table/">NL Design System Table</a>
+ * @see <a href="https://nl-design-system.github.io/utrecht/storybook/?path=/docs/css_css-table--docs">Utrecht Table Documentation</a>
+ */
+@NlComponentState(wicketState = BETA, estafetteState = COMMUNITY, htmlCssImplementedBy = UTRECHT)
+public class RdDataTable<T extends @Nullable Object, S extends @Nullable Object> extends DataTable<T, S> {
+
+    private static final Behavior CAPTION_CSS_BEHAVIOR = RdTableCss.CAPTION_ELEMENT.asBehavior();
+    private static final Behavior THEAD_ELEMENT_BEHAVIOR = RdTableCss.THEAD_ELEMENT.asBehavior();
+    private static final Behavior TABLE_ROW_ELEMENT_BEHAVIOR = RdTableCss.TABLE_ROW_ELEMENT_CSS.asBehavior();
+    /**
+     * Constructor.
+     *
+     * @param id component id
+     * @param columns list of columns
+     * @param dataProvider data provider
+     * @param rowsPerPage number of rows per page
+     */
+    public RdDataTable(String id,
+                       List<? extends IColumn<T, S>> columns,
+                       ISortableDataProvider<T, S> dataProvider,
+                       int rowsPerPage) {
+        super(id, columns, dataProvider, rowsPerPage);
+
+        addTopToolbar(new RdAjaxNavigationToolbar(this));
+
+        addTopToolbar(new RdHeadersToolbar<>(this, dataProvider));
+    }
+
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        setOutputMarkupId(true);
+
+        initializeNlDesignSystemStyle();
+
+        add(RdTableBehavior.INSTANCE);
+    }
+
+    private void initializeNlDesignSystemStyle() {
+        get("caption").add(CAPTION_CSS_BEHAVIOR);
+        get("topToolbars").add(THEAD_ELEMENT_BEHAVIOR);
+    }
+
+    @Override
+    protected Item<T> newRowItem(String id, int index, IModel<T> model) {
+        Item<T> item = super.newRowItem(id, index, model);
+
+        item.add(TABLE_ROW_ELEMENT_BEHAVIOR);
+
+        var extraClass = (index % 2 == 0) ? RdTableCss.TABLE_ROW_ELEMENT_EVEN : RdTableCss.TABLE_ROW_ELEMENT_ODD;
+        item.add(extraClass.asBehavior());
+        return item;
+    }
+
+    @Override
+    protected Item<IColumn<T, S>> newCellItem(String id, int index, IModel<IColumn<T, S>> model) {
+        Item<IColumn<T, S>> cellItem = super.newCellItem(id, index, model);
+
+        cellItem.add(RdTableCss.TABLE_BODY_CELL_ELEMENT.asBehavior());
+
+        return cellItem;
+    }
+}

@@ -1,0 +1,16 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+  <wicket:remove>CSS class in markup. We had to make a choice:
+
+  - make 'tr' tag a webmarkup container and duplicate the full HeadersToolbar
+  - add the CSS class name in the markup (which we do not so far).
+
+    As we make an exception here, we must be sure that it is verified with test
+  </wicket:remove>
+  <tr class="utrecht-table__row">
+    <wicket:container wicket:id="headers">
+      <th wicket:id="header">
+        <span wicket:id="label">[header-label]</span>
+      </th>
+    </wicket:container>
+  </tr>
+</wicket:panel>

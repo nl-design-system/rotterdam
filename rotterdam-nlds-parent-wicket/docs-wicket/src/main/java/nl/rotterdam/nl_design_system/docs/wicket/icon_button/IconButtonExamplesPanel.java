@@ -24,17 +24,23 @@ public class IconButtonExamplesPanel extends ExamplesPanel {
     private static Form<Void> ajaxButton() {
         var form = new Form<Void>("formOfAjaxButton");
 
-        var button = new RdIconAjaxButtonBorder("button", Model.of("send")) {
-            @Override
-            protected void onSubmit(AjaxRequestTarget target) {
-                System.out.println("Send geklikt");
-            }
-        };
-        form.add(button);
+        form.add(
+            new RdIconAjaxButtonBorder("button", Model.of("send")) {
 
-        var icon = new WebMarkupContainer("icon");
-        icon.add(RotterdamIconBehavior.SEND);
-        button.add(icon);
+                @Override
+                protected void onInitialize() {
+                    super.onInitialize();
+
+                    add(new WebMarkupContainer("icon")
+                        .add(RotterdamIconBehavior.SEND));
+                }
+
+
+                @Override
+                protected void onSubmit(AjaxRequestTarget target) {
+                    System.out.println("Send geklikt");
+                }
+            });
 
         return form;
     }
@@ -62,7 +68,6 @@ public class IconButtonExamplesPanel extends ExamplesPanel {
     protected void onInitialize() {
         super.onInitialize();
 
-        add(ajaxButton());
-        add(button());
+        add(ajaxButton(), button());
     }
 }
