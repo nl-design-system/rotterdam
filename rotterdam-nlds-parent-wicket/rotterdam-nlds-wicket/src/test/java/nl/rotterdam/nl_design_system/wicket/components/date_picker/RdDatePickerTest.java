@@ -48,4 +48,18 @@ class RdDatePickerTest extends NldsWicketTestCase {
 
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
+
+    @Test
+    void renderWithWijzigenButton() {
+        // as discussed with Robbert.
+        // language=HTML
+        String expectedHtml =
+            """
+<rods-date-picker>
+  <span slot="label">Afspraak wijzigen</span>
+  <span slot="description">Je kunt de afspraak tot 24 uur van tevoren wijzigen</span>
+</rods-date-picker>""";
+
+        throw new RuntimeException("TODO in progress");
+    }
 }

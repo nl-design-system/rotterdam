@@ -1,7 +1,7 @@
 package nl.rotterdam.nl_design_system.wicket.components.date_picker;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
-import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.form.AbstractTextComponent;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
 
@@ -24,7 +24,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  * @param <T> the model object type (typically String for date-time values)
  */
 @NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = ROTTERDAM)
-public class RdDatePicker<T extends @Nullable Object> extends TextField<T> {
+public class RdDatePicker<T extends @Nullable Object> extends AbstractTextComponent<T> {
 
     /**
      * Create a date picker instance.

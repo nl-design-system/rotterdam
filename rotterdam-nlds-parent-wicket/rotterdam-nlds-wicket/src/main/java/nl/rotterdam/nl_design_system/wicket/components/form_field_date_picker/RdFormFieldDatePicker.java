@@ -13,6 +13,7 @@ import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.AbstractTextComponent;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
@@ -148,7 +149,7 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
      *
      * @return the instance
      */
-    public final TextField<T> getTextField() {
+    public final AbstractTextComponent<T> getTextComponent() {
         return datePicker;
     }
 
