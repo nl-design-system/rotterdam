@@ -14,9 +14,11 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.component_examples;
     opens nl.rotterdam.nl_design_system.docs.wicket.css.bootstrap;
     opens nl.rotterdam.nl_design_system.docs.wicket.data_summary;
+    opens nl.rotterdam.nl_design_system.docs.wicket.date_picker;
     opens nl.rotterdam.nl_design_system.docs.wicket.dialog;
     opens nl.rotterdam.nl_design_system.docs.wicket.fieldset;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox;
+    opens nl.rotterdam.nl_design_system.docs.wicket.form_field_date_picker;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_label;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input;
     opens nl.rotterdam.nl_design_system.docs.wicket.form_field_textarea;

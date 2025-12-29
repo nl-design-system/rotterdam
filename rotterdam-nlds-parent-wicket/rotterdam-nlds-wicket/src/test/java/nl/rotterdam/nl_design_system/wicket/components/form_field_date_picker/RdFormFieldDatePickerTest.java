@@ -6,6 +6,8 @@ import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 class RdFormFieldDatePickerTest extends NldsWicketTestCase {
 
     @Test
@@ -22,9 +24,9 @@ class RdFormFieldDatePickerTest extends NldsWicketTestCase {
                       </div>
                   </div>""";
 
-        var component = new RdFormFieldDatePicker<>(
+        var component = new RdFormFieldDatePicker(
             "component",
-            Model.of("2025-12-31T10:05"),
+            Model.of(LocalDateTime.of(2025, 12, 31, 10, 5)),
             Model.of("Appointment Date"),
             Model.of("Select a date and time for your appointment.")
         );
@@ -50,9 +52,9 @@ class RdFormFieldDatePickerTest extends NldsWicketTestCase {
                       </div>
                   </div>""";
 
-        var component = new RdFormFieldDatePicker<>(
+        var component = new RdFormFieldDatePicker(
             "component",
-            Model.of(""),
+            () -> null,
             Model.of("Appointment Date")
         );
 
@@ -64,7 +66,7 @@ class RdFormFieldDatePickerTest extends NldsWicketTestCase {
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
-    private void setSubjectUnderTestIds(RdFormFieldDatePicker<?> component) {
+    private void setSubjectUnderTestIds(RdFormFieldDatePicker component) {
         component.setMarkupId("form-field-appointment");
         component.getDatePicker().setMarkupId("control-date");
         component.getDescriptionComponent().setMarkupId("description-label");

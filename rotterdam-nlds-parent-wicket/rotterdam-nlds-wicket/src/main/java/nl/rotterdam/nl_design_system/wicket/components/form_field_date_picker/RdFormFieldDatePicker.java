@@ -14,10 +14,13 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.AbstractTextComponent;
+import org.apache.wicket.markup.html.form.FormComponent;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
+
+import java.time.LocalDateTime;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.ROTTERDAM;
@@ -38,11 +41,9 @@ import static nl.rotterdam.nl_design_system.wicket.components.output_tag.Compone
  * <p>Uses the {@code <rods-date-picker>} web component from the
  * {@code @gemeente-rotterdam/date-picker-element} package.
  * </p>
- *
- * @param <T> the model object type (typically String for date-time values)
  */
 @NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = ROTTERDAM)
-public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPanel<T> implements RdFormField {
+public class RdFormFieldDatePicker extends GenericPanel<@Nullable LocalDateTime> implements RdFormField {
 
     private final Component labelComponent;
     private final Component descriptionComponent;
@@ -57,7 +58,7 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
      * @param model writable model
      * @param labelModel label to be shown
      */
-    public RdFormFieldDatePicker(String id, IModel<T> model, IModel<@Nullable String> labelModel) {
+    public RdFormFieldDatePicker(String id, IModel<@Nullable LocalDateTime> model, IModel<@Nullable String> labelModel) {
         this(id, model, labelModel, NULL_STRING_MODEL);
     }
 
@@ -71,7 +72,7 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
      */
     public RdFormFieldDatePicker(
         String id,
-        IModel<T> model,
+        IModel<@Nullable LocalDateTime> model,
         IModel<@Nullable String> labelModel,
         IModel<@Nullable String> descriptionModel
     ) {
@@ -88,7 +89,7 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
         errorMessageComponent = newErrorMessageComponent();
     }
 
-    private static Component newInputComponent(RdDatePicker<?> datePicker) {
+    private static Component newInputComponent(RdDatePicker datePicker) {
         return new WebMarkupContainer("input-container").add(datePicker).add(INPUT_ELEMENT.asBehavior());
     }
 
@@ -140,7 +141,7 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
      *
      * @return the instance
      */
-    public final RdDatePicker<T> getDatePicker() {
+    public final RdDatePicker getDatePicker() {
         return datePicker;
     }
 
@@ -149,17 +150,17 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
      *
      * @return the instance
      */
-    public final AbstractTextComponent<T> getTextComponent() {
+    public final AbstractTextComponent<LocalDateTime> getTextComponent() {
         return datePicker;
     }
 
     /**
-     * Marks {@link TextField<T>} as required
+     * Marks {@link FormComponent<LocalDateTime>} as required
      *
      * @param required if it should be required.
      * @return self for chaining.
      */
-    public RdFormFieldDatePicker<T> setRequired(boolean required) {
+    public RdFormFieldDatePicker setRequired(boolean required) {
         datePicker.setRequired(required);
         return this;
     }
@@ -170,7 +171,7 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
     }
 
     @Override
-    public RdFormFieldDatePicker<T> add(Behavior... behaviors) {
+    public RdFormFieldDatePicker add(Behavior... behaviors) {
         super.add(behaviors);
         return this;
     }
@@ -190,11 +191,11 @@ public class RdFormFieldDatePicker<T extends @Nullable Object> extends GenericPa
         return labelComponent;
     }
 
-    private class FormFieldDatePicker extends RdDatePicker<T> {
+    private class FormFieldDatePicker extends RdDatePicker {
 
         private final IModel<@Nullable String> descriptionModel;
 
-        private FormFieldDatePicker(IModel<T> model, IModel<@Nullable String> descriptionModel) {
+        private FormFieldDatePicker(IModel<@Nullable LocalDateTime> model, IModel<@Nullable String> descriptionModel) {
             super("control", model);
             this.descriptionModel = descriptionModel;
         }

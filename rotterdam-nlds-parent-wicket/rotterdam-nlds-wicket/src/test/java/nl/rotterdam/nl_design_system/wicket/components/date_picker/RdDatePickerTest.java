@@ -7,11 +7,13 @@ import org.apache.wicket.markup.Markup;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 class RdDatePickerTest extends NldsWicketTestCase {
 
     @Test
     void renderMinimal() {
-        Component datePicker = new RdDatePicker<>("appointmentDate", () -> "2025-12-31T10:05")
+        Component datePicker = new RdDatePicker("appointmentDate", () -> LocalDateTime.of(2025, 12, 31, 10, 5))
             .setMarkup(Markup.of("<rods-date-picker wicket:id='appointmentDate'></rods-date-picker>"))
             .setMarkupId("appointmentDate");
 
@@ -31,7 +33,7 @@ class RdDatePickerTest extends NldsWicketTestCase {
 
     @Test
     void renderWithoutValue() {
-        Component datePicker = new RdDatePicker<String>("appointmentDate", () -> null)
+        Component datePicker = new RdDatePicker("appointmentDate", () -> null)
             .setMarkup(Markup.of("<rods-date-picker wicket:id='appointmentDate'></rods-date-picker>"))
             .setMarkupId("appointmentDate");
 
@@ -61,6 +63,6 @@ class RdDatePickerTest extends NldsWicketTestCase {
   <span slot="description">Je kunt de afspraak tot 24 uur van tevoren wijzigen</span>
 </rods-date-picker>""";
 
-        throw new RuntimeException("TODO in progress");
+        throw new RuntimeException("TODO in progress" + expectedHtml);
     }
 }
