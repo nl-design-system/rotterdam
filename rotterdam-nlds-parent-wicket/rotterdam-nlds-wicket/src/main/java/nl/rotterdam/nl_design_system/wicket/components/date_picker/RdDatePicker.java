@@ -23,7 +23,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
 
 /**
  * <a href="https://www.npmjs.com/package/@gemeente-rotterdam/date-picker-element">Date Picker Element</a>
- * Wicket components.
+ * Wicket component.
  *
  * <p>Uses the {@code <rods-date-picker>} web component from the
  * {@code @gemeente-rotterdam/date-picker-element} package.
@@ -75,7 +75,6 @@ public class RdDatePicker extends AbstractTextComponent<LocalDateTime> {
         if (!Strings.isEmpty(value)) {
             tag.put("value", value);
         }
-
     }
 
     @Override
