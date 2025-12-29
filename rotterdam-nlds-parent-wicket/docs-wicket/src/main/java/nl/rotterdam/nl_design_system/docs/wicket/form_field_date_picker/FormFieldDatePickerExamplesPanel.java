@@ -22,7 +22,7 @@ public class FormFieldDatePickerExamplesPanel extends ExamplesPanel {
     private static RdFormFieldDatePicker exampleFormFieldDatePicker() {
         return new RdFormFieldDatePicker(
             "formFieldDatePicker",
-            Model.of(LocalDateTime.of(2025, 12, 31, 10,5)),
+            Model.of(LocalDateTime.of(2025, 12, 31, 10, 5)),
             Model.of("Afspraak datum"),
             Model.of("Selecteer een datum en tijd voor je afspraak.")
         );
