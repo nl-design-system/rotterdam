@@ -4,6 +4,7 @@ import nl.rotterdam.nl_design_system.wicket.components.form_field_date_picker.Rd
 import nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
+import org.apache.wicket.Component;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.util.CollectionModel;
 
@@ -38,6 +39,13 @@ public class FormFieldDatePickerExamplesPanel extends ExamplesPanel {
             Model.of("Gewenste datum en tijd")
         )
             .setRequired(true);
+    }
+
+    @ComponentExample
+    private static Component exampleFormFieldDatePickerWithErrorMessage() {
+        var component = new RdFormFieldDatePicker("formFieldDatePickerWithErrorMessage", Model.of(LocalDateTime.of(2025, 12, 31, 10, 0)), Model.of("Selecteer datum en tijd"));
+        component.getDatePicker().error("Het gekozen tijdstip is niet meer beschikbaar. Kies een andere datum en tijd.");
+        return component;
     }
 
     @ComponentExample
@@ -92,6 +100,7 @@ public class FormFieldDatePickerExamplesPanel extends ExamplesPanel {
             exampleFormFieldDatePickerRequired(),
             exampleFormFieldDatePickerDisabled(),
             exampleFormFieldDatePickerWithoutDescription(),
+            exampleFormFieldDatePickerWithErrorMessage(),
             exampleFormFieldDatePickerWithAvailableTimes()
         );
     }

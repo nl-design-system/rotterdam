@@ -1,9 +1,12 @@
 package nl.rotterdam.nl_design_system.wicket.components.form_field_date_picker;
 
 import static nl.rotterdam.nl_design_system.wicket.test_util.FormFieldAssertions.verifyFormFieldContract;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.apache.wicket.model.Model;
+import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -37,6 +40,19 @@ class RdFormFieldDatePickerTest extends NldsWicketTestCase {
 
         verifyFormFieldContract(component, actualHtmlFragment);
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
+    }
+
+    @Test
+    void renderWithError() {
+        RdFormFieldDatePicker component = new RdFormFieldDatePicker("component", Model.of(LocalDateTime.of(2025, 12, 31, 10, 0)), Model.of("Select a date and time for your appointment."));
+
+        component.getDatePicker().error("The selected date is no longer available. Please select another date and time for your appointment.");
+        setSubjectUnderTestIds(component);
+
+        String renderedDocument = renderComponentInDivTestPanel(component);
+
+        assertTrue(renderedDocument.contains("The selected date is no longer available."));
+
     }
 
     @Test

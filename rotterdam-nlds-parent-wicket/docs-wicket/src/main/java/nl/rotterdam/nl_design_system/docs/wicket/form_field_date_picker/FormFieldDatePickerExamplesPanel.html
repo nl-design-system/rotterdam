@@ -1,67 +1,87 @@
 <!doctype html>
 <html lang="nl" xmlns:wicket="http://wicket.apache.org">
-  <head>
-    <title>whatever</title>
-  </head>
-  <body>
-    <wicket:panel>
-      <section class="stories">
-        <h1>Form Field Date Picker component</h1>
-        <div>
-          <p>Biedt de mogelijkheid om een datum en tijd te selecteren met label, beschrijving en foutmeldingen.</p>
-          <p>Deze component gebruikt het <code>&lt;rods-date-picker&gt;</code> web component element.</p>
-        </div>
+<head>
+  <title>whatever</title>
+</head>
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Form Field Date Picker component</h1>
+    <div>
+      <p>Biedt de mogelijkheid om een datum en tijd te selecteren met label, beschrijving en foutmeldingen.</p>
+      <p>Deze component gebruikt het <code>&lt;rods-date-picker&gt;</code> web component element.</p>
+    </div>
 
-        <section data-testid="formFieldDatePicker">
-          <h2>Form Field Date Picker</h2>
-          <div>
-            <p>Een complete form field met label, beschrijving en date picker input.</p>
-          </div>
-          <rods-story-canvas
-            ><template> <div wicket:id="formFieldDatePicker"></div> </template>
-          </rods-story-canvas>
-        </section>
+    <section data-testid="formFieldDatePicker">
+      <h2>Form Field Date Picker</h2>
+      <div>
+        <p>Een complete form field met label, beschrijving en date picker input.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="formFieldDatePicker"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
 
-        <section data-testid="formFieldDatePickerRequired">
-          <h2>Form Field Date Picker Required</h2>
-          <div>
-            <p>Een verplichte date picker form field.</p>
-          </div>
-          <rods-story-canvas
-            ><template> <div wicket:id="formFieldDatePickerRequired"></div> </template>
-          </rods-story-canvas>
-        </section>
+    <section data-testid="formFieldDatePickerRequired">
+      <h2>Form Field Date Picker Required</h2>
+      <div>
+        <p>Een verplichte date picker form field.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="formFieldDatePickerRequired"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
 
-        <section data-testid="formFieldDatePickerDisabled">
-          <h2>Form Field Date Picker Disabled</h2>
-          <div>
-            <p>Een form field in disabled mode. Wordt zo gerenderd door Wicket setEnabled(false) te gebruiken.</p>
-          </div>
-          <rods-story-canvas
-            ><template> <div wicket:id="formFieldDatePickerDisabled"></div> </template>
-          </rods-story-canvas>
-        </section>
+    <section data-testid="formFieldDatePickerDisabled">
+      <h2>Form Field Date Picker Disabled</h2>
+      <div>
+        <p>Een form field in disabled mode. Wordt zo gerenderd door Wicket setEnabled(false) te gebruiken.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="formFieldDatePickerDisabled"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
 
-        <section data-testid="formFieldDatePickerWithoutDescription">
-          <h2>Form Field Date Picker without Description</h2>
-          <div>
-            <p>Een form field zonder beschrijving, alleen met label.</p>
-          </div>
-          <rods-story-canvas
-            ><template> <div wicket:id="formFieldDatePickerWithoutDescription"></div> </template>
-          </rods-story-canvas>
-        </section>
+    <section data-testid="formFieldDatePickerWithErrorMessage">
+      <h2>Form Field Date Picker With Error Message</h2>
+      <div>
+        <p>Met een foutmelding. Bijvoorbeeld als het veld verplicht is en niet is ingevuld, of als het gekozen tijdstip niet meer beschikbaar is.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="formFieldDatePickerWithErrorMessage"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
 
-        <section data-testid="formFieldDatePickerWithAvailableTimes">
-          <h2>Form Field Date Picker with Available Times</h2>
-          <div>
-            <p>Een form field met beschikbare tijdslots geconfigureerd via withDatePicker() methode.</p>
-            <p>Demonstreert het gebruik van de fluent API om de date picker te configureren.</p>
-          </div>
-          <rods-story-canvas
-            ><template> <div wicket:id="formFieldDatePickerWithAvailableTimes"></div> </template>
-          </rods-story-canvas>
-        </section>
+    <section data-testid="formFieldDatePickerWithoutDescription">
+      <h2>Form Field Date Picker without Description</h2>
+      <div>
+        <p>Een form field zonder beschrijving, alleen met label.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="formFieldDatePickerWithoutDescription"></div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="formFieldDatePickerWithAvailableTimes">
+      <h2>Form Field Date Picker with Available Times</h2>
+      <div>
+        <p>Een form field met beschikbare tijdslots geconfigureerd via withDatePicker() methode.</p>
+        <p>Demonstreert het gebruik van de fluent API om de date picker te configureren.</p>
+      </div>
+      <rods-story-canvas
+      ><template> <div wicket:id="formFieldDatePickerWithAvailableTimes"></div> </template>
+      </rods-story-canvas>
+    </section>
       </section>
     </wicket:panel>
   </body>
