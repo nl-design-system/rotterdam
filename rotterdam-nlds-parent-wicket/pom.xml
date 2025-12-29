@@ -5,11 +5,11 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent</artifactId>
-        <version>0.0.8-SNAPSHOT</version>
+        <version>0.0.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.9-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Rotterdam, NL Design System Wicket Parent</name>
     <description>NL Design System Wicket Parent POM.</description>
@@ -34,32 +34,32 @@
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>docs-wicket</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-css-wicket</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket-extras</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>test-common-wicket</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
 
             <dependency>
