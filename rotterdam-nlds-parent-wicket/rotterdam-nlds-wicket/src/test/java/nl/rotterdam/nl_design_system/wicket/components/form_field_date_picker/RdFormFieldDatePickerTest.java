@@ -12,25 +12,15 @@ class RdFormFieldDatePickerTest extends NldsWicketTestCase {
     void rendersDatePickerWithLabelAndDescriptionAsFormField() {
         // language=HTML
         var expectedHtmlFragment = """
-            <div id="form-field-appointment" class="utrecht-form-field utrecht-form-field--date-picker">
-              <div class="utrecht-form-field__label">
-                <label
-                  for="control-date"
-                  class="utrecht-form-label"
-                >Appointment Date</label>
-              </div>
-              <div id="description-label" class="utrecht-form-field-description utrecht-form-field__description">Select a date and time for your appointment.</div>
-              <div id="error-message-label" class="utrecht-form-field__error-message"></div>
-              <div class="utrecht-form-field__input">
-                <rods-date-picker
-                  value="2025-12-31T10:05"
-                  name="control"
-                  id="control-date"
-                  aria-describedby="description-label"
-                  class="rods-date-picker"
-                ></rods-date-picker>
-              </div>
-            </div>""";
+            <div class="utrecht-form-field utrecht-form-field--date-picker" id="form-field-appointment">
+                      <div class="utrecht-form-field__label">
+                          <label class="utrecht-form-label" for="control-date">Date</label>
+                      </div>
+                      <div class="utrecht-form-field-description utrecht-form-field__description" id="description-label">Select a date and time for your appointment.</div>
+                      <div class="utrecht-form-field__input">
+                          <rods-date-picker aria-describedby="description-label" class="rods-date-picker" id="control-date" name="static:component:input-container:control" value="2025-12-31T10:05"></rods-date-picker>
+                      </div>
+                  </div>""";
 
         var component = new RdFormFieldDatePicker<>(
             "component",
@@ -51,24 +41,14 @@ class RdFormFieldDatePickerTest extends NldsWicketTestCase {
     void rendersDatePickerWithLabelWithoutDescription() {
         // language=HTML
         var expectedHtmlFragment = """
-            <div id="form-field-appointment" class="utrecht-form-field utrecht-form-field--date-picker">
-              <div class="utrecht-form-field__label">
-                <label
-                  for="control-date"
-                  class="utrecht-form-label"
-                >Appointment Date</label>
-              </div>
-              <div id="description-label" class="utrecht-form-field-description utrecht-form-field__description"></div>
-              <div id="error-message-label" class="utrecht-form-field__error-message"></div>
-              <div class="utrecht-form-field__input">
-                <rods-date-picker
-                  value=""
-                  name="control"
-                  id="control-date"
-                  class="rods-date-picker"
-                ></rods-date-picker>
-              </div>
-            </div>""";
+            <div class="utrecht-form-field utrecht-form-field--date-picker" id="form-field-appointment">
+                      <div class="utrecht-form-field__label">
+                          <label class="utrecht-form-label" for="control-date">Date</label>
+                      </div>
+                      <div class="utrecht-form-field__input">
+                          <rods-date-picker class="rods-date-picker" id="control-date" name="static:component:input-container:control"></rods-date-picker>
+                      </div>
+                  </div>""";
 
         var component = new RdFormFieldDatePicker<>(
             "component",

@@ -1,8 +1,10 @@
 package nl.rotterdam.nl_design_system.wicket.components.date_picker;
 
 import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
+import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.AbstractTextComponent;
 import org.apache.wicket.model.IModel;
+import org.apache.wicket.util.string.Strings;
 import org.jspecify.annotations.Nullable;
 
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.ROTTERDAM;
@@ -40,5 +42,15 @@ public class RdDatePicker<T extends @Nullable Object> extends AbstractTextCompon
     protected void onInitialize() {
         super.onInitialize();
         add(RdDatePickerBehavior.INSTANCE);
+    }
+
+    @Override
+    protected void onComponentTag(ComponentTag tag) {
+        super.onComponentTag(tag);
+
+        String value = getValue();
+        if (!Strings.isEmpty(value)) {
+            tag.put("value", value);
+        }
     }
 }
