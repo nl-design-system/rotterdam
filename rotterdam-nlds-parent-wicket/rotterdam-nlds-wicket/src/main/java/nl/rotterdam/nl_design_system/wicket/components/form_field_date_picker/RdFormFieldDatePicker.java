@@ -93,6 +93,25 @@ public class RdFormFieldDatePicker extends GenericPanel<@Nullable LocalDateTime>
     }
 
     /**
+     * <p>
+     * Modify the Date Picker using the given consumer. This Form Field will also be passed to the consumer.
+     * </p>
+     * <p>
+     * By using this method you can modify the Date Picker in a fluent API style, without needing intermediary
+     * assignments.
+     * </p>
+     *
+     * @param consumer modifies the Date Picker in this Form Field.
+     *
+     * @return self for chaining.
+     */
+    public RdFormFieldDatePicker withDatePicker(WithDatePickerConsumer consumer) {
+        consumer.doWithDatePicker(datePicker, this);
+
+        return this;
+    }
+
+    /**
      * Marks {@link FormComponent<LocalDateTime>} as required
      *
      * @param required if it should be required.

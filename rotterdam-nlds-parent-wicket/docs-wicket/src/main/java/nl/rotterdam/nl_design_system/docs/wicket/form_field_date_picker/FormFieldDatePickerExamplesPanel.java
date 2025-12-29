@@ -5,8 +5,10 @@ import nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.model.util.CollectionModel;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class FormFieldDatePickerExamplesPanel extends ExamplesPanel {
     public FormFieldDatePickerExamplesPanel(String id) {
@@ -59,6 +61,28 @@ public class FormFieldDatePickerExamplesPanel extends ExamplesPanel {
         );
     }
 
+    @ComponentExample
+    private static RdFormFieldDatePicker exampleFormFieldDatePickerWithAvailableTimes() {
+        var availableTimes = List.of(
+            LocalDateTime.of(2026, 2, 10, 9, 0),
+            LocalDateTime.of(2026, 2, 10, 10, 30),
+            LocalDateTime.of(2026, 2, 10, 14, 0),
+            LocalDateTime.of(2026, 2, 11, 9, 0),
+            LocalDateTime.of(2026, 2, 11, 11, 0)
+        );
+
+        return new RdFormFieldDatePicker(
+            "formFieldDatePickerWithAvailableTimes",
+            DefaultModels.NULL_LOCAL_DATE_TIME,
+            Model.of("Kies een afspraakmoment"),
+            Model.of("Selecteer een beschikbaar tijdslot.")
+        )
+        .withDatePicker((datePicker, formField) ->
+            datePicker.withAvailableDateTimes(new CollectionModel<>(availableTimes))
+        )
+        .setRequired(true);
+    }
+
     @Override
     protected void onInitialize() {
         super.onInitialize();
@@ -67,7 +91,8 @@ public class FormFieldDatePickerExamplesPanel extends ExamplesPanel {
             exampleFormFieldDatePicker(),
             exampleFormFieldDatePickerRequired(),
             exampleFormFieldDatePickerDisabled(),
-            exampleFormFieldDatePickerWithoutDescription()
+            exampleFormFieldDatePickerWithoutDescription(),
+            exampleFormFieldDatePickerWithAvailableTimes()
         );
     }
 }
