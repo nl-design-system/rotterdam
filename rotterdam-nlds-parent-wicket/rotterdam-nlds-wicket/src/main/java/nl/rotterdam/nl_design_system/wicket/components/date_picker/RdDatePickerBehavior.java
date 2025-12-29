@@ -40,14 +40,11 @@ class RdDatePickerBehavior extends TagNameClassComponentBehavior<RdDatePicker> {
 
         if (component.hasErrorMessage()) {
             classes.add(RdDatePickerCss.INVALID);
+            tag.put("aria-invalid", "true");
         }
 
         if (component.isRequired()) {
             tag.put("aria-required", "true");
-        }
-        
-        if (component.hasErrorMessage()) {
-            tag.put("aria-invalid", "true");
         }
 
         return classes;
