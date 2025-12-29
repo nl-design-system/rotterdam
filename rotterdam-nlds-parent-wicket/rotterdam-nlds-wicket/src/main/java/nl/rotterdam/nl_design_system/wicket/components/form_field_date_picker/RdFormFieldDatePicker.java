@@ -22,8 +22,8 @@ import java.time.LocalDateTime;
 
 import static java.util.Objects.requireNonNull;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.ROTTERDAM;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.HELP_WANTED;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.DESCRIPTION_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.ERROR_MESSAGE_ELEMENT;
 import static nl.rotterdam.nl_design_system.wicket.components.form_field.RdFormFieldCss.INPUT_ELEMENT;
@@ -34,13 +34,14 @@ import static nl.rotterdam.nl_design_system.wicket.components.output_tag.Compone
 
 /**
  * <a href="https://nldesignsystem.nl/form-field/">Form Field</a>
- * Date Picker NL Design System implementation.
+ * <a href="https://nldesignsystem.nl/date-picker/">Date Picker</a> NL Design System implementation for date-time
+ * selection.
  *
  * <p>Uses the {@code <rods-date-picker>} web component from the
  * {@code @gemeente-rotterdam/date-picker-element} package.
  * </p>
  */
-@NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = ROTTERDAM)
+@NlComponentState(wicketState = UNSTABLE, estafetteState = HELP_WANTED, htmlCssImplementedBy = ROTTERDAM)
 public class RdFormFieldDatePicker extends GenericPanel<@Nullable LocalDateTime> implements RdFormField {
 
     /**
