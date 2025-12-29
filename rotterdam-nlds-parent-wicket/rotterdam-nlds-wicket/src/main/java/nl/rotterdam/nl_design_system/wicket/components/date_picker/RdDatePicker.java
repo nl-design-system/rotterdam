@@ -46,6 +46,13 @@ public class RdDatePicker extends AbstractTextComponent<LocalDateTime> {
         super(id, model);
     }
 
+    /**
+     * Configure the available date-time options that can be selected in the date picker.
+     * The provided collection of date-times will be rendered as selectable options in the web component.
+     *
+     * @param times model containing the collection of selectable date-time values
+     * @return self for method chaining
+     */
     public RdDatePicker withAvailableDateTimes(IModel<Collection<LocalDateTime>> times) {
         this.availableDateTimes = times;
         return this;
