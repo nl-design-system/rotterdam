@@ -37,3 +37,15 @@ Create a form associated custom element
 
 - TypeScript config must use very strict config
 - TypeScript must have no warnings or errors
+
+Testing:
+
+- must be tested in 1280x1024 (100% wcag)
+- must be tested in 320x256 (400% wcag)
+
+Reuse as much of the NL Design System components as possible:
+
+- utrecht-textbox
+- utrecht-listbox
+- utrecht-form-field
+- utrecht-form-label

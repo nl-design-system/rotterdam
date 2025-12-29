@@ -50,3 +50,51 @@ export const getDaysInMonth = (date: Date) => {
   }
   return dates;
 };
+
+export const dayOfWeekLocale = (n: Day) => {
+  const labels = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
+  return labels[n];
+};
+
+export const monthLocale = (n: number) => {
+  const labels = [
+    'januari',
+    'februari',
+    'maart',
+    'april',
+    'mei',
+    'juni',
+    'juli',
+    'augustus',
+    'september',
+    'oktober',
+    'november',
+    'december',
+  ];
+  return labels[n];
+};
+
+export const isSameMonth = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth();
+export const isSameDate = (a: Date, b: Date) => isSameMonth(a, b) && a.getDate() === b.getDate();
+
+export const numberSort = (a: number, b: number) => (a === b ? 0 : a > b ? 1 : -1);
+export const sortDate = (a: Date, b: Date) => numberSort(a.getTime(), b.getTime());
+
+export const getDatesBetween = (from: Date, to: Date) => {
+  if (from.getTime() > to.getTime()) {
+    return [];
+    // prevent infinite loop
+    // throw new TypeError();
+  }
+  const fromDate = from.getDate();
+  const dates = [];
+  const currentDate = new Date(from);
+  for (let day = 1; day; day++) {
+    currentDate.setDate(fromDate + day);
+    if (currentDate.getTime() >= to.getTime()) {
+      break;
+    }
+    dates.push(new Date(currentDate));
+  }
+  return dates;
+};
