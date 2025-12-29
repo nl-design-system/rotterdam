@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom/vitest';
-import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+import { page } from 'vitest/browser';
 import './date-picker-element';
 
 const tag = 'rods-date-picker';
@@ -11,21 +10,21 @@ describe(`<${tag}>`, () => {
   });
 
   it('shows a form control', () => {
-    const formElement = screen.getByRole('textbox');
+    const formElement = page.getByRole('textbox');
     expect(formElement).toBeDefined();
   });
 
   it('shows a form control for date', () => {
-    const formElement = screen.getByLabelText('datum');
+    const formElement = page.getByLabelText('datum');
     expect(formElement).toBeDefined();
   });
 
   it('shows a form control for time', () => {
-    const formElement = screen.getByLabelText('tijd');
+    const formElement = page.getByLabelText('tijd');
     expect(formElement).toBeDefined();
   });
   it('shows highlights today', () => {
-    const optionElement = screen.getByLabelText('Vandaag');
+    const optionElement = page.getByLabelText('Vandaag');
     console.log(optionElement);
     expect(optionElement).toBeDefined();
     console.log(optionElement);

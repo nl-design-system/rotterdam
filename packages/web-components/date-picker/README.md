@@ -32,3 +32,8 @@ Create a form associated custom element
   - Render the calendar grid with an HTML `table` element.
 - We have optimized the rendering in forced colors mode.
 - Hardcode minimum target size for options at 24x24px
+
+## Non functional requirements
+
+- TypeScript config must use very strict config
+- TypeScript must have no warnings or errors

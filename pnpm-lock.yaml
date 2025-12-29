@@ -501,6 +501,9 @@ importers:
       '@nl-design-system/tsconfig':
         specifier: 1.0.5
         version: 1.0.5(typescript@5.9.3)
+      '@testing-library/react':
+        specifier: 16.3.0
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@utrecht/listbox-css':
         specifier: 2.0.1
         version: 2.0.1

@@ -19,7 +19,10 @@
   "scripts": {
     "build": "tsc",
     "dev": "vite",
-    "test": "vitest --coverage"
+    "lint": "tsc --noEmit",
+    "test": "pnpm run test:unit && pnpm run test:e2e",
+    "test:unit": "vitest --coverage",
+    "test:e2e": "vitest --config vitest.e2e.config.ts"
   },
   "dependencies": {
     "@utrecht/button-css": "3.0.1",
@@ -34,6 +37,7 @@
   },
   "devDependencies": {
     "@nl-design-system/tsconfig": "1.0.5",
+    "@testing-library/react": "16.3.0",
     "@utrecht/listbox-css": "2.0.1",
     "@vitest/browser-playwright": "4.0.12",
     "@vitest/coverage-v8": "4.0.12",

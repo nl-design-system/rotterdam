@@ -1,14 +1,17 @@
-import { playwright } from '@vitest/browser-playwright';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    browser: {
-      enabled: true,
-      headless: true,
-      instances: [{ browser: 'chromium' }],
-      provider: playwright(),
-      screenshotDirectory: new URL('./tmp/__screenshots__', import.meta.url).pathname,
+    coverage: {
+      provider: 'v8',
+      thresholds: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100,
+      },
     },
+    // css: true,
+    environment: 'jsdom',
   },
 });
