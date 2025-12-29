@@ -26,6 +26,11 @@
             <artifactId>wicket-request</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.jspecify</groupId>
             <artifactId>jspecify</artifactId>
         </dependency>
@@ -47,6 +52,11 @@
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -308,6 +318,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_number_navigation</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/pagination-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/page_layout</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
@@ -361,6 +379,14 @@
                 <directory>node_modules/</directory>
                 <includes>
                     <include>@utrecht/separator-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/table</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@utrecht/table-css/dist/*.min.css</include>
                 </includes>
             </resource>
             <resource>

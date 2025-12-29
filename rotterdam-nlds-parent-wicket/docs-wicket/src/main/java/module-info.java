@@ -44,8 +44,9 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.separator;
     opens nl.rotterdam.nl_design_system.docs.wicket.side_nav;
     opens nl.rotterdam.nl_design_system.docs.wicket.sso_login_page;
-    opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
+    opens nl.rotterdam.nl_design_system.docs.wicket.table;
     opens nl.rotterdam.nl_design_system.docs.wicket.textarea;
+    opens nl.rotterdam.nl_design_system.docs.wicket.text_input;
     opens nl.rotterdam.nl_design_system.docs.wicket.unordered_list;
     opens nl.rotterdam.nl_design_system.docs.wicket;
 
@@ -60,6 +61,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     requires org.slf4j;
     requires wicket.bootstrap.extensions;
     requires org.apache.wicket.request;
+    requires org.apache.wicket.extensions;
     requires org.apache.wicket.util;
     requires org.apache.commons.lang3;
 }

@@ -654,6 +654,9 @@ importers:
       '@utrecht/page-layout-css':
         specifier: 1.1.1
         version: 1.1.1
+      '@utrecht/pagination-css':
+        specifier: 2.0.3
+        version: 2.0.3
       '@utrecht/preserve-data-css':
         specifier: 1.3.1
         version: 1.3.1
@@ -667,6 +670,9 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/separator-css':
+        specifier: 2.0.1
+        version: 2.0.1
+      '@utrecht/table-css':
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/textarea-css':
@@ -3400,6 +3406,9 @@ packages:
   '@utrecht/page-layout-css@1.1.1':
     resolution: {integrity: sha512-pFiRgDmB0F4s23JIJf0akynHVfBt7l4rv9t9gvpTeOxSdx3KTNZsxSNT5PyQwIf5mlEHWidp6yxn3fvQXlMKmw==}
 
+  '@utrecht/pagination-css@2.0.3':
+    resolution: {integrity: sha512-LXXWZXEgiOacCHljs9jm9Nm2MQW7dmNtq5Ck4PENOA62oT/HVCXbiviWeT+dYLsv8Nwv+JCFYWm4CA1UGY7MOw==}
+
   '@utrecht/preserve-data-css@1.3.1':
     resolution: {integrity: sha512-O4TdW3df2AJGHunXB5AzEGDi8u8RsdmSbhyVMO5XeVIjiCVztajiyXnRqfuFX7+OA0EZ5E3NUSjPuXnSEJnkQA==}
 
@@ -3421,6 +3430,9 @@ packages:
 
   '@utrecht/separator-css@2.0.1':
     resolution: {integrity: sha512-TpD/3w8N14XJD3hRKqpgftLFlmNveheNN9KUjBD3MEJF96i9e7S/4+YIasWicCHxrsQpicc28ERJLlGCRow+UA==}
+
+  '@utrecht/table-css@2.0.1':
+    resolution: {integrity: sha512-gJR0UjbHxnl2Wk+K2CcIYtJkBHEkDIc7MJ18//flLa6nPetfAr90nwc8OBgav++vbyUmueHgnS+lyL+AgrChkA==}
 
   '@utrecht/textarea-css@3.0.1':
     resolution: {integrity: sha512-byy2EpNx6g9ORxTZyeGxWclsvzJxbkmi1uqLSCS7286nw3t7PkwiWSKBPBJ568153nKgBD7FgiZrjR0Oe7TDnA==}
@@ -11396,6 +11408,8 @@ snapshots:
 
   '@utrecht/page-layout-css@1.1.1': {}
 
+  '@utrecht/pagination-css@2.0.3': {}
+
   '@utrecht/preserve-data-css@1.3.1': {}
 
   '@utrecht/radio-button-css@2.0.1': {}
@@ -11412,6 +11426,8 @@ snapshots:
   '@utrecht/select-css@2.0.1': {}
 
   '@utrecht/separator-css@2.0.1': {}
+
+  '@utrecht/table-css@2.0.1': {}
 
   '@utrecht/textarea-css@3.0.1': {}
 

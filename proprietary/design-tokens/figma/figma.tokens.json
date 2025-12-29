@@ -9069,7 +9069,7 @@
           "padding-inline-end": {},
           "padding-inline-start": {},
           "alternate-odd": {
-            "background-color": {},
+            "background-color": { "$value": "{rods.color.gray.tint-01}" },
             "color": {}
           },
           "alternate-even": {
