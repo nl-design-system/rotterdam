@@ -4,9 +4,12 @@ import nl.rotterdam.nl_design_system.wicket.components.date_picker.RdDatePicker;
 import nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
+import org.apache.wicket.Component;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.model.util.CollectionModel;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class DatePickerExamplesPanel extends ExamplesPanel {
     public DatePickerExamplesPanel(String id) {
@@ -19,7 +22,7 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdDatePicker exampleDatePicker() {
+    private static Component exampleDatePicker() {
         return new RdDatePicker(
             "datePicker",
             Model.of(LocalDateTime.of(2025, 12, 31, 10, 5))
@@ -27,7 +30,7 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdDatePicker exampleDatePickerEmpty() {
+    private static Component exampleDatePickerEmpty() {
         return new RdDatePicker(
             "datePickerEmpty",
             DefaultModels.NULL_LOCAL_DATE_TIME
@@ -35,23 +38,40 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static RdDatePicker exampleDatePickerDisabled() {
-        RdDatePicker component = new RdDatePicker(
+    private static Component exampleDatePickerDisabled() {
+        return new RdDatePicker(
             "datePickerDisabled",
             Model.of(LocalDateTime.of(2025, 1, 15, 14, 30))
-        );
-        component.setEnabled(false);
-        return component;
+        )
+            .setEnabled(false);
     }
 
     @ComponentExample
-    private static RdDatePicker exampleDatePickerRequired() {
-        RdDatePicker component = new RdDatePicker(
+    private static Component exampleDatePickerRequired() {
+        return new RdDatePicker(
             "datePickerRequired",
             DefaultModels.NULL_LOCAL_DATE_TIME
+        ).setRequired(true);
+    }
+
+    @ComponentExample
+    private static Component exampleDatePickerWithAvailableDateTimes() {
+        var selectableTimes = List.of(
+            LocalDateTime.of(2026, 1, 15, 10, 0),
+            LocalDateTime.of(2026, 1, 15, 11, 0),
+            LocalDateTime.of(2026, 1, 15, 13, 0),
+            LocalDateTime.of(2026, 1, 15, 14, 0),
+            LocalDateTime.of(2026, 1, 16, 10, 0),
+            LocalDateTime.of(2026, 1, 16, 12, 0),
+            LocalDateTime.of(2026, 1, 16, 16, 0)
         );
-        component.setRequired(true);
-        return component;
+
+        return new RdDatePicker(
+            "datePickerWithAvailableDateTimes",
+            DefaultModels.NULL_LOCAL_DATE_TIME
+        )
+        .withAvailableDateTimes(new CollectionModel<>(selectableTimes))
+        .setRequired(true);
     }
 
     @Override
@@ -62,7 +82,8 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
             exampleDatePicker(),
             exampleDatePickerEmpty(),
             exampleDatePickerDisabled(),
-            exampleDatePickerRequired()
+            exampleDatePickerRequired(),
+            exampleDatePickerWithAvailableDateTimes()
         );
     }
 }

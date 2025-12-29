@@ -13,9 +13,7 @@ import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.AbstractTextComponent;
 import org.apache.wicket.markup.html.form.FormComponent;
-import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
@@ -44,12 +42,6 @@ import static nl.rotterdam.nl_design_system.wicket.components.output_tag.Compone
  */
 @NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = ROTTERDAM)
 public class RdFormFieldDatePicker extends GenericPanel<@Nullable LocalDateTime> implements RdFormField {
-
-    private final Component labelComponent;
-    private final Component descriptionComponent;
-    private final Component errorMessageComponent;
-    private final Component inputComponent;
-    private final FormFieldDatePicker datePicker;
 
     /**
      * Create instance with label, without description.
@@ -88,6 +80,60 @@ public class RdFormFieldDatePicker extends GenericPanel<@Nullable LocalDateTime>
         inputComponent = newInputComponent(datePicker);
         errorMessageComponent = newErrorMessageComponent();
     }
+
+
+    /**
+     * Get reference to underlying {@link RdDatePicker}
+     *
+     * @return the instance
+     */
+    public final RdDatePicker getDatePicker() {
+        return datePicker;
+    }
+
+    /**
+     * Marks {@link FormComponent<LocalDateTime>} as required
+     *
+     * @param required if it should be required.
+     * @return self for chaining.
+     */
+    public RdFormFieldDatePicker setRequired(boolean required) {
+        datePicker.setRequired(required);
+        return this;
+    }
+
+    @Override
+    public Component getDescriptionComponent() {
+        return descriptionComponent;
+    }
+
+    @Override
+    public RdFormFieldDatePicker add(Behavior... behaviors) {
+        super.add(behaviors);
+        return this;
+    }
+
+    @Override
+    public Component getErrorMessageComponent() {
+        return errorMessageComponent;
+    }
+
+    @Override
+    public Component getInputComponent() {
+        return inputComponent;
+    }
+
+    @Override
+    public Component getLabelComponent() {
+        return labelComponent;
+    }
+
+    private final Component labelComponent;
+    private final Component descriptionComponent;
+    private final Component errorMessageComponent;
+    private final Component inputComponent;
+    private final FormFieldDatePicker datePicker;
+
 
     private static Component newInputComponent(RdDatePicker datePicker) {
         return new WebMarkupContainer("input-container").add(datePicker).add(INPUT_ELEMENT.asBehavior());
@@ -134,61 +180,6 @@ public class RdFormFieldDatePicker extends GenericPanel<@Nullable LocalDateTime>
         if (isInvalid()) {
             INVALID.appendTo(tag);
         }
-    }
-
-    /**
-     * Get reference to underlying {@link RdDatePicker}
-     *
-     * @return the instance
-     */
-    public final RdDatePicker getDatePicker() {
-        return datePicker;
-    }
-
-    /**
-     * Get reference to underlying {@link TextField}
-     *
-     * @return the instance
-     */
-    public final AbstractTextComponent<LocalDateTime> getTextComponent() {
-        return datePicker;
-    }
-
-    /**
-     * Marks {@link FormComponent<LocalDateTime>} as required
-     *
-     * @param required if it should be required.
-     * @return self for chaining.
-     */
-    public RdFormFieldDatePicker setRequired(boolean required) {
-        datePicker.setRequired(required);
-        return this;
-    }
-
-    @Override
-    public Component getDescriptionComponent() {
-        return descriptionComponent;
-    }
-
-    @Override
-    public RdFormFieldDatePicker add(Behavior... behaviors) {
-        super.add(behaviors);
-        return this;
-    }
-
-    @Override
-    public Component getErrorMessageComponent() {
-        return errorMessageComponent;
-    }
-
-    @Override
-    public Component getInputComponent() {
-        return inputComponent;
-    }
-
-    @Override
-    public Component getLabelComponent() {
-        return labelComponent;
     }
 
     private class FormFieldDatePicker extends RdDatePicker {
