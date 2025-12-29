@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <head>
+    <title>Table component</title>
+  </head>
+  <body>
+    <wicket:panel>
+
+      <section class="stories">
+        <h1>Table component</h1>
+        <div>
+          <p>Toont gestructureerde data in rijen en kolommen.</p>
+        </div>
+
+        <section data-testid="basicTable">
+          <h2>Basis tabel</h2>
+          <div>
+            <p>Een eenvoudige tabel met een paar kolommen.</p>
+          </div>
+          <rods-story-canvas>
+            <template> <table wicket:id="basicTable"></table> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="withManyRows">
+          <h2>Tabel met veel rijen</h2>
+          <div>
+            <p>Een tabel met 25 rijen en paginering (10 rijen per pagina). Met veel uitzonderlijke variaties in data.</p>
+          </div>
+          <rods-story-canvas
+            ><template> <table wicket:id="withManyRows"></table> </template>
+          </rods-story-canvas>
+        </section>
+
+        <section data-testid="withActions">
+          <h2>Tabel met acties</h2>
+          <div>
+            <p>Een tabel met acties en RODS iconen van Rotterdam.</p>
+          </div>
+          <rods-story-canvas>
+            <template>
+            <div wicket:id="containerWithActions">
+              <form wicket:id="actionsForm">
+                <table wicket:id="withActions"></table>
+              </form>
+            </div>
+          </template>
+          </rods-story-canvas>
+        </section>
+
+
+
+
+      </section>
+
+
+
+    </wicket:panel>
+  </body>
+</html>
