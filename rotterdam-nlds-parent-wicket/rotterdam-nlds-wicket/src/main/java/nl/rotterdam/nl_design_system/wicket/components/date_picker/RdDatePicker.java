@@ -6,12 +6,12 @@ import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
 
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.ROTTERDAM;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.HELP_WANTED;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 /**
  * <a href="https://www.npmjs.com/package/@gemeente-rotterdam/date-picker-element">Date Picker Element</a>
- * custom element wrapper.
+ * Wicket components.
  *
  * <p>Uses the {@code <rods-date-picker>} web component from the
  * {@code @gemeente-rotterdam/date-picker-element} package.
@@ -23,7 +23,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  *
  * @param <T> the model object type (typically String for date-time values)
  */
-@NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = ROTTERDAM)
+@NlComponentState(wicketState = UNSTABLE, estafetteState = HELP_WANTED, htmlCssImplementedBy = ROTTERDAM)
 public class RdDatePicker<T extends @Nullable Object> extends AbstractTextComponent<T> {
 
     /**
