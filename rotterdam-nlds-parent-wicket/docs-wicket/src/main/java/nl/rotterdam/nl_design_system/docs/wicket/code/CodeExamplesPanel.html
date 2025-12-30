@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+  <body>
+    <wicket:panel>
+      <section class="stories">
+        <h1>Code component</h1>
+        <div>
+          <p>Toont tekst als computercode.</p>
+        </div>
+
+        <section data-testid="code">
+          <h2>Code</h2>
+          <rods-story-canvas>
+            <template>
+              De variabele <code wicket:id="code">foo</code> is een bekende metasyntactische variabele.
+            </template>
+          </rods-story-canvas>
+        </section>
+      </section>
+    </wicket:panel>
+  </body>
+</html>
