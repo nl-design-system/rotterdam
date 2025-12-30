@@ -1,6 +1,6 @@
 {
   "name": "@gemeente-rotterdam/date-picker-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Community for NL Design System",
   "description": "<rods-date-picker> custom element with a Date Picker web component.",
   "license": "EUPL-1.2",
