@@ -1,3 +1,7 @@
+/**
+ * Layout for the desktop date picker, where there are two columns: one for the day, another for the time.
+ * There is a footer row below that, with the currently selected value.
+ */
 .rods-date-panels {
   display: grid;
   inline-size: 1180px;
@@ -6,27 +10,32 @@
     "date time"
     "footer footer";
 }
-.rods-date-panels__panel:nth-child(1) {
+.rods-date-panels__panel {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--rods-date-picker-border-color);
+}
+
+.rods-date-panels__panel--date {
   grid-area: date;
 }
-.rods-date-panels__panel {
-  border: 1px solid #cad6da;
-}
-.rods-date-panels__panel:nth-child(2) {
+
+.rods-date-panels__panel--time {
   grid-area: time;
   border-inline-start-width: 0;
 }
+
 .rods-date-panels__panel-header {
-  background-color: #eff4f6;
-  padding-inline: 24px;
-  padding-block: 24px;
+  background-color: var(--rods-date-picker-header-background-color);
+  padding-inline: var(--rods-date-picker-header-padding-inline);
+  padding-block: var(--rods-date-picker-header-padding-block);
 }
 .rods-date-panels__panel-header > p {
   margin-block: 0;
 }
 .rods-date-panels__panel-body {
-  padding-inline: 24px;
-  padding-block: 16px;
+  padding-inline: var(--rods-date-picker-body-padding-inline);
+  padding-block: var(--rods-date-picker-body-padding-block);
 }
 .rods-date-panels__footer {
   grid-area: footer;
@@ -42,7 +51,7 @@
   border-inline-start-width: 1px;
   border-block-end-width: 1px;
 }
-.rods-time-slots__list {
+.rods-time-badge-list {
   margin-block-end: 0; /* reset <ul> */
   margin-block-start: 0; /* reset <ul> */
   margin-inline-end: 0; /* reset <ul> */
@@ -50,13 +59,13 @@
   padding-inline-start: 0; /* reset <ul> */
 
   display: flex;
-  column-gap: var(--rods-time-slots-column-gap, 1ch);
-  row-gap: var(--rods-time-slots-row-gap, 1em);
+  column-gap: var(--rods-time-badge-list-column-gap, 1ch);
+  row-gap: var(--rods-time-badge-list-row-gap, 1em);
   flex-wrap: wrap;
   --rods-time-badge-min-inline-size: 100px;
 
   /* 5 columns of time slots */
-  min-inline-size: calc(5 * var(--rods-time-badge-min-inline-size) + 4 * var(--rods-time-slots-column-gap, 1ch));
+  min-inline-size: calc(5 * var(--rods-time-badge-min-inline-size) + 4 * var(--rods-badge-list-column-gap, 1ch));
 }
 .rods-time-badge__slot {
   min-inline-size: 4em;
@@ -324,7 +333,10 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
   row-gap: 12px;
 }
 
-.rods-date-picker__small {
+/**
+ * Container for the mobile design of the date picker.
+ */
+.rods-date-picker__mobile {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
@@ -337,23 +349,30 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
 }
 
 @container (width >= 1180px) {
-  .rods-date-picker__small {
+  /**
+   * Hide the mobile design of the date picker when there is room for the desktop design.
+   */
+  .rods-date-picker__mobile {
     display: none;
   }
 }
 
 @container (width < 1180px) {
-  .rods-date-picker__large {
+  /**
+   * Hide the desktop design of the date picker, when there is not enough room for it.
+   */
+  .rods-date-picker__desktop {
     display: none;
   }
 }
 
-.utrecht-listbox {
-  --utrecht-listbox-font-size: 24px;
-  --utrecht-listbox-font-weight: bold;
+.utrecht-listbox--rods-time-badge-list {
+  --utrecht-listbox-font-size: var(--rods-time-badge-font-size);
+  --utrecht-listbox-font-weight: var(--rods-time-badge-font-weight);
   --utrecht-listbox-inline-size: 100%;
   --utrecht-listbox-border-width: 0;
 }
+
 .utrecht-listbox__option {
   justify-content: center;
 }

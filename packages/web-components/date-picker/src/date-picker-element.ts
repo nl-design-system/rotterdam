@@ -18,8 +18,8 @@ import {
   getMinDate,
   getNextMonth,
   getPrevMonth,
-  isAfterMonth,
-  isBeforeMonth,
+  isAfterCurrentMonth,
+  isBeforeCurrentMonth,
   isSameDate,
   isSameMonth,
   monthLocale,
@@ -300,13 +300,13 @@ export class DatePickerElement extends LitElement {
     const mobileTimeOptions = times;
     const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
     const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
-    const hasPrevMonth = minBrowsableDate ? isBeforeMonth(this._visibleDate, minBrowsableDate) : true;
-    const hasNextMonth = maxBrowsableDate ? isAfterMonth(this._visibleDate, maxBrowsableDate) : true;
-    console.log({ hasNextMonth, hasPrevMonth, maxBrowsableDate, minBrowsableDate, visibleDate: this._visibleDate });
+    const hasPrevMonth = minBrowsableDate ? isBeforeCurrentMonth(this._visibleDate, minBrowsableDate) : true;
+    const hasNextMonth = maxBrowsableDate ? isAfterCurrentMonth(this._visibleDate, maxBrowsableDate) : true;
+
     const showTimePlaceholder =
       times.length === 0; /* TODO: Replace with logic to only show when no date has been selected */
     const output = html`<div class="rods-date-picker">
-      <div class="rods-date-picker__small">
+      <div class="rods-date-picker__mobile">
         <div class="utrecht-form-field">
           <div class="utrecht-form-field__label">
             <label for="date" class="utrecht-form-label" id="mobile-date-label-text">${chooseDatumLabelLocale}</label>
@@ -504,8 +504,8 @@ export class DatePickerElement extends LitElement {
           <p><button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button></p>
         </div>
       </div>
-      <div class="rods-date-panels rods-date-picker__large">
-        <div class="rods-date-panels__panel">
+      <div class="rods-date-panels rods-date-picker__desktop">
+        <div class="rods-date-panels__panel rods-date-panels__panel--date">
           <div class="rods-date-panels__panel-header">
             <p id="date-label" class="utrecht-form-label">${selectLocale}</p>
             <p id="date-desc" class="utrecht-form-field-description">${descriptionLocale}</p>
@@ -593,7 +593,7 @@ export class DatePickerElement extends LitElement {
             </table>
           </div>
         </div>
-        <div class="rods-date-panels__panel">
+        <div class="rods-date-panels__panel rods-date-panels__panel--time">
           <div class="rods-date-panels__panel-header">
             <p id="time-label" class="utrecht-form-label">${selectTimeLocale}</p>
             <p id="time-desc" class="utrecht-form-field-description">
@@ -602,7 +602,7 @@ export class DatePickerElement extends LitElement {
           </div>
           <div class="rods-date-panels__panel-body">
             <div
-              class="rods-time-slots"
+              class="rods-time-badge-listbox"
               tabindex="0"
               @keydown=${this.handleKeyDown}
               role="listbox"
@@ -610,7 +610,7 @@ export class DatePickerElement extends LitElement {
               aria-describedby="time-desc"
               aria-activedescendant=${activeDescendant}
             >
-              <ul class="rods-time-slots__list" role="list">
+              <ul class="rods-time-badge-list" role="list">
                 ${times.map(({ date, label, selected }, index, list) => {
                   return html`<li
                     id="option-${index}"
