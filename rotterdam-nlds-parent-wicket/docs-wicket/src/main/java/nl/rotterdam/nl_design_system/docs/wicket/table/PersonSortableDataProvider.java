@@ -73,21 +73,12 @@ public final class PersonSortableDataProvider extends SortableDataProvider<Perso
     private static Comparator<Person> comparatorFor(String property) {
         Comparator<String> nullSafeString = Comparator.nullsFirst(String.CASE_INSENSITIVE_ORDER);
 
-        if (SORT_EMAIL.equals(property)) {
-            return Comparator.comparing(Person::email, nullSafeString)
-                .thenComparing(Person::name, nullSafeString);
-        }
+        return switch (property) {
+            case SORT_EMAIL -> Comparator.comparing(Person::email, nullSafeString);
+            case SORT_NAME -> Comparator.comparing(Person::name, nullSafeString);
+            case SORT_STREET -> Comparator.comparing(Person::street, nullSafeString);
+            case null, default -> throw new IllegalArgumentException("Sort not supported: " + property);
+        };
 
-        if (SORT_NAME.equals(property)) {
-            return Comparator.comparing(Person::name, nullSafeString)
-                .thenComparing(Person::name, nullSafeString);
-        }
-
-        if (SORT_STREET.equals(property)) {
-            return Comparator.comparing(Person::street, nullSafeString)
-                .thenComparing(Person::street, nullSafeString);
-        }
-
-        throw new IllegalArgumentException("Sort not supported: " + property);
     }
 }
