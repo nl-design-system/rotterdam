@@ -10,12 +10,12 @@ class RdCodeBorderTest extends NldsWicketTestCase {
     @Test
     void baseRendersCorrectly() {
         var code = new RdCodeBorder("code")
-            .setMarkup(Markup.of("<code wicket:id='code'>&lt;p&gt;the lazy fox jumps over the quick brown dog&lt;/p&gt;</code>"))
+            .setMarkup(Markup.of("<code wicket:id='code'>&lt;p&gt;the quick brown fox jumps over the lazy dog&lt;/p&gt;</code>"))
             .setMarkupId("code");
 
         // language=HTML
         String expectedHtmlFragment = """
-            <code id='code' class='nl-code' translate='no'>&lt;p&gt;the lazy fox jumps over the quick brown dog&lt;/p&gt;</code>
+            <code id='code' class='nl-code' translate='no'>&lt;p&gt;the quick brown fox jumps over the lazy dog&lt;/p&gt;</code>
             """;
 
         String actualHtmlFragment = ComponentRenderer.renderComponent(code).toString();
