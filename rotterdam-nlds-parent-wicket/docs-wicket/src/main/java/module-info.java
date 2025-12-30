@@ -9,6 +9,7 @@ module nl.rotterdam.nl_design_system.docs.wicket {
     opens nl.rotterdam.nl_design_system.docs.wicket.button;
     opens nl.rotterdam.nl_design_system.docs.wicket.checkbox;
     opens nl.rotterdam.nl_design_system.docs.wicket.checkbox_group;
+    opens nl.rotterdam.nl_design_system.docs.wicket.code;
     opens nl.rotterdam.nl_design_system.docs.wicket.code_block;
     opens nl.rotterdam.nl_design_system.docs.wicket.column_layout;
     opens nl.rotterdam.nl_design_system.docs.wicket.component_examples;

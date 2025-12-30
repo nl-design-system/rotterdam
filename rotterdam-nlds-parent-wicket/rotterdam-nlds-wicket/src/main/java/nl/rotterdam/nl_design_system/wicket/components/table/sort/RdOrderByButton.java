@@ -3,7 +3,6 @@ package nl.rotterdam.nl_design_system.wicket.components.table.sort;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdAjaxButton;
 import nl.rotterdam.nl_design_system.wicket.components.button.RdButtonAppearance;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortState;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.ISortStateLocator;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.OrderByLink;
@@ -90,7 +89,7 @@ public class RdOrderByButton<S> extends RdAjaxButton
 
     @Override
     public void onSubmit(AjaxRequestTarget target) {
-        super.onSubmit();
+        super.onSubmit(target);
 		sort();
 		onSortChanged(target);
 	}

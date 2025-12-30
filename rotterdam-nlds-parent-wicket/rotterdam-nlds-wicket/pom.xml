@@ -4,7 +4,7 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>0.0.7-SNAPSHOT</version>
+        <version>0.0.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>rotterdam-nlds-wicket</artifactId>
@@ -163,6 +163,14 @@
                 <directory>node_modules/</directory>
                 <includes>
                     <include>@utrecht/data-list-css/dist/*.min.css</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/code</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@nl-design-system-candidate/code-css/dist/code.css</include>
                 </includes>
             </resource>
             <resource>
