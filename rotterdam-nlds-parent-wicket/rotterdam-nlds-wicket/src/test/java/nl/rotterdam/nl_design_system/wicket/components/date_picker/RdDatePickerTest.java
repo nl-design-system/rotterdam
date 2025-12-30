@@ -8,10 +8,27 @@ import org.apache.wicket.model.util.CollectionModel;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class RdDatePickerTest extends NldsWicketTestCase {
+
+    @Test
+    void optionsAreFormattedAsDesiredByComponent() {
+        var expected = """
+            [{ "value": "2026-01-01T09:00" }, { "value": "2026-01-01T10:00" }]"""
+            .trim();
+
+        String jsonString = RdDatePicker.toJson(List.of(
+            LocalDateTime.of(2026, 1, 1, 9, 0),
+            LocalDateTime.of(2026, 1, 1, 10, 0))
+        );
+
+        assertEquals(expected, jsonString);
+    }
 
     @Test
     void renderMinimal() {

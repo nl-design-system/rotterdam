@@ -96,18 +96,18 @@ public class RdDatePicker extends AbstractTextComponent<LocalDateTime> {
             (() => {
               const el = document.getElementById('%s');
               if (!el) return;
-              el.availableDateTimes = %s;
+              el.options = %s;
             })();
             """.formatted(getMarkupId(), toJson(selectableTimesObject));
 
         response.render(OnDomReadyHeaderItem.forScript(js));
     }
 
-    private String toJson(Collection<LocalDateTime> selectableTimesObject) {
+    static String toJson(Collection<LocalDateTime> selectableTimesObject) {
 
         return new TreeSet<>(selectableTimesObject).stream()
-            .map(entry -> "\"" + DATE_TIME_CONVERTER.convertToString(entry, null) + "\"")
-            .collect(java.util.stream.Collectors.joining(",", "[", "]"));
+            .map(entry -> "{ \"value\": \"" + DATE_TIME_CONVERTER.convertToString(entry, null) + "\" }")
+            .collect(java.util.stream.Collectors.joining(", ", "[", "]"));
     }
 
     private IModel<@Nullable Collection<LocalDateTime>> availableDateTimes = new CollectionModel<>();
