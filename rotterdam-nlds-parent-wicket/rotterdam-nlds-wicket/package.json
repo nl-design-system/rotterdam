@@ -25,6 +25,7 @@
     "@gemeente-rotterdam/design-tokens": "workspace:*",
     "@gemeente-rotterdam/date-picker-element": "workspace:*",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
+    "@nl-design-system-candidate/code-css": "2.0.4",
     "@nl-design-system-candidate/code-block-css": "1.1.4",
     "@nl-design-system-candidate/data-badge-css": "1.0.4",
     "@nl-design-system-candidate/heading-css": "1.1.2",
