@@ -1,32 +1,25 @@
 package nl.rotterdam.nl_design_system.docs.wicket.table;
 
+import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortParam;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
 
 import java.io.Serial;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 /**
- * Wicket 10 / Java 21 list-backed sortable provider for Person.
- *
- * Sort properties:
- *  - "name"
- *  - "email"
+ * List-backed sortable provider for Person.
  */
 public final class PersonSortableDataProvider extends SortableDataProvider<Person, String> {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    // TODO use enum.
-    public static final String SORT_NAME  = "name";
+    public static final String SORT_NAME = "name";
     public static final String SORT_EMAIL = "email";
     public static final String SORT_STREET = "street";
 
@@ -41,9 +34,9 @@ public final class PersonSortableDataProvider extends SortableDataProvider<Perso
     @Override
     public Iterator<? extends Person> iterator(long first, long count) {
         return sortedStream()
-                .skip(first)
-                .limit(count)
-                .iterator();
+            .skip(first)
+            .limit(count)
+            .iterator();
     }
 
     @Override
@@ -61,24 +54,29 @@ public final class PersonSortableDataProvider extends SortableDataProvider<Perso
     private Stream<Person> sortedStream() {
         SortParam<String> sort = getSort();
 
-        Comparator<Person> comparator = comparatorFor(sort == null ? null : sort.getProperty());
+        if (sort == null) {
+            return persons.stream();
+        }
 
-        if (sort != null && !sort.isAscending()) {
+        Comparator<Person> comparator = comparatorFor(sort.getProperty());
+
+        if (!sort.isAscending()) {
             comparator = comparator.reversed();
         }
 
         return persons.stream().sorted(comparator);
     }
 
+    private static final Map<String, Function<Person, String>> sortFunctions =
+        Map.of(
+            SORT_EMAIL, Person::email,
+            SORT_NAME, Person::name,
+            SORT_STREET, Person::street
+        );
+
     private static Comparator<Person> comparatorFor(String property) {
-        Comparator<String> nullSafeString = Comparator.nullsFirst(String.CASE_INSENSITIVE_ORDER);
-
-        return switch (property) {
-            case SORT_EMAIL -> Comparator.comparing(Person::email, nullSafeString);
-            case SORT_NAME -> Comparator.comparing(Person::name, nullSafeString);
-            case SORT_STREET -> Comparator.comparing(Person::street, nullSafeString);
-            case null, default -> throw new IllegalArgumentException("Sort not supported: " + property);
-        };
-
+        Function<Person, String> function = sortFunctions.get(property);
+        Objects.requireNonNull(function, () -> "Unknown property: " + property);
+        return Comparator.comparing(function, Comparator.nullsFirst(String.CASE_INSENSITIVE_ORDER));
     }
 }
