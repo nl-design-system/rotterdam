@@ -1,10 +1,17 @@
 package nl.rotterdam.nl_design_system.wicket.components.code;
 
+import nl.rotterdam.nl_design_system.wicket.components.component_state.NlComponentState;
 import org.apache.wicket.markup.html.border.Border;
 import org.apache.wicket.model.IModel;
 import org.jspecify.annotations.Nullable;
 
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.KERNTEAM;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.CANDIDATE;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
+
+@NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = KERNTEAM)
 public class RdCodeBorder extends Border {
+
     /**
      * Creates a new {@link RdCodeBorder} with the given component id.
      *
