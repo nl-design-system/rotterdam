@@ -5,6 +5,7 @@ import nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import org.apache.wicket.Component;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.util.CollectionModel;
 
@@ -66,9 +67,10 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
             LocalDateTime.of(2026, 1, 16, 16, 0)
         );
 
+        IModel<LocalDateTime> model = Model.of();
         return new RdDatePicker(
             "datePickerWithAvailableDateTimes",
-            DefaultModels.NULL_LOCAL_DATE_TIME
+            model
         )
         .withAvailableDateTimes(new CollectionModel<>(selectableTimes))
         .setRequired(true);
