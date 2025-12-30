@@ -98,3 +98,34 @@ export const getDatesBetween = (from: Date, to: Date) => {
   }
   return dates;
 };
+
+export const getRelativeMonth = (date: Date, offset: number): Date => {
+  const next = new Date(date.getTime());
+  next.setMonth(next.getMonth() + offset);
+  return next;
+};
+
+export const getNextMonth = (date: Date): Date => getRelativeMonth(date, 1);
+
+export const getPrevMonth = (date: Date): Date => getRelativeMonth(date, -1);
+
+export const getStartOfMonth = (date: Date) =>
+  new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
+export const getEndOfMonth = (date: Date) =>
+  // Return the first moment in the next month, minus one millisecond
+  new Date(date.getFullYear(), date.getMonth() + 1, date.getDate(), 0, 0, 0, -1);
+
+export const isBeforeMonth = (month: Date, date: Date): boolean => date.getTime() < getStartOfMonth(month).getTime();
+export const isAfterMonth = (month: Date, date: Date): boolean => date.getTime() > getEndOfMonth(month).getTime();
+
+export const getMinDate = (dateA: Date, dateB: Date) => {
+  const a = dateA.getTime();
+  const b = dateB.getTime();
+  return a < b ? dateA : dateB;
+};
+
+export const getMaxDate = (dateA: Date, dateB: Date) => {
+  const a = dateA.getTime();
+  const b = dateB.getTime();
+  return a > b ? dateA : dateB;
+};

@@ -15,8 +15,16 @@ describe(`<rods-date-picker>`, () => {
     expect(page.getByRole('button', { name: 'Vorige maand' })).toBeInTheDocument();
   });
 
+  it('has metadata that indicates a previous button', async () => {
+    expect(page.getByRole('button', { name: 'Vorige maand' })).toHaveAttribute('rel', 'prev');
+  });
+
   it('renders a button to view next month', async () => {
     expect(page.getByRole('button', { name: 'Volgende maand' })).toBeInTheDocument();
+  });
+
+  it('has metadata that indicates a next button', async () => {
+    expect(page.getByRole('button', { name: 'Volgende maand' })).toHaveAttribute('rel', 'next');
   });
 });
 
@@ -97,7 +105,8 @@ describe(`<rods-date-picker value="1970-01-01>`, () => {
     beforeEach(() => {
       document.body.innerHTML = `<rods-date-picker data-testid="custom-element" times='[{ "date": "2025-12-31T09:00", "label": "ochtend" }]'"></rods-date-picker>`;
     });
-    it.only('can be activated to show timeslots for that day', async () => {
+
+    it('can be activated to show timeslots for that day', async () => {
       const button = page.getByRole('button', { name: '31', exact: true });
       expect(button).toBeInTheDocument();
       expect(button).not.toBeDisabled();
@@ -111,6 +120,116 @@ describe(`<rods-date-picker value="1970-01-01>`, () => {
       expect(listbox).toBeInTheDocument();
 
       const option = page.getByRole('option', { name: 'ochtend' });
+      expect(option).toBeInTheDocument();
+      expect(option).toHaveAttribute('aria-selected', 'false');
+
+      await option.click();
+
+      expect(option).toHaveAttribute('aria-selected', 'true');
+    });
+  });
+
+  describe('one time slot available', async () => {
+    beforeEach(() => {
+      document.body.innerHTML = `<rods-date-picker data-testid="custom-element" times='[{ "date": "2025-12-31T09:00", "label": "ochtend" }]'"></rods-date-picker>`;
+    });
+
+    it('renders a disabled button to view previous month', async () => {
+      const prevButton = page.getByRole('button', { name: 'Vorige maand', disabled: true });
+      expect(prevButton).toBeInTheDocument();
+    });
+
+    it('renders a disabled button to view next month', async () => {
+      const nextButton = page.getByRole('button', { name: 'Volgende maand', disabled: true });
+      expect(nextButton).toBeInTheDocument();
+    });
+
+    it('can be activated to show timeslots for that day, and one option can be selected', async () => {
+      const button = page.getByRole('button', { name: '31', exact: true });
+      expect(button).toBeInTheDocument();
+      expect(button).not.toBeDisabled();
+
+      await button.click();
+
+      const text = page.getByText('Beschikbare tijdsloten: woensdag 31 december 2025');
+      expect(text).toBeInTheDocument();
+
+      const listbox = page.getByRole('listbox', { name: 'Selecteer een tijdslot voor' });
+      expect(listbox).toBeInTheDocument();
+
+      const singleOption = listbox.getByRole('option');
+      expect(singleOption).toBeInTheDocument();
+
+      const option = listbox.getByRole('option', { name: 'ochtend' });
+      expect(option).toBeInTheDocument();
+      expect(option).toHaveAttribute('aria-selected', 'false');
+
+      await option.click();
+
+      expect(option).toHaveAttribute('aria-selected', 'true');
+    });
+  });
+
+  describe('time slots available in previous, current and next month', async () => {
+    beforeEach(() => {
+      document.body.innerHTML = `<rods-date-picker data-testid="custom-element" times='[{ "date": "2025-11-02T13:00", "label": "middag" }, { "date": "2025-12-31T09:00", "label": "ochtend" },{ "date": "2026-01-15T20:00", "label": "avond" }]'"></rods-date-picker>`;
+    });
+
+    it.todo(
+      'renders a button to view the previous month, the grid for the previous month contains one option, and the month before that is disabled',
+      async () => {
+        const prevButton = page.getByRole('button', { name: 'Vorige maand', disabled: false });
+        expect(prevButton).toBeInTheDocument();
+        await prevButton.click();
+
+        const grid = page.getByRole('grid', { name: 'november 2025', exact: true });
+        expect(grid).toBeInTheDocument();
+
+        const disabledPrevButton = page.getByRole('button', { name: 'Vorige maand', disabled: true });
+        expect(disabledPrevButton).toBeInTheDocument();
+
+        // const button = grid.getByRole('button', { name: '1', disabled: false, exact: true });
+
+        // await button.click();
+
+        // const listbox = page.getByRole('listbox', { name: 'Selecteer een tijdslot voor', disabled: false });
+        // expect(listbox).toBeInTheDocument();
+
+        // const singleOption = listbox.getByRole('option');
+        // expect(singleOption).toBeInTheDocument();
+      },
+    );
+
+    it.todo('renders a disabled button to view next month', async () => {
+      const nextButton = page.getByRole('button', { name: 'Volgende maand', disabled: false });
+      expect(nextButton).toBeInTheDocument();
+
+      await nextButton.click();
+
+      const grid = page.getByRole('grid', { name: 'januari 2026', exact: true });
+      expect(grid).toBeInTheDocument();
+
+      const disabledNextutton = page.getByRole('button', { name: 'Volgende maand', disabled: true });
+      expect(disabledNextutton).toBeInTheDocument();
+    });
+
+    it.skip('can be activated to show timeslots for that day, and one option can be selected', async () => {
+      const button = page.getByRole('button', { name: '31', exact: true });
+      expect(button).toBeInTheDocument();
+      expect(button).not.toBeDisabled();
+
+      await button.click();
+
+      const text = page.getByText('Beschikbare tijdsloten: woensdag 31 december 2025');
+      expect(text).toBeInTheDocument();
+
+      const listbox = page.getByRole('listbox', { name: 'Selecteer een tijdslot voor' });
+      expect(listbox).toBeInTheDocument();
+
+      const singleOption = listbox.getByRole('option');
+      expect(singleOption).toBeInTheDocument();
+
+      const option = listbox.getByRole('option', { name: 'ochtend' });
       expect(option).toBeInTheDocument();
       expect(option).toHaveAttribute('aria-selected', 'false');
 

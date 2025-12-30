@@ -397,3 +397,7 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
   border-color: currentColor;
   border-width: 2px;
 }
+
+.hidden-description {
+  display: none;
+}

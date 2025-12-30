@@ -45,7 +45,13 @@ Testing:
 
 Reuse as much of the NL Design System components as possible:
 
-- utrecht-textbox
-- utrecht-listbox
-- utrecht-form-field
-- utrecht-form-label
+- `utrecht-button`
+- `utrecht-form-field`
+- `utrecht-form-label`
+- `utrecht-icon`
+- `utrecht-listbox`
+- `utrecht-textbox`
+
+CSS:
+
+- Use BEM class names

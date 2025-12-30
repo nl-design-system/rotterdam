@@ -14,6 +14,12 @@ import {
   dayOfWeekLocale,
   getDatesBetween,
   getDaysInMonth,
+  getMaxDate,
+  getMinDate,
+  getNextMonth,
+  getPrevMonth,
+  isAfterMonth,
+  isBeforeMonth,
   isSameDate,
   isSameMonth,
   monthLocale,
@@ -236,30 +242,11 @@ export class DatePickerElement extends LitElement {
       this.date,
     );
 
-    const getStartOfMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
-    const getEndOfMonth = (date: Date) =>
-      // Return the first moment in the next month, minus one millisecond
-      new Date(date.getFullYear(), date.getMonth() + 1, date.getDate(), 0, 0, 0, -1);
-
-    const isBeforeMonth = (month: Date, date: Date): boolean => date.getTime() < getStartOfMonth(month).getTime();
-    const isAfterMonth = (month: Date, date: Date): boolean => date.getTime() > getEndOfMonth(month).getTime();
-
     const min = this.getAttribute('min');
     const max = this.getAttribute('max');
     const minDate = min ? new Date(min) : null;
     const maxDate = max ? new Date(max) : null;
 
-    const getMinDate = (dateA: Date, dateB: Date) => {
-      const a = dateA.getTime();
-      const b = dateB.getTime();
-      return a < b ? dateA : dateB;
-    };
-
-    const getMaxDate = (dateA: Date, dateB: Date) => {
-      const a = dateA.getTime();
-      const b = dateB.getTime();
-      return a > b ? dateA : dateB;
-    };
     this._visibleTimes = sortedTimes;
 
     const monthOptions: { label: string; selected?: boolean; date: Date }[] = [
@@ -306,11 +293,16 @@ export class DatePickerElement extends LitElement {
         };
       });
 
+    const formatMonth = (date: Date) => `${monthLocale(date.getMonth())} ${date.getFullYear()}`;
+    const formattedCurrentMonth = formatMonth(this._visibleDate);
+    const formattedPrevMonth = formatMonth(getPrevMonth(this._visibleDate));
+    const formattedNextMonth = formatMonth(getNextMonth(this._visibleDate));
     const mobileTimeOptions = times;
     const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
     const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
     const hasPrevMonth = minBrowsableDate ? isBeforeMonth(this._visibleDate, minBrowsableDate) : true;
     const hasNextMonth = maxBrowsableDate ? isAfterMonth(this._visibleDate, maxBrowsableDate) : true;
+    console.log({ hasNextMonth, hasPrevMonth, maxBrowsableDate, minBrowsableDate, visibleDate: this._visibleDate });
     const showTimePlaceholder =
       times.length === 0; /* TODO: Replace with logic to only show when no date has been selected */
     const output = html`<div class="rods-date-picker">
@@ -520,18 +512,19 @@ export class DatePickerElement extends LitElement {
           </div>
           <div class="rods-date-panels__panel-body">
             <div class="rods-button-navigation">
-              <div class="rods-button-navigation__current" id="current-month-label">
-                ${monthLocale(this._visibleDate.getMonth())} ${this._visibleDate.getFullYear()}
-              </div>
+              <div class="rods-button-navigation__current" id="current-month-label">${formattedCurrentMonth}</div>
               <button
                 aria-labelledby="prev-month-label"
+                aria-describedby="prev-month-description"
                 rel="prev"
                 type="button"
-                disabled=${hasPrevMonth ? nothing : 'true'}
+                aria-disabled=${hasPrevMonth ? nothing : 'true'}
                 tabindex=${hasPrevMonth ? nothing : '0'}
                 class=${clsx('utrecht-button', { 'utrecht-button--disabled': !hasPrevMonth })}
                 @click=${() => {
-                  if (hasPrevMonth) this.showPreviousMonth();
+                  if (hasPrevMonth) {
+                    this.showPreviousMonth();
+                  }
                 }}
               >
                 <span class="utrecht-icon"
@@ -548,15 +541,19 @@ export class DatePickerElement extends LitElement {
                       d="M11.8285 16L22.4351 5.3941L21.0208 3.97998L9.00003 16L21.0208 28.02L22.4351 26.6059L11.8285 16Z"
                     /></svg></span
                 ><span id="prev-month-label" class="utrecht-button__label">${previousLocale}</span>
+                <span class="hidden-description" id="prev-month-description">${formattedPrevMonth}</span>
               </button>
               <button
                 aria-labelledby="next-month-label"
+                aria-describedby="next-month-description"
                 rel="next"
                 type="button"
-                disabled=${hasNextMonth ? nothing : 'true'}
+                aria-disabled=${hasNextMonth ? nothing : 'true'}
                 class=${clsx('utrecht-button', { 'utrecht-button--disabled': !hasNextMonth })}
                 @click=${() => {
-                  if (hasNextMonth) this.showNextMonth();
+                  if (hasNextMonth) {
+                    this.showNextMonth();
+                  }
                 }}
               >
                 <span id="next-month-label" class="utrecht-button__label">${nextLocale}</span>
@@ -574,6 +571,7 @@ export class DatePickerElement extends LitElement {
                       d="M20.6066 16L10 5.3934L11.4142 3.97919L23.435 16L11.4142 28.0208L10 26.6066L20.6066 16Z"
                     /></svg
                 ></span>
+                <span class="hidden-description" id="next-month-description">${formattedNextMonth}</span>
               </button>
             </div>
 
@@ -620,7 +618,7 @@ export class DatePickerElement extends LitElement {
                     role="option"
                     @click2=${this.handleClickTime}
                     @click=${() => this.selectTime(date)}
-                    aria-selected=${selected ? 'true' : nothing}
+                    aria-selected=${selected ? 'true' : 'false'}
                     aria-posinset=${index + 1}
                     aria-setsize=${list.length}
                   >
