@@ -10,18 +10,27 @@
     "date time"
     "footer footer";
 }
+
 .rods-date-panels__panel {
-  border-width: 1px;
+  border-width: var(--rods-date-picker-border-width);
   border-style: solid;
   border-color: var(--rods-date-picker-border-color);
 }
 
+/**
+ * The panel with the date picker grid goes left
+ */
 .rods-date-panels__panel--date {
   grid-area: date;
 }
 
+/**
+ * The panel with the time slot picker goes right
+ */
 .rods-date-panels__panel--time {
   grid-area: time;
+
+  /* disable the border for this panel, so there is only one 1px border between the panels */
   border-inline-start-width: 0;
 }
 
@@ -30,27 +39,32 @@
   padding-inline: var(--rods-date-picker-header-padding-inline);
   padding-block: var(--rods-date-picker-header-padding-block);
 }
+
 .rods-date-panels__panel-header > p {
   margin-block: 0;
 }
+
 .rods-date-panels__panel-body {
   padding-inline: var(--rods-date-picker-body-padding-inline);
   padding-block: var(--rods-date-picker-body-padding-block);
 }
+
 .rods-date-panels__footer {
   grid-area: footer;
   inline-size: 100%;
-  border-color: #cad6da;
+  border-color: var(--rods-date-picker-footer-background-color);
   border-style: solid;
-  padding-inline: 24px;
-  padding-block: 8px;
+  padding-inline: var(--rods-date-picker-footer-padding-inline);
+  padding-block: var(--rods-date-picker-footer-padding-block);
   box-sizing: border-box;
 
+  /* disable the `border-block-start` for this panel, so there is only one 1px border between the footer and the date/time panels */
   border-block-start-width: 0;
-  border-inline-end-width: 1px;
-  border-inline-start-width: 1px;
-  border-block-end-width: 1px;
+  border-inline-end-width: var(--rods-date-picker-border-width);
+  border-inline-start-width: var(--rods-date-picker-border-width);
+  border-block-end-width: var(--rods-date-picker-border-width);
 }
+
 .rods-time-badge-list {
   margin-block-end: 0; /* reset <ul> */
   margin-block-start: 0; /* reset <ul> */
@@ -67,72 +81,18 @@
   /* 5 columns of time slots */
   min-inline-size: calc(5 * var(--rods-time-badge-min-inline-size) + 4 * var(--rods-badge-list-column-gap, 1ch));
 }
+
 .rods-time-badge__slot {
   min-inline-size: 4em;
   border-color: var(--rods-time-badge-color, silver);
   border-style: solid;
   border-width: 1px;
 }
-.rods-time-badge {
-  text-align: center;
 
-  /* code taken from nl-data-badge */
-  /* npm: @nl-design-system-candidate/data-badge-css@1.0.3 */
-  background-color: var(--rods-time-badge-background-color);
-  border-color: var(--rods-time-badge-border-color, currentColor);
-  border-radius: var(--rods-time-badge-border-radius, 0);
-  border-style: solid;
-  border-width: var(--rods-time-badge-border-width, 1px);
-  box-sizing: border-box;
-  color: var(--rods-time-badge-color);
-  display: inline-block;
-  font-family: var(--rods-time-badge-font-family);
-  font-size: var(--rods-time-badge-font-size);
-  font-weight: var(--rods-time-badge-font-weight);
-  line-height: var(--rods-time-badge-line-height);
-  /* max-block-size: max-content; */
-  /* max-inline-size: max-content; */
-  min-block-size: var(--rods-time-badge-min-block-size, 24px);
-  min-inline-size: var(--rods-time-badge-min-inline-size, 24px);
-  padding-block: var(--rods-time-badge-padding-block);
-  padding-inline: var(--rods-time-badge-padding-inline);
-  text-decoration: none; /* no inheritance */
-  user-select: none; /* behave like a button */
-  -webkit-user-select: none; /* behave like a button */
-  cursor: default; /* behave like a button */
-}
-.rods-time-badge--selected {
-  background-color: var(--rods-time-badge-selected-background-color, var(--rods-time-badge-background-color));
-  border-color: var(--rods-time-badge-selected-border-color, var(--rods-time-badge-border-color, currentColor));
-  color: var(--rods-time-badge-selected-color, var(--rods-time-badge-color));
-}
-.rods-time-badge--selected b {
-  display: contents;
-}
-
-@media (forced-colors: active) {
-  .rods-time-badge {
-    --rods-time-badge-background-color: field;
-    --rods-time-badge-color: fieldtext;
-    --rods-time-badge-hover-background-color: Highlight;
-    --rods-time-badge-hover-color: HighlightText;
-    --rods-time-badge-active-background-color: Highlight;
-    --rods-time-badge-active-color: HighlightText;
-    --rods-time-badge-disabled-background-color: field;
-    --rods-time-badge-disabled-color: GrayText;
-    --rods-time-badge-selected-background-color: Highlight;
-    --rods-time-badge-selected-color: HighlightText;
-    --rods-time-badge-selected-hover-background-color: Highlight;
-    --rods-time-badge-selected-hover-color: HighlightText;
-    --rods-time-badge-selected-disabled-background-color: GrayText;
-    --rods-time-badge-selected-disabled-color: field;
-
-    /* Fix rendering glitch in Google Chrome, where the text became black on a black background */
-    forced-color-adjust: none;
-  }
-}
-
-:focus-visible {
+/**
+ * Use a consistent focus ring, even in the Shadow DOM.
+ */
+.rods-date-picker :focus-visible {
   --_utrecht-focus-ring-box-shadow: 0 0 0 var(--utrecht-focus-outline-width, 0)
     var(--utrecht-focus-inverse-outline-color, transparent);
 
@@ -149,82 +109,104 @@
 }
 
 .utrecht-calendar__table-days-item-day {
-  --utrecht-button-min-inline-size: 64px;
-  --utrecht-button-min-block-size: 64px;
-  --utrecht-button-font-weight: 700;
-  --utrecht-button-font-size: 20px;
+  --utrecht-button-background-color: var(--rods-date-picker-grid-cell-background-color);
+  --utrecht-button-border-color: var(--rods-date-picker-grid-cell-border-color);
+  --utrecht-button-border-width: var(--rods-date-picker-grid-cell-border-width);
+  --utrecht-button-color: var(--rods-date-picker-grid-cell-color);
+  --utrecht-button-font-size: var(--rods-date-picker-grid-cell-font-size);
+  --utrecht-button-font-weight: var(--rods-date-picker-grid-cell-font-weight);
+  --utrecht-button-min-block-size: var(--rods-date-picker-grid-cell-min-block-size);
+  --utrecht-button-min-inline-size: var(--rods-date-picker-grid-cell-min-inline-size);
 
-  --utrecht-button-border-color: #7c8b90;
-  --utrecht-button-background-color: white;
-  --utrecht-button-border-width: 0;
-  --utrecht-button-color: #404b4f;
+  /* hover state: no hover effect, to avoid supporting those additional tokens */
+  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
   --utrecht-button-hover-border-color: var(--utrecht-button-border-color);
   --utrecht-button-hover-color: var(--utrecht-button-color);
-  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
 
-  --utrecht-button-pressed-border-color: var(--rods-color-base-green);
-  --utrecht-button-pressed-color: var(--rods-color-base-white);
-  --utrecht-button-pressed-background-color: var(--rods-color-base-green);
+  /* disabled state */
+  --utrecht-button-disabled-background-color: var(--rods-date-picker-grid-cell-disabled-background-color);
+  --utrecht-button-disabled-border-color: var(--rods-date-picker-grid-cell-disabled-border-color);
+  --utrecht-button-disabled-color: var(--rods-date-picker-grid-cell-disabled-color);
+  --utrecht-button-disabled-font-weight: var(--rods-date-picker-grid-cell-disabled-font-weight);
 
-  --utrecht-button-disabled-border-color: transparent;
-  --utrecht-button-disabled-color: #65757b;
-  --utrecht-button-disabled-background-color: #cad6da;
-  --utrecht-button-disabled-font-weight: normal;
+  /* selected state */
+  --utrecht-button-pressed-background-color: var(--rods-date-picker-grid-cell-selected-background-color);
+  --utrecht-button-pressed-border-color: var(--rods-date-picker-grid-cell-selected-border-color);
+  --utrecht-button-pressed-color: var(--rods-date-picker-grid-cell-selected-color);
 }
 
-table {
+.utrecht-calendar__table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-td {
   padding: 0;
-  border: 1px solid #cad6da;
+  border-width: var(--rods-date-picker-grid-border-width);
+  border-style: solid;
+  border-color: var(--rods-date-picker-grid-border-color);
 }
 
-[rel="next"],
-[rel="prev"] {
-  --utrecht-button-padding-inline-end: 0;
-  --utrecht-button-padding-block-end: 0;
-  --utrecht-button-padding-inline-start: 0;
-  --utrecht-button-padding-block-start: 0;
-  --utrecht-button-icon-size: 24px;
-  --utrecht-button-border-color: #7c8b90;
+.utrecht-button--rods-icon-only {
   --utrecht-button-background-color: white;
+  --utrecht-button-border-color: #7c8b90;
   --utrecht-button-border-width: 1px;
   --utrecht-button-color: #404b4f;
+  --utrecht-button-icon-size: 24px;
+  --utrecht-button-padding-block-end: 0;
+  --utrecht-button-padding-block-start: 0;
+  --utrecht-button-padding-inline-end: 0;
+  --utrecht-button-padding-inline-start: 0;
+
+  /* hover state */
+  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
   --utrecht-button-hover-border-color: var(--utrecht-button-border-color);
   --utrecht-button-hover-color: var(--utrecht-button-color);
-  --utrecht-button-hover-background-color: var(--utrecht-button-background-color);
 
+  /* disabled state */
+  --utrecht-button-disabled-background-color: #cad6da;
   --utrecht-button-disabled-border-color: transparent;
   --utrecht-button-disabled-color: var(--utrecht-button-color);
-  --utrecht-button-disabled-background-color: #cad6da;
 }
 
-[rel="next"] .utrecht-button__label,
-[rel="prev"] .utrecht-button__label {
-  /* */
+/**
+ * Do not display the label.
+ *
+ * For the `rods-icon-only` variant the label is associated using `aria-labelledby`, so the label does not have to use a `sr-only` implementation.
+ */
+.utrecht-button--rods-icon-only .utrecht-button__label {
   display: none;
 }
 
-.rods-button-navigation {
+/**
+ * Display a bar with a previous and next button, with a caption in between.
+ */
+.rods-date-picker__grid-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-block-end: 16px;
 }
-.rods-button-navigation [rel="prev"] {
+
+/**
+ * Previous button is first
+ */
+.rods-date-picker__grid-navigation [rel="prev"] {
   order: 1;
 }
-.rods-button-navigation [rel="next"] {
+
+/**
+ * Next button is last
+ */
+.rods-date-picker__grid-navigation [rel="next"] {
   order: 3;
 }
-.rods-button-navigation__current {
+
+/**
+ * Caption for current month is second
+ */
+.rods-date-picker__grid-caption {
   order: 2;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 700;
+  font-size: var(--rods-date-picker-grid-caption-font-size);
+  line-height: var(--rods-date-picker-grid-caption-line-height);
+  font-weight: var(--rods-date-picker-grid-caption-font-weight);
 }
 
 .rods-time-placeholder {
@@ -232,7 +214,7 @@ td {
   justify-content: center;
   align-items: center;
   inline-size: 100%;
-  height: 100%;
+  block-size: 100%;
 }
 
 .placeholder-cell {
@@ -247,12 +229,13 @@ p.utrecht-form-label {
   margin-block-end: 8px;
 }
 
-th {
-  color: #65757b;
-  font-weight: normal;
-  padding-block: 4px;
-  font-size: 24px;
+.rods-date-picker__grid-column-header {
+  color: var(--rods-date-picker-grid-column-header-color);
+  font-weight: var(--rods-date-picker-grid-column-header-font-weight);
+  padding-block: var(--rods-date-picker-grid-column-header-padding-block);
+  font-size: var(--rods-date-picker-grid-column-header-font-size);
 }
+
 .utrecht-button--pressed {
   --utrecht-button-hover-background-color: var(--utrecht-button-pressed-background-color);
   --utrecht-button-hover-color: var(--utrecht-button-pressed-color);
@@ -289,6 +272,10 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
   --utrecht-icon-size: 24px;
   text-align: start;
   display: inline-flex;
+}
+
+.utrecht-textbox {
+  --utrecht-icon-color: var(--rods-date-picker-input-icon-color, currentColor);
 }
 
 .utrecht-textbox .utrecht-icon {
@@ -341,6 +328,7 @@ td:has(.utrecht-calendar__table-days-item-day--readonly) {
   flex-direction: column;
   row-gap: 24px;
 }
+
 .rods-date-picker__mobile-summary {
   padding: 24px;
   border-style: solid;

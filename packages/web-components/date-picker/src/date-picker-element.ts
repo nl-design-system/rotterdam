@@ -27,17 +27,16 @@ import {
   TimeOption,
 } from './date-picker-utils';
 import datePickerCSS from './date-picker.css?raw';
+import timeBadgeCSS from './time-badge.css?raw';
 
 export const tag = 'rods-date-picker';
 
 @customElement(tag)
 export class DatePickerElement extends LitElement {
-  _internals = this.attachInternals();
-  date: Date = new Date();
-
   static formAssociated = true;
   static override readonly styles = [
     unsafeCSS(datePickerCSS),
+    unsafeCSS(timeBadgeCSS),
     unsafeCSS(buttonCSS),
     unsafeCSS(drawerCSS),
     unsafeCSS(formFieldCSS),
@@ -47,7 +46,11 @@ export class DatePickerElement extends LitElement {
     unsafeCSS(listboxCSS),
     unsafeCSS(textboxCSS),
   ];
-  dates: DateOption[] = [];
+
+  _internals = this.attachInternals();
+
+  /* `Date` object for the current `value` */
+  _dateValue: Date = new Date();
 
   _times: TimeOption[] = [];
 
@@ -91,13 +94,18 @@ export class DatePickerElement extends LitElement {
   @queryAsync('[aria-selected="true"]')
   currentSelected: Promise<HTMLElement | null> = Promise.resolve(null);
 
+  /**
+   * When browsing through months and days, this `Date` represents the date the user currently chooses to view.
+   * It can be configured via `_selectDate()`
+   */
   _visibleDate = new Date();
-  _visibleTimes: TimeOption[] = [];
+
+  _dynamic = false;
+
   /**
    * Set to `true` to flag that the values in `times` are not complete,
    * and they can be updates based on the `visibleDateChange` event.
    */
-  _dynamic = false;
   @property()
   get dynamic() {
     return this._dynamic;
@@ -119,51 +127,82 @@ export class DatePickerElement extends LitElement {
     }
   }
 
+  /**
+   * This is the `value` for the form associated element.
+   */
   @property({ reflect: true })
   get value() {
-    const removeTime = (isoString: string) => isoString.replace(/[TZ].+$/, '');
-    return removeTime(this.date.toISOString());
+    return this._dateValue ? this._dateValue.toISOString() : '';
   }
 
   set value(value: unknown) {
     if (typeof value === 'string' || typeof value === 'number') {
-      this.date = new Date(value);
+      this._dateValue = new Date(value);
     }
   }
 
+  i18n = {
+    nl: {
+      afspraakLocale: 'Uw afspraak:',
+      chooseDatumLabelLocale: 'Kies een datum:',
+      chooseLabelFirstDescLocale: 'Kies eerst een datum.',
+      chooseTimeLabelLocale: 'Kies een tijdslot:',
+      confirmDayLocale: 'Bevestig dag',
+      confirmLocale: 'Bevestig uw afspraak',
+      confirmMonthLocale: 'Bevestig maand',
+      confirmTimeLocale: 'Bevestig tijdslot',
+      dayInLocale: 'Selecteer een dag in',
+      descriptionLocale: 'U kunt alleen beschikbare dagen selecteren.',
+      hourSuffixLocal: 'uur',
+      nextLocale: 'Volgende maand',
+      previousLocale: 'Vorige maand',
+      selectLocale: 'Selecteer een datum:',
+      selectMonthLocale: 'Selecteer een maand',
+      selectTimeLocale: 'Selecteer een tijdslot voor ',
+      timeDescLocale: 'Beschikbare tijdsloten:',
+      todayLocale: 'Vandaag',
+    },
+  };
+
   override render() {
-    const selectLocale = 'Selecteer een datum:';
-    const descriptionLocale = 'U kunt alleen beschikbare dagen selecteren.';
-    const todayLocale = 'Vandaag';
-    const selectTimeLocale = 'Selecteer een tijdslot voor ';
-    const timeDescLocale = 'Beschikbare tijdsloten:';
-    const afspraakLocale = 'Uw afspraak:';
-    const confirmLocale = 'Bevestig uw afspraak';
-    const previousLocale = 'Vorige maand';
-    const chooseDatumLabelLocale = 'Kies een datum:';
-    const chooseTimeLabelLocale = 'Kies een tijdslot:';
-    const chooseLabelFirstDescLocale = 'Kies eerst een datum.';
-    const selectMonthLocale = 'Selecteer een maand';
-    const dayInLocale = 'Selecteer een dag in';
-    const confirmMonthLocale = 'Bevestig maand';
-    const confirmDayLocale = 'Bevestig dag';
-    const confirmTimeLocale = 'Bevestig tijdslot';
-    const nextLocale = 'Volgende maand';
-    const hourSuffixLocal = 'uur';
-    // const dates = this.dates;
+    const lang = 'nl';
+    const {
+      afspraakLocale,
+      chooseDatumLabelLocale,
+      chooseLabelFirstDescLocale,
+      chooseTimeLabelLocale,
+      confirmDayLocale,
+      confirmLocale,
+      confirmMonthLocale,
+      confirmTimeLocale,
+      dayInLocale,
+      descriptionLocale,
+      hourSuffixLocal,
+      nextLocale,
+      previousLocale,
+      selectLocale,
+      selectMonthLocale,
+      selectTimeLocale,
+      timeDescLocale,
+      todayLocale,
+    } = this.i18n[lang];
+    const formatMonth = (date: Date) => `${monthLocale(date.getMonth())} ${date.getFullYear()}`;
+
+    const formattedSelectedDate = new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(this._visibleDate);
+    const formattedSelectedTime = new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._visibleDate);
+    const formattedSelectedDateTime = new Intl.DateTimeFormat(lang, { dateStyle: 'full', timeStyle: 'short' }).format(
+      this._dateValue,
+    );
+
     const currentIndex = this._times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
     const today = new Date();
-
     const times = this._times.filter((a) => isSameDate(a.date, this._visibleDate));
-
     const sortedTimes = [...this._times].sort((a: DateOption, b: DateOption): number => sortDate(a.date, b.date));
     const firstTime = this._dynamic ? null : sortedTimes[0];
     const lastTime = this._dynamic ? null : sortedTimes.at(-1);
 
     // TODO: Handle when there are no time slots
-    // const minDate = new Date(firstTime);
-    // const maxDate = new Date(lastTime);
     const dates: DateOption[] = getDaysInMonth(this._visibleDate).map((date) => {
       const timeSlots = this._times.filter((a) => isSameDate(date, a.date));
       return {
@@ -190,64 +229,20 @@ export class DatePickerElement extends LitElement {
       readOnly: true,
     }));
 
-    const htmlCells = [...beforeDates, ...dates].map(
-      ({ date, disabled, emphasis, hidden, label, readOnly, selected, today }) => {
-        return html`<td
-          role="gridcell"
-          aria-current=${today ? 'date' : nothing}
-          aria-selected=${selected ? 'true' : nothing}
-          aria-readonly=${readOnly ? 'true' : nothing}
-        >
-          <button
-            type="button"
-            tabindex="-1"
-            class=${clsx(
-              'utrecht-button',
-              { 'placeholder-cell': hidden },
-              {
-                'utrecht-button--pressed': selected,
-              },
-              {
-                'utrecht-button--disabled': readOnly,
-              },
-              'utrecht-calendar__table-days-item-day',
-              { 'utrecht-calendar__table-days-item-day--readonly': readOnly },
-              { 'utrecht-calendar__table-days-item-day--current': today },
-              { 'utrecht-calendar__table-days-item-day--emphasis': emphasis },
-              { 'utrecht-calendar__table-days-item-day--selected': selected },
-            )}
-            ?disabled=${disabled}
-            aria-pressed=${selected ? 'true' : nothing}
-            value=${date.toISOString()}
-            @click=${() => this._selectDate(date)}
-          >
-            ${label}${today ? html`<span class="today-marker">${todayLocale}</span>` : nothing}
-          </button>
-        </td>`;
-      },
-    );
-
-    // Create a 7xN grid out of the cells
-    const dateHTML = new Array(Math.ceil(htmlCells.length / 7)).fill(null).map(
-      (_, index) =>
-        html`<tr>
-          ${htmlCells.slice(index * 7, index * 7 + 7)}
-        </tr>`,
-    );
-
-    const lang = 'nl';
-    const formattedSelectedDate = new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(this._visibleDate);
-    const formattedSelectedTime = new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._visibleDate);
-    const formattedSelectedDateTime = new Intl.DateTimeFormat(lang, { dateStyle: 'full', timeStyle: 'short' }).format(
-      this.date,
-    );
-
     const min = this.getAttribute('min');
     const max = this.getAttribute('max');
     const minDate = min ? new Date(min) : null;
     const maxDate = max ? new Date(max) : null;
-
-    this._visibleTimes = sortedTimes;
+    const formattedCurrentMonth = formatMonth(this._visibleDate);
+    const formattedPrevMonth = formatMonth(getPrevMonth(this._visibleDate));
+    const formattedNextMonth = formatMonth(getNextMonth(this._visibleDate));
+    const mobileTimeOptions = times;
+    const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
+    const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
+    const hasPrevMonth = minBrowsableDate ? isBeforeCurrentMonth(this._visibleDate, minBrowsableDate) : true;
+    const hasNextMonth = maxBrowsableDate ? isAfterCurrentMonth(this._visibleDate, maxBrowsableDate) : true;
+    /* TODO: Replace with logic to only show when no date has been selected */
+    const showTimePlaceholder = times.length === 0;
 
     const monthOptions: { label: string; selected?: boolean; date: Date }[] = [
       { date: new Date('2025-01-01'), label: monthLocale(0) },
@@ -293,23 +288,21 @@ export class DatePickerElement extends LitElement {
         };
       });
 
-    const formatMonth = (date: Date) => `${monthLocale(date.getMonth())} ${date.getFullYear()}`;
-    const formattedCurrentMonth = formatMonth(this._visibleDate);
-    const formattedPrevMonth = formatMonth(getPrevMonth(this._visibleDate));
-    const formattedNextMonth = formatMonth(getNextMonth(this._visibleDate));
-    const mobileTimeOptions = times;
-    const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
-    const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
-    const hasPrevMonth = minBrowsableDate ? isBeforeCurrentMonth(this._visibleDate, minBrowsableDate) : true;
-    const hasNextMonth = maxBrowsableDate ? isAfterCurrentMonth(this._visibleDate, maxBrowsableDate) : true;
+    const htmlCells = [...beforeDates, ...dates].map((date) => this._renderGridCell({ ...date, todayLocale }));
 
-    const showTimePlaceholder =
-      times.length === 0; /* TODO: Replace with logic to only show when no date has been selected */
+    // Create a 7xN grid out of the cells
+    const dateHTML = new Array(Math.ceil(htmlCells.length / 7)).fill(null).map(
+      (_, index) =>
+        html`<tr>
+          ${htmlCells.slice(index * 7, index * 7 + 7)}
+        </tr>`,
+    );
+
     const output = html`<div class="rods-date-picker">
       <div class="rods-date-picker__mobile">
         <div class="utrecht-form-field">
           <div class="utrecht-form-field__label">
-            <label for="date" class="utrecht-form-label" id="mobile-date-label-text">${chooseDatumLabelLocale}</label>
+            <label for="date" class="utrecht-form-label" id="mobile-date-label">${chooseDatumLabelLocale}</label>
           </div>
           <div class="utrecht-form-field__input">
             <button
@@ -317,32 +310,29 @@ export class DatePickerElement extends LitElement {
               class="utrecht-textbox"
               type="button"
               @click=${() => this.showDateModal()}
-              todo-aria-labelledby="mobile-date-label-text mobile-date-button-text"
-              aria-labelledby="mobile-date-label-text"
+              todo-aria-labelledby="mobile-date-label mobile-date-button-label"
+              aria-labelledby="mobile-date-label"
             >
               <span class="utrecht-icon">
+                <slot name="icon-date"></slot>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M11 14C10.4477 14 10 14.4477 10 15C10 15.5523 10.4477 16 11 16V18C11 18.5523 11.4477 19 12 19C12.5523 19 13 18.5523 13 18V15C13 14.4477 12.5523 14 12 14H11Z"
-                    fill="#00811F"
+                    fill="currentColor"
                   />
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M16 2C16.5523 2 17 2.44772 17 3V4H18C18.7956 4 19.5587 4.31607 20.1213 4.87868C20.6839 5.44129 21 6.20435 21 7V19C21 19.7957 20.6839 20.5587 20.1213 21.1213C19.5587 21.6839 18.7957 22 18 22H6C5.20435 22 4.44129 21.6839 3.87868 21.1213C3.31607 20.5587 3 19.7957 3 19V7C3 6.20435 3.31607 5.44129 3.87868 4.87868C4.44129 4.31607 5.20435 4 6 4H7V3C7 2.44772 7.44772 2 8 2C8.55228 2 9 2.44772 9 3V4H15V3C15 2.44772 15.4477 2 16 2ZM19 7V10H5V7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H7V7C7 7.55228 7.44772 8 8 8C8.55228 8 9 7.55228 9 7V6H15V7C15 7.55228 15.4477 8 16 8C16.5523 8 17 7.55228 17 7V6H18C18.2652 6 18.5196 6.10536 18.7071 6.29289C18.8946 6.48043 19 6.73478 19 7ZM19 12H5V19C5 19.2652 5.10536 19.5196 5.29289 19.7071C5.48043 19.8946 5.73478 20 6 20H18C18.2652 20 18.5196 19.8946 18.7071 19.7071C18.8946 19.5196 19 19.2652 19 19V12Z"
-                    fill="#00811F"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
-              <span class="utrecht-textbox__value" id="mobile-date-button-text">${formattedSelectedDate}</span>
+              <span class="utrecht-textbox__value" id="mobile-date-button-label">${formattedSelectedDate}</span>
             </button>
           </div>
         </div>
-        <dialog
-          class="utrecht-drawer utrecht-drawer--block-end"
-          id="date-drawer"
-          aria-labelledby="mobile-date-label-text"
-        >
+        <dialog class="utrecht-drawer utrecht-drawer--block-end" id="date-drawer" aria-labelledby="mobile-date-label">
           <form method="dialog">
             <div class="utrecht-drawer__rods-step" id="date-drawer-step-1" data-step="1">
               <div class="utrecht-drawer__rods-header">
@@ -480,12 +470,13 @@ export class DatePickerElement extends LitElement {
               aria-labelledby="mobile-time-label-text mobile-time-button-text"
             >
               <span class="utrecht-icon">
+                <slot name="icon-time"></slot>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 6C12.5523 6 13 6.44772 13 7V11.5858L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L11.2929 12.7071C11.1054 12.5196 11 12.2652 11 12V7C11 6.44772 11.4477 6 12 6Z"
-                    fill="#00811F"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -511,8 +502,8 @@ export class DatePickerElement extends LitElement {
             <p id="date-desc" class="utrecht-form-field-description">${descriptionLocale}</p>
           </div>
           <div class="rods-date-panels__panel-body">
-            <div class="rods-button-navigation">
-              <div class="rods-button-navigation__current" id="current-month-label">${formattedCurrentMonth}</div>
+            <div class="rods-date-picker__grid-navigation">
+              <div class="rods-date-picker__grid-caption" id="current-month-label">${formattedCurrentMonth}</div>
               <button
                 aria-labelledby="prev-month-label"
                 aria-describedby="prev-month-description"
@@ -520,15 +511,18 @@ export class DatePickerElement extends LitElement {
                 type="button"
                 aria-disabled=${hasPrevMonth ? nothing : 'true'}
                 tabindex=${hasPrevMonth ? nothing : '0'}
-                class=${clsx('utrecht-button', { 'utrecht-button--disabled': !hasPrevMonth })}
+                class=${clsx('utrecht-button', 'utrecht-button--rods-icon-only', {
+                  'utrecht-button--disabled': !hasPrevMonth,
+                })}
                 @click=${() => {
                   if (hasPrevMonth) {
                     this.showPreviousMonth();
                   }
                 }}
               >
-                <span class="utrecht-icon"
-                  ><svg
+                <span class="utrecht-icon">
+                  <slot name="icon-prev"></slot>
+                  <svg
                     width="1em"
                     height="1em"
                     viewBox="0 0 32 32"
@@ -549,7 +543,9 @@ export class DatePickerElement extends LitElement {
                 rel="next"
                 type="button"
                 aria-disabled=${hasNextMonth ? nothing : 'true'}
-                class=${clsx('utrecht-button', { 'utrecht-button--disabled': !hasNextMonth })}
+                class=${clsx('utrecht-button', 'utrecht-button--rods-icon-only', {
+                  'utrecht-button--disabled': !hasNextMonth,
+                })}
                 @click=${() => {
                   if (hasNextMonth) {
                     this.showNextMonth();
@@ -557,7 +553,8 @@ export class DatePickerElement extends LitElement {
                 }}
               >
                 <span id="next-month-label" class="utrecht-button__label">${nextLocale}</span>
-                <span class="utrecht-icon"
+                <span class="utrecht-icon">
+                  <slot name="icon-next"></slot
                   ><svg
                     width="1em"
                     height="1em"
@@ -575,16 +572,22 @@ export class DatePickerElement extends LitElement {
               </button>
             </div>
 
-            <table role="grid" aria-labelledby="current-month-label" tabindex="0" @keydown=${this.handleKeyDownDate}>
+            <table
+              class="utrecht-calendar__table"
+              role="grid"
+              aria-labelledby="current-month-label"
+              tabindex="0"
+              @keydown=${this.handleKeyDownDate}
+            >
               <thead class="utrecht-calendar__table-weeks-container">
                 <tr class="utrecht-calendar__table-weeks-container-content">
-                  <th>${dayOfWeekLocale(1)}</th>
-                  <th>${dayOfWeekLocale(2)}</th>
-                  <th>${dayOfWeekLocale(3)}</th>
-                  <th>${dayOfWeekLocale(4)}</th>
-                  <th>${dayOfWeekLocale(5)}</th>
-                  <th>${dayOfWeekLocale(6)}</th>
-                  <th>${dayOfWeekLocale(0)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(1)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(2)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(3)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(4)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(5)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(6)}</th>
+                  <th class="rods-date-picker__grid-column-header">${dayOfWeekLocale(0)}</th>
                 </tr>
               </thead>
               <tbody class="utrecht-calendar__table-days-container">
@@ -644,6 +647,52 @@ export class DatePickerElement extends LitElement {
 
     return output;
   }
+
+  _renderGridCell = ({
+    date,
+    disabled,
+    emphasis,
+    hidden,
+    label,
+    readOnly,
+    selected,
+    today,
+    todayLocale,
+  }: DateOption & { todayLocale: string }) => {
+    return html`<td
+      class="utrecht-calendar__table-cell"
+      role="gridcell"
+      aria-current=${today ? 'date' : nothing}
+      aria-selected=${selected ? 'true' : nothing}
+      aria-readonly=${readOnly ? 'true' : nothing}
+    >
+      <button
+        type="button"
+        tabindex="-1"
+        class=${clsx(
+          'utrecht-button',
+          { 'placeholder-cell': hidden },
+          {
+            'utrecht-button--pressed': selected,
+          },
+          {
+            'utrecht-button--disabled': readOnly,
+          },
+          'utrecht-calendar__table-days-item-day',
+          { 'utrecht-calendar__table-days-item-day--readonly': readOnly },
+          { 'utrecht-calendar__table-days-item-day--current': today },
+          { 'utrecht-calendar__table-days-item-day--emphasis': emphasis },
+          { 'utrecht-calendar__table-days-item-day--selected': selected },
+        )}
+        ?disabled=${disabled}
+        aria-pressed=${selected ? 'true' : nothing}
+        value=${date.toISOString()}
+        @click=${() => this._selectDate(date)}
+      >
+        ${label}${today ? html`<span class="today-marker">${todayLocale}</span>` : nothing}
+      </button>
+    </td>`;
+  };
 
   showPreviousMonth() {
     const prev = new Date(this._visibleDate);
@@ -771,8 +820,8 @@ export class DatePickerElement extends LitElement {
     const date = this._times[next];
     if (date) {
       console.log('selected', date.date.toISOString());
-      this.date = new Date(date.date.getTime());
-      this.updateValue(this.date.toISOString());
+      this._dateValue = new Date(date.date.getTime());
+      this.updateValue(this._dateValue.toISOString());
     }
 
     this.requestUpdate();
@@ -791,7 +840,7 @@ export class DatePickerElement extends LitElement {
     this.scrollOptionIntoView();
   }
   updateValue(isoString: string) {
-    this.date = new Date(isoString);
+    this._dateValue = new Date(isoString);
     this.dispatchEvent(new CustomEvent('change'));
   }
   scrollOptionIntoView() {

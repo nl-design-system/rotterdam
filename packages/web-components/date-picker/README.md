@@ -46,6 +46,7 @@ Testing:
 Reuse as much of the NL Design System components as possible:
 
 - `utrecht-button`
+- `utrecht-drawer`
 - `utrecht-form-field`
 - `utrecht-form-label`
 - `utrecht-icon`
