@@ -27,11 +27,22 @@ public abstract class NldsWicketTestCase extends WicketTestCase {
     }
 
     protected static String renderComponentInDivTestPanel(Component component) {
+        assertWicketIdToBeComponent(component);
         return ComponentRenderer.renderComponent(new DivComponentTestPanel(component)).toString();
     }
 
     protected static String renderComponentInDlTestPanel(Component component) {
+        assertWicketIdToBeComponent(component);
         return ComponentRenderer.renderComponent(new DlComponentTestPanel(component)).toString();
+    }
+
+    protected static String renderComponentInTableTestPanel(Component component) {
+        assertWicketIdToBeComponent(component);
+        return ComponentRenderer.renderComponent(new TableComponentTestPanel(component)).toString();
+    }
+
+    private static void assertWicketIdToBeComponent(Component component) {
+        if (!component.getId().equals("component")) throw new IllegalArgumentException("Must have 'component' wicketId");
     }
 
     protected static String formatTidy(String htmlWithOneContainerElement) {

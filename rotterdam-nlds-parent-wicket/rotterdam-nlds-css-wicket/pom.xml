@@ -4,7 +4,7 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>0.0.7-SNAPSHOT</version>
+        <version>0.0.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>rotterdam-nlds-css-wicket</artifactId>
@@ -41,6 +41,11 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

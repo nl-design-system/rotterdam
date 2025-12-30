@@ -9069,7 +9069,7 @@
           "padding-inline-end": {},
           "padding-inline-start": {},
           "alternate-odd": {
-            "background-color": {},
+            "background-color": { "$value": "{rods.color.gray.tint-01}" },
             "color": {}
           },
           "alternate-even": {
@@ -9525,13 +9525,17 @@
           }
         },
         "option": {
+          "min-block-size": {
+            "$type": "dimension",
+            "$value": "48px"
+          },
           "padding-block-end": {
             "$type": "dimension",
-            "$value": "{basis.space.block.sm}"
+            "$value": "{basis.space.block.xs}"
           },
           "padding-block-start": {
             "$type": "dimension",
-            "$value": "{basis.space.block.sm}"
+            "$value": "{basis.space.block.xs}"
           },
           "padding-inline-end": {
             "$type": "dimension",
@@ -9602,6 +9606,88 @@
             }
           }
         }
+      }
+    }
+  },
+  "components/date-picker": {
+    "rods": {
+      "date-picker": {
+        "border-color": { "$value": "#cad6da" },
+        "border-width": { "$value": "1px" },
+        "grid": {
+          "border-width": { "$value": "1px" },
+          "border-color": { "$value": "#cad6da" }
+        },
+        "footer": {
+          "background-color": { "$value": "#cad6da" },
+          "padding-inline": { "$value": "24px" },
+          "padding-block": { "$value": "8px" }
+        },
+        "body": {
+          "padding-block": { "$value": "16px" },
+          "padding-inline": { "$value": "24px" }
+        },
+        "header": {
+          "background-color": { "$value": "#eff4f6" },
+          "padding-block": { "$value": "24px" },
+          "padding-inline": { "$value": "24px" }
+        },
+        "grid-cell": {
+          "background-color": { "$value": "white" },
+          "border-color": { "$value": "#7c8b90" },
+          "border-width": { "$value": "0" },
+          "color": { "$value": "#404b4f" },
+          "font-size": { "$value": "20px" },
+          "font-weight": { "$value": "700" },
+          "min-block-size": { "$value": "64px" },
+          "min-inline-size": { "$value": "64px" },
+          "disabled": {
+            "background-color": { "$value": "#cad6da" },
+            "border-color": { "$value": "transparent" },
+            "color": { "$value": "#65757b" },
+            "font-weight": { "$value": "normal" }
+          },
+          "selected": {
+            "background-color": { "$value": "{rods.color.base.green}" },
+            "border-color": { "$value": "{rods.color.base.green}" },
+            "color": { "$value": "{rods.color.base.white}" }
+          }
+        },
+        "grid-column-header": {
+          "color": { "$value": "#65757b" },
+          "font-weight": { "$value": "normal" },
+          "padding-block": { "$value": "4px" },
+          "font-size": { "$value": "24px" }
+        },
+        "grid-caption": {
+          "font-size": { "$value": "20px" },
+          "line-height": { "$value": "28px" },
+          "font-weight": { "$value": "700" }
+        },
+        "input-icon": {
+          "color": { "$value": "{rods.color.base.green}" }
+        }
+      },
+      "time-badge": {
+        "background-color": { "$value": "{rods.color.base.white}" },
+        "border-color": { "$value": "{rods.color.gray.tint-08}" },
+        "border-radius": { "$value": "0" },
+        "border-width": { "$value": "1px" },
+        "color": { "$value": "{rods.color.gray.tint-08}" },
+        "font-family": { "$value": "inherit" },
+        "font-size": { "$value": "{rods.typography.scale.xl.font-size}" },
+        "padding-block": { "$value": "4px" },
+        "padding-inline": { "$value": "12px" },
+        "font-weight": { "$value": "{rods.typography.weight-scale.bold.font-weight}" },
+        "line-height": { "$value": "{rods.typography.scale.xl.line-height}" },
+        "selected": {
+          "background-color": { "$value": "{rods.color.base.green}" },
+          "color": { "$value": "{rods.color.base.white}" }
+        }
+      },
+      "time-badge-list": {
+        "column-gap": { "$value": "8px" },
+        "row-gap": { "$value": "8px" }
       }
     }
   },

@@ -21,7 +21,7 @@ import java.util.function.BiFunction;
  * overriding a method from the panel or border. These methods are usually prefixed with <code>new</code>. Which
  * component types are allowed depends on the element type to which the template component will add the slot component. 
  * </p>
- * <h5>Template Component Markup</h5>
+ * <h2>Template Component Markup</h2>
  * <p>
  * A template component is free to structure its markup as needed. However, a good structure for the markup of slots is
  * an HTML element for the slot. This HTML element should contain <code>&lt;wicket:container&gt;</code> to which the
@@ -37,7 +37,7 @@ import java.util.function.BiFunction;
  * </p>
  * <pre>
  * <code><![CDATA[<div><wicket:container wicket:id="title"></wicket:container></div>]]></code></pre>
- * <h5>Template Instance Markup</h5>
+ * <h2>Template Instance Markup</h2>
  * <p>
  * The markup for a template instance must be as follows. This keeps the element for the template component and the slot
  * fragments together.
@@ -83,7 +83,7 @@ import java.util.function.BiFunction;
  *     </form>
  *   </wicket:fragment>
  * </wicket:container>]]></code></pre>
- * <h5>Instantiating a Template</h5>
+ * <h2>Instantiating a Template</h2>
  * <p>
  * Invoke {@link #add(MarkupContainer, String, BiFunction)} from the component containing the template instance with the
  * following arguments:
@@ -107,12 +107,12 @@ import java.util.function.BiFunction;
  * <code>var confirmCloseDialog = TemplateInstance.add(this, "confirmClose", (id, fragmentContainer) ->
  *         new TheDialog(id) {
  *             &#64;Override
- *             protected Component newTitle(String id, IModel<?> model) {
+ *             protected Component newTitle(String id, IModel&lt;?&gt; model) {
  *                 return new Fragment(id, "title", fragmentContainer);
  *             }
  *
  *             &#64;Override
- *             protected Component newFooter(String id, IModel<?> model) {
+ *             protected Component newFooter(String id, IModel&lt;?&gt; model) {
  *                 var fragment = new Fragment(id, "footer", fragmentContainer);
  *                 // Add the form and the buttons to the fragment here.
  *                 return fragment;

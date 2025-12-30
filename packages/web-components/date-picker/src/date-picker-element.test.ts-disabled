@@ -1,0 +1,38 @@
+// import '@testing-library/jest-dom/vitest';
+import { screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it } from 'vitest';
+import './date-picker-element';
+
+const tag = 'rods-date-picker';
+
+describe(`<${tag}>`, () => {
+  beforeEach(() => {
+    document.body.innerHTML = `<${tag}></${tag}>`;
+  });
+
+  it('shows a form control', () => {
+    const formElement = screen.getByRole('textbox');
+    expect(formElement).toBeDefined();
+  });
+
+  it('shows a form control for date', () => {
+    const formElement = screen.getByLabelText('datum');
+    expect(formElement).toBeDefined();
+  });
+
+  it('shows a form control for time', () => {
+    const formElement = screen.getByLabelText('tijd');
+    expect(formElement).toBeDefined();
+  });
+  it('shows highlights today', () => {
+    const optionElement = screen.getByLabelText('Vandaag');
+    console.log(optionElement);
+    expect(optionElement).toBeDefined();
+    console.log(optionElement);
+  });
+  it.todo('displays every available time slot', () => {});
+  it.todo('displays every available date', () => {});
+
+  it.todo('every timeslot can be clicked', () => {});
+  it.todo('every date can be clicked', () => {});
+});

@@ -5,13 +5,25 @@ import nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentsEx
 import nl.rotterdam.nl_design_system.wicket.html.WicketElementDisplayContentsHeaderContributor;
 import nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page.MijnLoketPage;
 import nl.rotterdam.nl_design_system.docs.wicket.sso_login_page.SingleSignOnLoginPage;
+import org.apache.wicket.Session;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 import org.apache.wicket.settings.ExceptionSettings;
 
+import java.util.Locale;
+
 public class DocsApplication extends WebApplication {
+
+    private static final Locale LOCALE_DUTCH = Locale.of("nl");
+
+    @Override
+    public Session newSession(Request request, Response response) {
+        return super.newSession(request, response).setLocale(LOCALE_DUTCH);
+    }
 
     @Override
     public void init() {

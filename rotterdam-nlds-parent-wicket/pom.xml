@@ -5,11 +5,11 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent</artifactId>
-        <version>0.0.7-SNAPSHOT</version>
+        <version>0.0.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.9-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Rotterdam, NL Design System Wicket Parent</name>
     <description>NL Design System Wicket Parent POM.</description>
@@ -34,38 +34,53 @@
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>docs-wicket</artifactId>
-                <version>0.0.7-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-css-wicket</artifactId>
-                <version>0.0.7-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
-                <version>0.0.7-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket</artifactId>
-                <version>0.0.7-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>rotterdam-nlds-wicket-extras</artifactId>
-                <version>0.0.7-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>nl.rotterdam.nl-design-system</groupId>
                 <artifactId>test-common-wicket</artifactId>
-                <version>0.0.7-SNAPSHOT</version>
+                <version>0.0.9-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.github.openjson</groupId>
                 <artifactId>openjson</artifactId>
                 <version>1.0.13</version>
+            </dependency>
+            <dependency>
+                <!--
+                    Needs to be specified. We must not expose it to our users!
+
+                    wicket-extensions has dependency with <optional>true</optional> on jackson.
+                    This makes it a must-have dependency for java module system users (nobody as of now).
+
+                    We add it in scope test for junit tests in all modules using wicket-extensions.
+                 -->
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>2.20.1</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.wicket</groupId>
