@@ -10,7 +10,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Es
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
 
  /**
- * Border component for rendering <a href="<a href="https://nl-design-system.nl/code">NL Design System code</a>">.
+ * Border component for rendering <a href="https://nl-design-system.nl/code">NL Design System code</a>.
  *
  */@NlComponentState(wicketState = BETA, estafetteState = CANDIDATE, htmlCssImplementedBy = KERNTEAM)
 public class RdCodeBorder extends Border {
