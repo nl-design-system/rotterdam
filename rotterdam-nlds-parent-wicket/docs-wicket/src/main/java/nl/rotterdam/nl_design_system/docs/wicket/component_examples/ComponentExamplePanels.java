@@ -16,7 +16,6 @@ import nl.rotterdam.nl_design_system.docs.wicket.date_picker.DatePickerExamplesP
 import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
-import nl.rotterdam.nl_design_system.docs.wicket.form_field_date_picker.FormFieldDatePickerExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_label.FormFieldLabelExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.FormFieldTextInputExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_textarea.FormFieldTextAreaExamplesPanel;
@@ -70,7 +69,6 @@ public class ComponentExamplePanels {
         DialogExamplesPanel.class,
         FieldsetExamplesPanel.class,
         FormFieldCheckboxExamplesPanel.class,
-        FormFieldDatePickerExamplesPanel.class,
         FormFieldLabelExamplesPanel.class,
         FormFieldTextAreaExamplesPanel.class,
         FormFieldTextInputExamplesPanel.class,
