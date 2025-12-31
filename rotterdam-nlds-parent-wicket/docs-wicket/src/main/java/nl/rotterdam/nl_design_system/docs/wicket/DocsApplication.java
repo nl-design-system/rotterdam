@@ -66,7 +66,11 @@ public class DocsApplication extends WebApplication {
             .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.NONCE)
             .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.SELF)
             .add(CSPDirective.SCRIPT_SRC, CSPDirectiveSrcValue.NONCE)
-            .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF);
+            .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF)
+
+            // TODO change to STYLE_SRC_ATTR when https://github.com/apache/wicket/pull/1341/files is
+            //  released update to that wicket version and change to STYLE_SRC_ATTR
+            .add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.UNSAFE_INLINE);
 
         mountPage("sso", SingleSignOnLoginPage.class);
         mountPage("rotterdam-base-page", RotterdamBasePage.class);

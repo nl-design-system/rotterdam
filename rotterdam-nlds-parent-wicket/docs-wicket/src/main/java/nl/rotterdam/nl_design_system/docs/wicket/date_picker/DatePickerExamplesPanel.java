@@ -5,11 +5,14 @@ import nl.rotterdam.nl_design_system.wicket.components.models.DefaultModels;
 import nl.rotterdam.nl_design_system.docs.wicket.ComponentExample;
 import nl.rotterdam.nl_design_system.docs.wicket.ExamplesPanel;
 import org.apache.wicket.Component;
-import org.apache.wicket.model.IModel;
+import org.apache.wicket.markup.html.form.FormComponent;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.util.CollectionModel;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DatePickerExamplesPanel extends ExamplesPanel {
@@ -56,7 +59,18 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     }
 
     @ComponentExample
-    private static Component exampleDatePickerWithAvailableDateTimes() {
+    private static Component exampleDatePickerWithAvailableDateTimesDesktop() {
+
+        return createDatePickerWithTwoDaysWithAvailableTimes("datePickerWithAvailableDateTimesDesktop");
+    }
+
+    @ComponentExample
+    private static Component exampleDatePickerWithAvailableDateTimesMobile() {
+
+        return createDatePickerWithTwoDaysWithAvailableTimes("datePickerWithAvailableDateTimesMobile");
+    }
+
+    private static FormComponent<LocalDateTime> createDatePickerWithTwoDaysWithAvailableTimes(String componentId) {
         var selectableTimes = List.of(
             LocalDateTime.of(2026, 1, 15, 10, 0),
             LocalDateTime.of(2026, 1, 15, 11, 0),
@@ -67,10 +81,33 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
             LocalDateTime.of(2026, 1, 16, 16, 0)
         );
 
-        IModel<LocalDateTime> model = Model.of();
         return new RdDatePicker(
-            "datePickerWithAvailableDateTimes",
-            model
+            componentId,
+            Model.of()
+        )
+            .withAvailableDateTimes(new CollectionModel<>(selectableTimes))
+            .setRequired(true);
+    }
+
+    @ComponentExample
+    private static Component exampleDatePickerWithManyAvailableDateTimes() {
+        var selectableTimes = new ArrayList<LocalDateTime>();
+        var date = LocalDate.now();
+        for (int i = 0; i < 90; i++) {
+            var currentDay = date.plusDays(i);
+            var dayOfWeek = currentDay.getDayOfWeek();
+            if (dayOfWeek != DayOfWeek.SATURDAY && dayOfWeek != DayOfWeek.SUNDAY) {
+                for (int hour = 9; hour < 17; hour++) {
+                    for (int minute = 0; minute < 60; minute += 10) {
+                        selectableTimes.add(currentDay.atTime(hour, minute));
+                    }
+                }
+            }
+        }
+
+        return new RdDatePicker(
+            "datePickerWithManyAvailableDateTimes",
+            Model.of()
         )
         .withAvailableDateTimes(new CollectionModel<>(selectableTimes))
         .setRequired(true);
@@ -81,11 +118,13 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
         super.onInitialize();
 
         add(
+            exampleDatePickerWithAvailableDateTimesDesktop(),
+            exampleDatePickerWithAvailableDateTimesMobile(),
+            exampleDatePickerWithManyAvailableDateTimes(),
             exampleDatePicker(),
             exampleDatePickerEmpty(),
             exampleDatePickerDisabled(),
-            exampleDatePickerRequired(),
-            exampleDatePickerWithAvailableDateTimes()
+            exampleDatePickerRequired()
         );
     }
 }
