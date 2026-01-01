@@ -574,8 +574,8 @@ importers:
   rotterdam-nlds-parent-wicket/docs-wicket:
     devDependencies:
       '@nl-design-system-unstable/voorbeeld-design-tokens':
-        specifier: 6.2.1
-        version: 6.2.1
+        specifier: 7.4.0
+        version: 7.4.0
       '@storybook/addon-docs':
         specifier: 9.1.16
         version: 9.1.16(@types/react@18.3.18)(storybook@10.1.4(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -2090,8 +2090,8 @@ packages:
   '@nl-design-system-candidate/paragraph-css@2.1.2':
     resolution: {integrity: sha512-peER0Wa+OfoZSD4PmGEVCFw+UNAyZbt6Mv8hS41I9z7dV3kNdcA8z7WgC4pb58Bq1aE7kkHcBjOBJ9otK1KGxQ==}
 
-  '@nl-design-system-unstable/voorbeeld-design-tokens@6.2.1':
-    resolution: {integrity: sha512-jGBiKwqubaZ+DrFmGGncN2Oznl1YROd+qtMCc91OsZtOEIY+psKnob8IDPmkpqvtwDfuSoB+WcWCZvu+wWzjEA==}
+  '@nl-design-system-unstable/voorbeeld-design-tokens@7.4.0':
+    resolution: {integrity: sha512-WiI8AbCM7pWiM50WRYoU9fqBx2sf0qvc8H51yi/vGyakfAnQwbkKlq1RdDLfM6UKki2BbqypY37j23GMs5Vb/w==}
 
   '@nl-design-system/eslint-config@2.2.0':
     resolution: {integrity: sha512-vZVbEkOQviJoiOdQT5zOi0GuSCaFrcz9/Awg/iXsmaNoXLkD5WOPVXR7RNlqeP4fPRmrHUvnVPsTDKLeIwbn2w==}
@@ -10244,7 +10244,7 @@ snapshots:
 
   '@nl-design-system-candidate/paragraph-css@2.1.2': {}
 
-  '@nl-design-system-unstable/voorbeeld-design-tokens@6.2.1': {}
+  '@nl-design-system-unstable/voorbeeld-design-tokens@7.4.0': {}
 
   '@nl-design-system/eslint-config@2.2.0(eslint@9.39.1)(typescript@5.9.3)':
     dependencies:
