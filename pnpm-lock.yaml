@@ -685,8 +685,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/link-list-css':
-        specifier: 2.3.1
-        version: 2.3.1
+        specifier: 3.0.1
+        version: 3.0.1
       '@utrecht/logo-css':
         specifier: 1.4.1
         version: 1.4.1
@@ -3343,8 +3343,8 @@ packages:
   '@utrecht/icon@2.2.0':
     resolution: {integrity: sha512-LAuQYCIyaUqR8fiM629+/tn46ZXNZvKcpTua7Q3PqEKmRzDNZqVkobH3GZLc0d02BxXqsgp6zZuWsm8pJ5U9xw==}
 
-  '@utrecht/link-list-css@2.3.1':
-    resolution: {integrity: sha512-KUzAe2dUd1sdoSLXFyqv1DjsjyXi9gJyHONGCEcQAkxpHYA4O569XQQnH4v9KVhGgJNRKmtXgcDJswMW09t5Xg==}
+  '@utrecht/link-list-css@3.0.1':
+    resolution: {integrity: sha512-/+pNmHFGadl/zVy0I3G6TVNWB3EuqRLvjsoBL7ue9+wJeye4LqDcweYgdFKm7wFcN4Tci479j21fZ63IK4KlXA==}
 
   '@utrecht/link-react@1.0.4':
     resolution: {integrity: sha512-0tOmJuQGL2oorw7oZCPZEsdyl2exanOH7X6L3lL4b89I3PHSrzBkLpTlvBXPTbIuZKDCKcdGXzDykmIhK/wlOw==}
@@ -11508,7 +11508,7 @@ snapshots:
 
   '@utrecht/icon@2.2.0': {}
 
-  '@utrecht/link-list-css@2.3.1': {}
+  '@utrecht/link-list-css@3.0.1': {}
 
   '@utrecht/link-react@1.0.4(@babel/runtime@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
