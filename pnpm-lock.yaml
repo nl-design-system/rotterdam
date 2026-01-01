@@ -429,8 +429,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/logo-css':
-        specifier: 1.4.1
-        version: 1.4.1
+        specifier: 2.0.1
+        version: 2.0.1
       chokidar-cli:
         specifier: 3.0.0
         version: 3.0.0
@@ -688,8 +688,8 @@ importers:
         specifier: 2.3.1
         version: 2.3.1
       '@utrecht/logo-css':
-        specifier: 1.4.1
-        version: 1.4.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/ordered-list-css':
         specifier: 3.0.1
         version: 3.0.1
@@ -3363,8 +3363,8 @@ packages:
       react: '18'
       react-dom: '18'
 
-  '@utrecht/logo-css@1.4.1':
-    resolution: {integrity: sha512-6ImqbLcRPhqVUP3toKG9rryoWWQTDKx/LmUgFQIe4OwPaJC/y7YM2pArdMtxiimJ/2hHODG2xfsHmkd+3qxBSQ==}
+  '@utrecht/logo-css@2.0.1':
+    resolution: {integrity: sha512-G2WyPM1Y1UnuQTodTcQ5wXGKm7gz4Wnre6O211ra4CAxhRfIXSxTUiW9waVHrkBOz+rxDy0S57gsBabAOiLGxQ==}
 
   '@utrecht/ordered-list-css@3.0.1':
     resolution: {integrity: sha512-FTLzofVJlkl4ypJz2QoWTwepXN+yX3Y3exL+69SpiwjAXSkRYkJ1agd0W6BZVH+JQ60u8+uApOKQpgx2Bh3ImQ==}
@@ -11526,7 +11526,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@utrecht/logo-css@1.4.1': {}
+  '@utrecht/logo-css@2.0.1': {}
 
   '@utrecht/ordered-list-css@3.0.1': {}
 
