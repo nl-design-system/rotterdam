@@ -13,7 +13,7 @@
     "directory": "."
   },
   "engines": {
-    "node": ">=22 <=24",
+    "node": ">=24 <=25",
     "pnpm": "^10"
   },
   "workspaces": [
