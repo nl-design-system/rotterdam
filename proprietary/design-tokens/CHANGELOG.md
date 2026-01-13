@@ -1,5 +1,11 @@
 # @gemeente-rotterdam/design-tokens
 
+## 1.1.0
+
+### Minor Changes
+
+- 03c6f39: Design tokens for the Rotterdam Date Picker.
+
 ## 1.0.1
 
 ### Patch Changes
