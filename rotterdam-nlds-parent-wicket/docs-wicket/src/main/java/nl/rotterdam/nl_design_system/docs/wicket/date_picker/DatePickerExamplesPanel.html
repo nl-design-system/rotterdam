@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="nl" xmlns:wicket="http://wicket.apache.org">
+<head>
+  <title>whatever</title>
+</head>
+<body>
+<wicket:panel>
+  <section class="stories">
+    <h1>Date Picker component</h1>
+    <div>
+      <p>Een date picker component om een datum en tijd te selecteren.</p>
+      <p>Deze component gebruikt het <code>&lt;rods-date-picker&gt;</code> web component element.</p>
+    </div>
+
+
+    <section data-testid="datePickerWithAvailableDateTimesDesktop">
+      <h2>Date Picker With Available Date-times (Desktop)</h2>
+      <div>
+        <p>Een date picker met beschikbare datum-tijden voorgedefinieerd.</p>
+        <p>Er zijn beschikbare tijden op 15 en 16 januari 2026.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <rods-date-picker wicket:id="datePickerWithAvailableDateTimesDesktop">
+          </rods-date-picker>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="datePickerWithAvailableDateTimesMobile">
+      <h2>Date Picker With Available Date-times (Mobile)</h2>
+      <div>
+        <p>Een date picker met beschikbare datum-tijden voorgedefinieerd.</p>
+        <p>Er zijn beschikbare tijden op 15 en 16 januari 2026.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <div style="max-width:800px;">
+          <rods-date-picker wicket:id="datePickerWithAvailableDateTimesMobile">
+          </rods-date-picker>
+          </div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="datePickerWithManyAvailableDateTimes">
+      <h2>Date Picker With 90 days of office hours available date-times</h2>
+      <div>
+        <p>Een date picker met 90 dagen aan beschikbare datum-tijden tijdens kantooruren.</p>
+      </div>
+      <rods-story-canvas>
+        <template>
+          <rods-date-picker wicket:id="datePickerWithManyAvailableDateTimes">
+          </rods-date-picker>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="datePicker">
+      <h2>Date Picker</h2>
+      <div>
+        <p>Een eenvoudige date picker met een ingevulde waarde.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <rods-date-picker wicket:id="datePicker"></rods-date-picker>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="datePickerEmpty">
+      <h2>Date Picker Empty</h2>
+      <div>
+        <p>Een date picker zonder ingevulde waarde.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <rods-date-picker wicket:id="datePickerEmpty"></rods-date-picker>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="datePickerDisabled">
+      <h2>Date Picker Disabled</h2>
+      <div>
+        <p>Een date picker in disabled mode. Wordt zo gerenderd door Wicket setEnabled(false) te gebruiken.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <rods-date-picker wicket:id="datePickerDisabled"></rods-date-picker>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="datePickerRequired">
+      <h2>Date Picker Required</h2>
+      <div>
+        <p>Een date picker die verplicht is in te vullen.</p>
+      </div>
+      <rods-story-canvas
+      >
+        <template>
+          <rods-date-picker wicket:id="datePickerRequired"></rods-date-picker>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+
+
+
+  </section>
+
+</wicket:panel>
+</body>
+</html>
