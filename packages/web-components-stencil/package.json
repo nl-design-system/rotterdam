@@ -40,7 +40,7 @@
     "@gemeente-rotterdam/components-css": "workspace:*",
     "@gemeente-rotterdam/icon": "workspace:*",
     "@jest/globals": "30.2.0",
-    "@stencil/react-output-target": "0.8.1",
+    "@stencil/react-output-target": "1.2.0",
     "@stencil/sass": "3.2.3",
     "@types/jest": "30.0.0",
     "@utrecht/components": "7.4.0",
