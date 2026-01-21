@@ -477,8 +477,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@utrecht/textbox-css':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 3.0.1
+        version: 3.0.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -3416,9 +3416,6 @@ packages:
 
   '@utrecht/textarea-css@3.0.1':
     resolution: {integrity: sha512-byy2EpNx6g9ORxTZyeGxWclsvzJxbkmi1uqLSCS7286nw3t7PkwiWSKBPBJ568153nKgBD7FgiZrjR0Oe7TDnA==}
-
-  '@utrecht/textbox-css@1.1.0':
-    resolution: {integrity: sha512-APQW299fyoNZQ/hYW8F9uET4JvzhXMbUBWT59h6sc/wwsbDBWku+ufgN4wrsYTqGSPExFKfffzRGuniaqyvBxA==}
 
   '@utrecht/textbox-css@3.0.1':
     resolution: {integrity: sha512-SP3CFpTd/6CffvSBcpBQ+uKzYusgDB/ri0vmEA/uYfWnRyen1ETQkeCoDJeSUR/D8g24NMdFu7xmOniiwGpRQg==}
@@ -11532,8 +11529,6 @@ snapshots:
   '@utrecht/table-css@2.0.1': {}
 
   '@utrecht/textarea-css@3.0.1': {}
-
-  '@utrecht/textbox-css@1.1.0': {}
 
   '@utrecht/textbox-css@3.0.1': {}
 
