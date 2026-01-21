@@ -13,7 +13,7 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@babel/core": "7.28.5",
+    "@babel/core": "7.28.6",
     "@mdx-js/react": "3.1.1",
     "@storybook/addon-docs": "8.4.7",
     "@types/react": "18.3.18",
@@ -22,9 +22,9 @@
     "react": "18.3.1",
     "rimraf": "6.1.2",
     "rollup-plugin-postcss": "4.0.2",
-    "rollup": "4.53.3",
+    "rollup": "4.55.1",
     "typescript": "5.9.3",
-    "webpack": "5.103.0"
+    "webpack": "5.104.1"
   },
   "repository": {
     "type": "git+ssh",
