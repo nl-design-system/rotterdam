@@ -1,10 +1,10 @@
 # Rotterdam component list
 
 
-| Component | Figma | NLDS Rotterdam | Mendix | TSO Wicket | TSO Angular | 
+| Component | Figma | Mendix | NLDS Wicket | TSO Wicket | TSO Angular | 
 |---|---:|---:|---:|---:|---:|
-| Accordion |  |  |  |  |  |
-| Action Group |  |  |  |  |  |
+| Accordion |[Rods](https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-Components?node-id=16429-4804&p=f&t=pxqzceolorgxGi0l-0)  | [documentatie](https://rs010.rotterdam.nl/p/Components/Accordion/49258120924364806)  |  |  |  |
+| Action Group |  |  | [code](https://github.com/nl-design-system/rotterdam/tree/main/rotterdam-nlds-parent-wicket/rotterdam-nlds-wicket/src/main/java/nl/rotterdam/nl_design_system/wicket/components/action_group) [voorbeeld](https://github.com/nl-design-system/rotterdam/tree/main/rotterdam-nlds-parent-wicket/docs-wicket/src/main/java/nl/rotterdam/nl_design_system/docs/wicket/action_group)  |  |  |
 | Alert |  |  |  |  |  |
 | Alert Dialog |  |  |  |  |  |
 | Avatar |  |  |  |  |  |
