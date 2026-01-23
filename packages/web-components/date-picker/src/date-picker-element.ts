@@ -638,13 +638,22 @@ export class DatePickerElement extends LitElement {
           </div>
         </div>
         <div class="rods-date-picker__mobile-summary">
-          <p>
+          <p ?hidden=${!(formattedSelectedDate && formattedSelectedTime)}>
             ${afspraakLocale}<br />
             <span>op <strong>${formattedSelectedDate}</strong></span>
             <br /><span>om <strong>${formattedSelectedTime}</strong></span>
           </p>
           <p>
-            <button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button>
+            <button
+              type="button"
+              class="utrecht-button utrecht-button--secondary-action"
+              class=${clsx('utrecht-button', 'utrecht-button--secondary-action', {
+                'utrecht-button--disabled': !this._dateValue,
+              })}
+              ?disabled="{!this._dateValue}"
+            >
+              ${confirmLocale}
+            </button>
           </p>
         </div>
       </div>
