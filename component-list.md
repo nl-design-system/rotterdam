@@ -1,6 +1,7 @@
 # Rotterdam component list
 
 
+
 | Component | Figma | Mendix | NLDS Wicket | TSO Wicket | TSO Angular | 
 |---|---:|---:|---:|---:|---:|
 | Accordion |[Rods](https://www.figma.com/design/iWuQsxelJzXVfCge87Og81/RODS-Components?node-id=16429-4804&p=f&t=pxqzceolorgxGi0l-0)  | [documentatie](https://rs010.rotterdam.nl/p/Components/Accordion/49258120924364806)  |  |  |  |
@@ -46,7 +47,7 @@
 | Heading 5 |  |  |  |  |  |
 | Heading 6 |  |  |  |  |  |
 | Heading Group |  |  |  |  |  |
-| Icon |  |  |  |  |  |
+| Icon |  |  |  | [documentatie](https://preview-eso-nieuwe-huisstijl.apps.ocp.rotterdam.nl/design/iconen.html) |  |
 | Image |  |  |  |  |  |
 | Input Group |  |  |  |  |  |
 | Language Navigation |  |  |  |  |  |
@@ -94,4 +95,3 @@
 | Unordered List |  |  |  |  |  |
 | Video |  |  |  |  |  |
 | YouTube Video |  |  |  |  |  |
-
