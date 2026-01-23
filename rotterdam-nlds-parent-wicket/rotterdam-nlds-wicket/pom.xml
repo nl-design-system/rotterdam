@@ -101,6 +101,14 @@
                 </includes>
             </resource>
             <resource>
+                <targetPath>nl/rotterdam/nl_design_system/wicket/components/date_picker</targetPath>
+                <filtering>false</filtering>
+                <directory>node_modules/</directory>
+                <includes>
+                    <include>@gemeente-rotterdam/date-picker-element/dist/*.js</include>
+                </includes>
+            </resource>
+            <resource>
                 <targetPath>nl/rotterdam/nl_design_system/wicket/components/alert</targetPath>
                 <filtering>false</filtering>
                 <directory>node_modules/</directory>
