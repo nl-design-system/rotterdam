@@ -1,2 +1,2 @@
 # Ignore generated files from Stencil
-src/*
+stencil-generated/

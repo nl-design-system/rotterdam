@@ -324,8 +324,19 @@ export class DatePickerElement extends LitElement {
       return labels[n];
     };
 
-    const formattedSelectedDate = new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(this._visibleDate);
-    const formattedSelectedTime = new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._visibleDate);
+    const formattedSelectedDate = this._dateValue
+      ? new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(this._dateValue)
+      : '';
+    let formattedSelectedTime = this._dateValue
+      ? new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._dateValue)
+      : '';
+
+    if (hourSuffixLocal) {
+      formattedSelectedTime = formattedSelectedTime
+        ? `${formattedSelectedTime} ${hourSuffixLocal}`
+        : formattedSelectedTime;
+    }
+
     const formattedSelectedDateTime = this._dateValue
       ? new Intl.DateTimeFormat(lang, { dateStyle: 'full', timeStyle: 'short' }).format(this._dateValue)
       : '';
@@ -622,20 +633,27 @@ export class DatePickerElement extends LitElement {
                   />
                 </svg>
               </span>
-              <span class="utrecht-textbox__value" id="mobile-time-button-text"
-                >${formattedSelectedTime} ${hourSuffixLocal}</span
-              >
+              <span class="utrecht-textbox__value" id="mobile-time-button-text">${formattedSelectedTime}</span>
             </button>
           </div>
         </div>
         <div class="rods-date-picker__mobile-summary">
-          <p>
+          <p ?hidden=${!(formattedSelectedDate && formattedSelectedTime)}>
             ${afspraakLocale}<br />
             <span>op <strong>${formattedSelectedDate}</strong></span>
-            <br /><span>om <strong>${formattedSelectedTime} ${hourSuffixLocal}</strong></span>
+            <br /><span>om <strong>${formattedSelectedTime}</strong></span>
           </p>
           <p>
-            <button type="button" class="utrecht-button utrecht-button--secondary-action">${confirmLocale}</button>
+            <button
+              type="button"
+              class="utrecht-button utrecht-button--secondary-action"
+              class=${clsx('utrecht-button', 'utrecht-button--secondary-action', {
+                'utrecht-button--disabled': !this._dateValue,
+              })}
+              ?disabled="{!this._dateValue}"
+            >
+              ${confirmLocale}
+            </button>
           </p>
         </div>
       </div>
