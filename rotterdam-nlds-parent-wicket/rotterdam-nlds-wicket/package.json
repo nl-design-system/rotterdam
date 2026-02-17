@@ -23,6 +23,7 @@
     "@amsterdam/design-system-css": "2.2.0",
     "@gemeente-denhaag/sidenav": "2.0.0",
     "@gemeente-rotterdam/design-tokens": "workspace:*",
+    "@gemeente-rotterdam/date-picker-element": "workspace:*",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
     "@nl-design-system-candidate/code-css": "2.0.4",
     "@nl-design-system-candidate/code-block-css": "1.1.4",

@@ -19,6 +19,7 @@ module nl.rotterdam.nl_design_system.wicket {
     exports nl.rotterdam.nl_design_system.wicket.components.css_class_names;
     exports nl.rotterdam.nl_design_system.wicket.components.data_badge;
     exports nl.rotterdam.nl_design_system.wicket.components.data_summary;
+    exports nl.rotterdam.nl_design_system.wicket.components.date_picker;
     exports nl.rotterdam.nl_design_system.wicket.components.dialog;
     exports nl.rotterdam.nl_design_system.wicket.components.fieldset;
     exports nl.rotterdam.nl_design_system.wicket.components.form_field;
@@ -70,6 +71,7 @@ module nl.rotterdam.nl_design_system.wicket {
     opens nl.rotterdam.nl_design_system.wicket.components.code_block;
     opens nl.rotterdam.nl_design_system.wicket.components.column_layout;
     opens nl.rotterdam.nl_design_system.wicket.components.data_summary;
+    opens nl.rotterdam.nl_design_system.wicket.components.date_picker;
     opens nl.rotterdam.nl_design_system.wicket.components.dialog;
     opens nl.rotterdam.nl_design_system.wicket.components.fieldset;
     opens nl.rotterdam.nl_design_system.wicket.components.form_field;
