@@ -4,8 +4,13 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import readme from '@gemeente-rotterdam/date-picker-element/README.md?raw';
 import { DecoratorFunction } from 'storybook/internal/csf';
 
-const DatePicker = ({ lang, options, value }: DatePickerProps) => (
-  <rods-date-picker lang={lang || undefined} value={value || undefined} options={JSON.stringify(options)}>
+const DatePicker = ({ lang, now, options, value }: DatePickerProps) => (
+  <rods-date-picker
+    lang={lang || undefined}
+    value={value || undefined}
+    options={JSON.stringify(options)}
+    now={now || undefined}
+  >
     {/* Hack to prevent a self-closing tag in "Show code" in Storybook*/}
     {'\u00A0'}
   </rods-date-picker>
@@ -16,6 +21,7 @@ DatePicker.displayName = 'rods-date-picker';
 const meta = {
   id: 'rods-date-picker',
   args: {
+    now: '2025-12-05T09:42:00',
     options: [{ value: '2025-11-02T13:00' }, { value: '2025-12-31T09:00' }, { value: '2026-01-15T20:00' }],
   },
   argTypes: {
@@ -68,6 +74,25 @@ const MobileDecorator: DecoratorFunction = (Story) => (
   <div style={{ maxInlineSize: '1179px', position: 'relative' }}>{Story()}</div>
 );
 type Story = StoryObj<typeof meta>;
+
+export const DesktopNow: Story = {
+  name: 'Desktop layout showing current date',
+  args: {
+    now: undefined,
+  },
+  decorators: [DesktopDecorator],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true,
+    },
+    docs: {
+      description: {
+        story:
+          'This example will show options based on the system date. Because this example changes over time, it is excluded from visual regression tests.',
+      },
+    },
+  },
+};
 
 export const Desktop: Story = {
   name: 'Desktop layout',
