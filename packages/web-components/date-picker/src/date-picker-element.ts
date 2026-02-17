@@ -135,10 +135,36 @@ export class DatePickerElement extends LitElement {
   currentSelected: Promise<HTMLElement | null> = Promise.resolve(null);
 
   /**
+   * Keep a reference to the initial value of `_now`, to do check if the value has changed.
+   */
+  _initialNow: Date = new Date();
+  _now: Date;
+
+  /**
+   * Configure the current date and time, for a stable test automation environment.
+   */
+  @property({ attribute: 'now' })
+  get now(): Date {
+    return this._now;
+  }
+
+  set now(value: unknown) {
+    // Value is `dirty` when `now` already has been changed from the initial value.
+    const dirty = this._now !== this._initialNow;
+    if (typeof value === 'string' || typeof value === 'number') {
+      this._now = new Date(value);
+
+      if (!dirty) {
+        this._visibleDate = this._now;
+      }
+    }
+  }
+
+  /**
    * When browsing through months and days, this `Date` represents the date the user currently chooses to view.
    * It can be configured via `_selectDate()`
    */
-  _visibleDate = new Date();
+  _visibleDate: Date;
 
   _dynamic = false;
 
@@ -288,6 +314,13 @@ export class DatePickerElement extends LitElement {
     this.requestUpdate();
   }
 
+  constructor() {
+    super();
+
+    this._now = this._initialNow;
+    this._visibleDate = this._now;
+  }
+
   override render() {
     const lang = this._lang;
     const {
@@ -343,7 +376,7 @@ export class DatePickerElement extends LitElement {
 
     const currentIndex = this._times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
-    const today = new Date();
+    const today = this._now;
     const times = this._times.filter((a) => isSameDate(a.date, this._visibleDate));
     const sortedTimes = [...this._times].sort((a: DateOption, b: DateOption): number => sortDate(a.date, b.date));
     const firstTime = this._dynamic ? null : sortedTimes[0];

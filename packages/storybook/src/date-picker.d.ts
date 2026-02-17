@@ -4,6 +4,7 @@ interface DatePickerProps {
   options?: { value: string; label?: string }[] | string;
   value?: string;
   children?: ReactNode;
+  now?: string;
 }
 
 interface HTMLElementTagNameMap {
