@@ -90,6 +90,15 @@ export const DesktopValue: Story = {
   decorators: [DesktopDecorator],
 };
 
+export const MobileValue: Story = {
+  name: 'Mobile layout with existing value',
+  args: {
+    options: [{ value: '2025-12-31T12:00:00' }],
+    value: '2025-12-31T12:00:00',
+  },
+  decorators: [MobileDecorator],
+};
+
 export const English: Story = {
   name: 'English user interface',
   args: {
