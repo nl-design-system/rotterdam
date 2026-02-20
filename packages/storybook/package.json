@@ -31,12 +31,12 @@
     "@gemeente-rotterdam/icon": "workspace:*",
     "@gemeente-rotterdam/web-components-react": "workspace:*",
     "@gemeente-rotterdam/web-components-stencil": "workspace:*",
-    "@storybook/addon-a11y": "10.1.4",
-    "@storybook/addon-designs": "11.0.3",
+    "@storybook/addon-a11y": "10.2.3",
+    "@storybook/addon-designs": "11.1.1",
     "@storybook/addon-docs": "10.0.8",
-    "@storybook/addon-links": "10.1.4",
-    "@storybook/addon-themes": "10.1.4",
-    "@storybook/react-vite": "10.1.4",
+    "@storybook/addon-links": "10.2.3",
+    "@storybook/addon-themes": "10.2.3",
+    "@storybook/react-vite": "10.2.3",
     "@storybook/testing-library": "0.2.2",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
@@ -46,8 +46,8 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "rimraf": "6.1.2",
-    "storybook": "10.1.4",
+    "storybook": "10.2.3",
     "typescript": "5.9.3",
-    "vite": "7.2.6"
+    "vite": "7.3.1"
   }
 }
