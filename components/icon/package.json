@@ -22,9 +22,9 @@
     "clean": "rimraf dist/ tmp/ ../../packages/web-components-stencil/src/generated/ ../../packages/web-components-stencil/src/generated/"
   },
   "devDependencies": {
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "minimist": "1.2.8",
-    "rimraf": "6.1.2",
+    "rimraf": "6.1.3",
     "svgo": "4.0.0"
   },
   "keywords": [
