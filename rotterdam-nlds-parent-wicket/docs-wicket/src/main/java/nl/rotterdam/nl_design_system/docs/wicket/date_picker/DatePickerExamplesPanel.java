@@ -37,7 +37,7 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     private static Component exampleDatePickerEmpty() {
         return new RdDatePicker(
             "datePickerEmpty",
-            DefaultModels.NULL_LOCAL_DATE_TIME
+            DefaultModels.NULL_LOCAL_DATE_TIME_MODEL
         );
     }
 
@@ -54,7 +54,7 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     private static Component exampleDatePickerRequired() {
         return new RdDatePicker(
             "datePickerRequired",
-            DefaultModels.NULL_LOCAL_DATE_TIME
+            DefaultModels.NULL_LOCAL_DATE_TIME_MODEL
         ).setRequired(true);
     }
 
