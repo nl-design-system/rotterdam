@@ -12,6 +12,7 @@ import nl.rotterdam.nl_design_system.docs.wicket.code.CodeExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.code_block.CodeBlockExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.column_layout.ColumnLayoutExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.data_summary.DataSummaryExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.date_picker.DatePickerExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.dialog.DialogExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.fieldset.FieldsetExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
@@ -64,6 +65,7 @@ public class ComponentExamplePanels {
         CodeBlockExamplesPanel.class,
         ColumnLayoutExamplesPanel.class,
         DataSummaryExamplesPanel.class,
+        DatePickerExamplesPanel.class,
         DialogExamplesPanel.class,
         FieldsetExamplesPanel.class,
         FormFieldCheckboxExamplesPanel.class,
