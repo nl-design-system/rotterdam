@@ -5,7 +5,6 @@ import org.apache.wicket.Component;
 import org.apache.wicket.core.util.string.ComponentRenderer;
 import org.apache.wicket.markup.Markup;
 import org.apache.wicket.model.util.CollectionModel;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -68,23 +67,6 @@ class RdDatePickerTest extends NldsWicketTestCase {
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
     }
 
-
-    @Disabled("Not implemented yet")
-    @Test
-    void renderWithWijzigenButton() {
-        // as discussed with Robbert.
-        // language=HTML
-        String expectedHtml =
-            """
-<rods-date-picker>
-  <span slot="label">Afspraak wijzigen</span>
-  <span slot="description">Je kunt de afspraak tot 24 uur van tevoren wijzigen</span>
-</rods-date-picker>""";
-
-        throw new RuntimeException("TODO in progress" + expectedHtml);
-    }
-
-
     @Test
     void renderWithoutValueWithOptionsToSelectFrom() {
         var selectableTimes = List.of(
@@ -113,7 +95,6 @@ class RdDatePickerTest extends NldsWicketTestCase {
         String actualHtmlFragment = ComponentRenderer.renderComponent(datePicker).toString();
 
         assertHtmlFragmentSame(expectedHtmlFragment, actualHtmlFragment);
-
     }
 
 }
