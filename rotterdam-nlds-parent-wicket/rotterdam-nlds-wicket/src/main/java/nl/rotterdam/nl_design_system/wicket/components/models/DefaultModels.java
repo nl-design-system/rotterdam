@@ -9,5 +9,5 @@ public enum DefaultModels {
     ;
 
     public static final IModel<@Nullable String> NULL_STRING_MODEL = () -> null;
-    public static final IModel<@Nullable LocalDateTime> NULL_LOCAL_DATE_TIME = () -> null;
+    public static final IModel<@Nullable LocalDateTime> NULL_LOCAL_DATE_TIME_MODEL = () -> null;
 }
