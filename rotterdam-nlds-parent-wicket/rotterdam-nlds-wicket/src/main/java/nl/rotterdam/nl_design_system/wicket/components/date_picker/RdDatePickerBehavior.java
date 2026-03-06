@@ -33,7 +33,6 @@ class RdDatePickerBehavior extends TagNameClassComponentBehavior<RdDatePicker> {
     @Override
     protected List<CssClassNames> customizeComponentAndReturnClasses(RdDatePicker component, ComponentTag tag) {
         List<CssClassNames> classes = new ArrayList<>();
-        
         if (!component.isEnabledInHierarchy()) {
             classes.add(RdDatePickerCss.DISABLED);
         }
