@@ -7,6 +7,7 @@ import iconCSS from '@utrecht/icon-css/dist/index.css?raw';
 import listboxCSS from '@utrecht/listbox-css/dist/index.css?raw';
 import textboxCSS from '@utrecht/textbox-css/dist/index.css?raw';
 import clsx from 'clsx';
+import { eachMonthOfInterval } from 'date-fns';
 import { html, LitElement, nothing, unsafeCSS } from 'lit';
 import { customElement, property, queryAsync } from 'lit/decorators.js';
 import {
@@ -424,21 +425,13 @@ export class DatePickerElement extends LitElement {
     /* TODO: Replace with logic to only show when no date has been selected */
     const showTimePlaceholder = times.length === 0;
 
-    const monthOptions: { label: string; selected?: boolean; date: Date }[] = [
-      { date: new Date('2025-01-01'), label: monthLocale(0) },
-      { date: new Date('2025-02-01'), label: monthLocale(1) },
-      { date: new Date('2025-03-01'), label: monthLocale(2) },
-      { date: new Date('2025-04-01'), label: monthLocale(3) },
-      { date: new Date('2025-05-01'), label: monthLocale(4) },
-      { date: new Date('2025-06-01'), label: monthLocale(5) },
-      { date: new Date('2025-07-01'), label: monthLocale(6) },
-      { date: new Date('2025-08-01'), label: monthLocale(7) },
-      { date: new Date('2025-09-01'), label: monthLocale(8) },
-      { date: new Date('2025-10-01'), label: monthLocale(9) },
-      { date: new Date('2025-11-01'), label: monthLocale(10) },
-      { date: new Date('2025-12-01'), label: monthLocale(11) },
-      { date: new Date('2026-01-01'), label: monthLocale(0) },
-    ];
+    const monthOptions: { label: string; selected?: boolean; date: Date }[] =
+      minBrowsableDate && maxBrowsableDate
+        ? eachMonthOfInterval({
+            end: maxBrowsableDate,
+            start: minBrowsableDate,
+          }).map((date) => ({ date, label: monthLocale(date.getMonth()) }))
+        : [];
 
     const mobileMonthOptions = monthOptions.map((option, index, options) => {
       let updated = option;
