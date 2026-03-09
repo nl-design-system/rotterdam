@@ -12,10 +12,26 @@
         <template>
           <div wicket:id="checkboxGroup">
             <div class="d-flex flex-column gap-2">
-            <div><label wicket:for="checkPhone"><input type="checkbox" wicket:id="checkPhone"/> Telefoon</label></div>
-            <div><label wicket:for="checkEmail"><input type="checkbox" wicket:id="checkEmail"/> E-mail</label></div>
-            <div><label wicket:for="checkWhatsapp"><input type="checkbox" wicket:id="checkWhatsapp"/> WhatsApp</label></div>
-            <div><label wicket:for="checkTelegram"><input type="checkbox" wicket:id="checkTelegram"/> Telegram</label></div>
+            <label wicket:for="checkPhone"><input type="checkbox" wicket:id="checkPhone"/> Telefoon</label>
+            <label wicket:for="checkEmail"><input type="checkbox" wicket:id="checkEmail"/> E-mail</label>
+            <label wicket:for="checkWhatsapp"><input type="checkbox" wicket:id="checkWhatsapp"/> WhatsApp</label>
+            <label wicket:for="checkTelegram"><input type="checkbox" wicket:id="checkTelegram"/> Telegram</label>
+            </div>
+          </div>
+        </template>
+      </rods-story-canvas>
+    </section>
+
+    <section data-testid="checkboxGroupSelectDays">
+      <h2>Checkbox Group: select days</h2>
+      <rods-story-canvas>
+        <template>
+          <div wicket:id="checkboxGroupSelectDays">
+            <div class="d-flex flex-column gap-2">
+                <label wicket:id="day" >
+                  <input type="checkbox" wicket:id="checkbox" />
+                  <wicket:container wicket:id="label"></wicket:container>
+              </label>
             </div>
           </div>
         </template>
