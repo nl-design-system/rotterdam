@@ -4,18 +4,26 @@
     <h1>Checkbox group component</h1>
     <div>
       <p>Een groep van selectievakjes.</p>
+      <p>Geselecteerde items hebben op rij-niveau andere css classes.</p>
+      <p>Refresh met Ajax wanneer de selectie wijzigt, als de style wijzigt bij de selectie.</p>
+      <p>Kenmerken:</p>
+      <ul>
+        <li>Zet het <em>&lt;label&gt;</em> om de checkbox heen</li>
+        <li>Geef het label het NL Design System gedrag via <em>RdFormFieldLabelBehavior</em></li>
+        <li>Geef de Check het NL Design System gedrag via <em>RdCheckboxBehavior</em> </li>
+      </ul>
     </div>
 
     <section data-testid="checkboxGroup">
-      <h2>Checkbox Group</h2>
+      <h2>Checkbox Group: vaste checks</h2>
       <rods-story-canvas>
         <template>
           <div wicket:id="checkboxGroup">
             <div class="d-flex flex-column gap-2">
-            <label wicket:for="checkPhone"><input type="checkbox" wicket:id="checkPhone"/> Telefoon</label>
-            <label wicket:for="checkEmail"><input type="checkbox" wicket:id="checkEmail"/> E-mail</label>
-            <label wicket:for="checkWhatsapp"><input type="checkbox" wicket:id="checkWhatsapp"/> WhatsApp</label>
-            <label wicket:for="checkTelegram"><input type="checkbox" wicket:id="checkTelegram"/> Telegram</label>
+              <label wicket:id="checkPhone"><input type="checkbox" wicket:id="check"/> Telefoon</label>
+              <label wicket:id="checkEmail"><input type="checkbox" wicket:id="check"/> E-mail</label>
+              <label wicket:id="checkWhatsapp"><input type="checkbox" wicket:id="check"/> WhatsApp</label>
+              <label wicket:id="checkTelegram"><input type="checkbox" wicket:id="check"/> Telegram</label>
             </div>
           </div>
         </template>
@@ -23,17 +31,19 @@
     </section>
 
     <section data-testid="checkboxGroupSelectDays">
-      <h2>Checkbox Group: select days</h2>
+      <h2>Checkbox Group: selecteer dagen via listview</h2>
+      <p>Voorbeeld waarop dagen geselecteerd worden.</p>
+      <p>Items worden via een listview toegevoegd.</p>
       <rods-story-canvas>
         <template>
-          <div wicket:id="checkboxGroupSelectDays">
-            <div class="d-flex flex-column gap-2">
-                <label wicket:id="day" >
-                  <input type="checkbox" wicket:id="checkbox" />
-                  <wicket:container wicket:id="label"></wicket:container>
-              </label>
+            <div wicket:id="checkboxGroupSelectDays">
+              <div class="d-flex flex-column gap-2">
+                  <label wicket:id="day" >
+                    <input type="checkbox" wicket:id="checkbox" />
+                    <wicket:container wicket:id="label"></wicket:container>
+                </label>
+              </div>
             </div>
-          </div>
         </template>
       </rods-story-canvas>
     </section>
