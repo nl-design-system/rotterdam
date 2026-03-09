@@ -8,8 +8,6 @@ updates:
     groups:
       github-actions:
         applies-to: "version-updates"
-    reviewers:
-      - "nl-design-system/kernteam-dependabot"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -26,5 +24,3 @@ updates:
           - "version-update:semver-major"
     versioning-strategy: "increase-if-necessary"
     open-pull-requests-limit: 20
-    reviewers:
-      - "nl-design-system/kernteam-dependabot"
