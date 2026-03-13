@@ -1,0 +1,16 @@
+{
+  "name": "@gemeente-rotterdam/java-release-group",
+  "version": "0.0.10",
+  "description": "Virtual package to track the Java/Maven release version via Changesets. Not published to npm.",
+  "author": "Community for NL Design System",
+  "license": "EUPL-1.2",
+  "keywords": [
+    "nl-design-system"
+  ],
+  "private": true,
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:nl-design-system/rotterdam.git",
+    "directory": "packages/java-release-group/"
+  }
+}
