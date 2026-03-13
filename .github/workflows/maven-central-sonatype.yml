@@ -18,6 +18,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: publish
     permissions:
       contents: write # needed for branch + commit
       pull-requests: write # needed for PR creation
@@ -156,4 +157,4 @@ jobs:
             --title "$PR_TITLE" \
             --body "$PR_BODY"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
