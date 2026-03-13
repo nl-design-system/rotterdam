@@ -14,7 +14,60 @@
         <section data-testid="formFieldTextInput">
           <h2>Form Field Text Input</h2>
           <rods-story-canvas
-            ><template> <div wicket:id="formFieldTextInput"></div> </template>
+          ><template> <div wicket:id="formFieldTextInput"></div> </template>
+          </rods-story-canvas>
+        </section>
+
+
+        <section data-testid="formFieldTextInputWithValueType">
+          <h2>Form Field Text Input met Value Type</h2>
+
+          <p>
+            In dit voorbeeld gebruikt het formulier geen <code>String</code>, maar het
+            domeintype <code>PersonFullName</code>. Dit value type vertegenwoordigt de
+            volledige naam van een persoon en bevat zelf de validatieregels.
+          </p>
+
+          <p>
+            In het <code>PersonFullName</code> type worden bijvoorbeeld constraints
+            afgedwongen zoals een minimale en maximale lengte van de naam. Hierdoor
+            kan een ongeldige naam niet in het domeinmodel terechtkomen.
+          </p>
+
+          <p>
+            Formulieren werken in de browser altijd met tekst (<code>String</code>).
+            Daarom gebruikt Wicket een <code>IConverter</code> om de invoer uit het
+            formulier te converteren naar het value type
+            <code>PersonFullName</code>. In deze converter worden eventuele
+            validatiefouten vertaald naar gebruikersvriendelijke foutmeldingen.
+          </p>
+
+          <p>
+            Het gebruik van value types kost iets meer implementatietijd
+            (bijvoorbeeld converters en integratie met frameworks),
+            maar levert op lange termijn duidelijke voordelen op:
+          </p>
+
+          <ul>
+            <li>betere type safety in het domeinmodel</li>
+            <li>validatie op één centrale plek</li>
+            <li>duidelijkere betekenis van waarden in de code</li>
+            <li>minder kans op bugs door verkeerd gebruik van <code>String</code></li>
+          </ul>
+
+          <p>
+            In dit voorbeeld wordt de tekstinvoer uit het formulier automatisch
+            geconverteerd naar een <code>PersonFullName</code> en opgeslagen
+            in het formuliermodel.
+          </p>
+
+          <rods-story-canvas
+          ><template>
+            <form wicket:id="formFieldTextInputWithValueType" class="d-flex flex-column gap-3 col-lg-5">
+              <div wicket:id="personFullName"/>
+              <button wicket:id="submit" type="submit">Verzenden</button>
+            </form>
+          </template>
           </rods-story-canvas>
         </section>
 
