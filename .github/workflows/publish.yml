@@ -257,7 +257,7 @@ jobs:
           publish: "pnpm run publish:changeset"
 
       - name: "Continuous Deployment: Create Java release tag"
-        if: steps.changesets.outputs.published == 'true'
+        if: steps.changesets.outputs.hasChangesets != 'true'
         env:
           GIT_AUTHOR_EMAIL: ${{ secrets.GIT_AUTHOR_EMAIL }}
           GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
