@@ -2,10 +2,10 @@ package nl.rotterdam.nl_design_system.docs.wicket.css;
 
 import static nl.rotterdam.nl_design_system.wicket.test_common.WicketAssertions.assertHeaderItemExists;
 
-import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
+import nl.rotterdam.nl_design_system.docs.wicket.DocsWicketTestCase;
 import org.junit.jupiter.api.Test;
 
-class NldsVoorbeeldGemeenteThemeCssReferenceTest extends NldsWicketTestCase {
+class NldsVoorbeeldGemeenteThemeCssReferenceTest extends DocsWicketTestCase {
 
     @Test
     void assertCssExists() {
