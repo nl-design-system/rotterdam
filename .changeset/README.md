@@ -1,5 +1,7 @@
 # Changeset sjabloon
 
+> Een changeset is een beschrijving van een versie-wijziging. Zie de [Changesets documentatie](https://github.com/changesets/changesets) voor meer informatie.
+
 Kopieer en plak het onderstaande sjabloon. Je kunt hiervoor de kopieer knop linksboven in het template gebruiken.
 
 ```markdown
