@@ -1,5 +1,13 @@
 # @gemeente-rotterdam/date-picker-element
 
+## 0.0.3
+
+### Patch Changes
+
+- df27a0e: Fix date picker to disable submit button and hide summary of selected value, when no date has been selected.
+- df27a0e: Show actually selected date in mobile date picker, instead of initially visible date.'
+- 61cfc47: Only show dates within the range of options, in the mobile date picker drawer for month selection.
+
 ## 0.0.2
 
 ### Patch Changes
