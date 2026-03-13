@@ -1,10 +1,10 @@
 package nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page;
 
-import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
+import nl.rotterdam.nl_design_system.docs.wicket.DocsWicketTestCase;
 import org.junit.jupiter.api.Test;
 
 
-class MijnLoketPageTest extends NldsWicketTestCase {
+class MijnLoketPageTest extends DocsWicketTestCase {
 
     @Test
     void renders() {

@@ -178,9 +178,13 @@ public class RdFormFieldTextInput<T extends @Nullable Object> extends GenericPan
         return textInput;
     }
 
-    public RdFormFieldTextInput<T> setInputType(String type) {
+    public RdFormFieldTextInput<T> setHtmlInputType(String type) {
         inputType = type;
+        return this;
+    }
 
+    public RdFormFieldTextInput<T> setModelType(Class<T> type) {
+        textInput.setType(type);
         return this;
     }
 

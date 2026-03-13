@@ -1,9 +1,9 @@
 package nl.rotterdam.nl_design_system.docs.wicket.component_examples;
 
+import nl.rotterdam.nl_design_system.docs.wicket.DocsWicketTestCase;
 import nl.rotterdam.nl_design_system.docs.wicket.action_group.ActionGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.link.LinkExamplesPanel;
-import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import nl.rotterdam.nl_design_system.wicket.test_common.WicketAssertions;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -24,7 +24,7 @@ import static nl.rotterdam.nl_design_system.docs.wicket.component_examples.Compo
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class ComponentsExamplePageTest extends NldsWicketTestCase {
+class ComponentsExamplePageTest extends DocsWicketTestCase {
 
     @Test
     void rendersWithoutComponentParameter() {

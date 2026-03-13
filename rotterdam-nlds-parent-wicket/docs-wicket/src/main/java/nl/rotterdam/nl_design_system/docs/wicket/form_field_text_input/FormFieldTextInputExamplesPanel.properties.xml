@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="PersonFullName.label">Full name</entry>
+    <entry key="PersonFullName.tooLong">${label} must have at max ${max} characters</entry>
+    <entry key="PersonFullName.tooShort">${label} must have at least ${min} characters</entry>
+    <entry key="Submit.label">Submit</entry>
+</properties>
