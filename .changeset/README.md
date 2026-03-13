@@ -23,3 +23,22 @@ Beschrijf na de tweede set `---` welke veranderingen je hebt doorgevoerd.
 
 Geef bij breaking changes aan **wat** er veranderd is, **waarom** de verandering nodig was en **hoe** gebruikers van het
 package hun code moeten aanpassen.
+
+## Wijzigingen in Java/Wicket componenten
+
+Voor wijzigingen in de Java/Wicket component library gebruik je de speciale `@gemeente-rotterdam/java-release-group` package.
+Alle Java modules delen één versienummer en worden als één geheel gereleased.
+
+```markdown
+---
+"@gemeente-rotterdam/java-release-group": minor
+---
+
+Beschrijving van de Java-wijziging
+```
+
+Gebruik:
+
+- `"@gemeente-rotterdam/java-release-group": major` voor breaking changes (bijv. Java versie verhogen, incompatibele API-wijziging)
+- `"@gemeente-rotterdam/java-release-group": minor` voor nieuwe componenten of achterwaarts-compatibele features
+- `"@gemeente-rotterdam/java-release-group": patch` voor bugfixes
