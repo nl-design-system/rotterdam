@@ -20,8 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: publish
     permissions:
-      contents: write # needed for branch + commit
-      pull-requests: write # needed for PR creation
+      contents: write # needed to commit SNAPSHOT bump directly to main
 
     env:
       # Sonatype credentials (via repo secrets)
@@ -38,8 +37,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
-          # Important: for tag builds, still checkout the tagged commit
-          # (we will not push from that commit; we create a new branch later)
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Ensure Maven Wrapper is executable
         run: chmod +x mvnw
@@ -118,43 +116,18 @@ jobs:
           ./mvnw -B versions:set -DnextSnapshot -DgenerateBackupPoms=false
           ./mvnw -B versions:commit
 
-      - name: Create branch for next SNAPSHOT version
+      - name: Commit next SNAPSHOT version to main
         if: startsWith(github.ref, 'refs/tags/java-')
-        id: create_branch
         run: |
           TAG_NAME="${GITHUB_REF_NAME}"              # java-0.1.0
           VERSION_FROM_TAG="${TAG_NAME#java-}"       # 0.1.0
-
-          # Branch name, e.g. release/next-snapshot-0.1.0
-          BRANCH_NAME="release/next-snapshot-${VERSION_FROM_TAG}"
 
           git config user.name  "${GIT_AUTHOR_NAME}"
           git config user.email "${GIT_AUTHOR_EMAIL}"
 
-          git checkout -b "$BRANCH_NAME"
+          git checkout main
 
-          git status
           git add .
           # No precommit-hook, we don't want pnpm to be present when building a Maven release
           git commit --no-verify -m "Bump version to next SNAPSHOT after ${VERSION_FROM_TAG} release"
-          git push origin "$BRANCH_NAME"
-
-          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
-
-      - name: Create PR for next SNAPSHOT version
-        if: startsWith(github.ref, 'refs/tags/java-')
-        run: |
-          TAG_NAME="${GITHUB_REF_NAME}"              # java-0.1.0
-          VERSION_FROM_TAG="${TAG_NAME#java-}"       # 0.1.0
-          BRANCH_NAME="${{ steps.create_branch.outputs.branch_name }}"
-
-          PR_TITLE="Bump version to next SNAPSHOT after ${VERSION_FROM_TAG} release"
-          PR_BODY="Automated PR to bump version to the next SNAPSHOT after releasing ${VERSION_FROM_TAG} to Maven Central."
-
-          gh pr create \
-            --base main \
-            --head "$BRANCH_NAME" \
-            --title "$PR_TITLE" \
-            --body "$PR_BODY"
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          git push origin main

@@ -74,16 +74,9 @@ This workflow:
 - Uploads them to Sonatype Central
 - Auto-publishes them to Maven Central
 - Waits until publication is fully complete
-- Creates a PR to bump Maven POMs to the next `-SNAPSHOT` development version
+- Commits the next `-SNAPSHOT` version directly to `main`
 
-### 4. Accept the Pull Request with the new development SNAPSHOT version
-
-A PR is created with the new development snapshot version.
-
-Open the [Pull Request](https://github.com/nl-design-system/rotterdam/pulls),
-approve and merge the version update commit.
-
-### 5. Rotterdam internal Maven caching
+### 4. Rotterdam internal Maven caching
 
 It may take some time before Maven caches within Rotterdam's infrastructure
 make the new version available.
