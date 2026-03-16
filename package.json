@@ -69,7 +69,7 @@
     "prepare": "husky",
     "prettier": "prettier --write .",
     "publish:changeset": "changeset publish",
-    "version:changeset": "changeset version && node scripts/sync-java-version.cjs",
+    "version:changeset": "changeset version && node scripts/sync-java-version.mjs",
     "start": "node_modules/http-server/bin packages/storybook/dist/",
     "storybook": "npm-run-all --parallel watch:**",
     "test": "npm run test-workspaces",

@@ -1,4 +1,7 @@
-'use strict';
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 /**
  * Syncs all Maven POM files to the version defined in packages/java-release-group/package.json.
@@ -11,10 +14,7 @@
  * a corresponding `java-<version>` git tag (meaning it was already released).
  */
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
 /** Read the target version from packages/java-release-group/package.json */
