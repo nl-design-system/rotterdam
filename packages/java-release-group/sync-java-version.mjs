@@ -26,8 +26,8 @@ function getJavaReleaseGroupVersion() {
 /** Read the current project version from Maven using the Maven Wrapper. */
 function getCurrentPomVersion() {
   const version = execSync('./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout', {
-    encoding: 'utf8',
     cwd: ROOT,
+    encoding: 'utf8',
   }).trim();
   if (!version) {
     throw new Error('Could not determine project version from Maven');
