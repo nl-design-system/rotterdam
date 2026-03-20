@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 /**
- * Syncs all Maven POM files to the version defined in packages/java-release-group/package.json.
+ * Syncs all Maven POM files to the version defined in this package's package.json.
  *
  * This script is run as part of `pnpm run version:changeset` (changeset version hook).
  * It ensures that when Changesets bumps the java-release-group package version,
@@ -15,11 +15,11 @@ import { fileURLToPath } from 'url';
  */
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(__dirname, '../..');
 
-/** Read the target version from packages/java-release-group/package.json */
+/** Read the target version from this package's package.json */
 function getJavaReleaseGroupVersion() {
-  const pkgPath = path.join(ROOT, 'packages', 'java-release-group', 'package.json');
+  const pkgPath = path.join(__dirname, 'package.json');
   return JSON.parse(fs.readFileSync(pkgPath, 'utf8')).version;
 }
 
