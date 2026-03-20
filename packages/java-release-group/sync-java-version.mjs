@@ -23,21 +23,16 @@ function getJavaReleaseGroupVersion() {
   return JSON.parse(fs.readFileSync(pkgPath, 'utf8')).version;
 }
 
-/** Read the current version from the root pom.xml.
- *
- * The project version is the first `<version>` element in the root pom.xml.
- * It always appears before any plugin or dependency versions in the file
- * because those are declared inside `<build>` and `<dependencyManagement>` which
- * come later. This makes the regex safe for this project's POM layout.
- */
+/** Read the current project version from Maven using the Maven Wrapper. */
 function getCurrentPomVersion() {
-  const pomPath = path.join(ROOT, 'pom.xml');
-  const content = fs.readFileSync(pomPath, 'utf8');
-  const match = content.match(/<version>(\d+\.\d+\.\d+(?:-SNAPSHOT)?)<\/version>/);
-  if (!match) {
-    throw new Error('Could not find <version> in pom.xml');
+  const version = execSync('./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout', {
+    encoding: 'utf8',
+    cwd: ROOT,
+  }).trim();
+  if (!version) {
+    throw new Error('Could not determine project version from Maven');
   }
-  return match[1];
+  return version;
 }
 
 /** Check whether a git tag exists locally (requires tags to be fetched). */
