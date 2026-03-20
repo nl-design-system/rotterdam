@@ -37,6 +37,8 @@ export interface TimeOption {
   selected?: boolean;
 }
 
+export type SortedTimeOptions = TimeOption[];
+
 /**
  * Give a `Date` for every day in the specified month.
  * Dates are sorted from first to last day.
@@ -182,4 +184,14 @@ export const getMaxDate = (dateA: Date, dateB: Date) => {
   const a = dateA.getTime();
   const b = dateB.getTime();
   return a === b ? dateA : a > b ? dateA : dateB;
+};
+
+export const getTimeOptionsBetween = (sortedTimes: TimeOption[], minDate: Date, maxDate: Date): TimeOption[] => {
+  const minTime = minDate.getTime();
+  const maxTime = maxDate.getTime();
+  const isInRange = ({ date }: TimeOption) => date.getTime() >= minTime && date.getTime() <= maxTime;
+  const firstIndex = sortedTimes.findIndex(isInRange);
+  const lastIndex = firstIndex === -1 ? -1 : sortedTimes.findLastIndex(isInRange);
+
+  return firstIndex === -1 ? [] : sortedTimes.slice(firstIndex, lastIndex + 1);
 };

@@ -29,7 +29,8 @@
               <rods-date-picker
                 name="voorbeeld-theme-date"
                 data-testid="custom-element"
-                options='[{ "value": "2025-11-02T13:00", "label": "middag" }, { "value": "2025-12-31T09:00", "label": "ochtend" },{ "value": "2026-01-15T20:00", "label": "avond" }]'
+                value="2025-11-02T13:00"
+                options='[{ "value": "2025-11-02T13:00", "label": "middag" }, { "value": "2025-12-31T09:00", "label": "ochtend" }, { "value": "2025-12-31T12:00", "label": "middag" },{ "value": "2026-01-15T20:00", "label": "avond" }]'
                 ><button
                   slot="submit-button"
                   type="submit"
@@ -38,28 +39,31 @@
                   Bevestig uw afspraak
                 </button></rods-date-picker
               >
-              <rods-date-picker
-                lang="en"
-                name="voorbeeld-theme-date-en"
-                options='[{ "value": "2025-11-02T13:00" }, { "value": "2025-12-31T09:00" },{ "value": "2026-01-15T20:00" }]'
-                ><button
-                  slot="submit-button"
-                  type="submit"
-                  class="utrecht-button utrecht-button--html utrecht-button--primary-action"
+              <div lang="en">
+                <rods-date-picker
+                  name="voorbeeld-theme-date-en"
+                  options='[{ "value": "2025-11-02T13:00" }, { "value": "2025-12-31T09:00" },{ "value": "2026-01-15T20:00" }]'
+                  ><button
+                    slot="submit-button"
+                    type="submit"
+                    class="utrecht-button utrecht-button--html utrecht-button--primary-action"
+                  >
+                    Confirm your appointment
+                  </button></rods-date-picker
                 >
-                  Confirm your appointment
-                </button></rods-date-picker
-              >
+              </div>
             </div>
           </div>
           <div class="rods-theme">
             <div class="utrecht-root margins">
               <rods-date-picker
+                now="2025-12-05T09:42:00"
                 name="rods-theme-date-1"
                 data-testid="custom-element"
                 options='[{ "value": "2025-11-02T13:00", "label": "middag" }, { "value": "2025-12-31T09:00", "label": "ochtend" },{ "value": "2026-01-15T20:00", "label": "avond" }]'
               ></rods-date-picker>
               <rods-date-picker
+                now="2025-12-05T09:42:00"
                 name="rods-theme-date-2"
                 options='[{ "value": "2025-11-02T13:00", "label": "middag" }, { "value": "2025-12-31T09:00", "label": "ochtend" },{ "value": "2026-01-15T20:00", "label": "avond" }]'
                 ><button
@@ -69,7 +73,7 @@
                 >
                   Bevestig uw afspraak
                 </button></rods-date-picker
-              ><rods-date-picker id="jcc" value="1970-01-01T00:00" name="rods-theme-date-3">
+              ><rods-date-picker now="2025-12-05T09:42:00" id="jcc" value="1970-01-01T00:00" name="rods-theme-date-3">
                 <div slot="time-placeholder" style="text-align: center">
                   <svg width="153" height="141" viewBox="0 0 153 141" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse cx="69.8547" cy="133.064" rx="42.3837" ry="7.06395" fill="#E4EEF1" />
