@@ -263,17 +263,7 @@ jobs:
           GIT_AUTHOR_EMAIL: ${{ secrets.GIT_AUTHOR_EMAIL }}
           GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
         run: |
-          PKG_FILE="./packages/java-release-group/package.json"
-          if [ ! -f "${PKG_FILE}" ]; then
-            echo "::error::${PKG_FILE} not found — cannot determine Java release version."
-            exit 1
-          fi
-
-          JAVA_VERSION=$(node -e "
-            const pkg = JSON.parse(require('fs').readFileSync('${PKG_FILE}', 'utf8'));
-            if (!pkg.version) { process.stderr.write('No version field in package.json\n'); process.exit(1); }
-            process.stdout.write(pkg.version);
-          ")
+          JAVA_VERSION=$(pnpm --filter @gemeente-rotterdam/java-release-group exec node -p "require('./package.json').version")
           MAVEN_TAG="java-${JAVA_VERSION}"
 
           # Refresh local tag list so we see any tags just pushed by the Changesets action
