@@ -703,8 +703,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@utrecht/page-layout-css':
-        specifier: 1.1.1
-        version: 1.1.1
+        specifier: 2.0.1
+        version: 2.0.1
       '@utrecht/pagination-css':
         specifier: 2.0.3
         version: 2.0.3
@@ -3383,8 +3383,8 @@ packages:
   '@utrecht/page-header-css@2.0.1':
     resolution: {integrity: sha512-HxONNJxBNwqEY/qDkx3U0wAVvirc/1l04i9L4dPscjf+Le6UWkJb4pfxXVO8b8yIT+wyj2YY0k8aeBUEIJPKjA==}
 
-  '@utrecht/page-layout-css@1.1.1':
-    resolution: {integrity: sha512-pFiRgDmB0F4s23JIJf0akynHVfBt7l4rv9t9gvpTeOxSdx3KTNZsxSNT5PyQwIf5mlEHWidp6yxn3fvQXlMKmw==}
+  '@utrecht/page-layout-css@2.0.1':
+    resolution: {integrity: sha512-FXLvM6A4Lex+Miz9cuDjFuoC+HeFBu78oMvFU88c4D01Jnso2gKaZHRy3XT8UqKJbE8z0rNzRTwoztOlBVqFIw==}
 
   '@utrecht/pagination-css@2.0.3':
     resolution: {integrity: sha512-LXXWZXEgiOacCHljs9jm9Nm2MQW7dmNtq5Ck4PENOA62oT/HVCXbiviWeT+dYLsv8Nwv+JCFYWm4CA1UGY7MOw==}
@@ -11508,7 +11508,7 @@ snapshots:
 
   '@utrecht/page-header-css@2.0.1': {}
 
-  '@utrecht/page-layout-css@1.1.1': {}
+  '@utrecht/page-layout-css@2.0.1': {}
 
   '@utrecht/pagination-css@2.0.3': {}
 
