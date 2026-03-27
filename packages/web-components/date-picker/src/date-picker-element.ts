@@ -609,7 +609,7 @@ export class DatePickerElement extends LitElement {
                         role="option"
                         @click=${() => this.selectTime(date)}
                       >
-                        ${label}
+                        ${label || new Intl.DateTimeFormat(this._lang, { timeStyle: 'short' }).format(date)}
                       </li>`,
                   )}
                 </ul>
@@ -1092,6 +1092,13 @@ export class DatePickerElement extends LitElement {
     });
   }
   closeDateModal() {
+    const dayChanged = !this._dateValue || !isSameDate(this._dateValue, this._visibleDate);
+    if (dayChanged) {
+      const firstSlot = this._times.find((t) => isSameDate(t.date, this._visibleDate));
+      this._dateValue = firstSlot ? firstSlot.date : null;
+      this._times = this._times.map((option) => ({ ...option, selected: option === firstSlot }));
+    }
+    this.requestUpdate();
     this.shadowRoot?.querySelector<HTMLDialogElement>('#date-drawer')?.close();
   }
   closeTimeModal() {
