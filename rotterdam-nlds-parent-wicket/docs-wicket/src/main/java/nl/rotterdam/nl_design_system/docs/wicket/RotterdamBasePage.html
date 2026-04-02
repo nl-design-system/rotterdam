@@ -3,6 +3,7 @@
   <head>
     <title></title>
   </head>
+
   <body>
     <wicket:extend>
       <div wicket:id="pageLayout">
@@ -18,7 +19,92 @@
             <wicket:child />
           </div>
         </div>
-        <footer wicket:id="pageFooter">Page footer</footer>
+        <footer wicket:id="pageFooter">
+
+          <div class="utrecht-page-footer__navigation" >
+            <ul role="list" class="utrecht-link-list utrecht-link-list--html-ul" >
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook/?path=/docs/utrecht-readme--docs" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit"
+                                            class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook </span> </a></li>
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook-angular/index.html?path=/" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit"
+                                            class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook Angular</span> </a>
+              </li>
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook-css/index.html?path=/" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit"
+                                            class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook CSS</span> </a></li>
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook-html/index.html?path=/" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit"
+                                            class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook HTML</span> </a></li>
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook-react/index.html?path=/" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit"
+                                            class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook React.Js</span> </a>
+              </li>
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook-vue/index.html?path=/" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit"
+                                            class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook Vue.Js</span> </a></li>
+              <li class="utrecht-link-list__item" ><a
+                href="/utrecht/storybook-web-component/index.html?path=/" target="_blank" rel="noreferrer"
+                class="nl-link utrecht-link--html-a utrecht-link-list__link" >
+                <utrecht-icon-chevron-right  direction="inherit" class="hydrated"></utrecht-icon-chevron-right>
+                <span class="utrecht-link-list__link-text" > Storybook Web Components</span>
+              </a></li>
+            </ul>
+          </div>
+
+          <p>float reset</p>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 d-none d-xl-block">
+                <hr>
+              </div>
+              <div class="col-12 col-xl-8">
+                <div class="row row-cols-2 row-cols-md-auto footer-links">
+                  <div class="col">
+                    <a class="text-body" href="https://www.rotterdam.nl/melding-vraag-of-klacht">Reactie</a>
+                  </div><div class="col">
+                  <a class="text-body" href="/mijnloket/publiek/toegankelijkheid">Toegankelijkheid</a>
+                </div><div class="col">
+                  <a class="text-body" href="https://www.rotterdam.nl/privacy">Privacy</a>
+                </div><div class="col">
+                  <a class="text-body" href="https://www.rotterdam.nl">Rotterdam.nl</a>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-12 d-block d-xl-none">
+                <hr>
+              </div>
+
+              <div class="col-12 col-xl-4 text-end">
+
+
+                <wicket:container wicket:id="logo">
+
+                </wicket:container>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
       <script type="module"></script>
     </wicket:extend>

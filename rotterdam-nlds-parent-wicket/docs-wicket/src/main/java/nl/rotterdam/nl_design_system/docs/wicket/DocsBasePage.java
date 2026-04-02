@@ -28,8 +28,8 @@ public abstract class DocsBasePage extends WebPage {
         super.onInitialize();
 
         add(
-            new RdRootTransparentContainer("root").add(
-                new NldsModelDesignSystemThemeBehavior(themeModel)),
+            new RdRootTransparentContainer("root")
+                .add(new NldsModelDesignSystemThemeBehavior(themeModel)),
             new RdBodyTransparentContainer("body"));
     }
 

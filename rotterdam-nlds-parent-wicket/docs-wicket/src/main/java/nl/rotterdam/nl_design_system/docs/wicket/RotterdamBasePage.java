@@ -34,6 +34,7 @@ public class RotterdamBasePage extends DocsBasePage {
         pageHeader = new RdPageHeaderBorder("pageHeader");
         pageBody = new RdPageBodyBorder("pageBody");
         pageFooter = new RdPageFooterBorder("pageFooter");
+        pageFooter.add(new RotterdamLogoImage("logo"));
         this.pageTitle = pageTitle;
     }
 

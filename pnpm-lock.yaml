@@ -275,6 +275,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(vite@7.2.6(@types/node@24.3.0)(sass-embedded@1.91.0)(sass@1.94.2)(terser@5.44.0)(yaml@2.8.1))
 
+  packages/java-release-group: {}
+
   packages/storybook:
     devDependencies:
       '@gemeente-denhaag/action':

@@ -9452,12 +9452,14 @@
   "components/page-footer/utrecht": {
     "utrecht": {
       "page-footer": {
-        "color": { "$value": "{rods.color.base.white}" },
-        "background-color": { "$value": "{rods.color.base.green}" },
-        "background-image": {},
-        "max-inline-size": {
-          "$value": "{basis.page.max-inline-size}"
+        "content": {
+          "padding-block-start": { "$value": "{rods.space.scale.4}" },
+          "padding-block-end": { "$value": "{rods.space.scale.4}" }
         },
+        "color": { "$value": "{rods.color.base.green}" },
+        "background-color": { "$value": "{rods.color.base.white}" },
+        "background-image": {},
+        "max-inline-size": { "$value": "{basis.page.max-inline-size}" },
         "padding-inline-end": { "$value": "72px" },
         "padding-inline-start": { "$value": "72px" },
         "padding-block-end": { "$value": "64px" },
