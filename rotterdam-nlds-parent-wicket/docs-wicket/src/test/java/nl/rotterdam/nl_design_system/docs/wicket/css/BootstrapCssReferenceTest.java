@@ -1,12 +1,12 @@
 package nl.rotterdam.nl_design_system.docs.wicket.css;
 
+import nl.rotterdam.nl_design_system.docs.wicket.DocsWicketTestCase;
 import nl.rotterdam.nl_design_system.docs.wicket.css.bootstrap.BootstrapCssReference;
-import nl.rotterdam.nl_design_system.wicket.test_common.NldsWicketTestCase;
 import org.junit.jupiter.api.Test;
 
 import static nl.rotterdam.nl_design_system.wicket.test_common.WicketAssertions.assertHeaderItemExists;
 
-class BootstrapCssReferenceTest extends NldsWicketTestCase {
+class BootstrapCssReferenceTest extends DocsWicketTestCase {
 
     @Test
     void assertExists() {

@@ -37,7 +37,7 @@ public class SingleSignOnLoginFormPanel extends Panel {
                         new RdFormFieldTextInput<>("username", username, Model.of("Gebruikersnaam")).setRequired(true),
                         new RdFormFieldTextInput<>("password", password, Model.of("Wachtwoord"))
                             .setRequired(true)
-                            .setInputType("password"),
+                            .setHtmlInputType("password"),
                         new RdFormFieldCheckbox("rememberMe", rememberMe, Model.of("Onthoud mij")).setRequired(true),
                         newMinLength8(sampleMinLength8),
                         new RdActionGroup("actionGroup").add(new RdButton("submit"))

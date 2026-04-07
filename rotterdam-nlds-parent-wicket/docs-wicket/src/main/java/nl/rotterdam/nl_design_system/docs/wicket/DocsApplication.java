@@ -2,9 +2,13 @@ package nl.rotterdam.nl_design_system.docs.wicket;
 
 import de.agilecoders.wicket.webjars.WicketWebjars;
 import nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentsExamplePage;
+import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.person_full_name.PersonFullName;
+import nl.rotterdam.nl_design_system.docs.wicket.form_field_text_input.person_full_name.PersonFullNameWicketConverter;
 import nl.rotterdam.nl_design_system.wicket.html.WicketElementDisplayContentsHeaderContributor;
 import nl.rotterdam.nl_design_system.docs.wicket.mijn_loket_page.MijnLoketPage;
 import nl.rotterdam.nl_design_system.docs.wicket.sso_login_page.SingleSignOnLoginPage;
+import org.apache.wicket.ConverterLocator;
+import org.apache.wicket.IConverterLocator;
 import org.apache.wicket.Session;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
@@ -14,16 +18,21 @@ import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.settings.ExceptionSettings;
 
-import java.util.Locale;
-
 public class DocsApplication extends WebApplication {
-
-    private static final Locale LOCALE_DUTCH = Locale.of("nl");
 
     @Override
     public Session newSession(Request request, Response response) {
-        return super.newSession(request, response).setLocale(LOCALE_DUTCH);
+        return super.newSession(request, response).setLocale(DocsLocale.LOCALE_DUTCH);
     }
+
+    @Override
+    protected IConverterLocator newConverterLocator() {
+        ConverterLocator locator = (ConverterLocator) super.newConverterLocator();
+
+        locator.set(PersonFullName.class, new PersonFullNameWicketConverter());
+        return locator;
+    }
+
 
     @Override
     public void init() {

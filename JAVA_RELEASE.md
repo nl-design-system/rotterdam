@@ -9,31 +9,62 @@ for maintainers.
 
 ## 1. Instructions for Creating a Release
 
-Releases are created through GitHub Actions and triggered by pushing a Git tag
-following the pattern:
+Java releases are created automatically through the same
+[Changesets](https://github.com/changesets/changesets)-based workflow
+that governs the npm packages in this repository.
 
-`java-<version>`
+### 1. Add a changeset to your PR
 
-Example: `java-0.0.2`
+Every PR that contains a releasable Java change must include a changeset
+that targets the `@gemeente-rotterdam/java-release-group` package. All Java/Wicket modules
+share a single version number and are always released together.
 
-Follow these steps:
+Run the CLI and follow the prompts, or create the file manually:
 
-### 1. Create a new release From GitHub UI
+```bash
+pnpm changeset
+```
 
-- Go to [GitHub releases](https://github.com/nl-design-system/rotterdam/releases)
-- Click `Draft a new release`
-- Tag: create tag. Prefix it with `java-`. and then append version from `pom.xml`
-  but without `-SNAPSHOT`. If `pom.xml` has 0.0.85-SNAPSHOT tag is: `java-0.0.85`
-- Title: short summary of the release
-- Release notes: highlights of the release.
+Choose `@gemeente-rotterdam/java-release-group` as the package and select the appropriate
+bump type:
 
-Click `Publish release`.
+| Wijziging                         | Bump type |
+| --------------------------------- | --------- |
+| Bugfix                            | `patch`   |
+| Nieuwe component / feature        | `minor`   |
+| Breaking API- of versie-wijziging | `major`   |
 
-### 2. GitHub Actions publishes to Maven Central
+The changeset file is committed together with your code changes.
 
-Pushing a tag automatically triggers the release workflow:
+Example changeset file (`.changeset/<random-name>.md`):
 
-[maven-central-sonatype.yml](.github/workflows/maven-central-sonatype.yml)
+```md
+---
+"@gemeente-rotterdam/java-release-group": minor
+---
+
+Adds the new `RdColorPicker` component to the Wicket component library.
+```
+
+### 2. Merge the PR
+
+After the PR is merged to `main`, the CI automatically creates or updates
+a **"docs(release): design system packages"** pull request that:
+
+- Bumps `packages/java-release-group/package.json` to the new version
+- Updates all Maven POM files to the same release version (removes `-SNAPSHOT`)
+- Updates `packages/java-release-group/CHANGELOG.md`
+
+Review the version bump PR, approve it, and merge it.
+
+### 3. CI publishes to Maven Central
+
+After the version PR is merged, the CI pipeline:
+
+1. Detects the new `@gemeente-rotterdam/java-release-group` version
+2. Creates the `java-<version>` git tag (e.g. `java-0.0.11`)
+3. The tag triggers the Maven Central release workflow:
+   [maven-central-sonatype.yml](.github/workflows/maven-central-sonatype.yml)
 
 This workflow:
 
@@ -43,17 +74,11 @@ This workflow:
 - Uploads them to Sonatype Central
 - Auto-publishes them to Maven Central
 - Waits until publication is fully complete
-
-### 3. Accept the Pull Request with the new development SNAPSHOT version
-
-A PR is created with the new development snapshot version.
-
-Open the [Pull Request](https://github.com/nl-design-system/rotterdam/pulls),
-Approve and Merge the version update commit.
+- Commits the next `-SNAPSHOT` version directly to `main`
 
 ### 4. Rotterdam internal Maven caching
 
-It may take some time before Maven caches within Rotterdam’s infrastructure
+It may take some time before Maven caches within Rotterdam's infrastructure
 make the new version available.
 
 ---
@@ -84,7 +109,9 @@ Useful for verifying that everything is configured correctly.
 
 ### B. Full release (tag-triggered)
 
-Triggered by a tag `java-<version>`.
+Triggered automatically by the `publish-npm` job in
+[publish.yml](.github/workflows/publish.yml) when a new `java-<version>`
+tag is created.
 This mode:
 
 - Builds

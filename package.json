@@ -69,6 +69,7 @@
     "prepare": "husky",
     "prettier": "prettier --write .",
     "publish:changeset": "changeset publish",
+    "version:changeset": "changeset version && pnpm --filter @gemeente-rotterdam/java-release-group run sync-pom-versions",
     "start": "node_modules/http-server/bin packages/storybook/dist/",
     "storybook": "npm-run-all --parallel watch:**",
     "test": "npm run test-workspaces",
