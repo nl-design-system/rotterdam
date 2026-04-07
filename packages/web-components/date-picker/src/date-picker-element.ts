@@ -238,7 +238,7 @@ export class DatePickerElement extends LitElement {
    * This is the `value` for the form associated element.
    */
   @property({ reflect: true })
-  get value() {
+  get value(): string {
     return this._dateValue ? this._dateValue.toISOString() : '';
   }
 
@@ -252,6 +252,7 @@ export class DatePickerElement extends LitElement {
       } else {
         this._dateValue = null;
       }
+      this._internals.setFormValue(this.value);
       this._indeterminate = false;
     }
   }
@@ -1184,6 +1185,7 @@ export class DatePickerElement extends LitElement {
   }
   updateValue(date: string | Date | null, indeterminate = false) {
     this._dateValue = typeof date === 'string' ? new Date(date) : date ? new Date(date.getTime()) : null;
+    this._internals.setFormValue(this.value);
     this._indeterminate = indeterminate;
 
     this.dispatchEvent(new CustomEvent('change'));
