@@ -109,7 +109,15 @@ export const Mobile: Story = {
 export const DesktopValue: Story = {
   name: 'Desktop with existing value',
   args: {
-    options: [{ value: '2025-12-31T12:00:00' }],
+    options: [
+      { value: '2025-12-31T12:00:00' },
+      { value: '2025-12-31T12:30:00' },
+      { value: '2025-12-31T13:00:00' },
+      { value: '2026-01-01T13:00:00' },
+      { value: '2026-01-01T14:00:29' },
+      { value: '2026-01-01T15:00:00' },
+      { value: '2026-01-02T09:00:00' },
+    ],
     value: '2025-12-31T12:00:00',
   },
   decorators: [DesktopDecorator],
@@ -118,7 +126,15 @@ export const DesktopValue: Story = {
 export const MobileValue: Story = {
   name: 'Mobile layout with existing value',
   args: {
-    options: [{ value: '2025-12-31T12:00:00' }],
+    options: [
+      { value: '2025-12-31T12:00:00' },
+      { value: '2025-12-31T12:30:00' },
+      { value: '2025-12-31T13:00:00' },
+      { value: '2026-01-01T13:00:00' },
+      { value: '2026-01-01T14:00:00' },
+      { value: '2026-01-01T15:00:00' },
+      { value: '2026-01-02T09:00:00' },
+    ],
     value: '2025-12-31T12:00:00',
   },
   decorators: [MobileDecorator],
