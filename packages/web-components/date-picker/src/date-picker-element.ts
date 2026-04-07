@@ -181,12 +181,12 @@ export class DatePickerElement extends LitElement {
   }
 
   set now(value: unknown) {
-    // Value is `dirty` when `now` already has been changed from the initial value.
-    const dirty = this._now !== this._initialNow;
     if (typeof value === 'string' || typeof value === 'number') {
       this._now = new Date(value);
 
-      if (!dirty) {
+      // When the `_visibleDate` is still set to the initial value `now`,
+      // we should also update the `_visibleDate` to match the new `now`
+      if (this._visibleDate === this._initialNow) {
         this._visibleDate = this._now;
       }
     }
@@ -433,6 +433,7 @@ export class DatePickerElement extends LitElement {
     const currentIndex = this._times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
     const today = this._now;
+
     const times = getTimeOptionsBetween(this._times, startOfDay(this._visibleDate), endOfDay(this._visibleDate)).map(
       (obj) => ({
         ...obj,
@@ -486,6 +487,7 @@ export class DatePickerElement extends LitElement {
       ...obj,
       selected: this._drawerDate ? isEqual(this._drawerDate, obj.date) : false,
     }));
+
     const mobileSelectedOption = mobileTimeOptions.find(({ selected }) => selected);
     const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
     const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
