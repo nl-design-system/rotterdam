@@ -208,6 +208,9 @@ export class DatePickerElement extends LitElement {
 
   _drawerDate: Date | null = null;
 
+  /* The value of `_dateValue` when the drawer is opened. Can be used to restore the value */
+  _initialDrawerDateValue: Date | null = null;
+
   /**
    * Set to `true` to flag that the values in `times` are not complete,
    * and they can be updates based on the `visibleDateChange` event.
@@ -554,21 +557,26 @@ export class DatePickerElement extends LitElement {
         </tr>`,
     );
 
-    let initialDrawerDateValue: Date | null = null;
     /** State for the drawer: which date did the user choose? */
     const openDateDrawer = () => {
-      initialDrawerDateValue = this._dateValue;
+      this._initialDrawerDateValue = this._dateValue;
       this._drawerDate = null;
+      this.showDateModal();
     };
     const openTimeDrawer = () => {
+      if (!this._dateValue && !this._userVisibleDate) {
+        return;
+      }
+
       this._drawerDate = this._dateValue;
+      this.showTimeModal();
     };
 
     const cancelDateDrawer = () => {
-      this._dateValue = initialDrawerDateValue;
+      this._dateValue = this._initialDrawerDateValue;
     };
     const cancelTimeDrawer = () => {
-      this._dateValue = initialDrawerDateValue;
+      this._dateValue = this._initialDrawerDateValue;
     };
 
     const submitDateDrawer = () => {
@@ -597,7 +605,9 @@ export class DatePickerElement extends LitElement {
               id="mobile-date-button"
               class="utrecht-textbox"
               type="button"
-              @click=${() => this.showDateModal()}
+              @click=${() => {
+                openDateDrawer();
+              }}
               todo-aria-labelledby="mobile-date-label mobile-date-button-label"
               aria-labelledby="mobile-date-label"
             >
@@ -625,7 +635,6 @@ export class DatePickerElement extends LitElement {
           class="utrecht-drawer utrecht-drawer--block-end"
           id="date-drawer"
           aria-labelledby="mobile-date-label"
-          @open=${openDateDrawer}
           @cancel=${cancelDateDrawer}
         >
           <form method="dialog" @submit=${submitTimeDrawer}>
@@ -723,12 +732,7 @@ export class DatePickerElement extends LitElement {
             </div>
           </form>
         </dialog>
-        <dialog
-          class="utrecht-drawer utrecht-drawer--block-end"
-          id="time-drawer"
-          @open=${openTimeDrawer}
-          @cancel=${cancelTimeDrawer}
-        >
+        <dialog class="utrecht-drawer utrecht-drawer--block-end" id="time-drawer" @cancel=${cancelTimeDrawer}>
           <form method="dialog" @submit=${submitTimeDrawer}>
             <div class="utrecht-drawer__rods-header">
               <h2 class="utrecht-drawer__rods-heading">${selectTimeLocale} ${formattedSelectedDate}</h2>
@@ -779,10 +783,7 @@ export class DatePickerElement extends LitElement {
               })}
               type="button"
               @click=${() => {
-                if (!this._dateValue && !this._userVisibleDate) {
-                  return;
-                }
-                this.showTimeModal();
+                openTimeDrawer();
               }}
               ?aria-disabled=${!this._dateValue && !this._userVisibleDate ? 'true' : nothing}
               tabindex=${!this._dateValue && this._userVisibleDate ? nothing : '0'}
