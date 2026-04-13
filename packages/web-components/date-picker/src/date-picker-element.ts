@@ -43,6 +43,8 @@ const getLang = (node: Node): string => {
   }
 };
 
+const DEFAULT_LANG = 'nl';
+
 export const tag = 'rods-date-picker';
 interface DatePickerI18n {
   [index: string]: DatePickerI18nText;
@@ -60,7 +62,6 @@ interface DatePickerI18nText {
   dayInLocale: string;
   daysOfWeek: string[];
   descriptionLocale: string;
-  hourSuffixLocal: string;
   months: string[];
   nextLocale: string;
   previousLocale: string;
@@ -180,12 +181,12 @@ export class DatePickerElement extends LitElement {
   }
 
   set now(value: unknown) {
-    // Value is `dirty` when `now` already has been changed from the initial value.
-    const dirty = this._now !== this._initialNow;
     if (typeof value === 'string' || typeof value === 'number') {
       this._now = new Date(value);
 
-      if (!dirty) {
+      // When the `_visibleDate` is still set to the initial value `now`,
+      // we should also update the `_visibleDate` to match the new `now`
+      if (this._visibleDate === this._initialNow) {
         this._visibleDate = this._now;
       }
     }
@@ -206,6 +207,9 @@ export class DatePickerElement extends LitElement {
   _dynamic = false;
 
   _drawerDate: Date | null = null;
+
+  /* The value of `_dateValue` when the drawer is opened. Can be used to restore the value */
+  _initialDrawerDateValue: Date | null = null;
 
   /**
    * Set to `true` to flag that the values in `times` are not complete,
@@ -236,7 +240,7 @@ export class DatePickerElement extends LitElement {
    * This is the `value` for the form associated element.
    */
   @property({ reflect: true })
-  get value() {
+  get value(): string {
     return this._dateValue ? this._dateValue.toISOString() : '';
   }
 
@@ -246,9 +250,11 @@ export class DatePickerElement extends LitElement {
 
       if (Number.isFinite(newDate.getTime())) {
         this._dateValue = new Date(value);
+        this._visibleDate = this._dateValue;
       } else {
         this._dateValue = null;
       }
+      this._internals.setFormValue(this.value);
       this._indeterminate = false;
     }
   }
@@ -266,7 +272,6 @@ export class DatePickerElement extends LitElement {
       dayInLocale: 'Pick a day in ',
       daysOfWeek: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
       descriptionLocale: 'You can only select dates with available slots.',
-      hourSuffixLocal: "o'clock",
       months: [
         'January',
         'February',
@@ -301,7 +306,6 @@ export class DatePickerElement extends LitElement {
       dayInLocale: 'Selecteer een dag in',
       daysOfWeek: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
       descriptionLocale: 'U kunt alleen beschikbare dagen selecteren.',
-      hourSuffixLocal: 'uur',
       months: [
         'januari',
         'februari',
@@ -380,7 +384,12 @@ export class DatePickerElement extends LitElement {
   }
 
   override render() {
-    const lang = this._lang || this._htmlLang || 'nl';
+    let lang = this._lang || this._htmlLang;
+
+    if (!Object.hasOwn(this.i18n, lang)) {
+      lang = DEFAULT_LANG;
+    }
+
     const {
       afspraakLocale,
       chooseDatumLabelLocale,
@@ -393,7 +402,6 @@ export class DatePickerElement extends LitElement {
       dayInLocale,
       daysOfWeek,
       descriptionLocale,
-      hourSuffixLocal,
       months,
       nextLocale,
       previousLocale,
@@ -419,15 +427,6 @@ export class DatePickerElement extends LitElement {
     const formattedSelectedDate = displayDate
       ? new Intl.DateTimeFormat(lang, { dateStyle: 'full' }).format(displayDate)
       : '';
-    let formattedSelectedTime = this._dateValue
-      ? new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._dateValue)
-      : '';
-
-    if (hourSuffixLocal) {
-      formattedSelectedTime = formattedSelectedTime
-        ? `${formattedSelectedTime} ${hourSuffixLocal}`
-        : formattedSelectedTime;
-    }
 
     const mobileDisplayDate = this._dateValue || this._userVisibleDate;
     const formattedSelectedDateTime = mobileDisplayDate
@@ -437,7 +436,14 @@ export class DatePickerElement extends LitElement {
     const currentIndex = this._times.findIndex((el) => el.selected);
     const activeDescendant = `option-${currentIndex}`;
     const today = this._now;
-    const times = getTimeOptionsBetween(this._times, startOfDay(this._visibleDate), endOfDay(this._visibleDate));
+
+    const times = getTimeOptionsBetween(this._times, startOfDay(this._visibleDate), endOfDay(this._visibleDate)).map(
+      (obj) => ({
+        ...obj,
+        label: obj.label || new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(obj.date),
+        selected: this._dateValue ? isEqual(this._dateValue, obj.date) : false,
+      }),
+    );
     const sortedTimes = [...this._times].sort((a: DateOption, b: DateOption): number => sortDate(a.date, b.date));
     const firstTime = this._dynamic ? null : sortedTimes[0];
     const lastTime = this._dynamic ? null : sortedTimes.at(-1);
@@ -480,13 +486,25 @@ export class DatePickerElement extends LitElement {
     const formattedCurrentMonth = formatMonth(visibleDate);
     const formattedPrevMonth = formatMonth(getPrevMonth(visibleDate));
     const formattedNextMonth = formatMonth(getNextMonth(visibleDate));
-    const mobileTimeOptions = times;
+    const mobileTimeOptions = times.map((obj) => ({
+      ...obj,
+      selected: this._drawerDate ? isEqual(this._drawerDate, obj.date) : false,
+    }));
+
+    const mobileSelectedOption = mobileTimeOptions.find(({ selected }) => selected);
     const minBrowsableDate = minDate && firstTime ? getMaxDate(minDate, firstTime.date) : minDate || firstTime?.date;
     const maxBrowsableDate = maxDate && lastTime ? getMinDate(maxDate, lastTime.date) : maxDate || lastTime?.date;
     const hasPrevMonth = minBrowsableDate ? isBeforeCurrentMonth(visibleDate, minBrowsableDate) : true;
     const hasNextMonth = maxBrowsableDate ? isAfterCurrentMonth(visibleDate, maxBrowsableDate) : true;
     /* TODO: Replace with logic to only show when no date has been selected */
     const showTimePlaceholder = times.length === 0;
+
+    const formattedSelectedTime = this._dateValue
+      ? new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(this._dateValue)
+      : '';
+
+    const formattedSelectedTimeLabel =
+      (mobileSelectedOption ? mobileSelectedOption.label : '') || formattedSelectedTime;
 
     const monthOptions: { label: string; selected?: boolean; date: Date; options: SortedTimeOptions }[] =
       minBrowsableDate && maxBrowsableDate
@@ -525,6 +543,7 @@ export class DatePickerElement extends LitElement {
             .format(option.date)
             .replace(String(option.date.getFullYear()), '')
             .replace(/januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december/g, ''),
+          selected: this._drawerDate ? isSameMonth(this._drawerDate, option.date) : false,
         };
       });
 
@@ -538,21 +557,26 @@ export class DatePickerElement extends LitElement {
         </tr>`,
     );
 
-    let initialDrawerDateValue: Date | null = null;
     /** State for the drawer: which date did the user choose? */
     const openDateDrawer = () => {
-      initialDrawerDateValue = this._dateValue;
+      this._initialDrawerDateValue = this._dateValue;
       this._drawerDate = null;
+      this.showDateModal();
     };
     const openTimeDrawer = () => {
+      if (!this._dateValue && !this._userVisibleDate) {
+        return;
+      }
+
       this._drawerDate = this._dateValue;
+      this.showTimeModal();
     };
 
     const cancelDateDrawer = () => {
-      this._dateValue = initialDrawerDateValue;
+      this._dateValue = this._initialDrawerDateValue;
     };
     const cancelTimeDrawer = () => {
-      this._dateValue = initialDrawerDateValue;
+      this._dateValue = this._initialDrawerDateValue;
     };
 
     const submitDateDrawer = () => {
@@ -581,7 +605,9 @@ export class DatePickerElement extends LitElement {
               id="mobile-date-button"
               class="utrecht-textbox"
               type="button"
-              @click=${() => this.showDateModal()}
+              @click=${() => {
+                openDateDrawer();
+              }}
               todo-aria-labelledby="mobile-date-label mobile-date-button-label"
               aria-labelledby="mobile-date-label"
             >
@@ -609,7 +635,6 @@ export class DatePickerElement extends LitElement {
           class="utrecht-drawer utrecht-drawer--block-end"
           id="date-drawer"
           aria-labelledby="mobile-date-label"
-          @open=${openDateDrawer}
           @cancel=${cancelDateDrawer}
         >
           <form method="dialog" @submit=${submitTimeDrawer}>
@@ -675,25 +700,20 @@ export class DatePickerElement extends LitElement {
                   aria-labelledby="mobile-day-listbox-label"
                 >
                   <ul class="utrecht-listbox__list" role="none">
-                    ${mobileDayOptions
-                      .map((obj) => ({
-                        ...obj,
-                        selected: this._drawerDate ? isSameMonth(this._drawerDate, obj.date) : false,
-                      }))
-                      .map(
-                        ({ date, label, selected }) =>
-                          html`<li
-                            class=${`utrecht-listbox__option utrecht-listbox__option--html-li ${selected ? 'utrecht-listbox__option--selected' : ''}`}
-                            aria-selected=${selected ? 'true' : 'false'}
-                            role="option"
-                            @click=${() => {
-                              this._drawerDate = date;
-                              this.requestUpdate();
-                            }}
-                          >
-                            ${label}
-                          </li>`,
-                      )}
+                    ${mobileDayOptions.map(
+                      ({ date, label, selected }) =>
+                        html`<li
+                          class=${`utrecht-listbox__option utrecht-listbox__option--html-li ${selected ? 'utrecht-listbox__option--selected' : ''}`}
+                          aria-selected=${selected ? 'true' : 'false'}
+                          role="option"
+                          @click=${() => {
+                            this._drawerDate = date;
+                            this.requestUpdate();
+                          }}
+                        >
+                          ${label}
+                        </li>`,
+                    )}
                   </ul>
                 </div>
               </div>
@@ -712,12 +732,7 @@ export class DatePickerElement extends LitElement {
             </div>
           </form>
         </dialog>
-        <dialog
-          class="utrecht-drawer utrecht-drawer--block-end"
-          id="time-drawer"
-          @open=${openTimeDrawer}
-          @cancel=${cancelTimeDrawer}
-        >
+        <dialog class="utrecht-drawer utrecht-drawer--block-end" id="time-drawer" @cancel=${cancelTimeDrawer}>
           <form method="dialog" @submit=${submitTimeDrawer}>
             <div class="utrecht-drawer__rods-header">
               <h2 class="utrecht-drawer__rods-heading">${selectTimeLocale} ${formattedSelectedDate}</h2>
@@ -725,25 +740,20 @@ export class DatePickerElement extends LitElement {
             <div class="utrecht-drawer__rods-body">
               <div class="utrecht-listbox utrecht-listbox--html-div rods-scroll-shadows" role="listbox" tabindex="0">
                 <ul class="utrecht-listbox__list" role="none">
-                  ${mobileTimeOptions
-                    .map((obj) => ({
-                      ...obj,
-                      selected: this._drawerDate ? isEqual(this._drawerDate, obj.date) : false,
-                    }))
-                    .map(
-                      ({ date, label, selected }) =>
-                        html`<li
-                          class=${`utrecht-listbox__option utrecht-listbox__option--html-li ${selected ? 'utrecht-listbox__option--selected' : ''}`}
-                          aria-selected=${selected ? 'true' : 'false'}
-                          role="option"
-                          @click=${() => {
-                            this._drawerDate = date;
-                            this.requestUpdate();
-                          }}
-                        >
-                          ${label}
-                        </li>`,
-                    )}
+                  ${mobileTimeOptions.map(
+                    ({ date, label, selected }) =>
+                      html`<li
+                        class=${`utrecht-listbox__option utrecht-listbox__option--html-li ${selected ? 'utrecht-listbox__option--selected' : ''}`}
+                        aria-selected=${selected ? 'true' : 'false'}
+                        role="option"
+                        @click=${() => {
+                          this._drawerDate = date;
+                          this.requestUpdate();
+                        }}
+                      >
+                        ${label}
+                      </li>`,
+                  )}
                 </ul>
               </div>
             </div>
@@ -769,16 +779,14 @@ export class DatePickerElement extends LitElement {
             <button
               id="mobile-time-button"
               class=${clsx('utrecht-textbox', {
-                'utrecht-textbox--disabled': !this._userVisibleDate,
+                'utrecht-textbox--disabled': !this._dateValue && !this._userVisibleDate,
               })}
               type="button"
               @click=${() => {
-                if (this._userVisibleDate) {
-                  this.showTimeModal();
-                }
+                openTimeDrawer();
               }}
-              ?aria-disabled=${!this._userVisibleDate ? 'true' : nothing}
-              tabindex=${this._userVisibleDate ? nothing : '0'}
+              ?aria-disabled=${!this._dateValue && !this._userVisibleDate ? 'true' : nothing}
+              tabindex=${!this._dateValue && this._userVisibleDate ? nothing : '0'}
               xaria-labelledby="mobile-time-label-text"
               aria-labelledby="mobile-time-label-text mobile-time-button-text"
             >
@@ -794,7 +802,7 @@ export class DatePickerElement extends LitElement {
                   />
                 </svg>
               </span>
-              <span class="utrecht-textbox__value" id="mobile-time-button-text">${formattedSelectedTime}</span>
+              <span class="utrecht-textbox__value" id="mobile-time-button-text">${formattedSelectedTimeLabel}</span>
             </button>
           </div>
         </div>
@@ -940,7 +948,6 @@ export class DatePickerElement extends LitElement {
             >
               <ul class="rods-time-badge-list" role="list">
                 ${times.map(({ date, label, selected }, index, list) => {
-                  const labelText = label || new Intl.DateTimeFormat(lang, { timeStyle: 'short' }).format(date);
                   return html`<li
                     id="option-${index}"
                     class="rods-time-badge${selected ? ' rods-time-badge--selected' : ''}"
@@ -952,8 +959,8 @@ export class DatePickerElement extends LitElement {
                   >
                     ${selected
                       ? /* render the selected item with a <b> element, so it will still have a distinct appearance without CSS */
-                        html`<b>${labelText}</b>`
-                      : labelText}
+                        html`<b>${label}</b>`
+                      : label}
                   </li>`;
                 })}
               </ul>
@@ -1170,6 +1177,7 @@ export class DatePickerElement extends LitElement {
   }
   updateValue(date: string | Date | null, indeterminate = false) {
     this._dateValue = typeof date === 'string' ? new Date(date) : date ? new Date(date.getTime()) : null;
+    this._internals.setFormValue(this.value);
     this._indeterminate = indeterminate;
 
     this.dispatchEvent(new CustomEvent('change'));
