@@ -9,7 +9,6 @@
     <description>NL Design System Parent POM made by Gemeente Rotterdam. Used for Java libraries related to NL Design System.</description>
     <url>https://github.com/nl-design-system/rotterdam/</url>
 
-
     <licenses>
         <license>
             <name>EUPL-1.2 license</name>
