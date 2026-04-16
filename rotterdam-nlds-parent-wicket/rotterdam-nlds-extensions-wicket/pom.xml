@@ -4,7 +4,7 @@
     <parent>
         <groupId>nl.rotterdam.nl-design-system</groupId>
         <artifactId>rotterdam-nlds-parent-wicket</artifactId>
-        <version>0.0.12</version>
+        <version>0.1.0</version>
     </parent>
 
     <artifactId>rotterdam-nlds-extensions-wicket</artifactId>
