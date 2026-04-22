@@ -1,5 +1,11 @@
 # @gemeente-rotterdam/date-picker-element
 
+## 0.1.1
+
+### Patch Changes
+
+- b94f972: Start calendar grid on correct day of the week.
+
 ## 0.1.0
 
 ### Minor Changes
