@@ -13,7 +13,6 @@ import { customElement, property, queryAsync } from 'lit/decorators.js';
 import {
   DateOption,
   Day,
-  getDatesBetween,
   getDaysInMonth,
   getEndOfMonth,
   getMaxDate,
@@ -411,6 +410,7 @@ export class DatePickerElement extends LitElement {
       timeDescLocale,
       todayLocale,
     } = this.i18n[lang];
+    const columns = [Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY, Day.SATURDAY, Day.SUNDAY];
     const formatMonth = (date: Date) => `${monthLocale(date.getMonth())} ${date.getFullYear()}`;
 
     const dayOfWeekLocale = (n: Day): string => {
@@ -465,18 +465,21 @@ export class DatePickerElement extends LitElement {
 
     // Determine which day is the first in the grid, when the grid starts on Monday
     const firstDate = dates[0].date;
-    const firstDay = firstDate.getDay();
-    const remainder = firstDay % 7;
-    const firstGridDay = new Date(firstDate);
-    firstGridDay.setDate(firstDate.getDate() - remainder + 1); // add 1 to start on monday
-
-    const beforeDates: DateOption[] = getDatesBetween(firstGridDay, firstDate).map((date) => ({
-      date,
-      disabled: true,
-      hidden: true,
-      label: date.getDate().toString(),
-      readOnly: true,
-    }));
+    const firstDateColumn = columns.indexOf(firstDate.getDay());
+    const beforeColumns = columns.slice(0, firstDateColumn);
+    const beforeDates: DateOption[] = beforeColumns
+      .map((_day, index, arr) => {
+        const date = new Date(firstDate);
+        date.setDate(arr.length - index);
+        return date;
+      })
+      .map((date) => ({
+        date,
+        disabled: true,
+        hidden: true,
+        label: date.getDate().toString(),
+        readOnly: true,
+      }));
 
     const min = this.getAttribute('min');
     const max = this.getAttribute('max');
@@ -550,10 +553,11 @@ export class DatePickerElement extends LitElement {
     const htmlCells = [...beforeDates, ...dates].map((date) => this._renderGridCell({ ...date, todayLocale }));
 
     // Create a 7xN grid out of the cells
-    const dateHTML = new Array(Math.ceil(htmlCells.length / 7)).fill(null).map(
+    const columnCount = columns.length;
+    const dateHTML = new Array(Math.ceil(htmlCells.length / columnCount)).fill(null).map(
       (_, index) =>
         html`<tr>
-          ${htmlCells.slice(index * 7, index * 7 + 7)}
+          ${htmlCells.slice(index * columnCount, index * columnCount + columnCount)}
         </tr>`,
     );
 
