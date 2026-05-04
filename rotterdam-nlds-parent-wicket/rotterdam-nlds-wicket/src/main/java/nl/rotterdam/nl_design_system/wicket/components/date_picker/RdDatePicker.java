@@ -20,7 +20,6 @@ import java.util.TreeSet;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.ROTTERDAM;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.HELP_WANTED;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
 
 /**
  * <a href="https://www.npmjs.com/package/@gemeente-rotterdam/date-picker-element">Date Picker Element</a>
