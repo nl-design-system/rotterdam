@@ -31,6 +31,8 @@ package hun code moeten aanpassen.
 Voor wijzigingen in de Java/Wicket component library gebruik je de speciale `@gemeente-rotterdam/java-release-group` package.
 Alle Java modules delen één versienummer en worden als één geheel gereleased.
 
+Zie ook [Java instructies](../JAVA_RELEASE.md).
+
 ```markdown
 ---
 "@gemeente-rotterdam/java-release-group": minor
