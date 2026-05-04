@@ -1,5 +1,11 @@
 # @gemeente-rotterdam/java-release-group
 
+## 0.1.1
+
+### Patch Changes
+
+- e8c1b97: Fixed issue where dates were shown in wrong column(day-of-week)
+
 ## 0.1.0
 
 ### Minor Changes
