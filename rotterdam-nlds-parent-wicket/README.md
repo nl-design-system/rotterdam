@@ -27,22 +27,9 @@ Installeer Java 21 en Maven 3.x
 
 We hebben de volgende scripts beschikbaar:
 
-- `pnpm run -w wicket:install`: installeer alle Maven dependencies
-- `pnpm run -w wicket:build`: build alle Maven projecten
+- `pnpm run -w wicket:install-and-build`: build alle Maven projecten
+- `pnpm run -w wicket:build-docs`: genereer Storybook documentatie
 - `pnpm run -w wicket:dev`: start de development server op [localhost:8945](http://localhost:8945).
-
-### Maven uitvoeren in Docker
-
-Je hoeft niet precies de goeie versie van Java en Maven te installeren op je
-computer, je kunt ook [Docker installeren](https://docs.docker.com/engine/install/) en gebruiken.
-
-Start de server met:
-
-```shell
-docker compose up --build --remove-orphans
-```
-
-Open de server op [localhost:8080](http://localhost:8080/).
 
 ## Meer leren over Wicket
 
