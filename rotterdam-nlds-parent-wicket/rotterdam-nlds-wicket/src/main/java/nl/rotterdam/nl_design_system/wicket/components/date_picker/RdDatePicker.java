@@ -19,7 +19,7 @@ import java.util.TreeSet;
 
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.Community.ROTTERDAM;
 import static nl.rotterdam.nl_design_system.wicket.components.component_state.EstafetteState.HELP_WANTED;
-import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.UNSTABLE;
+import static nl.rotterdam.nl_design_system.wicket.components.component_state.WicketState.BETA;
 
 /**
  * <a href="https://www.npmjs.com/package/@gemeente-rotterdam/date-picker-element">Date Picker Element</a>
@@ -33,7 +33,7 @@ import static nl.rotterdam.nl_design_system.wicket.components.component_state.Wi
  * presentation using a web component tag name.
  * </p>
  */
-@NlComponentState(wicketState = UNSTABLE, estafetteState = HELP_WANTED, htmlCssImplementedBy = ROTTERDAM)
+@NlComponentState(wicketState = BETA , estafetteState = HELP_WANTED, htmlCssImplementedBy = ROTTERDAM)
 public class RdDatePicker extends AbstractTextComponent<LocalDateTime> {
 
     /**
