@@ -11,7 +11,7 @@ Neem de volgende dependencies op in je project:
 
 ```xml
 <properties>
-  <nlds-rotterdam.version>0.0.8</nlds-rotterdam.version>
+  <nlds-rotterdam.version>0.1.1</nlds-rotterdam.version>
 </properties>
 
 <dependency>

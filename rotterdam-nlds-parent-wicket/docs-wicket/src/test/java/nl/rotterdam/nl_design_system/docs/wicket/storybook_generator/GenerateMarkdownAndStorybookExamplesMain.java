@@ -1,6 +1,8 @@
 package nl.rotterdam.nl_design_system.docs.wicket.storybook_generator;
 
 import java.io.PrintWriter;
+
+import ch.qos.logback.classic.LoggerContext;
 import org.junit.platform.engine.discovery.DiscoverySelectors;
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
@@ -8,6 +10,7 @@ import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
+import org.slf4j.LoggerFactory;
 
 public class GenerateMarkdownAndStorybookExamplesMain {
 
@@ -37,6 +40,16 @@ public class GenerateMarkdownAndStorybookExamplesMain {
             throw  new RuntimeException("Markdown generation failed, there are the following failures");
         }
 
+        shutdownLogback();
+
         System.out.println("Completed storybook generation");
+
     }
+
+    private static void shutdownLogback() {
+        if (LoggerFactory.getILoggerFactory() instanceof LoggerContext context) {
+            context.stop();
+        }
+    }
+
 }

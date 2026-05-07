@@ -35,4 +35,4 @@ jobs:
             node_modules/.pnpm
           key: ${{ steps.get-date.outputs.date }}
       - name: Maven build
-        run: ./mvnw install javadoc:javadoc --threads 1C
+        run: ./mvnw --no-transfer-progress install javadoc:javadoc --threads 1C
