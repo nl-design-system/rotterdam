@@ -1,0 +1,6 @@
+# See: https://nldesignsystem.nl/codeowners
+
+* @nl-design-system/gemeente-rotterdam-committer @nl-design-system/kernteam-committer
+
+# Protect this file itself (order matters, keep this line last):
+.github/CODEOWNERS @nl-design-system/gemeente-rotterdam-maintainer @nl-design-system/kernteam-maintainer
