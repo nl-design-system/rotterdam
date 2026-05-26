@@ -38,6 +38,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: true
 
       - name: Ensure Maven Wrapper is executable
         run: chmod +x mvnw
