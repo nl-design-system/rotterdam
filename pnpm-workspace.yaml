@@ -6,6 +6,11 @@ packages:
   - packages/web-components/*
   - proprietary/*
 
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  unrs-resolver: true
+
 autoInstallPeers: false
 
 engineStrict: true
@@ -35,3 +40,4 @@ saveExact: true
 savePrefix: ""
 
 strictPeerDependencies: false
+provenance: true
