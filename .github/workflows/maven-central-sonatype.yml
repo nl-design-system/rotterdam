@@ -89,7 +89,7 @@ jobs:
             help:evaluate)
 
           echo "Raw POM version: ${VERSION_FROM_POM}, changing to ${VERSION_FROM_TAG}"
-          
+
           ./mvnw -B versions:set -DnewVersion="${VERSION_FROM_TAG}" -DgenerateBackupPoms=false
 
       - name: Publish to Maven Central (Sonatype)
