@@ -1,5 +1,11 @@
 # @gemeente-rotterdam/design-tokens
 
+## 1.1.1
+
+### Patch Changes
+
+- b9b20e6: Doubly ensure packages are published with provenance
+
 ## 1.1.0
 
 ### Minor Changes
