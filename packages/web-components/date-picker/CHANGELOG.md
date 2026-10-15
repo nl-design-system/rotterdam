@@ -1,5 +1,11 @@
 # @gemeente-rotterdam/date-picker-element
 
+## 0.1.2
+
+### Patch Changes
+
+- b9b20e6: Doubly ensure packages are published with provenance
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @gemeente-rotterdam/design-tokens
 
+## 1.1.1
+
+### Patch Changes
+
+- 198566a: Logo mag groter worden dan de minimale afmeting: `--utrecht-logo-max-inline-size` is nu `320px` en `--utrecht-logo-max-block-size` is nu `64px` (voorheen gelijk aan de minimale afmeting van 220 × 48px).
+- 198566a: Ruimte rond koppen, spotlight-secties en fieldsets hersteld, met dezelfde waarden als de standaardinstellingen van Utrecht:
+  
+  - `--utrecht-heading-2-margin-block-start` is nu `1.5rem` en `--utrecht-heading-2-margin-block-end` is nu `0.3rem` (was `0px`).
+  - `--utrecht-heading-3-margin-block-start` is nu `1rem` en `--utrecht-heading-3-margin-block-end` is nu `0.2rem` (was `0px`).
+  - `--utrecht-spotlight-section-margin-block-start` is nu `24px` (was `0px`).
+  - `--utrecht-form-fieldset-margin-block-start` is nu `4px` (was `40px`).
+- b9b20e6: Doubly ensure packages are published with provenance
+
 ## 1.1.0
 
 ### Minor Changes
