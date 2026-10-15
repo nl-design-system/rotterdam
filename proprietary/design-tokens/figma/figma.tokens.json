@@ -6310,10 +6310,10 @@
           "$value": "48px"
         },
         "max-inline-size": {
-          "$value": "{utrecht.logo.min-inline-size}"
+          "$value": "320px"
         },
         "max-block-size": {
-          "$value": "{utrecht.logo.min-block-size}"
+          "$value": "64px"
         }
       }
     }
