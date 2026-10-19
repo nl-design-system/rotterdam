@@ -30,6 +30,15 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
         return new RdDatePicker(
             "datePicker",
             Model.of(LocalDateTime.of(2025, 12, 31, 10, 5))
+        ).withAvailableDateTimes(
+            Model.of(
+                List.of(
+                    LocalDateTime.of(2025, 11, 30, 10, 0),
+                    LocalDateTime.of(2025, 12, 31, 10, 0),
+                    LocalDateTime.of(2025, 12, 31, 10, 5),
+                    LocalDateTime.of(2025, 12, 31, 10, 10)
+                )
+            )
         );
     }
 
