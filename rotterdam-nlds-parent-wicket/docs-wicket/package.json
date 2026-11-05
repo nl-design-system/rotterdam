@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@nl-design-system-unstable/voorbeeld-design-tokens": "6.2.1",
-    "@storybook/addon-docs": "9.1.16",
+    "@storybook/addon-docs": "9.1.21",
     "bootstrap": "5.3.8",
     "rimraf": "6.1.2"
   },
