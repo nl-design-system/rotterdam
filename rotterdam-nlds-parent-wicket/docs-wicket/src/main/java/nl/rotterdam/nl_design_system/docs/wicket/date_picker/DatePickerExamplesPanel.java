@@ -30,6 +30,15 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
         return new RdDatePicker(
             "datePicker",
             Model.of(LocalDateTime.of(2025, 12, 31, 10, 5))
+        ).withAvailableDateTimes(
+            Model.of(
+                List.of(
+                    LocalDateTime.of(2025, 11, 30, 10, 0),
+                    LocalDateTime.of(2025, 12, 31, 10, 0),
+                    LocalDateTime.of(2025, 12, 31, 10, 5),
+                    LocalDateTime.of(2025, 12, 31, 10, 10)
+                )
+            )
         );
     }
 
@@ -61,16 +70,16 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
     @ComponentExample
     private static Component exampleDatePickerWithAvailableDateTimesDesktop() {
 
-        return createDatePickerWithTwoDaysWithAvailableTimes("datePickerWithAvailableDateTimesDesktop");
+        return createDatePickerWithThreeDaysWithAvailableTimes("datePickerWithAvailableDateTimesDesktop");
     }
 
     @ComponentExample
     private static Component exampleDatePickerWithAvailableDateTimesMobile() {
 
-        return createDatePickerWithTwoDaysWithAvailableTimes("datePickerWithAvailableDateTimesMobile");
+        return createDatePickerWithThreeDaysWithAvailableTimes("datePickerWithAvailableDateTimesMobile");
     }
 
-    private static FormComponent<LocalDateTime> createDatePickerWithTwoDaysWithAvailableTimes(String componentId) {
+    private static FormComponent<LocalDateTime> createDatePickerWithThreeDaysWithAvailableTimes(String componentId) {
         var selectableTimes = List.of(
             LocalDateTime.of(2026, 1, 15, 10, 0),
             LocalDateTime.of(2026, 1, 15, 11, 0),
@@ -78,7 +87,9 @@ public class DatePickerExamplesPanel extends ExamplesPanel {
             LocalDateTime.of(2026, 1, 15, 14, 0),
             LocalDateTime.of(2026, 1, 16, 10, 0),
             LocalDateTime.of(2026, 1, 16, 12, 0),
-            LocalDateTime.of(2026, 1, 16, 16, 0)
+            LocalDateTime.of(2026, 1, 16, 16, 0),
+            LocalDateTime.of(2026, 3, 23, 9, 0),
+            LocalDateTime.of(2026, 3, 23, 10, 0)
         );
 
         return new RdDatePicker(
