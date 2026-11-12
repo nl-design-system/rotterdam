@@ -3,6 +3,7 @@ package nl.rotterdam.nl_design_system.docs.wicket.component_examples;
 import nl.rotterdam.nl_design_system.docs.wicket.DocsWicketTestCase;
 import nl.rotterdam.nl_design_system.docs.wicket.action_group.ActionGroupExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.form_field_checkbox.FormFieldCheckboxExamplesPanel;
+import nl.rotterdam.nl_design_system.docs.wicket.icon_button.IconButtonExamplesPanel;
 import nl.rotterdam.nl_design_system.docs.wicket.link.LinkExamplesPanel;
 import nl.rotterdam.nl_design_system.wicket.test_common.WicketAssertions;
 import org.apache.wicket.markup.head.HeaderItem;
@@ -22,6 +23,7 @@ import java.util.List;
 import static nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentsExamplePage.PAGE_PARAM_COMPONENT;
 import static nl.rotterdam.nl_design_system.docs.wicket.component_examples.ComponentsExamplePage.makeLabel;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class ComponentsExamplePageTest extends DocsWicketTestCase {
@@ -57,6 +59,14 @@ class ComponentsExamplePageTest extends DocsWicketTestCase {
             .filter(item -> (item instanceof IReferenceHeaderItem))
             .map(item -> (IReferenceHeaderItem) item)
             .forEach(WicketAssertions::assertHeaderItemExists);
+    }
+
+    @Test
+    void rendersCspNonceMetaTagForStencilIcons() {
+        tester.startPage(ComponentsExamplePage.class, new PageParameters().set(PAGE_PARAM_COMPONENT, IconButtonExamplesPanel.class.getSimpleName()));
+        assertComponentExamplePageRendered();
+
+        assertTrue(tester.getLastResponseAsString().matches("(?s).*<meta name=\"csp-nonce\" content=\"[^\"]+\".*"));
     }
 
     private void assertComponentExamplePageRendered() {

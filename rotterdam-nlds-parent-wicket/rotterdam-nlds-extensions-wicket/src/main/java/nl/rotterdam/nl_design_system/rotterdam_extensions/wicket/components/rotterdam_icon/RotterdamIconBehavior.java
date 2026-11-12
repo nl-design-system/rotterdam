@@ -8,6 +8,8 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.JavaScriptReferenceType;
+import org.apache.wicket.markup.head.MetaDataHeaderItem;
+import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.danekja.java.util.function.serializable.SerializableSupplier;
 
@@ -183,6 +185,10 @@ public class RotterdamIconBehavior extends Behavior {
 
         ESM.setType(JavaScriptReferenceType.MODULE);
         response.render(ESM);
+        // Stencil injects its own <style> elements and reads the nonce for them from this meta tag; without it, a
+        // nonce-based style-src CSP blocks them.
+        response.render(MetaDataHeaderItem.forMetaTag("csp-nonce",
+            WebApplication.get().getCspSettings().getNonce(component.getRequestCycle())));
     }
 
     /**
