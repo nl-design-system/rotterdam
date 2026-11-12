@@ -39,8 +39,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
-        <node.version>v24.16.0</node.version>
-        <pnpm.version>11.5.1</pnpm.version>
+        <!-- node.version is not defined here: it is read from .nvmrc by gmavenplus-plugin (execution read-node-version).
+        The pnpm version comes from "packageManager" in package.json (via corepack). -->
         <central-publishing.autoPublish>true</central-publishing.autoPublish>
         <central-publishing.waitUntil>published</central-publishing.waitUntil>
     </properties>
@@ -53,6 +53,11 @@
                     <groupId>com.github.ekryd.sortpom</groupId>
                     <artifactId>sortpom-maven-plugin</artifactId>
                     <version>4.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.gmavenplus</groupId>
+                    <artifactId>gmavenplus-plugin</artifactId>
+                    <version>5.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -75,12 +80,44 @@
                     <version>1.15.1</version>
                     <configuration>
                         <nodeVersion>${node.version}</nodeVersion>
-                        <pnpmVersion>${pnpm.version}</pnpmVersion>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <!-- Read the Node.js version from .nvmrc (single source of truth, also used by nvm and GitHub Actions)
+                and expose it, with "v" prefix, as the ${node.version} property, used by frontend-maven-plugin. Unlike maven-antrun-plugin
+                with exportAntProperties, this sets only this property, without clash warnings. -->
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.groovy</groupId>
+                        <artifactId>groovy</artifactId>
+                        <version>6.0.0</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>read-node-version</id>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <scripts>
+                                <script><![CDATA[
+                                    def version = new File(session.request.multiModuleProjectDirectory, '.nvmrc').text.trim()
+                                    // frontend-maven-plugin needs the "v" prefix, which .nvmrc may leave out
+                                    project.properties['node.version'] = version.startsWith('v') ? version : 'v' + version
+                                ]]></script>
+                            </scripts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
