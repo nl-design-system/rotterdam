@@ -115,3 +115,82 @@ describe(`<rods-date-picker>`, () => {
     });
   });
 });
+
+describe('<rods-date-picker> mobile date drawer (#599)', () => {
+  const options = [
+    { value: '2026-12-07T09:00' },
+    { value: '2026-12-07T10:00' },
+    { value: '2026-12-14T09:00' },
+    { value: '2026-12-21T09:00' },
+    { value: '2026-12-28T09:00' },
+  ];
+
+  beforeEach(() => {
+    // "now" is in November, but the only available times are in December
+    document.body.innerHTML = `<rods-date-picker lang="nl" now="2026-11-16T10:00" options='${JSON.stringify(options)}'></rods-date-picker>`;
+  });
+
+  const openDateDrawer = async () => {
+    await page.getByRole('button', { name: 'Kies een datum' }).click();
+    return page.getByRole('dialog', { name: 'Kies een datum' });
+  };
+
+  it('preselects the first month with available times', async () => {
+    const dialog = await openDateDrawer();
+    const month = dialog.getByRole('listbox', { name: 'Selecteer een maand' }).getByRole('option', {
+      name: 'december 2026',
+    });
+
+    await expect.element(month).toHaveAttribute('aria-selected', 'true');
+  });
+
+  it('shows the days of the chosen month, with the chosen month in the heading', async () => {
+    const dialog = await openDateDrawer();
+    await dialog.getByRole('button', { name: 'Bevestig maand' }).click();
+
+    await expect.element(dialog.getByRole('heading', { name: '2/2 Selecteer een dag in december' })).toBeVisible();
+
+    const days = dialog.getByRole('listbox', { name: /Selecteer een dag/ }).getByRole('option');
+    await expect.element(days.first()).toBeVisible();
+    expect(days.elements().map((el) => el.textContent?.trim())).toEqual([
+      'maandag 7',
+      'maandag 14',
+      'maandag 21',
+      'maandag 28',
+    ]);
+  });
+
+  it('marks only the chosen day as selected', async () => {
+    const dialog = await openDateDrawer();
+    await dialog.getByRole('button', { name: 'Bevestig maand' }).click();
+
+    const dayListbox = dialog.getByRole('listbox', { name: /Selecteer een dag/ });
+    const selectedDays = () =>
+      dayListbox
+        .getByRole('option')
+        .elements()
+        .filter((el) => el.getAttribute('aria-selected') === 'true')
+        .map((el) => el.textContent?.trim());
+
+    // The first available day is preselected
+    await expect.poll(selectedDays).toEqual(['maandag 7']);
+
+    await dayListbox.getByRole('option', { name: /maandag 14/ }).click();
+
+    await expect.poll(selectedDays).toEqual(['maandag 14']);
+  });
+
+  it('can confirm a day in a month that is not the current month', async () => {
+    const dialog = await openDateDrawer();
+    await dialog.getByRole('button', { name: 'Bevestig maand' }).click();
+    await dialog
+      .getByRole('listbox', { name: /Selecteer een dag/ })
+      .getByRole('option', { name: /maandag 21/ })
+      .click();
+    await dialog.getByRole('button', { name: 'Bevestig dag' }).click();
+
+    await expect
+      .element(page.getByRole('button', { name: 'Kies een datum' }))
+      .toHaveTextContent('maandag 21 december 2026');
+  });
+});
