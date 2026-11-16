@@ -1,3 +1,8 @@
+/* The page body is a grid; without this its column grows to the widest example and the page no longer fits on mobile. */
+.utrecht-page-body__content {
+  min-inline-size: 0;
+}
+
 .example-story {
   background-color: white;
   border-color: rgb(0 0 0 / 10%);
@@ -12,4 +17,25 @@
   padding-inline-end: 20px;
   padding-inline-start: 20px;
   position: relative;
+}
+
+/* Layout of docs pages lives here instead of in style attributes, which the nonce-based style-src CSP blocks. */
+.example-docs-components-page {
+  margin-inline: auto;
+  max-inline-size: 40em;
+}
+
+.example-docs-date-picker-mobile {
+  max-inline-size: 800px;
+}
+
+.example-docs-mijn-loket-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.example-docs-sso-login-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
