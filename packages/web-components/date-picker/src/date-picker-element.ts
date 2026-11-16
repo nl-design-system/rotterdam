@@ -546,7 +546,7 @@ export class DatePickerElement extends LitElement {
             .format(option.date)
             .replace(String(option.date.getFullYear()), '')
             .replace(/januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december/g, ''),
-          selected: this._drawerDate ? isSameMonth(this._drawerDate, option.date) : false,
+          selected: this._drawerDate ? isSameDate(this._drawerDate, option.date) : false,
         };
       });
 
@@ -564,7 +564,13 @@ export class DatePickerElement extends LitElement {
     /** State for the drawer: which date did the user choose? */
     const openDateDrawer = () => {
       this._initialDrawerDateValue = this._dateValue;
-      this._drawerDate = null;
+      // Preselect a month, so the user can confirm right away and gets a list of days.
+      // Prefer the current value, then the visible month, then the first month with available times.
+      const initialMonth =
+        monthOptions.find(({ date, options }) => options.length > 0 && isSameMonth(date, visibleDate)) ||
+        monthOptions.find(({ options }) => options.length > 0);
+      this._drawerDate = this._dateValue || (initialMonth ? initialMonth.options[0].date : null);
+      this.requestUpdate();
       this.showDateModal();
     };
     const openTimeDrawer = () => {
@@ -693,7 +699,7 @@ export class DatePickerElement extends LitElement {
             <div class="utrecht-drawer__rods-step" id="date-drawer-step-2" hidden data-step="2">
               <div class="utrecht-drawer__rods-header">
                 <h2 class="utrecht-drawer__rods-heading" id="mobile-day-listbox-label">
-                  <strong>2/2</strong> ${dayInLocale} ${monthLocale(visibleDate.getMonth())}
+                  <strong>2/2</strong> ${dayInLocale} ${monthLocale((this._drawerDate || visibleDate).getMonth())}
                 </h2>
               </div>
               <div class="utrecht-drawer__rods-body">
