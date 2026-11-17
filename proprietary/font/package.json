@@ -11,7 +11,8 @@
   "private": false,
   "publishConfig": {
     "access": "restricted",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "provenance": false
   },
   "files": [
     "src"
