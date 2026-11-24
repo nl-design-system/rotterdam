@@ -16,14 +16,6 @@
     "node": "^24.22.3 || ^26.13.1",
     "pnpm": "^12"
   },
-  "workspaces": [
-    "./rotterdam-nlds-parent-wicket/",
-    "./rotterdam-nlds-parent-wicket/*",
-    "./packages/*",
-    "./packages/web-components/*",
-    "./components/*",
-    "./proprietary/*"
-  ],
   "devDependencies": {
     "@changesets/cli": "3.0.1",
     "@eslint/js": "9.39.1",
